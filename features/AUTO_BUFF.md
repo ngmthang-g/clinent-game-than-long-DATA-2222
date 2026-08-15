@@ -1,6 +1,6 @@
 # Feature specification — Auto Buff / Nga My support nearby players
 
-Status: **read/query schema + donor action logic VERIFIED; external non-team buff loop requires runtime integration proof**.
+Status: **read/query schema + donor action logic + skill cooldown/local buff schema VERIFIED; external non-team buff loop requires runtime integration proof**.
 
 ## Goal
 
@@ -46,6 +46,48 @@ The built-in team's support engine uses:
 
 This is the preferred semantic action pattern.
 
+## Verified cooldown source
+
+The shipped SkillBar calls:
+
+`Game.GetSkillCooldown(skillID)`
+
+and reads:
+
+- `[1] = passedTicks`
+- `[2] = cooldownTicks`.
+
+Ready condition:
+
+`cooldownTicks <= 0 OR passedTicks >= cooldownTicks`.
+
+So before requesting a cast, the tool can add an explicit cooldown readiness check rather than retrying on a timer.
+
+Full detail: `analysis/18_SKILLBAR_COOLDOWN_QUICKSKILLS.md`.
+
+## Verified local buff state
+
+For the local role the game exposes:
+
+`Game.GetBuffs()`
+
+with live fields:
+
+- `BuffID`
+- `DurationTick` (milliseconds)
+- `Stack`.
+
+`Game.GetBuffData(BuffID)` additionally exposes at least:
+
+- `Level`
+- `Stack`.
+
+`Game.GetBuffProperties(BuffID)` supplies semantic magic properties.
+
+This is useful for self-buff maintenance and cast verification. Arbitrary target players are only VERIFIED to expose buff icons so far; do not pretend we already have their structured BuffID/duration list.
+
+Full detail: `analysis/17_BUFF_RUNTIME_SCHEMA.md`.
+
 ## Recommended read-only candidate snapshot
 
 Normalize each scanned player into the tool's own immutable snapshot:
@@ -86,27 +128,29 @@ A deterministic policy:
 2. filter HP% below threshold;
 3. sort by `MaxHP DESC`;
 4. select the highest-MaxHP low-HP target;
-5. heal until target reaches threshold or action is no longer appropriate;
-6. rescan;
-7. choose next highest-MaxHP eligible target.
+5. issue at most one heal action;
+6. wait for state proof;
+7. rescan current players/HP;
+8. continue the same target only while it is still below threshold and remains the chosen policy winner;
+9. otherwise choose the next highest-MaxHP eligible target.
 
-Do not build a long queue from a stale scan. Rescan after every mutable action.
+Do not build a long queue from a stale scan.
 
 ## Skill selection
 
-If target is alive and needs healing:
+For a living target needing healing:
 
-1. if enabled + condition passes -> 406;
-2. else if enabled + condition passes -> 424;
-3. else if enabled + condition passes -> 407;
-4. else no action.
+1. 406 if enabled, learned/available, cooldown ready and `Game.CheckCondition(406)` passes;
+2. otherwise 424 under the same checks;
+3. otherwise 407;
+4. otherwise no action.
 
 If exact dead state is available and Cải Tử Hoàn Sinh is enabled:
 
-- condition check `408`;
+- validate skill 408 condition/cooldown;
 - use semantic target action for RoleID.
 
-The exact preference order above mirrors the built-in donor implementation for normal healing.
+The 406 -> 424 -> 407 preference order mirrors the built-in donor implementation.
 
 ## Range handling
 
@@ -115,23 +159,45 @@ Never assume F1 or keyboard range.
 Use skill data:
 
 1. `skillData = Game.GetSkillLuaData(skillID)`;
-2. convert `skillData.CastRange` through `Game.CellToDistance`;
+2. convert `skillData.CastRange` through `Game.CellToDistance` as the built-in donor does;
 3. compare real target distance;
 4. if outside range, call `Game.ChaseTarget`;
-5. cast from its success callback;
+5. cast from the success callback;
 6. if already inside range, cast immediately.
 
-## State proof after a cast
+## State proof after a heal cast
 
-Prefer one or more of:
+Preferred order:
 
-- target HP changes in a fresh nearby-player snapshot;
-- relevant buff event/data appears;
-- target becomes invalid/out of AOI;
-- skill condition/cooldown state changes consistently;
-- explicit cast/game state confirms completion.
+1. fresh target HP differs / target reaches threshold;
+2. skill cooldown transitions from ready to active as secondary evidence;
+3. cast/progress state confirms action was accepted;
+4. target disappears/out of AOI -> invalidate and rescan.
 
 Do not simply `Sleep(500)` and assume success.
+
+## Persistent self-buffs
+
+For local-player buffs, use:
+
+- `Game.HasBuff(skillID)` for the lightweight check used by built-in Auto;
+- `Game.GetBuffs()` when duration/stack is needed;
+- AddBuff/UpdateBuff/RemoveBuff events as state proof.
+
+A policy can refresh a buff only when:
+
+- absent; or
+- remaining `DurationTick` is below a user-configured refresh threshold.
+
+Do not recast every scan loop.
+
+## Target persistent buffs
+
+Current Lua proof for other players is limited to:
+
+`Game.GetTargetBuffIcons(RoleID)`.
+
+Until a structured target BuffID/duration API is found, do not implement repeated target-buff recasting based only on uncertain icon matching. Healing by HP is much better grounded today.
 
 ## Self-heal
 
@@ -146,9 +212,23 @@ For every game process keep separate:
 - settings/profile;
 - current action;
 - last scan/cast timestamps;
+- cooldown snapshot;
 - Unity dispatcher context.
 
 Never share client pointers between processes. Only static IDs/config may be shared.
+
+## Safety guards
+
+Before mutable action:
+
+- Captcha active -> pause and require user interaction;
+- loading/map transition -> wait;
+- local player dead/Revival -> hand over to revive state machine;
+- progress/channel action active -> wait unless the specific action permits interruption;
+- selected target stale/out of AOI -> rescan;
+- skill not learned / condition false / cooldown active -> do not cast.
+
+See `analysis/19_PROGRESS_CAPTCHA_SAFETY.md`.
 
 ## Architecture
 
@@ -157,6 +237,7 @@ Resolver
  -> read-only NearbyPlayerScanner
  -> Snapshot Store
  -> Filter/Priority Observer
+ -> Cooldown/Buff Observer
  -> Buff State Machine
  -> Safety Guard
  -> Action Queue (max 1)
@@ -173,11 +254,12 @@ Resolver
 - CE scanning HP offsets;
 - clicking a player on screen;
 - pressing F1 physically;
+- hardcoded skill cooldown delays;
 - holding a stale UI button pointer.
 
 ## Remaining runtime proof
 
-Before declaring the complete external feature VERIFIED:
+Before declaring the complete external non-team feature VERIFIED:
 
 1. invoke/read `GetNearByPeacePlayers` through the actual bridge;
 2. confirm return object fields in the runtime bridge;
