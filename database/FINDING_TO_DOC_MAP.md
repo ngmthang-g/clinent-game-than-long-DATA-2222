@@ -2,6 +2,18 @@
 
 Use this file when you remember a conclusion but do not know where it was stored. It maps high-value findings to the canonical document that explains them.
 
+## AI navigation first
+
+| Need | Canonical entry |
+|---|---|
+| Start a build task without reading whole repo | `AI_BOOTSTRAP.md` |
+| Route task to smallest reading set | `AI_ROUTER.md` |
+| Task-specific required/optional docs | `contexts/BUILD_*.md` |
+| Fast exact constants/IDs/facts | `database/FACTS.jsonl` |
+| How knowledge is preserved | `KB_METHOD.md` |
+
+## Deep technical map
+
 | Finding / question | Canonical document |
 |---|---|
 | Client architecture, file priority | `analysis/00_MASTER_RESEARCH_MAP.md` |
@@ -47,11 +59,27 @@ Use this file when you remember a conclusion but do not know where it was stored
 | Auto Sell design | `features/AUTO_SELL.md` |
 | Auto Revive/Đầu thai | `features/AUTO_REVIVE.md` |
 | NPC Trị liệu mechanism | `features/AUTO_HEAL_NPC.md` |
+| Adaptive cross-feature orchestration | `features/AUTO_ORCHESTRATOR.md` |
 | Evidence/preservation method | `KB_METHOD.md` |
+
+## Build routing map
+
+| Build problem | Context pack |
+|---|---|
+| Core architecture / multi-client / action gate | `contexts/BUILD_TOOL_CORE.md` |
+| Runtime scanners/snapshots | `contexts/BUILD_RUNTIME_SCANNER.md` |
+| External System.Action / MainThread bridge | `contexts/BUILD_MAINTHREAD_BRIDGE.md` |
+| Auto Train | `contexts/BUILD_AUTO_TRAIN.md` |
+| Auto Buff | `contexts/BUILD_AUTO_BUFF.md` |
+| Auto Sell | `contexts/BUILD_AUTO_SELL.md` |
+| NPC treatment | `contexts/BUILD_AUTO_HEAL.md` |
+| Revive | `contexts/BUILD_AUTO_REVIVE.md` |
+| Party/team/follow | `contexts/BUILD_PARTY.md` |
+| Combined adaptive automation | `contexts/BUILD_ORCHESTRATOR.md` |
 
 ## Exact facts that should be easy to find
 
-- Nearby peaceful player records expose `RoleID, Name, Level, FactionID, HP, MaxHP, GuildName, AvartaID, TeamRank` → `analysis/14_NEARBY_ENTITY_UI_SCHEMA.md`.
+- Nearby peaceful player records expose `RoleID, Name, Level, FactionID, HP, MaxHP, GuildName, AvartaID, TeamRank` → `analysis/14_NEARBY_ENTITY_UI_SCHEMA.md` / `FACTS.jsonl`.
 - Train semantic start is `GUI.FindUI("AutoFight_Main"):StartAutoFight(C_AutoModel.Train)` → `analysis/10...` / `features/AUTO_TRAIN.md`.
 - Shop sell request is packet `200036`, payload `itemInstanceID:NpcShopID:ShopID` → `analysis/11...` / `analysis/20...`.
 - Đầu thai is revive packet `200063` value `1` → `features/AUTO_REVIVE.md`.
