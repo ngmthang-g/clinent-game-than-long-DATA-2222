@@ -2,24 +2,43 @@
 
 Repository: `ngmthang-g/clinent-game-than-long-DATA-2222`
 
+## IMPORTANT: compact entrypoint changed
+
+This repository is now intentionally optimized for a **large AI-native knowledge base**. Future AI should **not read this entire index plus every analysis file before starting a task**.
+
+Normal task flow:
+
+1. `AI_BOOTSTRAP.md` — compact architecture/fact guardrails.
+2. `AI_ROUTER.md` — map current task to one context pack.
+3. exactly one matching `contexts/BUILD_*.md` pack.
+4. only the REQUIRED documents named by that pack.
+5. database lookup for specific IDs/records as needed.
+
+Use this `AI_INDEX.md` as the **deep repository map** when broader navigation is needed.
+
 ## Purpose
 
-This repository is the **canonical technical memory** for this frozen Thần Long client snapshot. Future AI must read the knowledge base before doing new reverse engineering.
+This repository is the canonical technical memory for this frozen Thần Long client snapshot. Future AI must read the knowledge base before doing new reverse engineering, but should do so through the routing layer above to avoid context overload.
 
 The KB is **not a verbatim chat dump**. Exact technical facts are preserved exactly; repeated discussion, dead ends and exploratory wording are deduplicated into structured documents. Read `KB_METHOD.md` for the preservation/evidence policy.
 
-## Mandatory reading order
+## Routing layer
 
-1. `AI_INDEX.md`
-2. `KB_METHOD.md`
-3. `analysis/00_MASTER_RESEARCH_MAP.md`
-4. `analysis/09_PHASE2_DECRYPTED_DATA_LUA.md`
-5. `research/VERIFIED.md`
-6. `research/VERIFIED_PHASE2.md`
-7. `research/VERIFIED_PHASE3.md`
-8. the subsystem/feature document relevant to the task
-9. `database/README.md` and `database/FINDING_TO_DOC_MAP.md`
-10. `research/PROBABLE.md`, `research/HYPOTHESES.md`, `research/TODO.md` only when missing information must be investigated.
+- `AI_BOOTSTRAP.md` — short mandatory bootstrap.
+- `AI_ROUTER.md` — task -> context-pack router.
+- `contexts/README.md` — context-pack usage rules.
+- `contexts/BUILD_TOOL_CORE.md`
+- `contexts/BUILD_RUNTIME_SCANNER.md`
+- `contexts/BUILD_MAINTHREAD_BRIDGE.md`
+- `contexts/BUILD_AUTO_TRAIN.md`
+- `contexts/BUILD_AUTO_BUFF.md`
+- `contexts/BUILD_AUTO_SELL.md`
+- `contexts/BUILD_AUTO_HEAL.md`
+- `contexts/BUILD_AUTO_REVIVE.md`
+- `contexts/BUILD_PARTY.md`
+- `contexts/BUILD_ORCHESTRATOR.md`.
+
+Read-budget target for a normal implementation task: **5–10 documents before coding**, not the entire repo.
 
 ## Evidence labels
 
@@ -80,7 +99,7 @@ Examples:
 - `Game.GetItemsAtSite(Site)` is the semantic bag/storage source.
 - `Game.IsMapReady`, `GetLocalMapObjects`, `GetNearbyObjects`, `MoveTo`, `GoTo` provide map/movement state.
 
-## Phase 4 — MainThread dispatcher is now statically solved
+## Phase 4 — MainThread dispatcher is statically solved
 
 `FGStudio.Engine.Utilities.MainThread` is no longer just a candidate.
 
@@ -146,7 +165,9 @@ Therefore the internal dispatcher chain is VERIFIED. Remaining work is only the 
 Start at:
 
 - `database/README.md`
-- `database/FINDING_TO_DOC_MAP.md`.
+- `database/FINDING_TO_DOC_MAP.md`
+- `database/FACTS_README.md`
+- `database/FACTS.jsonl` — atomic high-value facts for fast lookup.
 
 High-value databases:
 
@@ -167,7 +188,7 @@ High-value databases:
 - `database/NGAMY_SUPPORT_SKILLS.md`
 - `database/static/README.md` — navigation/schema for the large normalized Config databases.
 
-Large Items/Skills/Magic/Monsters/Equips CSV chunks have been generated offline; uploading all chunks remains an explicit TODO until they appear under `database/static/*/`.
+Large Items/Skills/Magic/Monsters/Equips CSV chunks are lookup data. Do not load all of them into context; locate the relevant record/chunk first.
 
 # Feature specs
 
@@ -289,7 +310,7 @@ Broad reverse is no longer the task. Remaining work is targeted:
 1. external managed `System.Action` construction/rooting + harmless live `MainThread.Execute` proof;
 2. runtime/server-dynamic NPC Trị liệu selection proof;
 3. non-team beneficial-skill acceptance proof for Auto Buff;
-4. selected social/party runtime actions where source semantics are still incomplete;
-5. upload the already-generated large normalized static CSV chunks.
+4. selected social/party runtime actions where source semantics remain incomplete;
+5. continue expanding/uploading large normalized static CSV chunks as needed, but keep them query-oriented rather than mandatory reading.
 
 Read `research/TODO.md` before doing any further reverse work.
