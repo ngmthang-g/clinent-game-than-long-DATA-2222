@@ -124,6 +124,22 @@ Support at least:
 - alive/dead state when exact field is available;
 - optional MaxHP priority.
 
+### v1.3.1 source donor — filter UX worth preserving
+
+`ThanLongAutoBuff_Source_v1.3.1` was source-inspected separately in `analysis/23_AUTOBUFF_V131_SOURCE_DONOR.md`.
+
+Its useful filter/product behavior should be retained:
+
+- scan-and-tick lists rather than requiring manual text entry;
+- player selection persisted by RoleID;
+- faction selection persisted by FactionID;
+- guild selection + RoleID + faction + level + MaxHP range + HP threshold composed together;
+- selected entries remain configured when they temporarily leave AOI;
+- self buff is an explicit independent option;
+- per-client filter/profile isolation.
+
+Do not copy the donor's direct `ObjectManager.sprites` scan when the semantic nearby-player API already exposes the needed data.
+
 ## Priority policy matching the requested behavior
 
 A deterministic policy:
@@ -138,6 +154,18 @@ A deterministic policy:
 8. continue/reselect according to fresh state.
 
 Do not build a long queue from a stale scan.
+
+### Priority modes recovered from the v1.3.1 donor
+
+The source already implements three useful user-facing policies:
+
+1. lowest HP% first;
+2. highest MaxHP first;
+3. lowest MaxHP first.
+
+For the two MaxHP modes the donor locks the chosen RoleID until that target no longer qualifies. Preserve that behavior as an optional policy.
+
+Recommended improvement: add an optional `CriticalHPPercent` emergency override so a player at critically low HP may temporarily preempt the locked MaxHP target, then return to the locked target afterward if still eligible.
 
 ## Skill selection policy
 
@@ -170,6 +198,10 @@ Before casting any selected ID:
 - target alive/dead eligibility;
 - range/path eligibility.
 
+### Skill discovery donor
+
+The v1.3.1 source dynamically enumerates the current character's owned skills and keeps the choice per session. Preserve this UI behavior, but resolve semantic identity by verified SkillID first. Dynamic enumeration is for ownership/UI, not a reason to fuzzy-match an already known canonical skill ID.
+
 ## Exact Config semantics useful for range/timeouts
 
 - 406: SelfAndAlly, CastRange 15, AttackRadius 7, ProgressTime 3000 ms.
@@ -191,6 +223,25 @@ Use skill data, not F-key assumptions:
 5. cast from success callback;
 6. if already in range, cast immediately.
 
+## Revalidate immediately before cast
+
+One strong behavior from the v1.3.1 source is to re-read/re-check the chosen target just before the mutable request. Preserve this pattern in the new architecture:
+
+```text
+fresh candidate snapshot
+ -> choose RoleID
+ -> acquire single action slot
+ -> re-read current target by RoleID
+ -> re-check HP/MaxHP + threshold
+ -> re-check Peace
+ -> re-apply latest filters
+ -> check skill ownership/cooldown/condition
+ -> range/chase check
+ -> dispatch one semantic cast on Unity main thread
+```
+
+Do not assume a target selected 300–500 ms earlier is still valid.
+
 ## State proof after a heal cast
 
 Preferred order:
@@ -201,6 +252,21 @@ Preferred order:
 4. target disappears/out of AOI -> invalidate and rescan.
 
 Do not simply `Sleep(500)` and assume success.
+
+The v1.3.1 donor's `commandsSent` counter measures requests issued, **not confirmed healing**. Keep separate counters such as `healsRequested` and `healsProven`.
+
+## Pacing / anti-spam
+
+The donor used 2.5 seconds per target and 700 ms globally. Keep those only as prototype/rate-limit guards. Exact cooldown, ProgressTime and state proof should drive normal pacing.
+
+## Metadata cache behavior
+
+The donor contains a useful failure-cache rule: valid metadata can live longer, but blank/fallback results get only a short TTL and are retried quickly. Preserve the principle:
+
+- stable name / faction display metadata: longer cache;
+- guild data: shorter cache;
+- blank/error/transient result: very short cache;
+- IDs remain canonical identity whenever available.
 
 ## Persistent self-buffs
 
@@ -224,9 +290,35 @@ Until a structured target BuffID/duration API is found, do not repeatedly cast p
 
 Built-in code treats self separately and uses targetRoleID `-1` with `RequestUsingSkillWithTarget` when self HP is below threshold. Keep self-support as an explicit policy option.
 
+The v1.3.1 donor also correctly separates self from nearby-player Peace filtering, but its exact self RoleID request behavior is not a substitute for the shipped semantic donor; use the canonical built-in semantics.
+
 ## Multi-client rule
 
 For every game process keep separate nearby snapshot, selected targets, settings/profile, current action, cooldown snapshot and Unity dispatcher context. Never share client pointers between processes.
+
+The v1.3.1 source's one-`GameSession`-per-PID model is a good behavioral donor. Improve persistence by binding reusable profiles to RoleID/profile identity rather than PID alone because PID changes after restart.
+
+## Observability
+
+Retain per-client live diagnostics from the v1.3.1 source, but expand them with state proof:
+
+```text
+nearbyPeace
+matchedFilter
+lowHP
+currentTarget
+currentAction
+lastActionResult
+lastStateProof
+healsRequested
+healsProven
+mapReady
+progressActive
+captcha
+dispatcherReady
+```
+
+This makes “Auto is not buffing” diagnosable without guessing.
 
 ## Safety guards
 
@@ -258,6 +350,19 @@ Resolver
  -> rescan
 ```
 
+## Legacy donor mechanism explicitly rejected
+
+Do not migrate these parts of v1.3.1 into the new action engine:
+
+- `CreateRemoteThread` remote worker;
+- direct arbitrary mutable IL2CPP calls from that worker;
+- hardcoded RVA/offset as sole runtime identity;
+- direct `ObjectManager.sprites` enumeration as first-choice scanner;
+- request-count-as-success semantics;
+- missing range/chase and global Captcha/loading/progress guards.
+
+Full source audit: `analysis/23_AUTOBUFF_V131_SOURCE_DONOR.md`.
+
 ## What is NOT needed
 
 - party membership for the read list;
@@ -268,6 +373,10 @@ Resolver
 - hardcoded cooldown delays;
 - stale UI button pointers.
 
+## Integration with higher-level automation
+
+Auto Buff should be one feature policy under `features/AUTO_ORCHESTRATOR.md`, not a competing independent mutable-action loop. The orchestrator arbitrates Buff vs Train vs Party vs Revive vs Sell vs map/spot changes for each PID.
+
 ## Remaining runtime proof
 
 Before declaring the complete external non-team feature VERIFIED:
@@ -276,4 +385,6 @@ Before declaring the complete external non-team feature VERIFIED:
 2. confirm return object fields in the runtime bridge;
 3. prove `RequestUsingSkillWithTarget` on a selected non-team peaceful RoleID through the Unity/main-thread dispatcher;
 4. verify server/game accepts the intended beneficial skill on that target;
-5. record outcome/state proof and edge cases.
+5. verify range/chase behavior;
+6. verify target disappearance/map-transition safety;
+7. record outcome/state proof and edge cases.
