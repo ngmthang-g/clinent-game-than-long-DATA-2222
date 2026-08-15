@@ -1,6 +1,20 @@
 # Research TODO — targeted follow-up after deep static/Lua/native analysis
 
-> General repository survey, asset decrypt, Config/Interface/Lua extraction, core packet/action discovery and MainThread dispatcher internals are DONE. **Không broad reverse lại client từ đầu.**
+> General repository survey, asset decrypt, Config/Interface/Lua extraction, core packet/action discovery, MainThread dispatcher internals and the AI routing layer are DONE. **Không broad reverse lại client từ đầu.**
+
+## DONE — AI-native knowledge routing
+
+- [x] `AI_BOOTSTRAP.md` compact mandatory entrypoint.
+- [x] `AI_ROUTER.md` task-to-context routing.
+- [x] task-specific `contexts/BUILD_*.md` packs for core/scanner/MainThread/Train/Buff/Sell/Heal/Revive/Party/Orchestrator.
+- [x] `database/FACTS.jsonl` atomic high-value facts index.
+- [x] `database/FACTS_README.md` usage/maintenance rules.
+- [x] `database/FINDING_TO_DOC_MAP.md` linked to routing/context layer.
+- [x] root README and `AI_INDEX.md` now instruct AI not to preload the whole repository.
+
+Normal future build path:
+
+`AI_BOOTSTRAP -> AI_ROUTER -> one context pack -> REQUIRED docs -> specific database lookup`.
 
 ## DONE — architecture + semantic discovery
 
