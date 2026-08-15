@@ -1,0 +1,171 @@
+EdgeType,FromMapID,FromX,FromY,ToMapID,ToX,ToY,FromMapName,ToMapName
+NPC,6,2970,1940,15,920,1650,Thiếu Lâm Tự,Mộ Dung
+NPC,6,2970,1940,16,3100,1100,Thiếu Lâm Tự,Quỷ Cốc
+NPC,6,2970,1940,17,4000,3800,Thiếu Lâm Tự,Đường Môn
+NPC,6,2970,1940,18,8400,5000,Thiếu Lâm Tự,Đào Hoa
+NPC,6,2970,1940,137,4317,2128,Thiếu Lâm Tự,Mạn Đà Sơn Trang
+NPC,6,2970,1940,143,8180,8060,Thiếu Lâm Tự,Tuyệt Tình Cốc
+NPC,7,3040,2300,1,4882,6388,Cái Bang Tổng Đà,Phụng Minh Trấn
+NPC,7,3040,2300,2,8260,6340,Cái Bang Tổng Đà,Đại Lý
+NPC,7,3040,2300,3,10460,7570,Cái Bang Tổng Đà,Lạc Dương
+NPC,7,3040,2300,3,7570,6090,Cái Bang Tổng Đà,Lạc Dương
+NPC,7,3040,2300,3,6930,5380,Cái Bang Tổng Đà,Lạc Dương
+NPC,7,3040,2300,4,10600,8780,Cái Bang Tổng Đà,Tô Châu
+NPC,7,3040,2300,4,6160,8100,Cái Bang Tổng Đà,Tô Châu
+NPC,7,3040,2300,5,9260,5910,Cái Bang Tổng Đà,Lâu Lan
+NPC,7,3040,2300,6,2970,2140,Cái Bang Tổng Đà,Thiếu Lâm Tự
+NPC,7,3040,2300,8,3120,820,Cái Bang Tổng Đà,Quang Minh Điện
+NPC,7,3040,2300,9,2860,1660,Cái Bang Tổng Đà,Nga My Sơn
+NPC,7,3040,2300,10,3000,2110,Cái Bang Tổng Đà,Thiên Long Tự
+NPC,7,3040,2300,11,2050,1510,Cái Bang Tổng Đà,Lăng Ba Động 
+NPC,7,3040,2300,12,3000,1340,Cái Bang Tổng Đà,Tinh Túc Hải
+NPC,7,3040,2300,13,3050,2310,Cái Bang Tổng Đà,Thiên Sơn
+NPC,7,3040,2300,14,3255,2725,Cái Bang Tổng Đà,Núi Võ Đang
+NPC,7,3040,2300,15,920,1650,Cái Bang Tổng Đà,Mộ Dung
+NPC,7,3040,2300,16,3100,1100,Cái Bang Tổng Đà,Quỷ Cốc
+NPC,7,3040,2300,17,4000,3800,Cái Bang Tổng Đà,Đường Môn
+NPC,7,3040,2300,18,8400,5000,Cái Bang Tổng Đà,Đào Hoa
+NPC,7,3040,2300,137,4317,2128,Cái Bang Tổng Đà,Mạn Đà Sơn Trang
+NPC,7,3040,2300,143,8180,8060,Cái Bang Tổng Đà,Tuyệt Tình Cốc
+NPC,8,3290,620,1,4882,6388,Quang Minh Điện,Phụng Minh Trấn
+NPC,8,3290,620,2,8260,6340,Quang Minh Điện,Đại Lý
+NPC,8,3290,620,3,10460,7570,Quang Minh Điện,Lạc Dương
+NPC,8,3290,620,3,7570,6090,Quang Minh Điện,Lạc Dương
+NPC,8,3290,620,3,6930,5380,Quang Minh Điện,Lạc Dương
+NPC,8,3290,620,4,10600,8780,Quang Minh Điện,Tô Châu
+NPC,8,3290,620,4,6160,8100,Quang Minh Điện,Tô Châu
+NPC,8,3290,620,5,9260,5910,Quang Minh Điện,Lâu Lan
+NPC,8,3290,620,6,2970,2140,Quang Minh Điện,Thiếu Lâm Tự
+NPC,8,3290,620,7,2840,2300,Quang Minh Điện,Cái Bang Tổng Đà
+NPC,8,3290,620,9,2860,1660,Quang Minh Điện,Nga My Sơn
+NPC,8,3290,620,10,3000,2110,Quang Minh Điện,Thiên Long Tự
+NPC,8,3290,620,11,2050,1510,Quang Minh Điện,Lăng Ba Động 
+NPC,8,3290,620,12,3000,1340,Quang Minh Điện,Tinh Túc Hải
+NPC,8,3290,620,13,3050,2310,Quang Minh Điện,Thiên Sơn
+NPC,8,3290,620,14,3255,2725,Quang Minh Điện,Núi Võ Đang
+NPC,8,3290,620,15,920,1650,Quang Minh Điện,Mộ Dung
+NPC,8,3290,620,16,3100,1100,Quang Minh Điện,Quỷ Cốc
+NPC,8,3290,620,17,4000,3800,Quang Minh Điện,Đường Môn
+NPC,8,3290,620,18,8400,5000,Quang Minh Điện,Đào Hoa
+NPC,8,3290,620,137,4317,2128,Quang Minh Điện,Mạn Đà Sơn Trang
+NPC,8,3290,620,143,8180,8060,Quang Minh Điện,Tuyệt Tình Cốc
+NPC,9,2780,1700,1,4882,6388,Nga My Sơn,Phụng Minh Trấn
+NPC,9,2780,1700,2,8260,6340,Nga My Sơn,Đại Lý
+NPC,9,2780,1700,3,10460,7570,Nga My Sơn,Lạc Dương
+NPC,9,2780,1700,3,7570,6090,Nga My Sơn,Lạc Dương
+NPC,9,2780,1700,3,6930,5380,Nga My Sơn,Lạc Dương
+NPC,9,2780,1700,4,10600,8780,Nga My Sơn,Tô Châu
+NPC,9,2780,1700,4,6160,8100,Nga My Sơn,Tô Châu
+NPC,9,2780,1700,5,9260,5910,Nga My Sơn,Lâu Lan
+NPC,9,2780,1700,6,2970,2140,Nga My Sơn,Thiếu Lâm Tự
+NPC,9,2780,1700,7,2840,2300,Nga My Sơn,Cái Bang Tổng Đà
+NPC,9,2780,1700,8,3120,820,Nga My Sơn,Quang Minh Điện
+NPC,9,2780,1700,10,3000,2110,Nga My Sơn,Thiên Long Tự
+NPC,9,2780,1700,11,2050,1510,Nga My Sơn,Lăng Ba Động 
+NPC,9,2780,1700,12,3000,1340,Nga My Sơn,Tinh Túc Hải
+NPC,9,2780,1700,13,3050,2310,Nga My Sơn,Thiên Sơn
+NPC,9,2780,1700,14,3255,2725,Nga My Sơn,Núi Võ Đang
+NPC,9,2780,1700,15,920,1650,Nga My Sơn,Mộ Dung
+NPC,9,2780,1700,16,3100,1100,Nga My Sơn,Quỷ Cốc
+NPC,9,2780,1700,17,4000,3800,Nga My Sơn,Đường Môn
+NPC,9,2780,1700,18,8400,5000,Nga My Sơn,Đào Hoa
+NPC,9,2780,1700,137,4317,2128,Nga My Sơn,Mạn Đà Sơn Trang
+NPC,9,2780,1700,143,8180,8060,Nga My Sơn,Tuyệt Tình Cốc
+NPC,10,3170,2110,1,4882,6388,Thiên Long Tự,Phụng Minh Trấn
+NPC,10,3170,2110,3,7570,6090,Thiên Long Tự,Lạc Dương
+NPC,10,3170,2110,3,6930,5380,Thiên Long Tự,Lạc Dương
+NPC,10,3170,2110,2,8260,6340,Thiên Long Tự,Đại Lý
+NPC,10,3170,2110,3,10460,7570,Thiên Long Tự,Lạc Dương
+NPC,10,3170,2110,4,10600,8780,Thiên Long Tự,Tô Châu
+NPC,10,3170,2110,4,6160,8100,Thiên Long Tự,Tô Châu
+NPC,10,3170,2110,5,9260,5910,Thiên Long Tự,Lâu Lan
+NPC,10,3170,2110,6,2970,2140,Thiên Long Tự,Thiếu Lâm Tự
+NPC,10,3170,2110,7,2840,2300,Thiên Long Tự,Cái Bang Tổng Đà
+NPC,10,3170,2110,8,3120,820,Thiên Long Tự,Quang Minh Điện
+NPC,10,3170,2110,9,2860,1660,Thiên Long Tự,Nga My Sơn
+NPC,10,3170,2110,11,2050,1510,Thiên Long Tự,Lăng Ba Động 
+NPC,10,3170,2110,12,3000,1340,Thiên Long Tự,Tinh Túc Hải
+NPC,10,3170,2110,13,3050,2310,Thiên Long Tự,Thiên Sơn
+NPC,10,3170,2110,14,3255,2725,Thiên Long Tự,Núi Võ Đang
+NPC,10,3170,2110,15,920,1650,Thiên Long Tự,Mộ Dung
+NPC,10,3170,2110,16,3100,1100,Thiên Long Tự,Quỷ Cốc
+NPC,10,3170,2110,17,4000,3800,Thiên Long Tự,Đường Môn
+NPC,10,3170,2110,18,8400,5000,Thiên Long Tự,Đào Hoa
+NPC,10,3170,2110,137,4317,2128,Thiên Long Tự,Mạn Đà Sơn Trang
+NPC,10,3170,2110,143,8180,8060,Thiên Long Tự,Tuyệt Tình Cốc
+NPC,11,2210,1510,1,4882,6388,Lăng Ba Động ,Phụng Minh Trấn
+NPC,11,2210,1510,3,7570,6090,Lăng Ba Động ,Lạc Dương
+NPC,11,2210,1510,3,6930,5380,Lăng Ba Động ,Lạc Dương
+NPC,11,2210,1510,2,8260,6340,Lăng Ba Động ,Đại Lý
+NPC,11,2210,1510,3,10460,7570,Lăng Ba Động ,Lạc Dương
+NPC,11,2210,1510,4,10600,8780,Lăng Ba Động ,Tô Châu
+NPC,11,2210,1510,4,6160,8100,Lăng Ba Động ,Tô Châu
+NPC,11,2210,1510,5,9260,5910,Lăng Ba Động ,Lâu Lan
+NPC,11,2210,1510,6,2970,2140,Lăng Ba Động ,Thiếu Lâm Tự
+NPC,11,2210,1510,7,2840,2300,Lăng Ba Động ,Cái Bang Tổng Đà
+NPC,11,2210,1510,8,3120,820,Lăng Ba Động ,Quang Minh Điện
+NPC,11,2210,1510,9,2860,1660,Lăng Ba Động ,Nga My Sơn
+NPC,11,2210,1510,10,3000,2110,Lăng Ba Động ,Thiên Long Tự
+NPC,11,2210,1510,12,3000,1340,Lăng Ba Động ,Tinh Túc Hải
+NPC,11,2210,1510,13,3050,2310,Lăng Ba Động ,Thiên Sơn
+NPC,11,2210,1510,14,3255,2725,Lăng Ba Động ,Núi Võ Đang
+NPC,11,2210,1510,15,920,1650,Lăng Ba Động ,Mộ Dung
+NPC,11,2210,1510,16,3100,1100,Lăng Ba Động ,Quỷ Cốc
+NPC,11,2210,1510,17,4000,3800,Lăng Ba Động ,Đường Môn
+NPC,11,2210,1510,18,8400,5000,Lăng Ba Động ,Đào Hoa
+NPC,11,2210,1510,137,4317,2128,Lăng Ba Động ,Mạn Đà Sơn Trang
+NPC,11,2210,1510,143,8180,8060,Lăng Ba Động ,Tuyệt Tình Cốc
+NPC,12,3180,1340,1,4882,6388,Tinh Túc Hải,Phụng Minh Trấn
+NPC,12,3180,1340,2,8260,6340,Tinh Túc Hải,Đại Lý
+NPC,12,3180,1340,3,10460,7570,Tinh Túc Hải,Lạc Dương
+NPC,12,3180,1340,3,7570,6090,Tinh Túc Hải,Lạc Dương
+NPC,12,3180,1340,3,6930,5380,Tinh Túc Hải,Lạc Dương
+NPC,12,3180,1340,4,10600,8780,Tinh Túc Hải,Tô Châu
+NPC,12,3180,1340,4,6160,8100,Tinh Túc Hải,Tô Châu
+NPC,12,3180,1340,5,9260,5910,Tinh Túc Hải,Lâu Lan
+NPC,12,3180,1340,6,2970,2140,Tinh Túc Hải,Thiếu Lâm Tự
+NPC,12,3180,1340,7,2840,2300,Tinh Túc Hải,Cái Bang Tổng Đà
+NPC,12,3180,1340,8,3120,820,Tinh Túc Hải,Quang Minh Điện
+NPC,12,3180,1340,9,2860,1660,Tinh Túc Hải,Nga My Sơn
+NPC,12,3180,1340,10,3000,2110,Tinh Túc Hải,Thiên Long Tự
+NPC,12,3180,1340,11,2050,1510,Tinh Túc Hải,Lăng Ba Động 
+NPC,12,3180,1340,13,3050,2310,Tinh Túc Hải,Thiên Sơn
+NPC,12,3180,1340,14,3255,2725,Tinh Túc Hải,Núi Võ Đang
+NPC,12,3180,1340,15,920,1650,Tinh Túc Hải,Mộ Dung
+NPC,12,3180,1340,16,3100,1100,Tinh Túc Hải,Quỷ Cốc
+NPC,12,3180,1340,17,4000,3800,Tinh Túc Hải,Đường Môn
+NPC,12,3180,1340,18,8400,5000,Tinh Túc Hải,Đào Hoa
+NPC,12,3180,1340,137,4317,2128,Tinh Túc Hải,Mạn Đà Sơn Trang
+NPC,12,3180,1340,143,8180,8060,Tinh Túc Hải,Tuyệt Tình Cốc
+NPC,13,2910,2310,1,4882,6388,Thiên Sơn,Phụng Minh Trấn
+NPC,13,2910,2310,2,8260,6340,Thiên Sơn,Đại Lý
+NPC,13,2910,2310,3,10460,7570,Thiên Sơn,Lạc Dương
+NPC,13,2910,2310,3,7570,6090,Thiên Sơn,Lạc Dương
+NPC,13,2910,2310,3,6930,5380,Thiên Sơn,Lạc Dương
+NPC,13,2910,2310,4,10600,8780,Thiên Sơn,Tô Châu
+NPC,13,2910,2310,4,6160,8100,Thiên Sơn,Tô Châu
+NPC,13,2910,2310,5,9260,5910,Thiên Sơn,Lâu Lan
+NPC,13,2910,2310,6,2970,2140,Thiên Sơn,Thiếu Lâm Tự
+NPC,13,2910,2310,7,2840,2300,Thiên Sơn,Cái Bang Tổng Đà
+NPC,13,2910,2310,8,3120,820,Thiên Sơn,Quang Minh Điện
+NPC,13,2910,2310,9,2860,1660,Thiên Sơn,Nga My Sơn
+NPC,13,2910,2310,10,3000,2110,Thiên Sơn,Thiên Long Tự
+NPC,13,2910,2310,11,2050,1510,Thiên Sơn,Lăng Ba Động 
+NPC,13,2910,2310,12,3000,1340,Thiên Sơn,Tinh Túc Hải
+NPC,13,2910,2310,14,3255,2725,Thiên Sơn,Núi Võ Đang
+NPC,13,2910,2310,15,920,1650,Thiên Sơn,Mộ Dung
+NPC,13,2910,2310,16,3100,1100,Thiên Sơn,Quỷ Cốc
+NPC,13,2910,2310,17,4000,3800,Thiên Sơn,Đường Môn
+NPC,13,2910,2310,18,8400,5000,Thiên Sơn,Đào Hoa
+NPC,13,2910,2310,137,4317,2128,Thiên Sơn,Mạn Đà Sơn Trang
+NPC,13,2910,2310,143,8180,8060,Thiên Sơn,Tuyệt Tình Cốc
+NPC,14,3255,2825,1,4882,6388,Núi Võ Đang,Phụng Minh Trấn
+NPC,14,3255,2825,2,8260,6340,Núi Võ Đang,Đại Lý
+NPC,14,3255,2825,3,10460,7570,Núi Võ Đang,Lạc Dương
+NPC,14,3255,2825,3,7570,6090,Núi Võ Đang,Lạc Dương
+NPC,14,3255,2825,3,6930,5380,Núi Võ Đang,Lạc Dương
+NPC,14,3255,2825,4,10600,8780,Núi Võ Đang,Tô Châu
+NPC,14,3255,2825,4,6160,8100,Núi Võ Đang,Tô Châu
+NPC,14,3255,2825,5,9260,5910,Núi Võ Đang,Lâu Lan
+NPC,14,3255,2825,6,2970,2140,Núi Võ Đang,Thiếu Lâm Tự
+NPC,14,3255,2825,7,2840,2300,Núi Võ Đang,Cái Bang Tổng Đà
