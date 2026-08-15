@@ -1,0 +1,4 @@
+NPC_ID,Name,ResName,Avatar,AutoPath_MapIDs,AutoPath_MapNames
+1001,Đan Anh,npc_ZM_2023JueQingGuGeZhu,CommonNPCHeader32_14,143,Tuyệt Tình Cốc
+1002,Khổng Tước Như,BaiMiaoWeiBing,CommonNPCHeader7_25,,
+1003,Triệu Tử Huân,npcBaiZhanQinWangZhaoZiXun,CommonNPCHeader30_1,,
