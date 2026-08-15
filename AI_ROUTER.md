@@ -54,8 +54,11 @@ For ground loot/pickup, read:
 For static data questions about Items/Skills/Monsters/Equips/Magic, read:
 
 - `database/static/README.md`
+- `database/static/LOOKUP_GUIDE.md`
 - `analysis/28_STATIC_DATA_DATABASE_EXPANSION.md`
-- only the specific CSV chunk containing the required records.
+- only the specific index/chunk containing required records **if that chunk has actually been uploaded**.
+
+Do not invent a missing static CSV. The repo currently records schema/counts and tracks full chunk upload separately in `research/TODO.md`.
 
 For exact packets/API names, prefer lookup before broad analysis:
 
@@ -93,7 +96,7 @@ Use database lookup first, then `analysis/12_GLOBAL_LUA_HELPERS.md` and `analysi
 
 ### “What is ItemID X?”
 
-Query the matching static Item CSV chunk. Do not load all 5,238 Items into context.
+Use the static-data guide/index strategy. Do not load all 5,238 Items into context, and do not claim an unuploaded chunk is present.
 
 ## Hard rule
 
