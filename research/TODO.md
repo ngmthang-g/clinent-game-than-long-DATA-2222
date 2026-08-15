@@ -22,8 +22,9 @@
 - [x] Extract 169 TCP packet constants.
 - [x] Build full 1,003-NPC database + map links where available.
 - [x] Build full 193-map database.
-- [x] Build 165 portal edge database + 23 item destinations.
+- [x] Build 165 portal edges + 23 item destinations + full 506 NPC-mediated AutoPath edges.
 - [x] Build 19 FuBen scenario database.
+- [x] Build initial NPC service candidate classification (`LangZhong*`, recovery, vendor, blacksmith, warehouse).
 - [x] Recover exact `CMD_NPC_SHOP_SELL_REQUEST` payload.
 - [x] Recover exact revive/Đầu thai packet values.
 - [x] Recover exact bag-sort and selected item-action payloads.
@@ -35,13 +36,13 @@
 
 Static reverse is already sufficient to define the mechanism. Remaining work is one runtime observation:
 
-- [ ] Open intended healer NPC (for Lâu Lan candidate: NPC 339 Đỗ Thanh Đằng is verified in static DB).
+- [ ] Open intended healer NPC (Lâu Lan candidate NPC `339` = Đỗ Thanh Đằng is VERIFIED in static DB).
 - [ ] Capture current `GameDialogData.Selections` exactly as server sends it.
 - [ ] Identify which visible selection corresponds to Trị liệu.
 - [ ] Send actual `selectionID:-1` through `CMD_SHOW_GAMEDIALOG` or invoke equivalent Lua handler.
 - [ ] Record whether a second MessageBox/selection is produced.
 - [ ] Define state proof: HP restored, money changed if applicable, dialog closed/updated.
-- [ ] Add the observed selection text/sequence to `features/AUTO_HEAL_NPC.md`; do **not** assume the numeric selection ID is globally stable unless repeated evidence proves it.
+- [ ] Add observed selection text/sequence to `features/AUTO_HEAL_NPC.md`; do **not** assume numeric selection ID is globally stable unless repeated evidence proves it.
 
 ## P0 — External main-thread bridge proof
 
@@ -63,21 +64,20 @@ Do this incrementally; do not dump everything “just in case”.
 
 ## P1 — Expand machine-readable offline database
 
-Core catalogs exist. Optional expansions useful for future AI/tool filtering:
+Core world/NPC/map/route/protocol databases now exist. Optional expansions:
 
 - [ ] Export `Items` 5,238 rows to chunked CSV with ID/Name/price/sellable/throwable/bound/stack/type description.
 - [ ] Export `Skills` 2,091 rows with ID/Name/faction/style/range/target/property/damage flag.
 - [ ] Export `MagicAtrributes` 509 rows.
 - [ ] Export `Monsters` 17,121 rows with ID/ResName/Name/level/type/MaxHP/AIID/skills and key combat stats.
 - [ ] Export `Equips` 22,763 rows with ID/name/type/equip point/level/faction/star/sell price/buff.
-- [ ] Export the 506 `AutoPath/NPC` transition edges if offline route debugging needs them.
 - [ ] Optionally commit full Lua class→method and UI handler machine-readable catalogs.
 
-## P1 — NPC service classification
+## P1 — NPC service runtime verification
 
-- [ ] Build candidate tags from NPC name/ResName (`LangZhong*`, shop/vendor, blacksmith, warehouse, etc.).
-- [ ] Treat tags as candidate inference, not service contract.
-- [ ] Promote only after dialog/shop/runtime evidence.
+- [x] Build candidate tags from NPC name/ResName (`LangZhong*`, shop/vendor, blacksmith, warehouse, recovery).
+- [x] Keep tags explicitly as candidate inference, not service contract.
+- [ ] Promote individual NPC→service mappings only after dialog/shop/runtime evidence.
 
 ## P1 — Auto Sell implementation validation
 
@@ -91,7 +91,7 @@ Exact sell packet is solved. Remaining implementation checks:
 
 ## P2 — Static route planner (optional)
 
-- [ ] Use portal graph to build offline map adjacency/navigation diagnostics.
+- [ ] Use portal + NPC-mediated edges to build offline map adjacency/navigation diagnostics.
 - [ ] Model possible conditions/level restrictions separately.
 - [ ] Keep runtime `Game.GoTo` as preferred executor unless a concrete reason requires custom routing.
 
