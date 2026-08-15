@@ -1,109 +1,124 @@
-# Research TODO — targeted follow-up after Phase 2
+# Research TODO — targeted follow-up after deep static/Lua/native analysis
 
-> General repository survey, asset decrypt, Config extraction, Interface/Lua extraction, core packet discovery, Auto Train semantics, sell request and revive semantics are DONE. **Không broad reverse lại client từ đầu.**
+> General repository survey, asset decrypt, Config/Interface/Lua extraction, core packet/action discovery and MainThread dispatcher internals are DONE. **Không broad reverse lại client từ đầu.**
 
-## DONE — Phase 1 architecture
+## DONE — architecture + semantic discovery
 
-- [x] Unity x64 + IL2CPP architecture.
-- [x] metadata v39 and high-value IL2CPP APIs.
+- [x] Unity x64 + IL2CPP architecture and metadata v39.
 - [x] LuaSystemManager / SharedData / Game / GUI / Network bridges.
 - [x] world/path/inventory/skill/buff symbol map.
-- [x] `ClickNPC` high-level native flow.
+- [x] `ClickNPC` internal flow.
 - [x] `UIButton.HandleClickEvent` instance/stale-pointer hazard.
-- [x] FG custom asset transform module.
+- [x] FG custom asset transform/decrypt.
+- [x] 75 Config XML tables.
+- [x] 338 UI layout XML files + 1,469 handler bindings.
+- [x] readable Lua source and 339-class catalog.
+- [x] 169 TCP packet constants.
+- [x] 1,003 NPC + 193 map database.
+- [x] 165 portal + 23 item destination + 506 NPC-mediated AutoPath edges.
+- [x] 19 FuBen scenarios.
+- [x] exact shop sell payload, revive values, bag sort/item action payloads.
+- [x] dynamic `GameDialog.Selections` mechanism.
+- [x] exact built-in Train start/state architecture.
+- [x] nearby peaceful-player structured schema.
+- [x] skill cooldown/QuickSkill semantics.
+- [x] local buff duration/stack schema.
+- [x] bag/shop event lifecycle.
+- [x] team/follow runtime schema.
+- [x] storage item-move/bank semantics.
+- [x] loot/item-pack semantic engine.
+- [x] task/quest and pet/spirit donor subsystems.
 
-## DONE — Phase 2 decrypted semantic data
+## DONE — MainThread dispatcher internals
 
-- [x] Reproduce enough `FG_Decrypt` logic to restore bundles.
-- [x] Decrypt/extract Config, Interface, Translations and shared UI bundles.
-- [x] Extract 75 Config XML tables.
-- [x] Extract 338 UI layout XML files.
-- [x] Extract readable Lua source and catalog 339 Lua classes.
-- [x] Extract 169 TCP packet constants.
-- [x] Build full 1,003-NPC database + map links where available.
-- [x] Build full 193-map database.
-- [x] Build 165 portal edges + 23 item destinations + full 506 NPC-mediated AutoPath edges.
-- [x] Build 19 FuBen scenario database.
-- [x] Build initial NPC service candidate classification (`LangZhong*`, recovery, vendor, blacksmith, warehouse).
-- [x] Recover exact `CMD_NPC_SHOP_SELL_REQUEST` payload.
-- [x] Recover exact revive/Đầu thai packet values.
-- [x] Recover exact bag-sort and selected item-action payloads.
-- [x] Recover dynamic `GameDialog.Selections` mechanism.
-- [x] Identify exact built-in Auto Fight Train entry/state architecture.
-- [x] Identify `Game.GetNPCPosition -> Game.GoTo -> GetNearestNPC` navigation pattern.
+Direct frozen-snapshot GameAssembly disassembly now proves:
+
+- [x] `MainThread.Awake()` establishes singleton Instance.
+- [x] constructor creates `ConcurrentQueue<System.Action>` at `this+0x20`.
+- [x] `Execute(Action)` enqueues into that queue.
+- [x] `Update()` calls `DoExecuteWorks()`.
+- [x] `DoExecuteWorks()` loops queue state -> dequeue -> Action invoke until empty.
+
+Canonical evidence: `analysis/21_MAIN_THREAD_DISPATCHER.md`.
+
+Do **not** waste time reproving this chain.
+
+## P0 — External MainThread bridge: remaining live proof
+
+The remaining execution-context problem is no longer the dispatcher implementation. It is managed delegate construction/lifetime from the external bridge.
+
+- [ ] Resolve live `MainThread.Instance` per game PID and confirm non-null.
+- [ ] Determine the safest IL2CPP mechanism to construct/root a valid `System.Action` callback object for this runtime.
+- [ ] Enqueue one harmless Action through `MainThread.Execute`.
+- [ ] Record producer thread ID vs callback execution thread ID and prove callback runs on Unity Update thread.
+- [ ] Verify delegate remains valid across GC during the action lifetime.
+- [ ] Keep max one mutable external action pending.
+- [ ] Only after this proof route `Game/Lua/UI` mutations through the dispatcher.
+
+Do not replace this with a production `CreateRemoteThread` gameplay worker.
 
 ## P0 — NPC Trị liệu: targeted runtime proof only
 
-Static reverse is already sufficient to define the mechanism. Remaining work is one runtime observation:
+- [ ] Open intended healer NPC (Lâu Lan candidate NPC `339` = Đỗ Thanh Đằng is static VERIFIED).
+- [ ] Capture actual server-supplied `GameDialogData.Selections`.
+- [ ] Identify visible Trị liệu/heal text and actual selectionID.
+- [ ] Submit actual `selectionID:-1` through semantic GameDialog path.
+- [ ] Record any second confirmation/dialog.
+- [ ] Prove completion from HP/money/dialog state.
+- [ ] Never assume a global fixed treatment selection ID unless repeated runtime evidence proves it.
 
-- [ ] Open intended healer NPC (Lâu Lan candidate NPC `339` = Đỗ Thanh Đằng is VERIFIED in static DB).
-- [ ] Capture current `GameDialogData.Selections` exactly as server sends it.
-- [ ] Identify which visible selection corresponds to Trị liệu.
-- [ ] Send actual `selectionID:-1` through `CMD_SHOW_GAMEDIALOG` or invoke equivalent Lua handler.
-- [ ] Record whether a second MessageBox/selection is produced.
-- [ ] Define state proof: HP restored, money changed if applicable, dialog closed/updated.
-- [ ] Add observed selection text/sequence to `features/AUTO_HEAL_NPC.md`; do **not** assume numeric selection ID is globally stable unless repeated evidence proves it.
+## P0 — Runtime entity schema only where feature needs it
 
-## P0 — External main-thread bridge proof
+Structured UI paths already expose many useful fields. Only expand exact object layouts when needed by implementation:
 
-Lua/game action semantics are known; execution context is the remaining engineering risk.
+- [ ] live bridge invocation of `GetNearByPeacePlayers` and copy returned fields into external snapshots.
+- [ ] exact live Position/death/target fields needed for non-team support.
+- [ ] exact NPC/Monster/Pet/ItemPack object fields only if current semantic APIs are insufficient.
+- [ ] structured target-buff IDs/durations only if a future feature needs more than target buff icons.
 
-- [ ] Prove a stable Unity/main-thread dispatcher usable by external tool.
-- [ ] Verify one harmless semantic action end-to-end through dispatcher.
-- [ ] Keep max one mutable action pending.
-- [ ] Never invoke Unity/Lua gameplay action from arbitrary worker thread.
+## P1 — Machine-readable static database completion
 
-## P0 — Runtime entity schema when a feature needs it
+Normalized schemas/counts are documented in `analysis/28_STATIC_DATA_DATABASE_EXPANSION.md`.
 
-- [ ] Resolve/invoke `LuaSystemSharedData.GetNearbySprites` read-only and record return object type.
-- [ ] Map exact fields for Player: RoleID, Name, HP, MaxHP, MP, Position, Team/Faction/Combat/Target where present.
-- [ ] Map exact fields for NPC/Monster/Pet/ItemPack objects.
-- [ ] Map `GetBuffs/GetBuffData` return fields including duration/stack if exposed.
+The large CSV chunks have been generated offline; repository upload remains to be completed:
 
-Do this incrementally; do not dump everything “just in case”.
+- [ ] upload Items 5,238 rows.
+- [ ] upload Skills 2,091 rows.
+- [ ] upload MagicAtrributes 509 rows.
+- [ ] upload Monsters 17,121 rows.
+- [ ] upload Equips 22,763 rows.
 
-## P1 — Expand machine-readable offline database
+Important static rule already documented: `EquipPoint=0` is Weapon; do not classify weapons only by subtype `Type`.
 
-Core world/NPC/map/route/protocol databases now exist. Optional expansions:
+## P1 — Auto Sell / Store live validation
 
-- [ ] Export `Items` 5,238 rows to chunked CSV with ID/Name/price/sellable/throwable/bound/stack/type description.
-- [ ] Export `Skills` 2,091 rows with ID/Name/faction/style/range/target/property/damage flag.
-- [ ] Export `MagicAtrributes` 509 rows.
-- [ ] Export `Monsters` 17,121 rows with ID/ResName/Name/level/type/MaxHP/AIID/skills and key combat stats.
-- [ ] Export `Equips` 22,763 rows with ID/name/type/equip point/level/faction/star/sell price/buff.
-- [ ] Optionally commit full Lua class→method and UI handler machine-readable catalogs.
+- [ ] use `GetFreeBagSpace` as source of truth.
+- [ ] define explicit keep/sell/store policy.
+- [ ] one current live instance -> one mutation -> wait item/shop/storage event -> rescan.
+- [ ] verify NPCShop/storage service state before request.
+- [ ] return to saved Train state only after map/position readiness proof.
 
-## P1 — NPC service runtime verification
+## P1 — NPC service promotion
 
-- [x] Build candidate tags from NPC name/ResName (`LangZhong*`, shop/vendor, blacksmith, warehouse, recovery).
-- [x] Keep tags explicitly as candidate inference, not service contract.
-- [ ] Promote individual NPC→service mappings only after dialog/shop/runtime evidence.
+- [x] static service candidates exist.
+- [ ] promote individual NPC -> service contracts only after dialog/shop/runtime evidence.
 
-## P1 — Auto Sell implementation validation
+## P2 — Optional route planner
 
-Exact sell packet is solved. Remaining implementation checks:
-
-- [ ] Use `GetFreeBagSpace` as source of truth.
-- [ ] Define user keep/sell whitelist policy.
-- [ ] Choose ONE current instance -> send ONE sell -> wait inventory/shop change -> rescan.
-- [ ] Verify shop open state from `CMD_NPC_SHOP_DATA` / `NPCShop`.
-- [ ] Return via saved map/position and resume Train only after state proof.
-
-## P2 — Static route planner (optional)
-
-- [ ] Use portal + NPC-mediated edges to build offline map adjacency/navigation diagnostics.
-- [ ] Model possible conditions/level restrictions separately.
-- [ ] Keep runtime `Game.GoTo` as preferred executor unless a concrete reason requires custom routing.
+- [ ] use static portal + NPC-mediated edges for offline adjacency diagnostics if needed.
+- [ ] keep runtime `Game.GoTo` as preferred executor.
+- [ ] model level/event/state restrictions separately.
 
 ## Architecture guardrails
 
-`Resolver -> read-only Scanner -> Snapshot/State Store -> Observer -> State Machine -> Safety Guard -> Action Queue (max 1 mutable action) -> Unity/Main Thread Dispatcher -> Internal Action Engine`
+`Resolver -> read-only Scanner -> Snapshot/State Store -> Observer -> State Machine -> Safety Guard -> Action Queue (max 1 mutable action) -> MainThread.Execute(Action) -> Internal Action -> State Proof`
 
-Additional rules:
+Rules:
 - response handlers are not requests;
-- UI pointers are not reusable contracts across transitions;
-- fixed delays are timeouts/fallbacks, never state proof;
+- stale UI pointers are not contracts;
+- fixed delays are timeouts, never state proof;
 - prefer semantic names/IDs over RVA;
-- `ID` instance vs `ItemID` template vs `Position` slot must remain distinct;
-- do not invent NPC coordinates when `GetNPCPosition` exists;
-- do not invent a fixed treatment selection ID.
+- `ID` instance != `ItemID` template != `Position` slot != `Site` container;
+- no invented NPC coordinates when `GetNPCPosition` exists;
+- no invented treatment selection ID;
+- no Captcha solving/bypass; pause for user verification.
