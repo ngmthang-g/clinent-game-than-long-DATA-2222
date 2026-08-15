@@ -1,0 +1,201 @@
+NPC_ID,Name,ResName,Avatar,AutoPath_MapIDs,AutoPath_MapNames
+401,Tiền Hoành Trụ,LuoYangBing2,CommonNPCHeader5_24,5,Lâu Lan
+402,Bảo Thời Thiên,LuoYangBing2,CommonNPCHeader5_24,5,Lâu Lan
+403,Vân Hiểu Hiểu,ZhenShouHeTiNPC,CommonNPCHeader16_8,5,Lâu Lan
+404,Kim Duệ Phàm,ZhangLei,CommonNPCHeader9_2,5,Lâu Lan
+405,Trần Thọ Đình,JianShang,CommonNPCHeader7_14,3,Lạc Dương
+406,Ngô Thử Nhân,XiaoFan20110923,CommonNPCHeader9_11,3,Lạc Dương
+407,Bành Hoài Ngọc,BaiMiaoWeiBing,CommonNPCHeader7_25,3,Lạc Dương
+408,Vương Hy Chi,npcKVKZhuChengDaShiJieJieYinRen20110805,CommonNPCHeader8_2,3,Lạc Dương
+409,Y Thiên Thái,npcPiaoLiangNu20091030,CommonNPCHeader8_5,3,Lạc Dương
+410,Yến Như Tuyết,ShaoFu,CommonNPCHeader8_5,3,Lạc Dương
+411,Hà Linh Chi,ShaoFu2,CommonNPCHeader8_5,3,Lạc Dương
+412,Nhan Như Ngọc,ShaoFu3,CommonNPCHeader8_5,3,Lạc Dương
+413,Chu Bang Ngạn,QingNianShuSheng,CommonNPCHeader9_7,3,Lạc Dương
+414,Ngũ Đinh,ALaBoNanRen2,CommonNPCHeader11_16,3,Lạc Dương
+415,Cái Thiên Minh,BiaoTou,CommonNPCHeader8_24,3,Lạc Dương
+416,Cổ Uy Tin,BiaoTou,CommonNPCHeader8_24,3,Lạc Dương
+417,Vân Hàm Nhi,XiaoMing2,CommonNPCHeader4_1,3,Lạc Dương
+418,Khương Ngư,YuFu,CommonNPCHeader7_2,3,Lạc Dương
+419,Tiểu Tiểu,ShaoFu2,CommonNPCHeader4_25,3,Lạc Dương
+420,Bốc Hối Kỳ,QinHongMian,CommonNPCHeader12_9,3,Lạc Dương
+421,Khổng Tông Uyên,MiFei,CommonNPCHeader3_14,3,Lạc Dương
+422,Quan Hán Thọ,LuoYangBing1,CommonNPCHeader10_9,3,Lạc Dương
+423,Đồng Quán,XiaoMing,CommonNPCHeader9_8,3,Lạc Dương
+424,Vương Tích Tân,SuXingHe,CommonNPCHeader8_2,3,Lạc Dương
+425,Chu Bá Hành,LuoYangBing2,CommonNPCHeader5_24,3,Lạc Dương
+426,Triệu Minh Thành,SuCheB,CommonNPCHeader3_14,3,Lạc Dương
+427,Tiểu Hoa,YaHuan,CommonNPCHeader4_15,3,Lạc Dương
+428,Giả Tác Trân,JianShang,CommonNPCHeader7_14,3,Lạc Dương
+429,Vệ Tiên Sinh,JianShang,CommonNPCHeader7_14,3,Lạc Dương
+430,Vương Đức Qúy,TieJiang,CommonNPCHeader7_13,3,Lạc Dương
+431,Phù Mẫn Chi,CaiFeng,CommonNPCHeader6_25,3,Lạc Dương
+432,Vân Diêu Diêu,ShaoFu2,CommonNPCHeader4_25,3,Lạc Dương
+433,Vân Hàm Phi,XiaoShi,CommonNPCHeader9_8,3,Lạc Dương
+434,Kiều Phúc Thịnh,PangBanShangRen,CommonNPCHeader10_18,3,Lạc Dương
+435,Nhuế Phúc Tường,JiuDianLaoBan1,CommonNPCHeader10_19,3,Lạc Dương
+436,Uông Hạn,LuoYangKeZhanLaoBan,CommonNPCHeader7_14,3,Lạc Dương
+437,Ngô Đức Xương,LuoYangKeZhanLaoBan,CommonNPCHeader7_14,3,Lạc Dương
+438,Phạm Thuần Lễ,SuCheB,CommonNPCHeader3_14,3,Lạc Dương
+439,Điền Kiều Minh,ZhanDouXiaoYaoDiZi,CommonNPCHeader7_1,3,Lạc Dương
+440,Bạch Dĩnh Minh,MingYi1,CommonNPCHeader7_7,3,Lạc Dương
+441,Bạch Manh Minh,ChengJing,CommonNPCHeader8_25,3,Lạc Dương
+442,Bạch Dĩnh Minh,MingYi1,CommonNPCHeader7_7,3,Lạc Dương
+443,Trương Minh Cảnh,LangZhong1,CommonNPCHeader9_2,3,Lạc Dương
+444,Lý Đại Chủy,JiuDianLaoBan1,CommonNPCHeader10_19,3,Lạc Dương
+445,Khương Lý,XiaoFan20110923,CommonNPCHeader9_11,3,Lạc Dương
+446,Tương Vy,TianShanZhongNianNuDiZi,CommonNPCHeader4_1,3,Lạc Dương
+447,Đinh Đinh,PiaoLiangNu,CommonNPCHeader8_5,3,Lạc Dương
+448,Đông Đông,XiaoNanHai3,CommonNPCHeader10_23,3,Lạc Dương
+449,Phùng Đào Thiết,HeiMiaoNan,CommonNPCHeader6_1,3,Lạc Dương
+450,Nghiêm Bách Thảo,LangZhong1,CommonNPCHeader7_8,3,Lạc Dương
+451,Củng Thái Lê,ShaoFu4,CommonNPCHeader4_16,3,Lạc Dương
+452,Hà Sinh Tài,PangDaShangRen,CommonNPCHeader10_17,3,Lạc Dương
+453,Phùng Tiên Sinh,JianShang,CommonNPCHeader6_24,3,Lạc Dương
+454,Kim Lục Gia,ShangRen,CommonNPCHeader10_18,3,Lạc Dương
+455,Trương Bá Trí,GouDu,CommonNPCHeader6_24,3,Lạc Dương
+456,Kha Bách Nhân,LangZhong1,CommonNPCHeader9_2,3,Lạc Dương
+457,Chu Đồng,LuoYangBing2,CommonNPCHeader5_24,3,Lạc Dương
+458,Long Tam Thiếu,MingYi2,CommonNPCHeader7_17,3,Lạc Dương
+459,Lang Phu Nhân,LiShiShi,CommonNPCHeader8_8,3,Lạc Dương
+460,Xa Thuyền Nghĩa,KeZhanLaoBan,CommonNPCHeader7_14,3,Lạc Dương
+461,Yến Thanh,HanShiZhong,CommonNPCHeader3_11,3,Lạc Dương
+462,Lập Phồn,npcLiFan,CommonNPCHeader14_8,3,Lạc Dương
+463,Long Phá Thiên,PuTongXiaShi2,FightNPCHeader6_20,3,Lạc Dương
+464,A Tử,AZi,CommonNPCHeader12_10,3,Lạc Dương
+465,Du Than Chi,YouTanZhi,CommonNPCHeader3_4,3,Lạc Dương
+466,Nguyệt Lão,YueLao,CommonNPCHeader9_5,3,Lạc Dương
+467,Mộc Tỷ Tỷ,npcZhuChengNu20091010,CommonNPCHeader14_25,3,Lạc Dương
+468,Thái Kinh,SongDaGuanYuan2,CommonNPCHeader10_2,3,Lạc Dương
+469,Thái Bình Thần,ChengRuoQing,CommonNPCHeader3_14,3,Lạc Dương
+470,Hoàng Vân Thiền,npckvkZhuChengWuHunAnQiXiuLi20110815,CommonNPCHeader23_21,3,Lạc Dương
+471,Gia Luật Đại Thạch,LiaoGuoLaoNianWuGuan2,CommonNPCHeader5_12,3,Lạc Dương
+472,Đằng Nguyên Tá Vi,TengYuanZuoWei,CommonNPCHeader3_18,3,Lạc Dương
+473,Kim Tả Hoán,JinZuoHuan,CommonNPCHeader3_19,3,Lạc Dương
+474,Hách Liên Thiết Thụ,HeLianTieShu,CommonNPCHeader5_19,3,Lạc Dương
+475,Phạm Tống,JiuDianLaoBan1,CommonNPCHeader10_19,3,Lạc Dương
+476,Vân Thanh Thanh,ShaoFu2,CommonNPCHeader4_25,3,Lạc Dương
+477,Châu Thiên Sư,YuJiuLian,CommonNPCHeader7_12,3,Lạc Dương
+478,Vũ Cửu Liên,WuDangGaoJiQiChengDiZi,CommonNPCHeader9_18,3,Lạc Dương
+479,Lưu Kiện Minh,ZhanDouBuKuai1,CommonNPCHeader7_1,3,Lạc Dương
+480,Trần Vĩnh Nhân,ZhanDouBuKuai2,CommonNPCHeader7_1,3,Lạc Dương
+481,Phạm Thuần Nhân,SongDaGuanYuan3,CommonNPCHeader10_3,3,Lạc Dương
+482,Phạm Di Thành,SongDaGuanYuan3,CommonNPCHeader10_3,3,Lạc Dương
+483,Hạ Hầu Nhân,LuoYangBing2,CommonNPCHeader5_24,3,Lạc Dương
+484,Kiểu Trí Quảng,npckvkZhuChengJiShouShangRen20110720,CommonNPCHeader22_2,3,Lạc Dương
+485,Hỷ Lai Lạc,BeiFangGuiZu,CommonNPCHeader7_24,3,Lạc Dương
+486,Thẩm Vạn Tam,ZhanDouDaLiDiZi,CommonNPCHeader9_7,84,Mai Lĩnh
+487,Thái Dương Hoa,ShanYueJiSi,FightNPCHeader4_11,84,Mai Lĩnh
+488,Kinh Cúc,ShanYueHuFa,FightNPCHeader4_10,84,Mai Lĩnh
+489,Cam Thảo,ShanYueHuFa,FightNPCHeader4_10,84,Mai Lĩnh
+490,Đông Thích,ShanYueHuFa,FightNPCHeader4_10,84,Mai Lĩnh
+491,Ngân Hiệp,ShanYueHuFa,FightNPCHeader4_10,84,Mai Lĩnh
+492,Sơn Việt Tế Ty,ShanYueJiSi,FightNPCHeader4_11,84,Mai Lĩnh
+493,Sơn Việt Tế Ty,ShanYueJiSi,FightNPCHeader4_11,84,Mai Lĩnh
+494,Nguyệt Lý,ShanYueJiSi,FightNPCHeader4_11,84,Mai Lĩnh
+495,Thương Đội Viên Công,DaLiSuJiaDiZi,CommonNPCHeader9_9,84,Mai Lĩnh
+496,Thương Đội Viên Công,DaLiSuJiaNuDiZi,CommonNPCHeader9_10,84,Mai Lĩnh
+497,Thương Đội Viên Công,SuJiaDiZi,CommonNPCHeader9_7,84,Mai Lĩnh
+498,Thương Đội Viên Công,ShaoLinNuDiZi,CommonNPCHeader9_8,84,Mai Lĩnh
+499,Khắc Lý Tư Đế An,DeGuoRen,CommonNPCHeader11_10,84,Mai Lĩnh
+500,Thạch Chung Nham,HeiMiaoLaoTou,CommonNPCHeader6_7,64,Miêu Cương
+501,A Vũ,HeiMiaoNu,CommonNPCHeader7_10,64,Miêu Cương
+502,Dương Minh,BaiMiaoWeiBing,CommonNPCHeader7_25,64,Miêu Cương
+503,A Tùng,HeiMiaoZuXiaoNanHai,CommonNPCHeader6_12,64,Miêu Cương
+504,A Hội Nam,HeiMiaoWeiBing,CommonNPCHeader6_1,64,Miêu Cương
+505,Thạc Cang,LuShiXiang,CommonNPCHeader7_18,8,Quang Minh Điện
+506,Phương Thất Phật,FangQiFo,CommonNPCHeader5_25,8,Quang Minh Điện
+507,Phương Thiên Định,YuDaoAn,CommonNPCHeader11_8,8,Quang Minh Điện
+508,Lâm Nham,FangLa,CommonNPCHeader3_13,8,Quang Minh Điện
+509,Bàng Vạn Xuân,FangQiFo,CommonNPCHeader5_25,8,Quang Minh Điện
+510,Lã Sư Tương,LuShiXiang,CommonNPCHeader11_8,8,Quang Minh Điện
+511,Đặng Nguyên Giác,FangQiFo,CommonNPCHeader4_17,8,Quang Minh Điện
+512,Lâm Thế Trường,LinShiChang,CommonNPCHeader8_20,8,Quang Minh Điện
+513,Phương Bách Hoa,FangBaiHua,CommonNPCHeader4_17,8,Quang Minh Điện
+514,Ma Vân Thiên,BeiFangXiHu,CommonNPCHeader7_23,42,Ma Nhai Động
+515,Đinh Liên Y,DaLiSuJiaNuDiZi,CommonNPCHeader9_10,85,Nam Hải
+516,Diệp Lưu Phàm,DaLiSuJiaDiZi,CommonNPCHeader9_9,85,Nam Hải
+517,Nhạc Trọng Thu,MingYi1,CommonNPCHeader7_7,85,Nam Hải
+518,Nam Hải Ngư Thôn Dân,XiaoNuHai3,CommonNPCHeader10_25,85,Nam Hải
+519,Thạch Cảm Đương,ShiRen,FightNPCHeader3_12,85,Nam Hải
+520,Nam Hải Ngư Thôn Dân,YuFu,CommonNPCHeader7_2,85,Nam Hải
+521,Lý Lão Thái Thái,PangFu,CommonNPCHeader10_14,85,Nam Hải
+522,Xa Truyền Tín,QiongShuShengA,CommonNPCHeader10_12,85,Nam Hải
+523,Bạch Lan,BaiMiaoGuiZuNu,CommonNPCHeader6_11,63,Nam Chiêu
+524,Bạch Cảnh Võ,BaiMiaoWeiBing,CommonNPCHeader6_2,63,Nam Chiêu
+525,A Vượng,BaiMiaoWeiBing,CommonNPCHeader7_25,63,Nam Chiêu
+526,A Ngõa,BaiMiaoWeiBing,CommonNPCHeader7_25,63,Nam Chiêu
+527,Dương Minh,BenYin,CommonNPCHeader7_25,63,Nam Chiêu
+528,Du Du,QingNianNuXia,CommonNPCHeader7_10,86,Quỳnh Châu
+529,Nguyên Tử Khâm,DaLiSuJiaDiZi,CommonNPCHeader9_9,86,Quỳnh Châu
+530,Lăng Ức Từ,ShaoFu2,CommonNPCHeader4_25,86,Quỳnh Châu
+531,Nhạc Lão Tam,NanHaiEShen,FightNPCHeader4_8,86,Quỳnh Châu
+532,Thân Tín Bang Chúng,NanHaiEShen,FightNPCHeader4_8,86,Quỳnh Châu
+533,Thân Tín Bang Chúng,NanHaiEShen,FightNPCHeader4_8,86,Quỳnh Châu
+534,Hồng Long,XiaoFan20110923,CommonNPCHeader9_11,86,Quỳnh Châu
+535,Tuệ Luân,HuiLun,CommonNPCHeader6_18,6,Thiếu Lâm Tự
+536,Huyền Độ,XuanJi,CommonNPCHeader3_10,6,Thiếu Lâm Tự
+537,Huyền Minh,XuanNan,CommonNPCHeader3_10,6,Thiếu Lâm Tự
+538,Tuệ Phương,HuiLun,CommonNPCHeader6_19,6,Thiếu Lâm Tự
+539,Huyền Chứng,XuanJi,CommonNPCHeader3_10,6,Thiếu Lâm Tự
+540,Huyền Nạn,XuanJi,CommonNPCHeader3_10,6,Thiếu Lâm Tự
+541,Huyền Tịch,XuanJi,CommonNPCHeader3_10,6,Thiếu Lâm Tự
+542,Huyền Sinh,XuanNan,CommonNPCHeader3_10,6,Thiếu Lâm Tự
+543,Huyền Từ,XuanCi,CommonNPCHeader3_10,6,Thiếu Lâm Tự
+544,Hồng Thái Vân,ShaoLinNuDiZi,CommonNPCHeader9_8,6,Thiếu Lâm Tự
+545,Trịnh Huyền,SuXingHe,CommonNPCHeader8_2,60,Thạch Lâm
+546,Dương Liên Tử,YaHuanB,CommonNPCHeader9_8,60,Thạch Lâm
+547,Trịnh Viên,ShaoFu4,CommonNPCHeader7_10,60,Thạch Lâm
+548,Tần Hồng Miên,QinHongMian,CommonNPCHeader12_11,60,Thạch Lâm
+549,Lương A Bà,PangFu,CommonNPCHeader10_14,60,Thạch Lâm
+550,Dương Thiết Tín,PuTongXiaShi3,CommonNPCHeader4_1,60,Thạch Lâm
+551,Cáp Ba,npcShuHeGuZhenHaBa,CommonNPCHeader14_13,58,
+552,Ngọc Long,npcShuHeGuZhenYuLong,CommonNPCHeader14_16,58,
+553,Từ Hà Khách,npcShuHeGuZhenXuXiaKe,CommonNPCHeader14_15,58,
+554,Kim Sa,npcShuHeGuZhenJinSha,CommonNPCHeader14_14,58,
+555,Thương Lan,npcShuHeGuZhenCangLan,CommonNPCHeader14_12,58,
+556,Hùng Kiếm,KuiWuQingNianXiaKe,CommonNPCHeader7_19,58,
+557,Mã Lân,TieJiang,CommonNPCHeader7_13,58,
+558,Vũ Văn Yến,WanYanAGuDa,CommonNPCHeader9_24,58,
+559,Đường Minh,BeiFangGuiZu,CommonNPCHeader7_7,58,
+560,Trần Tụ Tài,PangBanShangRen,CommonNPCHeader10_18,58,
+561,Lưu Hỏa Kế,JianShang,CommonNPCHeader7_14,58,
+562,Lục Hỏa Kế,JianShang,CommonNPCHeader7_14,58,
+563,Trần Mặc,ChengJing,CommonNPCHeader7_14,58,
+564,Vân Thiên Thiên,ShaoFu4,CommonNPCHeader7_10,58,
+565,Bảo Dư,JiuDianLaoBan3,CommonNPCHeader10_21,58,
+566,Hác Thái,LiShiErNiang,CommonNPCHeader4_14,58,
+567,Ngụy Lượng,OuYangXiuB,CommonNPCHeader5_21,58,
+568,Tương Minh Hiên,MingYi2,CommonNPCHeader7_17,58,
+569,Bạch Thảo,MingYi1,CommonNPCHeader7_7,58,
+570,Chu Bảo Quế,ZhangLei,CommonNPCHeader9_2,58,
+571,Ban Ny Lộ,ShaoFu2,CommonNPCHeader4_25,58,
+572,Kinh Khảm Thật,ALaBoNanRen1,CommonNPCHeader11_15,58,
+573,Cao Tiếu,MoJieGuWeiBing,CommonNPCHeader6_1,58,
+574,Hồ Tùng Lập,CaiFeng,CommonNPCHeader6_25,58,
+575,Ôn Liễu,KangMin,CommonNPCHeader5_2,58,
+576,Tôn Phảng Trang,YuFu,CommonNPCHeader7_2,58,
+577,Kiều Thọ,OuYangXiu,CommonNPCHeader7_17,58,
+578,Cảnh Cung Dật,BaTianShi,CommonNPCHeader11_9,58,
+579,Trương Diệc Điền,ZhangQuanXiang,CommonNPCHeader5_7,58,
+580,Vương Tiêu,YangWenYanC,CommonNPCHeader10_6,58,
+581,Lí Minh Dương,HeiMiaoWeiBing,CommonNPCHeader6_1,58,
+582,Mộc Trạch,DaLiSuJiaDiZi,CommonNPCHeader9_9,58,
+583,Mộc Hoa,ZhanDouWuDangDiZi,CommonNPCHeader6_24,58,
+584,Mộc Duẫn,ChuChenZi,CommonNPCHeader9_9,58,
+585,Lộ Hữu,PiaoLiangNu,CommonNPCHeader8_5,58,
+586,Trương Trạch Cốc,PuTongXiaShi1,FightNPCHeader5_19,58,
+587,Dư Hoa Bình,FuShuShengA,CommonNPCHeader8_13,58,
+588,Dương Hồng Nhược,ZhanDouEMeiDiZi,CommonNPCHeader7_4,58,
+589,Lí Tiêu,ZhanDouBuKuai1,CommonNPCHeader7_1,58,
+590,Lí Diêu,ZhanDouBuKuai2,CommonNPCHeader7_1,58,
+591,Triệu Hân Lê,KangMin,CommonNPCHeader10_15,58,
+592,Trình Tiểu Vân,JuJian,CommonNPCHeader7_16,58,
+593,Tiền Tiểu Giang,XiaoNuHai3,CommonNPCHeader10_25,58,
+594,Đinh Tiểu Lâm,XiaoNuHai,CommonNPCHeader10_24,58,
+595,Khương Bồng Thành,HuangChang,CommonNPCHeader9_9,58,
+596,Vương Mạc Hàn,HuangChang,CommonNPCHeader9_11,58,
+597,Lục Liễu Ca Ca,QinGuan,CommonNPCHeader4_20,58,
+598,Bước Thanh Vân,PangDaShangRen,CommonNPCHeader10_17,58,
+599,Bù Nhìn,DaoCaoRen,FightNPCHeader4_24,58,
+600,Bù Nhìn,DaoCaoRen,FightNPCHeader4_24,58,
