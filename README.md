@@ -18,7 +18,9 @@ Không phân tích lại toàn bộ binary nếu subsystem đã được mô t�
 - [`analysis/05_COMBAT_SKILLS_BUFFS.md`](./analysis/05_COMBAT_SKILLS_BUFFS.md) — combat/skills/buffs/auto fight.
 - [`analysis/06_ASSETS_ENCRYPTION_BUNDLES.md`](./analysis/06_ASSETS_ENCRYPTION_BUNDLES.md) — asset bundles + FG decrypt.
 - [`analysis/07_SUPPORT_MODULES_LAUNCHER.md`](./analysis/07_SUPPORT_MODULES_LAUNCHER.md) — Unity/support modules/launcher.
-- [`database/API_QUICK_REFERENCE.md`](./database/API_QUICK_REFERENCE.md) — tra nhanh class/method/command.
+- [`analysis/08_FILE_BY_FILE_CATALOG.md`](./analysis/08_FILE_BY_FILE_CATALOG.md) — mô tả từng file/nhóm file trong snapshot, giá trị reverse và dự đoán nội dung.
+- [`database/API_QUICK_REFERENCE.md`](./database/API_QUICK_REFERENCE.md) — tra nhanh class/method/API/RVA hints.
+- [`database/NETWORK_COMMAND_CATALOG.md`](./database/NETWORK_COMMAND_CATALOG.md) — command/event vocabulary theo subsystem và cách diễn giải an toàn.
 
 ## Evidence state
 
