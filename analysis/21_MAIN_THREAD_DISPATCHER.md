@@ -1,130 +1,250 @@
-# FGStudio MainThread dispatcher — execution bridge target
+# FGStudio MainThread dispatcher — exact execution bridge
 
-Status: **metadata/runtime-inspection surface VERIFIED; exact external enqueue implementation still requires one end-to-end proof**.
+Status: **dispatcher internal control flow VERIFIED by metadata + direct GameAssembly disassembly. External bridge construction of a valid `System.Action` still requires one live end-to-end proof.**
 
-This is one of the most important engineering documents for implementing the semantic Lua/Game actions discovered elsewhere in the KB without destabilizing Unity.
+This is a major engineering result. The game-owned dispatcher is no longer merely a candidate inferred from method names: its native implementation has been resolved and the full queue path has been observed.
 
-## Verified class
+## Exact class
 
 Namespace/class:
 
 `FGStudio.Engine.Utilities.MainThread`
 
-Runtime metadata inspection on this frozen client has exposed these members:
+Metadata TypeDefinition index:
 
-### Static property
+- decimal `2931`
+- hex `0xB73`.
 
-- `get_Instance()`
-- `set_Instance(FGStudio.Engine.Utilities.MainThread)`.
+Source-path strings present in the frozen binary/metadata include:
 
-### Unity lifecycle / dispatcher methods
+- `Assets\Scripts\Engine\Utilities\Threading\MainThread\MainThread.cs`
+- `MainThread_API.cs`
+- `MainThread_Core.cs`
+- `MainThread_Define.cs`.
 
-- `Awake()`
-- `Update()`
-- `Execute(System.Action)`
-- `StartCoroutine(System.Collections.IEnumerator)`
-- `StopCoroutine(UnityEngine.Coroutine)`
-- `DoExecuteWorks()`
-- `.ctor()`.
+## Exact method table
 
-### Fields observed
+Type methodStart = `24029`, method_count = `9`.
 
-- `<Instance>k__BackingField`
-- a `System.Collections.Concurrent.ConcurrentQueue<System.Action>` field whose metadata/string name is `waitToBeProcess`.
+| Method | Metadata token RID | GameAssembly RVA | VA |
+|---|---:|---:|---:|
+| `get_Instance()` | `0x2AB7` | `0x601360` | `0x180601360` |
+| `set_Instance(MainThread)` | `0x2AB8` | `0x6013A0` | `0x1806013A0` |
+| `Awake()` | `0x2AB9` | `0x601130` | `0x180601130` |
+| `Update()` | `0x2ABA` | `0x6012D0` | `0x1806012D0` |
+| `Execute(System.Action)` | `0x2ABB` | `0x601250` | `0x180601250` |
+| `StartCoroutine(IEnumerator)` | `0x2ABC` | `0x6012B0` | `0x1806012B0` |
+| `StopCoroutine(Coroutine)` | `0x2ABD` | `0x6012C0` | `0x1806012C0` |
+| `DoExecuteWorks()` | `0x2ABE` | `0x601190` | `0x180601190` |
+| `.ctor()` | `0x2ABF` | `0x6012E0` | `0x1806012E0` |
 
-## Strong architectural interpretation
+These pointers were resolved through the `Assembly-CSharp.dll` IL2CPP CodeGenModule. Its methodPointerCount is `0x3190` = 12,688 and method-pointer table address is `0x1834BCD70` in this frozen image.
 
-The combination:
+Historic RVAs are evidence/debug locators for this snapshot; future implementation should still prefer semantic metadata resolution over hardcoding them as the only identity.
 
-- singleton `Instance`;
-- `ConcurrentQueue<Action>`;
-- `Execute(Action)`;
-- Unity `Update()`;
-- `DoExecuteWorks()`
+## Fields
 
-strongly indicates a producer/consumer dispatcher where work can be queued from another thread and drained from the Unity-side update loop.
+Verified fields:
 
-The existence of the fields/methods is VERIFIED. The exact control flow `Execute -> enqueue -> Update/DoExecuteWorks -> invoke` should be treated as **PROBABLE until direct method disassembly/runtime tracing is recorded in this KB**.
+- static `<Instance>k__BackingField`
+- `System.Collections.Concurrent.ConcurrentQueue<System.Action> waitToBeProcess`.
 
-## Why this is preferable to direct arbitrary-thread invocation
+Direct constructor disassembly shows the queue reference is stored at native instance offset:
 
-Many actions now have exact semantic endpoints:
+`this + 0x20`.
 
-- `AutoFight_Main:StartAutoFight(Train)`
-- `Game.GoTo`
-- `Game.ClickNPC`
-- `Game.RequestUsingSkillWithTarget`
-- `Network.SendPacket`
-- Lua UI callbacks.
+## `.ctor()` — queue allocation VERIFIED
 
-The remaining stability risk is execution context. Calling Unity/Lua/gameplay methods from an arbitrary external worker thread can produce:
+At RVA `0x6012E0`, the constructor allocates/initializes a `ConcurrentQueue<System.Action>` and stores it into the instance field around:
 
-- Unity object access from the wrong thread;
-- stale/lifecycle races;
-- UI transition races;
-- disconnect/crash/no-op behavior.
+```text
+lea rcx,[rdi+0x20]
+mov [rdi+0x20],rbx
+```
 
-A game-owned MainThread dispatcher is therefore the preferred target for the Action Queue stage.
+It then continues to the MonoBehaviour/base constructor path.
+
+Conclusion:
+
+**`waitToBeProcess` is an initialized per-instance concurrent Action queue at offset `0x20`.**
+
+## `Awake()` — singleton setup VERIFIED
+
+RVA `0x601130` writes the current `this` instance into static `<Instance>k__BackingField`.
+
+Therefore normal Unity lifecycle establishes:
+
+`MainThread.Instance = this`.
+
+`get_Instance()` at RVA `0x601360` reads the static backing field; `set_Instance()` at `0x6013A0` writes it.
+
+## `Execute(System.Action)` — enqueue semantics VERIFIED
+
+Windows x64 instance-call register convention at entry:
+
+- `RCX = this`
+- `RDX = System.Action`.
+
+At RVA `0x601250`, native code loads:
+
+`[this + 0x20]`
+
+and passes the queue plus supplied Action into the ConcurrentQueue enqueue implementation (resolved call/tail-jump around VA `0x180F7C390`). Null queue follows the generated throw path.
+
+Observed key access:
+
+```text
+mov rcx,[rbx+0x20]
+...
+jmp/call 0x180F7C390
+```
+
+Conclusion:
+
+**`MainThread.Execute(action)` enqueues `action` into `waitToBeProcess`.**
+
+This is no longer PROBABLE.
+
+## `Update()` — every-frame drain entry VERIFIED
+
+RVA `0x6012D0` is effectively a thin wrapper:
+
+```text
+xor edx,edx
+jmp 0x180601190   ; DoExecuteWorks
+```
+
+Conclusion:
+
+**Unity `Update()` invokes `DoExecuteWorks()` each frame.**
+
+## `DoExecuteWorks()` — dequeue + Action invoke loop VERIFIED
+
+RVA `0x601190` performs the queue consumer loop.
+
+Observed structure:
+
+1. load queue from `[this+0x20]`;
+2. check whether it is empty (call around VA `0x180F81A00`);
+3. if empty, return;
+4. otherwise call the ConcurrentQueue dequeue/TryDequeue path (around `0x180F7FE60`) with an out Action;
+5. if returned Action is non-null, load delegate internals and invoke it via the delegate virtual invocation slot;
+6. loop until the queue becomes empty.
+
+The Action invocation region includes a call through:
+
+```text
+call QWORD PTR [rax+0x18]
+```
+
+after loading the delegate target/method data from the Action object.
+
+Conclusion:
+
+**`Update -> DoExecuteWorks -> TryDequeue -> invoke Action -> repeat until empty`.**
+
+This is the exact game-owned main-thread producer/consumer path.
+
+## End-to-end dispatcher truth
+
+The frozen client therefore implements:
+
+```text
+producer thread/context
+        |
+        v
+MainThread.Execute(System.Action)
+        |
+        v
+ConcurrentQueue<Action>.Enqueue
+        |
+        |   (thread-safe queue boundary)
+        v
+Unity MainThread.Update()
+        |
+        v
+DoExecuteWorks()
+        |
+        v
+TryDequeue Action
+        |
+        v
+Action.Invoke() on Unity Update thread
+```
+
+The static/native dispatcher behavior itself is **VERIFIED**.
+
+## What remains unverified
+
+The remaining problem is narrower: an external tool must prove it can safely construct/retain a valid managed `System.Action` and call `MainThread.Execute(action)` through the live IL2CPP bridge.
+
+Still required once at runtime:
+
+1. resolve `MainThread.Instance` per PID and confirm non-null;
+2. create a valid managed `System.Action` whose delegate target/thunk remains alive long enough;
+3. enqueue it through `Execute`;
+4. make the first callback harmless/non-destructive;
+5. record producer thread ID and callback thread ID to prove the callback executes on Unity Update thread;
+6. verify no GC/lifetime corruption;
+7. only then route gameplay/UI mutations through this path.
+
+Do **not** claim this final external Action-construction step is solved merely because the internal queue is solved.
 
 ## Recommended architecture
 
 ```text
-External process/controller
+External Controller
  -> Resolver
  -> read-only Scanner
- -> Snapshot/Observer
+ -> Snapshot Store
+ -> Observer
  -> State Machine
  -> Safety Guard
- -> Action Queue (max one mutable action)
- -> bridge creates/queues semantic action
- -> FGStudio.Engine.Utilities.MainThread.Execute(Action)
- -> game-owned main-thread execution
- -> observer waits for state proof
+ -> Action Queue (max 1 mutable action)
+ -> build/retain valid System.Action
+ -> MainThread.Instance.Execute(Action)
+ -> Unity Update drains queue
+ -> semantic Lua/Game/UI action
+ -> state proof
+ -> next action
 ```
 
-Do not issue the next mutable action until the first action's expected state transition is observed or a timeout/failure path is taken.
+## Why this supersedes the legacy remote-worker design
 
-## Exact verification plan
+Many gameplay semantics are already known:
 
-Before declaring the dispatcher path fully VERIFIED:
+- `StartAutoFight(C_AutoModel.Train)`
+- `Game.GoTo`
+- `Game.ClickNPC`
+- `Game.RequestUsingSkillWithTarget`
+- packet/Lua UI actions.
 
-1. resolve `MainThread.Instance` on a live client;
-2. confirm it is non-null after normal scene/bootstrap initialization;
-3. inspect/disassemble `Execute` and `DoExecuteWorks` or trace them read-only;
-4. verify `Execute(Action)` causes the Action to be processed on the same Unity thread that runs `Update()`;
-5. test one harmless semantic callback first;
-6. record Unity thread ID and action execution thread ID;
-7. only then use it for mutable gameplay/UI actions.
+The old risk was invoking those on an arbitrary worker thread. The game already provides a concurrency boundary specifically shaped as `ConcurrentQueue<Action> -> Update -> Invoke`.
 
-## Harmless proof candidates
+Therefore production mutable actions should target this dispatcher rather than a continuously running `CreateRemoteThread`/remote-worker gameplay executor.
 
-Prefer a read-only/logging or non-destructive UI/state callback for first proof. Do not use selling, item deletion, revive or movement as the first dispatcher test.
+## Lifetime/process rules
 
-## Lifetime rules
-
-- resolve the singleton per game process;
-- never reuse a MainThread instance pointer across different game processes;
-- revalidate after process restart;
-- do not assume a UI child object survives a panel close/reopen even if MainThread itself is stable;
-- if a scene/bootstrap transition can recreate the dispatcher, revalidate instance identity.
+- resolve singleton separately for every game PID;
+- never share MainThread/object/delegate pointers between clients;
+- re-resolve after process restart;
+- revalidate Instance after major bootstrap/scene lifecycle if needed;
+- never retain child UI pointers across close/reopen transitions;
+- keep at most one mutable external action pending until state proof/timeout resolves it.
 
 ## Relationship to `MonoBehaviourExecutor`
 
-The Lua GUI path (`MainCallUI/CallUI`) uses `MonoBehaviourExecutor` for Lua script/UI lifecycle, while `FGStudio.Engine.Utilities.MainThread` appears to be a general Action dispatcher.
+`MonoBehaviourExecutor` remains the Lua/UI script lifecycle layer used by `MainCallUI/CallUI`.
 
-These are complementary layers:
+The roles are complementary:
 
-- MainThread = where a cross-thread action should execute;
-- Lua/Game/GUI API = what semantic action should execute.
+- **MainThread dispatcher** = where externally-originated work should execute;
+- **Lua/Game/GUI semantic APIs** = what work should execute.
 
-## Important non-goal
+## Important rule
 
-`il2cpp_runtime_invoke` being exported does **not** prove a method is safe to call from an arbitrary thread. Runtime invocation mechanics and Unity thread affinity are separate concerns.
-
-Use `runtime_invoke` only as an invocation primitive when the target execution context and object lifetime are already valid.
+`il2cpp_runtime_invoke` is an invocation primitive, not a thread-safety guarantee. If it is used to call `MainThread.Execute`, that can be appropriate because the supplied Action itself is deferred to Unity Update. Do not use arbitrary-thread `runtime_invoke` directly on Unity/Lua gameplay mutations merely because the export exists.
 
 ## Future AI rule
 
-Do not redesign the tool around `CreateRemoteThread` or a continuously running remote worker for gameplay actions if the game-owned main-thread dispatcher can be proven and used. Preserve the architecture:
-
-`Resolver -> Scanner -> Snapshot -> Observer -> State Machine -> Safety Guard -> Action Queue(1) -> MainThread Dispatcher -> Internal Action`.
+Do not spend time rediscovering whether `Execute` really enqueues or whether `Update` really drains the queue. That part is now VERIFIED by direct disassembly. Future work should focus only on the **external managed Action construction/lifetime + one harmless live proof**.
