@@ -20,10 +20,15 @@ Repo này là **canonical knowledge base** cho client Thần Long snapshot cố 
 
 ### Không broad reverse lại nếu docs/database đã trả lời
 
-- inventory/shop → `analysis/04_INVENTORY_ITEMS_SHOP.md` + `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md`
+- inventory/shop → `analysis/04_INVENTORY_ITEMS_SHOP.md` + `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`
+- exact packets/actions → `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md`
 - UI/action lifecycle → `analysis/13_UI_RUNTIME_ACTION_SURFACE.md` + `database/UI_PACKET_LIFECYCLE.md`
 - nearby player/entity scanner → `analysis/14_NEARBY_ENTITY_UI_SCHEMA.md`
+- player/social target object → `analysis/16_PLAYER_INTERACTION_UI_API.md`
 - Nga My/healing donor logic → `analysis/15_AUTO_RECOVERY_NGAMY_ENGINE.md`
+- buff IDs/duration/stack → `analysis/17_BUFF_RUNTIME_SCHEMA.md`
+- skill cooldown/quick skills/F1 semantics → `analysis/18_SKILLBAR_COOLDOWN_QUICKSKILLS.md`
+- progress/Captcha safety → `analysis/19_PROGRESS_CAPTCHA_SAFETY.md`
 - Auto Train → `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md` + `features/AUTO_TRAIN.md`
 - Auto Buff → `features/AUTO_BUFF.md`
 - revive/Đầu thai → `features/AUTO_REVIVE.md`
@@ -49,8 +54,6 @@ Contents API có thể trả `.dll/.exe/.dat` dưới dạng pointer ~130 byte. 
 
 Đã tái tạo đủ `FGClientTool_Windows.dll` decrypt để mở custom bundles và extract semantic data.
 
-Đã giải mã/đọc Config/Interface/Translations/shared bundles và `data.unity3d`.
-
 Kết quả chính:
 - **75 Config XML TextAssets**
 - **338 UI layout XML TextAssets**
@@ -64,8 +67,6 @@ Với UI/automation, ưu tiên:
 `Lua source -> Config/Layout semantic data -> exact handler/payload -> native reverse only if still needed`.
 
 ## Phase 3 — UI/runtime breakthrough
-
-The shipped UI itself proves structured runtime data routes and direct semantic actions.
 
 ### Nearby peaceful players
 
@@ -83,9 +84,9 @@ The shipped UI itself proves structured runtime data routes and direct semantic 
 
 So nearby friendly HP/MaxHP/name/faction/guild scanning **does not require party membership, OCR or CE scanning**.
 
-### Selected target
+### Selected target / other-player object
 
-`Game.SelectedTarget` is consumed by `MainUI_OtherHeader` with RoleID, Type, Name, HPPercent, MPPercent, RagePercent, Level, FactionID and other type-specific state; target buffs are read with `Game.GetTargetBuffIcons(RoleID)`.
+`Game.SelectedTarget` is consumed with RoleID, Type, Name, HPPercent, MPPercent, RagePercent, Level, FactionID and target buff icons. `OtherRolePopup` additionally consumes TeamID, GroupID, GuildID, GuildRank and AlliesID and sends RoleID-based semantic player actions.
 
 ### Exact Auto menu action
 
@@ -95,16 +96,33 @@ So nearby friendly HP/MaxHP/name/faction/guild scanning **does not require party
 
 then updates display status. The visible `Đánh quái` settings tab is **not** the start command.
 
-### Nga My donor engine
+### Nga My donor engine — corrected skill identity
 
-Exact frozen-client IDs:
+Cross-check Lua constants against `Skills.xml` + visible `AutoHp_Layout` text.
 
-- Phật Quang Phổ Chiếu = 406
-- Thanh Tâm Phổ Thiện Chú = 424
-- Kim Châm Độ Kiếp = 407
-- Cải Tử Hoàn Sinh = 408.
+Actual Config names/IDs:
 
-Built-in code demonstrates `GetNearTeammates -> HP/MaxHP -> CastRange -> ChaseTarget -> RequestUsingSkillWithTarget`. `features/AUTO_BUFF.md` documents how to combine that verified donor action path with the verified peaceful-player scanner.
+- Phật Quang Phổ Chiếu = `406`
+- **Xung Hư Dưỡng Khí = `407`**
+- Khởi Tử Hồi Sinh = `408`
+- **Kim Châm Độ Kiếp = `423`**
+- Thanh Tâm Phổ Thiện Chú = `424`.
+
+Important legacy bug/name mismatch: `C_NMBuff.KIMCHAMDOKIEP` and setting key `KimChamDoKiep` point to **407**, but UI text says Xung Hư Dưỡng Khí and Config confirms actual Kim Châm is 423. Never call 407 “Kim Châm” in new implementation.
+
+Built-in AutoHp fallback is `406 -> 424 -> 407`.
+
+### Skill cooldown
+
+`Game.GetSkillCooldown(skillID)` returns `[passedTicks, cooldownTicks]`. Ready when cooldown<=0 or passed>=cooldown. SkillBar semantic action is `Game.UseSkill(skillID)`, so physical F-key input is not the identity of the skill.
+
+### Buff runtime
+
+Local `Game.GetBuffs()` exposes BuffID, DurationTick(ms), Stack; `GetBuffData` adds Level; `GetBuffProperties` exposes semantic properties. Add/Update/Remove buff events provide strong state proof.
+
+### Bag/shop runtime
+
+Bag UI is a structured 100-slot rendering of `Game.GetItemsAtSite(Site)`. AddItem/RemoveItem/UpdateItemsList events update all bag grids. NPCShop sell request uses current item instance ID + current NpcShopID/ShopID; Quick Sell is only a UI convenience over the same request.
 
 ### UI packet lifecycle
 
@@ -113,9 +131,12 @@ Important state proofs are server/event-driven:
 - `CMD_REVIVE_DATA` -> open/update/close `Revival` + `DeathActive()`
 - `CMD_NPC_SHOP_DATA` -> open/refresh `NPCShop`
 - `CMD_SHOW_GAMEDIALOG` -> replace/close/create `GameDialog`
-- buff events -> Add/Update/Remove through `BuffFrame`.
+- buff events -> Add/Update/Remove through `BuffFrame`
+- Begin/Interrupt/Update Progress -> `ProgressBar` lifecycle.
 
-See `database/UI_PACKET_LIFECYCLE.md`.
+### Captcha safety
+
+`NewCaptcha` opens `Captcha` with image/question/answers and manual submit calls `Game.SendAnswerCaptcha`. Automation framework must pause and require user interaction; do not implement automated solving/bypass.
 
 ## Analysis map
 
@@ -133,8 +154,13 @@ See `database/UI_PACKET_LIFECYCLE.md`.
 - `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md` — exact packet/action payloads
 - `analysis/12_GLOBAL_LUA_HELPERS.md` — reusable helpers such as `GoToNPC`
 - `analysis/13_UI_RUNTIME_ACTION_SURFACE.md` — deep UI event/action architecture
-- `analysis/14_NEARBY_ENTITY_UI_SCHEMA.md` — exact nearby-player/target fields used by UI
-- `analysis/15_AUTO_RECOVERY_NGAMY_ENGINE.md` — recovery/Nga My donor logic.
+- `analysis/14_NEARBY_ENTITY_UI_SCHEMA.md` — nearby-player/target schema
+- `analysis/15_AUTO_RECOVERY_NGAMY_ENGINE.md` — recovery/Nga My donor + corrected skill identity
+- `analysis/16_PLAYER_INTERACTION_UI_API.md` — rich selected-player/social action data
+- `analysis/17_BUFF_RUNTIME_SCHEMA.md` — BuffID/duration/stack/properties/event model
+- `analysis/18_SKILLBAR_COOLDOWN_QUICKSKILLS.md` — quick skills/cooldown/semantic use
+- `analysis/19_PROGRESS_CAPTCHA_SAFETY.md` — progress state and user-required Captcha pause
+- `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md` — bag grid/events/shop/quick-sell internals.
 
 ## Database map
 
@@ -172,7 +198,7 @@ Start at `database/README.md`.
 
 ### Lâu Lan healer candidate
 
-**NPC `339` = Đỗ Thanh Đằng, `ResName=LangZhong1`, Map `5` = Lâu Lan.** Static identity/map is VERIFIED. Healer service is a strong semantic inference; exact “Trị liệu” selection must still be read from actual `GameDialog.Selections`.
+**NPC `339` = Đỗ Thanh Đằng, `ResName=LangZhong1`, Map `5` = Lâu Lan.** Static identity/map is VERIFIED. Exact “Trị liệu” selection must still be read from actual `GameDialog.Selections`.
 
 ### NPC navigation
 
@@ -188,7 +214,7 @@ Built-in helper `GoToNPC(mapID,npcID)` uses `Game.GetNPCPosition -> Game.GoTo ->
 
 ### Đầu thai/revive
 
-`CMD_REVIVE_DATA = 200063`: normal/Đầu thai=1, newbie=2, skill revive=3.
+`CMD_REVIVE_DATA = 200063`: normal/Đầu thai=1, newbie=2, skill revive=3. Revival server data also exposes TimeLeft and option availability.
 
 ### Dynamic NPC dialog
 
@@ -196,17 +222,18 @@ Built-in helper `GoToNPC(mapID,npcID)` uses `Game.GetNPCPosition -> Game.GoTo ->
 
 ## Những việc không nên lặp lại
 
-- CE scan từng HP offset khi structured nearby-player/game data API đủ dùng.
+- CE scan từng HP offset when structured nearby-player/game data API đủ dùng.
 - pixel/OCR item/player data khi semantic fields tồn tại.
 - click visible `Đánh quái` tab để cố khởi động Train.
 - gọi `UIButton.HandleClickEvent` như static/global function.
 - reuse UIButton pointer sau UI transition.
-- dùng fixed sleep làm state proof.
+- fixed sleep làm state proof.
 - gọi response handler như action request.
 - hardcode RVA làm identity duy nhất.
 - broad reverse LiveKit/baselib/D3D12 trước gameplay modules.
 - bịa NPC X/Y thay vì `Game.GetNPCPosition`.
 - bịa fixed `selectionID` cho Trị liệu.
+- copy misleading internal variable names without cross-checking Config/UI text.
 
 ## Current state
 
