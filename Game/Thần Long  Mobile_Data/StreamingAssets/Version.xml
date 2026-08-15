@@ -1,0 +1,8 @@
+<Config URL="https://cdn.fgstudio.vn/">
+	<CdnUrl Url="https://cdn.fgstudio.vn/" />
+	<Application VerCode="125" />
+	<Store AppsIosUrl="https://apps.apple.com/vn/app/id6470350824" AppsAndroidUrl="https://play.google.com/store/apps/details?id=com.fgstudio.thanlongmobile" Msg="Đã có phiên bản mới. Vui lòng tải về và cài đè lên phiên bản hiện tại để có được trải nghiệm tốt nhất." />
+	<UpdateInfo UpdateSelectServerUrl="https://sdk.fgstudio.vn/Services/Server/RecordLastServer/RecordLastServerController.aspx" ServerListUrl="https://sdk.fgstudio.vn/Services/Server/ServerList/ServerListAndroidController.aspx" VerifyAccountSDK="https://sdk.fgstudio.vn/Services/User/VerifyLogin/VerifyLoginController.aspx" LoginAccountSDK="https://sdk.fgstudio.vn/Services/User/Login/LoginController.aspx" RegisterAccountSDK="https://sdk.fgstudio.vn/Services/User/Register/RegisterController.aspx" DeleteAccountSDK="https://sdk.fgstudio.vn/Services/User/Delete/DeleteAccount.aspx" FileUpdateUrl="UpdateList.xml" LogServicesURL="https://logs.fgstudio.vn/api/log" />
+	<VoiceChat Enable="true" PublicBlobUrl="https://voicesdk.fgstudio.vn/client/voice-blobs" MaxDurationSeconds="15" MaxBlobBytes="5242880" UploadTimeoutSeconds="20" DownloadTimeoutSeconds="20" />
+	<VoiceRealtime Enable="true" Backend="livekit" ConnectTimeoutSeconds="15" DefaultMicMuted="false" DefaultPlaybackVolume="1" />
+</Config>
