@@ -21,7 +21,11 @@ Repo này là **canonical knowledge base** cho client Thần Long snapshot cố 
 ### Không broad reverse lại nếu docs/database đã trả lời
 
 - inventory/shop → `analysis/04_INVENTORY_ITEMS_SHOP.md` + `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md`
+- UI/action lifecycle → `analysis/13_UI_RUNTIME_ACTION_SURFACE.md` + `database/UI_PACKET_LIFECYCLE.md`
+- nearby player/entity scanner → `analysis/14_NEARBY_ENTITY_UI_SCHEMA.md`
+- Nga My/healing donor logic → `analysis/15_AUTO_RECOVERY_NGAMY_ENGINE.md`
 - Auto Train → `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md` + `features/AUTO_TRAIN.md`
+- Auto Buff → `features/AUTO_BUFF.md`
 - revive/Đầu thai → `features/AUTO_REVIVE.md`
 - Auto Sell → `features/AUTO_SELL.md`
 - NPC Trị liệu → `features/AUTO_HEAL_NPC.md` + `database/NPC_SERVICE_CANDIDATES.md`
@@ -41,31 +45,77 @@ Chủ sở hữu không có kế hoạch thay client trong repo. Không cần b�
 
 Contents API có thể trả `.dll/.exe/.dat` dưới dạng pointer ~130 byte. Deep analysis đã dùng original bytes. Nếu cần disassembly mới, phải dùng original LFS/local bytes, không phân tích pointer text.
 
-## Phase 2 — breakthrough
+## Phase 2 — decrypted semantic data breakthrough
 
 Đã tái tạo đủ `FGClientTool_Windows.dll` decrypt để mở custom bundles và extract semantic data.
 
-Đã giải mã/đọc:
-- `Config.unity3d`
-- `Interface.unity3d`
-- `Translations.unity3d`
-- `LoadingResources.unity3d`
-- `Logo.unity3d`
-- `Shared.unity3d`
-- `Shared_2.unity3d`
-- `data.unity3d`.
+Đã giải mã/đọc Config/Interface/Translations/shared bundles và `data.unity3d`.
 
-Kết quả:
+Kết quả chính:
 - **75 Config XML TextAssets**
 - **338 UI layout XML TextAssets**
 - **1,469 UI handler bindings**
-- **339 Lua script classes** + global infrastructure
+- **339 high-level Lua script classes** + global infrastructure
 - **169 TCP packet constants**
 - exact Lua payloads cho revive, sell, bag sort, item actions, GameDialog.
 
-Với UI/automation, ưu tiên mới:
+Với UI/automation, ưu tiên:
 
 `Lua source -> Config/Layout semantic data -> exact handler/payload -> native reverse only if still needed`.
+
+## Phase 3 — UI/runtime breakthrough
+
+The shipped UI itself proves structured runtime data routes and direct semantic actions.
+
+### Nearby peaceful players
+
+`MainUI_NearByPlayers_PlayersTab` calls `Game.GetNearByPeacePlayers(MaxPlayers)` and directly reads:
+
+- RoleID
+- Name
+- Level
+- FactionID
+- HP
+- MaxHP
+- GuildName
+- AvartaID
+- TeamRank.
+
+So nearby friendly HP/MaxHP/name/faction/guild scanning **does not require party membership, OCR or CE scanning**.
+
+### Selected target
+
+`Game.SelectedTarget` is consumed by `MainUI_OtherHeader` with RoleID, Type, Name, HPPercent, MPPercent, RagePercent, Level, FactionID and other type-specific state; target buffs are read with `Game.GetTargetBuffIcons(RoleID)`.
+
+### Exact Auto menu action
+
+`TopIcon:AutoTrainClick()` calls:
+
+`GUI.FindUI("AutoFight_Main"):StartAutoFight(C_AutoModel.Train)`
+
+then updates display status. The visible `Đánh quái` settings tab is **not** the start command.
+
+### Nga My donor engine
+
+Exact frozen-client IDs:
+
+- Phật Quang Phổ Chiếu = 406
+- Thanh Tâm Phổ Thiện Chú = 424
+- Kim Châm Độ Kiếp = 407
+- Cải Tử Hoàn Sinh = 408.
+
+Built-in code demonstrates `GetNearTeammates -> HP/MaxHP -> CastRange -> ChaseTarget -> RequestUsingSkillWithTarget`. `features/AUTO_BUFF.md` documents how to combine that verified donor action path with the verified peaceful-player scanner.
+
+### UI packet lifecycle
+
+Important state proofs are server/event-driven:
+
+- `CMD_REVIVE_DATA` -> open/update/close `Revival` + `DeathActive()`
+- `CMD_NPC_SHOP_DATA` -> open/refresh `NPCShop`
+- `CMD_SHOW_GAMEDIALOG` -> replace/close/create `GameDialog`
+- buff events -> Add/Update/Remove through `BuffFrame`.
+
+See `database/UI_PACKET_LIFECYCLE.md`.
 
 ## Analysis map
 
@@ -80,7 +130,11 @@ Với UI/automation, ưu tiên mới:
 - `analysis/08_FILE_BY_FILE_CATALOG.md` — file-by-file catalog
 - `analysis/09_PHASE2_DECRYPTED_DATA_LUA.md` — decrypted Config/Interface/Lua
 - `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md` — built-in train/PK/quest/FuBen engine
-- `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md` — exact packet/action payloads.
+- `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md` — exact packet/action payloads
+- `analysis/12_GLOBAL_LUA_HELPERS.md` — reusable helpers such as `GoToNPC`
+- `analysis/13_UI_RUNTIME_ACTION_SURFACE.md` — deep UI event/action architecture
+- `analysis/14_NEARBY_ENTITY_UI_SCHEMA.md` — exact nearby-player/target fields used by UI
+- `analysis/15_AUTO_RECOVERY_NGAMY_ENGINE.md` — recovery/Nga My donor logic.
 
 ## Database map
 
@@ -89,12 +143,12 @@ Start at `database/README.md`.
 ### Static world data
 - `database/MAPS.csv` — full 193 maps
 - `database/npcs/NPCS_*.csv` — full 1,003 NPCs
-- `database/NPC_SERVICE_CANDIDATES.md` — healer/vendor/etc candidate semantics with confidence labels
-- `database/FUBEN_SCENARIOS.csv` — 19 FuBen definitions
-- `database/AUTOPATH_PORTAL_EDGES.csv` — 165 direct portal edges
-- `database/AUTOPATH_ITEM_DESTINATIONS.csv` — 23 item destinations
-- `database/autopath_npc/AUTOPATH_NPC_EDGES_*.csv` — full 506 NPC-mediated travel edges
-- `database/CONFIG_TABLE_CATALOG.md` — all 75 Config tables.
+- `database/NPC_SERVICE_CANDIDATES.md`
+- `database/FUBEN_SCENARIOS.csv`
+- `database/AUTOPATH_PORTAL_EDGES.csv`
+- `database/AUTOPATH_ITEM_DESTINATIONS.csv`
+- `database/autopath_npc/AUTOPATH_NPC_EDGES_*.csv`
+- `database/CONFIG_TABLE_CATALOG.md`.
 
 ### Protocol/API/UI
 - `database/API_QUICK_REFERENCE.md`
@@ -102,11 +156,14 @@ Start at `database/README.md`.
 - `database/PACKET_CATALOG.md`
 - `database/PACKET_IDS.csv`
 - `database/UI_LAYOUT_CALLBACKS.md`
-- `database/LUA_SCRIPT_CATALOG.md`.
+- `database/LUA_SCRIPT_CATALOG.md`
+- `database/UI_PACKET_LIFECYCLE.md`
+- `database/AUTO_SETTINGS_SCHEMA.md`.
 
 ## Feature specs
 
 - `features/AUTO_TRAIN.md`
+- `features/AUTO_BUFF.md`
 - `features/AUTO_SELL.md`
 - `features/AUTO_REVIVE.md`
 - `features/AUTO_HEAL_NPC.md`.
@@ -119,69 +176,29 @@ Start at `database/README.md`.
 
 ### NPC navigation
 
-Built-in flow uses:
-- `Game.GetNPCPosition(npcID)`
-- `Game.GoTo`
-- `Game.GetNearestNPC`
-- internal semantic interaction.
-
-Do **not** invent NPC coordinates from `AutoPath/NPCData`; that table has no X/Y.
+Built-in helper `GoToNPC(mapID,npcID)` uses `Game.GetNPCPosition -> Game.GoTo -> Game.ClickNPC`. Do not invent NPC X/Y from AutoPath NPCData.
 
 ### Auto Train
 
-`C_AutoModel.Train = 1`; semantic start is `AutoFight_Main:StartAutoFight(C_AutoModel.Train)`. The visible “Đánh quái” UI is configuration, not the combat loop itself.
+`C_AutoModel.Train = 1`; semantic start is `AutoFight_Main:StartAutoFight(C_AutoModel.Train)` or shipped wrapper `TopIcon:AutoTrainClick()`.
 
 ### Auto Sell
 
-`CMD_NPC_SHOP_SELL_REQUEST = 200036`
-
-payload: `itemInstanceID:NpcShopID:ShopID`.
-
-Use one current item instance -> one sell -> wait server update -> rescan.
+`CMD_NPC_SHOP_SELL_REQUEST = 200036`, payload `itemInstanceID:NpcShopID:ShopID`.
 
 ### Đầu thai/revive
 
-`CMD_REVIVE_DATA = 200063`
-- normal/Đầu thai = `1`
-- newbie = `2`
-- skill revive = `3`.
+`CMD_REVIVE_DATA = 200063`: normal/Đầu thai=1, newbie=2, skill revive=3.
 
 ### Dynamic NPC dialog
 
-`Selections[selectionID] = visibleText`; submit through `CMD_SHOW_GAMEDIALOG = 100007` payload `selectionID:SelectedItemID` (normally `-1` if no item choice).
-
-Built-in FuBen auto itself uses text matching against `Selections`, which is the preferred pattern for Trị liệu.
-
-## Entry points quan trọng
-
-### Runtime/world
-- `LuaSystemSharedData.GetNearbySprites/GetNearbyObjects/GetLocalMapObjects/GetNearestNPC/GetNearByEnemies`
-- `GScene`, `PathFinder`, `NodeGrid`.
-
-### Auto/combat
-- `AutoFight_Main:StartAutoFight`
-- `Game.GetNearbySpritesWithPredicate`
-- `Game.SelectTarget`
-- `Game.ChaseTarget`
-- `Game.RequestUsingSkillWithTarget/Pos`.
-
-### Inventory
-- `GetFreeBagSpace`
-- `GetItemsAtSite`
-- `GetItemType/GetEquipType`
-- `IsItemSellable/IsItemThrowable`.
-
-### UI/network
-- `MainCallUI/CallUI/FindUI/HasScript/GetScript`
-- `CMD_SHOW_GAMEDIALOG=100007`
-- `CMD_BAG_SORT=100006`
-- `CMD_NPC_SHOP_SELL_REQUEST=200036`
-- `CMD_REVIVE_DATA=200063`.
+`Selections[selectionID] = visibleText`; submit through `CMD_SHOW_GAMEDIALOG=100007` payload `selectionID:SelectedItemID`.
 
 ## Những việc không nên lặp lại
 
-- CE scan từng HP offset khi semantic query/entity API đủ dùng.
-- pixel/OCR item classification khi data API có sẵn.
+- CE scan từng HP offset khi structured nearby-player/game data API đủ dùng.
+- pixel/OCR item/player data khi semantic fields tồn tại.
+- click visible `Đánh quái` tab để cố khởi động Train.
 - gọi `UIButton.HandleClickEvent` như static/global function.
 - reuse UIButton pointer sau UI transition.
 - dùng fixed sleep làm state proof.
@@ -193,4 +210,4 @@ Built-in FuBen auto itself uses text matching against `Selections`, which is the
 
 ## Current state
 
-General deep reverse + decrypted asset/Lua/data Phase 2 đã được ghi lại. Future work phải là **targeted runtime verification/implementation** cho những state động còn thiếu, không phải fresh general reverse-engineering pass.
+General reverse + decrypted asset/Lua + deep UI/runtime semantic analysis đã được ghi lại. Future work phải là **targeted runtime verification/implementation** cho những state động còn thiếu, không phải fresh general reverse-engineering pass.
