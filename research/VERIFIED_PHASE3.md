@@ -1,26 +1,14 @@
 # VERIFIED Phase 3 — UI/runtime semantic findings
 
-> Source evidence: decrypted Interface Lua/layouts + Config XML + prior runtime metadata inspection. These findings materially reduce the need for CE scans, screen clicks and fixed delays.
+> Source evidence: decrypted Interface Lua/layouts + Config XML + runtime metadata inspection + direct frozen-snapshot GameAssembly disassembly. These findings materially reduce the need for CE scans, screen clicks and fixed delays.
 
 ## 1. Nearby peaceful-player schema is directly exposed to shipped UI
 
 Status: **VERIFIED**
 
-`MainUI_NearByPlayers_PlayersTab` calls `Game.GetNearByPeacePlayers(MaxPlayers)` and reads:
+`MainUI_NearByPlayers_PlayersTab` calls `Game.GetNearByPeacePlayers(MaxPlayers)` and reads RoleID, Name, Level, FactionID, HP, MaxHP, GuildName, AvartaID and TeamRank. The stock UI targets a selected record using `Game.SelectTarget(RoleID)`.
 
-- RoleID
-- Name
-- Level
-- FactionID
-- HP
-- MaxHP
-- GuildName
-- AvartaID
-- TeamRank.
-
-The stock UI selects one using `Game.SelectTarget(RoleID)`.
-
-Conclusion: nearby friendly player HP/MaxHP/name/RoleID/faction/guild does not require party membership, OCR or arbitrary HP memory scanning.
+Conclusion: nearby friendly HP/MaxHP/name/RoleID/faction/guild does not require party membership, OCR or arbitrary HP memory scanning.
 
 ## 2. Nearby enemy UI exposes the same core schema
 
@@ -34,19 +22,13 @@ Status: **VERIFIED**
 
 `Game.SelectedTarget` is consumed with at least RoleID, Type, Avarta, Name, HPPercent, MPPercent, RagePercent, EnergyPercent, Level, FactionID and MonsterBelongState depending on target type.
 
-`Game.GetTargetBuffIcons(RoleID)` exposes target buff icons.
-
-`OtherRolePopup` additionally reads TeamID, GroupID, GuildID, GuildRank and AlliesID for selected players.
+`Game.GetTargetBuffIcons(RoleID)` exposes target buff icons. `OtherRolePopup` additionally reads TeamID, GroupID, GuildID, GuildRank and AlliesID for selected players.
 
 ## 4. Exact Auto Train UI wrapper is solved
 
 Status: **VERIFIED**
 
-`TopIcon:AutoTrainClick()` finds `AutoFight_Main` and calls:
-
-`StartAutoFight(C_AutoModel.Train)`.
-
-`AutoStopClick()` calls `StartAutoFight(C_AutoModel.None)`.
+`TopIcon:AutoTrainClick()` finds `AutoFight_Main` and calls `StartAutoFight(C_AutoModel.Train)`. `AutoStopClick()` calls `StartAutoFight(C_AutoModel.None)`.
 
 Visible `Đánh quái` inside the Auto settings window is a settings tab, not the semantic Train start action.
 
@@ -54,12 +36,7 @@ Visible `Đánh quái` inside the Auto settings window is a settings tab, not th
 
 Status: **VERIFIED**
 
-`Game.GetSkillCooldown(skillID)` returns:
-
-- passedTicks
-- cooldownTicks.
-
-Ready when cooldown<=0 or passed>=cooldown.
+`Game.GetSkillCooldown(skillID)` returns passedTicks and cooldownTicks. Ready when cooldown<=0 or passed>=cooldown.
 
 The SkillBar executes the tagged SkillID through `Game.UseSkill(skillID)`, proving physical F-key identity is not required for semantic casting.
 
@@ -75,13 +52,7 @@ Saving uses `CMD_SAVE_QUICK_SKILLS = 100009` with Position/SkillID records.
 
 Status: **VERIFIED**
 
-`Game.GetBuffs()` records expose:
-
-- BuffID
-- DurationTick (milliseconds)
-- Stack.
-
-`Game.GetBuffData(BuffID)` exposes at least BuffID/Level/Stack. `Game.GetBuffProperties` exposes magic attributes. Add/Update/Remove buff events update the BuffFrame.
+`Game.GetBuffs()` records expose BuffID, DurationTick (milliseconds) and Stack. `Game.GetBuffData(BuffID)` exposes at least BuffID/Level/Stack. `Game.GetBuffProperties` exposes magic attributes. Add/Update/Remove buff events update the BuffFrame.
 
 ## 8. Nga My donor skill identity correction
 
@@ -105,8 +76,6 @@ Status: **VERIFIED**
 
 The engine reads teammate IsDeath/HP/MaxHP/Position/RoleID, checks skill condition, derives CastRange from skill data, chases via `Game.ChaseTarget` if needed, then uses `Game.RequestUsingSkillWithTarget`.
 
-This is a strong donor pattern for an external nearby-peace-player support loop.
-
 ## 10. Bag UI is structured and event-driven
 
 Status: **VERIFIED**
@@ -115,18 +84,11 @@ Status: **VERIFIED**
 
 AddItem/RemoveItem/UpdateItemsList events update all bag grids. RemoveItem data contains site/dbID/position.
 
-Conclusion: Auto Sell can confirm one sale and rescan without 90 blind cell clicks.
-
 ## 11. NPCShop current state supplies exact sell identifiers
 
 Status: **VERIFIED**
 
-`NPCShop_SellItemTab` uses current:
-
-- NpcShopID
-- ShopID (`CurrentShopData.ID`)
-
-and sends `CMD_NPC_SHOP_SELL_REQUEST=200036` with `itemInstanceID:NpcShopID:ShopID`.
+`NPCShop_SellItemTab` uses current NpcShopID and ShopID (`CurrentShopData.ID`) and sends `CMD_NPC_SHOP_SELL_REQUEST=200036` with `itemInstanceID:NpcShopID:ShopID`.
 
 Quick Sell is only a UI convenience calling the same request.
 
@@ -134,26 +96,13 @@ Quick Sell is only a UI convenience calling the same request.
 
 Status: **VERIFIED**
 
-Revival data used by Lua contains:
-
-- TimeLeft
-- IsEnableReviveNewbie
-- IsEnableBySkill
-- server Action state in inbound lifecycle.
-
-When countdown expires, stock UI automatically sends normal/Đầu thai type 1.
+Revival data used by Lua contains TimeLeft, IsEnableReviveNewbie, IsEnableBySkill and server Action state in inbound lifecycle. When countdown expires, stock UI automatically sends normal/Đầu thai type 1.
 
 ## 13. Progress state is event-driven
 
 Status: **VERIFIED**
 
-Events:
-
-- BeginProgress=12
-- InteruptProgress=13
-- UpdateProgressTime=14.
-
-ProgressBar uses duration/lifeTimeTicks in milliseconds. This provides a state guard for channel/progress actions.
+Events BeginProgress=12, InteruptProgress=13 and UpdateProgressTime=14 drive ProgressBar duration/lifetime state in milliseconds.
 
 ## 14. Captcha is an explicit user-verification state
 
@@ -167,32 +116,52 @@ Automation design rule: pause and require user input; do not implement auto-solv
 
 Status: **VERIFIED**
 
-Minimap/local map use:
+Minimap/local map use `Game.IsMapReady()`, `Game.GetMapName()`, `Game.GetMapSize()`, `Game.GetLocalMapObjects()`, `Game.GetNearbyObjects()`, `Game.GetCurrentMoveDestination()`, `Game.MoveTo(X,Y)` and `Game.GoTo(MapID,-1,-1)`.
 
-- `Game.IsMapReady()`
-- `Game.GetMapName()`
-- `Game.GetMapSize()`
-- `Game.GetLocalMapObjects()`
-- `Game.GetNearbyObjects()`
-- `Game.GetCurrentMoveDestination()`
-- `Game.MoveTo(X,Y)`
-- `Game.GoTo(MapID,-1,-1)`.
+## 16. MainThread internal dispatcher chain is fully resolved
 
-Local map object fields include Type/Name/Position for NPC/Monster/GrowPoint/Zone/Portal.
+Status: **VERIFIED by metadata + direct GameAssembly disassembly**
 
-## 16. FGStudio MainThread dispatcher surface exists
+Class:
 
-Status: **VERIFIED for metadata/runtime surface; execution control flow pending final proof**
+`FGStudio.Engine.Utilities.MainThread`
 
-`FGStudio.Engine.Utilities.MainThread` exposes singleton Instance, `Execute(System.Action)`, Update, DoExecuteWorks and a `ConcurrentQueue<Action>` named `waitToBeProcess`.
+Exact frozen-snapshot method RVAs:
 
-This is the preferred candidate for main-thread action dispatch; exact Execute->queue->Update drain behavior is still a targeted proof item.
+- `Awake` = `0x601130`
+- `DoExecuteWorks` = `0x601190`
+- `Execute(System.Action)` = `0x601250`
+- `Update` = `0x6012D0`
+- `.ctor` = `0x6012E0`
+- `get_Instance` = `0x601360`
+- `set_Instance` = `0x6013A0`.
+
+The constructor creates `ConcurrentQueue<System.Action>` and stores it at `this+0x20` (`waitToBeProcess`).
+
+`Awake()` stores `this` into the static Instance backing field.
+
+`Execute(Action)` loads `[this+0x20]` and enqueues the supplied Action into that concurrent queue.
+
+`Update()` directly dispatches to `DoExecuteWorks()`.
+
+`DoExecuteWorks()` checks queue-empty state, dequeues Actions and invokes returned delegates, looping until the queue is empty.
+
+Therefore the game-owned path is exactly:
+
+`Execute(Action) -> ConcurrentQueue.Enqueue -> Unity Update -> DoExecuteWorks -> TryDequeue -> Action.Invoke`.
+
+Canonical detailed evidence: `analysis/21_MAIN_THREAD_DISPATCHER.md`.
+
+### Remaining distinction
+
+The **dispatcher itself is solved**. The external tool has not yet proven the final live bridge step of constructing/rooting a valid managed `System.Action`, calling `MainThread.Instance.Execute(action)` and observing the callback on Unity Update thread. Keep that as a targeted runtime implementation proof, not as uncertainty about the dispatcher internals.
 
 ## Phase 3 design consequence
 
-The remaining engineering bottleneck is no longer “what button/data exists?”. It is primarily:
+The remaining engineering bottleneck is now narrower:
 
-1. stable live bridge/resolution;
-2. exact Unity/main-thread dispatch proof;
-3. state-machine integration;
-4. a few server-driven dynamic choices such as NPC treatment GameDialog selection.
+1. stable live resolution of `MainThread.Instance`;
+2. safe managed `System.Action` construction/lifetime from the external bridge;
+3. one harmless end-to-end callback/thread-ID proof;
+4. state-machine integration;
+5. a few server-driven dynamic choices such as NPC treatment GameDialog selection.
