@@ -2,214 +2,294 @@
 
 Repository: `ngmthang-g/clinent-game-than-long-DATA-2222`
 
-## Mục tiêu
+## Purpose
 
-Repo này là **canonical knowledge base** cho client Thần Long snapshot cố định. AI sau phải đọc KB trước và chỉ reverse/trace đúng điểm còn thiếu, không mổ lại toàn bộ client.
+This repository is the **canonical technical memory** for this frozen Thần Long client snapshot. Future AI must read the knowledge base before doing new reverse engineering.
 
-## Bắt buộc đọc theo thứ tự
+The KB is **not a verbatim chat dump**. Exact technical facts are preserved exactly; repeated discussion, dead ends and exploratory wording are deduplicated into structured documents. Read `KB_METHOD.md` for the preservation/evidence policy.
+
+## Mandatory reading order
 
 1. `AI_INDEX.md`
-2. `analysis/00_MASTER_RESEARCH_MAP.md`
-3. `analysis/09_PHASE2_DECRYPTED_DATA_LUA.md`
-4. `research/VERIFIED.md` + `research/VERIFIED_PHASE2.md` + `research/VERIFIED_PHASE3.md`
-5. tài liệu subsystem/feature đúng task
-6. `database/README.md` và database cụ thể
-7. `research/PROBABLE.md` / `research/HYPOTHESES.md` / `research/TODO.md` nếu cần đào tiếp.
+2. `KB_METHOD.md`
+3. `analysis/00_MASTER_RESEARCH_MAP.md`
+4. `analysis/09_PHASE2_DECRYPTED_DATA_LUA.md`
+5. `research/VERIFIED.md`
+6. `research/VERIFIED_PHASE2.md`
+7. `research/VERIFIED_PHASE3.md`
+8. the subsystem/feature document relevant to the task
+9. `database/README.md` and `database/FINDING_TO_DOC_MAP.md`
+10. `research/PROBABLE.md`, `research/HYPOTHESES.md`, `research/TODO.md` only when missing information must be investigated.
 
-## Quy tắc cho mọi AI
-
-### Không broad reverse lại nếu docs/database đã trả lời
-
-- inventory/shop → `analysis/04_INVENTORY_ITEMS_SHOP.md` + `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`
-- exact packets/actions → `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md`
-- UI/action lifecycle → `analysis/13_UI_RUNTIME_ACTION_SURFACE.md` + `database/UI_PACKET_LIFECYCLE.md`
-- nearby player/entity scanner → `analysis/14_NEARBY_ENTITY_UI_SCHEMA.md`
-- player/social target object → `analysis/16_PLAYER_INTERACTION_UI_API.md`
-- Nga My/healing donor → `analysis/15_AUTO_RECOVERY_NGAMY_ENGINE.md` + `database/NGAMY_SUPPORT_SKILLS.md`
-- buff IDs/duration/stack → `analysis/17_BUFF_RUNTIME_SCHEMA.md`
-- skill cooldown/quick skills/F1 semantics → `analysis/18_SKILLBAR_COOLDOWN_QUICKSKILLS.md`
-- progress/Captcha safety → `analysis/19_PROGRESS_CAPTCHA_SAFETY.md`
-- main-thread execution → `analysis/21_MAIN_THREAD_DISPATCHER.md`
-- map readiness/object navigation → `analysis/22_MAP_MINIMAP_RUNTIME.md`
-- Auto Train → `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md` + `features/AUTO_TRAIN.md`
-- Auto Buff → `features/AUTO_BUFF.md` + `analysis/23_AUTOBUFF_V131_SOURCE_DONOR.md`
-- adaptive Train/Party/Buff/Sell/Revive/spot orchestration → `features/AUTO_ORCHESTRATOR.md`
-- revive/Đầu thai → `features/AUTO_REVIVE.md`
-- Auto Sell → `features/AUTO_SELL.md`
-- NPC Trị liệu → `features/AUTO_HEAL_NPC.md` + `database/NPC_SERVICE_CANDIDATES.md`
-- NPC/map/route → `database/README.md`, `database/npcs/`, `MAPS.csv`, AutoPath databases.
-
-### Mức chắc chắn
+## Evidence labels
 
 - **VERIFIED** — direct binary/metadata/decrypted asset/Lua/runtime evidence.
-- **PROBABLE** — evidence mạnh nhưng chưa end-to-end/runtime-confirmed.
-- **HYPOTHESIS** — hướng test, không phải fact.
-- **SOURCE-INSPECTED DONOR** — logic/UX/state-policy đã thấy trực tiếp trong source tool cũ; hữu ích làm donor nhưng không tự nâng thành runtime VERIFIED của kiến trúc mới.
+- **PROBABLE** — strong evidence, not yet end-to-end runtime verified.
+- **HYPOTHESIS** — proposed direction requiring validation.
+- **SOURCE-INSPECTED DONOR** — behavior/UX/state policy observed in older tool source; useful donor, but not automatically runtime-verified in the new architecture.
 
-### Frozen snapshot
+Never silently promote a prediction into VERIFIED.
 
-Chủ sở hữu không có kế hoạch thay client trong repo. Không cần bắt user hash-check mỗi lần. Historic RVA chỉ để locate/debug; semantic name/ID ưu tiên hơn hardcode address.
+## Frozen snapshot / Git LFS rule
 
-### Git LFS
+The owner intentionally keeps this repo as one fixed client snapshot. Do not request a new hash/version check every session.
 
-Contents API có thể trả `.dll/.exe/.dat` dưới dạng pointer ~130 byte. Deep analysis đã dùng original bytes. Nếu cần disassembly mới, phải dùng original LFS/local bytes, không phân tích pointer text.
+GitHub Contents may show `.dll/.exe/.dat` as ~130-byte LFS pointers. Deep reverse used the real original bytes. If new native disassembly is genuinely required, use original LFS/local bytes, not pointer text.
 
-## Phase 2 — decrypted semantic data breakthrough
+# Major breakthroughs already solved
 
-Đã tái tạo đủ `FGClientTool_Windows.dll` decrypt để mở custom bundles và extract semantic data.
+## Phase 1 — IL2CPP architecture
 
-Kết quả chính:
+Client is Unity Windows x64 + IL2CPP. `global-metadata.dat` is metadata version 39. `GameAssembly.dll` exposes a broad `il2cpp_*` runtime API surface.
+
+Core bridge classes include:
+
+- `FGStudio.LuaSystem.LuaSystemManager`
+- `FGStudio.LuaSystem.LuaSystemSharedData`
+- `FGStudio.LuaSystem.API.LuaSystemAPI_Game`
+- `FGStudio.LuaSystem.API.LuaSystemAPI_GUI`
+- `FGStudio.LuaSystem.API.LuaSystemAPI_Network`
+- `FGStudio.LuaSystem.GUI.UIButton`.
+
+## Phase 2 — decrypted semantic data
+
+Custom bundle decrypt was reproduced sufficiently to extract Config/Interface/Lua data.
+
+Recovered:
+
 - **75 Config XML TextAssets**
 - **338 UI layout XML TextAssets**
 - **1,469 UI handler bindings**
 - **339 high-level Lua script classes** + global infrastructure
-- **169 TCP packet constants**
-- exact Lua payloads cho revive, sell, bag sort, item actions, GameDialog.
+- **169 TCP packet constants**.
 
-Với UI/automation, ưu tiên:
+For UI/gameplay investigation, use this priority:
 
 `Lua source -> Config/Layout semantic data -> exact handler/payload -> native reverse only if still needed`.
 
-## Phase 3 — UI/runtime breakthrough
+## Phase 3 — structured runtime/UI data
 
-### Nearby peaceful players
+Shipped UI proves semantic runtime APIs for nearby players, selected targets, bag/items, buffs, skill cooldowns, map readiness, team members, pet/spirit and tasks.
 
-`Game.GetNearByPeacePlayers(MaxPlayers)` feeds shipped UI fields RoleID, Name, Level, FactionID, HP, MaxHP, GuildName, AvartaID and TeamRank. Nearby friendly scanning therefore does not require party membership, OCR or CE value search.
+Examples:
 
-### Selected target / other-player object
+- `Game.GetNearByPeacePlayers(limit)` exposes RoleID/Name/Level/FactionID/HP/MaxHP/GuildName/AvartaID/TeamRank.
+- `Game.SelectedTarget` exposes target identity/vitals/type state.
+- `Game.GetSkillCooldown(skillID)` exposes passed/cooldown ticks.
+- `Game.GetBuffs()` exposes BuffID/DurationTick/Stack.
+- `Game.GetItemsAtSite(Site)` is the semantic bag/storage source.
+- `Game.IsMapReady`, `GetLocalMapObjects`, `GetNearbyObjects`, `MoveTo`, `GoTo` provide map/movement state.
 
-`Game.SelectedTarget` exposes target identity/vitals/type data. `OtherRolePopup` additionally consumes TeamID, GroupID, GuildID, GuildRank and AlliesID and uses RoleID-driven actions.
+## Phase 4 — MainThread dispatcher is now statically solved
 
-### Exact Auto menu action
+`FGStudio.Engine.Utilities.MainThread` is no longer just a candidate.
 
-`TopIcon:AutoTrainClick()` calls `GUI.FindUI("AutoFight_Main"):StartAutoFight(C_AutoModel.Train)`. Visible `Đánh quái` in settings is not the start command.
+Direct GameAssembly disassembly verifies:
 
-### Nga My donor — corrected identity
+- `.ctor()` creates `ConcurrentQueue<System.Action>` at `this+0x20`;
+- `Awake()` sets singleton Instance;
+- `Execute(Action)` enqueues into the queue;
+- `Update()` calls `DoExecuteWorks()`;
+- `DoExecuteWorks()` loops queue state -> dequeue -> `Action.Invoke` until empty.
 
-Actual Config IDs:
+Exact frozen-snapshot RVAs are documented in `analysis/21_MAIN_THREAD_DISPATCHER.md`.
 
-- 406 Phật Quang Phổ Chiếu
-- **407 Xung Hư Dưỡng Khí**
-- 408 Khởi Tử Hồi Sinh
-- **423 Kim Châm Độ Kiếp**
-- 424 Thanh Tâm Phổ Thiện Chú.
+Game-owned network producers (`TCPGame` and `TCPLogin` SocketCommand/Event handlers) themselves construct legitimate managed `System.Action` objects and call `MainThread.Execute`. See `analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md`.
 
-Legacy Lua key `KIMCHAMDOKIEP` points to 407 but visible UI + Config prove 407 is Xung Hư Dưỡng Khí. Never copy that misleading name into new code. Built-in AutoHp fallback is 406 -> 424 -> 407.
+Therefore the internal dispatcher chain is VERIFIED. Remaining work is only the external bridge proof: safely construct/root a managed Action, enqueue one harmless callback, and prove it executes on Unity Update thread.
 
-### Skill cooldown / F-key semantics
+# Canonical analysis documents
 
-`Game.GetSkillCooldown(skillID)` returns passed/cooldown ticks. SkillBar semantic action is `Game.UseSkill(skillID)`; physical F-key position is only presentation/configuration.
+## Architecture / reverse foundation
 
-### Buff runtime
-
-Local `Game.GetBuffs()` exposes BuffID, DurationTick(ms), Stack; GetBuffData/GetBuffProperties add semantic information; Add/Update/Remove events provide state proof.
-
-### Bag/shop runtime
-
-Bag UI renders `Game.GetItemsAtSite(Site)` and receives AddItem/RemoveItem/UpdateItemsList events. NPC Shop uses current item instance ID + current NpcShopID/ShopID; Quick Sell is only a UI wrapper around the same request.
-
-### Map runtime
-
-`Game.IsMapReady`, `GetLocalMapObjects`, `GetNearbyObjects`, `GetCurrentMoveDestination`, `MoveTo` and `GoTo` provide real map/movement state. Use them instead of fixed post-map delays.
-
-### Main-thread bridge candidate
-
-`FGStudio.Engine.Utilities.MainThread` exposes singleton Instance, Execute(Action), Update, DoExecuteWorks and `ConcurrentQueue<Action> waitToBeProcess`. Surface is verified; exact enqueue/drain execution needs final targeted proof before mutable external actions.
-
-### Captcha safety
-
-`NewCaptcha` opens a user-verification UI. Automation must pause and require manual user handling; no auto-solving/bypass.
-
-## Source donor + orchestration synthesis
-
-`ThanLongAutoBuff_Source_v1.3.1` has now been source-inspected and documented in `analysis/23_AUTOBUFF_V131_SOURCE_DONOR.md`.
-
-Keep these donor ideas:
-
-- one independent `GameSession` per PID;
-- scan-and-tick filters for RoleID/guild/faction;
-- HP/level/MaxHP composite filters;
-- lowest-HP and MaxHP-priority target policies;
-- MaxHP target locking;
-- self branch separated from nearby-player branch;
-- target revalidation immediately before cast;
-- per-target/global pacing guards;
-- short retry TTL for transient blank metadata;
-- per-client profiles and diagnostics;
-- fail-closed version/build checks.
-
-Do **not** copy its low-level `CreateRemoteThread`/`remote_worker.S` action path, hardcoded RVA dependency, or direct `ObjectManager.sprites` scan as the new canonical design. Migrate the useful behavior into semantic scanners + max-one-action state machine + validated Unity main-thread dispatcher.
-
-The current cross-feature design is recorded in `features/AUTO_ORCHESTRATOR.md`: map/spot travel, Party discovery/join, Auto Buff, death-rate switching, loot-rate switching, Auto Sell, Revive and adaptive TrainSpot scoring are coordinated by one per-client orchestrator.
-
-## Analysis map
-
-- `analysis/00_MASTER_RESEARCH_MAP.md` — architecture/file priority
-- `analysis/01_IL2CPP_RUNTIME_METADATA.md` — IL2CPP/metadata
-- `analysis/02_LUA_GAME_UI_NETWORK_API.md` — Lua bridge/UI/network
+- `analysis/00_MASTER_RESEARCH_MAP.md` — file priority and architecture map
+- `analysis/01_IL2CPP_RUNTIME_METADATA.md` — IL2CPP/metadata/runtime surface
+- `analysis/02_LUA_GAME_UI_NETWORK_API.md` — Lua/Game/GUI/Network bridge
 - `analysis/03_WORLD_ENTITY_MAP_PATH.md` — world/entity/map/path
-- `analysis/04_INVENTORY_ITEMS_SHOP.md` — inventory/shop
+- `analysis/04_INVENTORY_ITEMS_SHOP.md` — inventory/item/shop foundation
 - `analysis/05_COMBAT_SKILLS_BUFFS.md` — combat/skills/buffs
-- `analysis/06_ASSETS_ENCRYPTION_BUNDLES.md` — asset encryption
-- `analysis/07_SUPPORT_MODULES_LAUNCHER.md` — support/launcher
-- `analysis/08_FILE_BY_FILE_CATALOG.md` — file-by-file catalog
-- `analysis/09_PHASE2_DECRYPTED_DATA_LUA.md` — decrypted Config/Interface/Lua
-- `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md` — built-in train/PK/quest/FuBen engine
+- `analysis/06_ASSETS_ENCRYPTION_BUNDLES.md` — FG decrypt and Unity bundles
+- `analysis/07_SUPPORT_MODULES_LAUNCHER.md` — launcher/support modules
+- `analysis/08_FILE_BY_FILE_CATALOG.md` — file-by-file reverse value
+- `analysis/09_PHASE2_DECRYPTED_DATA_LUA.md` — decrypted Config/Interface/Lua results.
+
+## Gameplay/UI semantic subsystems
+
+- `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md` — Train/PK/Quest/FuBen auto engine
 - `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md` — exact packet/action payloads
-- `analysis/12_GLOBAL_LUA_HELPERS.md` — helpers such as GoToNPC
+- `analysis/12_GLOBAL_LUA_HELPERS.md` — `GoToNPC`, `GoToMonster`, reusable helpers
 - `analysis/13_UI_RUNTIME_ACTION_SURFACE.md` — UI event/action architecture
-- `analysis/14_NEARBY_ENTITY_UI_SCHEMA.md` — nearby-player/target schema
-- `analysis/15_AUTO_RECOVERY_NGAMY_ENGINE.md` — recovery/Nga My donor + corrected skill naming
-- `analysis/16_PLAYER_INTERACTION_UI_API.md` — selected-player/social data/actions
-- `analysis/17_BUFF_RUNTIME_SCHEMA.md` — BuffID/duration/stack/properties/events
-- `analysis/18_SKILLBAR_COOLDOWN_QUICKSKILLS.md` — quick skills/cooldown/semantic use
-- `analysis/19_PROGRESS_CAPTCHA_SAFETY.md` — progress + Captcha guard
-- `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md` — bag/events/shop/quick-sell internals
-- `analysis/21_MAIN_THREAD_DISPATCHER.md` — game-owned MainThread dispatcher target
-- `analysis/22_MAP_MINIMAP_RUNTIME.md` — map readiness/local objects/movement/world map
-- `analysis/23_AUTOBUFF_V131_SOURCE_DONOR.md` — source audit of Auto Buff v1.3.1; preserve behavior/UX donors, reject legacy remote-worker action path.
+- `analysis/14_NEARBY_ENTITY_UI_SCHEMA.md` — nearby peaceful/enemy player + target schema
+- `analysis/15_AUTO_RECOVERY_NGAMY_ENGINE.md` — Nga My donor and corrected skill identity
+- `analysis/16_PLAYER_INTERACTION_UI_API.md` — player/social target actions/data
+- `analysis/17_BUFF_RUNTIME_SCHEMA.md` — buff ID/duration/stack/properties/events
+- `analysis/18_SKILLBAR_COOLDOWN_QUICKSKILLS.md` — skill cooldown and F-key semantics
+- `analysis/19_PROGRESS_CAPTCHA_SAFETY.md` — progress/channel/Captcha guard
+- `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md` — bag events/NPCShop/Quick Sell
+- `analysis/21_MAIN_THREAD_DISPATCHER.md` — exact MainThread queue/Update/Action.Invoke chain
+- `analysis/22_MAP_MINIMAP_RUNTIME.md` — map-ready/local objects/movement
+- `analysis/23_TASK_QUEST_AUTOMATION.md` — structured Task/Auto Quest donor
+- `analysis/24_PET_SPIRIT_AUTO_RUNTIME.md` — Pet/Spirit runtime and auto behavior
+- `analysis/25_TEAM_RUNTIME_FOLLOW.md` — team state/HP/position/actions/Follow
+- `analysis/26_STORAGE_BANK_ITEM_MOVE.md` — storage item move + bank money semantics
+- `analysis/27_LOOT_PICKUP_FILTER_ENGINE.md` — item-pack/loot scan/filter/pickup
+- `analysis/28_STATIC_DATA_DATABASE_EXPANSION.md` — Items/Skills/Magic/Monsters/Equips normalized schemas
+- `analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md` — game-owned Action construction + MainThread.Execute producers.
 
-## Database map
+## Older-tool source donor / orchestration
 
-Start at `database/README.md`.
+- `analysis/23_AUTOBUFF_V131_SOURCE_DONOR.md` — source audit of Auto Buff v1.3.1; keep UX/state-policy donors, reject legacy remote-worker mutable-action path
+- `features/AUTO_ORCHESTRATOR.md` — coordinated Train/Party/Buff/Sell/Revive/spot switching and adaptive orchestration.
 
-Static world data includes full maps/NPCs/FuBen/AutoPath databases. Protocol/API/UI references include packet IDs, API quick reference, UI callbacks, Lua catalog, UI lifecycle, AutoSettings and `database/NGAMY_SUPPORT_SKILLS.md`.
+# Database navigation
 
-## Feature specs
+Start at:
+
+- `database/README.md`
+- `database/FINDING_TO_DOC_MAP.md`.
+
+High-value databases:
+
+- `database/MAPS.csv` — 193 maps
+- `database/npcs/NPCS_*.csv` — 1,003 NPCs
+- `database/NPC_SERVICE_CANDIDATES.md`
+- `database/FUBEN_SCENARIOS.csv`
+- `database/AUTOPATH_PORTAL_EDGES.csv`
+- `database/AUTOPATH_ITEM_DESTINATIONS.csv`
+- `database/autopath_npc/AUTOPATH_NPC_EDGES_*.csv`
+- `database/PACKET_IDS.csv`
+- `database/PACKET_CATALOG.md`
+- `database/API_QUICK_REFERENCE.md`
+- `database/UI_LAYOUT_CALLBACKS.md`
+- `database/LUA_SCRIPT_CATALOG.md`
+- `database/UI_PACKET_LIFECYCLE.md`
+- `database/AUTO_SETTINGS_SCHEMA.md`
+- `database/NGAMY_SUPPORT_SKILLS.md`
+- `database/static/README.md` — navigation/schema for the large normalized Config databases.
+
+Large Items/Skills/Magic/Monsters/Equips CSV chunks have been generated offline; uploading all chunks remains an explicit TODO until they appear under `database/static/*/`.
+
+# Feature specs
 
 - `features/AUTO_TRAIN.md`
 - `features/AUTO_BUFF.md`
 - `features/AUTO_SELL.md`
 - `features/AUTO_REVIVE.md`
 - `features/AUTO_HEAL_NPC.md`
-- `features/AUTO_ORCHESTRATOR.md` — coordinated Train/Party/Buff/Sell/Revive/spot switching and adaptive spot scoring.
+- `features/AUTO_ORCHESTRATOR.md`.
 
-## High-value exact facts
+# High-value exact facts
 
-- NPC 339 = Đỗ Thanh Đằng, ResName LangZhong1, Map 5 Lâu Lan; exact treatment selection remains runtime GameDialog data.
-- `GoToNPC` uses GetNPCPosition -> GoTo -> ClickNPC.
-- Train start = `StartAutoFight(C_AutoModel.Train)`.
-- Sell = packet 200036, payload `itemInstanceID:NpcShopID:ShopID`.
-- Revive = packet 200063; normal/Đầu thai=1, newbie=2, skill=3.
-- GameDialog selection submit = packet 100007, `selectionID:SelectedItemID`.
-- Party request-to-join target action is already recorded in `analysis/16_PLAYER_INTERACTION_UI_API.md`; exact leave-team action still needs targeted trace.
+## Auto Train
 
-## Những việc không nên lặp lại
+`C_AutoModel.Train = 1`.
 
-- CE scan individual HP offsets when semantic APIs already expose needed data.
-- pixel/OCR item/player classification when semantic fields exist.
-- click visible Đánh quái settings tab as Train start.
-- use stale UIButton instances across transitions.
-- fixed sleep as state proof.
-- call response handlers as request actions.
-- hardcode RVA as sole identity.
-- use `CreateRemoteThread` / injected `remote_worker` as the production mutable action engine.
-- enumerate `ObjectManager.sprites` as first choice when `GetNearByPeacePlayers`/other semantic queries already exist.
-- invent NPC X/Y when GetNPCPosition exists.
-- invent treatment selection IDs.
-- trust misleading internal variable names without Config/UI cross-check.
-- label “request sent” as “server accepted” without state proof.
+Shipped wrapper:
 
-## Current state
+`GUI.FindUI("AutoFight_Main"):StartAutoFight(C_AutoModel.Train)`.
 
-General reverse + decrypted asset/Lua + deep UI/runtime semantic analysis are recorded. Auto Buff v1.3.1 has additionally been mined as a behavior/UX donor, and the larger adaptive orchestration design is documented. Remaining work should be targeted runtime verification/implementation, especially the main-thread dispatcher, non-team beneficial-skill acceptance, leave-team action, and server-dynamic interactions—not a new broad reverse pass.
+The visible `Đánh quái` settings tab is not the actual Train start action.
+
+## Nearby peaceful players
+
+Shipped UI reads from `Game.GetNearByPeacePlayers(limit)`:
+
+`RoleID, Name, Level, FactionID, HP, MaxHP, GuildName, AvartaID, TeamRank`.
+
+Do not restart with CE HP scans for those fields.
+
+## Nga My skill identity correction
+
+Frozen Config truth:
+
+- 406 = Phật Quang Phổ Chiếu
+- **407 = Xung Hư Dưỡng Khí**
+- 408 = Khởi Tử Hồi Sinh
+- **423 = Kim Châm Độ Kiếp**
+- 424 = Thanh Tâm Phổ Thiện Chú.
+
+Legacy Lua variable `KIMCHAMDOKIEP` misleadingly points to 407. Do not copy that naming bug.
+
+## Auto Sell
+
+`CMD_NPC_SHOP_SELL_REQUEST = 200036`
+
+payload:
+
+`itemInstanceID:NpcShopID:ShopID`.
+
+Mutation rule: one current instance -> one sell -> wait server/item event -> rescan.
+
+## Storage move
+
+`CMD_ITEM_ACTION = 100005`, Move action = `5`.
+
+Payload:
+
+`5:itemInstanceID:destinationSite`.
+
+Bag=10; Storage pages=11..15.
+
+## Revive / Đầu thai
+
+`CMD_REVIVE_DATA = 200063`
+
+- normal/Đầu thai = 1
+- newbie = 2
+- skill revive = 3.
+
+## Dynamic NPC dialog
+
+`Selections[selectionID] = visibleText`.
+
+Submit through `CMD_SHOW_GAMEDIALOG = 100007` with:
+
+`selectionID:SelectedItemID`.
+
+Normally SelectedItemID is `-1` when no item reward selection is involved.
+
+## Lâu Lan healer candidate
+
+Map 5 = Lâu Lan.
+
+- NPC 337 Đỗ Bất Đằng — `LangZhong1`
+- NPC 338 Đỗ Hoàng Đằng — `LangZhong1`
+- NPC 339 Đỗ Thanh Đằng — `LangZhong1`.
+
+NPC 339 is a strong static healer candidate; exact Trị liệu dialog selection remains server/runtime data and must not be invented.
+
+## Weapon classification
+
+For static `Equips.xml`, `EquipPoint=0` is Weapon. Do not classify weapon templates only as `Type<10`, because weapon subtypes also include Blade/Sickle/Zither outside that range.
+
+# Architecture guardrail
+
+Canonical production direction:
+
+`Resolver -> read-only Scanner -> Snapshot Store -> Observer -> State Machine -> Safety Guard -> Action Queue(max 1 mutable action) -> valid System.Action -> MainThread.Execute -> semantic Game/Lua/UI action -> state proof`
+
+Do not use:
+
+- production `CreateRemoteThread`/continuous remote worker for gameplay mutations;
+- arbitrary-thread direct Unity/Lua action invocation;
+- stale UIButton pointers;
+- screen coordinates when semantic API exists;
+- fixed Sleep as success proof;
+- response handlers as request actions;
+- hardcoded RVA as sole identity;
+- OCR/CE scans when structured game data already exists;
+- invented NPC coordinates instead of `Game.GetNPCPosition`;
+- invented Trị liệu selection IDs;
+- automated Captcha solving/bypass.
+
+# Current bottlenecks
+
+Broad reverse is no longer the task. Remaining work is targeted:
+
+1. external managed `System.Action` construction/rooting + harmless live `MainThread.Execute` proof;
+2. runtime/server-dynamic NPC Trị liệu selection proof;
+3. non-team beneficial-skill acceptance proof for Auto Buff;
+4. selected social/party runtime actions where source semantics are still incomplete;
+5. upload the already-generated large normalized static CSV chunks.
+
+Read `research/TODO.md` before doing any further reverse work.
