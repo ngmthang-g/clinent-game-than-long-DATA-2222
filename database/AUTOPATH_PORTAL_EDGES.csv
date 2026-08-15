@@ -1,0 +1,166 @@
+EdgeType,FromMapID,FromX,FromY,ToMapID,ToX,ToY,FromMapName,ToMapName
+Portal,25,1122,3986,137,4442,2069,Thái Hồ,Mạn Đà Sơn Trang
+Portal,137,4598,1952,25,1352,4014,Mạn Đà Sơn Trang,Thái Hồ
+Portal,2,1070,5470,21,1400,1320,Đại Lý,Kiếm Các
+Portal,2,9470,5480,19,1600,4800,Đại Lý,Vô Lượng Sơn
+Portal,2,5120,890,20,9000,9050,Đại Lý,Nhĩ Hải
+Portal,3,14000,7920,24,8510,1570,Lạc Dương,Nhạn Nam
+Portal,3,2760,8180,22,8680,5510,Lạc Dương,Đôn Hoàng
+Portal,3,8190,1400,23,1360,8470,Lạc Dương,Tung Sơn
+Portal,4,2220,7690,30,9000,8790,Tô Châu,Kính Hồ
+Portal,4,8900,14900,25,6890,1550,Tô Châu,Thái Hồ
+Portal,4,8920,3000,26,1570,8450,Tô Châu,Tây Hồ
+Portal,5,9550,5660,68,947,7010,Lâu Lan,Cao Xương
+Portal,5,760,5660,71,6220,1000,Lâu Lan,Đại Uyển
+Portal,5,5140,430,73,1000,7080,Lâu Lan,Tháp Lý Mộc
+Portal,6,3070,730,23,8620,5920,Thiếu Lâm Tự,Tung Sơn
+Portal,7,2950,520,25,9000,8650,Cái Bang Tổng Đà,Thái Hồ
+Portal,8,3120,530,25,9120,2900,Quang Minh Điện,Thái Hồ
+Portal,9,2860,1380,21,9100,4850,Nga My Sơn,Kiếm Các
+Portal,10,3070,1435,19,2700,1810,Thiên Long Tự,Vô Lượng Sơn
+Portal,11,1040,1950,19,3720,8900,Lăng Ba Động ,Vô Lượng Sơn
+Portal,12,3050,1190,22,1420,1360,Tinh Túc Hải,Đôn Hoàng
+Portal,13,3040,1070,22,2000,8880,Thiên Sơn,Đôn Hoàng
+Portal,14,3030,975,30,1030,2700,Núi Võ Đang,Kính Hồ
+Portal,15,5180,600,30,2300,5680,Mộ Dung,Kính Hồ
+Portal,19,1370,4720,2,9400,5400,Vô Lượng Sơn,Đại Lý
+Portal,19,2700,1555,10,3070,1630,Vô Lượng Sơn,Thiên Long Tự
+Portal,19,3720,9180,11,1340,1950,Vô Lượng Sơn,Lăng Ba Động 
+Portal,19,9090,7730,30,1080,770,Vô Lượng Sơn,Kính Hồ
+Portal,20,9300,9250,2,5110,1060,Nhĩ Hải,Đại Lý
+Portal,20,1180,5200,57,8700,8500,Nhĩ Hải,Thương Sơn
+Portal,20,1070,1300,60,8400,6150,Nhĩ Hải,Thạch Lâm
+Portal,20,9090,7410,56,1180,630,Nhĩ Hải,Ôn Tuyền Động
+Portal,21,1200,1220,2,1370,5400,Kiếm Các,Đại Lý
+Portal,21,9150,4460,9,2860,1580,Kiếm Các,Nga My Sơn
+Portal,21,3390,9000,22,7420,1550,Kiếm Các,Đôn Hoàng
+Portal,21,7400,1260,17,5300,1100,Kiếm Các,Đường Môn
+Portal,17,5530,800,21,7400,1500,Đường Môn,Kiếm Các
+Portal,22,9175,5620,3,3380,8180,Đôn Hoàng,Lạc Dương
+Portal,22,1800,9070,13,3040,1270,Đôn Hoàng,Thiên Sơn
+Portal,22,7420,1250,21,3390,8800,Đôn Hoàng,Kiếm Các
+Portal,22,1120,1360,12,3050,1390,Đôn Hoàng,Tinh Túc Hải
+Portal,22,5320,9190,50,7500,700,Đôn Hoàng,Bảo Tàng Động Tầng 1
+Portal,22,2260,6888,55,7000,7200,Đôn Hoàng,Hỏa Diệm Sơn
+Portal,23,1080,8470,3,8190,1800,Tung Sơn,Lạc Dương
+Portal,23,9060,2300,25,3000,9270,Tung Sơn,Thái Hồ
+Portal,23,9070,5920,6,3070,1030,Tung Sơn,Thiếu Lâm Tự
+Portal,24,8510,1170,3,13600,7920,Nhạn Nam,Lạc Dương
+Portal,24,7930,8900,31,7330,1190,Nhạn Nam,Nhạn Bắc
+Portal,24,1160,8933,42,733,973,Nhạn Nam,Ma Nhai Động
+Portal,24,1140,8340,43,9080,2040,Nhạn Nam,Thảo Nguyên
+Portal,24,2400,1200,16,3100,1100,Nhạn Nam,Quỷ Cốc
+Portal,16,3110,730,24,2400,1600,Quỷ Cốc,Nhạn Nam
+Portal,25,6900,1250,4,8888,14500,Thái Hồ,Tô Châu
+Portal,25,9300,2710,8,3120,675,Thái Hồ,Quang Minh Điện
+Portal,25,9000,8900,7,2950,820,Thái Hồ,Cái Bang Tổng Đà
+Portal,25,2960,9440,23,9060,2000,Thái Hồ,Tung Sơn
+Portal,26,8440,1400,83,1660,8300,Tây Hồ,Võ Di
+Portal,26,1170,8600,4,8920,3400,Tây Hồ,Tô Châu
+Portal,26,8880,8300,27,1250,1550,Tây Hồ,Long Tuyền
+Portal,27,1070,1400,26,8680,8300,Long Tuyền,Tây Hồ
+Portal,27,9600,5150,29,8320,8300,Long Tuyền,Thanh Nguyên
+Portal,27,5440,1330,28,720,7500,Long Tuyền,Kiếm Gia
+Portal,28,433,7700,27,5440,1530,Kiếm Gia,Long Tuyền
+Portal,29,8620,8720,27,9400,5150,Thanh Nguyên,Long Tuyền
+Portal,29,8840,1280,84,8800,9000,Thanh Nguyên,Mai Lĩnh
+Portal,30,9330,8870,4,2460,7670,Kính Hồ,Tô Châu
+Portal,30,1020,540,19,8900,7730,Kính Hồ,Vô Lượng Sơn
+Portal,30,830,2700,14,3030,1100,Kính Hồ,Núi Võ Đang
+Portal,30,2000,5680,15,5100,800,Kính Hồ,Mộ Dung
+Portal,31,7330,990,24,7930,8700,Nhạn Bắc,Nhạn Nam
+Portal,31,4480,1940,33,2090,1460,Nhạn Bắc,Yến Vương Cổ Mộ Tầng 1
+Portal,31,1740,8300,32,1280,1180,Nhạn Bắc,Thảo Liệu Trường
+Portal,32,680,840,31,1740,8100,Thảo Liệu Trường,Nhạn Bắc
+Portal,33,2090,1260,31,4600,2200,Yến Vương Cổ Mộ Tầng 1,Nhạn Bắc
+Portal,33,740,2929,34,2500,960,Yến Vương Cổ Mộ Tầng 1,Yến Vương Cổ Mộ Tầng 2
+Portal,34,2500,660,33,940,2929,Yến Vương Cổ Mộ Tầng 2,Yến Vương Cổ Mộ Tầng 1
+Portal,34,3370,3080,35,990,3600,Yến Vương Cổ Mộ Tầng 2,Yến Vương Cổ Mộ Tầng 3
+Portal,35,690,3600,34,3070,3080,Yến Vương Cổ Mộ Tầng 3,Yến Vương Cổ Mộ Tầng 2
+Portal,35,3400,800,36,3230,3200,Yến Vương Cổ Mộ Tầng 3,Yến Vương Cổ Mộ Tầng 4
+Portal,36,3230,3500,35,3400,950,Yến Vương Cổ Mộ Tầng 4,Yến Vương Cổ Mộ Tầng 3
+Portal,36,1860,2737,37,820,3240,Yến Vương Cổ Mộ Tầng 4,Yến Vương Cổ Mộ Tầng 5
+Portal,37,710,3340,36,1860,3000,Yến Vương Cổ Mộ Tầng 5,Yến Vương Cổ Mộ Tầng 4
+Portal,37,3400,3686,38,2080,600,Yến Vương Cổ Mộ Tầng 5,Yến Vương Cổ Mộ Tầng 6
+Portal,38,2080,300,37,3400,3486,Yến Vương Cổ Mộ Tầng 6,Yến Vương Cổ Mộ Tầng 5
+Portal,38,2090,2400,39,860,555,Yến Vương Cổ Mộ Tầng 6,Yến Vương Cổ Mộ Tầng 7
+Portal,39,860,355,38,2090,2100,Yến Vương Cổ Mộ Tầng 7,Yến Vương Cổ Mộ Tầng 6
+Portal,39,2530,3210,40,450,3600,Yến Vương Cổ Mộ Tầng 7,Yến Vương Cổ Mộ Tầng 8
+Portal,40,450,3720,39,2970,3150,Yến Vương Cổ Mộ Tầng 8,Yến Vương Cổ Mộ Tầng 7
+Portal,40,1270,3130,41,610,3600,Yến Vương Cổ Mộ Tầng 8,Yến Vương Cổ Mộ Tầng 9
+Portal,41,470,3640,40,1400,3260,Yến Vương Cổ Mộ Tầng 9,Yến Vương Cổ Mộ Tầng 8
+Portal,42,733,673,24,1460,8933,Ma Nhai Động,Nhạn Nam
+Portal,43,9441,1960,24,1440,8340,Thảo Nguyên,Nhạn Nam
+Portal,43,8280,8000,48,1550,1550,Thảo Nguyên,Trường Bạch Sơn
+Portal,43,3800,9330,45,2070,1560,Thảo Nguyên,Liêu Tây
+Portal,43,2060,3860,44,7400,850,Thảo Nguyên,Thủy Kính Hồ
+Portal,44,7400,577,43,2360,3860,Thủy Kính Hồ,Thảo Nguyên
+Portal,45,2070,1260,43,3800,9030,Liêu Tây,Thảo Nguyên
+Portal,45,1300,3480,46,4070,7225,Liêu Tây,Tiên Vương Phần
+Portal,45,8100,8000,47,1920,1170,Liêu Tây,Ngân Ngai Tuyết Nguyên
+Portal,46,4070,7525,45,1600,3480,Tiên Vương Phần,Liêu Tây
+Portal,47,1920,870,45,7890,8000,Ngân Ngai Tuyết Nguyên,Liêu Tây
+Portal,48,1250,1550,43,7716,7853,Trường Bạch Sơn,Thảo Nguyên
+Portal,48,9040,7888,49,1550,1550,Trường Bạch Sơn,Hoàng Long Phủ
+Portal,49,1250,1550,48,8640,7888,Hoàng Long Phủ,Trường Bạch Sơn
+Portal,50,7500,520,22,5320,9000,Bảo Tàng Động Tầng 1,Đôn Hoàng
+Portal,50,980,7080,51,7300,1020,Bảo Tàng Động Tầng 1,Bảo Tàng Động Tầng 2
+Portal,51,7300,820,50,980,6900,Bảo Tàng Động Tầng 2,Bảo Tàng Động Tầng 1
+Portal,51,700,7310,52,560,670,Bảo Tàng Động Tầng 2,Bảo Tàng Động Tầng 3
+Portal,52,560,370,51,700,7110,Bảo Tàng Động Tầng 3,Bảo Tàng Động Tầng 2
+Portal,52,6968,6666,53,1100,570,Bảo Tàng Động Tầng 3,Bảo Tàng Động Tầng 4
+Portal,53,800,270,52,6968,6366,Bảo Tàng Động Tầng 4,Bảo Tàng Động Tầng 3
+Portal,53,7120,7410,54,4080,1440,Bảo Tàng Động Tầng 4,Bảo Tàng Động Tầng 5
+Portal,54,4080,1240,53,6920,7410,Bảo Tàng Động Tầng 5,Bảo Tàng Động Tầng 4
+Portal,55,960,4920,70,2300,3150,Hỏa Diệm Sơn,Hỏa Diệm Cốc
+Portal,55,1080,970,68,7175,1212,Hỏa Diệm Sơn,Cao Xương
+Portal,55,7100,7200,22,2300,6888,Hỏa Diệm Sơn,Đôn Hoàng
+Portal,56,980,630,20,8870,7200,Ôn Tuyền Động,Nhĩ Hải
+Portal,57,9140,8440,20,1535,4970,Thương Sơn,Nhĩ Hải
+Portal,57,9400,5300,59,880,6060,Thương Sơn,Dã Nhân Cốc
+Portal,59,450,7400,57,9200,5300,Dã Nhân Cốc,Thương Sơn
+Portal,60,8600,6150,20,1300,1400,Thạch Lâm,Nhĩ Hải
+Portal,60,760,2150,63,8400,8450,Thạch Lâm,Nam Chiêu
+Portal,60,1300,1500,65,1400,7230,Thạch Lâm,Diêm Hồ
+Portal,60,3555,9000,61,1500,8650,Thạch Lâm,Ngọc Khê
+Portal,60,3420,1800,67,7580,7490,Thạch Lâm,Thiên Khanh Thụ Động
+Portal,61,1250,8650,60,3555,8800,Ngọc Khê,Thạch Lâm
+Portal,61,1950,5020,62,1200,7200,Ngọc Khê,Đào Hoa Nguyên
+Portal,62,760,7490,61,2180,5110,Đào Hoa Nguyên,Ngọc Khê
+Portal,63,8636,8740,60,1200,2300,Nam Chiêu,Thạch Lâm
+Portal,63,3300,800,64,2020,9150,Nam Chiêu,Miêu Cương
+Portal,64,2020,9450,63,3300,1000,Miêu Cương,Nam Chiêu
+Portal,65,1630,7520,60,1500,1500,Diêm Hồ,Thạch Lâm
+Portal,65,7300,2780,66,3200,1160,Diêm Hồ,Bạch Sa Diêm Khanh
+Portal,66,3200,960,65,7100,2780,Bạch Sa Diêm Khanh,Diêm Hồ
+Portal,67,7580,7690,60,3420,2000,Thiên Khanh Thụ Động,Thạch Lâm
+Portal,68,7340,1030,55,1400,1270,Cao Xương,Hỏa Diệm Sơn
+Portal,68,2250,3535,69,3110,979,Cao Xương,Cao Xương Mê Cung
+Portal,68,747,7010,5,9250,5660,Cao Xương,Lâu Lan
+Portal,69,3310,750,68,2250,3235,Cao Xương Mê Cung,Cao Xương
+Portal,70,2125,3460,55,1160,4920,Hỏa Diệm Cốc,Hỏa Diệm Sơn
+Portal,71,6250,630,5,960,5660,Đại Uyển,Lâu Lan
+Portal,71,800,1640,72,2800,1300,Đại Uyển,Hãn Huyết Lĩnh
+Portal,72,3020,1300,71,1000,1640,Hãn Huyết Lĩnh,Đại Uyển
+Portal,73,1000,7380,5,5140,730,Tháp Lý Mộc,Lâu Lan
+Portal,73,3380,1180,74,1100,3260,Tháp Lý Mộc,Tháp Khắc Lạp Mã Can
+Portal,73,7333,1370,75,3530,7473,Tháp Lý Mộc,Côn Lôn Sơn
+Portal,74,1100,3430,73,3610,1140,Tháp Khắc Lạp Mã Can,Tháp Lý Mộc
+Portal,75,3530,7673,73,6400,1233,Côn Lôn Sơn,Tháp Lý Mộc
+Portal,75,920,850,76,3020,2800,Côn Lôn Sơn,Côn Lôn Phúc Địa
+Portal,76,3020,3020,75,1000,1100,Côn Lôn Phúc Địa,Côn Lôn Sơn
+Portal,83,1555,8600,26,8440,1600,Võ Di,Tây Hồ
+Portal,83,8776,4488,84,1200,1600,Võ Di,Mai Lĩnh
+Portal,83,8100,1500,85,1240,9070,Võ Di,Nam Hải
+Portal,83,3200,8800,99,3500,1100,Võ Di,Hoàng Long Động
+Portal,84,1055,1470,83,8555,4535,Mai Lĩnh,Võ Di
+Portal,84,8800,9220,29,8955,1455,Mai Lĩnh,Thanh Nguyên
+Portal,85,1040,9070,83,8100,1700,Nam Hải,Võ Di
+Portal,85,9060,4700,86,8720,1620,Nam Hải,Quỳnh Châu
+Portal,86,8720,1420,85,8860,4700,Quỳnh Châu,Nam Hải
+Portal,99,3500,950,83,3400,8600,Hoàng Long Động,Võ Di
+Portal,99,3500,950,83,3400,8600,Hoàng Long Động,Võ Di
+Portal,18,8270,4520,26,7800,7400,Đào Hoa,Tây Hồ
+Portal,26,8020,7200,18,8400,5000,Tây Hồ,Đào Hoa
+Portal,21,9036,2837,143,4873,4091,Kiếm Các,Tuyệt Tình Cốc
+Portal,143,4773,3891,21,8496,2865,Tuyệt Tình Cốc,Kiếm Các
