@@ -32,7 +32,8 @@ Repo này là **canonical knowledge base** cho client Thần Long snapshot cố 
 - main-thread execution → `analysis/21_MAIN_THREAD_DISPATCHER.md`
 - map readiness/object navigation → `analysis/22_MAP_MINIMAP_RUNTIME.md`
 - Auto Train → `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md` + `features/AUTO_TRAIN.md`
-- Auto Buff → `features/AUTO_BUFF.md`
+- Auto Buff → `features/AUTO_BUFF.md` + `analysis/23_AUTOBUFF_V131_SOURCE_DONOR.md`
+- adaptive Train/Party/Buff/Sell/Revive/spot orchestration → `features/AUTO_ORCHESTRATOR.md`
 - revive/Đầu thai → `features/AUTO_REVIVE.md`
 - Auto Sell → `features/AUTO_SELL.md`
 - NPC Trị liệu → `features/AUTO_HEAL_NPC.md` + `database/NPC_SERVICE_CANDIDATES.md`
@@ -43,6 +44,7 @@ Repo này là **canonical knowledge base** cho client Thần Long snapshot cố 
 - **VERIFIED** — direct binary/metadata/decrypted asset/Lua/runtime evidence.
 - **PROBABLE** — evidence mạnh nhưng chưa end-to-end/runtime-confirmed.
 - **HYPOTHESIS** — hướng test, không phải fact.
+- **SOURCE-INSPECTED DONOR** — logic/UX/state-policy đã thấy trực tiếp trong source tool cũ; hữu ích làm donor nhưng không tự nâng thành runtime VERIFIED của kiến trúc mới.
 
 ### Frozen snapshot
 
@@ -118,6 +120,28 @@ Bag UI renders `Game.GetItemsAtSite(Site)` and receives AddItem/RemoveItem/Updat
 
 `NewCaptcha` opens a user-verification UI. Automation must pause and require manual user handling; no auto-solving/bypass.
 
+## Source donor + orchestration synthesis
+
+`ThanLongAutoBuff_Source_v1.3.1` has now been source-inspected and documented in `analysis/23_AUTOBUFF_V131_SOURCE_DONOR.md`.
+
+Keep these donor ideas:
+
+- one independent `GameSession` per PID;
+- scan-and-tick filters for RoleID/guild/faction;
+- HP/level/MaxHP composite filters;
+- lowest-HP and MaxHP-priority target policies;
+- MaxHP target locking;
+- self branch separated from nearby-player branch;
+- target revalidation immediately before cast;
+- per-target/global pacing guards;
+- short retry TTL for transient blank metadata;
+- per-client profiles and diagnostics;
+- fail-closed version/build checks.
+
+Do **not** copy its low-level `CreateRemoteThread`/`remote_worker.S` action path, hardcoded RVA dependency, or direct `ObjectManager.sprites` scan as the new canonical design. Migrate the useful behavior into semantic scanners + max-one-action state machine + validated Unity main-thread dispatcher.
+
+The current cross-feature design is recorded in `features/AUTO_ORCHESTRATOR.md`: map/spot travel, Party discovery/join, Auto Buff, death-rate switching, loot-rate switching, Auto Sell, Revive and adaptive TrainSpot scoring are coordinated by one per-client orchestrator.
+
 ## Analysis map
 
 - `analysis/00_MASTER_RESEARCH_MAP.md` — architecture/file priority
@@ -142,7 +166,8 @@ Bag UI renders `Game.GetItemsAtSite(Site)` and receives AddItem/RemoveItem/Updat
 - `analysis/19_PROGRESS_CAPTCHA_SAFETY.md` — progress + Captcha guard
 - `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md` — bag/events/shop/quick-sell internals
 - `analysis/21_MAIN_THREAD_DISPATCHER.md` — game-owned MainThread dispatcher target
-- `analysis/22_MAP_MINIMAP_RUNTIME.md` — map readiness/local objects/movement/world map.
+- `analysis/22_MAP_MINIMAP_RUNTIME.md` — map readiness/local objects/movement/world map
+- `analysis/23_AUTOBUFF_V131_SOURCE_DONOR.md` — source audit of Auto Buff v1.3.1; preserve behavior/UX donors, reject legacy remote-worker action path.
 
 ## Database map
 
@@ -156,7 +181,8 @@ Static world data includes full maps/NPCs/FuBen/AutoPath databases. Protocol/API
 - `features/AUTO_BUFF.md`
 - `features/AUTO_SELL.md`
 - `features/AUTO_REVIVE.md`
-- `features/AUTO_HEAL_NPC.md`.
+- `features/AUTO_HEAL_NPC.md`
+- `features/AUTO_ORCHESTRATOR.md` — coordinated Train/Party/Buff/Sell/Revive/spot switching and adaptive spot scoring.
 
 ## High-value exact facts
 
@@ -166,6 +192,7 @@ Static world data includes full maps/NPCs/FuBen/AutoPath databases. Protocol/API
 - Sell = packet 200036, payload `itemInstanceID:NpcShopID:ShopID`.
 - Revive = packet 200063; normal/Đầu thai=1, newbie=2, skill=3.
 - GameDialog selection submit = packet 100007, `selectionID:SelectedItemID`.
+- Party request-to-join target action is already recorded in `analysis/16_PLAYER_INTERACTION_UI_API.md`; exact leave-team action still needs targeted trace.
 
 ## Những việc không nên lặp lại
 
@@ -176,10 +203,13 @@ Static world data includes full maps/NPCs/FuBen/AutoPath databases. Protocol/API
 - fixed sleep as state proof.
 - call response handlers as request actions.
 - hardcode RVA as sole identity.
+- use `CreateRemoteThread` / injected `remote_worker` as the production mutable action engine.
+- enumerate `ObjectManager.sprites` as first choice when `GetNearByPeacePlayers`/other semantic queries already exist.
 - invent NPC X/Y when GetNPCPosition exists.
 - invent treatment selection IDs.
 - trust misleading internal variable names without Config/UI cross-check.
+- label “request sent” as “server accepted” without state proof.
 
 ## Current state
 
-General reverse + decrypted asset/Lua + deep UI/runtime semantic analysis are recorded. Remaining work should be targeted runtime verification/implementation, especially the main-thread dispatcher and server-dynamic interactions, not a new broad reverse pass.
+General reverse + decrypted asset/Lua + deep UI/runtime semantic analysis are recorded. Auto Buff v1.3.1 has additionally been mined as a behavior/UX donor, and the larger adaptive orchestration design is documented. Remaining work should be targeted runtime verification/implementation, especially the main-thread dispatcher, non-team beneficial-skill acceptance, leave-team action, and server-dynamic interactions—not a new broad reverse pass.
