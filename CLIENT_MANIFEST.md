@@ -1,70 +1,77 @@
-# Client Manifest
+# Client Snapshot Manifest
 
 Repository: `ngmthang-g/clinent-game-than-long-DATA-2222`
 Branch: `main`
+Status: **FROZEN RESEARCH SNAPSHOT**
 
-This file identifies the exact client build used by the research knowledge base. Binary-dependent conclusions should always be tied to this manifest.
+## Mục đích
 
-## Client identity
+Repo này không được dùng như nơi cập nhật client liên tục. Chủ sở hữu dự kiến giữ nguyên bộ client hiện tại để làm nguồn binary/data cố định cho knowledge base. Vì vậy future AI không cần yêu cầu hash lại mỗi lần làm việc.
 
-- Client name: Than Long
-- Build/version: `PENDING`
-- Capture date: `PENDING`
-- Source/install package: `PENDING`
-- Architecture: `PENDING`
-- Unity version: `PENDING`
-- IL2CPP version/metadata version: `PENDING`
+## Identity đã ghi nhận
 
-## Important source files
+- Company/product từ `app.info`: `FGStudio` / `Thần Long  Mobile`
+- Root PC manifest: `GameVersion=126`, `LauncherVersion=4`
+- Streaming `Version.xml`: `Application VerCode=125`
+- Game executable: `Thần Long  Mobile.exe`
+- Architecture: Windows x64 game client
+- Runtime architecture: Unity + IL2CPP
+- IL2CPP metadata version: `39`
+- Unity family: Unity 6 / `6000.3.x`
+- `data.unity3d` version text: `6000.3.6f1`
+- `Interface.unity3d` contains version text: `6000.3.7f1`
 
-Known files currently relevant to analysis include:
+`GameVersion=126` và `VerCode=125` là hai versioning layers được đọc từ hai manifest/config khác nhau; không coi chúng là mâu thuẫn nếu chưa biết release/update semantics chính xác.
+
+## Primary reverse-engineering sources
+
+### Logic / schema
 
 - `Game/GameAssembly.dll`
+- `Game/Thần Long  Mobile_Data/il2cpp_data/Metadata/global-metadata.dat`
+
+### Static data / assets
+
+- `Game/Thần Long  Mobile_Data/data.unity3d`
+- `Game/Thần Long  Mobile_Data/StreamingAssets/Config.unity3d`
+- `Game/Thần Long  Mobile_Data/StreamingAssets/Interface.unity3d`
+- `Game/Thần Long  Mobile_Data/StreamingAssets/Interface/*.unity3d`
+- `Game/Thần Long  Mobile_Data/StreamingAssets/Translations.unity3d`
+
+### Custom asset transform
+
+- `Game/Thần Long  Mobile_Data/Plugins/x86_64/FGClientTool_Windows.dll`
+
+### Engine/support
+
 - `Game/UnityPlayer.dll`
+- `Game/Thần Long  Mobile_Data/Plugins/x86_64/lib_burst_generated.dll`
+- `Game/Thần Long  Mobile_Data/Plugins/x86_64/livekit_ffi.dll`
 - `Game/baselib.dll`
-- `Game/D3D12/D3D12Core.dll`
-- game executable under `Game/`
-- `global-metadata.dat` under the game's `il2cpp_data/Metadata/` tree
-- native plugins under the game's `Plugins/x86_64/` tree
+
+### Launcher/session layer
+
 - `Host.exe`
 - `Launcher.exe`
+- their configs/PDBs
 
-The repository also contains supporting resources and configuration files. Do not assume every file is analysis-relevant; document relevance as it is established.
+## LFS note
 
-## SHA-256 fingerprints
+Các `.dll/.exe/.dat` lớn được Git LFS quản lý. GitHub Contents API có thể trả pointer text ~130 bytes thay vì original binary. Không phân tích LFS pointer như thể đó là DLL thật.
 
-Populate these from the local original files. Do not use Git LFS pointer hashes as binary SHA-256 fingerprints.
+Original bytes của archive nghiên cứu đã được đối chiếu với LFS object ID của `GameAssembly.dll` và `global-metadata.dat`, nên deep-analysis docs hiện tại thuộc đúng snapshot này.
 
-| File | SHA-256 | Status |
-|---|---|---|
-| `Game/GameAssembly.dll` | `PENDING` | required |
-| `Game/UnityPlayer.dll` | `PENDING` | required |
-| `global-metadata.dat` | `PENDING` | required |
-| `Game/baselib.dll` | `PENDING` | recommended |
-| game executable | `PENDING` | recommended |
-| `Host.exe` | `PENDING` | optional |
-| `Launcher.exe` | `PENDING` | optional |
+## Không cần làm lại
 
-## Version-change rule
+Không yêu cầu user:
 
-Before reusing offsets, native addresses, metadata layouts, method mappings, or binary-specific conclusions:
+- hash lại client;
+- upload client mới;
+- xác định version lại;
+- phân tích tổng quát lại GameAssembly.
 
-1. Compare current local SHA-256 values with this manifest.
-2. If `GameAssembly.dll` or `global-metadata.dat` changes, mark binary-specific conclusions for re-validation.
-3. Preserve old findings instead of overwriting history when a new client build is introduced.
-4. Add the new build identifier and clearly state which findings were re-verified.
+Chỉ re-open original binary khi một task cụ thể cần exact disassembly/field/signature chưa có trong knowledge base.
 
-## Recommended local hash command
+## Entry point
 
-PowerShell example:
-
-```powershell
-Get-FileHash -Algorithm SHA256 ".\Game\GameAssembly.dll"
-```
-
-For the metadata file, use the exact local path shown by the client installation.
-
-## Notes
-
-- Files managed by Git LFS may appear as small pointer files through some GitHub APIs. That pointer content is not the original binary.
-- Deep analysis should use the original binary bytes, not the LFS pointer text.
+Đọc `AI_INDEX.md` rồi `analysis/00_MASTER_RESEARCH_MAP.md`.
