@@ -1,180 +1,122 @@
-# PROBABLE findings
+# PROBABLE findings — remaining after Phase 2
 
-> Các mục ở đây có bằng chứng mạnh nhưng chưa đủ để coi là runtime-verified end-to-end. AI được phép dùng chúng để định hướng, nhưng phải giữ nhãn PROBABLE khi đưa vào implementation.
+> Phase 2 đã nâng nhiều giả thuyết cũ thành VERIFIED. File này chỉ giữ các kết luận còn có bằng chứng mạnh nhưng chưa đủ end-to-end/runtime proof.
 
-## 1. `LuaSystemSharedData` là query layer chính cho world scanner
-
-**Confidence: HIGH**
-
-Evidence:
-
-- có `GetNearbySprites`, `GetNearbyObjects`, `GetLocalMapObjects`, `GetNearByEnemies`, `GetNearByPeacePlayers`, `GetNearestNPC`, item-pack queries;
-- closures gần đó nhắc `npcData`, `monsterData`, `petData`, `portalData`, `zoneData`.
-
-Prediction:
-
-Có thể lấy danh sách nearby world objects qua API/data layer này thay vì heap-scan toàn process.
-
-Cần verify:
-
-- instance/static access;
-- return types và fields cụ thể.
-
-## 2. Nearby player/entity object chứa nhiều state hơn HP
-
-**Confidence: HIGH**
-
-Runtime trước đó đã quan sát Name/RoleID/HP/MaxHP/position của player trong phạm vi client. Network/world architecture còn có faction/team/PK/combat/death/target/buff state.
-
-Prediction:
-
-Cùng object hoặc related data có thể cung cấp:
-
-- MP/MaxMP;
-- level/class/faction;
-- TeamID;
-- PK/combat state;
-- target;
-- death/moving state;
-- appearance/title/guild;
-- buff reference/list.
-
-Không được giả định exact offsets.
-
-## 3. Config.unity3d chứa static game database quan trọng
-
-**Confidence: HIGH**
-
-Evidence:
-
-- tên file `Config.unity3d`;
-- GameAssembly lộ rất nhiều template/data APIs và `NPCData`, `MonsterData`, `PortalData`, item/skill/magic keys;
-- game có custom asset decrypt DLL.
-
-Prediction:
-
-Sau decrypt/extract sẽ tìm được ít nhất một phần của:
-
-- NPC/map/monster;
-- item/equipment/gem;
-- skill/buff/magic;
-- quest/task;
-- portal/zone.
-
-Exact table/file names chưa known.
-
-## 4. Interface.unity3d chứa Lua/UI definitions cần cho NPC/shop/auto
-
-**Confidence: HIGH**
-
-Evidence:
-
-- `LuaSystemManager.LoadFromAssetBundle`;
-- high-level Lua GUI APIs;
-- bundle tên Interface + Shared/LoadingResources;
-- callback cụ thể không xuất hiện như public C# helper.
-
-Prediction:
-
-Exact UI script names/callbacks cho Trị liệu, shop, Đầu thai, Auto/Đánh quái có khả năng nằm ở interface/Lua asset layer.
-
-## 5. Built-in Auto Fight có state/radius riêng
-
-**Confidence: MEDIUM-HIGH**
-
-Evidence:
-
-- `get/set_EnableAutoF1`;
-- `RangerAuto`, `RangerRequest`, auto flags;
-- `DrawCicleAutoFight`;
-- `RemoveAutoFightMark`.
-
-Prediction:
-
-UI “Auto -> Đánh quái” có thể đang cấu hình một built-in auto subsystem, không phải chỉ bật một button callback đơn giản.
-
-Cần trace manual toggle để biết exact Lua action/config.
-
-## 6. NPC action nên đi qua `ClickNPC` thay vì mouse click
+## 1. `LuaSystemSharedData` là query layer chính cho runtime world scanner
 
 **Confidence: VERY HIGH**
 
-Disassembly của `ClickNPC` đã cho thấy stop-path -> locate -> face/select -> `SendClickOnObject`.
+Evidence:
+- `GetNearbySprites`, `GetNearbyObjects`, `GetLocalMapObjects`, `GetNearByEnemies`, `GetNearByPeacePlayers`, `GetNearestNPC`, item-pack queries tồn tại;
+- built-in Auto Fight thực tế dùng nearby-sprite APIs để tìm quái.
 
 Prediction:
+- external read-only scanner có thể lấy world entities từ semantic query/data layer thay vì heap-scan toàn process.
 
-Đây là entry point ổn định hơn coordinate click cho mở NPC. End-to-end vẫn cần main-thread/state validation.
+Chưa VERIFIED:
+- exact return type của từng API;
+- full field schema cho Player/NPC/Monster/Pet/Object.
 
-## 7. Shop action là Lua callback -> packet -> server update
+## 2. Nearby player/entity object chứa nhiều state hơn HP/position
 
 **Confidence: HIGH**
+
+Runtime cũ đã quan sát Name/RoleID/HP/MaxHP/position của player trong AOI. Engine/API/network vocabulary cho thấy faction/team/combat/death/target/buff concepts tồn tại.
+
+Likely fields hoặc related objects:
+- MP/MaxMP;
+- level/faction/class;
+- TeamID;
+- combat/PK/death/moving state;
+- target;
+- guild/title/appearance;
+- buff list/reference.
+
+Không được giả định offsets cho đến khi return object schema được map.
+
+## 3. `LangZhong1/2` là dấu hiệu rất mạnh của NPC y sư/trị liệu
+
+**Confidence: HIGH, nhưng service contract chưa runtime-confirmed**
 
 Evidence:
-
-- không thấy helper C# rõ kiểu SellItem;
-- GUI/Lua/network bridge hiện diện;
-- ProcessRemoveItem/UpdateItemsList/UpdateMoney/TraderState hiện diện.
+- nhiều NPC có tên mang nghĩa y/dược dùng `ResName=LangZhong1/2`;
+- Lâu Lan có ba NPC liên tiếp 337/338/339 dùng `LangZhong1`, trong đó 339 là Đỗ Thanh Đằng;
+- Config còn có NPC 912 `Tháp trị liệu`, ResName `ZhiLiaoTa`.
 
 Prediction:
+- ResName family có thể dùng làm **candidate classifier** để tìm healer service NPC.
 
-Một trace manual sell sẽ lộ callback/packet đủ để replay chuẩn.
+Chưa VERIFIED:
+- mỗi NPC `LangZhong*` có cùng menu/service hay không;
+- selection text/ID cụ thể mà server trả ở từng map/state.
 
-## 8. Treatment/Heal NPC cũng là Lua callback/network flow
+## 4. NPC Trị liệu nên được chọn bằng active `GameDialog.Selections`
+
+**Confidence: VERY HIGH**
+
+Evidence:
+- generic NPC dialog is server-driven;
+- selectionID được gắn vào visible text;
+- built-in FuBen auto đã có exact pattern lowercase/text-match rồi gửi actual selection ID.
+
+Prediction:
+- treatment flow có thể ổn định bằng semantic text matching (`Trị liệu`, hoặc text tương đương do server trả) thay vì hardcode button pointer/selection ID.
+
+Cần runtime proof trên đúng NPC mong muốn và xác nhận outcome HP/money/dialog state.
+
+## 5. Buff-aware auto buff có thể dùng object buff data thay vì suy luận HP đơn thuần
 
 **Confidence: HIGH**
 
-Evidence tương tự shop: ClickNPC mở interaction, nhưng treatment helper C# rõ ràng chưa thấy; Lua GUI + SendPacket bridge có sẵn.
+Evidence: `GetBuffs`, `HasBuff`, `GetBuffData`, `GetBuffProperties`, target buff icons tồn tại.
 
 Prediction:
+- sau khi map return schema có thể quyết định theo buff ID/duration/stack/source/target kết hợp HP policy.
 
-Trace `CallUI/MainCallUI + SendPacket` khi bấm Trị liệu/Đồng ý sẽ cho exact action sequence.
-
-## 9. Asset custom transform chủ yếu là obfuscation
+## 6. Ground-loot scanner có thể đọc semantic item-pack object
 
 **Confidence: HIGH**
 
-FGClientTool decrypt dùng swap/add/sub/xorshift + header checks `UnityFS/UnityRaw/UnityWeb`, không giống cipher cryptographic mạnh.
+Evidence: built-in Auto Fight dùng `GetNearbyItemPack`, `GetNearestItemPack`, `PickUpItemFromItemPack`.
 
 Prediction:
+- có thể enumerate drop package ID/position/distance/contents đủ để lọc loot tốt hơn macro click.
 
-Port exact native algorithm sẽ phục hồi bundle để standard Unity extractor xử lý.
+Exact item-pack schema chưa map hoàn chỉnh.
 
-## 10. Launcher có multi-process/sync/record-playback layer riêng
-
-**Confidence: HIGH**
-
-Binary strings trực tiếp có session/process IDs, sync group/master, recording/playback process/group methods.
-
-Prediction:
-
-Có thể nghiên cứu launcher để tái sử dụng process/session orchestration, nhưng per-game runtime data vẫn phải tách context từng process.
-
-## 11. Buff-aware auto buff khả thi
+## 7. Portal graph có thể dùng làm offline coarse-route planner
 
 **Confidence: MEDIUM-HIGH**
 
-`GetBuffs`, `HasBuff`, `GetBuffData`, target buff icons tồn tại.
+Evidence:
+- 165 portal edges có From/To map và tọa độ;
+- built-in `Game.GoTo` đã hỗ trợ cross-map route abstraction.
 
 Prediction:
+- static graph có thể giúp chọn route/map topology, diagnostics hoặc fallback planning.
 
-Khi map return object, auto buff có thể quyết định theo buff ID/duration/stack + HP policy, không chỉ HP%.
+Caveat:
+- portal có thể phụ thuộc level/quest/event/state;
+- runtime `Game.GoTo` vẫn nên là route executor ưu tiên.
 
-## 12. Ground-loot scanner khả thi
-
-**Confidence: HIGH**
-
-`GetNearestItemPack`, `GetNearbyItemPack`, `PickUpItemFromItemPack` tồn tại.
-
-Prediction:
-
-Có thể enumerate ItemPack ID/distance và pick up semantic items sau khi map exact pack data.
-
-## 13. NPC/map offline DB có thể tự sinh
+## 8. Một phần NPC service role có thể phân loại offline bằng Name/ResName
 
 **Confidence: MEDIUM-HIGH**
 
-`GetNearestNPC(npcResID)`, `NPCData`, `PortalData`, `ZoneData` + config bundles.
+Ví dụ semantic families như `LangZhong*`, `TieJiang`, `JiuDianLaoBan*`, `ShangRen`, `CaiFeng`, `YuFu` cho biết archetype/model và thường tương quan với nghề/service.
 
 Prediction:
+- có thể tạo candidate service tags để rút ngắn tìm kiếm NPC bán đồ/trị liệu/sửa đồ.
 
-Có thể sinh Map -> NPC RESID -> Name -> X/Y -> service relationship, thay vì nhập tay từng NPC.
+Không được coi ResName là API contract; phải validate dialog/shop data trước khi action.
+
+## 9. External tool có thể gọi built-in AutoFight engine ổn định nếu dispatch đúng main thread/state
+
+**Confidence: HIGH**
+
+Lua semantics của engine đã rõ. Rủi ro còn lại là **bridge execution context** từ external tool vào Unity/Lua runtime.
+
+Prediction:
+- dùng resolver + proven Unity main-thread dispatcher + max-one-action queue sẽ ổn định hơn gọi native arbitrary thread hoặc click nền.
+
+Cần implementation/runtime validation trên bridge hiện tại.
