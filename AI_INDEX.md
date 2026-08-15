@@ -10,217 +10,162 @@ Repo này là **canonical knowledge base** cho client Thần Long hiện tại. 
 
 1. `AI_INDEX.md` — file này.
 2. `analysis/00_MASTER_RESEARCH_MAP.md` — bản đồ kiến trúc + ưu tiên file.
-3. `research/VERIFIED.md` — các fact đã xác nhận.
-4. Tài liệu subsystem đúng với task.
-5. `database/API_QUICK_REFERENCE.md` khi cần tra symbol/method nhanh.
-6. `research/PROBABLE.md` và `research/HYPOTHESES.md` khi cần hướng đào tiếp.
+3. `analysis/09_PHASE2_DECRYPTED_DATA_LUA.md` — kết quả giải mã Config/Interface/Lua.
+4. `research/VERIFIED.md` — các fact đã xác nhận.
+5. Tài liệu subsystem/feature đúng với task.
+6. `database/API_QUICK_REFERENCE.md`, `database/CONFIG_TABLE_CATALOG.md`, `database/PACKET_CATALOG.md` khi cần tra nhanh.
+7. `research/PROBABLE.md` và `research/HYPOTHESES.md` khi cần hướng đào tiếp.
 
-## Quy tắc quan trọng cho mọi AI
+## Quy tắc cho mọi AI
 
-### 1. Không phân tích lại nếu tài liệu đã trả lời
+### Không broad reverse lại nếu docs đã trả lời
 
-Ví dụ nếu cần biết API inventory có gì, đọc:
+Ví dụ:
+- inventory/shop → `analysis/04_INVENTORY_ITEMS_SHOP.md` + `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md`;
+- Auto Train → `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md` + `features/AUTO_TRAIN.md`;
+- revive/Đầu thai → `features/AUTO_REVIVE.md`;
+- Auto Sell → `features/AUTO_SELL.md`;
+- NPC Trị liệu → `features/AUTO_HEAL_NPC.md`.
 
-- `analysis/04_INVENTORY_ITEMS_SHOP.md`
-- `database/API_QUICK_REFERENCE.md`
+### Phân biệt độ chắc chắn
 
-Không dump lại toàn bộ GameAssembly chỉ để tìm `GetFreeBagSpace`.
-
-### 2. Phân biệt mức chắc chắn
-
-- **VERIFIED** — direct binary/metadata/disassembly/runtime evidence.
+- **VERIFIED** — direct binary/metadata/decrypted asset/Lua/runtime evidence.
 - **PROBABLE** — evidence mạnh, semantics chưa end-to-end verified.
 - **HYPOTHESIS** — giả thuyết dùng để định hướng test.
 
-Không được biến dự đoán thành fact chỉ vì nó “hợp lý”.
+Không được biến dự đoán thành fact.
 
-### 3. Repo là frozen snapshot
+### Repo là frozen snapshot
 
-Chủ sở hữu không có kế hoạch thay client trong repo này. Không cần bắt user chạy hash/version check mỗi lần. Historic RVAs chỉ dùng để locate/debug; code cuối vẫn nên resolve semantic name khi có thể.
+Chủ sở hữu không có kế hoạch thay client trong repo này. Không cần bắt user chạy hash/version check mỗi lần. Historic RVA chỉ để locate/debug; code cuối vẫn nên resolve semantic name khi có thể.
 
-### 4. LFS pointer không phải binary
+### LFS pointer không phải binary
 
-GitHub Contents API có thể trả về file text khoảng 130 byte cho `.dll/.exe/.dat` vì Git LFS. Deep binary analysis đã được thực hiện trên original bytes của archive khớp snapshot. Future AI có thể dùng docs trước; nếu cần disassembly mới, phải lấy original LFS bytes/local binary chứ không phân tích pointer text.
+GitHub Contents API có thể trả file LFS khoảng 130 byte. Deep analysis được làm trên original bytes của snapshot. Nếu cần disassembly mới, phải dùng original binary, không phân tích pointer text.
+
+## Phase 2 — phát hiện làm thay đổi chiến lược reverse
+
+`FGClientTool_Windows.dll` decrypt đã được tái tạo đủ để mở các bundle custom. Đã giải mã/extract:
+- `Config.unity3d`
+- `Interface.unity3d`
+- `Translations.unity3d`
+- `LoadingResources.unity3d`
+- `Logo.unity3d`
+- `Shared.unity3d`
+- `Shared_2.unity3d`
+- `data.unity3d` vốn đã UnityFS.
+
+Kết quả:
+- **75 Config XML TextAssets**;
+- **338 UI layout XML TextAssets**;
+- **339 Lua script classes** + global infrastructure scripts;
+- **169 packet constants**;
+- exact Lua payloads cho revive, sell, bag sort, item actions, GameDialog.
+
+Vì vậy với UI/auto flow, thứ tự ưu tiên mới là:
+
+`Lua source -> Config/Layout semantic data -> exact handler/payload -> native reverse only if still needed`.
 
 ## Bản đồ tài liệu
 
 ### Architecture / file priority
-
-`analysis/00_MASTER_RESEARCH_MAP.md`
-
-- phân loại toàn bộ nhóm file;
-- P0/P1/P2/P3 reverse-engineering value;
-- kiến trúc Offline DB + Runtime Scanner + Internal Action Controller.
+- `analysis/00_MASTER_RESEARCH_MAP.md`
 
 ### IL2CPP / metadata
+- `analysis/01_IL2CPP_RUNTIME_METADATA.md`
 
-`analysis/01_IL2CPP_RUNTIME_METADATA.md`
-
-- IL2CPP x64;
-- metadata v39;
-- ~16,080 type definitions, 96 images/assemblies;
-- large `il2cpp_*` export surface;
-- metadata-driven resolver strategy.
-
-### Lua / UI / Network action bridge
-
-`analysis/02_LUA_GAME_UI_NETWORK_API.md`
-
-- `LuaSystemManager`;
-- `LuaSystemSharedData`;
-- `LuaSystemAPI_Game`;
-- `LuaSystemAPI_GUI`;
-- `LuaSystemAPI_Network`;
-- `ClickNPC` flow;
-- `UIButton.HandleClickEvent` stale-instance hazard;
-- targeted tracing strategy cho callback/packet chưa biết.
+### Lua / UI / network bridge
+- `analysis/02_LUA_GAME_UI_NETWORK_API.md`
 
 ### World / entities / maps / pathfinding
-
-`analysis/03_WORLD_ENTITY_MAP_PATH.md`
-
-- nearby sprite/object queries;
-- `GScene`;
-- `PathFinder`, `NodeGrid`;
-- NPC/Monster/Portal/Zone data;
-- AOI limitation;
-- target/loot/NPC database possibilities.
+- `analysis/03_WORLD_ENTITY_MAP_PATH.md`
 
 ### Inventory / items / shop
-
-`analysis/04_INVENTORY_ITEMS_SHOP.md`
-
-- bag APIs;
-- `LuaItemData` ID vs ItemID vs Position;
-- ItemType/EquipType;
-- Weapon detection;
-- safe filters;
-- server-authoritative sell update;
-- Auto Sell state machine.
+- `analysis/04_INVENTORY_ITEMS_SHOP.md`
 
 ### Combat / skills / buffs
-
-`analysis/05_COMBAT_SKILLS_BUFFS.md`
-
-- skill request APIs;
-- buff query APIs;
-- magic/effect flags;
-- network combat commands;
-- built-in Auto Fight evidence;
-- buff-aware automation.
+- `analysis/05_COMBAT_SKILLS_BUFFS.md`
 
 ### Asset bundles / encryption
-
-`analysis/06_ASSETS_ENCRYPTION_BUNDLES.md`
-
-- `FGClientTool_Windows.dll`;
-- `FG_Encrypt/FG_Decrypt`;
-- UnityFS/UnityRaw/UnityWeb detection;
-- `0x9E3779B9` xorshift branch;
-- Config/Interface/data/Translations bundle roles.
+- `analysis/06_ASSETS_ENCRYPTION_BUNDLES.md`
 
 ### Support modules / launcher
+- `analysis/07_SUPPORT_MODULES_LAUNCHER.md`
 
-`analysis/07_SUPPORT_MODULES_LAUNCHER.md`
+### File-by-file catalog
+- `analysis/08_FILE_BY_FILE_CATALOG.md`
 
-- UnityPlayer;
-- Burst;
-- LiveKit;
-- baselib/D3D12;
-- Host/Launcher .NET stack;
-- multi-instance/sync/record-playback evidence.
+### Decrypted Config/Interface/Lua
+- `analysis/09_PHASE2_DECRYPTED_DATA_LUA.md`
 
-### Reusable quick lookup
+### Built-in Auto Fight
+- `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md`
 
-`database/API_QUICK_REFERENCE.md`
+### Exact actions/packets
+- `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md`
 
-- high-value class/method catalog;
-- selected command names;
-- item/equip categories;
-- historic RVA hints.
+## Database quick lookup
 
-## Các entry point quan trọng nhất hiện tại
+- `database/API_QUICK_REFERENCE.md`
+- `database/NETWORK_COMMAND_CATALOG.md`
+- `database/CONFIG_TABLE_CATALOG.md`
+- `database/PACKET_CATALOG.md`
+- `database/PACKET_IDS.csv`
+- `database/UI_LAYOUT_CALLBACKS.md`
+- `database/LUA_SCRIPT_CATALOG.md`
 
-### Runtime/world data
+## Feature specs
 
-- `FGStudio.LuaSystem.LuaSystemSharedData`
-  - `GetNearbySprites`
-  - `GetNearbyObjects`
-  - `GetLocalMapObjects`
-  - `GetNearestNPC`
-  - `GetNearByEnemies`
-  - item queries.
+- `features/AUTO_TRAIN.md`
+- `features/AUTO_SELL.md`
+- `features/AUTO_REVIVE.md`
+- `features/AUTO_HEAL_NPC.md`
 
-### Scene/path
+## Entry points quan trọng
 
-- `FGStudio.Engine.Objects.GScene`
-- `PathFinder`
-- `NodeGrid`
+### World/runtime
+- `LuaSystemSharedData.GetNearbySprites/GetNearbyObjects/GetLocalMapObjects/GetNearestNPC/GetNearByEnemies`
+- `GScene`, `PathFinder`, `NodeGrid`
 
-### Game actions
+### Built-in auto/combat
+- `AutoFight_Main:StartAutoFight`
+- `Game.GetNearbySpritesWithPredicate`
+- `Game.SelectTarget`
+- `Game.ChaseTarget`
+- `Game.RequestUsingSkillWithTarget/Pos`
 
-- `LuaSystemAPI_Game.ClickNPC`
-- `SelectTarget`
-- `UseSkill` / `RequestUsingSkill*`
-- movement/state helpers.
+### NPC/navigation
+- `Game.GetNPCPosition`
+- `Game.GoTo`
+- `Game.GetNearestNPC`
+- dynamic `GameDialog.Selections`
 
-### UI
-
-- `LuaSystemAPI_GUI.MainCallUI/CallUI`
-- `MainFindUI/FindUI`
-- `LuaSystemManager.HasScript/GetScript`
-
-### Network trace
-
-- `LuaSystemAPI_Network.SendPacket`
-- `LuaSystemManager.SendPacketToServer`
-
-### Inventory
-
+### Inventory/shop
 - `GetFreeBagSpace`
 - `GetItemsAtSite`
-- `GetItemType`
-- `GetEquipType`
-- `IsItemSellable`
-- `IsItemThrowable`.
+- `GetItemType/GetEquipType`
+- `IsItemSellable/IsItemThrowable`
+- `CMD_NPC_SHOP_SELL_REQUEST = 200036`
 
-## Những việc KHÔNG nên lặp lại
+### UI/network
+- `MainCallUI/CallUI/FindUI/HasScript/GetScript`
+- `CMD_SHOW_GAMEDIALOG = 100007`
+- `CMD_REVIVE_DATA = 200063`
+- `CMD_BAG_SORT = 100006`
 
-- CE scan HP từng offset nếu mục tiêu có thể đạt qua SharedData/entity schema.
-- dùng pixel/OCR để phân loại item khi data API tồn tại.
+## Những việc không nên lặp lại
+
+- CE scan HP từng offset khi query/entity API trả lời được.
+- pixel/OCR cho item classification khi data API tồn tại.
 - gọi `UIButton.HandleClickEvent` như static/global function.
-- reuse UIButton pointer sau khi UI transition.
-- dùng fixed sleep làm state proof.
-- gọi `ProcessRemoveItem`/response handler như action request.
+- reuse UIButton pointer sau UI transition.
+- fixed sleep làm state proof.
+- gọi response handler như action request.
 - hardcode RVA làm identity duy nhất.
-- reverse `livekit_ffi.dll`, `baselib.dll`, D3D12 trước gameplay modules.
-
-## Khi gặp một tính năng chưa hoàn tất
-
-### Nếu thiếu exact UI callback
-
-Trace một thao tác manual tại:
-
-- `MainCallUI/CallUI`;
-- `HasScript/GetScript`;
-- `SendPacket`;
-- inbound `Process*`/event.
-
-### Nếu thiếu exact data field
-
-Resolve return object type của SharedData/Game API rồi enumerate metadata fields. Không scan toàn process trước.
-
-### Nếu thiếu static table
-
-Decrypt/extract `Config.unity3d` hoặc Interface bundle và commit **kết quả semantic** vào `database/`.
-
-## Research ledgers
-
-- `research/VERIFIED.md` — confirmed.
-- `research/PROBABLE.md` — strong predictions.
-- `research/HYPOTHESES.md` — ideas requiring validation.
-- `research/TODO.md` — only remaining targeted work.
+- broad reverse LiveKit/baselib/D3D12 trước gameplay modules.
+- bịa tọa độ NPC từ `AutoPath/NPCData`; dùng `Game.GetNPCPosition`.
+- bịa `selectionID` cho Trị liệu; đọc active `GameDialog.Selections`.
 
 ## Current state
 
-Deep repository/client analysis has been recorded. Future work should be **targeted verification/implementation**, not a fresh general reverse-engineering pass.
+General deep reverse + asset/Lua Phase 2 đã được ghi lại. Future work nên là **targeted verification/implementation**, không phải một fresh general reverse-engineering pass.
