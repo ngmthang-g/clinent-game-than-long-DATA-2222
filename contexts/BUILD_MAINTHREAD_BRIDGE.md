@@ -7,11 +7,13 @@ Use when implementing or debugging the external bridge that must execute semanti
 ## REQUIRED reading
 
 1. `AI_BOOTSTRAP.md`
-2. `analysis/21_MAIN_THREAD_DISPATCHER.md`
-3. `analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md`
-4. `analysis/30_EXTERNAL_ACTION_BRIDGE_BLUEPRINT.md`
-5. `analysis/01_IL2CPP_RUNTIME_METADATA.md`
+2. `contracts/MAINTHREAD_BRIDGE_V1.md` — build-ready implementation contract
+3. `analysis/30_EXTERNAL_ACTION_BRIDGE_BLUEPRINT.md` — exact Action ABI/proof details
+4. `analysis/21_MAIN_THREAD_DISPATCHER.md` — queue consumer proof
+5. `analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md` — game-owned producer donor
 6. `research/TODO.md`
+
+Read `analysis/01_IL2CPP_RUNTIME_METADATA.md` only when resolver/export details beyond the contract are actually needed.
 
 ## VERIFIED internal chain
 
