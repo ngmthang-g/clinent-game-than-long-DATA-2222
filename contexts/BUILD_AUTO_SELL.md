@@ -10,19 +10,20 @@ Use for bag-full detection, inventory filtering, vendor routing, opening shop, s
 2. `AUTO_TOOL_SCOPE.md`
 3. `features/AUTO_SELL.md`
 4. `database/AUTO_SELL_CLASSIFICATION.md`
-5. `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`
-6. `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md`
+5. `database/AUTO_SELL_VENDOR_MAP.md`
+6. `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`
 
 ## OPTIONAL — only when needed
 
+- Exact older action-flow detail: `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md`.
 - NPC movement/helper detail: `analysis/12_GLOBAL_LUA_HELPERS.md`, `analysis/22_MAP_MINIMAP_RUNTIME.md`.
-- Vendor lookup: `database/README.md`, `database/NPC_SERVICE_CANDIDATES.md`, `database/npcs/`.
+- Broader NPC discovery: `database/NPC_SERVICE_CANDIDATES.md`, `database/npcs/`.
 - Deep static schema/statistics: `analysis/28_STATIC_DATA_DATABASE_EXPANSION.md`.
 - Exact static rows/chunks: only if the required data has actually been materialized under `database/static/...`.
 - MainThread execution: `contexts/BUILD_MAINTHREAD_BRIDGE.md`.
 - Orchestrator integration: `contexts/BUILD_ORCHESTRATOR.md`.
 
-Do not load all Items/Equips merely to implement one keep/sell rule.
+Do not load all Items/Equips or all NPCs merely to implement one keep/sell route.
 
 ## VERIFIED bag truth
 
@@ -81,11 +82,24 @@ Do not pre-cache 90 slots or blindly click/sell 90 times.
 
 ## Vendor/NPC routing
 
-Use semantic NPC/map data and `Game.GetNPCPosition` / `GoToNPC` patterns. Do not invent fixed X/Y from AutoPath NPCData.
+Use `database/AUTO_SELL_VENDOR_MAP.md` first.
+
+Current high-priority Lâu Lan candidates:
+
+- NPC 328 Ba Nhĩ — static identity VERIFIED, service USER-REPORTED, runtime shop proof pending;
+- NPC 373 Mã Kiêu Minh — static identity VERIFIED, service USER-REPORTED, runtime shop proof pending;
+- NPC 341 Hiệp Hàng — static merchant-archetype candidate;
+- NPC 398 Chu Thập Tam — blacksmith/service candidate.
+
+Use semantic NPC/map data and `Game.GetNPCPosition` / `GoToNPC` patterns. Do not invent or persist fixed X/Y as the canonical route.
+
+A vendor is only promoted to runtime-verified when interaction yields a valid normal sell-capable `NPCShop` (`CMD_NPC_SHOP_DATA`, current `NpcShopID`, current `ShopID`, `IsGuildShop==false`).
 
 ## Shop state proof
 
 Do not sell merely because an NPC was clicked. Wait for current NPCShop/shopData and reject incompatible shop states such as guild-shop sell-disabled state.
+
+If a dialog exists before shop opening, read the current `GameDialog.Selections` and match the current service text; do not hardcode a global selection ID.
 
 ## Completion criteria
 
