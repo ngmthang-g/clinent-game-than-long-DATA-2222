@@ -11,6 +11,7 @@ Do not select multiple context packs unless the task genuinely spans multiple su
 Before opening broad analysis, use these when useful:
 
 - `AUTO_FEATURE_READINESS.md` — solved vs targeted-proof vs design-only status for each automation feature.
+- `research/AUTO_RUNTIME_PROOF_QUEUE.md` — **only the remaining live/runtime proofs worth collecting**; use this instead of inventing new broad reverse work.
 - `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md` — exact per-PID read-only external snapshot model and field boundaries.
 - `database/AUTO_TOOL_API_CATALOG.md` — auto-only state/query API catalog.
 - `database/AUTO_TOOL_ACTION_CATALOG.md` — **exact semantic mutable actions**, packet IDs/payloads and result-proof rules.
@@ -75,9 +76,13 @@ Do not load all 5,238 Items or 22,763 Equips.
 
 ### NPC/service/navigation
 
-Use:
+For Auto Sell vendor selection, start with:
 
-- NPC database / service candidate index;
+- `database/AUTO_SELL_VENDOR_MAP.md`.
+
+For broader discovery only when needed, use:
+
+- `database/NPC_SERVICE_CANDIDATES.md` / NPC chunks;
 - `analysis/12_GLOBAL_LUA_HELPERS.md`;
 - `analysis/22_MAP_MINIMAP_RUNTIME.md`;
 - actual `GameDialog` / `NPCShop` runtime state.
@@ -97,6 +102,25 @@ invite target -> CMD_OTHER_ROLE_COMMAND 200051 -> 5:targetRoleID
 ```
 
 Membership success still requires fresh TeamID/C_TeamData proof.
+
+### Feature is statically solved but one live behavior is missing
+
+Read:
+
+1. `AUTO_FEATURE_READINESS.md`
+2. `research/AUTO_RUNTIME_PROOF_QUEUE.md`
+3. exactly the one feature/context document named by that proof.
+
+Do **not** broad-reverse the client again merely because runtime validation has not yet been performed.
+
+Current highest-value queued proofs are:
+
+```text
+P0 external managed Action -> MainThread live callback
+P1 non-team Nga My beneficial-skill acceptance
+P1 exact Trị liệu dialog/result
+P1 Lâu Lan vendor -> normal NPCShop promotion
+```
 
 ## Conditional routes — only when that auto feature is actually requested
 
