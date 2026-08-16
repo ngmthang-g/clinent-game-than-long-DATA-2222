@@ -31,6 +31,7 @@ General architecture, bundle decrypt, Config/Interface extraction, major Lua/UI/
 - [x] AI routing / context packs / atomic facts / anti-overread layer.
 - [x] compact automation API catalog: `database/AUTO_TOOL_API_CATALOG.md`.
 - [x] feature state/action/proof contract: `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md`.
+- [x] runtime per-PID immutable snapshot contract: `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md`.
 - [x] solved-vs-gap matrix: `AUTO_FEATURE_READINESS.md`.
 
 ---
@@ -39,20 +40,28 @@ General architecture, bundle decrypt, Config/Interface extraction, major Lua/UI/
 
 ## P0.1 Runtime scanner contracts
 
-Goal: future AI should be able to implement read-only snapshots without re-reversing object layouts.
+Reusable external snapshot schemas are now documented in `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md` and routed through `contexts/BUILD_RUNTIME_SCANNER.md`.
 
-Prioritize only fields used by automation:
+Completed:
 
-- [ ] local player: finish exact reusable snapshot contract for RoleID, name, HP/MaxHP, map, position, dead, combat/busy/progress, selected target where not already explicit in canonical docs.
-- [ ] nearby PeacePlayers: add position/death only if required for the chosen non-team Buff implementation; identity/HP/MaxHP/faction/name/guild are already VERIFIED.
-- [ ] nearby enemies/monsters: add exact live HP/MaxHP fields only if built-in Train/target state does not already expose enough for the intended policy; Type/IsDeath/RoleID/ResID/Position are already documented.
-- [x] current map readiness + movement destination semantics.
-- [x] bag free space + live item identity (`ID`, `ItemID`, `Site`, `Position` and common fields).
-- [x] local buffs/cooldowns relevant to casting decisions.
-- [x] team member HP/map/position for follow/support.
-- [x] active GameDialog / NPCShop semantic state/lifecycle.
+- [x] local RoleData + busy/progress/map/selected-target snapshot contract.
+- [x] nearby PeacePlayer exact proven fields and explicit boundary around unproven generic Position/death.
+- [x] Train-target exact proven fields: `Type, IsDeath, RoleID, ResID, Position`.
+- [x] selected-target identity/type/HPPercent schema.
+- [x] map readiness/current position/movement-destination contract.
+- [x] bag free-space + live item identity/versioning contract.
+- [x] local buff + cooldown normalized snapshots.
+- [x] team HP/map/backup-position + nearby precise-position contract.
+- [x] GameDialog/NPCShop/Revival transaction snapshots.
+- [x] per-PID snapshot version and tool-owned world-generation invalidation model.
 
-Do not map extra actor fields unless a concrete feature uses them.
+Only targeted gaps remain:
+
+- [ ] arbitrary non-team PeacePlayer Position/death only if the chosen Auto Buff implementation actually needs it.
+- [ ] exact live HP/MaxHP for every unselected nearby monster only if a future Train policy requires absolute values.
+- [ ] richer arbitrary-target BuffID/duration list only if target buff icons + cast/HP proof are insufficient.
+
+Do not map extra actor fields merely for completeness.
 
 ## P0.2 Auto Train knowledge
 
