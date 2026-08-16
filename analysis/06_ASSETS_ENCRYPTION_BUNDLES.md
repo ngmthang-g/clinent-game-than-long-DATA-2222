@@ -1,92 +1,59 @@
-# Asset Bundles / Config / Interface / FGClientTool encryption
+# Asset Bundles / Config / Interface / FGClientTool — current evidence
 
-## 1. Vì sao asset branch quan trọng ngang GameAssembly
+> This document was originally written before the custom bundles were successfully decoded. It is now refreshed so future AI does **not** repeat the old assumption that Config/Interface contents are only predictions.
 
-`GameAssembly.dll + global-metadata.dat` cho biết **logic và API**. Các `.unity3d` bundles có khả năng chứa **data cụ thể**: NPC/map/item/skill/UI/localization/config/resources. Muốn AI hiểu client mà không reverse lại, phải giữ hai nhánh tri thức song song.
+---
 
-## 2. Các bundle/data chính trong repo
+## 1. Why the asset branch matters alongside GameAssembly
 
-### `data.unity3d`
+`GameAssembly.dll + global-metadata.dat` give executable logic, runtime APIs and semantic type/member identity.
 
-- khoảng 47.6 MB;
-- bắt đầu bằng header chuẩn `UnityFS`;
-- version string quan sát: `6000.3.6f1`;
-- ưu tiên cao vì là bundle lớn và không cần custom decrypt đầu vào.
+The asset branch gives the **data the logic consumes**:
 
-### `StreamingAssets/Config.unity3d`
+- static IDs/templates/rules;
+- maps/NPCs/items/equipment/skills/monsters/tasks/pets;
+- Lua orchestration source;
+- UI layouts/callback names;
+- localization/resources.
 
-- khoảng 1.36 MB;
-- header bị custom/obfuscate;
-- ứng viên ưu tiên cao cho static configuration.
+For many future questions, decrypted Config/Interface is now a better first source than new native disassembly.
 
-### `StreamingAssets/Interface.unity3d`
+Preferred order:
 
-- khoảng 578 KB;
-- header không phải `UnityFS` nguyên bản nhưng khi inspect binary vẫn lộ dấu liên quan `UnityFS`/CAB và version text `6000.3.7f1`;
-- rất đáng đào cho UI/Lua script/resource mapping.
+```text
+Lua / extracted Config / extracted UI
+ -> runtime semantic API
+ -> exact request/payload if needed
+ -> native reverse only for an exact remaining gap
+```
 
-### `StreamingAssets/Interface/`
+---
 
-- `LoadingResources.unity3d`
-- `Logo.unity3d`
-- `Shared.unity3d`
-- `Shared_2.unity3d`
+## 2. FGClientTool_Windows.dll — VERIFIED custom transform module
 
-Các file này có mức transform khác nhau; nhiều file có `CAB-...` markers sau header custom.
+Native x64 FGStudio DLL.
 
-### `Translations.unity3d`
-
-- khoảng 1.83 MB;
-- ưu tiên trung bình/cao cho localization/text key mapping;
-- có thể giúp nối UI labels/quest/item names với resource IDs sau khi extract.
-
-### `Resources/unity default resources`
-
-- built-in Unity resource data;
-- có version string riêng (`6000.3.0b4` đã quan sát trong binary) nhưng **không được dùng để suy ra core game build**, vì default resources có thể đến từ engine/package build khác.
-
-## 3. FGClientTool_Windows.dll
-
-Native x64 DLL riêng của FGStudio. Export đã xác nhận:
+Verified exports:
 
 - `FG_Decrypt`
 - `FG_Encrypt`
-- `HelloWorld`
+- `HelloWorld`.
 
-`GameAssembly` có tham chiếu tới `FG_Encrypt`/`FG_Decrypt`, nên DLL này là thành phần thực, không phải file thừa.
+`GameAssembly` references the encryption/decryption functions, so this is an active client component rather than an unused helper.
 
-## 4. FG_Encrypt — behavior đã disassemble
+### Legacy head/tail transform family
 
-Behavior quan sát:
+Observed behavior includes bounded front/back byte-pair processing and a `0x0F` adjustment. The exact implementation is preserved by native analysis; this family was sufficient to explain one class of transformed bundle headers.
 
-- nếu buffer null hoặc length không hợp lệ: bỏ qua/return;
-- số pair xử lý tương đương `min(128, length / 2)`;
-- thao tác trên byte ở đầu và cuối buffer;
-- swap cặp front/back và cộng `0x0F` modulo 256 vào byte theo transform.
+### Size-derived transform family
 
-Exact pseudocode nên được lấy lại từ disassembly nếu port production, nhưng các đặc điểm trên đủ để nhận diện algorithm.
+A second branch derives state from file size using:
 
-## 5. FG_Decrypt — behavior quan trọng
+```text
+seed = file_size XOR 0x9E3779B9
+```
 
-Disassembly cho thấy nhiều phase.
-
-### Header detection
-
-Hàm kiểm tra trực tiếp các signature:
-
-- `UnityFS`
-- `UnityRaw`
-- `UnityWeb`
-
-Nếu sau một phase transform header trở thành bundle Unity hợp lệ, hàm có đường return sớm.
-
-### Custom transform branch
-
-Một nhánh sử dụng length và constant:
-
-`0x9E3779B9`
-
-Sau đó dùng chuỗi xorshift kiểu:
+then xorshift-style steps:
 
 ```text
 x ^= x << 13
@@ -94,127 +61,287 @@ x ^= x >> 17
 x ^= x << 5
 ```
 
-Từ `x` suy ra:
+The resulting state controls bounded front/back transforms/swaps.
 
-- số pair byte cần xử lý (bounded, tối đa vùng đầu/cuối);
-- một byte delta/decrement custom;
-- swap/adjust các byte front/back.
+### Bundle validation
 
-Điều này giải thích vì sao một số bundle trông random ở header nhưng vẫn lộ cấu trúc Unity/CAB phía sau.
+The decrypt logic checks for valid Unity bundle signatures including:
 
-## 6. Không nên gọi đây là “mã hóa mạnh”
+- `UnityFS`
+- `UnityRaw`
+- `UnityWeb`.
 
-Transform hiện thấy giống **custom obfuscation/header transformation** hơn cryptography hiện đại. Mục tiêu có vẻ là làm asset extractor tiêu chuẩn không nhận `UnityFS` ngay lập tức.
+This is best understood as custom obfuscation/header transformation, not strong modern cryptography.
 
-Vì vậy hướng đúng:
+---
+
+## 3. Decrypt/extraction is already successful
+
+Status: **VERIFIED by successful decode to valid UnityFS and semantic extraction.**
+
+Decoded bundle/version evidence:
+
+- `Config.unity3d` -> Unity `6000.3.7f1`
+- `Interface.unity3d` -> Unity `6000.3.7f1`
+- `Translations.unity3d` -> Unity `6000.3.7f1`
+- `LoadingResources.unity3d` -> Unity `6000.3.4f1`
+- `Logo.unity3d` -> Unity `6000.3.4f1`
+- `Shared.unity3d` -> Unity `6000.3.4f1`
+- `Shared_2.unity3d` -> Unity `6000.3.6f1`
+- `data.unity3d` was already plain UnityFS `6000.3.6f1`.
+
+Mixed 6000.3.x versions are not necessarily contradictory; separate bundles/resources may have been built/repacked with different minor editor/package builds.
+
+---
+
+## 4. `Config.unity3d` — VERIFIED semantic database source
+
+Repo file size is about 1.36 MB.
+
+It is no longer a predicted static-config candidate. Extraction recovered **75 named XML TextAssets**.
+
+Important verified tables and direct row counts include:
+
+| Table | Rows | Main value |
+|---|---:|---|
+| `Maps` | 193 | Map IDs/names/resources/type/server metadata |
+| `NPCs` | 1,003 | NPC IDs/names/ResName/avatar |
+| `AutoPath` | 1,618 | NPC associations, transitions, portals, item destinations |
+| `Items` | 5,238 | template/price/sellable/stack/binding data |
+| `Equips` | 22,763 | subtype, EquipPoint, level/faction/price/star/buff/attributes |
+| `Skills` | 2,091 | target/range/faction/weapon/property/action semantics |
+| `SkillProperties` | 2,044 | skill property definitions |
+| `AutoSkills` | 300 | automatic trigger/value/cooldown/SkillIDs |
+| `MagicAtrributes` | 509 | semantic effect-symbol dictionary |
+| `Monsters` | 17,121 | monster identity/stats/AI/skills |
+| `Tasks` | 516 | task type/rule/dialog/next/requirements |
+| `GrowPoints` | 407 | gather/life-skill/quest targets |
+| `Pets` | 8,349 | pet templates/growth/stats/skills |
+| `Spirits` | 1,889 | spirit templates/model/skill capacity |
+| `Factions` | 17 | books/F1/initial quick-skill relationships |
+| `FuBenScenarios` | 19 | dungeon/scenario definitions |
+| `Medicines` | 692 | medicine level/price/stack/sellability |
+| `Gems` | 1,154 | gem templates/types/levels/prices |
+
+Full 75-table catalog:
+
+`database/CONFIG_TABLE_CATALOG.md`.
+
+Domain-oriented navigation:
+
+- `analysis/32_CONFIG_DOMAIN_ATLAS.md`
+- `analysis/33_UNDEREXPLORED_HIGH_VALUE_CONFIG.md`.
+
+### Static authority boundary
+
+Config is authoritative for template/configured identity and relationships.
+
+It is **not** the final authority for:
+
+- whether an object is spawned now;
+- live position;
+- live item instance/site/slot;
+- current cooldown/buff state;
+- current server dialog selections;
+- whether a request succeeded.
+
+Those remain runtime/server-authoritative.
+
+---
+
+## 5. `Interface.unity3d` — VERIFIED Lua/UI semantic source
+
+Repo file size is about 578 KB.
+
+Extraction recovered:
+
+- **338 UI layout XML TextAssets**;
+- **1,469 UI handler bindings**;
+- **339 Lua script classes with colon-method definitions**;
+- global Lua infrastructure including `Global`, `Global_Constants`, `Global_Functions`, `Loader`, `Loader_Data`, `TCPPacketDefine`, `TCPCmdHandler`, `TCPCmdEventHandler`.
+
+High-value scripts include:
+
+- `AutoFight_Main`
+- `AutoFight_FuBen`
+- `AutoTrainMonster`
+- `AutoHp`
+- `Utilities`
+- `Revival`
+- `NPCShop_SellItemTab`
+- `RoleInfo_BagTab`
+- `BagItemsGrid`
+- `GameDialog`
+- team/task/pet/spirit scripts.
+
+High-value layouts include:
+
+- `Revival_Layout`
+- `AutoFight_Layout`
+- `AutoTrainMonster_Layout`
+- `AutoHp_Layout`
+- `Utilities_Layout`
+- `NPCShop_Layout`
+- `NPCShop_SellItemTab_Layout`
+- `RoleInfo_BagTab_Layout`
+- `MessageBox_Layout`
+- `GameDialog_Layout`.
+
+Canonical indexes:
+
+- `database/LUA_SCRIPT_CATALOG.md`
+- `database/UI_LAYOUT_CALLBACKS.md`
+- `database/PACKET_IDS.csv`
+- `analysis/09_PHASE2_DECRYPTED_DATA_LUA.md`.
+
+### Why Interface is especially valuable
+
+Lua frequently contains the exact human-readable flow that native reverse would otherwise have to reconstruct:
 
 ```text
-read raw bundle
- -> reproduce FG_Decrypt exactly
- -> verify output starts UnityFS/UnityRaw/UnityWeb
- -> feed output to standard Unity bundle parser/extractor
+visible button/layout
+ -> Lua handler
+ -> semantic Game/GUI call or exact SendPacket
+ -> runtime state update
 ```
 
-Không cần brute force.
+Examples already solved this way include revive, NPC shop sell, bag actions, dynamic GameDialog, Auto Train and task/FuBen behavior.
 
-## 7. Mixed Unity version strings
+---
 
-Đã quan sát:
+## 6. `Translations.unity3d`
 
-- `data.unity3d`: `6000.3.6f1`
-- `Interface.unity3d`: text `6000.3.7f1`
-- `unity default resources`: `6000.3.0b4`
+Repo file size is about 1.83 MB.
 
-Không nên kết luận mâu thuẫn. Bundle/resources có thể được build/repacked bằng minor editor/package versions khác nhau. Core client evidence hiện nghiêng về Unity 6 / 6000.3.x + IL2CPP x64.
+**Verified:** custom transform was successfully decoded to valid UnityFS `6000.3.7f1`.
 
-## 8. Config.unity3d — predicted content
+**Not yet canonicalized:** a compact localization key/value database has not been committed to the KB.
 
-Dựa trên symbol/data class/magic keys trong GameAssembly, các nhóm data **có khả năng rất cao** tồn tại trong config/related bundle:
+Potential high-value uses:
 
-- NPC definitions / RESID / names / services;
-- monster templates;
-- map/zone/portal data;
-- item templates/types/prices;
-- equip/gem rules;
-- skill/ability templates;
-- buff/magic effect configuration;
-- quests/tasks;
-- visual/resource IDs.
+- alternate localized wording for NPC/service dialog matching;
+- UI text lookup;
+- names/descriptions where Config references localization keys rather than direct text.
 
-Đây là PROBABLE, chưa phải verified table names trong bundle.
+Do not invent its exact internal schema before extracting/indexing the relevant TextAssets.
 
-## 9. Interface bundles — predicted content
+Current research hypothesis/target is documented in `research/HYPOTHESES.md`.
 
-Dựa trên `LuaSystemManager.LoadFromAssetBundle`, `MainCallUI/FindUI`, UI classes và bundle name, có khả năng mạnh chứa:
+---
 
-- Lua UI scripts hoặc packaged script payload;
-- UI prefab hierarchy;
-- panel/button/resource names;
-- shared UI assets;
-- message boxes/loading UI;
-- shop/NPC/auto-fight UI definitions.
+## 7. `data.unity3d`
 
-Đây là nơi ưu tiên khi cần exact callback/name cho `Trị liệu`, `Bán nhanh`, `Đầu thai`, `Đánh quái`.
+Repo file size: ~47.6 MB.
 
-## 10. Asset extraction pipeline nên lưu lại nếu làm tiếp
+**Verified:** plain `UnityFS`, Unity `6000.3.6f1`.
+
+Potential value:
+
+- serialized resources/prefabs;
+- map/scene support data;
+- model/resource references;
+- possibly path/grid/obstruction assets.
+
+However, the current KB already has most high-level gameplay semantics from Config/Interface/GameAssembly. Therefore `data.unity3d` should be **targeted-only**, not blindly extracted because it is large.
+
+Best future workflow if needed:
 
 ```text
-Input bundle
- -> check plain UnityFS/UnityRaw/UnityWeb
- -> if not plain: FG_Decrypt-compatible transform
- -> validate header/version/block table
- -> decompress UnityFS blocks
- -> parse serialized files/CAB
- -> export TextAsset/MonoBehaviour/prefab/config
- -> index names/IDs into database/
+inventory asset names/types first
+ -> identify relevant serialized objects
+ -> extract only those
+ -> commit semantic indexes/results
 ```
 
-Khi có extractor ổn định, không nên chỉ lưu tool; cần commit **kết quả semantic** vào knowledge base để AI sau không cần decrypt lại.
+---
 
-## 11. Các file config text đã đọc trực tiếp
+## 8. Shared Interface bundles
+
+Decoded successfully:
+
+- `LoadingResources.unity3d`
+- `Logo.unity3d`
+- `Shared.unity3d`
+- `Shared_2.unity3d`.
+
+Likely value is mostly shared prefabs/materials/loading/visual resources.
+
+They are lower priority than the already-readable Interface Lua/layout layer. Open them only when a concrete prefab/resource question cannot be answered from semantic text.
+
+---
+
+## 9. Standard extraction pipeline — historical/reference
+
+The successful conceptual pipeline is:
+
+```text
+raw bundle
+ -> detect plain UnityFS/UnityRaw/UnityWeb
+ -> if transformed: reproduce FG_Decrypt-compatible transform
+ -> validate Unity bundle header/version/block table
+ -> parse/decompress UnityFS
+ -> enumerate serialized files/CAB objects
+ -> export TextAsset/MonoBehaviour/layout/resource data
+ -> normalize semantic IDs/fields into database/docs
+```
+
+The important long-term artifact is not merely the decrypt code. It is the **normalized semantic knowledge committed to GitHub**, so future AI does not need to run the extraction again.
+
+---
+
+## 10. Direct text/config files around the bundles
 
 ### `app.info`
 
-- company: `FGStudio`
-- product: `Thần Long  Mobile`
+Verified:
+
+```text
+FGStudio
+Thần Long  Mobile
+```
 
 ### `boot.config`
 
-Có:
+Observed:
 
 - graphics jobs enabled;
 - threading mode 6;
-- native debugger wait disabled;
+- native-debugger wait disabled;
 - HDR disabled;
 - GC max time slice 3;
 - build GUID.
 
 ### `Version.xml`
 
-Cho biết snapshot config có:
+Observed:
 
 - application `VerCode=125`;
-- CDN FGStudio;
-- SDK endpoints cho server list/account operations;
-- log service;
-- voice blob service;
-- `VoiceRealtime Enable=true Backend=livekit`.
+- FGStudio CDN/service endpoints;
+- account/server/log/voice services;
+- realtime voice enabled with LiveKit backend.
 
 ### root `Manifest.xml`
 
-Cho biết PC launcher manifest:
+Observed:
 
 - `LauncherVersion=4`
 - `GameVersion=126`
-- `GameExeName="Thần Long  Mobile.exe"`
-- Windows CDN path.
+- `GameExeName="Thần Long  Mobile.exe"`.
 
-`VerCode=125` trong StreamingAssets và `GameVersion=126` ở root launcher manifest có thể phản ánh hai versioning layers khác nhau (app config vs PC package/launcher update), không nên ép thành cùng một số.
+`VerCode=125` and launcher `GameVersion=126` appear to be different versioning layers; do not force them into one semantic meaning without more evidence.
 
-## 12. Ưu tiên nếu tiếp tục đào asset
+---
 
-1. Port/reuse exact `FG_Decrypt`.
-2. Extract `Config.unity3d`.
-3. Extract `Interface.unity3d` + shared UI bundles.
-4. Build tables into `database/`.
-5. Chỉ sau đó đào asset visual lớn nếu task cần.
+## 11. Current asset-research priorities
+
+Do **not** redo Config/Interface decrypt/extraction.
+
+Highest-value remaining asset work is only:
+
+1. normalize/index more already-extracted Config domains (`Skills/SkillProperties/AutoSkills`, `Items/Equips/Medicines`, `Tasks/GrowPoints`, `Pets/Spirits`);
+2. extract/index Translations when localization becomes useful;
+3. inspect `data.unity3d` only for a concrete missing scene/path/resource question;
+4. inspect shared UI bundles only for a concrete prefab/resource gap;
+5. reopen FGClientTool only if a real future bundle fails the known transform variants.
+
+This keeps the KB focused on reusable semantic data rather than repeatedly reverse-engineering container formats.
