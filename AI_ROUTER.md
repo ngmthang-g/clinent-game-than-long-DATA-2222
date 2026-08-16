@@ -1,12 +1,12 @@
-# AI Router — route task before reading deeply
+# AI Router — route automation task before reading deeply
 
-Read `AI_BOOTSTRAP.md` first.
+Read `AI_BOOTSTRAP.md` and `AUTO_TOOL_SCOPE.md` first.
 
-This file answers: **What should I read for the current task?**
+This file answers: **What should I read for the current automation/tool task?**
 
 Do not select multiple context packs unless the task genuinely spans multiple subsystems. For cross-feature work, use `contexts/BUILD_ORCHESTRATOR.md` instead of loading every feature pack independently.
 
-| Task / question | Primary context pack |
+| Auto-tool task / question | Primary context pack |
 |---|---|
 | Build/refactor tool architecture, multi-client, state machine, action arbitration | `contexts/BUILD_TOOL_CORE.md` |
 | Read nearby players/entities, local player, target, map objects, bag state | `contexts/BUILD_RUNTIME_SCANNER.md` |
@@ -19,54 +19,84 @@ Do not select multiple context packs unless the task genuinely spans multiple su
 | Party/team/join/leave/follow/member data | `contexts/BUILD_PARTY.md` |
 | Adaptive Train + Party + Buff + Sell + Revive + spot switching | `contexts/BUILD_ORCHESTRATOR.md` |
 
-## Secondary routes
+## Direct supporting routes for automation
 
-For quest/task automation, read:
+### Ground loot / pickup
 
-- `AI_BOOTSTRAP.md`
-- `analysis/23_TASK_QUEST_AUTOMATION.md`
-- `analysis/12_GLOBAL_LUA_HELPERS.md`
-- `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md`
-- `analysis/22_MAP_MINIMAP_RUNTIME.md`.
+Read only:
 
-For Pet/Spirit automation, read:
-
-- `AI_BOOTSTRAP.md`
-- `analysis/24_PET_SPIRIT_AUTO_RUNTIME.md`
-- `analysis/18_SKILLBAR_COOLDOWN_QUICKSKILLS.md`
-- `analysis/19_PROGRESS_CAPTCHA_SAFETY.md`
-- `contexts/BUILD_MAINTHREAD_BRIDGE.md` if implementation sends mutable actions externally.
-
-For Storage/Bank, read:
-
-- `AI_BOOTSTRAP.md`
-- `analysis/26_STORAGE_BANK_ITEM_MOVE.md`
-- `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`
-- `contexts/BUILD_MAINTHREAD_BRIDGE.md` for execution.
-
-For ground loot/pickup, read:
-
-- `AI_BOOTSTRAP.md`
 - `analysis/27_LOOT_PICKUP_FILTER_ENGINE.md`
 - `analysis/22_MAP_MINIMAP_RUNTIME.md`
 - `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`.
 
-For static data questions about Items/Skills/Monsters/Equips/Magic, read:
+### Skill / buff lookup
 
-- `database/static/README.md`
-- `database/static/LOOKUP_GUIDE.md`
-- `analysis/28_STATIC_DATA_DATABASE_EXPANSION.md`
-- only the specific index/chunk containing required records **if that chunk has actually been uploaded**.
+Use lookup first:
 
-Do not invent a missing static CSV. The repo currently records schema/counts and tracks full chunk upload separately in `research/TODO.md`.
+- `database/NGAMY_SUPPORT_SKILLS.md`
+- `database/FACTS.jsonl`
+- `database/static/README.md` / `LOOKUP_GUIDE.md` when exact static record exists.
 
-For exact packets/API names, prefer lookup before broad analysis:
+Do not load every skill/config table merely to implement one cast rule.
+
+### Item/equipment lookup for Auto Sell / loot
+
+Use only the records needed for the current keep/sell/use policy. Runtime `GetItemType`, `GetEquipType`, `IsItemSellable` and current live instance fields remain action-time truth.
+
+### NPC/service/navigation
+
+Use:
+
+- NPC database / service candidate index;
+- `analysis/12_GLOBAL_LUA_HELPERS.md`;
+- `analysis/22_MAP_MINIMAP_RUNTIME.md`;
+- actual `GameDialog` / NPCShop runtime state.
+
+Do not invent static X/Y when `Game.GetNPCPosition(npcID)` exists.
+
+### Exact packet/API lookup
+
+Prefer:
 
 - `database/FACTS.jsonl`
 - `database/PACKET_IDS.csv`
 - `database/PACKET_CATALOG.md`
 - `database/API_QUICK_REFERENCE.md`
 - `database/FINDING_TO_DOC_MAP.md`.
+
+## Conditional routes — only when that auto feature is actually requested
+
+Quest/task automation:
+
+- `analysis/23_TASK_QUEST_AUTOMATION.md`
+- `analysis/12_GLOBAL_LUA_HELPERS.md`
+- `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md`
+- `analysis/22_MAP_MINIMAP_RUNTIME.md`.
+
+Pet/Spirit automation:
+
+- `analysis/24_PET_SPIRIT_AUTO_RUNTIME.md`
+- `analysis/18_SKILLBAR_COOLDOWN_QUICKSKILLS.md`
+- `analysis/19_PROGRESS_CAPTCHA_SAFETY.md`.
+
+Storage/Bank automation:
+
+- `analysis/26_STORAGE_BANK_ITEM_MOVE.md`
+- `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`.
+
+Do not research these domains merely because they exist in Config.
+
+## Normally out of route
+
+Unless a concrete auto feature depends on them, do not spend context/research on:
+
+- cosmetics/fashion/appearance/FX;
+- voice/LiveKit;
+- launcher/update internals;
+- D3D/rendering/baselib;
+- decorative UI assets;
+- guild/title/reputation systems;
+- broad analytics unrelated to auto decisions.
 
 ## Routing examples
 
@@ -75,8 +105,9 @@ For exact packets/API names, prefer lookup before broad analysis:
 Read:
 
 1. `AI_BOOTSTRAP.md`
-2. `contexts/BUILD_AUTO_BUFF.md`
-3. only REQUIRED files listed there.
+2. `AUTO_TOOL_SCOPE.md`
+3. `contexts/BUILD_AUTO_BUFF.md`
+4. only REQUIRED files listed there.
 
 Do not read Quest/Pet/Storage/Launcher docs.
 
@@ -85,8 +116,9 @@ Do not read Quest/Pet/Storage/Launcher docs.
 Read:
 
 1. `AI_BOOTSTRAP.md`
-2. `contexts/BUILD_MAINTHREAD_BRIDGE.md`
-3. `contexts/BUILD_TOOL_CORE.md` only if action queue/state ownership is also broken.
+2. `AUTO_TOOL_SCOPE.md`
+3. `contexts/BUILD_MAINTHREAD_BRIDGE.md`
+4. `contexts/BUILD_TOOL_CORE.md` only if action queue/state ownership is also broken.
 
 Do not restart GameAssembly-wide reverse.
 
@@ -94,10 +126,10 @@ Do not restart GameAssembly-wide reverse.
 
 Use database lookup first, then `analysis/12_GLOBAL_LUA_HELPERS.md` and `analysis/22_MAP_MINIMAP_RUNTIME.md`. Do not manually invent X/Y.
 
-### “What is ItemID X?”
+### “What should Auto Sell keep?”
 
-Use the static-data guide/index strategy. Do not load all 5,238 Items into context, and do not claim an unuploaded chunk is present.
+Read `contexts/BUILD_AUTO_SELL.md`; query only item/equipment fields needed by the policy. Do not load all Items/Equips tables.
 
 ## Hard rule
 
-**A large repository is not an instruction to read everything. It is a library. Route, lookup, then read narrowly.**
+**This is an automation-tool knowledge library, not an encyclopedia of the whole client. Route, lookup, then read narrowly.**
