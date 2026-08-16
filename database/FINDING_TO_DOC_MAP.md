@@ -46,6 +46,7 @@ Use this file when you remember a conclusion but do not know where it was stored
 | Ground loot/item-pack scan/filter/pickup | `analysis/27_LOOT_PICKUP_FILTER_ENGINE.md` |
 | Items/Skills/Magic/Monsters/Equips static DB schema | `analysis/28_STATIC_DATA_DATABASE_EXPANSION.md` |
 | Game-owned producers constructing Action + calling MainThread.Execute | `analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md` |
+| Exact generated Action constructor ABI + external bridge proof recipe | `analysis/30_EXTERNAL_ACTION_BRIDGE_BLUEPRINT.md` |
 | Full map/NPC/route lookup | `database/README.md` + CSVs |
 | Planned/normalized large Config DB location | `database/static/README.md` |
 | All packet constants | `database/PACKET_IDS.csv` |
@@ -90,6 +91,7 @@ Use this file when you remember a conclusion but do not know where it was stored
 - 407 is Xung Hư Dưỡng Khí; real Kim Châm Độ Kiếp is 423 → `analysis/15...` / `database/NGAMY_SUPPORT_SKILLS.md`.
 - MainThread dispatcher is no longer merely a candidate: `.ctor` creates queue at `this+0x20`; `Execute` enqueues; `Update` calls `DoExecuteWorks`; dequeued Action is invoked → `analysis/21...`.
 - TCPGame/TCPLogin network handlers themselves construct legitimate `System.Action` objects and call `MainThread.Execute` → `analysis/29...`.
+- Generated Action constructor ABI is directly recovered; shipped calls use `Action object + target/null + callback MethodInfo*`, and a CTS `Cancel()` Action is the canonical harmless external proof → `analysis/30...`.
 - Team state exposes structured member RoleID/Name/Level/Faction/Map/HP/MaxHP/backup X/Y; Follow uses nearby precise position then cross-map fallback → `analysis/25...`.
 - Storage movement uses `CMD_ITEM_ACTION=100005`, action `5`, payload `5:instanceID:destinationSite` → `analysis/26...`.
 - Loot engine uses nearby ItemPack RoleID/Position + semantic path/move/click/pickup APIs → `analysis/27...`.
