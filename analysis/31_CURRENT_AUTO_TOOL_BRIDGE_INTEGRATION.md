@@ -171,8 +171,8 @@ Therefore the CTS proof **must be asynchronous/two-phase**.
 Proposed new commands:
 
 ```text
-BeginMainThreadActionProof = 6
-PollMainThreadActionProof  = 7
+BeginMainThreadActionProof   = 6
+PollMainThreadActionProof    = 7
 CleanupMainThreadActionProof = 8
 ```
 
@@ -333,30 +333,76 @@ Require non-null before Action construction/enqueue is considered usable.
 
 Do not read the static backing field by guessed address when a semantic getter exists.
 
-## 13. `System.Action` construction in this tool
+## 13. Exact native producer calls available in the frozen snapshot
 
-Canonical evidence is in `analysis/30_EXTERNAL_ACTION_BRIDGE_BLUEPRINT.md`.
+The current client is frozen, and direct disassembly gives two useful native producer entrypoints.
 
-Frozen generated constructor ABI:
+### `System.Action` constructor
 
 ```text
-RCX = Action object
-RDX = target object or null
+GameAssembly + 0x49F810
+```
+
+Call shape:
+
+```text
+RCX = allocated Action object
+RDX = target object
 R8  = callback MethodInfo*
 R9  = null
 ```
 
+### `MainThread.Execute(Action)`
+
+```text
+GameAssembly + 0x601250
+```
+
+The shipped `TCPGame.SocketCommandHandler` call site sets:
+
+```text
+RCX = MainThread.Instance
+RDX = Action
+R8  = 0
+jmp GameAssembly+0x601250
+```
+
+and `Execute` then loads `[this+0x20]` and passes the Action into `ConcurrentQueue<Action>.Enqueue`.
+
+Therefore, for the **first frozen-snapshot proof**, a narrow direct-call implementation can use:
+
+```text
+ActionCtorFn(action, cts, cancelMethodInfo, nullptr)
+MainThreadExecuteFn(mainThreadInstance, action, nullptr)
+```
+
+provided that:
+
+- Action/CTS/classes/methods are still resolved semantically first;
+- current hook has already passed Unity-main-thread validation;
+- object allocation/rooting uses IL2CPP APIs;
+- exact RVAs are treated as frozen-snapshot implementation locators, not universal client contracts.
+
+This avoids uncertainty about `runtime_invoke` argument marshalling for the delegate constructor during the first proof.
+
+## 14. `System.Action` construction rule
+
+Canonical evidence is in `analysis/30_EXTERNAL_ACTION_BRIDGE_BLUEPRINT.md`.
+
 Best implementation order for this fixed client:
 
 1. resolve Action semantically;
-2. allocate Action through `il2cpp_object_new`;
-3. resolve CTS.Cancel MethodInfo semantically;
-4. use the verified legitimate constructor path;
-5. never fill delegate offsets manually.
+2. verify its `.ctor` exists and has expected metadata shape;
+3. allocate Action through `il2cpp_object_new`;
+4. resolve CTS.Cancel MethodInfo semantically;
+5. call the verified native Action constructor at the frozen RVA;
+6. root Action;
+7. call the verified native MainThread Execute entrypoint;
+8. never fill delegate offsets manually.
 
-If a pure managed `runtime_invoke`/reflection delegate-construction path is proven later, it may replace frozen native-constructor address usage. Until then, the direct generated donor ABI is the strongest snapshot-specific evidence.
+If a pure managed reflection/delegate-construction path is proven later, it may replace frozen native-constructor address usage. Until then, the direct generated donor ABI is the strongest exact path for this frozen repository.
 
-## 14. Suggested proof state object inside bridge
+## 15. Suggested proof state object inside bridge
 
 Bridge-local per-process globals are sufficient because the DLL instance lives inside one game process.
 
@@ -368,7 +414,6 @@ ActionProofState {
     uint32 generation
     uint32 targetHandle
     uint32 actionHandle
-    Il2CppObject* targetCachedForDiagnostics
     uint64 beginTick
     uint64 deadlineTick
     ProofStage stage
@@ -378,7 +423,7 @@ ActionProofState {
 
 Prefer retrieving target from `gchandle_get_target` during Poll instead of trusting a stale cached raw pointer.
 
-## 15. Shared response extension
+## 16. Shared response extension
 
 Add a compact proof snapshot rather than writing proof data into free-form text only.
 
@@ -398,7 +443,7 @@ ActionProofSnapshot {
 
 The controller can still display Vietnamese detail text for humans.
 
-## 16. Controller state-machine integration
+## 17. Controller state-machine integration
 
 Current controller already guarantees only one outstanding bridge command:
 
@@ -434,7 +479,7 @@ SnapshotReady
 
 Never spam Poll every message/frame. 50–200 ms polling is enough for a proof; exact interval is tool policy.
 
-## 17. Current `selftest.cpp` is not a runtime Action proof
+## 18. Current `selftest.cpp` is not a runtime Action proof
 
 Current bridge selftest only:
 
@@ -446,7 +491,7 @@ Keep it for packaging/export validation, but do not confuse it with the in-game 
 
 The CTS proof belongs to the live controller/bridge protocol.
 
-## 18. Safety of first test
+## 19. Safety of first test
 
 CTS proof is deliberately chosen because it changes only an isolated BCL object created by the bridge.
 
@@ -462,7 +507,7 @@ It does not:
 
 This is a better first mutable managed callback than any gameplay action.
 
-## 19. After CTS PASS
+## 20. After CTS PASS
 
 Do not immediately enable every feature.
 
@@ -477,7 +522,7 @@ CTS managed proof
 
 At each step, preserve max one mutable action per PID.
 
-## 20. Architectural conclusion
+## 21. Architectural conclusion
 
 The current tool is already much closer to the target architecture than a fresh bridge would be:
 
