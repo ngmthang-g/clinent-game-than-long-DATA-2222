@@ -1,108 +1,211 @@
-# Network Command / Event Catalog
+# Network Command / Event Catalog — refreshed after Lua packet extraction
 
-> Các tên dưới đây được lấy từ metadata/string evidence của snapshot. **Tên tồn tại là VERIFIED; direction, numeric ID và payload KHÔNG được tự suy ra nếu chưa trace callsite.**
+> This file combines two evidence layers:
+>
+> 1. native/metadata command vocabulary (`CMD_*`, processor/event names);
+> 2. decrypted Lua `TCPPacketDefine` with **169 exact numeric packet constants**.
+>
+> Full numeric list: `database/PACKET_IDS.csv`.
+>
+> Packet **ID existence does not prove direction or payload**. Exact payloads are VERIFIED only when legitimate Lua/native request code constructs them.
 
-## 1. Core world/object lifecycle
+---
 
-| Command/name | Diễn giải có khả năng |
-|---|---|
-| `CMD_CHANGE_MAP` | chuyển map / map transition |
-| `CMD_NEW_OBJECTS` | server/client báo các object mới vào phạm vi |
-| `CMD_REMOVE_OBJECTS` | loại object khỏi local world/AOI |
-| `CMD_OBJECT_LOAD_ALREADY` | object finished/ready state |
-| `CMD_CLICK_OBJECT` | interaction/click object request/event |
-| `CMD_OBJECT_DEATH` | object death state/event |
-| `CMD_REVIVE` | revive/rebirth related request/event |
-| `CMD_SYNC_DATA` | sync main object/player data |
-| `CMD_OTHER_SYNC_DATA` | sync data cho object khác |
-| `CMD_UPDATE_OBJECT_TITLE` | object title update |
-| `CMD_UPDATE_NAME` | name update |
-| `CMD_UPDATE_INVISIBLE_STATE` | invisibility state update |
-| `CMD_UPDATE_MONSTER_TYPE` | monster type/state change |
-| `CMD_SWITCH_SERVER` | server switch/transition |
+## 1. Core world / object lifecycle
 
-## 2. Movement / action / scene
+Verified vocabulary includes:
 
-| Command/name | Diễn giải có khả năng |
-|---|---|
-| `CMD_AUTO_PATH` | auto path request/state |
-| `CMD_MOVE_TO_LOCATION` | move-to position |
-| `CMD_DO_ACTION` | generic actor action |
-| `CMD_DO_LEAP` | leap movement/action |
-| `CMD_MOVESPEED_CHANGED` | movement speed update |
-| `CMD_DRAG_TARGET` | forced drag/pull target |
-| `CMD_ACTIVATE_TRAP` | trap activation |
-| `CMD_PLAY_SOUND` | play sound event |
-| `CMD_PLAY_TEMPORARY_FX` | temporary visual effect |
-| `CMD_SYNS_STATE` | state synchronization string as present in binary (spelling preserved) |
+- `CMD_CHANGE_MAP`
+- `CMD_NEW_OBJECTS`
+- `CMD_REMOVE_OBJECTS`
+- `CMD_OBJECT_LOAD_ALREADY`
+- `CMD_CLICK_OBJECT`
+- `CMD_OBJECT_DEATH`
+- `CMD_REVIVE`
+- `CMD_SYNC_DATA`
+- `CMD_OTHER_SYNC_DATA`
+- `CMD_UPDATE_OBJECT_TITLE`
+- `CMD_UPDATE_NAME`
+- `CMD_UPDATE_INVISIBLE_STATE`
+- `CMD_UPDATE_MONSTER_TYPE`
+- `CMD_SWITCH_SERVER`.
 
-Related processors/strings include object position change, dynamic obstruction label updates, progress state and scene sync.
+Interpretation:
+
+This family describes AOI/world-object lifecycle, state sync, interaction and map transitions. Some are clearly update/event-side names; do not treat every `CMD_*` as a client request.
+
+`LuaSystemAPI_Game.ClickNPC(npcID)` already gives a safer semantic NPC interaction path than fabricating a raw `CMD_CLICK_OBJECT` payload.
+
+---
+
+## 2. Movement / scene / actor actions
+
+Vocabulary:
+
+- `CMD_AUTO_PATH`
+- `CMD_MOVE_TO_LOCATION`
+- `CMD_DO_ACTION`
+- `CMD_DO_LEAP`
+- `CMD_MOVESPEED_CHANGED`
+- `CMD_DRAG_TARGET`
+- `CMD_ACTIVATE_TRAP`
+- `CMD_PLAY_SOUND`
+- `CMD_PLAY_TEMPORARY_FX`
+- `CMD_SYNS_STATE` (spelling preserved).
+
+Preferred automation layer:
+
+- `Game.GoTo`
+- `Game.MoveTo`
+- `Game.HasPath`
+- `Game.ChaseTarget`
+- `Game.DoAction`
+
+before considering raw packet replay.
+
+---
 
 ## 3. Inventory / item / economy
 
-| Command/name | Diễn giải có khả năng |
-|---|---|
-| `CMD_UPDATE_MONEY` | money/currency update |
-| `CMD_ADD_ITEM` | add item instance |
-| `CMD_UPDATE_ITEM` | item instance update |
-| `CMD_SWAP_ITEMS` | swap/move item slots |
-| `CMD_REMOVE_ITEM` | remove item instance |
-| `CMD_UPDATE_ITEMS_LIST` | replace/refresh item collection |
-| `CMD_ITEM_PACK` | ground item pack / loot pack related |
-| `CMD_UPDATE_TRADER_STATE` | trader/shop state update |
-| `CMD_STALL_ACTION` | stall/player-shop style action |
+Vocabulary:
 
-Known inbound processor names:
+- `CMD_UPDATE_MONEY`
+- `CMD_ADD_ITEM`
+- `CMD_UPDATE_ITEM`
+- `CMD_SWAP_ITEMS`
+- `CMD_REMOVE_ITEM`
+- `CMD_UPDATE_ITEMS_LIST`
+- `CMD_ITEM_PACK`
+- `CMD_UPDATE_TRADER_STATE`
+- `CMD_STALL_ACTION`.
+
+Observed inbound/update processors include:
 
 - `ProcessRemoveItem`
 - `ProcessUpdateItemsList`
 - `ProcessUpdateMoney`
-- `ProcessUpdateTraderState`
+- `ProcessUpdateTraderState`.
 
-### Safety note
+### Exact request contracts already solved
 
-Các `Process*` rất có khả năng là **response/update handlers**. Không gọi chúng để giả lập request bán/mua.
+#### Item action
+
+`CMD_ITEM_ACTION = 100005`
+
+Verified observed payload families:
+
+- Equip -> `1:instanceID`
+- Use -> `3:instanceID`
+- Abandon -> `4:instanceID`
+- Move -> `5:instanceID:destinationSite`
+- Split -> `8:instanceID:quantity`.
+
+#### Bag/site sort
+
+`CMD_BAG_SORT = 100006`
+
+Bag payload:
+
+`10`
+
+Storage sorting uses the target storage site.
+
+#### NPC shop sell
+
+`CMD_NPC_SHOP_SELL_REQUEST = 200036`
+
+Payload:
+
+`itemInstanceID:NpcShopID:ShopID`
+
+This uses the **live item instance ID**, not template ItemID.
+
+#### NPC shop data
+
+`CMD_NPC_SHOP_DATA = 200034`
+
+Verified as server/shop data lifecycle used to open/refresh the NPC shop UI. Do not send it as if it were the sell request.
+
+### Mutation rule
+
+For item/shop actions:
+
+`one current instance -> one request -> wait Remove/UpdateItemsList/money/shop proof -> fresh rescan`.
+
+Never call `Process*` handlers as fake requests.
+
+---
 
 ## 4. Skill / combat
 
-| Command/name | Diễn giải có khả năng |
-|---|---|
-| `CMD_ADD_SKILL` | add/unlock skill |
-| `CMD_REMOVE_SKILL` | remove skill |
-| `CMD_REFRESH__GROUP_SKILLS_LIST` | refresh grouped skill list (spelling preserved) |
-| `CMD_REFRESH_SKILLS_CD` | refresh cooldowns |
-| `CMD_USE_SKILL` | skill use request/event |
-| `CMD_NEW_MISSILE` | projectile/missile spawn |
-| `CMD_NEW_SKILL_EXPLODE` | skill explosion/AOE event |
-| `CMD_SKILL_DAMAGE` | damage result/event |
-| `CMD_SKILL_HEAL` | heal result/event |
-| `CMD_PUPPET_ATTACK` | puppet/summon attack |
+Vocabulary:
 
-Potential use for combat recorder: correlate use-skill -> damage/heal -> death/buff events by timestamp and target identifiers.
+- `CMD_ADD_SKILL`
+- `CMD_REMOVE_SKILL`
+- `CMD_REFRESH__GROUP_SKILLS_LIST` (spelling preserved)
+- `CMD_REFRESH_SKILLS_CD`
+- `CMD_USE_SKILL`
+- `CMD_NEW_MISSILE`
+- `CMD_NEW_SKILL_EXPLODE`
+- `CMD_SKILL_DAMAGE`
+- `CMD_SKILL_HEAL`
+- `CMD_PUPPET_ATTACK`.
 
-## 5. Buff / status effects
+For automation, prefer semantic skill APIs already proven by shipped UI:
 
-| Command/name | Diễn giải có khả năng |
-|---|---|
-| `CMD_ADD_BUFF` | new buff/status |
-| `CMD_UPDATE_BUFF` | buff stack/duration/property update |
-| `CMD_REMOVE_BUFF` | remove buff/status |
+- `Game.UseSkill(skillID)`
+- `Game.RequestUsingSkillWithTarget`
+- `Game.RequestUsingSkillWithPos`
+- `Game.CanUseSkill`
+- `Game.GetSkillCooldown`.
 
-Related Lua events include AddBuff/UpdateBuff semantics. Exact payload fields still need runtime schema mapping.
+Packet/event vocabulary is especially useful for **observation/telemetry**, not as the first action layer.
+
+---
+
+## 5. Buff / status
+
+Vocabulary:
+
+- `CMD_ADD_BUFF`
+- `CMD_UPDATE_BUFF`
+- `CMD_REMOVE_BUFF`.
+
+Runtime semantic state is already stronger than the old command-name-only inference:
+
+- `Game.GetBuffs()` -> BuffID, DurationTick, Stack;
+- `Game.GetBuffData(BuffID)`;
+- `Game.GetBuffProperties(BuffID)`;
+- add/update/remove events drive UI state.
+
+Do not infer a “cast buff” request from an inbound `CMD_ADD_BUFF`; actual buff application normally results from skill use/server authority.
+
+---
 
 ## 6. Task / quest
+
+Vocabulary:
 
 - `CMD_ASSIGN_TASK`
 - `CMD_COMPLETE_TASK`
 - `CMD_UPDATE_TASK`
 - `CMD_ABANDON_TASK`
-- `CMD_UPDATE_NPC_TASK_STATE`
+- `CMD_UPDATE_NPC_TASK_STATE`.
 
-### Prediction
+The earlier prediction “task config probably exists” is obsolete: **`Tasks.xml` is VERIFIED with 516 rows**, and built-in Auto Quest consumes structured task data.
 
-Có task/quest model đủ để theo dõi quest ID/progress/NPC state. Static quest config có khả năng nằm trong Config bundle.
+Canonical docs:
 
-## 7. Pet / spirit / puppet
+- `analysis/23_TASK_QUEST_AUTOMATION.md`
+- `analysis/33_UNDEREXPLORED_HIGH_VALUE_CONFIG.md`.
+
+Task update events are state evidence; objective actions still depend on task type/NPC/monster/item/area semantics.
+
+---
+
+## 7. Pet / Spirit / summon
+
+Vocabulary includes:
 
 - `CMD_ADD_PET`
 - `CMD_UPDATE_PET`
@@ -115,9 +218,24 @@ Có task/quest model đủ để theo dõi quest ID/progress/NPC state. Static q
 - `CMD_REMOVE_SPIRIT`
 - `CMD_GET_SPIRIT`
 - `CMD_SPIRIT_UPDATE_POSITION`
-- `CMD_PUPPET_ATTACK`
+- `CMD_PUPPET_ATTACK`.
 
-## 8. Appearance / fashion / mount
+Exact Pet/Spirit runtime/action evidence is documented in `analysis/24_PET_SPIRIT_AUTO_RUNTIME.md`.
+
+Static Config also contains:
+
+- `Pets` 8,349 rows;
+- `PetFeatures` 11;
+- `PetEquips` 70;
+- `PetEquipSets` 13;
+- `Spirits` 1,889;
+- `SpiritFeatures` 3.
+
+---
+
+## 8. Appearance / fashion / mounts
+
+Vocabulary:
 
 - `CMD_APPEARANCE_ACTION`
 - `CMD_OTHER_UPDATE_EQUIP`
@@ -129,107 +247,208 @@ Có task/quest model đủ để theo dõi quest ID/progress/NPC state. Static q
 - `CMD_DOUBLE_RIDE`
 - `CMD_PUBLIC_MOUNT`
 - `CMD_SHAPE_SHIFTING_ACTION`
-- `CMD_UPDATE_ROLE_ANIMATED_TITLE`
+- `CMD_UPDATE_ROLE_ANIMATED_TITLE`.
 
-Useful if future scanner needs appearance/equipment state of nearby players.
+Useful mainly for appearance-state observation/inspection. Lower priority for core Train/Buff/Sell.
+
+---
 
 ## 9. Team / allies / group
 
-Known names include:
+Vocabulary includes:
 
 - `CMD_UPDATE_TEAMDATA`
-- guild/team notify family
+- guild/team notification families
 - `CMD_ALLIES_NOTIFY`
 - `CMD_ALLIES_SYSN_DATA` (spelling preserved)
 - `CMD_ALLIES_UPDATE_MEMBER`
-- `CMD_UPDATE_GROUP_NOTIFY`
+- `CMD_UPDATE_GROUP_NOTIFY`.
 
-### Prediction
+The old “team data may be available” prediction is now partly solved:
 
-Team/ally state may be available both via network updates and `LuaSystemSharedData` queries.
+- global `C_TeamData` exists;
+- member RoleID/RoleName/Level/FactionID/MapID/Hp/MaxHp/AvartaID/PosX/PosY are VERIFIED;
+- `C_TeamAction` action values/payloads are documented in `analysis/25_TEAM_RUNTIME_FOLLOW.md`.
 
-## 10. Faction / PK / reputation / title
+Use semantic team state/action evidence there instead of rediscovering from command names.
+
+---
+
+## 10. Revive / reincarnation
+
+Exact action is solved:
+
+`CMD_REVIVE_DATA = 200063`
+
+Revive type values:
+
+- normal / Đầu thai = `1`
+- newbie = `2`
+- skill revive = `3`.
+
+This supersedes generic speculation around `CMD_REVIVE` names.
+
+Canonical source: `features/AUTO_REVIVE.md` / `research/VERIFIED_PHASE2.md`.
+
+---
+
+## 11. Dynamic NPC dialog
+
+Exact semantic contract:
+
+`CMD_SHOW_GAMEDIALOG = 100007`
+
+Payload:
+
+`selectionID:SelectedItemID`
+
+Active server data maps:
+
+`Selections[selectionID] = visibleText`.
+
+Do not invent a global treatment selection ID.
+
+---
+
+## 12. Faction / PK / reputation / title
+
+Vocabulary:
 
 - `CMD_UPDATE_FACTION`
 - `CMD_PK_VALUE`
 - `CMD_REPUTE_ACTION`
 - `CMD_TITLE_ACTION`
 - `CMD_CHANGE_CURRENT_TITLE`
-- object title/name update commands.
+- title/name update commands.
 
-Potential fields for entity scanner: faction, PK value, current title, reputation-related state.
+Static Config now also provides faction/reputation/title tables, so use both layers:
 
-## 11. Chat / captcha / Lua / voice
+- runtime events for current state;
+- Config for ID/template interpretation.
+
+---
+
+## 13. Chat / Captcha / Lua / voice
+
+Vocabulary:
 
 - `CMD_CHAT_DATA`
 - `CMD_CAPTCHA`
 - `CMD_CLIENT_LUA`
 - `CMD_VOICE_CHAT`
-- `CMD_VOICE_REALTIME`
+- `CMD_VOICE_REALTIME`.
 
-`CMD_VOICE_REALTIME` aligns with `Version.xml` LiveKit backend and `livekit_ffi.dll`.
+Known:
 
-`CMD_CLIENT_LUA` is especially interesting but direction/payload unknown. Do not experiment by fabricating payload; trace a legitimate action if needed.
+- Captcha is explicit UI/manual-verification state; automation must pause rather than solve/bypass.
+- realtime voice aligns with LiveKit backend/module.
+- `CMD_CLIENT_LUA` remains unresolved in direction/payload/use and stays a targeted hypothesis only.
 
-## 12. Progress / gather / crafting-like state
+---
 
-Strings/commands include progress handling and:
+## 14. Progress / gather / crafting-like state
+
+Vocabulary includes:
 
 - `CMD_UPDATE_GATHER_MAKE_POINT`
-- progress begin/update/interruption-related processors/events.
+- progress begin/update/interruption events/processors.
 
-Potential use: detect channeling/gathering/crafting state instead of fixed delays.
+Progress lifecycle is now VERIFIED event-driven (`BeginProgress`, `InteruptProgress`, `UpdateProgressTime`), so state machines should observe it rather than sleep blindly.
 
-## 13. Network event observer architecture
+`GrowPoints` static Config has 407 gather/life-skill/quest rows for template interpretation.
 
-Recommended observer model:
+---
+
+## 15. Dungeon / FuBen exact packet family
+
+From `TCPPacketDefine`, high-value verified IDs include:
+
+- `CMD_FUBEN_AUTO_DATA = 200168`
+- `CMD_FUBEN_KILL_PROGRESS = 200169`
+- `CMD_FUBEN_QUERY_ALIVE = 200170`
+- `CMD_FUBEN_MATCHMAKING = 200171`
+- `CMD_FUBEN_COMPLETE = 200173`
+- `CMD_FUBEN_SYNC_TARGET = 200174`.
+
+Existence/ID is VERIFIED. Payloads/directions must still come from actual Lua handlers/request code before replay.
+
+Static `FuBenScenarios` has 19 scenario definitions.
+
+---
+
+## 16. Network observer architecture
+
+Recommended observation model:
 
 ```text
-Raw inbound/outbound observation
- -> classify by command/processor
+Inbound/outbound observation
+ -> classify packet/event
  -> extract semantic IDs/state
- -> publish immutable Event
- -> Snapshot Store updates
+ -> immutable Event
+ -> Snapshot Store
  -> State Machine reacts
 ```
 
-Do **not** make action logic mutate game state inside a packet hook. Hooks should observe/log and hand off.
+Do not mutate gameplay state inside a packet hook.
 
-## 14. High-value traces for unresolved features
+Useful future telemetry targets:
 
-### Sell
+- skill damage/heal;
+- death;
+- buff lifecycle;
+- loot/item updates;
+- team/task changes;
+- map transitions.
 
-Capture:
+---
 
-```text
-manual sell 1 item
- -> outgoing SendPacket
- -> command/payload
- -> ProcessRemoveItem
- -> ProcessUpdateMoney
- -> ProcessUpdateItemsList
- -> optional trader-state update
-```
+## 17. Evidence levels for network data
 
-### Revive
+### Level A — symbol only
 
-```text
-dead UI action
- -> outgoing request
- -> CMD_REVIVE related flow
- -> object/map/spawn state
-```
+Example: metadata string `CMD_CLIENT_LUA`.
 
-### Auto combat
+Known: name exists.
 
-Observe UI callback and state change; do not assume `CMD_USE_SKILL` itself represents turning auto mode on.
+Unknown: ID/direction/payload unless cross-linked elsewhere.
 
-## 15. What this catalog does NOT provide
+### Level B — exact packet constant
 
-- numeric command IDs;
-- protobuf/message schemas;
-- direction for every name;
-- server authorization rules;
-- safe replay payloads.
+Example: entry in `TCPPacketDefine` / `PACKET_IDS.csv`.
 
-Those are targeted trace tasks only. The purpose of this file is to stop future AI from rediscovering the command vocabulary and subsystem grouping.
+Known: symbol + numeric ID.
+
+Still unknown: direction/payload unless traced.
+
+### Level C — exact legitimate request construction
+
+Example:
+
+`CMD_NPC_SHOP_SELL_REQUEST = 200036`
+
+`itemInstanceID:NpcShopID:ShopID`.
+
+This is safe to document as an exact request contract for the frozen client.
+
+### Level D — request + response/state lifecycle
+
+Example Auto Sell:
+
+request -> RemoveItem/UpdateItemsList/money/shop state -> fresh bag scan.
+
+This is the preferred level for building a reliable state machine.
+
+---
+
+## 18. What this catalog is for
+
+Use it to avoid rediscovering protocol vocabulary and to know which network paths are already solved.
+
+For exact numeric lookup use `database/PACKET_IDS.csv`.
+
+For exact verified action payloads use:
+
+- `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md`
+- subsystem docs such as `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`, `analysis/25_TEAM_RUNTIME_FOLLOW.md`, `analysis/26_STORAGE_BANK_ITEM_MOVE.md`.
+
+Do not broad-reverse network code if the required contract is already present there.
