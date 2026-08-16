@@ -1,6 +1,6 @@
 # External `System.Action` bridge — exact construction blueprint
 
-Status: **native delegate-construction ABI VERIFIED from frozen GameAssembly; full external live enqueue proof still pending.**
+Status: **native delegate-construction ABI + proof-target metadata VERIFIED from frozen GameAssembly/global-metadata; full external live enqueue proof still pending.**
 
 This document narrows the remaining MainThread problem to a concrete producer-side implementation recipe. The consumer side is already solved in `analysis/21_MAIN_THREAD_DISPATCHER.md` and the game-owned producer pattern is documented in `analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md`.
 
@@ -23,7 +23,27 @@ call System.Action::.ctor
 
 This is not inferred from C# syntax; it is the exact argument pattern emitted by this client.
 
-## 2. Delegate constructor fields observed
+## 2. `System.Action` metadata identity is also recovered
+
+Frozen `global-metadata.dat` directly identifies the non-generic `System.Action` type:
+
+- namespace: `System`
+- name: `Action`
+- TypeDefinition index: `155`
+- type token: `0x0200009C`
+- methodStart: `940`
+- method count: `2`.
+
+Exact methods in this snapshot:
+
+| Method index | Method | Param count | Token |
+|---:|---|---:|---:|
+| `940` | `.ctor` | `2` | `0x060003AD` |
+| `941` | `Invoke` | `0` | `0x060003AE` |
+
+This gives future resolvers both semantic identity and frozen metadata evidence for the exact Action delegate type being constructed.
+
+## 3. Delegate constructor fields observed
 
 The constructor does not treat Action as a tiny unmanaged callback struct. It initializes managed delegate internals.
 
@@ -44,7 +64,7 @@ Conclusion:
 
 Historic offsets are evidence for this fixed snapshot, not a recommendation to hand-build a delegate layout.
 
-## 3. Static target (`target == null`) is supported by the shipped constructor path
+## 4. Static target (`target == null`) is supported by the shipped constructor path
 
 Direct GameAssembly call sites exist where the game allocates a `System.Action` and invokes the same constructor with:
 
@@ -62,7 +82,7 @@ Therefore the constructor supports both:
 
 This is useful for harmless proof callbacks and reduces the need to manufacture a closure when no captured state is required.
 
-## 4. IL2CPP exports needed by the external producer are present
+## 5. IL2CPP exports needed by the external producer are present
 
 The frozen `GameAssembly.dll` export surface contains the semantic resolver/allocation/thread/GC APIs required by a producer bridge.
 
@@ -99,7 +119,7 @@ These are **frozen-snapshot diagnostics**, not the preferred production resolver
 
 This means the bridge can be semantic/resolver-driven instead of depending only on historic RVAs.
 
-## 5. Producer-thread attachment rule
+## 6. Producer-thread attachment rule
 
 If the producer execution context is not already an IL2CPP-attached managed runtime thread, attach before allocating/invoking managed objects:
 
@@ -112,7 +132,7 @@ Detach only when that producer context is truly finished and the bridge architec
 
 Do not assume a native thread created/injected externally is automatically a valid IL2CPP managed thread.
 
-## 6. Strong GC rooting is available
+## 7. Strong GC rooting is available
 
 The client exports strong GC-handle APIs.
 
@@ -127,15 +147,28 @@ Keep the proof target rooted until the external observer has verified the callba
 
 Keep Action rooted at least through successful enqueue. Once `MainThread.Execute` has stored the Action in `ConcurrentQueue<Action>`, the queue itself is a managed strong reference; the external Action handle can then be released if desired. During the first proof, retaining both handles until completion is simpler and safer.
 
-## 7. Best first proof callback: isolated `CancellationTokenSource.Cancel()`
+## 8. Best first proof callback: isolated `CancellationTokenSource.Cancel()`
 
-A better proof than movement/UI/gameplay is a completely isolated BCL managed object.
+The proof target is no longer only a string-level candidate. Frozen metadata resolves the exact type and methods.
 
-The frozen metadata contains:
+`System.Threading.CancellationTokenSource`:
 
-- `System.Threading.CancellationTokenSource`
-- `Cancel`
-- `IsCancellationRequested`.
+- TypeDefinition index: `525`
+- type token: `0x0200020A`
+- methodStart: `4610`
+- method count: `26`.
+
+Relevant exact methods:
+
+| Method index | Method | Param count | Token |
+|---:|---|---:|---:|
+| `4610` | `get_IsCancellationRequested` | `0` | `0x06001203` |
+| `4617` | `.ctor` | `0` | `0x0600120A` |
+| `4618` | `Cancel` | `0` | `0x0600120B` |
+| `4619` | `Cancel` | `1` | `0x0600120C` |
+| `4623` | `Dispose` | `0` | `0x06001210` |
+
+Therefore the intended proof callback has an unambiguous zero-argument overload in this client.
 
 Recommended proof object:
 
@@ -147,13 +180,13 @@ Recommended Action target/method:
 
 ```text
 target = CancellationTokenSource instance
-callback = CancellationTokenSource.Cancel()   // parameterless instance method
+callback = CancellationTokenSource.Cancel()   // exact zero-arg overload, token 0x0600120B
 ```
 
 Expected observable state:
 
 ```text
-IsCancellationRequested: false -> true
+get_IsCancellationRequested(): false -> true
 ```
 
 Why this is a strong first test:
@@ -162,19 +195,12 @@ Why this is a strong first test:
 - no Unity object mutation;
 - no network packet;
 - no item/social/destructive action;
-- callback result is externally observable by reading a managed property;
+- callback result is externally observable by a dedicated managed property;
 - object can be rooted independently until proof completes.
 
-Before using it, resolve the exact overload and verify:
+Runtime code should still verify name/parameter count/return type rather than blindly trusting a pointer. The metadata tokens above are frozen evidence and useful diagnostics.
 
-- method name `Cancel`;
-- parameter count `0`;
-- return type `System.Void`;
-- instance/static flags match the intended target form.
-
-Do not blindly bind only by name if overload ambiguity exists.
-
-## 8. Recommended proof algorithm
+## 9. Recommended proof algorithm
 
 Per PID:
 
@@ -184,23 +210,24 @@ Per PID:
 3. Resolve MainThread class + non-null MainThread.Instance.
 4. Resolve System.Action class.
 5. Resolve System.Threading.CancellationTokenSource class.
-6. Allocate CTS object and run its parameterless constructor through a valid managed invocation path.
+6. Allocate CTS object and invoke exact zero-arg .ctor.
 7. Strong-root CTS.
-8. Resolve CTS.Cancel() and verify zero-arg void instance signature.
+8. Resolve exact zero-arg CTS.Cancel() (token 0x0600120B as frozen cross-check).
 9. Allocate System.Action object.
 10. Construct Action legitimately with target=CTS and callback MethodInfo=Cancel.
 11. Strong-root Action.
-12. Confirm CTS.IsCancellationRequested == false.
+12. Confirm get_IsCancellationRequested() == false.
 13. Invoke MainThread.Execute(Action) from the producer context.
-14. Poll/read CTS.IsCancellationRequested without issuing another mutable game action.
+14. Poll/read get_IsCancellationRequested() without issuing another mutable game action.
 15. Success when it becomes true.
 16. Record enqueue/proof timing and bridge diagnostics.
-17. Release Action/CTS GC handles after proof cleanup.
+17. Optionally invoke CTS.Dispose() after proof.
+18. Release Action/CTS GC handles after safe cleanup.
 ```
 
 The game-owned queue consumer already proves that an Action dequeued by `DoExecuteWorks()` is invoked from Unity `Update()`. Therefore an isolated false->true CTS transition after enqueue is a practical end-to-end proof that the external bridge successfully constructed a valid managed delegate and crossed the MainThread queue boundary.
 
-## 9. Optional direct thread-ID proof
+## 10. Optional direct thread-ID proof
 
 If direct TID equality is still desired after the CTS proof, add a **diagnostic-only** one-shot observation layer around the queued callback or `DoExecuteWorks` and record `GetCurrentThreadId()`.
 
@@ -217,7 +244,7 @@ valid managed Action constructed
 
 with static `Update -> DoExecuteWorks -> Action.Invoke` evidence supplying the execution-thread semantics.
 
-## 10. `runtime_invoke` boundary
+## 11. `runtime_invoke` boundary
 
 `il2cpp_runtime_invoke` may be used from a correctly attached producer context for runtime-safe bridge/resolver operations and for `MainThread.Execute`, because `Execute` itself only crosses the thread-safe queue boundary.
 
@@ -225,7 +252,7 @@ Do **not** reinterpret this as permission to call gameplay mutations (`Game.GoTo
 
 Gameplay mutations still belong inside the queued Action on Unity Update.
 
-## 11. Two legitimate Action-construction strategies
+## 12. Two legitimate Action-construction strategies
 
 ### Strategy A — exact generated constructor ABI
 
@@ -246,7 +273,7 @@ This can reduce dependency on delegate native layout, but the exact chosen overl
 
 For the frozen client, Strategy A currently has the strongest direct native donor evidence.
 
-## 12. Suggested bridge contract
+## 13. Suggested bridge contract
 
 Expose one narrow producer primitive first:
 
@@ -264,9 +291,11 @@ Contract:
 - bridge never directly invokes the requested gameplay callback on producer thread;
 - bridge reports construction/enqueue exception separately from callback state proof.
 
+Build-ready interface details are in `contracts/MAINTHREAD_BRIDGE_V1.md`.
+
 Do not begin with a generic “invoke any method anywhere” API. Keep the first implementation deliberately narrow.
 
-## 13. Failure diagnostics
+## 14. Failure diagnostics
 
 Record explicit failure stages:
 
@@ -289,7 +318,7 @@ GC_LIFETIME_ERROR
 
 Do not collapse them into “MainThread failed”.
 
-## 14. Promotion rule
+## 15. Promotion rule
 
 After one CTS Action succeeds repeatedly without corruption:
 
@@ -300,7 +329,7 @@ After one CTS Action succeeds repeatedly without corruption:
 
 Do not start with Sell, Abandon, Revive, party mutation or map travel.
 
-## 15. What future AI must not redo
+## 16. What future AI must not redo
 
 Do not re-reverse:
 
@@ -308,6 +337,8 @@ Do not re-reverse:
 - whether Update drains the queue;
 - whether Action constructor supports target + callback MethodInfo;
 - whether null/static targets are possible;
+- `System.Action` TypeDef/method identities above;
+- `CancellationTokenSource` zero-arg ctor/Cancel/getter identities above;
 - whether the required IL2CPP GC-handle/object/reflection exports exist.
 
 Those are now recorded from direct frozen-client evidence. The only missing part is the **live external construction/enqueue proof**.
