@@ -11,10 +11,12 @@ Do not select multiple context packs unless the task genuinely spans multiple su
 Before opening broad analysis, use these when useful:
 
 - `AUTO_FEATURE_READINESS.md` — solved vs targeted-proof vs design-only status for each automation feature.
-- `database/AUTO_TOOL_API_CATALOG.md` — auto-only state/query/action API catalog with exact high-value IDs/payloads and narrow remaining gaps.
+- `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md` — exact per-PID read-only external snapshot model and field boundaries.
+- `database/AUTO_TOOL_API_CATALOG.md` — auto-only state/query API catalog.
+- `database/AUTO_TOOL_ACTION_CATALOG.md` — **exact semantic mutable actions**, packet IDs/payloads and result-proof rules.
 - `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md` — per-feature `state -> guard -> one action -> proof -> failure/rescan` matrix.
 
-They are compact implementation summaries; canonical subsystem documents remain the evidence source when exact provenance or edge cases matter.
+These are compact implementation summaries; canonical subsystem documents remain the evidence source when exact provenance or edge cases matter.
 
 | Auto-tool task / question | Primary context pack |
 |---|---|
@@ -31,28 +33,45 @@ They are compact implementation summaries; canonical subsystem documents remain 
 
 ## Direct supporting routes for automation
 
+### Exact action / packet question
+
+Start with:
+
+- `database/AUTO_TOOL_ACTION_CATALOG.md`
+
+It already consolidates the important solved mutations for Train, movement, skill use, NPC/GameDialog, Sell, item actions, loot, Revive, Team join/leave/invite and Follow.
+
+Only open `database/PACKET_IDS.csv` / subsystem analysis when the action catalog does not contain the required operation.
+
 ### Ground loot / pickup
 
 Read only:
 
-- `analysis/27_LOOT_PICKUP_FILTER_ENGINE.md`
-- `analysis/22_MAP_MINIMAP_RUNTIME.md`
-- `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`.
+- `database/AUTO_TOOL_ACTION_CATALOG.md`
+- `analysis/27_LOOT_PICKUP_FILTER_ENGINE.md` if detailed filter/lifecycle evidence is needed.
 
 ### Skill / buff lookup
 
 Use lookup first:
 
 - `database/AUTO_TOOL_API_CATALOG.md`
+- `database/AUTO_TOOL_ACTION_CATALOG.md`
 - `database/NGAMY_SUPPORT_SKILLS.md`
 - `database/FACTS.jsonl`
-- `database/static/README.md` / `LOOKUP_GUIDE.md` when an exact static record is actually needed for an auto decision.
+- exact static record only if a concrete auto decision needs it.
 
 Do not load every skill/config table merely to implement one cast rule.
 
 ### Item/equipment lookup for Auto Sell / loot
 
-Use only the records needed for the current keep/sell/use policy. Runtime `GetItemType`, `GetEquipType`, `IsItemSellable` and current live instance fields remain action-time truth.
+Use:
+
+- `contexts/BUILD_AUTO_SELL.md`
+- `database/AUTO_SELL_CLASSIFICATION.md`
+- live runtime `GetItemType`, `GetEquipType`, `IsItemSellable`
+- targeted static rows only when a richer keep/sell policy requires them.
+
+Do not load all 5,238 Items or 22,763 Equips.
 
 ### NPC/service/navigation
 
@@ -61,20 +80,23 @@ Use:
 - NPC database / service candidate index;
 - `analysis/12_GLOBAL_LUA_HELPERS.md`;
 - `analysis/22_MAP_MINIMAP_RUNTIME.md`;
-- actual `GameDialog` / NPCShop runtime state.
+- actual `GameDialog` / `NPCShop` runtime state.
 
 Do not invent static X/Y when `Game.GetNPCPosition(npcID)` exists.
 
-### Exact packet/API lookup
+### Party/join/follow
 
-Prefer:
+Use `contexts/BUILD_PARTY.md` first.
 
-- `database/AUTO_TOOL_API_CATALOG.md`
-- `database/FACTS.jsonl`
-- `database/PACKET_IDS.csv`
-- `database/PACKET_CATALOG.md`
-- `database/API_QUICK_REFERENCE.md`
-- `database/FINDING_TO_DOC_MAP.md`.
+Already solved and must not be retraced:
+
+```text
+leave team -> CMD_TEAM_ACTION 200057 -> 4:selfRoleID
+join target's team -> CMD_OTHER_ROLE_COMMAND 200051 -> 9:targetRoleID
+invite target -> CMD_OTHER_ROLE_COMMAND 200051 -> 5:targetRoleID
+```
+
+Membership success still requires fresh TeamID/C_TeamData proof.
 
 ## Conditional routes — only when that auto feature is actually requested
 
@@ -136,11 +158,11 @@ Do not restart GameAssembly-wide reverse.
 
 ### “Find NPC ID and make character walk to it”
 
-Use database lookup first, then `analysis/12_GLOBAL_LUA_HELPERS.md` and `analysis/22_MAP_MINIMAP_RUNTIME.md`. Do not manually invent X/Y.
+Use database lookup first, then `database/AUTO_TOOL_ACTION_CATALOG.md` and `analysis/12_GLOBAL_LUA_HELPERS.md`. Do not manually invent X/Y.
 
 ### “What should Auto Sell keep?”
 
-Read `contexts/BUILD_AUTO_SELL.md`; query only item/equipment fields needed by the policy. Do not load all Items/Equips tables.
+Read `contexts/BUILD_AUTO_SELL.md` and `database/AUTO_SELL_CLASSIFICATION.md`; query only item/equipment fields needed by the policy.
 
 ## Hard rule
 
