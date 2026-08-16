@@ -1,0 +1,4 @@
+Từ giờ mày có thể đưa cho AI repo này và chỉ cần nói:
+
+Đọc AI_INDEX.md và knowledge base trước. Không broad reverse-engineer lại client. 
+Chỉ phân tích binary khi thông tin exact cần cho task chưa có trong VERIFIED/database.
