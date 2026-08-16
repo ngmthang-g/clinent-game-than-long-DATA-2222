@@ -1,133 +1,451 @@
-# Bản đồ nghiên cứu client Thần Long
+# Bản đồ nghiên cứu client Thần Long — current canonical map
 
-> Đây là tài liệu định hướng cấp cao cho AI. Đọc file này sau `AI_INDEX.md`, sau đó chỉ mở tài liệu subsystem liên quan. Repo được coi là một snapshot client cố định; mục tiêu là tránh reverse-engineer lại từ đầu ở các cuộc làm việc sau.
+> Đây là bản đồ cấp cao của **frozen client snapshot**. Future AI không được dùng file này như lý do để đọc toàn repo. Bình thường hãy bắt đầu bằng `AI_BOOTSTRAP.md` -> `AI_ROUTER.md` hoặc `database/SUBSYSTEM_SOURCE_MAP.md`.
 
-## 1. Kết luận kiến trúc lớn
+---
 
-Client là game Unity Windows x64 dùng IL2CPP. Logic gameplay C# đã được chuyển thành native trong `Game/GameAssembly.dll`, còn tên class/method/field/namespace và nhiều metadata cần thiết nằm trong `global-metadata.dat`. `ScriptingAssemblies.json` xác nhận có `Assembly-CSharp.dll`, `Assembly-CSharp-firstpass.dll`, `Google.Protobuf.dll`, `protobuf-net.dll`, `Newtonsoft.Json.dll`, `LiveKit.dll`, Unity Burst/Collections, URP và Unity Purchasing/Services.
+# 1. Kết luận kiến trúc lớn
 
-Điểm quan trọng nhất: không nên nhìn client như một tập offset rời rạc. Dữ liệu cho thấy game có các lớp API cao cấp đủ để xây một framework gồm:
+Client là game **Unity Windows x64 + IL2CPP**.
 
-1. **Offline Game Database** — asset/config/map/NPC/item/skill/UI.
-2. **Runtime Scanner** — đọc object/state thật: player, nearby entities, bag, buff, map, combat, UI.
-3. **Internal Action Controller** — gọi action nội bộ đúng state/main-thread thay vì macro click mù.
+- gameplay C# đã compile native vào `Game/GameAssembly.dll`;
+- semantic type/method/field/assembly metadata nằm trong `global-metadata.dat` version 39;
+- game còn có một lớp **Lua runtime** rất lớn cho UI/gameplay orchestration;
+- `Config.unity3d` chứa static semantic databases;
+- `Interface.unity3d` chứa readable Lua + UI layout/callback data;
+- runtime có structured Game/SharedData APIs cho world/player/item/skill/buff/map/team/pet/task/loot;
+- mutable work có game-owned `MainThread.Execute(System.Action)` dispatcher.
 
-## 2. Các nguồn tri thức quan trọng theo thứ tự ưu tiên
+Vì vậy không nên nhìn client như một đống pointer/offset. Kiến trúc knowledge/tool phù hợp là:
 
-### P0 — Cực cao
+```text
+Offline semantic DB
+ + runtime semantic scanner
+ + immutable snapshots/events
+ + state machine
+ + validated main-thread semantic actions
+```
 
-- `Game/GameAssembly.dll`
-  - gameplay IL2CPP native;
-  - export rất nhiều `il2cpp_*` API;
-  - chứa code của Assembly-CSharp và cầu nối C# ↔ Lua/UI/network;
-  - là nguồn chính để tìm `LuaSystemManager`, `LuaSystemAPI_Game`, `LuaSystemAPI_GUI`, `LuaSystemSharedData`, `GScene`, item/buff/skill/network handlers.
+---
 
-- `Game/Thần Long  Mobile_Data/il2cpp_data/Metadata/global-metadata.dat`
-  - metadata version 39;
-  - khoảng 16.080 type definitions và 96 image/assembly records theo phân tích cấu trúc hiện tại;
-  - là chìa khóa để map namespace/class/method/field mà không hardcode RVA.
+# 2. Những nguồn tri thức đã được khai thác sâu
 
-- `Game/Thần Long  Mobile_Data/StreamingAssets/Config.unity3d`
-  - ứng viên mạnh chứa bảng config tĩnh: NPC, map, item, skill, monster, quest, portal, magic/buff…;
-  - cần giải mã/extract đúng bundle trước khi coi tên bảng cụ thể là VERIFIED.
+## Tier S — canonical semantic sources
 
-- `Game/Thần Long  Mobile_Data/Plugins/x86_64/FGClientTool_Windows.dll`
-  - DLL riêng của game;
-  - export `FG_Encrypt`, `FG_Decrypt`, `HelloWorld`;
-  - code decrypt có nhận diện `UnityFS`, `UnityRaw`, `UnityWeb` và custom transform, rất quan trọng để bóc các bundle bị biến đổi.
+### `Game/GameAssembly.dll`
 
-### P1 — Rất cao
+**Status:** broad architecture/native semantic reverse DONE; chỉ targeted reverse khi exact contract còn thiếu.
 
-- `StreamingAssets/Interface.unity3d` và `StreamingAssets/Interface/*.unity3d`
-  - nơi đáng đào để tìm UI prefab, Lua UI script/data, tên panel/button/callback, shared resources;
-  - `Interface.unity3d` có header bị custom/obfuscate nhưng vẫn lộ dấu Unity bundle và version text.
+Recovered value:
 
-- `Game/Thần Long  Mobile_Data/data.unity3d`
-  - bundle UnityFS lớn (~47 MB), version text cho thấy Unity `6000.3.6f1`;
-  - có thể chứa serialized game data/resources quan trọng.
+- Assembly-CSharp gameplay native code;
+- Lua bridge / Game / GUI / Network API;
+- world/path/item/skill/buff symbols;
+- IL2CPP exports;
+- exact MainThread dispatcher chain;
+- targeted action/constructor ABI evidence.
 
-- `RuntimeInitializeOnLoads.json`
-  - xác nhận `Assembly-CSharp.SyncBootstrap.AutoInit` được gọi khi runtime khởi tạo;
-  - có LiveKit/Burst/Unity Services init; hữu ích để hiểu bootstrap và main-thread environment.
+Do not broad-scan it again for every feature.
 
-### P2 — Trung bình
+### `global-metadata.dat`
 
-- `UnityPlayer.dll`: engine Unity, GameObject/Transform/PlayerLoop/AssetBundle/Input/rendering; cần khi bridge vào engine, nhưng gameplay chính không nằm ở đây.
-- `lib_burst_generated.dll`: Burst compiled jobs, nhiều export bị hash; chỉ ưu tiên khi một subsystem cụ thể được chứng minh chạy qua Burst.
-- `Thần Long  Mobile.exe`: Unity player executable, entry/bootstrap; ít gameplay trực tiếp.
-- `Host.exe`, `Launcher.exe`: .NET Framework 4.7.2 launcher/update/multi-instance/control layer; hữu ích cho quy trình launch/update nhưng không phải nguồn gameplay chính.
+**Status:** structural/semantic mapping DONE enough for current KB.
 
-### P3 — Thấp đối với gameplay
+Verified:
 
-- `livekit_ffi.dll`: LiveKit/WebRTC voice/data/media stack. `Version.xml` xác nhận voice realtime backend là LiveKit.
-- `baselib.dll`: Unity low-level memory/thread/socket/filesystem primitives.
-- `D3D12Core.dll`: graphics runtime.
-- `UnityCrashHandler64.exe`: crash collection.
-- screenshots: chỉ có giá trị đối chiếu UI/visual, không phải nguồn logic.
-- `*-resources.dat`: resource phụ của managed libraries, giá trị reverse gameplay thấp.
+- metadata v39;
+- ~16,080 type definitions;
+- 96 images/assemblies;
+- large method/field/parameter tables;
+- semantic names/tokens usable with GameAssembly.
 
-## 3. Subsystem đã thấy rõ trong metadata/string/binary
+### `Config.unity3d`
 
-### Lua runtime và high-level API
+**Status: VERIFIED DECRYPTED + EXTRACTED.**
 
-Các class/namespace quan trọng đã thấy:
+This is no longer an “ứng viên mạnh”. It produced **75 XML TextAssets**.
 
-- `FGStudio.LuaSystem.LuaSystemManager`
-- `FGStudio.LuaSystem.LuaSystemSharedData`
-- `FGStudio.LuaSystem.API.LuaSystemAPI_Game`
-- `FGStudio.LuaSystem.API.LuaSystemAPI_GUI`
-- `FGStudio.LuaSystem.API.LuaSystemAPI_Network`
-- `FGStudio.LuaSystem.GUI.UIButton`
+High-value tables include:
 
-Đây là một phát hiện kiến trúc quan trọng: phần lớn flow UI/NPC/shop có thể đi qua Lua, trong khi C# cung cấp API cầu nối rất giàu chức năng.
+- Maps 193
+- NPCs 1,003
+- AutoPath 1,618
+- Items 5,238
+- Equips 22,763
+- Skills 2,091
+- SkillProperties 2,044
+- AutoSkills 300
+- MagicAtrributes 509
+- Monsters 17,121
+- Tasks 516
+- GrowPoints 407
+- Pets 8,349
+- Spirits 1,889
+- Factions 17
+- FuBenScenarios 19
+- plus guild/equipment/activity/cosmetic/model tables.
 
-### World/scene
+Use:
 
-Đã thấy `FGStudio.Engine.Objects.GScene`, `PathFinder`, `NodeGrid`, `LocalMapComponents`, `NPCData`, `MonsterData`, `PortalData`, `ZoneData`, `GrowPointData`, `MapAreaSoundData` và các nhóm obstruction/region/safe-area.
+- `database/CONFIG_TABLE_CATALOG.md`
+- `analysis/32_CONFIG_DOMAIN_ATLAS.md`
+- `analysis/33_UNDEREXPLORED_HIGH_VALUE_CONFIG.md`.
 
-### Inventory/items
+Do not decrypt/reparse this bundle again for a question already answered by those DB/docs.
 
-Đã thấy API trực tiếp cho free bag space, danh sách item, item instance/template, type/equip type, sellable/throwable, price, stack, bound, durability… Vì vậy inventory scanner không cần OCR/icon recognition.
+### `Interface.unity3d`
 
-### Combat/skill/buff
+**Status: VERIFIED DECRYPTED + EXTRACTED.**
 
-Đã thấy `UseSkill`, nhiều `RequestUsingSkill*`, buff getters/removal, target/combat helpers và một lượng lớn `magic_*` flags mô tả hiệu ứng kỹ năng/buff/debuff.
+Recovered:
 
-### Network/event
+- **338 UI layout XML TextAssets**;
+- **1,469 handler bindings**;
+- **339 Lua script classes with colon-method definitions**;
+- global Lua infrastructure such as `Global_Constants`, `Global_Functions`, `TCPPacketDefine`, `TCPCmdHandler`, `TCPCmdEventHandler`;
+- high-value scripts including AutoFight, AutoHp, Utilities, Revival, Bag, NPCShop, GameDialog, Team, Task, Pet/Spirit.
 
-Đã thấy `SendPacket`, `SendPacketToServer`, `SendClickOnObject` và nhiều command/event như `CMD_CLICK_OBJECT`, `CMD_REMOVE_ITEM`, `CMD_UPDATE_ITEMS_LIST`, `CMD_USE_SKILL`, `CMD_OBJECT_DEATH`, `CMD_REVIVE`, `CMD_CHANGE_MAP`, `CMD_UPDATE_TRADER_STATE`, `CMD_CLIENT_LUA`…
+This changed the preferred research order for UI/gameplay features to:
 
-## 4. Hai nguyên tắc để AI không suy luận sai
+`layout/Lua -> runtime semantic API -> exact packet/action -> native only if still missing`.
 
-1. **Tên symbol tồn tại không đồng nghĩa action đã runtime-verified.** Ví dụ thấy `CMD_REVIVE` chứng minh protocol/event có khái niệm revive, nhưng chưa tự động chứng minh cách gửi packet revive chính xác.
-2. **Response handler không phải request action.** Ví dụ `ProcessRemoveItem`/`ProcessUpdateMoney` là dấu hiệu server đã cập nhật client; không được gọi chúng để giả bán đồ.
+### `FGClientTool_Windows.dll`
 
-## 5. Mục tiêu reverse đáng làm nhất nếu cần đào tiếp
+**Status:** decrypt role sufficiently solved for successful extraction.
 
-Không ưu tiên tìm offset HP từng người. Ưu tiên tìm các object/query layer trung tâm đã có bằng chứng cụ thể:
+Verified exports:
 
-- `LuaSystemSharedData` — nearby sprites/NPC/team/enemy/item pack/local map objects/inventory.
-- `GScene` — scene, target, position, pathfinder, safe area, map components.
-- Lua Game API — action/query layer cấp cao.
-- Lua GUI API — panel/script lifecycle và callbacks.
-- Lua Network API — packet bridge.
+- `FG_Encrypt`
+- `FG_Decrypt`
+- `HelloWorld`.
 
-Các tên giả định kiểu `WorldManager`, `EntityManager`, `BagManager` chỉ nên dùng như mô hình tư duy; hiện chưa có bằng chứng phải tồn tại đúng tên đó.
+Its major value was decoding custom bundles. Reopen only if a concrete bundle fails the known transform path.
 
-## 6. Cách đọc knowledge base
+---
 
-- IL2CPP/metadata: `analysis/01_IL2CPP_RUNTIME_METADATA.md`
-- Lua/API/UI/network: `analysis/02_LUA_GAME_UI_NETWORK_API.md`
-- World/entity/map/path: `analysis/03_WORLD_ENTITY_MAP_PATH.md`
-- Inventory/shop: `analysis/04_INVENTORY_ITEMS_SHOP.md`
-- Combat/skill/buff: `analysis/05_COMBAT_SKILLS_BUFFS.md`
-- Asset/encryption: `analysis/06_ASSETS_ENCRYPTION_BUNDLES.md`
-- Support modules/launcher: `analysis/07_SUPPORT_MODULES_LAUNCHER.md`
-- Quick lookup: `database/API_QUICK_REFERENCE.md`
-- Điều đã xác nhận: `research/VERIFIED.md`
-- Dự đoán mạnh: `research/PROBABLE.md`
-- Giả thuyết cần test: `research/HYPOTHESES.md`
+# 3. Important sources that remain targeted-only
 
-## 7. Snapshot identity tối thiểu
+## `data.unity3d`
 
-Repo này được chủ động coi là snapshot cố định. Không bắt buộc workflow hash mỗi lần. Tuy nhiên binary trong archive nghiên cứu đã được đối chiếu với LFS object của repo cho `GameAssembly.dll` và `global-metadata.dat`, nên các phân tích dưới đây thuộc đúng snapshot hiện tại, không phải một client ngẫu nhiên khác.
+Plain UnityFS ~47.6 MB, Unity `6000.3.6f1`.
+
+Potentially valuable for serialized resources/prefabs/map/path/world assets, but **do not broad-extract without a missing concrete question**.
+
+Priority now: medium-high only for asset/world/path gaps.
+
+## `Translations.unity3d`
+
+Successfully decoded to valid UnityFS according to Phase 2 evidence, but a compact canonical localization DB has not yet been created.
+
+Potential value:
+
+- localized text/key mapping;
+- robust semantic dialog matching;
+- UI display-name lookup.
+
+Target when language/text matching becomes a blocker.
+
+## Interface shared bundles
+
+`LoadingResources`, `Logo`, `Shared`, `Shared_2` were decoded to valid UnityFS.
+
+Use only for prefab/resource-specific questions that Lua/layout text cannot answer.
+
+## `UnityPlayer.dll`
+
+Engine-level source: PlayerLoop, Unity object lifecycle, AssetBundle, Transform/GameObject/render/input internals.
+
+Do not reverse it for normal game feature semantics.
+
+## `lib_burst_generated.dll`
+
+Target only when a proven call path enters a Burst job that matters.
+
+## Launcher / Host
+
+Separate .NET launcher/update/session layer. Do not mix with frozen gameplay client research unless a specific launcher/session question is asked.
+
+---
+
+# 4. Core runtime semantic layers already VERIFIED
+
+## Nearby players / entities
+
+Shipped UI proves:
+
+`Game.GetNearByPeacePlayers(limit)` ->
+
+- RoleID
+- Name
+- Level
+- FactionID
+- HP
+- MaxHP
+- GuildName
+- AvartaID
+- TeamRank.
+
+Nearby enemy UI exposes the same core schema.
+
+`Game.SelectedTarget` gives richer target-specific identity/vitals/type/social state.
+
+Consequence:
+
+Do not return to broad CE scanning for nearby player HP/MaxHP/name/RoleID/faction/guild.
+
+## Map / movement / world
+
+Verified semantic APIs include:
+
+- `Game.IsMapReady()`
+- `GetLocalMapObjects()`
+- `GetNearbyObjects()`
+- `GetCurrentMoveDestination()`
+- `MoveTo`
+- `MoveToEx`
+- `GoTo`
+- `HasPath`
+- `GetNPCPosition`
+- `ClickNPC`
+- `ClickToObject`.
+
+## Inventory
+
+Verified semantic APIs include:
+
+- `GetItemsAtSite`
+- `GetItemData`
+- `GetItemTemplateData`
+- `GetFreeBagSpace`
+- `GetItemType`
+- `GetEquipType`
+- `IsItemSellable`
+- price/stack/star/level/gem helpers.
+
+Identity rule:
+
+`ID = live instance` != `ItemID = template` != `Position = slot` != `Site = container`.
+
+## Skill / buff
+
+Verified:
+
+- `Game.UseSkill(skillID)` semantic use;
+- `GetSkillCooldown(skillID)` returns passed/cooldown ticks;
+- `GetBuffs()` -> BuffID/DurationTick/Stack;
+- `GetBuffData`, `GetBuffProperties`, `HasBuff`;
+- team-heal donor uses range/chase/target skill semantics.
+
+## Team
+
+Verified structured `C_TeamData` + action constants/payloads + Follow engine.
+
+## Task
+
+`Tasks.xml` exists with 516 rows, and built-in Auto Quest uses structured task semantics.
+
+## Pet / Spirit
+
+Runtime state/action donor is documented; static Config also provides thousands of Pet/Spirit templates.
+
+## Ground loot
+
+Built-in engine already uses semantic ItemPack queries/path/interact/pickup. No OCR needed.
+
+---
+
+# 5. Exact action/protocol breakthroughs
+
+## Auto Train
+
+`C_AutoModel.Train = 1`
+
+Start:
+
+`GUI.FindUI("AutoFight_Main"):StartAutoFight(C_AutoModel.Train)`.
+
+Visible `Đánh quái` tab is configuration, not the actual start action.
+
+## NPC shop sell
+
+`CMD_NPC_SHOP_SELL_REQUEST = 200036`
+
+Payload:
+
+`itemInstanceID:NpcShopID:ShopID`.
+
+## Revive / Đầu thai
+
+`CMD_REVIVE_DATA = 200063`
+
+- normal/Đầu thai = 1
+- newbie = 2
+- skill revive = 3.
+
+## Dynamic GameDialog
+
+`CMD_SHOW_GAMEDIALOG = 100007`
+
+`Selections[selectionID] = visibleText`
+
+submit:
+
+`selectionID:SelectedItemID`.
+
+Treatment selection must come from the active server dialog; do not invent a global ID.
+
+## Storage move
+
+`CMD_ITEM_ACTION = 100005`
+
+Move action = 5
+
+payload:
+
+`5:itemInstanceID:destinationSite`.
+
+## MainThread
+
+Frozen exact architecture:
+
+`MainThread.Execute(Action) -> ConcurrentQueue<Action> -> Update -> DoExecuteWorks -> Action.Invoke`.
+
+Dispatcher implementation is VERIFIED; only a live external producer proof remains if building the action bridge.
+
+---
+
+# 6. Static data should now be treated as domains, not one giant database
+
+Read `analysis/32_CONFIG_DOMAIN_ATLAS.md`.
+
+Important groups:
+
+### World/routing
+
+Maps, WorldMap, NPCs, AutoPath, FuBenScenarios, Monsters, GrowPoints.
+
+### Combat/skills
+
+Skills, SkillProperties, AutoSkills, MagicAtrributes, Books, Factions.
+
+### Inventory/equipment/economy
+
+Items, Equips, Medicines, Gems, EquipSets, EquipEnhance, EquipIdentifyValues, EquipExtendedAttributes.
+
+### Pet/Spirit
+
+Pets, PetFeatures, PetEquips, PetEquipSets, Spirits, SpiritFeatures.
+
+### Task/progression
+
+Tasks, GuildTask, Activities, DailyActivityAward, RoleReputes, RoleTitles.
+
+### Cosmetics/resources
+
+Character models/appearance/FX/audio and related low-priority tables.
+
+This domain map is specifically designed so AI can select only the needed rows/tables.
+
+---
+
+# 7. Current highest-value knowledge work
+
+Broad binary reverse is no longer the main goal.
+
+Priorities:
+
+1. **Skills semantic stack**
+   - Skills
+   - SkillProperties
+   - AutoSkills
+   - Factions
+   - Books.
+
+2. **Inventory/equipment policy stack**
+   - Items
+   - Equips
+   - Medicines
+   - equipment support tables.
+
+3. **Tasks/gather/activity stack**
+   - Tasks
+   - GrowPoints
+   - GuildTask
+   - Activities.
+
+4. **Pet/Spirit template stack**
+   - Pets
+   - PetFeatures
+   - PetEquips
+   - Spirits.
+
+5. Localization database from `Translations.unity3d` when semantic text matching needs it.
+
+6. `data.unity3d` asset inventory only when a concrete missing world/path/resource question justifies the cost.
+
+Exact extraction schemas/preservation rules: `analysis/33_UNDEREXPLORED_HIGH_VALUE_CONFIG.md`.
+
+---
+
+# 8. Remaining runtime-only proof questions
+
+These cannot be solved purely by more static prose:
+
+- actual Trị liệu selection on a live healer dialog + any confirmation/outcome;
+- server acceptance rules for beneficial skills on non-team peaceful players;
+- exact extra fields of runtime actor objects beyond already-verified UI schema;
+- final external managed Action bridge proof if/when implementation work resumes.
+
+These must stay targeted; they do **not** justify re-reversing the whole client.
+
+---
+
+# 9. AI reading strategy
+
+For a question like “Auto Sell”:
+
+```text
+AI_BOOTSTRAP
+ -> AI_ROUTER / SUBSYSTEM_SOURCE_MAP
+ -> Auto Sell context/feature doc
+ -> Bag/shop runtime doc
+ -> exact item records only if needed
+```
+
+For “skill X does what?”:
+
+```text
+SUBSYSTEM_SOURCE_MAP
+ -> Skills index/record
+ -> SkillProperties
+ -> MagicAtrributes if property symbols need interpretation
+ -> runtime APIs only if asking whether the current character can cast it now
+```
+
+For “NPC X ở đâu/làm gì?”:
+
+```text
+NPC database
+ -> map association/service candidate
+ -> runtime GetNPCPosition for live coordinates
+ -> active GameDialog/shop data for actual service contract
+```
+
+The repo is a library, not a book that must be read front-to-back.
+
+---
+
+# 10. Evidence hygiene
+
+Two rules remain critical:
+
+1. symbol/packet/table existence does not automatically prove direction/payload/runtime service behavior;
+2. server/update handlers are evidence of state changes, not automatically request actions.
+
+Use:
+
+- `research/VERIFIED*.md` for solved facts;
+- `research/PROBABLE.md` for strong remaining inferences;
+- `research/HYPOTHESES.md` for unresolved research questions.
+
+Stale uncertainty must be removed when later phases prove the answer.
