@@ -2,14 +2,21 @@
 
 This repository is intentionally large. **Do not read the entire repository before starting a task.**
 
+## Primary scope
+
+The primary purpose of this KB is **building a large Thần Long automation tool**, not documenting every subsystem in the client.
+
+After this file, read `AUTO_TOOL_SCOPE.md`. Research unrelated to automation should be deferred unless a concrete auto feature depends on it.
+
 The correct workflow is:
 
 1. read this file;
-2. read `AI_ROUTER.md`;
-3. choose exactly one matching `contexts/BUILD_*.md` pack;
-4. read only the REQUIRED documents named by that pack;
-5. query databases only for the specific IDs/records needed;
-6. open deeper analysis/raw evidence only when the context pack says it is necessary.
+2. read `AUTO_TOOL_SCOPE.md`;
+3. read `AI_ROUTER.md`;
+4. choose exactly one matching `contexts/BUILD_*.md` pack;
+5. read only the REQUIRED documents named by that pack;
+6. query databases only for the specific IDs/records needed;
+7. open deeper analysis/raw evidence only when the context pack says it is necessary.
 
 ## Purpose
 
@@ -22,6 +29,22 @@ The KB preserves exact technical facts while deduplicating chat/research repetit
 For a normal implementation task, target **5–10 documents maximum before coding**. Do not preload all `analysis/`, all CSVs, all Lua, or all client files.
 
 Large CSV/XML databases are lookup sources, not sequential reading material.
+
+## Auto-value rule
+
+Prioritize knowledge that helps the tool:
+
+- observe runtime state;
+- decide what to do;
+- move/path/return to a spot;
+- target/chase/cast;
+- interact with NPC/UI semantically;
+- sell/store/use/loot items safely;
+- revive/heal/buff;
+- coordinate party/multiple clients;
+- verify success and avoid crashes/disconnects.
+
+Normally defer cosmetics, rendering, voice, launcher internals, decorative resources, broad analytics and unrelated progression systems.
 
 ## Evidence levels
 
@@ -117,4 +140,4 @@ If conflict remains, do targeted verification and update the KB; do not broad-re
 
 ## Mandatory next step
 
-After reading this file, open `AI_ROUTER.md` and route the current task.
+After reading this file, open `AUTO_TOOL_SCOPE.md`, then `AI_ROUTER.md`, and route the current automation task.
