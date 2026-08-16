@@ -2,7 +2,11 @@
 
 Purpose: give future tool-building AI a **small implementation contract** so it does not need to reread all native reverse documents before coding.
 
-Read deeper evidence only if this contract is insufficient:
+Current-tool integration is documented in:
+
+- `analysis/31_CURRENT_AUTO_TOOL_BRIDGE_INTEGRATION.md`.
+
+Read deeper client evidence only if this contract is insufficient:
 
 - `analysis/21_MAIN_THREAD_DISPATCHER.md`
 - `analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md`
@@ -10,34 +14,88 @@ Read deeper evidence only if this contract is insufficient:
 
 ## 1. Non-negotiable architecture
 
-The external controller may resolve/read state from its producer context, but gameplay/UI mutations must be marshalled through:
+For the current `AUTO-train-thanlong` tool:
 
 ```text
-valid managed System.Action
+External controller
+ -> per-PID shared mapping
+ -> PostThreadMessage(kWakeMessage)
+ -> WH_GETMESSAGE TlGetMessageHook
+ -> validated Unity managed main thread
+ -> construct legitimate System.Action
  -> FGStudio.Engine.Utilities.MainThread.Execute(Action)
  -> ConcurrentQueue<Action>
- -> Unity Update
+ -> hook returns
+ -> later Unity Update
  -> DoExecuteWorks
  -> Action.Invoke
+ -> observer/state proof
 ```
 
-Do not expose a production primitive that directly invokes arbitrary Game/Lua/UI mutation on the producer thread.
+Do not expose a production primitive that directly invokes arbitrary Game/Lua/UI mutation from the hook callback merely because the hook already runs on the correct thread. Queueing avoids Windows-message-hook re-entrancy and restores the game-owned Update execution boundary.
 
-## 2. Minimal public bridge interface
+## 2. Current tool fact: producer thread is already managed Unity main thread when proof passes
 
-Recommended first interface:
+The current bridge source performs all of these checks before setting `ValidUnityMainThread`:
+
+```text
+GetCurrentThreadId() == targetWindowThreadId
+il2cpp_thread_current() != null
+SynchronizationContext.Current is UnitySynchronizationContext
+CurrentThread.ManagedThreadId == UnitySynchronizationContext.MainThreadId
+```
+
+Therefore the current WH_GETMESSAGE producer path should **not** call `il2cpp_thread_attach` after this proof passes.
+
+Use `thread_attach` only for a genuinely foreign future producer context.
+
+## 3. Existing protocol must be extended, not replaced
+
+Current protocol V1.0.7 already provides one-command-at-a-time shared-memory request/response and commands 1..5 for read-only validation/snapshot.
+
+Recommended V1.0.8 additions:
+
+```text
+BeginMainThreadActionProof   = 6
+PollMainThreadActionProof    = 7
+CleanupMainThreadActionProof = 8
+```
+
+Bump protocol version when request/response structures change so mismatched controller/bridge binaries fail closed.
+
+## 4. Critical async rule
+
+**Never enqueue an Action and synchronously wait for its callback inside the same WH_GETMESSAGE hook request.**
+
+That would block the Unity main thread and prevent the future `Update()` that drains the queue.
+
+The proof must be two-phase:
+
+```text
+Begin -> construct/root/enqueue -> return from hook
+        [normal Unity Update invokes Action]
+Poll  -> observe callback state -> cleanup/pass
+```
+
+This rule is mandatory for the current tool architecture.
+
+## 5. Minimal bridge interface
+
+At the controller/state-machine level:
 
 ```text
 BridgeResolve(pid) -> BridgeContext
 BridgeProbeMainThread(ctx) -> MainThreadStatus
-BridgeRunCtsProof(ctx) -> ProofResult
-BridgeEnqueueAction(ctx, ManagedActionDescriptor) -> EnqueueResult
+BridgeBeginCtsProof(ctx) -> Enqueued/Pending/Error
+BridgePollCtsProof(ctx) -> Pending/Pass/Timeout/Error
+BridgeCleanupCtsProof(ctx)
+BridgeEnqueueAction(ctx, ManagedActionDescriptor) -> EnqueueResult   // only after proof is promoted
 BridgeRelease(ctx)
 ```
 
 Do **not** start with a giant generic remote invocation API.
 
-## 3. `BridgeContext`
+## 6. `BridgeContext`
 
 Per PID only:
 
@@ -50,13 +108,15 @@ ProducerThreadAttachState
 MainThreadClass
 MainThreadInstance
 ActionClass
+ActionProofGeneration
+ActionProofState
 LastException
 LastErrorCode
 ```
 
-Never share live pointers between game processes.
+Never share live pointers/GC handles between game processes.
 
-## 4. `ManagedActionDescriptor`
+## 7. `ManagedActionDescriptor`
 
 ```text
 TargetObject        // nullable for static callback
@@ -73,7 +133,7 @@ The V1 bridge accepts only callbacks compatible with `System.Action`:
 
 Reject incompatible callbacks before constructing the delegate.
 
-## 5. Resolver rules
+## 8. Resolver rules
 
 Resolve by names/metadata whenever possible:
 
@@ -85,23 +145,33 @@ System.Threading.CancellationTokenSource
 
 Use exported IL2CPP APIs for assembly/image/class/method lookup.
 
-Historic RVAs are frozen-snapshot diagnostics, not the sole identity.
+Historic RVAs/tokens are frozen-snapshot diagnostics, not the sole production identity.
 
-## 6. Producer thread
+## 9. Required new IL2CPP API delta for current `bridge.cpp`
 
-Before managed allocation/invoke:
+Current bridge already resolves the read/query APIs needed for metadata and `runtime_invoke`.
+
+Add at minimum:
 
 ```text
-if producer context is not attached:
-    domain = il2cpp_domain_get()
-    il2cpp_thread_attach(domain)
+il2cpp_object_new
+il2cpp_gchandle_new
+il2cpp_gchandle_get_target
+il2cpp_gchandle_free
 ```
 
-Record whether the bridge attached the thread itself so cleanup does not detach an unrelated game-owned managed thread.
+Keep optional support for:
 
-## 7. Action construction
+```text
+il2cpp_thread_attach
+il2cpp_thread_detach
+```
 
-Verified generated donor ABI in this snapshot:
+but do not attach the existing validated hook thread again.
+
+## 10. Action construction
+
+Verified generated donor ABI in this frozen client:
 
 ```text
 ActionCtor(
@@ -122,80 +192,123 @@ write guessed fields
 pretend result is System.Action
 ```
 
-## 8. GC ownership
+## 11. GC ownership
 
 V1 proof policy:
 
 ```text
-root target
-root Action
-construct/enqueue
-wait proof
-release Action root
-release target root
+Begin request:
+  root target
+  root Action
+  enqueue
+  return
+
+Poll request(s):
+  recover target through strong GC handle
+  inspect state
+
+Pass/cleanup:
+  release Action root
+  release target root
 ```
 
 Use strong `il2cpp_gchandle_new(..., false)` handles.
 
-Do not free a target root before proof if the external observer still needs to inspect it.
+Do not free a target root before proof if the Poll phase still needs to inspect it.
 
-## 9. Canonical proof
+## 12. Canonical proof target
 
-`BridgeRunCtsProof` should use:
+Use:
 
 ```text
 System.Threading.CancellationTokenSource
 ```
 
-Sequence:
+Frozen metadata cross-check:
 
 ```text
-allocate + initialize CTS
-root CTS
-resolve Cancel() [0 args, void]
-construct rooted Action(target=CTS, callback=Cancel)
-assert IsCancellationRequested == false
-enqueue Action
-wait until IsCancellationRequested == true
-cleanup roots
+zero-arg .ctor token = 0x0600120A
+zero-arg Cancel token = 0x0600120B
+get_IsCancellationRequested token = 0x06001203
 ```
 
-This proof must not:
+Runtime code should resolve semantically and use these only as diagnostics/cross-checks.
 
-- move the role;
-- interact with NPC/UI;
-- send game packets;
-- alter items;
-- alter team/social state.
+## 13. Begin proof contract
 
-## 10. Proof result
+`BridgeBeginCtsProof`:
 
 ```text
-ProofResult {
-  Success
-  ErrorCode
+require ValidUnityMainThread
+require no active proof/action
+resolve/allocate CTS
+invoke zero-arg CTS .ctor
+root CTS
+resolve zero-arg Cancel [void]
+resolve/allocate System.Action
+construct legitimate Action(target=CTS, callback=Cancel)
+root Action
+verify CTS cancellation state == false
+resolve non-null MainThread.Instance
+invoke MainThread.Execute(Action)
+store proof generation + handles + begin/deadline time
+return ENQUEUED immediately
+```
+
+Do not poll CTS before returning from the same hook invocation.
+
+## 14. Poll proof contract
+
+`BridgePollCtsProof`:
+
+```text
+require active proof
+recover CTS from target GC handle
+read get_IsCancellationRequested
+if true:
+    mark PASS
+    optional Dispose
+    cleanup handles
+    return PASS
+if deadline exceeded:
+    return TIMEOUT / cleanup according to fail-closed policy
+otherwise:
+    return PENDING
+```
+
+Poll must not enqueue another callback.
+
+Controller policy should poll at a modest interval such as 50–200 ms rather than spam the game message queue.
+
+## 15. Proof result
+
+Add a structured result, e.g.:
+
+```text
+ActionProofSnapshot {
+  ValidMask
+  Generation
+  State       // Idle/Enqueued/Pending/Pass/Timeout/Error
   Stage
-  MainThreadInstance
-  TargetHandleCreated
-  ActionHandleCreated
-  EnqueueReturned
+  ErrorCode
   CallbackObserved
   DurationMs
-  ExceptionPointerOrMessage
 }
 ```
+
+Human-readable `detail` remains useful, but automation must not parse free-form text as state.
 
 Optional diagnostics:
 
 ```text
 ProducerTID
-ObservedUnityTID
+ObservedUnityManagedThreadId
 CallbackTID
 ```
 
-Direct TID measurement is optional once the isolated callback result is observed, because the static queue consumer is already VERIFIED to invoke from Unity Update.
+Direct callback TID measurement is optional because the static queue consumer is already VERIFIED to invoke from Unity Update.
 
-## 11. Error codes
+## 16. Error codes
 
 Canonical V1 codes:
 
@@ -204,7 +317,7 @@ OK
 GAMEASSEMBLY_NOT_FOUND
 EXPORT_RESOLVE_FAIL
 DOMAIN_RESOLVE_FAIL
-THREAD_ATTACH_FAIL
+HOOK_NOT_UNITY_MAINTHREAD
 MAINTHREAD_CLASS_FAIL
 MAINTHREAD_INSTANCE_NULL
 ACTION_CLASS_FAIL
@@ -219,6 +332,8 @@ TARGET_GCHANDLE_FAIL
 ACTION_GCHANDLE_FAIL
 EXECUTE_METHOD_FAIL
 EXECUTE_EXCEPTION
+PROOF_ALREADY_ACTIVE
+PROOF_NOT_ACTIVE
 CALLBACK_TIMEOUT
 TARGET_STATE_UNCHANGED
 GC_LIFETIME_ERROR
@@ -227,7 +342,7 @@ PROCESS_EXITED
 
 The UI/log should display the specific stage instead of only `Bridge failed`.
 
-## 12. Mutable action gate
+## 17. Mutable action gate
 
 After the proof is VERIFIED, each PID still gets:
 
@@ -239,7 +354,7 @@ Higher feature layers wait for semantic state proof before enqueuing another mut
 
 Read-only scanners are separate and may run concurrently.
 
-## 13. First gameplay promotion ladder
+## 18. First gameplay promotion ladder
 
 Do not jump from CTS proof directly to Auto Sell/Revive.
 
@@ -247,7 +362,7 @@ Recommended promotion:
 
 ```text
 Stage 0: CTS isolated managed proof
-Stage 1: harmless/read-only or cosmetic semantic callback if available
+Stage 1: harmless/cosmetic semantic callback if available
 Stage 2: low-risk reversible gameplay semantic action
 Stage 3: movement/target/skill actions
 Stage 4: transactional item/shop/social actions
@@ -255,18 +370,19 @@ Stage 4: transactional item/shop/social actions
 
 Every stage must record expected state proof and timeout behavior.
 
-## 14. Definition of done for V1
+## 19. Definition of done for V1
 
 `MAINTHREAD_BRIDGE_V1` is complete when, for one live game PID:
 
-1. resolver finds MainThread Instance;
-2. producer is correctly attached to IL2CPP;
+1. existing main-thread validator passes;
+2. resolver finds non-null MainThread.Instance;
 3. CTS target is allocated/initialized/rooted;
 4. legitimate Action is constructed/rooted;
-5. `Execute(Action)` accepts it without managed exception;
-6. CTS state changes from false to true;
+5. Begin command enqueues and returns without blocking Unity;
+6. a later Poll observes CTS state false -> true;
 7. repeated proofs do not crash/corrupt GC;
 8. cleanup releases roots safely;
-9. diagnostics distinguish every failure stage.
+9. diagnostics distinguish every failure stage;
+10. protocol/controller enforce at most one pending proof/mutable action.
 
 Only then should feature-specific action contracts depend on this bridge.
