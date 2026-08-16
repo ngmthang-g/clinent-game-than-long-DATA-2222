@@ -1,16 +1,43 @@
 # Feature specification — Adaptive Auto Orchestrator
 
-Status: **DESIGN SYNTHESIS** built from VERIFIED semantic APIs + Auto Buff v1.3.1 behavior donor + current requested automation ideas. Individual actions retain the confidence level of their underlying KB evidence; the full end-to-end orchestrator is not yet runtime VERIFIED.
+Status: **DESIGN SYNTHESIS** from VERIFIED client state/action contracts. The full orchestrator is tool design, not a shipped game feature.
 
-## Goal
+Purpose: coordinate Auto Train, Party, Auto Buff, Revive, Auto Sell, travel and train-spot switching as **one state machine per PID** without competing mutable-action loops.
 
-Coordinate Auto Train, Party, Auto Buff, Revive, Bag/Sell and map/spot switching as **one state machine per game client**.
+Read first:
 
-The important design change is that features must not run as unrelated loops/threads that issue mutable actions concurrently. Scanners may run read-only, but each client gets **at most one mutable action in flight**.
+- `AUTO_FEATURE_READINESS.md`
+- `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md`
+- `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md`
 
-## 1. Top-level states
+---
 
-Recommended state family:
+# 1. Core architecture
+
+Per client:
+
+```text
+Resolver
+ -> read-only Scanners / Observers
+ -> immutable Snapshot Store
+ -> Orchestrator State Machine
+ -> Feature Policy
+ -> Safety Guard
+ -> Action Gate (max 1 mutable action)
+ -> Unity/MainThread dispatcher
+ -> semantic Game/Lua/UI action
+ -> concrete state proof
+ -> fresh snapshot
+ -> next decision
+```
+
+Read-only observers may run concurrently. Mutable actions may not.
+
+Every PID owns independent live state. Static Config/database data may be shared read-only.
+
+---
+
+# 2. Canonical top-level states
 
 ```text
 IDLE
@@ -26,6 +53,7 @@ BUFF_SUPPORT
 REVIVAL
 BAG_EVALUATION
 SELLING
+RETURN_TO_SPOT
 SPOT_EVALUATION
 CHANGE_SPOT
 PAUSED_CAPTCHA
@@ -33,11 +61,111 @@ RECOVERY
 ERROR
 ```
 
-A feature may have its own inner state machine, but all mutable actions go through the same per-client action gate.
+A feature may have inner states, but all mutations still pass through the single per-PID action gate.
 
-## 2. Train spot profile
+---
 
-Each configured train spot should be a first-class record, not only an X/Y pair.
+# 3. Per-PID snapshots
+
+Use `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md` as the canonical schema.
+
+Important publications:
+
+```text
+LocalRoleSnapshot
+MapSnapshot
+NearbyPeacePlayers
+NearbyTrainTargets
+SelectedTargetSnapshot
+BagSnapshot
+BuffSnapshot
+SkillCooldownSnapshot
+TeamSnapshot
+GameDialogSnapshot
+ShopTransactionSnapshot
+RevivalSnapshot
+```
+
+Every snapshot/action candidate carries freshness/version information. A tool-owned `WorldGeneration` invalidates stale world/UI transaction state after map/loading generations change.
+
+Never retain Lua/C#/UIButton/item object pointers as long-lived external identity.
+
+---
+
+# 4. One-action arbitration
+
+Recommended priority:
+
+```text
+CAPTCHA / MANUAL PAUSE
+ > fatal/error recovery
+ > REVIVAL
+ > map-transition completion
+ > critical self survival
+ > critical Buff/Heal
+ > current Sell/NPC transaction
+ > current Party transaction
+ > normal Buff
+ > Train target/chase/cast
+ > Loot
+ > background spot/travel optimization
+```
+
+Do not interrupt a server-authoritative transaction halfway unless its feature has a proven safe cancel path.
+
+---
+
+# 5. State-proof rule
+
+Every transition needs evidence.
+
+Travel:
+
+```text
+expected MapID
+AND Game.IsMapReady()
+AND valid fresh position
+AND distance(position,destination) <= tolerance
+```
+
+Party:
+
+```text
+Game.RoleData.TeamID / C_TeamData changed as expected
+```
+
+Buff/heal:
+
+```text
+fresh target HP change
+OR buff/icon evidence when available
+OR cooldown/progress transition consistent with cast
+```
+
+Sell:
+
+```text
+sold instance removed
+OR UpdateItemsList + fresh BagSnapshot
+OR consistent shop/money update
+```
+
+Revive:
+
+```text
+local role alive
+AND Revival state cleared
+AND map ready
+AND valid position
+```
+
+Timeout means failure/unknown, never success.
+
+---
+
+# 6. Train spot profile
+
+A spot should be a first-class record:
 
 ```text
 SpotID
@@ -47,500 +175,389 @@ TrainX
 TrainY
 Tolerance
 TrainRadius
-PreferredVendor / vendor policy
+PreferredVendor / VendorPolicy
 PartyPolicy
 Enabled
 Priority
-CooldownUntil / BadUntil
+BadUntil
 ```
 
-Runtime metrics:
+Useful runtime metrics:
 
 ```text
 VisitStartedAt
-DeathsRolling30m
-LootEventsRolling30m
-LootValueRolling30m
+DeathsRollingWindow
+LootEventsRollingWindow
+LootValueRollingWindow optional
 FreeBagStart
 FreeBagNow
-TrainSeconds
-IdleSeconds
-PartyFoundCount
+ActiveTrainSeconds
+IdleNoTargetSeconds
 PartyJoinAttempts
 PartyJoinSuccess
-LastVisitedAt
+TravelFailures
 LastFailureReason
-SpotScore
+LastVisitedAt
+SpotScore optional
 ```
 
-## 3. Cross-map travel
+---
 
-Use semantic navigation already VERIFIED:
+# 7. Cross-map travel / return-to-spot
+
+Canonical pattern:
 
 ```text
 StartAutoFight(None)
- -> wait Train state stopped
- -> Game.GoTo(MapID, X, Y)
+ -> wait Train ownership yielded
+ -> Game.GoTo(MapID,X,Y)
  -> wait expected MapID
- -> wait Game.IsMapReady() == true
- -> wait valid RoleData.Position
- -> wait distance(Position, TrainPoint) <= tolerance
+ -> wait IsMapReady
+ -> wait valid position
+ -> wait distance <= tolerance
  -> continue
 ```
 
-Do not use a fixed post-map sleep as success proof.
+Use `GetCurrentMoveDestination()` for movement diagnostics when needed.
 
-Use `GetCurrentMoveDestination()` for diagnostics and movement-state proof when needed.
+Do not use a fixed post-map delay as the state transition.
 
-## 4. Party behavior on arrival
+---
 
-Requested behavior:
+# 8. Party behavior — exact requests already solved
+
+Candidate discovery can use nearby peaceful players / nearby team-leader semantics as appropriate.
+
+## Leave current team
+
+```text
+CMD_TEAM_ACTION
+C_TeamAction.LeaveTeam = 4
+payload = 4:selfRoleID
+```
+
+## Request to join selected target's team
+
+Verified from shipped `OtherRolePopup.lua`:
+
+```text
+CMD_OTHER_ROLE_COMMAND = 200051
+C_OtherRoleCommand.TeamRequestJoin = 9
+payload = 9:targetRoleID
+```
+
+## Invite selected target to local team
+
+```text
+CMD_OTHER_ROLE_COMMAND = 200051
+C_OtherRoleCommand.TeamInviter = 5
+payload = 5:targetRoleID
+```
+
+Do **not** confuse `C_TeamAction.RequestJoin=7` with `C_OtherRoleCommand.TeamRequestJoin=9`; they belong to different action families.
+
+Automatic join flow:
 
 ```text
 arrive spot
- -> optionally leave old party
- -> scan nearby players/team leaders
- -> determine party state
- -> request to join an eligible party
- -> wait for state proof / timeout
- -> start training regardless according to policy
+ -> optional leave old/incompatible team
+ -> fresh candidate RoleID
+ -> send ONE 200051 / 9:RoleID
+ -> wait TeamID/C_TeamData proof
+ -> accepted: continue
+ -> rejected/timeout: cooldown candidate
+ -> optionally try next
 ```
-
-### Data/actions already grounded
-
-- nearby peaceful players are available from `Game.GetNearByPeacePlayers(MaxPlayers)`;
-- selected-player data exposes `TeamID` and other social IDs;
-- `GetNearbyTeamLeaders` exists as a useful candidate query;
-- current team state is in `C_TeamData` and `Game.RoleData.TeamID`;
-- `C_TeamAction.LeaveTeam = 4`;
-- observed exact leave payload is `4:selfRoleID` through `CMD_TEAM_ACTION`;
-- the team action enum also contains `RequestJoin=7`, `AcceptJoin=5`, `RejectJoin=6`, `AcceptInvite=8`, `RejectInvite=9`, etc.; only use payload forms that are actually documented/verified for the requested operation.
-
-Canonical team evidence: `analysis/25_TEAM_RUNTIME_FOLLOW.md`.
-
-### Anti-spam policy
 
 Never request every visible player continuously.
 
-Recommended party request state:
+**Join-party request construction is not a remaining reverse-engineering gap.**
+
+---
+
+# 9. Auto Train ownership
+
+Exact semantic mode:
 
 ```text
-candidate leaders sorted by policy
- -> send one request
- -> wait server/team-state proof
- -> if rejected/timeout, cooldown that RoleID
- -> try next candidate
- -> cap attempts per arrival / per time window
+C_AutoModel.Train = 1
 ```
 
-## 5. Buff eligibility policy
-
-Auto Buff should reuse the mature donor filter model:
-
-- explicit RoleID whitelist;
-- selected names for display/convenience;
-- guild;
-- faction;
-- level range;
-- MaxHP range;
-- HP threshold;
-- include self;
-- priority mode.
-
-Recommended stable identity:
-
-- character selection: RoleID;
-- faction selection: FactionID;
-- guild: prefer GuildID if/when resolved reliably; fall back to normalized guild name only when GuildID is unavailable.
-
-Examples requested:
+Start:
 
 ```text
-only buff RoleID A/B/C
-OR only buff selected names
-OR only buff GuildName == ABC
-OR combine guild + faction + MaxHP range + HP threshold
+GUI.FindUI("AutoFight_Main"):StartAutoFight(C_AutoModel.Train)
 ```
 
-## 6. Buff priority policy
-
-Supported modes from the v1.3.1 donor:
-
-1. lowest HP% first;
-2. highest MaxHP first with target lock;
-3. lowest MaxHP first with target lock.
-
-Recommended extension:
+Stop/yield:
 
 ```text
-CriticalHPPercent emergency override
+StartAutoFight(C_AutoModel.None)
 ```
 
-This allows a critical player to preempt a locked MaxHP target temporarily.
+The visible `Đánh quái` settings tab is not the semantic start action.
 
-Every cast must:
+Before Sell, explicit NPC travel or spot switching, stop/yield Train so combat movement does not compete with the higher-level state.
+
+---
+
+# 10. Auto Buff arbitration
+
+Candidate source:
+
+`Game.GetNearByPeacePlayers(limit)`.
+
+Verified fields:
 
 ```text
-select from fresh snapshot
- -> revalidate RoleID still present
- -> re-read HP/MaxHP
- -> re-check Peace and filters
- -> check skill ownership/condition/cooldown
- -> check map/death/progress/Captcha guards
- -> ensure range or ChaseTarget
- -> dispatch exactly one cast on Unity main thread
- -> wait state proof
+RoleID, Name, Level, FactionID,
+HP, MaxHP, GuildName, AvartaID, TeamRank
+```
+
+Possible filters:
+
+```text
+RoleID/name whitelist
+guild
+faction
+level range
+MaxHP range
+HP threshold
+include/exclude self
+```
+
+Every cast:
+
+```text
+fresh candidate
+ -> revalidate HP/identity
+ -> skill ownership/condition/cooldown
+ -> range/chase
+ -> ONE RequestUsingSkillWithTarget
+ -> wait proof
  -> rescan
 ```
 
-## 7. Death-rate spot switching
+Important remaining runtime boundary: server acceptance for intended beneficial skills on non-team PeacePlayers must be proven per intended skill/relationship.
 
-Requested rule:
+---
 
-> If the current spot causes more than N deaths within a rolling 30-minute window, immediately move to the next spot.
+# 11. Bag / Auto Sell arbitration
 
-Implement as a rolling timestamp deque, not a periodic counter reset.
+Trigger from semantic bag state:
 
-```text
-on death:
-    append death timestamp
-    remove timestamps < now - 30 minutes
-    if count >= DeathLimit:
-        mark spot BAD
-        trigger CHANGE_SPOT
-```
+`Game.GetFreeBagSpace()`.
 
-Default example:
+Use `database/AUTO_SELL_CLASSIFICATION.md` for compact policy.
+
+Sell transaction:
 
 ```text
-DeathLimit = 10
-Window = 30 minutes
-```
-
-### Quarantine / BadUntil
-
-Do not immediately rotate back into a dangerous spot.
-
-Example:
-
-```text
-10 deaths / 30m
- -> BadUntil = now + 90m
-```
-
-The scheduler skips quarantined spots until the cooldown expires unless no other enabled spot exists.
-
-## 8. Loot-efficiency spot switching
-
-The original idea was:
-
-> If a spot does not fill the bag within 30 minutes, switch to another spot.
-
-That rule is technically possible but is a weak proxy for loot quality because stacked items may generate many drops without consuming many slots.
-
-### Better metric hierarchy
-
-Preferred:
-
-```text
-LootEventsRolling30m
-LootValueRolling30m
-NetBagSlotsConsumed
-```
-
-Use bag events / fresh bag scans as source of truth.
-
-Potential metrics:
-
-```text
-LootRate = loot events / active train minute
-LootValueRate = sum(basePrice * quantity delta) / active train minute
-BagPressure = FreeBagStart - FreeBagNow
-```
-
-`GetFreeBagSpace()` remains useful as a full-bag trigger, but **not as the only measure of spot quality**.
-
-### Simple first version
-
-If value tracking is not implemented yet:
-
-```text
-if TrainActive >= 30m
-AND LootEventsRolling30m < configured minimum
-    -> mark spot low-efficiency
-    -> CHANGE_SPOT
-```
-
-This is better than “bag not full”.
-
-## 9. Bag full / Auto Sell integration
-
-When bag policy says sell:
-
-```text
-remember current spot
- -> stop Train semantically
- -> travel to vendor
- -> open NPC/shop state
- -> scan bag
- -> choose ONE current sell candidate
- -> send semantic sell request
- -> wait RemoveItem / UpdateItemsList / money/shop proof
+remember current spot/mode
+ -> stop Train
+ -> route to configured vendor
+ -> wait actual NPCShop state
+ -> fresh BagSnapshot
+ -> choose ONE current instance
+ -> CMD_NPC_SHOP_SELL_REQUEST 200036
+ -> wait removal/update proof
  -> rescan
- -> repeat until no sell candidates / enough free slots
+ -> repeat
  -> return to saved spot
- -> verify map/position
- -> resume orchestration
+ -> verify arrival
+ -> resume Train
 ```
 
 Do not use 90 blind sell clicks.
 
-## 10. Spot scheduler: round-robin vs adaptive score
+Vendor-service mapping remains runtime-promoted: static NPC identity/ResName alone does not prove an NPC opens the desired sell-capable shop.
 
-### Simple mode
+---
 
-```text
-Spot1 -> Spot2 -> Spot3 -> Spot4 -> Spot1
-```
+# 12. Revive ownership
 
-with `BadUntil` skipping dangerous/temporarily disabled spots.
-
-### Recommended adaptive mode
-
-Calculate a score from live metrics.
-
-Conceptual formula:
+Exact packet:
 
 ```text
-SpotScore =
-    + LootRateWeight * normalizedLootRate
-    + LootValueWeight * normalizedLootValue
-    + PartyBonus
-    - DeathPenalty
-    - IdlePenalty
-    - TravelPenalty
-    - RecentFailurePenalty
+CMD_REVIVE_DATA = 200063
+1 = normal / Đầu thai
+2 = newbie
+3 = skill revive
 ```
 
-The exact weights are user policy, not client facts.
+Revive preempts Train/Buff/Sell except manual Captcha pause.
 
-The scheduler can remember performance by time bucket, e.g.:
+Flow:
 
 ```text
-SpotID + day-of-week + hour bucket
+dead / Revival active
+ -> remember prior spot/mode
+ -> send one allowed revive action
+ -> wait alive + Revival cleared + map ready
+ -> optional return to saved spot
+ -> verify position
+ -> resume prior mode
 ```
 
-so the system can learn that one spot is better at a certain time while another is frequently PK-contested.
+---
 
-Do not overfit from one short visit; require a minimum active-train duration before trusting a score.
-
-## 11. State-proof driven transitions
-
-Every transition must have proof.
-
-Examples:
-
-### Travel proof
+# 13. NPC treatment ownership
 
 ```text
-MapID expected
-AND IsMapReady
-AND position within tolerance
+stop conflicting Train movement
+ -> GoToNPC / GetNPCPosition
+ -> wait current GameDialog
+ -> inspect current Selections[selectionID]=visibleText
+ -> match treatment text
+ -> submit actual selectionID
+ -> wait HP/money/dialog proof
+ -> return/resume
 ```
 
-### Party proof
+Do not hardcode a global Trị liệu selection ID.
+
+NPC 339 Đỗ Thanh Đằng / Lâu Lan is a strong static healer candidate; exact live treatment sequence remains targeted runtime evidence.
+
+---
+
+# 14. Death-rate spot switching
+
+Use a rolling timestamp deque, not a counter reset on clock boundaries.
 
 ```text
-local/target TeamID or C_TeamData changed as expected
+on death:
+  append timestamp
+  remove timestamps older than configured window
+  if count >= DeathLimit:
+      currentSpot.BadUntil = now + quarantineDuration
+      CHANGE_SPOT
 ```
 
-### Heal proof
+This prevents immediately rotating back into a dangerous spot.
+
+---
+
+# 15. Loot-efficiency spot switching
+
+“Bag not full after N minutes” is a weak proxy because stackable items distort bag pressure.
+
+Preferred metrics:
 
 ```text
-fresh HP changed / reached threshold
-OR cooldown/progress transition consistent with cast
+LootEvents / ActiveTrainMinute
+LootValue / ActiveTrainMinute optional
+NetBagSlotsConsumed
+IdleNoTargetSeconds
 ```
 
-### Sell proof
+Start simple. Do not add adaptive scoring until basic action/state reliability is proven.
+
+---
+
+# 16. Spot selection
+
+Simple mode: round-robin enabled spots while skipping `BadUntil` spots.
+
+Later adaptive score may use:
 
 ```text
-sold instance removed
-OR UpdateItemsList + fresh scan
-OR consistent shop/money update
++ loot rate/value
++ party availability
+- death rate
+- idle/no-target rate
+- travel failure rate
+- recent failure penalty
 ```
 
-### Revive proof
+Weights are tool/user policy, not client facts.
+
+---
+
+# 17. Failure reason taxonomy
+
+Useful external reason codes:
 
 ```text
-local role alive
-AND Revival UI/state cleared
-AND map ready
+STALE_SNAPSHOT
+ACTION_GATE_BUSY
+MAP_NOT_READY
+ROLE_DEAD
+CAPTCHA_PAUSE
+PROGRESS_BLOCKED
+TARGET_GONE
+TARGET_DEAD
+NO_PATH
+SKILL_NOT_READY
+SKILL_NO_PROOF
+NPC_NOT_FOUND
+DIALOG_NOT_READY
+DIALOG_SELECTION_NOT_FOUND
+SHOP_NOT_READY
+ITEM_GONE
+ITEM_NOT_SELLABLE
+SELL_NO_PROOF
+PARTY_REQUEST_TIMEOUT
+TRAVEL_TIMEOUT
+REVIVE_NO_PROOF
+CLIENT_GONE
+DISPATCHER_NOT_READY
 ```
 
-Timeouts are failure guards, not proof of success.
+Do not collapse all failures into one “auto failed” state.
 
-## 12. Single-action arbitration
+---
+
+# 18. Multi-client rule
 
 Per PID:
 
 ```text
-ActionQueue capacity = 1 mutable action
-```
-
-Suggested priority:
-
-```text
-Captcha/manual pause
- > fatal/error recovery
- > Revival
- > map transition completion
- > critical self survival
- > critical buff emergency
- > Sell transaction currently in progress
- > Party request currently in progress
- > normal Buff
- > Train target/movement
- > background travel/spot optimization
-```
-
-Do not interrupt a server-authoritative transaction halfway unless its feature defines a safe cancel path.
-
-## 13. Read-only observers may run concurrently
-
-Safe observers can update snapshots without issuing actions:
-
-```text
-NearbyPlayerObserver
-BagObserver
-MapObserver
-Death/RevivalObserver
-SkillCooldownObserver
-ProgressObserver
-CaptchaObserver
-TrainSpotMetricsObserver
-PartyStateObserver
-```
-
-They publish immutable state. The orchestrator consumes snapshots and chooses one next action.
-
-## 14. Multi-client rule
-
-Every PID has a completely independent orchestrator:
-
-```text
-PID A -> snapshots/state/action queue/dispatcher/profile A
-PID B -> snapshots/state/action queue/dispatcher/profile B
-```
-
-Static databases/config tables may be shared read-only.
-
-Persistent user profiles should bind to RoleID/profile identity, not only PID.
-
-## 15. UI proposal
-
-Per client show:
-
-```text
-Current state
-Current spot
-Map / X,Y
-Train running/stopped
-Party state
-Nearby Peace / eligible buff targets
-Current buff target
-Deaths 30m
-Loot events 30m
-Loot value 30m
-Free bag slots
-Current SpotScore
+Resolver
+Snapshot versions / WorldGeneration
+Feature state
+Action gate
+Dispatcher state
+Spot profile
+User settings
+Metrics
 Last action
 Last proof/result
 ```
 
-Train spot editor:
+Never share live client pointers/state across PIDs.
 
-```text
-Spot name
-Map
-X/Y
-Tolerance
-Train radius
-Death limit/window
-Loot minimum/window
-Quarantine duration
-Party behavior
-Vendor policy
-Enabled
-```
+Persistent profiles should preferably bind to character RoleID/profile identity rather than PID alone.
 
-Auto Buff filter UI should retain the v1.3.1 scan-and-tick model and per-client profile isolation.
+---
 
-## 16. Failure handling
-
-A spot may fail for many different reasons. Do not collapse all failures into “bad spot”.
-
-Track reason codes such as:
-
-```text
-TOO_MANY_DEATHS
-LOW_LOOT
-TRAVEL_FAILED
-MAP_NOT_READY
-NO_PATH
-PARTY_SPAM_GUARD
-VENDOR_FAILED
-CAPTCHA
-DISPATCHER_NOT_READY
-GAME_CLOSED
-CLIENT_VERSION_MISMATCH
-```
-
-Only performance-related failures should affect long-term SpotScore.
-
-## 17. What should be implemented first
+# 19. Implementation order
 
 Recommended order:
 
-1. finish validated Unity/MainThread dispatcher;
-2. stabilize read-only semantic snapshots per PID;
-3. migrate Auto Buff from v1.3.1 behavior donor to semantic scanner + dispatcher;
-4. prove one external Peace-player heal end-to-end;
-5. implement map travel state proof;
-6. implement death rolling window + simple round-robin spot switch;
-7. implement bag observer + Auto Sell integration;
-8. implement PartyDiscovery/Join using already-mapped team semantics and only targeted runtime validation for any still-unverified join-request payload path;
-9. add loot-rate scoring;
-10. add adaptive SpotScore after enough telemetry exists.
+1. external managed Action -> MainThread live proof;
+2. stable semantic per-PID snapshots;
+3. Auto Train start/stop + state proof;
+4. Auto Buff semantic cast + one non-team acceptance proof if used;
+5. map travel/return proof;
+6. Revive recovery;
+7. bag observer + Auto Sell transaction;
+8. Party join/leave using already-recovered exact requests;
+9. simple rolling-death spot switching;
+10. loot-rate metrics;
+11. adaptive scoring only after enough stable telemetry exists.
 
-Do not jump directly to adaptive scoring while action dispatch is still unstable.
+---
 
-## 18. Canonical architecture
+# 20. Remaining knowledge gaps — narrow only
 
-```text
-Resolver
- -> read-only Scanners / Observers
- -> immutable Snapshot Store
- -> Orchestrator State Machine
- -> Feature Policy (Train/Party/Buff/Sell/Revive/Spot)
- -> Safety Guard
- -> Action Queue (max 1)
- -> Unity/Main Thread Dispatcher
- -> semantic Game/Lua action
- -> state proof
- -> update metrics
- -> next decision
-```
+Current gaps that can materially affect the orchestrator:
 
-## 19. Targeted unknowns only
+1. live external `System.Action -> MainThread.Execute` proof;
+2. non-team beneficial-skill server acceptance for the exact skills used;
+3. exact live Trị liệu dialog sequence/outcome for chosen healer;
+4. specific vendor-service promotion for configured Train maps/NPCs where shop service is not yet runtime-proven;
+5. additional actor fields only if a concrete feature cannot operate from current snapshots.
 
-Do not broad reverse the client for this feature. Remaining exact unknowns should be handled narrowly:
+**Not a gap:** join-party request construction. It is already VERIFIED as `CMD_OTHER_ROLE_COMMAND=200051`, payload `9:targetRoleID`.
 
-- any still-unverified **join-party request payload/path** needed by the chosen implementation;
-- any missing live party-state proof not already exposed by selected/local role data or `C_TeamData`;
-- final external `MainThread.Execute -> queue -> Update/DoExecuteWorks` live execution proof;
-- server acceptance behavior for specific non-team beneficial skills;
-- optional GuildID acquisition path for nearby players without forcing intrusive target mutation.
-
-The leave-team action itself is already VERIFIED: `C_TeamAction.LeaveTeam=4`, payload `4:selfRoleID` through `CMD_TEAM_ACTION`. Do not waste time re-tracing it.
-
-Everything else should first reuse the existing KB.
+Do not broad reverse unrelated client systems to expand this list.
