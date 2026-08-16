@@ -1,169 +1,315 @@
-# Research TODO — targeted follow-up after deep static/Lua/native analysis
+# Research TODO — frozen-client knowledge database
 
-> General repository survey, asset decrypt, Config/Interface/Lua extraction, core packet/action discovery, MainThread dispatcher internals, Action constructor ABI and the AI routing layer are DONE. **Không broad reverse lại client từ đầu.**
+> Main project goal: turn this frozen client into a reusable **AI-readable technical/database corpus** so future tool-building sessions query existing knowledge instead of broad-reversing binaries again.
 
-## DONE — AI-native knowledge routing
+General architecture, bundle decrypt, Config/Interface extraction, major Lua/UI/runtime semantics, core packet/action discovery and MainThread native internals are DONE.
 
-- [x] `AI_BOOTSTRAP.md` compact mandatory entrypoint.
-- [x] `AI_ROUTER.md` task-to-context routing.
-- [x] task-specific `contexts/BUILD_*.md` packs for core/scanner/MainThread/Train/Buff/Sell/Heal/Revive/Party/Orchestrator.
-- [x] `database/FACTS.jsonl` atomic high-value facts index.
-- [x] `database/FACTS_README.md` usage/maintenance rules.
-- [x] `database/FINDING_TO_DOC_MAP.md` linked to routing/context layer.
-- [x] root README and `AI_INDEX.md` instruct AI not to preload the whole repository.
+**Do not broad reverse the client from zero.**
 
-Normal future build path:
+---
 
-`AI_BOOTSTRAP -> AI_ROUTER -> one context pack -> REQUIRED docs -> specific database lookup`.
+# DONE — AI-native navigation / anti-overread layer
 
-## DONE — architecture + semantic discovery
+- [x] `AI_BOOTSTRAP.md` compact entrypoint.
+- [x] `AI_ROUTER.md` task routing.
+- [x] task-specific `contexts/BUILD_*.md` packs.
+- [x] `database/SUBSYSTEM_SOURCE_MAP.md` subsystem -> source-layer router.
+- [x] `database/FINDING_TO_DOC_MAP.md` finding -> canonical doc router.
+- [x] `database/FACTS.jsonl` atomic fact index.
+- [x] `database/FACTS_README.md` maintenance rules.
+- [x] read-budget rule: normal AI task should load only the relevant small context set.
 
-- [x] Unity x64 + IL2CPP architecture and metadata v39.
-- [x] LuaSystemManager / SharedData / Game / GUI / Network bridges.
-- [x] world/path/inventory/skill/buff symbol map.
-- [x] `ClickNPC` internal flow.
+Normal path:
+
+```text
+AI_BOOTSTRAP
+ -> AI_ROUTER or SUBSYSTEM_SOURCE_MAP
+ -> relevant context/canonical docs
+ -> exact database lookup
+```
+
+---
+
+# DONE — client architecture / semantic discovery
+
+- [x] Unity Windows x64 + IL2CPP, metadata v39.
+- [x] GameAssembly/global-metadata semantic mapping.
+- [x] LuaSystemManager / SharedData / Game / GUI / Network bridge map.
+- [x] `ClickNPC` native internal flow.
 - [x] `UIButton.HandleClickEvent` instance/stale-pointer hazard.
-- [x] FG custom asset transform/decrypt.
-- [x] 75 Config XML tables.
-- [x] 338 UI layout XML files + 1,469 handler bindings.
-- [x] readable Lua source and 339-class catalog.
-- [x] 169 TCP packet constants.
-- [x] 1,003 NPC + 193 map database.
-- [x] 165 portal + 23 item destination + 506 NPC-mediated AutoPath edges.
-- [x] 19 FuBen scenarios.
-- [x] exact shop sell payload, revive values, bag sort/item action payloads.
-- [x] dynamic `GameDialog.Selections` mechanism.
-- [x] exact built-in Train start/state architecture.
-- [x] nearby peaceful-player structured schema.
-- [x] skill cooldown/QuickSkill semantics.
-- [x] local buff duration/stack schema.
+- [x] FG custom asset transform/decrypt sufficiently reproduced.
+- [x] `Config.unity3d` decoded/extracted: 75 XML tables.
+- [x] `Interface.unity3d` decoded/extracted: 338 layouts, 1,469 handler bindings, 339 Lua classes + globals.
+- [x] 169 exact `TCPPacketDefine` constants.
+- [x] map/NPC/route/FuBen databases.
+- [x] exact sell/revive/GameDialog/bag/storage action contracts currently documented.
+- [x] built-in Auto Train engine/start semantics.
+- [x] nearby peaceful/enemy player structured fields used by shipped UI.
+- [x] selected-target rich semantic state.
+- [x] skill cooldown / QuickSkill semantics.
+- [x] local buff BuffID/DurationTick/Stack.
 - [x] bag/shop event lifecycle.
-- [x] team/follow runtime schema.
-- [x] storage item-move/bank semantics.
-- [x] loot/item-pack semantic engine.
-- [x] task/quest and pet/spirit donor subsystems.
+- [x] team/follow schema/action semantics.
+- [x] storage/bank semantics.
+- [x] ground loot/ItemPack semantic engine.
+- [x] Task/Auto Quest donor.
+- [x] Pet/Spirit runtime donor.
+- [x] Config domain atlas (`analysis/32_CONFIG_DOMAIN_ATLAS.md`).
+- [x] underexplored Config normalization plan (`analysis/33_UNDEREXPLORED_HIGH_VALUE_CONFIG.md`).
+- [x] stale Phase-1 assumptions cleaned from master/Lua/world/inventory/combat/asset docs.
 
-## DONE — MainThread dispatcher + producer ABI
+---
 
-Direct frozen-snapshot GameAssembly disassembly proves:
+# DONE — MainThread static/native research
 
-- [x] `MainThread.Awake()` establishes singleton Instance.
-- [x] constructor creates `ConcurrentQueue<System.Action>` at `this+0x20`.
-- [x] `Execute(Action)` enqueues into that queue.
-- [x] `Update()` calls `DoExecuteWorks()`.
-- [x] `DoExecuteWorks()` loops queue state -> dequeue -> Action invoke until empty.
-- [x] shipped TCPGame/TCPLogin producers allocate legitimate managed targets/closures and Action delegates before calling Execute.
-- [x] generated `System.Action` constructor call ABI is recovered: `RCX=Action`, `RDX=target or null`, `R8=callback MethodInfo*`, `R9=null` in observed calls.
-- [x] same Action constructor is used with `RDX=0` in shipped static-callback call sites.
-- [x] required semantic IL2CPP exports for class/method/type resolution, object allocation, runtime invoke, thread attach and GC handles are present.
+This is retained as client knowledge, but it is **not the main current data-expansion task**.
 
-Canonical evidence:
+Verified:
+
+- [x] `MainThread.Awake()` sets singleton Instance.
+- [x] `.ctor()` creates `ConcurrentQueue<System.Action>` at `this+0x20`.
+- [x] `Execute(Action)` enqueues.
+- [x] `Update()` -> `DoExecuteWorks()`.
+- [x] `DoExecuteWorks()` dequeues/invokes Actions until empty.
+- [x] TCPGame/TCPLogin producers construct legitimate `System.Action` objects and call Execute.
+- [x] generated Action constructor ABI recovered.
+- [x] relevant IL2CPP allocation/GC/thread/runtime exports identified.
+
+Canonical docs:
 
 - `analysis/21_MAIN_THREAD_DISPATCHER.md`
 - `analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md`
 - `analysis/30_EXTERNAL_ACTION_BRIDGE_BLUEPRINT.md`.
 
-Do **not** waste time reproving these static/native facts.
+Future live bridge proof belongs to implementation work, not broad client research.
 
-## P0 — External MainThread bridge: one live proof remains
+---
 
-The remaining execution-context problem is now extremely narrow: construct/root one valid managed Action from the external bridge, enqueue it and observe its callback result.
+# P0 — expand the static semantic database
 
-Canonical first proof:
+This is the **current main research priority**.
+
+## P0.1 — Skill semantic stack
+
+Build compact indexes + chunked/lossless normalized records for:
+
+- [ ] `Skills` — 2,091 rows.
+- [ ] `SkillProperties` — 2,044 rows.
+- [ ] `AutoSkills` — 300 rows.
+- [ ] `MagicAtrributes` — 509 rows.
+- [ ] `Factions` — 17 rows.
+- [ ] `Books` — 128 rows.
+- [ ] `BookLevelUpCost` — 9 rows.
+
+Desired lookup chain:
 
 ```text
-System.Threading.CancellationTokenSource
-IsCancellationRequested=false
- -> Action target = CTS, callback = Cancel()
- -> MainThread.Execute(Action)
- -> Unity Update drains/invokes Action
- -> IsCancellationRequested=true
+SkillID
+ -> name/type/faction/target/range/cooldown/property
+ -> SkillProperties
+ -> MagicAtrributes meanings
+ -> faction/book relationships
 ```
 
-Required steps:
+Priority reason: gives future AI a near-direct answer path for Auto Buff/combat/skill questions.
 
-- [ ] Resolve live `MainThread.Instance` per game PID and confirm non-null.
-- [ ] Attach producer context with `il2cpp_thread_attach(domain)` if it is not already an IL2CPP-attached thread.
-- [ ] Resolve/allocate/initialize `System.Threading.CancellationTokenSource`.
-- [ ] Strong-root CTS with `il2cpp_gchandle_new`.
-- [ ] Resolve exact `Cancel()` overload and verify zero parameters + `System.Void` return.
-- [ ] Resolve/allocate `System.Action`.
-- [ ] Construct Action legitimately using target CTS + callback MethodInfo; do not forge fields.
-- [ ] Strong-root Action during the first proof.
-- [ ] Verify initial `IsCancellationRequested == false`.
-- [ ] Enqueue through `MainThread.Execute(Action)`.
-- [ ] Observe `IsCancellationRequested == true` within timeout.
-- [ ] Confirm no managed exception/crash/GC corruption.
-- [ ] Release roots after safe completion/cleanup.
-- [ ] Repeat enough times to establish stability.
-- [ ] Only after this proof route low-risk semantic Game/Lua/UI actions through the dispatcher.
+## P0.2 — Item / equipment / medicine stack
 
-Direct TID logging is optional diagnostic evidence. The primary proof combines the live CTS state transition with already-VERIFIED static `Update -> DoExecuteWorks -> Action.Invoke` semantics.
+- [ ] `Items` — 5,238 rows.
+- [ ] `Equips` — 22,763 rows.
+- [ ] `Medicines` — 692 rows.
+- [ ] `Gems` — 1,154 rows.
+- [ ] `EquipSets` — 272 rows.
+- [ ] `EquipEnhance` — 99 rows.
+- [ ] `EquipIdentifyValues` — 256 rows.
+- [ ] `EquipExtendedAttributes` — 29 rows.
 
-Do not replace this with a production `CreateRemoteThread` gameplay worker.
+Required indexes should support:
 
-## P0 — NPC Trị liệu: targeted runtime proof only
+```text
+ItemID -> identity/type/value/sell/throw rules
+EquipID -> Type/EquipPoint/faction/level/star/set/buff/attributes
+medicine/gem direct lookup
+```
 
-- [ ] Open intended healer NPC (Lâu Lan candidate NPC `339` = Đỗ Thanh Đằng is static VERIFIED).
-- [ ] Capture actual server-supplied `GameDialogData.Selections`.
-- [ ] Identify visible Trị liệu/heal text and actual selectionID.
-- [ ] Submit actual `selectionID:-1` through semantic GameDialog path.
-- [ ] Record any second confirmation/dialog.
-- [ ] Prove completion from HP/money/dialog state.
-- [ ] Never assume a global fixed treatment selection ID unless repeated runtime evidence proves it.
+Critical preserved fact:
 
-## P0 — Runtime entity schema only where feature needs it
+`Equips.EquipPoint == 0` = Weapon.
 
-Structured UI paths already expose many useful fields. Only expand exact object layouts when needed by implementation:
+## P0.3 — Task / gather / activity stack
 
-- [ ] live bridge invocation of `GetNearByPeacePlayers` and copy returned fields into external snapshots.
-- [ ] exact live Position/death/target fields needed for non-team support.
-- [ ] exact NPC/Monster/Pet/ItemPack object fields only if current semantic APIs are insufficient.
-- [ ] structured target-buff IDs/durations only if a future feature needs more than target buff icons.
+- [ ] `Tasks` — 516 rows.
+- [ ] `GrowPoints` — 407 rows.
+- [ ] `GuildTask` — 360 rows.
+- [ ] `Activities` — 45 rows.
+- [ ] `DailyActivityAward` — 2 rows.
 
-## P1 — Machine-readable static database completion
+Goal:
 
-Normalized schemas/counts are documented in `analysis/28_STATIC_DATA_DATABASE_EXPANSION.md`.
+```text
+TaskID
+ -> type/rule/NPC/monster/item/grow-point/map/dialog/next relationships
+```
 
-The large CSV chunks have been generated offline; repository upload remains to be completed:
+Unknown positional/extra fields must be preserved rather than discarded.
 
-- [ ] upload Items 5,238 rows.
-- [ ] upload Skills 2,091 rows.
-- [ ] upload MagicAtrributes 509 rows.
-- [ ] upload Monsters 17,121 rows.
-- [ ] upload Equips 22,763 rows.
+## P0.4 — Pet / Spirit stack
 
-Important static rule already documented: `EquipPoint=0` is Weapon; do not classify weapons only by subtype `Type`.
+- [ ] `Pets` — 8,349 rows.
+- [ ] `PetFeatures` — 11 rows.
+- [ ] `PetEquips` — 70 rows.
+- [ ] `PetEquipSets` — 13 rows.
+- [ ] `Spirits` — 1,889 rows.
+- [ ] `SpiritFeatures` — 3 rows.
 
-## P1 — Auto Sell / Store live validation
+Goal:
 
-- [ ] use `GetFreeBagSpace` as source of truth.
-- [ ] define explicit keep/sell/store policy.
-- [ ] one current live instance -> one mutation -> wait item/shop/storage event -> rescan.
-- [ ] verify NPCShop/storage service state before request.
-- [ ] return to saved Train state only after map/position readiness proof.
+live Pet/Spirit ID/state -> static template/name/growth/skills/equipment/feature semantics.
 
-## P1 — NPC service promotion
+### Storage design
 
-- [x] static service candidates exist.
-- [ ] promote individual NPC -> service contracts only after dialog/shop/runtime evidence.
+Large tables must use small indexes plus chunks, e.g.:
 
-## P2 — Optional route planner
+```text
+database/static/skills/SKILL_INDEX.csv
+database/static/skills/SKILLS_0001_0500.csv
+...
+```
 
-- [ ] use static portal + NPC-mediated edges for offline adjacency diagnostics if needed.
+Do **not** make AI read a single giant Markdown/CSV when it only needs one ID.
+
+### Current repository-state truth
+
+Schemas/counts and substantial derived knowledge are already in GitHub, but the full normalized row chunks for the biggest tables are **not yet present under `database/static/...`**.
+
+Do not tell future AI those files exist until they actually appear in the tree.
+
+---
+
+# P1 — semantic indexes from other already-decoded bundles
+
+## P1.1 — Translations
+
+- [ ] inventory TextAsset/string-table structure from decoded `Translations.unity3d`.
+- [ ] if useful, create localization key -> text/language index.
+- [ ] connect localized labels to dialog/service/UI matching.
+
+Potential value:
+
+robust matching of visible server/UI text without hardcoding one wording.
+
+Do not guess the internal schema before extraction.
+
+## P1.2 — shared Interface resources
+
+Only if needed by a concrete question:
+
+- [ ] inventory `Shared.unity3d` / `Shared_2.unity3d` asset names/types.
+- [ ] map relevant prefab/resource IDs.
+
+Lua/layout remains the preferred UI semantic source.
+
+## P1.3 — `data.unity3d`
+
+Large (~47.6 MB), plain UnityFS.
+
+Do not broad-extract it pre-emptively.
+
+If a concrete gap appears:
+
+- [ ] build an asset inventory first;
+- [ ] isolate relevant map/path/scene/resource objects;
+- [ ] extract only useful semantic structures;
+- [ ] commit an index/result rather than raw noise.
+
+---
+
+# P1 — runtime-only targeted proofs
+
+These cannot be resolved by writing more static prose.
+
+## NPC Trị liệu
+
+- [ ] capture active server `GameDialog.Selections` at intended healer.
+- [ ] identify actual visible treatment selection/text.
+- [ ] record current selectionID and any confirmation step.
+- [ ] prove HP/money/dialog outcome.
+
+Static NPC 339 = Đỗ Thanh Đằng / LangZhong1 / Lâu Lan is VERIFIED; service selection remains runtime/server-driven.
+
+## Non-team beneficial skill acceptance
+
+- [ ] verify which support skills can target a non-team PeacePlayer.
+- [ ] record range/relationship/server restrictions.
+- [ ] prove success from HP/buff/cooldown/progress state.
+
+## Additional actor fields
+
+Only when a feature actually needs them:
+
+- [ ] exact Position/death/social/combat fields beyond shipped nearby UI schema.
+- [ ] richer target-buff IDs/durations if target icons are insufficient.
+- [ ] exact special NPC/Monster/Pet/GrowPoint object fields not already exposed semantically.
+
+---
+
+# P2 — analytics / optional deeper models
+
+## Combat telemetry
+
+- [ ] map exact `CMD_SKILL_DAMAGE` / `CMD_SKILL_HEAL` / death/buff event payloads.
+- [ ] determine attacker/target/SkillID/value/timing fields.
+- [ ] investigate crit/elemental/XP/loot linkage only if evidence supports it.
+
+## Offline route planner
+
+- [ ] use 165 portal + 506 NPC-mediated edges for adjacency/diagnostics.
+- [ ] model level/quest/event restrictions if needed.
 - [ ] keep runtime `Game.GoTo` as preferred executor.
-- [ ] model level/event/state restrictions separately.
 
-## Architecture guardrails
+## PathFinder / NodeGrid
 
-`Resolver -> read-only Scanner -> Snapshot/State Store -> Observer -> State Machine -> Safety Guard -> Action Queue (max 1 mutable action) -> valid System.Action -> MainThread.Execute(Action) -> Internal Action -> State Proof`
+- [ ] only inspect if stock runtime pathing becomes an actual blocker.
+- [ ] avoid expensive path/grid extraction without a concrete use case.
+
+---
+
+# P2 — low-priority client branches
+
+Only investigate if directly requested:
+
+- Launcher sync/record-playback internals.
+- `SyncBootstrap.AutoInit` meaning.
+- LiveKit/voice internals.
+- Burst jobs.
+- UnityPlayer engine internals.
+- graphics/baselib/crash-handler internals.
+
+These are not current gameplay-knowledge priorities.
+
+---
+
+# Knowledge hygiene — ongoing
+
+For every meaningful discovery:
+
+```text
+raw evidence
+ -> interpretation
+ -> canonical subsystem doc
+ -> database/index if appropriate
+ -> VERIFIED/PROBABLE/HYPOTHESIS ledger
+ -> routing cross-link if useful
+```
 
 Rules:
-- response handlers are not requests;
-- stale UI pointers are not contracts;
-- fixed delays are timeouts, never state proof;
-- prefer semantic names/IDs over RVA;
-- `ID` instance != `ItemID` template != `Position` slot != `Site` container;
-- no invented NPC coordinates when `GetNPCPosition` exists;
-- no invented treatment selection ID;
-- no Captcha solving/bypass; pause for user verification.
+
+- promote solved predictions out of PROBABLE/HYPOTHESES;
+- never invent missing rows/fields;
+- preserve unknown Config columns/nested data during normalization;
+- keep static template data separate from runtime server-authoritative state;
+- packet symbol != exact request payload;
+- response handler != request action;
+- no invented NPC coordinates when `Game.GetNPCPosition` exists;
+- no invented treatment selection IDs;
+- no automatic Captcha solving/bypass.
