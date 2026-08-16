@@ -1,12 +1,39 @@
-# Combat / Skills / Buffs / Auto Fight
+# Combat / Skills / Buffs / Auto Fight — current semantic model
 
-## 1. Kết luận kiến trúc
+> Phase 2/3 solved the old uncertainties around skill config, buff runtime schema and built-in Auto Fight. This document now separates verified combat semantics from the smaller set of remaining runtime questions.
 
-Metadata/string evidence cho thấy combat không phải một black box. Client có API cấp cao để query/use skill, select/chase target, inspect buff và xử lý nhiều magic effect semantics. Đây là nền tảng tốt cho auto combat/buff dựa trên state thật thay vì click/macro.
+---
 
-## 2. Skill/ability API đã thấy
+## 1. Core conclusion
 
-Trong `LuaSystemAPI_Game` có các symbol:
+Combat is not a black box and should not be automated as keyboard/mouse macros.
+
+The frozen client exposes:
+
+- structured nearby target data;
+- semantic target/chase/movement APIs;
+- semantic skill APIs;
+- skill cooldown state;
+- structured local buff state;
+- static Skills/SkillProperties/AutoSkills/MagicAttributes tables;
+- readable built-in AutoFight Lua;
+- combat event/packet vocabulary.
+
+The preferred architecture is:
+
+```text
+runtime snapshot
+ -> target/skill policy
+ -> one semantic action
+ -> state/event proof
+ -> fresh snapshot
+```
+
+---
+
+## 2. Skill/runtime API — VERIFIED existence and shipped use
+
+High-value members include:
 
 - `GetAbilities`
 - `GetAbilityLevel`
@@ -14,8 +41,6 @@ Trong `LuaSystemAPI_Game` có các symbol:
 - `GetAbilityName`
 - `GetAbilityDescription`
 - `GetAbilityIcon`
-- `GetAbilityLevelUpExp`
-- recipe-related getters
 - `UseSkill(skillID)`
 - `RequestUsingSkill`
 - `RequestUsingSkillWithPos`
@@ -23,19 +48,44 @@ Trong `LuaSystemAPI_Game` có các symbol:
 - `GetSkillLuaData`
 - `IsSkillRequireTarget`
 - `CanUseSkill`
+- `GetSkillCooldown(skillID)`.
 
-### Diễn giải
+Shipped SkillBar uses:
 
-Có ít nhất hai tầng:
+`Game.UseSkill(skillID)`.
 
-- API semantic để UI/Lua yêu cầu dùng skill;
-- network/event processing để server xác nhận damage/heal/buff/state.
+This proves that a physical F1/F2 key is only a UI/input mapping, not semantic skill identity.
 
-Tool nên ưu tiên action/game API hợp lệ thay vì thao tác phím nếu mục tiêu là ổn định.
+---
 
-## 3. Target/chase state
+## 3. Cooldown — VERIFIED semantic state
 
-Các API liên quan:
+`Game.GetSkillCooldown(skillID)` returns:
+
+- `passedTicks`
+- `cooldownTicks`.
+
+Ready condition used by analysis:
+
+```text
+cooldownTicks <= 0
+OR
+passedTicks >= cooldownTicks
+```
+
+This enables exact readiness policy rather than fixed per-skill sleeps.
+
+QuickSkills are also structured (`position_skillID` mappings), so the tool can distinguish UI slot from actual SkillID.
+
+Canonical detail:
+
+`analysis/18_SKILLBAR_COOLDOWN_QUICKSKILLS.md`.
+
+---
+
+## 4. Target / chase / range layer
+
+High-value semantic APIs:
 
 - `SelectTarget`
 - `ClickToObject`
@@ -43,114 +93,272 @@ Các API liên quan:
 - `get_CurrentChaseTargetID`
 - `IsSelectTargetDie`
 - `IsAllowDeadTarget`
-- `BugTarget`
 - `GetDistance`
 - `HasPath`
-- `CanMove`
+- `CanMove`.
 
-Từ đó có thể xây target policy:
+Shipped nearby-player/enemy UIs already expose structured RoleID/HP/MaxHP and use RoleID for targeting.
+
+A target policy can therefore operate as:
 
 ```text
-query nearby enemies
- -> filter alive / valid / reachable
- -> score by distance/type/HP
- -> SelectTarget
- -> chase/request skill
- -> observe death/target change
+query nearby actors
+ -> filter by semantic type/relationship/alive state
+ -> score by policy
+ -> SelectTarget / ChaseTarget
+ -> use actual SkillID
+ -> observe cooldown/HP/death/buff/progress state
 ```
 
-Không cần nhận diện quái bằng ảnh nếu nearby object data đã được map.
+No image recognition is required for ordinary targets already present in AOI.
 
-## 4. Buff API
+---
 
-Đã thấy:
+## 5. Static `Skills.xml` — VERIFIED, 2,091 rows
+
+Normalized fields already recovered/documented include:
+
+`ID, Name, Type, Style, FactionID, BookID, CanDirectlyStudy, RequireLevel, RequireWeapon, IsDamageSkill, TargetType, CastRange, AttackRadius, ProgressTime, CooldownGroup, AnimationDuration, MissileSpeed, MissileCount, FixedHitRate, FixedCritRate, Property, Tag, Icon, ActionID, ShortDescription, Description`.
+
+### Snapshot type counts
+
+- Active: **1,014**
+- Auto: **602**
+- Passive: **361**
+- SpiritActive: **80**
+- PetActive: **34**.
+
+### Major target-type counts
+
+- Self: **1,005**
+- Enemy: **838**
+- Owner: **145**
+- SelfAndAlly: **57**
+- PeacePlayer: **41**
+- EnemyPlayer: **5**.
+
+This means support/damage/target-type candidate discovery can be done offline before touching runtime.
+
+Static row meaning is not current ownership/readiness; those remain runtime questions.
+
+---
+
+## 6. `SkillProperties.xml` — VERIFIED, 2,044 rows
+
+The old statement “detailed skill/buff config is only probable” is obsolete.
+
+A dedicated table exists for skill property definitions.
+
+High-value join:
+
+```text
+Skills.ID
+ -> Skills.Property
+ -> SkillProperties
+ -> MagicAtrributes symbols/descriptions
+```
+
+This is one of the highest-value still-under-normalized datasets because it can explain skill effect semantics beyond display description.
+
+Extraction/index priorities are documented in:
+
+`analysis/33_UNDEREXPLORED_HIGH_VALUE_CONFIG.md`.
+
+---
+
+## 7. `AutoSkills.xml` — VERIFIED, 300 rows
+
+Catalog evidence shows activation type/value/cooldown/SkillID semantics.
+
+Potential use:
+
+- recover shipped automatic-skill trigger policies;
+- identify state/threshold/timing-driven automatic skills;
+- understand internal auto behavior without mimicking visible UI clicks.
+
+Numeric activation modes should not be renamed into guessed human meanings until cross-checked with Lua/config usage.
+
+---
+
+## 8. `MagicAtrributes.xml` — VERIFIED, 509 rows
+
+The client contains a semantic dictionary of `magic_*` effect symbols.
+
+Examples observed include concepts for:
+
+- max HP;
+- cooldown modification/reset;
+- stack limits;
+- buff removal on timeout/move/action;
+- invisibility/see-invisibility;
+- unable-to-use-skill;
+- drag/blink/swap position;
+- revive/death effects;
+- hit/crit behavior;
+- traps/puppets;
+- autoskill/called-skill behavior.
+
+The important change from the old phase is that these are no longer merely free-floating metadata strings: `MagicAtrributes.xml` is a **verified 509-row static semantic table**.
+
+Do not assume every symbol is used by every skill/buff; join through actual SkillProperties/equipment/buff data.
+
+---
+
+## 9. Buff runtime schema — VERIFIED
+
+High-value APIs:
 
 - `GetBuffs`
 - `GetBuffProperties`
 - `HasBuff`
 - `GetBuffData`
 - `GetTargetBuffIcons`
-- `SendRemoveBuff(buffID)`
+- `SendRemoveBuff`.
 
-Điều này tạo cơ sở cho auto buff chính xác hơn logic “HP thấp thì buff”. Khi exact return type được map, có khả năng đọc:
+`Game.GetBuffs()` records expose:
 
-- buff ID/template;
-- owner/target;
-- stack;
-- duration/remaining time;
-- properties/category;
-- positive/negative flags.
+- `BuffID`
+- `DurationTick` in milliseconds
+- `Stack`.
 
-Danh sách field exact chưa được VERIFIED, nhưng API names chứng minh subsystem tồn tại.
+`Game.GetBuffData(BuffID)` exposes at least level/stack-related data.
 
-## 5. Magic/effect semantics thấy trong metadata
+`Game.GetBuffProperties(BuffID)` exposes semantic magic properties.
 
-String heap có số lượng lớn `magic_*` flags/keys. Các ví dụ đáng chú ý:
+Add/Update/Remove buff events drive shipped UI updates.
 
-- `magic_reduce_skill_cd` và nhiều biến thể;
-- `magic_total_targets`;
-- `magic_max_stacks`;
-- `magic_state_no_clear_on_death`;
-- `magic_remove_buff_on_max_stack`;
-- `magic_buff_realtime_db`;
-- `magic_double_strikes` / `magic_triple_strikes`;
-- `magic_buff_group`;
-- `magic_buff_no_save_db`;
-- `magic_remove_buff_on_timeout`;
-- `magic_special_res_id`;
-- `magic_mark_hp_from_owner_p`;
-- `magic_buff_remove_on_move`;
-- `magic_buff_remove_on_action`;
-- `magic_can_positive_remove`;
-- `magic_fall_from_mount`;
-- `magic_force_monster_attack_self`;
-- `magic_revive_on_death`;
-- `magic_ignore_target_defense`;
-- `magic_ignore_target_res`;
-- `magic_drag_target`;
-- `magic_doubledamage_next_attack`;
-- `magic_unable_to_use_skill`;
-- `magic_blink_to_target`;
-- `magic_blink_to_position`;
-- `magic_reset_all_skill_cd`;
-- `magic_revive_death`;
-- `magic_reduce_skill_cast_time`;
-- `magic_chaining_no_interupt`;
-- `magic_reduce_chaining_time`;
-- `magic_skill_always_hit`;
-- `magic_skill_always_crit`;
-- `magic_invisibility`;
-- `magic_swap_position`;
-- `magic_see_hidden_trap`;
-- `magic_activate_trap`;
-- `magic_summon_puppet`;
-- `magic_callback_puppet`;
-- `magic_swap_puppet_position`;
-- `magic_see_invisibility_low/high`;
-- `magic_negate_dead`;
-- `magic_skill_start_event`;
-- `magic_skill_collide_event`;
-- `magic_skill_vanish_event`;
-- `magic_autoskill`;
-- `magic_call_skill_random...`.
+Therefore exact local buff-aware automation can use actual BuffID/duration/stack rather than only HP thresholds.
 
-### Ý nghĩa
+Still targeted if needed:
 
-Config skill/buff có vẻ giàu data hơn chỉ damage number. Nếu extract đúng config, có thể xây offline skill database để hiểu:
+- source/owner field;
+- richer target buff IDs/durations beyond current target icon path;
+- any specific positive/negative categorization not already obtainable from static/property data.
 
-- buff/debuff semantics;
-- target requirements;
-- cooldown modifiers;
-- death/revive behavior;
-- mobility/blink/drag;
-- invisibility/trap;
-- chain/auto-skill behavior.
+Canonical detail:
 
-Đây là PROBABLE cho schema chi tiết cho tới khi bảng asset cụ thể được decode.
+`analysis/17_BUFF_RUNTIME_SCHEMA.md`.
 
-## 6. Network commands liên quan combat
+---
 
-Các command names đã thấy gồm:
+## 10. Built-in Auto Fight — VERIFIED semantic engine
+
+Readable `AutoFight_Main` Lua proves the game has a real internal auto engine.
+
+`C_AutoModel`:
+
+- None = 0
+- Train = 1
+- PK = 2
+- Quest = 3
+- AutoPath = 4
+- Fllow = 5
+- FuBen = 6.
+
+Train start:
+
+`GUI.FindUI("AutoFight_Main"):StartAutoFight(C_AutoModel.Train)`.
+
+Stop:
+
+`StartAutoFight(C_AutoModel.None)`.
+
+The visible `Đánh quái` tab is **settings**, not the start action.
+
+Shipped engine uses semantic world/target/skill/path APIs such as nearby sprite queries, `HasPath`, `SelectTarget`, `ChaseTarget`, target/position skill requests and target-death checks.
+
+Old PROBABLE architecture around “maybe there is an internal AutoFight loop” is now fully resolved.
+
+Canonical detail:
+
+`analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md`.
+
+---
+
+## 11. Auto Train settings / radius / lure
+
+`AutoTrainMonster_Layout` and Lua expose actual settings for:
+
+- monster whitelist;
+- scan/radius behavior;
+- lure mode;
+- attack-in-radius;
+- skill slots;
+- combo/basic-skill toggles.
+
+A few deeper internal center/return/ranger state fields may still be worth targeted mapping if a feature needs to duplicate exact stock behavior, but there is no reason to rediscover whether radius/monster policy exists.
+
+Remaining hypothesis is narrowed in `research/HYPOTHESES.md`.
+
+---
+
+## 12. Nga My support skill truth — VERIFIED correction
+
+Frozen `Skills.xml`:
+
+- 406 = Phật Quang Phổ Chiếu
+- **407 = Xung Hư Dưỡng Khí**
+- 408 = Khởi Tử Hồi Sinh
+- **423 = Kim Châm Độ Kiếp**
+- 424 = Thanh Tâm Phổ Thiện Chú.
+
+Legacy Lua variable `KIMCHAMDOKIEP` misleadingly points to 407. Do not copy that name/value association into new code or data.
+
+Built-in AutoHp fallback observed:
+
+`406 -> 424 -> 407`.
+
+Canonical truth table:
+
+`database/NGAMY_SUPPORT_SKILLS.md`.
+
+---
+
+## 13. Team-heal donor — VERIFIED exact flow
+
+Built-in Nga My support logic reads teammate state including death/HP/MaxHP/Position/RoleID, checks skill/range state, chases if needed and calls target-skill semantics.
+
+This gives a reliable donor for:
+
+- HP threshold selection;
+- range handling;
+- semantic chase;
+- target skill request;
+- state proof.
+
+It does **not** automatically prove the server accepts every beneficial skill on every non-team peaceful player.
+
+That remains a targeted runtime acceptance question.
+
+---
+
+## 14. Auto Buff should combine vitals and buff state
+
+A robust policy can use two independent signals:
+
+1. **need state** — HP/MaxHP/priority/filter;
+2. **effect state** — BuffID/duration/stack/presence.
+
+Example policy:
+
+```text
+snapshot eligible nearby peaceful players
+ -> filter whitelist/guild/faction/level/MaxHP/etc.
+ -> rank by configured policy
+ -> revalidate target
+ -> check desired buff/cooldown/range/progress
+ -> one semantic cast
+ -> wait cooldown/buff/HP/state proof
+ -> fresh snapshot
+```
+
+Do not spam a buff merely because HP is low if the desired effect is already active and non-refreshable.
+
+---
+
+## 15. Combat network/event vocabulary
+
+Verified names include:
 
 - `CMD_USE_SKILL`
 - `CMD_NEW_MISSILE`
@@ -158,84 +366,95 @@ Các command names đã thấy gồm:
 - `CMD_SKILL_DAMAGE`
 - `CMD_SKILL_HEAL`
 - `CMD_OBJECT_DEATH`
-- `CMD_REVIVE`
 - `CMD_ADD_BUFF`
 - `CMD_UPDATE_BUFF`
 - `CMD_REMOVE_BUFF`
-- `CMD_MOVESPEED_CHANGED`
-- `CMD_DRAG_TARGET`
-- `CMD_DO_ACTION`
-- `CMD_DO_LEAP`
-- `CMD_ACTIVATE_TRAP`
-- `CMD_PUPPET_ATTACK`
-- `CMD_UPDATE_MONSTER_TYPE`
-- `CMD_PK_VALUE`.
+- movement/drag/trap/puppet/PK-related commands.
 
-Không nên suy ra packet direction chỉ từ tên; hãy map caller/processor khi cần exact behavior.
+Exact packet constants are available where defined in `TCPPacketDefine`.
 
-## 7. Auto Fight evidence
+For action execution, semantic `Game` API is preferred.
 
-String evidence có `DrawCicleAutoFight` (typo đúng như binary) và `RemoveAutoFightMark` trong scene-related cluster. Cùng với `get/set_EnableAutoF1`, `RangerAuto`, `AutoSetFlag`, điều này gợi ý mạnh rằng game có **built-in auto-fight state/radius/marker**, không chỉ một UI button giả.
+For analytics, inbound damage/heal/death/buff events are a promising observation source.
 
-### PROBABLE architecture
+Do not infer request direction/payload from a command name alone.
 
-```text
-Auto UI selection
- -> set auto mode/flag/range config
- -> scene draws auto-fight circle/mark
- -> internal target/skill loop operates
-```
+---
 
-Exact method làm “chọn chế độ Đánh quái” chưa được xác nhận. Future AI nên trace UI/Lua action khi người dùng tự bật đúng mode, thay vì tìm coordinate nút.
+## 16. Combat recorder — still PROBABLE, but well grounded
 
-## 8. Auto buff theo HP/MaxHP
+Structured event vocabulary strongly suggests a recorder can capture some combination of:
 
-Nếu nearby player/entity data + buff API được resolve, policy có thể là:
+- attacker/target identity;
+- SkillID;
+- damage/heal values;
+- death timing;
+- buff lifecycle;
+- target/spot efficiency.
 
-```text
-candidates = nearby eligible players
-sort by MaxHP descending (hoặc policy khác)
-for each:
-    if HP% below threshold AND missing desired buff:
-        select/target
-        cast buff skill
-        wait buff/event/skill completion
-        rescan
-```
+Still needs targeted handler/payload mapping for:
 
-Điểm quan trọng: **HP priority và buff presence là hai signal khác nhau**. Nếu chỉ nhìn HP sẽ spam buff lên người đã có buff hoặc bỏ qua duration/stack.
+- exact event fields;
+- crit/block/elemental flags;
+- XP/loot linkage.
 
-## 9. Combat recorder khả thi
+Track this as a telemetry research target, not a solved full schema.
 
-Với event commands/processors, có khả năng xây observer cho:
+---
 
-- skill used;
-- damage/heal;
-- crit nếu protocol/data có flag;
-- target death;
-- XP/loot events nếu map được;
-- kill rate, death/hour, loot/hour.
+## 17. Main-thread/state requirement
 
-Đây là hướng analytics; không phải tất cả field đã được map.
+Skill, target, Lua/UI and other mutable game actions should execute through the validated game-owned action path, not arbitrary external worker-thread invocation.
 
-## 10. Main-thread/state requirement
-
-`UseSkill`/UI/target action có thể chạm Unity/Lua/game state. Không gọi từ arbitrary worker thread. Pattern:
+Canonical action pattern:
 
 ```text
-read-only observer
- -> decide
- -> enqueue one action
- -> Unity/main-thread dispatch
- -> wait concrete event/state
- -> next action
+read-only Observer
+ -> policy decision
+ -> max one mutable action
+ -> MainThread.Execute(Action)
+ -> semantic Game/Lua action
+ -> concrete runtime/server proof
+ -> next decision
 ```
 
-## 11. Điều cần verify nếu implement cụ thể
+The `MainThread.Execute -> queue -> Update -> Action.Invoke` consumer chain itself is already VERIFIED.
 
-- exact return type của `GetBuffs`;
-- skill ID/template mapping trong Config bundle;
-- built-in Auto Fight toggle/action method;
-- exact server/client direction và payload của relevant commands;
-- target validity and distance rules;
-- cast/channel completion states.
+---
+
+## 18. Remaining high-value combat data work
+
+The best next **knowledge** work is not more broad GameAssembly reverse. It is normalization/indexing of:
+
+1. `Skills` 2,091 rows;
+2. `SkillProperties` 2,044 rows;
+3. `AutoSkills` 300 rows;
+4. `Factions` 17 rows;
+5. `Books` 128 rows;
+6. `MagicAtrributes` 509 rows.
+
+Goal:
+
+```text
+SkillID
+ -> exact name/faction/type/target/range/cooldown/property
+ -> property effects
+ -> magic-symbol meanings
+ -> current runtime ownership/cooldown/buff state
+```
+
+This will let future AI answer most skill/support/combat questions by lookup rather than reverse analysis.
+
+---
+
+## 19. Remaining targeted runtime questions
+
+Only investigate when a feature needs them:
+
+- server acceptance rules for specific beneficial skills on non-team players;
+- richer target-buff data beyond icons/current known local schema;
+- additional actor combat fields not already consumed by shipped UI;
+- exact combat-event payload schema for a recorder;
+- any internal AutoFight center/return state needed beyond documented Lua settings.
+
+Do not re-question the existence of Skills/SkillProperties/AutoFight/buff duration/skill cooldown: those are already VERIFIED.
