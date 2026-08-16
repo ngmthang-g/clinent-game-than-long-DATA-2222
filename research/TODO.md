@@ -2,7 +2,7 @@
 
 > Main goal: turn this frozen client into a reusable **AI-readable knowledge base for building the Thần Long auto tool**. Do not expand unrelated client knowledge unless it materially improves an automation feature.
 
-Read `AUTO_TOOL_SCOPE.md` before adding new research.
+Read `AUTO_TOOL_SCOPE.md` and `AUTO_FEATURE_READINESS.md` before adding new research.
 
 General architecture, bundle decrypt, Config/Interface extraction, major Lua/UI/runtime semantics, core packet/action discovery and MainThread native internals are DONE.
 
@@ -21,14 +21,17 @@ General architecture, bundle decrypt, Config/Interface extraction, major Lua/UI/
 - [x] local buff BuffID/DurationTick/Stack.
 - [x] bag/item structured runtime state.
 - [x] exact NPC shop sell request and server-driven bag update lifecycle.
-- [x] revive / Đầu thai exact packet/value semantics.
+- [x] revive / Đầu thai exact packet/value semantics + server Revival lifecycle/countdown.
 - [x] dynamic GameDialog selection mechanism.
-- [x] team/follow runtime schema.
+- [x] team/follow runtime schema + exact leave-team request.
 - [x] storage move semantics.
 - [x] loot / ItemPack semantic engine.
 - [x] NPC/map/AutoPath databases.
 - [x] MainThread queue/Update/Action.Invoke internals.
 - [x] AI routing / context packs / atomic facts / anti-overread layer.
+- [x] compact automation API catalog: `database/AUTO_TOOL_API_CATALOG.md`.
+- [x] feature state/action/proof contract: `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md`.
+- [x] solved-vs-gap matrix: `AUTO_FEATURE_READINESS.md`.
 
 ---
 
@@ -40,51 +43,51 @@ Goal: future AI should be able to implement read-only snapshots without re-rever
 
 Prioritize only fields used by automation:
 
-- [ ] local player: RoleID, name, HP/MaxHP, map, position, dead, combat/busy/progress, selected target.
-- [ ] nearby PeacePlayers: identity, HP/MaxHP, faction, position/death if needed for Buff.
-- [ ] nearby enemies/monsters: identity/template, HP/MaxHP, position, alive/dead, reachability/target relevance.
-- [ ] current map readiness + movement destination.
-- [ ] bag free space + live items (`ID`, `ItemID`, `Site`, `Position`, quantity/bound/durability as needed).
-- [ ] local buffs/cooldowns relevant to casting decisions.
-- [ ] team member HP/map/position for follow/support.
-- [ ] active GameDialog / NPCShop state where needed.
+- [ ] local player: finish exact reusable snapshot contract for RoleID, name, HP/MaxHP, map, position, dead, combat/busy/progress, selected target where not already explicit in canonical docs.
+- [ ] nearby PeacePlayers: add position/death only if required for the chosen non-team Buff implementation; identity/HP/MaxHP/faction/name/guild are already VERIFIED.
+- [ ] nearby enemies/monsters: add exact live HP/MaxHP fields only if built-in Train/target state does not already expose enough for the intended policy; Type/IsDeath/RoleID/ResID/Position are already documented.
+- [x] current map readiness + movement destination semantics.
+- [x] bag free space + live item identity (`ID`, `ItemID`, `Site`, `Position` and common fields).
+- [x] local buffs/cooldowns relevant to casting decisions.
+- [x] team member HP/map/position for follow/support.
+- [x] active GameDialog / NPCShop semantic state/lifecycle.
 
 Do not map extra actor fields unless a concrete feature uses them.
 
 ## P0.2 Auto Train knowledge
 
 - [x] `C_AutoModel.Train=1` and semantic StartAutoFight path.
-- [ ] capture exact runtime guards/state that define Train running/stopped/loading/dead.
-- [ ] document target selection/range/chase/skill fallback fields required by production state machine.
-- [ ] document train-center/radius/return constraints actually exposed by Lua/settings.
-- [ ] document reliable stop/resume semantics across map change/death/sell/heal.
-- [ ] document adaptive spot-switch signals: deaths/time window, bag/loot rate, target availability, return success.
+- [ ] capture any exact runtime flag/state needed by the external tool to distinguish Train running/stopped if the existing service state is insufficient during implementation.
+- [x] target selection/range/chase/skill semantic fields and action donor documented.
+- [x] train-center/radius settings documented: `IsTrainInRanger`, `RangerScan` default 500, `GiveUpMonsterOutRanger`, whitelist/lure/skill settings.
+- [x] stop/yield -> delegated feature -> map/position proof -> resume contract documented for Sell/Revive/Travel.
+- [x] adaptive spot-switch input model documented: rolling deaths, loot events/value, bag pressure, idle/target availability, travel/return proof.
 
 ## P0.3 Auto Buff / Nga My
 
 - [x] nearby PeacePlayer schema.
 - [x] key Nga My skill IDs and corrected identity.
 - [x] cooldown and local buff semantics.
-- [ ] verify non-team beneficial-skill acceptance per important skill.
-- [ ] map exact target range/eligibility/state guards used by built-in heal/buff donor.
-- [ ] document success proof: HP change / buff appearance / cooldown / progress.
-- [ ] define production priority policy fields: HP%, MaxHP priority, whitelist, distance, existing buff, death state.
+- [ ] verify non-team beneficial-skill acceptance per important skill/relationship actually used by the tool.
+- [x] target range/eligibility/chase/cast state guards used by the built-in support donor documented.
+- [x] success-proof contract documented: HP/buff/cooldown/progress + fresh rescan.
+- [x] production priority policy fields documented: HP%, MaxHP priority, RoleID/name/guild/faction/level filters, existing buff, range, target freshness/death.
 
 ## P0.4 Auto Sell / inventory policy
 
 - [x] free bag-space semantic source.
 - [x] item instance/template/site/slot distinction.
-- [x] sell packet + payload.
-- [x] server-driven rescan rule.
+- [x] sell packet + exact payload.
+- [x] server-driven one-mutation -> wait -> rescan rule.
 - [ ] build compact static lookup for only fields relevant to keep/sell/use policy:
   - item name/type;
   - sellable/throwable;
   - equipment slot/type;
   - level/star/quality/value fields when useful;
   - protected/quest/special categories.
-- [ ] map/verify vendor candidates needed by actual train maps.
-- [ ] document NPCShop-ready guard and sell completion proof.
-- [ ] document return-to-train state after selling.
+- [ ] promote/verify vendor candidates needed by the actual configured Train maps; do not map every merchant in the game unnecessarily.
+- [x] NPCShop-ready guard and sell completion proof documented.
+- [x] return-to-saved-Train map/position proof + resume contract documented.
 
 Do **not** normalize every cosmetic/equipment field merely because `Equips` has 22,763 rows.
 
@@ -101,25 +104,31 @@ Do **not** normalize every cosmetic/equipment field merely because `Equips` has 
 ## P0.6 Revive / death recovery
 
 - [x] exact revive packet/type values.
-- [ ] document death-detection -> countdown/availability -> action -> map/spawn-ready proof.
-- [ ] document safe resume rules for Auto Train after revive.
-- [ ] integrate saved train map/position and path-back semantics.
+- [x] server Revival state fields `TimeLeft`, newbie/skill availability and open/update/close lifecycle documented.
+- [x] death -> choose revive policy -> one action -> Revival close -> alive/spawn/map-ready proof documented.
+- [x] safe resume rule documented: do not resume Train until alive + map-ready + valid position.
+- [x] saved Train map/position + semantic GoTo return path documented.
 
 ## P0.7 Party / follow / multi-client orchestration
 
 - [x] structured team member fields and Follow donor.
-- [ ] map exact join/leave/invite/accept actions only if production feature needs them.
-- [ ] define per-PID independent snapshot/action ownership.
-- [ ] define priority arbitration between Revive, Heal, Sell, Return, Buff, Train.
-- [ ] document adaptive train-spot rotation policy inputs/outputs.
+- [x] exact leave-team action: `LeaveTeam=4`, payload `4:selfRoleID` through `CMD_TEAM_ACTION`.
+- [ ] verify the exact automatic **join-party request** payload/path only if the production feature actually needs automatic joining and no already-proven path is sufficient.
+- [x] per-PID independent snapshot/state/action ownership design documented.
+- [x] priority arbitration between Revive, map transition, survival, Heal/Buff, Sell, Party, Train, Loot and spot optimization documented.
+- [x] adaptive train-spot rotation policy inputs/outputs documented.
 
 ## P0.8 MainThread / action boundary
 
 Static dispatcher knowledge is DONE and retained.
 
-Remaining live proof is implementation work, but any new client-side facts discovered during implementation should be recorded here only if they are reusable across features.
+Remaining live proof is implementation work:
 
-Do not spend general research time re-proving the dispatcher.
+- [ ] construct/root one valid external managed `System.Action`, enqueue through `MainThread.Execute`, and observe the harmless callback state transition.
+
+Record new client-side facts here only if they are reusable across multiple auto features.
+
+Do not spend general research time re-proving the dispatcher internals.
 
 ---
 
