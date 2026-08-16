@@ -1,6 +1,6 @@
 # Research TODO — targeted follow-up after deep static/Lua/native analysis
 
-> General repository survey, asset decrypt, Config/Interface/Lua extraction, core packet/action discovery, MainThread dispatcher internals and the AI routing layer are DONE. **Không broad reverse lại client từ đầu.**
+> General repository survey, asset decrypt, Config/Interface/Lua extraction, core packet/action discovery, MainThread dispatcher internals, Action constructor ABI and the AI routing layer are DONE. **Không broad reverse lại client từ đầu.**
 
 ## DONE — AI-native knowledge routing
 
@@ -10,7 +10,7 @@
 - [x] `database/FACTS.jsonl` atomic high-value facts index.
 - [x] `database/FACTS_README.md` usage/maintenance rules.
 - [x] `database/FINDING_TO_DOC_MAP.md` linked to routing/context layer.
-- [x] root README and `AI_INDEX.md` now instruct AI not to preload the whole repository.
+- [x] root README and `AI_INDEX.md` instruct AI not to preload the whole repository.
 
 Normal future build path:
 
@@ -43,31 +43,62 @@ Normal future build path:
 - [x] loot/item-pack semantic engine.
 - [x] task/quest and pet/spirit donor subsystems.
 
-## DONE — MainThread dispatcher internals
+## DONE — MainThread dispatcher + producer ABI
 
-Direct frozen-snapshot GameAssembly disassembly now proves:
+Direct frozen-snapshot GameAssembly disassembly proves:
 
 - [x] `MainThread.Awake()` establishes singleton Instance.
 - [x] constructor creates `ConcurrentQueue<System.Action>` at `this+0x20`.
 - [x] `Execute(Action)` enqueues into that queue.
 - [x] `Update()` calls `DoExecuteWorks()`.
 - [x] `DoExecuteWorks()` loops queue state -> dequeue -> Action invoke until empty.
+- [x] shipped TCPGame/TCPLogin producers allocate legitimate managed targets/closures and Action delegates before calling Execute.
+- [x] generated `System.Action` constructor call ABI is recovered: `RCX=Action`, `RDX=target or null`, `R8=callback MethodInfo*`, `R9=null` in observed calls.
+- [x] same Action constructor is used with `RDX=0` in shipped static-callback call sites.
+- [x] required semantic IL2CPP exports for class/method/type resolution, object allocation, runtime invoke, thread attach and GC handles are present.
 
-Canonical evidence: `analysis/21_MAIN_THREAD_DISPATCHER.md`.
+Canonical evidence:
 
-Do **not** waste time reproving this chain.
+- `analysis/21_MAIN_THREAD_DISPATCHER.md`
+- `analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md`
+- `analysis/30_EXTERNAL_ACTION_BRIDGE_BLUEPRINT.md`.
 
-## P0 — External MainThread bridge: remaining live proof
+Do **not** waste time reproving these static/native facts.
 
-The remaining execution-context problem is no longer the dispatcher implementation. It is managed delegate construction/lifetime from the external bridge.
+## P0 — External MainThread bridge: one live proof remains
+
+The remaining execution-context problem is now extremely narrow: construct/root one valid managed Action from the external bridge, enqueue it and observe its callback result.
+
+Canonical first proof:
+
+```text
+System.Threading.CancellationTokenSource
+IsCancellationRequested=false
+ -> Action target = CTS, callback = Cancel()
+ -> MainThread.Execute(Action)
+ -> Unity Update drains/invokes Action
+ -> IsCancellationRequested=true
+```
+
+Required steps:
 
 - [ ] Resolve live `MainThread.Instance` per game PID and confirm non-null.
-- [ ] Determine the safest IL2CPP mechanism to construct/root a valid `System.Action` callback object for this runtime.
-- [ ] Enqueue one harmless Action through `MainThread.Execute`.
-- [ ] Record producer thread ID vs callback execution thread ID and prove callback runs on Unity Update thread.
-- [ ] Verify delegate remains valid across GC during the action lifetime.
-- [ ] Keep max one mutable external action pending.
-- [ ] Only after this proof route `Game/Lua/UI` mutations through the dispatcher.
+- [ ] Attach producer context with `il2cpp_thread_attach(domain)` if it is not already an IL2CPP-attached thread.
+- [ ] Resolve/allocate/initialize `System.Threading.CancellationTokenSource`.
+- [ ] Strong-root CTS with `il2cpp_gchandle_new`.
+- [ ] Resolve exact `Cancel()` overload and verify zero parameters + `System.Void` return.
+- [ ] Resolve/allocate `System.Action`.
+- [ ] Construct Action legitimately using target CTS + callback MethodInfo; do not forge fields.
+- [ ] Strong-root Action during the first proof.
+- [ ] Verify initial `IsCancellationRequested == false`.
+- [ ] Enqueue through `MainThread.Execute(Action)`.
+- [ ] Observe `IsCancellationRequested == true` within timeout.
+- [ ] Confirm no managed exception/crash/GC corruption.
+- [ ] Release roots after safe completion/cleanup.
+- [ ] Repeat enough times to establish stability.
+- [ ] Only after this proof route low-risk semantic Game/Lua/UI actions through the dispatcher.
+
+Direct TID logging is optional diagnostic evidence. The primary proof combines the live CTS state transition with already-VERIFIED static `Update -> DoExecuteWorks -> Action.Invoke` semantics.
 
 Do not replace this with a production `CreateRemoteThread` gameplay worker.
 
@@ -125,7 +156,7 @@ Important static rule already documented: `EquipPoint=0` is Weapon; do not class
 
 ## Architecture guardrails
 
-`Resolver -> read-only Scanner -> Snapshot/State Store -> Observer -> State Machine -> Safety Guard -> Action Queue (max 1 mutable action) -> MainThread.Execute(Action) -> Internal Action -> State Proof`
+`Resolver -> read-only Scanner -> Snapshot/State Store -> Observer -> State Machine -> Safety Guard -> Action Queue (max 1 mutable action) -> valid System.Action -> MainThread.Execute(Action) -> Internal Action -> State Proof`
 
 Rules:
 - response handlers are not requests;
