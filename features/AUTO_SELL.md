@@ -1,6 +1,6 @@
 # Feature specification — Auto Sell
 
-Status: **core sell request + inventory/shop lifecycle VERIFIED; NPC dialog choice remains state-dependent**.
+Status: **core sell request + inventory/shop lifecycle VERIFIED; per-NPC service confirmation remains runtime-dependent**.
 
 ## Data
 
@@ -28,12 +28,35 @@ Use `GoToNPC(mapID,npcID)` or its semantic steps:
 
 `Game.GetNPCPosition -> Game.GoTo -> Game.ClickNPC`.
 
-Static DB confirms on Map 5 Lâu Lan:
+Current Lâu Lan Auto Sell knowledge is separated by evidence level in `database/AUTO_SELL_VENDOR_MAP.md`.
 
-- Ba Nhĩ = NPC 328
-- Mã Kiêu Minh = NPC 373.
+Static DB confirms Map 5 Lâu Lan identities:
 
-No static X/Y is asserted from `AutoPath/NPCData`.
+- Ba Nhĩ = NPC 328;
+- Mã Kiêu Minh = NPC 373;
+- Hiệp Hàng = NPC 341, merchant-archetype `ResName=npcXiYuTuoDuiShangRen`;
+- Chu Thập Tam = NPC 398, blacksmith-archetype `ResName=TieJiang`.
+
+The user has identified Ba Nhĩ and Mã Kiêu Minh as selling destinations in gameplay; keep that as **USER-REPORTED SERVICE** until the exact runtime GameDialog/NPCShop path is captured. Do not mislabel it as static Config proof.
+
+No static/manual X/Y is canonical. Query `Game.GetNPCPosition(npcID)` at action time.
+
+## Vendor verification rule
+
+A candidate becomes a **runtime-verified normal sell vendor** only when the actual interaction path proves:
+
+```text
+candidate NPC interaction
+ -> optional current GameDialog selection
+ -> inbound CMD_NPC_SHOP_DATA = 200034
+ -> current NPCShop data present
+ -> IsGuildShop == false
+ -> current NpcShopID + ShopID captured
+```
+
+Opening some unrelated UI or dialog is not enough.
+
+If one disposable item is used for verification, success proof is the normal sell lifecycle: `RemoveItem` / `UpdateItemsList` / consistent shop-money state.
 
 ## Shop opening/readiness
 
@@ -41,11 +64,13 @@ If the NPC uses a dialog menu:
 
 1. wait for active `GameDialog`;
 2. inspect current `Selections`;
-3. choose the actual shop/trade selection ID;
+3. choose the actual shop/trade selection ID by current visible text;
 4. wait for inbound `CMD_NPC_SHOP_DATA = 200034`;
 5. require current `NPCShop`/shopData before selling.
 
 `NPCShop:RefreshData(shopData)` exposes `shopData.IsGuildShop`; guild shops disable the sell tab and are not a valid normal sell destination.
+
+Do not persist one observed dialog selection ID as a permanent global constant unless repeatable evidence proves it stable.
 
 ## Exact sell request
 
@@ -81,6 +106,8 @@ Before selling, stock Lua blocks:
 
 Preserve these guards and add the user's keep/sell whitelist.
 
+Canonical compact keep/sell rules: `database/AUTO_SELL_CLASSIFICATION.md`.
+
 ## Mutation-safe confirmation
 
 Inbound `RemoveItem` data is parsed as:
@@ -108,11 +135,13 @@ Do not cache a list of 90 slot clicks.
 
 When a fresh filtered bag scan contains zero sell candidates, selling is complete.
 
+Optionally stop earlier when the configured free-space target has been reached.
+
 The old fallback “bấm bán 90 lần” is unnecessary once the semantic sell path is operational.
 
 ## Weapon/item keep filtering
 
-Use the semantic item/equipment classification documented in `analysis/04_INVENTORY_ITEMS_SHOP.md` and the frozen Config database. Do not classify by icon/OCR.
+Use `database/AUTO_SELL_CLASSIFICATION.md`, runtime semantic item/equipment classification and only the static fields needed by the actual policy. Do not classify by icon/OCR.
 
 Always keep `ID` (instance), `ItemID` (template) and `Position` (slot) distinct.
 
@@ -138,5 +167,6 @@ After selling:
 - no current shop data -> do not send sell.
 - one mutable item action at a time.
 - never call client response handlers to fake removal/sale.
+- do not upgrade a vendor candidate to runtime-verified from name/ResName alone.
 
 Deep donor detail: `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`.
