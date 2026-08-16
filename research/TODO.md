@@ -24,6 +24,7 @@ General architecture, bundle decrypt, Config/Interface extraction, major Lua/UI/
 - [x] revive / Đầu thai exact packet/value semantics + server Revival lifecycle/countdown.
 - [x] dynamic GameDialog selection mechanism.
 - [x] team/follow runtime schema + exact leave-team request.
+- [x] exact selected-player join-team request: `CMD_OTHER_ROLE_COMMAND=200051`, payload `9:targetRoleID`.
 - [x] storage move semantics.
 - [x] loot / ItemPack semantic engine.
 - [x] NPC/map/AutoPath databases.
@@ -32,6 +33,7 @@ General architecture, bundle decrypt, Config/Interface extraction, major Lua/UI/
 - [x] compact automation API catalog: `database/AUTO_TOOL_API_CATALOG.md`.
 - [x] feature state/action/proof contract: `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md`.
 - [x] runtime per-PID immutable snapshot contract: `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md`.
+- [x] compact Auto Sell classification/policy contract: `database/AUTO_SELL_CLASSIFICATION.md`.
 - [x] solved-vs-gap matrix: `AUTO_FEATURE_READINESS.md`.
 
 ---
@@ -40,7 +42,7 @@ General architecture, bundle decrypt, Config/Interface extraction, major Lua/UI/
 
 ## P0.1 Runtime scanner contracts
 
-Reusable external snapshot schemas are now documented in `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md` and routed through `contexts/BUILD_RUNTIME_SCANNER.md`.
+Reusable external snapshot schemas are documented in `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md` and routed through `contexts/BUILD_RUNTIME_SCANNER.md`.
 
 Completed:
 
@@ -66,7 +68,7 @@ Do not map extra actor fields merely for completeness.
 ## P0.2 Auto Train knowledge
 
 - [x] `C_AutoModel.Train=1` and semantic StartAutoFight path.
-- [ ] capture any exact runtime flag/state needed by the external tool to distinguish Train running/stopped if the existing service state is insufficient during implementation.
+- [ ] capture any exact runtime flag/state needed by the external tool to distinguish Train running/stopped **only if** existing service/orchestrator ownership is insufficient during implementation.
 - [x] target selection/range/chase/skill semantic fields and action donor documented.
 - [x] train-center/radius settings documented: `IsTrainInRanger`, `RangerScan` default 500, `GiveUpMonsterOutRanger`, whitelist/lure/skill settings.
 - [x] stop/yield -> delegated feature -> map/position proof -> resume contract documented for Sell/Revive/Travel.
@@ -88,12 +90,14 @@ Do not map extra actor fields merely for completeness.
 - [x] item instance/template/site/slot distinction.
 - [x] sell packet + exact payload.
 - [x] server-driven one-mutation -> wait -> rescan rule.
-- [ ] build compact static lookup for only fields relevant to keep/sell/use policy:
+- [x] compact classification/policy fields documented in `database/AUTO_SELL_CLASSIFICATION.md`:
   - item name/type;
   - sellable/throwable;
   - equipment slot/type;
-  - level/star/quality/value fields when useful;
-  - protected/quest/special categories.
+  - level/star/value/bound-related fields;
+  - protected quest range;
+  - exact Weapon rule `EquipPoint==0`.
+- [ ] materialize targeted static Item/Equip rows/indexes only if the user's richer keep/sell policy needs data not available from runtime APIs/current compact schema.
 - [ ] promote/verify vendor candidates needed by the actual configured Train maps; do not map every merchant in the game unnecessarily.
 - [x] NPCShop-ready guard and sell completion proof documented.
 - [x] return-to-saved-Train map/position proof + resume contract documented.
@@ -121,11 +125,15 @@ Do **not** normalize every cosmetic/equipment field merely because `Equips` has 
 ## P0.7 Party / follow / multi-client orchestration
 
 - [x] structured team member fields and Follow donor.
-- [x] exact leave-team action: `LeaveTeam=4`, payload `4:selfRoleID` through `CMD_TEAM_ACTION`.
-- [ ] verify the exact automatic **join-party request** payload/path only if the production feature actually needs automatic joining and no already-proven path is sufficient.
+- [x] exact leave-team action: `CMD_TEAM_ACTION`, payload `4:selfRoleID`.
+- [x] exact request-to-join selected target's team: `CMD_OTHER_ROLE_COMMAND=200051`, `TeamRequestJoin=9`, payload `9:targetRoleID`.
+- [x] exact invite-selected-target route: `CMD_OTHER_ROLE_COMMAND=200051`, `TeamInviter=5`, payload `5:targetRoleID`.
+- [x] server acceptance proof rule: request sent is not success; wait `Game.RoleData.TeamID` / `C_TeamData` update.
 - [x] per-PID independent snapshot/state/action ownership design documented.
 - [x] priority arbitration between Revive, map transition, survival, Heal/Buff, Sell, Party, Train, Loot and spot optimization documented.
 - [x] adaptive train-spot rotation policy inputs/outputs documented.
+
+No broad party reverse remains. Only runtime integration/anti-spam behavior belongs to implementation.
 
 ## P0.8 MainThread / action boundary
 
@@ -160,25 +168,18 @@ No need to fully model progression/book economy unless an auto feature uses it.
 
 ## Items / equipment subset
 
-Prioritize Auto Sell / loot / use decisions:
-
-- ItemID / Name / Type
-- sellable / throwable
-- stack/value
-- equipment point/type
-- level/star/quality/bound-relevant rules
-- medicine usage fields if Auto HP/MP item use is implemented.
+The compact Auto Sell policy schema is already documented. Materialize actual rows only when a concrete user policy requires specific template lookups beyond runtime `GetItemType/GetEquipType/IsItemSellable`.
 
 ## Monsters / maps / NPC subset
 
-Prioritize:
+Prioritize only:
 
 - train target identity;
 - boss/monster filtering;
 - map/NPC service routing;
 - return paths / portal topology if `Game.GoTo` needs support.
 
-Do not normalize 17,121 monster rows into mandatory AI context; use compact index + chunks/lookup.
+Do not normalize 17,121 monster rows into mandatory AI context; use compact index + chunks/lookup if needed.
 
 ---
 
