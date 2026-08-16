@@ -1,54 +1,60 @@
-# Inventory / Items / Shop / Auto Sell
+# Inventory / Items / Shop / Auto Sell — current solved model
 
-## 1. Kết luận lớn
+> Inventory/shop is now one of the best-understood subsystems in the frozen client. Old statements that the sell packet or Config table are unknown are obsolete.
 
-Đây là một trong các subsystem được metadata mô tả rõ nhất. Client có API semantic đủ để:
+---
 
-- biết số ô trống;
-- enumerate item;
-- phân biệt item instance và item template;
-- phân loại Equip/Common/Gem/Medicine/PetEquip;
-- phân loại loại trang bị, gồm Weapon;
-- biết sellable/throwable;
-- lấy base/buy price, stack, bound, quantity/durability;
-- quan sát server response khi item/money/shop state thay đổi.
+## 1. Core conclusion
 
-Vì vậy inventory scanner không nên dựa vào OCR, pixel, icon hay kéo tay nải xuống để đếm ô.
+The client exposes enough semantic runtime/static data to avoid OCR, icon recognition, bag scrolling and blind repeated clicks.
 
-## 2. API đã thấy
+A robust inventory system can:
 
-### Bag/list/query
+- read free bag slots;
+- enumerate live item instances;
+- distinguish live instance ID from template ID and slot/site;
+- classify item/equipment type;
+- preserve weapons or other protected categories by game data;
+- check sellable/throwable rules;
+- join live instances to static `Items` / `Equips` / `Medicines` / `Gems` data;
+- issue one exact semantic mutation;
+- wait for server-authoritative item/money/shop state before continuing.
+
+---
+
+## 2. Runtime query APIs
+
+### Bag / collection
 
 - `GetFreeBagSpace()`
 - `GetTotalItems`
 - `GetItems`
 - `GetItemsAtSite(site)`
-- `GetItemAtSite(site, pos)`
+- `GetItemAtSite(site,pos)`
 - `FindItems`
 - `FindItem`
-- `CountItem`
+- `CountItem`.
 
-### Item data/template
+### Item/template
 
 - `GetItemData(dbID)`
-- `GetItemTemplateData`
-- `GetItemType(itemID)`
-- `GetEquipType(itemID)`
-- `GetPetEquipType(itemID)`
+- `GetItemTemplateData(ItemID)`
+- `GetItemType(ItemID)`
+- `GetEquipType(ItemID)`
+- `GetPetEquipType(ItemID)`
 - `GetItemName`
 - `GetItemIcon`
 - `GetItemBasePrice`
 - `GetItemBuyPrice`
 - `GetItemMaxStack`
-- `GetItemExtraHint`
+- `GetItemExtraHint`.
 
-### Rules
+### Rule helpers
 
-- `IsItemThrowable(itemID)`
-- `IsItemSellable(itemID)`
-- `IsItemSellToShopWithBoundMoney(itemID)`
-- `GetEquipBoundRule`
-- `CanEquipIdentified`
+- `IsItemThrowable(ItemID)`
+- `IsItemSellable(ItemID)`
+- `IsItemSellToShopWithBoundMoney(ItemID)`
+- equip/bound/identify helpers.
 
 ### Equipment/gem details
 
@@ -61,11 +67,13 @@ Vì vậy inventory scanner không nên dựa vào OCR, pixel, icon hay kéo tay
 - `GetGemType`
 - `GetGemLevel`
 - `IsUniversalGem`
-- HeroicOrder/Signet/PetEquip-related methods also exist.
+- PetEquip/HeroicOrder/Signet-related helpers.
 
-## 3. LuaItemData — ba ID không được nhầm
+---
 
-Metadata/analysis trước đó cho thấy item instance có các property/field names:
+## 3. Live item identity — never conflate these fields
+
+Observed `LuaItemData` fields include:
 
 - `ID`
 - `ItemID`
@@ -73,251 +81,370 @@ Metadata/analysis trước đó cho thấy item instance có các property/field
 - `Position`
 - `Bound`
 - `Quantity`
-- `Durability`
-- và các thông tin khác.
+- `Durability`.
 
-### Ý nghĩa
+Meaning:
 
-- `ID`: ID của **instance cụ thể** đang tồn tại.
-- `ItemID`: ID **template/resource** của loại item.
-- `Position`: slot/position trong container.
+- `ID` = **live item/database instance ID**;
+- `ItemID` = static template/resource ID;
+- `Site` = logical container;
+- `Position` = current slot inside that container.
 
-Một lỗi rất nguy hiểm là dùng `ItemID` như instance ID hoặc tin `Position` sẽ không đổi sau khi server update bag.
+Canonical rule:
 
-## 4. ItemType đã thấy
+```text
+ID != ItemID != Position != Site
+```
 
-Enum/string evidence gồm ít nhất:
+Mutation requests such as shop sell/storage move use the **current live instance ID**.
 
-- `Equip`
-- `CommonItem`
-- `Gem`
-- `Medicine`
-- `PetEquip`
+After a mutation, slot/site/list state may change; never keep using an old bag-slot snapshot without a fresh read.
 
-Exact numeric enum values chưa được ghi ở KB này; hãy resolve enum metadata nếu cần code cứng giá trị.
+---
 
-## 5. EquipType đã thấy
+## 4. Item/equipment classification
 
-Các category đã ghi nhận:
+Runtime semantic type names include:
 
-- `Weapon`
-- `Hat`
-- `Cloth`
-- `Gloves`
-- `Shoes`
-- `Belt`
-- `Ring`
-- `Necklace`
-- `Mount`
-- `Ring_2`
-- `Amulet`
-- `Amulet_2`
-- `Cuff`
-- `Shoulderpads`
-- `Fashion`
-- `Dart`
-- `Soul`
-- `DragonTattoo`
-- `HeroicOrder`
-- `Signet`
-- `WeaponVisual`
-- có thể còn category khác.
+- Equip
+- CommonItem
+- Gem
+- Medicine
+- PetEquip.
 
-### Nhận biết vũ khí
+Equipment categories include Weapon, Hat, Cloth, Gloves, Shoes, Belt, Ring, Necklace, Mount, Amulet, Cuff, Shoulderpads, Fashion, Dart, Soul, DragonTattoo, HeroicOrder, Signet, WeaponVisual and variants.
 
-Logic semantic:
+### Static `Equips.xml` distinction — VERIFIED
+
+`Equips.xml` has both:
+
+- `Type` = specific equipment form/subtype;
+- `EquipPoint` = equipment slot/position semantic.
+
+Exact important slot rule:
+
+`EquipPoint == 0` = **Weapon**.
+
+There are **4,685** Equip rows at Weapon position in this snapshot.
+
+Do not classify a weapon only with `Type < 10`; other weapon forms such as Blade/Sickle/Zither exist outside that range.
+
+### Runtime preferred check
+
+When live APIs are available:
 
 ```text
 GetItemType(ItemID) == Equip
 AND
 GetEquipType(ItemID) == Weapon
-=> item là vũ khí
 ```
 
-Không cần OCR/icon/name matching.
+Static `EquipPoint==0` is ideal for offline/template policy.
 
-## 6. Filter an toàn
+---
 
-Giả định `không phải Weapon = rác` là sai và nguy hiểm. Nó có thể gồm:
+## 5. Static item/equipment databases — VERIFIED
 
-- gem;
-- medicine;
-- quest item;
-- material;
-- rare item;
-- pet equipment;
-- bound/non-sellable item;
-- currency-like objects.
+`Config.unity3d` extraction proves the exact tables exist.
 
-### Rule an toàn cho auto sell
+### `Items.xml`
 
-Ví dụ:
+**5,238 rows**.
+
+Normalized fields already documented include:
+
+`ID, Name, Icon, ItemLevel, RequireLevel, BoundMoney, BasePrice, SellPrice, Throwable, Sellable, Bound, Stack, MaxUsageTimes, DurationHour, ScriptID, TypeDesc, ...`
+
+Snapshot statistics:
+
+- Sellable=true: **4,970**
+- Sellable=false: **268**
+- Throwable=true: **5,005**
+- Throwable=false: **233**.
+
+### `Equips.xml`
+
+**22,763 rows**.
+
+Contains template identity, Type, EquipPoint, level/faction, price, durability, identification, star, BuffID, SetID, visual and base attributes.
+
+### `Medicines.xml`
+
+**692 rows** with medicine price/level/stack/sellability semantics.
+
+### `Gems.xml`
+
+**1,154 rows**.
+
+Canonical schema/detail:
+
+- `analysis/28_STATIC_DATA_DATABASE_EXPANSION.md`
+- `analysis/33_UNDEREXPLORED_HIGH_VALUE_CONFIG.md`.
+
+### Static vs live rule
+
+Static rows decide **what the template is**.
+
+Live runtime decides:
+
+- whether the current instance exists;
+- where it currently is;
+- whether current semantic/server rules allow mutation;
+- whether a request succeeded.
+
+---
+
+## 6. Safe keep/sell policy
+
+The rule “not Weapon = trash” is unsafe.
+
+Non-weapon items can include:
+
+- valuable armor/accessories;
+- gems;
+- medicines;
+- quest items;
+- materials;
+- pet gear;
+- rare/bound/non-sellable objects.
+
+A conservative policy can be:
 
 ```text
-if Weapon:
+if protected ItemID / whitelist:
     KEEP
-else if !IsItemSellable(ItemID):
-    KEEP / SKIP
-else if whitelist matches:
+else if live/template class is Weapon and policy says keep weapons:
+    KEEP
+else if !Game.IsItemSellable(ItemID):
+    KEEP_OR_SKIP
+else if quality/star/level/set/value rules say keep:
     KEEP
 else:
     SELL_CANDIDATE
 ```
 
-Có thể thêm filter:
+Discard policy must additionally require `IsItemThrowable(ItemID)` and explicit user policy.
 
-- ItemType
-- EquipType
-- Bound
-- Quantity
-- SellPrice/base price
-- star/level/quality nếu map được
-- protected item IDs.
+---
 
-### Rule an toàn cho auto discard
+## 7. Bag-full detection — VERIFIED semantic path
 
-Chỉ đưa item vào discard candidate khi **cả policy của user và `IsItemThrowable`** cho phép. Không dùng “không phải vũ khí” làm điều kiện đủ.
+Use:
 
-## 7. Bag-full detection
+`Game.GetFreeBagSpace()`.
 
-`GetFreeBagSpace()` là entry point ưu tiên.
-
-Thay vì:
+No need for:
 
 ```text
-Open bag -> Sort -> Scroll -> Count empty slots visually
+open bag -> sort -> scroll -> visually count blank cells
 ```
 
-hãy dùng:
+Recommended trigger:
 
 ```text
 free = GetFreeBagSpace()
-if free == 0:
-    start sell state machine
+if free <= configuredThreshold:
+    enter BAG_EVALUATION / SELLING policy
 ```
 
-Có thể vẫn mở bag UI cho mục đích hiển thị/debug, nhưng không nên coi UI là source of truth cho free slots.
+The visible 100-slot Bag grid is presentation; `Game.GetItemsAtSite(C_ItemSite.Bag)` is the structured content source.
 
-## 8. Server-authoritative shop update
+`C_ItemSite.Bag = 10`.
 
-Đã thấy các processing/update names:
+---
 
-- `ProcessRemoveItem`
-- `ProcessUpdateItemsList`
-- `ProcessUpdateMoney`
-- `ProcessUpdateTraderState`
+## 8. Exact shop sell request — VERIFIED
 
-và command/event names tương ứng như:
+This is no longer a missing trace.
 
+From decrypted `NPCShop_SellItemTab` Lua:
+
+`CMD_NPC_SHOP_SELL_REQUEST = 200036`
+
+Payload:
+
+```text
+itemInstanceID:NpcShopID:ShopID
+```
+
+Where:
+
+- `itemInstanceID` = `dbItemData.ID` of the **current live instance**;
+- `NpcShopID` = current NPC shop context;
+- `ShopID` = `CurrentShopData.ID`.
+
+Original Lua also checks:
+
+- quest-item ID family/range guard;
+- `Game.IsItemSellable(ItemID)`.
+
+### Quick Sell
+
+Quick Sell is a UI convenience; it ultimately calls the **same semantic sell request**, not a special bulk-sell protocol.
+
+Canonical detailed evidence:
+
+- `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`
+- `analysis/11_EXACT_INTERNAL_ACTION_FLOWS.md`.
+
+---
+
+## 9. Shop state / server proof
+
+Relevant server/update lifecycle includes:
+
+- `CMD_NPC_SHOP_DATA = 200034` -> shop data/UI state;
 - `CMD_REMOVE_ITEM`
 - `CMD_UPDATE_ITEMS_LIST`
 - `CMD_UPDATE_MONEY`
-- `CMD_UPDATE_TRADER_STATE`.
+- `CMD_UPDATE_TRADER_STATE`;
+- processors such as `ProcessRemoveItem`, `ProcessUpdateItemsList`, `ProcessUpdateMoney`, `ProcessUpdateTraderState`.
 
-### Điều này chứng minh gì
+### Important distinction
 
-Bán item là flow có server confirmation/state sync. Các `Process*` là dấu hiệu inbound/update, **không phải request bán**.
+These inbound/update handlers are **not sell requests**.
 
-Không gọi `ProcessRemoveItem` để “giả bán”. Làm vậy chỉ có thể sửa state client tạm thời rồi server sync lại hoặc tạo desync.
+Never invoke `ProcessRemoveItem` or update handlers to simulate sale. The server remains authoritative.
 
-## 9. Vì sao bán nhiều item phải rescan
+---
 
-Sai:
+## 10. Why Auto Sell must mutate one current instance at a time
+
+Wrong:
 
 ```text
-scan slots 1..100
-save list positions
-sell pos 1
-sell pos 2
-sell pos 3
+scan bag once
+ -> save 70 slots/IDs
+ -> blast 70 sell requests
 ```
 
-Sau mỗi server update, list/slot/position có thể thay đổi.
+Risks:
 
-Đúng hơn:
+- item list can be compacted/reordered;
+- instance may disappear/change site;
+- shop/server state may reject or update asynchronously;
+- stale policy data can cause unintended mutation.
+
+Correct loop:
 
 ```text
 SCAN current bag
- -> choose ONE candidate by instance ID/current position
- -> send real sell action
- -> WAIT RemoveItem/UpdateItemsList/UpdateMoney or bag change
- -> SCAN AGAIN
- -> choose next
+ -> filter candidates
+ -> choose ONE current instance
+ -> verify shop context + sellability
+ -> send 200036 instanceID:NpcShopID:ShopID
+ -> WAIT RemoveItem / UpdateItemsList / money/shop proof
+ -> fresh SCAN
+ -> choose next candidate
 ```
 
-Có thể giữ stable instance ID nếu game đảm bảo ID tồn tại đến khi remove, nhưng không được tin tuyệt đối slot snapshot cũ.
+This removes the need for the old “press Sell 90 times” fallback architecture.
 
-## 10. Shop request còn thiếu gì
+---
 
-C# metadata không lộ một helper rõ ràng tên `SellItem()` hoặc `QuickSell()` trong các phát hiện hiện tại. Bằng chứng kiến trúc cho thấy phần shop action có khả năng nằm trong Lua UI và gọi `LuaSystemAPI_Network.SendPacket`.
+## 11. Bag item events — VERIFIED
 
-Vì thế muốn map request bán chính xác, targeted trace tốt nhất là:
+`BagItemsGrid` renders 100 logical positions but populates them from:
 
-1. `ClickNPC(vendorNpcId)`;
-2. trace `MainCallUI/CallUI` khi mở shop;
-3. trace Lua callback khi chọn sell mode;
-4. trace `SendPacket(packetID, payload)` khi tự tay bán **một item**;
-5. observe `ProcessRemoveItem` / `ProcessUpdateMoney` / `ProcessUpdateItemsList`.
+`Game.GetItemsAtSite(Site)`.
 
-Sau một trace đúng, document packet/callback và replay bằng state machine.
+Add/Remove/UpdateItemsList events refresh the structured grids.
 
-## 11. State machine đề xuất cho Auto Sell
+Observed RemoveItem data carries enough identity context such as site/dbID/position for UI updates.
+
+This supports event-driven or fresh-snapshot confirmation rather than screen inspection.
+
+---
+
+## 12. Item actions outside shop — VERIFIED examples
+
+`CMD_ITEM_ACTION = 100005`.
+
+Observed payload families:
+
+- Equip -> `1:instanceID`
+- Use -> `3:instanceID`
+- Abandon -> `4:instanceID`
+- Move -> `5:instanceID:destinationSite`
+- Split -> `8:instanceID:quantity`.
+
+Bag/site sort:
+
+`CMD_BAG_SORT = 100006`.
+
+Bag payload:
+
+`10`.
+
+Storage pages use site IDs 11..15.
+
+Canonical storage detail:
+
+`analysis/26_STORAGE_BANK_ITEM_MOVE.md`.
+
+---
+
+## 13. Ground loot integration
+
+The client already has a semantic loot subsystem.
+
+Typical source path:
+
+```text
+nearby ItemPack
+ -> path/reachability
+ -> ClickToObject
+ -> pack contents
+ -> item policy / bag capacity
+ -> PickUpItemFromItemPack
+ -> bag update
+```
+
+Therefore a sophisticated Auto Sell policy can share the same static Item/Equip classification with the loot filter rather than duplicating image/name heuristics.
+
+Canonical detail:
+
+`analysis/27_LOOT_PICKUP_FILTER_ENGINE.md`.
+
+---
+
+## 14. Auto Sell state machine
+
+Recommended high-level flow:
 
 ```text
 TRAINING
- -> periodic GetFreeBagSpace
- -> if free > threshold: stay training
- -> if full: suspend combat
- -> choose vendor for current map
- -> move to vendor
- -> ClickNPC
- -> WAIT NPC UI
- -> open trade/shop action
- -> WAIT shop UI / trader state
- -> enter sell mode
- -> SCAN BAG
- -> choose 1 SELL_CANDIDATE
- -> SEND REAL SELL ACTION
- -> WAIT SERVER CONFIRM
- -> SCAN BAG AGAIN
- -> no candidates? close shop
- -> return train position
- -> verify position/map
- -> resume combat
+ -> observe GetFreeBagSpace
+ -> threshold reached
+ -> suspend Train
+ -> choose configured/current-map vendor candidate
+ -> semantic navigation to vendor
+ -> open actual NPC/shop state
+ -> verify current NpcShopID + ShopID
+ -> scan current Bag
+ -> filter ONE candidate
+ -> send exact sell request
+ -> wait server/item proof
+ -> rescan/repeat
+ -> stop when policy satisfied/no candidates/enough free slots
+ -> leave shop
+ -> return saved train location
+ -> verify map/position
+ -> resume Train
 ```
 
-Không nên “bấm bán 90 lần” nếu bag list đã đọc được realtime. Fixed 90-click chỉ nên là fallback tạm thời cho prototype.
+Do not let Shop, Train, Buff or other mutable actions run concurrently for the same PID.
 
-## 12. Database item offline
+---
 
-`Config.unity3d` có khả năng rất cao chứa static item configuration. Nếu extract được, nên tạo database tĩnh:
+## 15. Remaining targeted unknowns
 
-```text
-ItemID
-Name
-ItemType
-EquipType
-BasePrice
-MaxStack
-Bound/Sell/Throw rules
-rarity/quality nếu có
-icon/resource refs
-```
+The fundamental sell mechanism is solved. Remaining questions are policy/runtime details, not broad reverse tasks:
 
-Runtime scanner sau đó chỉ cần giữ instance fields (`ID`, `ItemID`, position, qty, bound/durability) và join vào database tĩnh.
+- which vendor/service NPC should be chosen on a specific map/profile;
+- exact service opening path for a chosen NPC if not already observed;
+- final user keep/sell/store policy;
+- any special server restriction on unusual item classes;
+- normalized upload/index of all large Item/Equip rows for fast AI lookup.
 
-## 13. Các điểm đã chắc / chưa chắc
-
-### Chắc cao
-
-- API query bag/item tồn tại.
-- Weapon có thể phân loại bằng data game.
-- sell/update có server-side confirmation semantics.
-- slot snapshot có thể stale sau mutation; rescan/state observation là kiến trúc đúng.
-
-### Chưa xác nhận exact
-
-- packetID/payload bán một item;
-- Lua callback/menu name cho shop hiện tại;
-- numeric enum values của tất cả ItemType/EquipType;
-- exact static config table trong `Config.unity3d`.
+Do not re-reverse the shop packet or claim the Config item tables are still only predictions.
