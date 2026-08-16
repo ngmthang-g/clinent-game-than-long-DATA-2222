@@ -44,11 +44,14 @@ The engine also handles stuck/busy/path/HP-not-changing cases and can ignore pro
 
 ## Skills/support
 
-The engine selects usable skills from configured lists. Confirmed Nga My/support constants include:
-- `406` Phật Quang Phổ Chiếu
-- `424` Thanh Tâm Phổ Thiện Chú
-- `407` Kim Châm Độ Kiếp
-- `408` Cải Tử Hoàn Sinh
+The engine selects usable skills from configured lists. Exact Nga My/support identities for this frozen Config are:
+- `406` = Phật Quang Phổ Chiếu
+- `407` = **Xung Hư Dưỡng Khí**
+- `408` = Khởi Tử Hồi Sinh
+- `423` = **Kim Châm Độ Kiếp**
+- `424` = Thanh Tâm Phổ Thiện Chú
+
+Important source quirk: legacy Lua constant `C_NMBuff.KIMCHAMDOKIEP = 407` is misnamed. Built-in AutoHp uses that legacy key for **407 Xung Hư Dưỡng Khí**; actual Config Kim Châm Độ Kiếp is SkillID **423**. Canonical cross-check: `analysis/15_AUTO_RECOVERY_NGAMY_ENGINE.md`.
 
 Config contains the full Skills table; these are not the only heal/buff skills.
 
