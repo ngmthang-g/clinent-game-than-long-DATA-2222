@@ -1,27 +1,36 @@
-# Lua runtime, Game API, GUI API và Network API
+# Lua runtime / Game API / GUI API / Network API — current semantic map
 
-## 1. Vì sao Lua layer là trung tâm
+> `Interface.unity3d` has now been decoded and yielded readable Lua source plus UI layouts. Therefore this document distinguishes what is directly recovered from Lua/runtime from what still needs targeted live proof.
 
-Binary/metadata cho thấy client không chỉ có C# gameplay. Nó có một Lua subsystem rõ ràng dưới `FGStudio.LuaSystem`. C# cung cấp bridge cấp cao để Lua query data, mở/tìm UI, gọi game action và gửi packet.
+---
 
-Điều này giải thích vì sao một số hành động nhìn như “nút UI” nhưng thực tế flow đúng có thể là:
+## 1. Lua is a first-class gameplay orchestration layer
+
+The client is not simply “C# compiled to IL2CPP”. It also has a substantial Lua subsystem under `FGStudio.LuaSystem`.
+
+Recovered architecture:
 
 ```text
-C# game state
- -> Lua API
- -> Lua script/UI
- -> network request
- -> server response
- -> C# process event/update state
+IL2CPP game/runtime state
+ -> LuaSystemSharedData / LuaSystemAPI_Game
+ -> readable Lua gameplay/UI scripts
+ -> LuaSystemAPI_GUI / LuaSystemAPI_Network
+ -> server request / runtime action
+ -> inbound packet/event
+ -> Lua/UI/runtime state update
 ```
 
-Vì thế replay action nên quan sát cả **UI lifecycle + Lua callback + network event**, không chỉ `UIButton.HandleClickEvent`.
+This means many actions that look like visible button clicks are better understood from the Lua handler and semantic API call than from `UIButton.HandleClickEvent` itself.
 
-## 2. LuaSystemManager
+---
 
-Class đã thấy: `FGStudio.LuaSystem.LuaSystemManager`.
+## 2. `LuaSystemManager`
 
-Các member/string quan trọng:
+Class:
+
+`FGStudio.LuaSystem.LuaSystemManager`
+
+High-value members recovered from metadata/native evidence include:
 
 - `CreateTable`
 - `OnReceiveEvent`
@@ -35,26 +44,24 @@ Các member/string quan trọng:
 - `get_LuaEnv` / `set_LuaEnv`
 - `Reload`
 - `RegisterLibraries`
-- `RegisterConstants`
+- `RegisterConstants`.
 
-### Diễn giải
+`Interface.unity3d` extraction confirms `LoadFromAssetBundle` was not just a theoretical clue: the shipped client really contains readable Lua script TextAssets.
 
-`LuaSystemManager` có vẻ là owner/bridge chính của Lua runtime. `HasScript`/`GetScript` rất có giá trị để xác nhận một UI/script đã thực sự được load, thay vì sleep cố định.
+Use `HasScript` / `GetScript` to reason about current script/UI lifetime instead of assuming a fixed delay made a panel ready.
 
-`LoadFromAssetBundle` củng cố giả thuyết rằng phần script/UI cụ thể có thể nằm trong `Interface.unity3d` hoặc bundle khác.
+---
 
-`OnReceivePacket`/`OnReceiveEvent` + `SendPacketToServer` cho thấy Lua có cả inbound và outbound network bridge.
+## 3. `LuaSystemSharedData` — semantic state/query layer
 
-## 3. LuaSystemSharedData — lớp query đáng ưu tiên nhất
+High-value query/member names include:
 
-Các query đã thấy:
-
-- `get_LeaderRoleData` / `set_LeaderRoleData`
+- `get_LeaderRoleData`
 - `GetNearestItemPack`
-- `GetNearestNPC(npcResID)`
-- `GetNearbySprites(includeDeath)`
+- `GetNearestNPC`
+- `GetNearbySprites`
 - `GetNearbyTeamLeaders`
-- `GetNearTeammates(includeNonePlayers, lowHPPriority, maxTargets)`
+- `GetNearTeammates`
 - `GetNearByEnemyIDs`
 - `GetNearByEnemies`
 - `GetNearByPeacePlayers`
@@ -65,46 +72,54 @@ Các query đã thấy:
 - `GetItems`
 - `FindItems`
 - `FindItem`
-- `GetItemsAtSite(site)`
+- `GetItemsAtSite`.
 
-Compiler-generated lambdas quanh subsystem này nhắc tới:
+Related world-data names include NPC/monster/pet/grow-point/portal/zone data.
 
-- `npcData`
-- `monsterData`
-- `petData`
-- `markData`
-- `growPointData`
-- `portalData`
-- `zoneData`
+### Runtime schemas already solved through shipped Lua/UI
 
-### Ý nghĩa
+#### Nearby peaceful players
 
-Đây là bằng chứng mạnh rằng client đã có **query layer chuẩn hóa cho world objects**, không cần scan toàn RAM để đoán entity base.
+`Game.GetNearByPeacePlayers(limit)` supplies at least:
 
-Một scanner nên thử resolve/invoke read-only các query này trước khi xây custom heap scanner.
+- RoleID
+- Name
+- Level
+- FactionID
+- HP
+- MaxHP
+- GuildName
+- AvartaID
+- TeamRank.
 
-## 4. LuaSystemAPI_Game
+#### Nearby enemies
 
-Class này có phạm vi rất rộng. Danh mục dưới đây được lấy từ metadata/string cluster; exact signature của mọi method cần metadata parser hoặc runtime inspect nếu dùng thật.
+Shipped enemy UI consumes the same core identity/vital fields.
 
-### Skill / ability
+#### Team
 
-- `GetAbilities`
-- `GetAbilityLevel`
-- `GetAbilityTemplateData`
-- `GetAbilityName`
-- `GetAbilityDescription`
-- `GetAbilityIcon`
-- `GetAbilityLevelUpExp`
-- recipe-related getters
-- `UseSkill(skillID)`
-- `RequestUsingSkill`
-- `RequestUsingSkillWithPos`
-- `RequestUsingSkillWithTarget`
-- `GetSkillLuaData`
-- `IsSkillRequireTarget`
+`C_TeamData.TeamMember[]` contains at least:
 
-### NPC / object / target
+- RoleID
+- RoleName
+- Level
+- FactionID
+- MapID
+- Hp
+- MaxHp
+- AvartaID
+- PosX
+- PosY.
+
+Therefore old statements that “return type/field layout is entirely unknown” are obsolete. Only **additional** fields beyond the schemas already consumed by shipped code remain targeted research.
+
+---
+
+## 4. `LuaSystemAPI_Game` — primary semantic Game layer
+
+### Target / NPC / world
+
+Important members:
 
 - `ClickNPC(npcID)`
 - `ClickToObject`
@@ -112,45 +127,71 @@ Class này có phạm vi rất rộng. Danh mục dưới đây được lấy t
 - `IsSelectTargetDie`
 - `get_CurrentChaseTargetID`
 - `ChaseTarget`
-- `BugTarget`
 - `IsAllowDeadTarget`
+- `StopAutoPath`
+- `GetNPCPosition`
+- `GetCurrentMoveDestination`.
 
-### Movement / navigation
+Direct native evidence for `ClickNPC` shows:
 
+```text
+StopAutoPath
+ -> resolve NPC/object
+ -> orient/select target
+ -> SendClickOnObject(objectID)
+```
+
+Historic frozen RVA ~`0x66ADC0` is a disassembly locator only.
+
+### Movement / map
+
+Semantic members observed/used by shipped Lua include:
+
+- `CanMove`
+- `IsMoving`
+- `HasPath`
+- `MoveTo`
+- `MoveToEx`
+- `GoTo`
+- `GetDistance`
+- `CellToDistance`
+- `CalculatePointOnLine`
+- `IsMapReady`
 - `DoLeap`
 - `DoJump`
 - `DoMeditate`
-- `DoAction(actionID)`
-- `StopAutoPath`
-- `CanMove`
-- `IsMoving`
-- `get_IsMovingWithJoyStick`
-- `HasPath(fromPos,toPos)`
-- `CellToDistance`
-- `CalculatePointOnLine`
-- `GetDistance`
-- `RangerRequest`
-- strings/lambdas liên quan `MoveToEx`, `GoTo`.
+- `DoAction`.
 
-### Auto / state
+Built-in `GoToNPC(mapID,npcID)` already demonstrates the preferred NPC route:
 
-- `get_EnableAutoF1`
-- `set_EnableAutoF1`
-- `AutoRemoveFlag`
-- `RangerAuto`
-- `AutoSetFlag`
-- `IsRoleBusy`
-- `IsLastActionOver`
+```text
+Game.GoTo(map,-1,-1) if map change needed
+ -> Game.GetNPCPosition(npcID)
+ -> Game.GoTo(map,X,Y)
+ -> semantic NPC interaction
+```
+
+Do not invent NPC coordinates from static Config when runtime position lookup exists.
+
+### Skill / ability
+
+High-value members:
+
+- `GetAbilities`
+- `GetAbilityLevel`
+- `GetAbilityTemplateData`
+- `UseSkill(skillID)`
+- `RequestUsingSkill`
+- `RequestUsingSkillWithPos`
+- `RequestUsingSkillWithTarget`
+- `GetSkillLuaData`
+- `IsSkillRequireTarget`
 - `CanUseSkill`
-- `CanUseItem`
-- `IsProgress`
+- `GetSkillCooldown(skillID)`.
 
-### Character / state
+Shipped SkillBar calls `Game.UseSkill(skillID)` directly.
 
-- `GetCurrentHP`
-- faction functions
-- appearance/avatar/hair/face/fashion functions
-- `ChangeName`
+`GetSkillCooldown(skillID)` returns passed/cooldown ticks, so physical F-key slots are not required to identify or time a skill.
 
 ### Buff
 
@@ -159,71 +200,78 @@ Class này có phạm vi rất rộng. Danh mục dưới đây được lấy t
 - `HasBuff`
 - `GetBuffData`
 - `GetTargetBuffIcons`
-- `SendRemoveBuff(buffID)`
+- `SendRemoveBuff`.
 
-### Inventory/item
+`GetBuffs()` records are verified to expose BuffID, DurationTick in milliseconds and Stack.
+
+### Inventory / item
 
 - `GetFreeBagSpace`
 - `GetTotalItems`
 - `GetItemTemplateData`
-- `GetItemData(dbID)`
+- `GetItemData`
 - `GetItemAtSite`
+- `GetItemsAtSite`
 - `CountItem`
 - `GetItemType`
 - `GetEquipType`
 - `GetPetEquipType`
-- `GetItemIcon`
-- `GetItemName`
-- `GetEquipVisualID`
-- `GetEquipStar`
-- `GetEquipLevel`
-- `GetEquipEnhanceData`
-- `GetEquipIdentifyValue`
-- `GetFakeItemData`
 - `IsItemThrowable`
 - `IsItemSellable`
 - `IsItemSellToShopWithBoundMoney`
-- `GetItemBasePrice`
-- `GetItemBuyPrice`
-- `GetItemMaxStack`
-- `GetEquipSet`
-- `GetPetEquipSet`
-- `GetGemType`
-- `GetGemLevel`
-- `IsUniversalGem`
-- `PickUpItemFromItemPack(itemPackID, slotIndex, UsingAuto)`
+- price/stack/equip/gem helpers
+- `PickUpItemFromItemPack`.
 
-### Misc
+Live item identity:
 
-- `DisplayTemporaryFx`
-- `DisplayChat`
+`ID = instance`, `ItemID = template`, `Site = container`, `Position = slot`.
+
+### Other state/helpers
+
+Observed APIs include:
+
+- `GetCurrentHP`
+- `IsRoleBusy`
+- `IsLastActionOver`
+- `CanUseItem`
+- `IsProgress`
 - `SendAnswerCaptcha`
-- `OpenURL`
-- `get_CoreVersion`
 - `CheckCondition`
-- `LuaCallback`
+- appearance/faction helpers.
 
-## 5. ClickNPC là entry point đặc biệt giá trị
+---
 
-Phân tích disassembly trước đó trên đúng snapshot này cho thấy `LuaSystemAPI_Game.ClickNPC(npcID)` đi theo logic tương đương:
+## 5. Built-in Auto Fight semantic layer
 
-```text
-StopAutoPath
- -> locate NPC/object
- -> orient character toward NPC
- -> GScene.SelectTarget
- -> TCPGameEventProcessor.SendClickOnObject(objectID)
-```
+Interface Lua extraction resolves the major auto modes:
 
-RVA đã từng quan sát ở snapshot này khoảng `0x66ADC0`, nhưng **RVA chỉ là evidence/debug hint, không phải identity lâu dài**.
+`C_AutoModel`:
 
-### Kết luận
+- None = 0
+- Train = 1
+- PK = 2
+- Quest = 3
+- AutoPath = 4
+- Fllow = 5
+- FuBen = 6.
 
-`ClickNPC` gần với hành động “người chơi click NPC thật” hơn nhiều so với gửi mouse click giả.
+Train start:
 
-## 6. LuaSystemAPI_GUI
+`GUI.FindUI("AutoFight_Main"):StartAutoFight(C_AutoModel.Train)`.
 
-Các member đã thấy:
+Train stop:
+
+`StartAutoFight(C_AutoModel.None)`.
+
+The visible `Đánh quái` tab is a configuration UI, not the semantic start action.
+
+Canonical detail: `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md`.
+
+---
+
+## 6. `LuaSystemAPI_GUI`
+
+High-value members:
 
 - `Instantiate`
 - `MainCallUI`
@@ -233,119 +281,161 @@ Các member đã thấy:
 - `CallUIAlwaysOnTop`
 - `FindUI`
 - `FindAllUIs`
-- `get_ImageMaterial`
-- `ShowMessageBox(showCancel, showOK)`
-- `ShowWaitingBox` (string evidence)
+- `ShowMessageBox`
+- `ShowWaitingBox`.
 
-Disassembly trước đó cho `MainCallUI`/`CallUI` cho thấy chúng đi qua các thành phần kiểu:
+Historical disassembly showed `MainCallUI`/`CallUI` flowing through `MonoBehaviourExecutor` script/UI resolution.
 
-- `MonoBehaviourExecutor.AddScript`
-- `MonoBehaviourExecutor.GetScript`
-- `MonoBehaviourExecutor.GetScriptUIRoot`
-
-RVA từng quan sát trong snapshot:
+Frozen RVA hints remain diagnostic only:
 
 - `MainCallUI` ~ `0x6A5E70`
 - `CallUI` ~ `0x6A5CD0`
 - `MainFindUI` ~ `0x6A5F90`
-- `FindUI` ~ `0x6A5DF0`
+- `FindUI` ~ `0x6A5DF0`.
 
-Các RVA này dùng để đối chiếu disassembly, không nên hardcode vào tool cuối.
+### Layout -> Lua handler -> action is now directly available
 
-## 7. UIButton.HandleClickEvent — cảnh báo quan trọng
+Recovered 338 layout XMLs and 1,469 handler bindings allow future AI to start from the visible panel/button and follow the actual Lua callback.
 
-Đã thấy `FGStudio.LuaSystem.GUI.UIButton.HandleClickEvent`.
+Examples:
 
-Disassembly trước đó cho thấy đây là **instance method** và native code dereference state từ `this` (đã thấy access quanh vùng kiểu `this + 0x100`).
+- `Revival_Layout` -> exact revive handlers;
+- `NPCShop_SellItemTab_Layout` -> sell UI logic;
+- `RoleInfo_BagTab_Layout` -> item/sort actions;
+- `GameDialog_Layout` -> dynamic function buttons;
+- `AutoFight_Layout` / `AutoTrainMonster_Layout` -> auto settings/start distinction.
 
-Do đó các kiểu sau nguy hiểm:
+Canonical callback index: `database/UI_LAYOUT_CALLBACKS.md`.
 
-- gọi method với `this = null`;
-- lấy pointer UIButton ở UI state cũ rồi reuse sau khi panel đổi;
-- cache pointer button lâu dài qua loading/map/UI reconstruction;
-- gọi từ worker thread không phải Unity main thread.
+---
 
-Đây là lời giải thích rất hợp lý cho pattern lỗi từng thấy: bước đầu click được, panel đổi, bước sau pointer cũ không còn hợp lệ.
+## 7. `UIButton.HandleClickEvent` — lifecycle warning
 
-### Pattern đúng hơn
+Class:
 
-```text
-perform action A
- -> WAIT condition/state
- -> FindUI / HasScript / query current UI
- -> resolve current instance/action B
- -> dispatch on main thread
- -> observe resulting state
-```
+`FGStudio.LuaSystem.GUI.UIButton`
 
-Không dùng `Sleep(200)` như bằng chứng UI đã sẵn sàng.
+`HandleClickEvent` is a native **instance method** and dereferences object state.
 
-## 8. LuaSystemAPI_Network
+Consequences:
 
-Đã thấy `SendPacket` trong `LuaSystemAPI_Network`.
+- null `this` is invalid;
+- a pointer from an old UI state may be stale after panel reconstruction;
+- do not cache UIButton pointers across loading/map/UI transitions;
+- semantic Lua/UI resolution at action time is safer than replaying a stale native button instance.
 
-Disassembly trước đó cho thấy bridge xuống:
-
-`LuaSystemManager.SendPacketToServer(packetID, data)`.
-
-RVA `SendPacket` từng quan sát khoảng `0x6A69A0` trên snapshot này.
-
-### Ý nghĩa
-
-Đây là điểm trace rất mạnh. Khi muốn hiểu một thao tác chưa rõ callback, ví dụ:
-
-- NPC -> Trị liệu -> Đồng ý;
-- NPC -> Mua bán -> Bán nhanh -> bán 1 item;
-
-thì trace một lần:
-
-- `MainCallUI` / `CallUI`: `uiName`, args;
-- `SendPacket`: packetID + payload;
-- inbound processor/event sau đó;
-
-sẽ chính xác hơn đoán tên nút.
-
-## 9. Kiến trúc action engine đề xuất
+Correct pattern:
 
 ```text
-Action Request
- -> Safety Guard
- -> verify game state
- -> resolve semantic method/UI
- -> enqueue max 1 mutable action
- -> Unity/Main Thread Dispatcher
- -> execute internal action
- -> Observer waits for concrete result
- -> state machine advances
+action A
+ -> wait concrete state/event
+ -> resolve current script/UI/semantic action B
+ -> dispatch B in valid game context
+ -> observe result
 ```
 
-Ví dụ NPC:
+A fixed `Sleep` is only a timeout, never UI-ready proof.
+
+---
+
+## 8. `LuaSystemAPI_Network`
+
+`SendPacket(packetID,data)` bridges to:
+
+`LuaSystemManager.SendPacketToServer(packetID,data)`.
+
+Frozen RVA hint ~`0x6A69A0`.
+
+Interface extraction also recovered `TCPPacketDefine` with **169 exact symbolic packet IDs**.
+
+Full list:
+
+`database/PACKET_IDS.csv`.
+
+### Exact actions already solved from legitimate Lua construction
+
+#### Shop sell
+
+`CMD_NPC_SHOP_SELL_REQUEST = 200036`
+
+`itemInstanceID:NpcShopID:ShopID`
+
+#### Dynamic GameDialog
+
+`CMD_SHOW_GAMEDIALOG = 100007`
+
+`selectionID:SelectedItemID`
+
+#### Revive
+
+`CMD_REVIVE_DATA = 200063`
+
+- normal/Đầu thai = 1
+- newbie = 2
+- skill = 3.
+
+#### Bag/item
+
+`CMD_ITEM_ACTION = 100005`
+
+observed Equip/Use/Abandon/Move/Split actions.
+
+`CMD_BAG_SORT = 100006`.
+
+Use `database/NETWORK_COMMAND_CATALOG.md` for the evidence-level distinction between symbol-only, exact ID, exact request payload and full request/response lifecycle.
+
+---
+
+## 9. GameDialog is server/runtime-driven, not a fixed button map
+
+Recovered Lua proves:
+
+`Selections[selectionID] = visibleText`.
+
+The UI stores the current selection ID in the generated button/tag and sends the actual ID back.
+
+Built-in FuBen automation already contains a text-matching pattern against active selection names.
+
+Therefore a service such as `Trị liệu` should be resolved from the **active current GameDialog text**, not from a guessed permanent selection ID or stale UIButton pointer.
+
+---
+
+## 10. Preferred research order for an unresolved visible action
+
+If a user names a visible feature/button that is not documented:
 
 ```text
-NeedNPCAction
- -> ClickNPC(npcID)
- -> WAIT NPC Lua UI exists
- -> find current script/UI
- -> invoke exact Lua action
- -> WAIT expected next UI/server event
+1. locate <Panel>_Layout handler binding
+2. open the same-name Lua script
+3. identify Game/GUI/Network call
+4. identify exact packet payload only if Lua constructs one
+5. identify inbound event/state proof
+6. native reverse only if one exact semantic gap remains
 ```
 
-## 10. Điều nên trace thay vì reverse lại
+This replaces the older advice to immediately trace `MainCallUI`/`SendPacket` for every case. Manual/runtime tracing is now reserved for values that are actually server-dynamic or absent from shipped Lua.
 
-Nếu future AI cần tên callback chính xác cho một menu cụ thể mà docs chưa có, đừng mổ toàn bộ GameAssembly lại. Trace targeted:
+---
 
-1. `LuaSystemAPI_GUI.MainCallUI`
-2. `LuaSystemAPI_GUI.CallUI`
-3. `LuaSystemManager.HasScript/GetScript`
-4. `LuaSystemAPI_Network.SendPacket`
-5. relevant inbound processor
+## 11. Confidence state after Phase 2/3
 
-Chỉ cần một thao tác manual đúng là có thể map end-to-end flow.
+### VERIFIED
 
-## 11. Phân loại mức chắc chắn
+- Lua subsystem/classes and readable shipped source;
+- 339 Lua classes + global infrastructure;
+- 338 layouts + 1,469 bindings;
+- nearby peaceful/enemy player schemas consumed by UI;
+- team member schema consumed by UI;
+- semantic movement/NPC/item/skill/buff APIs;
+- Auto Train semantic start;
+- exact shop sell/revive/GameDialog/bag action contracts documented elsewhere;
+- dynamic dialog mechanism.
 
-**VERIFIED/strong binary evidence:** các class/method names, existence of Lua bridges, instance nature of UIButton, ClickNPC flow đã disassemble trong snapshot, SendPacket bridge.
+### Still targeted runtime proof
 
-**PROBABLE:** UI treatment/shop action cụ thể sống trong Lua script/bundle; high-level UI state can be driven without blind coordinate clicks.
+- actual server-supplied `Trị liệu` selection for a specific live healer/state;
+- server acceptance of specific beneficial skills on non-team peaceful players;
+- additional actor fields not already consumed by shipped UI/Lua;
+- final external execution-bridge proof if implementation work is requested.
 
-**NOT YET VERIFIED:** exact Lua function names/payloads cho `Trị liệu`, `Bán nhanh`, `Đầu thai`, `Đánh quái` ở UI hiện tại.
+Do not resurrect solved Lua/UI/action questions as PROBABLE merely because this document was originally written before Interface extraction.
