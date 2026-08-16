@@ -6,6 +6,15 @@ This file answers: **What should I read for the current automation/tool task?**
 
 Do not select multiple context packs unless the task genuinely spans multiple subsystems. For cross-feature work, use `contexts/BUILD_ORCHESTRATOR.md` instead of loading every feature pack independently.
 
+## Compact auto-tool references
+
+Before opening broad analysis, use these when useful:
+
+- `database/AUTO_TOOL_API_CATALOG.md` — auto-only state/query/action API catalog with exact high-value IDs/payloads and narrow remaining gaps.
+- `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md` — per-feature `state -> guard -> one action -> proof -> failure/rescan` contract.
+
+They are compact implementation summaries; canonical subsystem documents remain the evidence source when exact provenance or edge cases matter.
+
 | Auto-tool task / question | Primary context pack |
 |---|---|
 | Build/refactor tool architecture, multi-client, state machine, action arbitration | `contexts/BUILD_TOOL_CORE.md` |
@@ -33,9 +42,10 @@ Read only:
 
 Use lookup first:
 
+- `database/AUTO_TOOL_API_CATALOG.md`
 - `database/NGAMY_SUPPORT_SKILLS.md`
 - `database/FACTS.jsonl`
-- `database/static/README.md` / `LOOKUP_GUIDE.md` when exact static record exists.
+- `database/static/README.md` / `LOOKUP_GUIDE.md` when an exact static record is actually needed for an auto decision.
 
 Do not load every skill/config table merely to implement one cast rule.
 
@@ -58,6 +68,7 @@ Do not invent static X/Y when `Game.GetNPCPosition(npcID)` exists.
 
 Prefer:
 
+- `database/AUTO_TOOL_API_CATALOG.md`
 - `database/FACTS.jsonl`
 - `database/PACKET_IDS.csv`
 - `database/PACKET_CATALOG.md`
