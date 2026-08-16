@@ -6,6 +6,7 @@ This repository exists primarily to support building a large **Thần Long autom
 
 For implementation-oriented work, prefer these compact files before opening broad analysis:
 
+- `AUTO_FEATURE_READINESS.md` — what auto knowledge is already solved, what still needs one targeted runtime proof, and what is only tool-design work.
 - `database/AUTO_TOOL_API_CATALOG.md` — auto-relevant state/query/action APIs, exact IDs/payloads and remaining targeted gaps.
 - `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md` — per-feature `state -> guard -> one action -> proof -> failure/rescan` contract.
 
