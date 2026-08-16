@@ -8,12 +8,47 @@ Use when implementing or debugging the external bridge that must execute semanti
 
 1. `AI_BOOTSTRAP.md`
 2. `contracts/MAINTHREAD_BRIDGE_V1.md` — build-ready implementation contract
-3. `analysis/30_EXTERNAL_ACTION_BRIDGE_BLUEPRINT.md` — exact Action ABI/proof details
-4. `analysis/21_MAIN_THREAD_DISPATCHER.md` — queue consumer proof
-5. `analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md` — game-owned producer donor
+3. `analysis/31_CURRENT_AUTO_TOOL_BRIDGE_INTEGRATION.md` — exact fit to current `AUTO-train-thanlong` source
+4. `analysis/30_EXTERNAL_ACTION_BRIDGE_BLUEPRINT.md` — exact Action ABI/CTS proof details
+5. `analysis/21_MAIN_THREAD_DISPATCHER.md` — queue consumer proof
 6. `research/TODO.md`
 
-Read `analysis/01_IL2CPP_RUNTIME_METADATA.md` only when resolver/export details beyond the contract are actually needed.
+`analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md` is supporting donor evidence; read it only if construction rationale needs re-checking. Read `analysis/01_IL2CPP_RUNTIME_METADATA.md` only when resolver/export details beyond the contract are actually needed.
+
+## Current-tool shortcut
+
+The current `AUTO-train-thanlong` bridge is **not** a foreign worker-thread design. Its `WH_GETMESSAGE` hook already proves, before read-only snapshot access:
+
+```text
+window TID == hook TID
+il2cpp_thread_current() != null
+SynchronizationContext.Current == UnitySynchronizationContext
+CurrentThread.ManagedThreadId == Unity MainThreadId
+```
+
+Therefore the existing validated hook path is already a legitimate managed Unity-main-thread **producer context**. Do not call `thread_attach` again on that path.
+
+Still enqueue mutations through `MainThread.Execute(Action)` so actual callback execution happens from the normal game-owned Update dispatcher rather than re-entrantly inside the Windows message hook.
+
+## Critical async rule for this tool
+
+Do **not**:
+
+```text
+hook -> Execute(Action) -> wait synchronously for Action result
+```
+
+The hook is on the Unity main thread; blocking it prevents the future Update that drains the Action.
+
+Use the two-phase protocol from the contract:
+
+```text
+Begin proof -> construct/root/enqueue -> return from hook
+[next Unity Update invokes Action]
+Poll proof -> observe CTS state -> PASS/cleanup
+```
+
+Recommended new tool commands are `BeginMainThreadActionProof`, `PollMainThreadActionProof`, and `CleanupMainThreadActionProof`, with a protocol-version bump when shared structures change.
 
 ## VERIFIED internal chain
 
@@ -30,114 +65,103 @@ Frozen client truth:
 
 ## VERIFIED Action-construction details
 
-Direct frozen GameAssembly disassembly also proves the generated `System.Action` constructor pattern used by the client:
+Generated `System.Action` constructor pattern:
 
 ```text
 RCX = new Action object
 RDX = managed target object, or null for static callback
 R8  = callback MethodInfo*
-R9  = null in observed generated call sites
+R9  = null
 ```
 
-The constructor initializes real delegate runtime fields and performs managed-reference write-barrier handling. Null-target/static Action construction is also present in shipped call sites.
+Current frozen direct producer locators:
+
+```text
+System.Action ctor      GameAssembly + 0x49F810
+MainThread.Execute      GameAssembly + 0x601250
+```
+
+A shipped caller enters Execute with:
+
+```text
+RCX = MainThread.Instance
+RDX = Action
+R8  = 0
+```
+
+Resolve semantic type/method identities first; treat RVAs only as this frozen snapshot's native implementation locators.
 
 Do **not** forge delegate memory manually.
 
-## Required IL2CPP producer capabilities are exported
+## Current bridge API delta
 
-Relevant exported APIs include semantic class/method/type resolution, `il2cpp_object_new`, `il2cpp_runtime_invoke`, `il2cpp_thread_attach/detach` and strong `il2cpp_gchandle_*` rooting.
+Existing `bridge.cpp` already resolves most read/query APIs. Add at minimum:
 
-Therefore the bridge should resolve objects/methods semantically and use historic RVAs only as frozen-snapshot evidence/debug hints.
+```text
+il2cpp_object_new
+il2cpp_gchandle_new
+il2cpp_gchandle_get_target
+il2cpp_gchandle_free
+```
 
-## Remaining narrow problem
-
-External code still must prove:
-
-1. resolve non-null `MainThread.Instance` per PID;
-2. attach producer context to IL2CPP if it is not already attached;
-3. allocate/initialize a legitimate managed target;
-4. construct a legitimate `System.Action` from target + callback MethodInfo;
-5. root managed objects safely across enqueue/execution;
-6. enqueue through `MainThread.Execute`;
-7. observe a harmless callback result;
-8. verify no exception/crash/GC corruption.
+The current hook path already has `runtime_invoke`, corlib/class/method lookup, return-type inspection, `thread_current`, object unbox and field/type helpers.
 
 ## Canonical first live proof
 
-Use an isolated BCL object instead of game state:
+Use:
 
 ```text
 System.Threading.CancellationTokenSource
 ```
 
-Build an Action targeting its parameterless `Cancel()` method.
-
-Expected state proof:
+Exact frozen metadata cross-checks:
 
 ```text
-IsCancellationRequested == false
-   -> enqueue Action through MainThread.Execute
-   -> Unity Update drains Action
-   -> IsCancellationRequested == true
+zero-arg .ctor             token 0x0600120A
+zero-arg Cancel()          token 0x0600120B
+get_IsCancellationRequested token 0x06001203
 ```
 
-Before binding, resolve the exact `Cancel` overload and verify zero parameters + `System.Void` return.
+Expected proof:
+
+```text
+false
+ -> legitimate Action(target=CTS, callback=Cancel)
+ -> MainThread.Execute(Action)
+ -> return from hook
+ -> Unity Update drains Action
+ -> later Poll sees true
+```
 
 This proof does not move the player, touch UI, send packets, mutate items or alter social state.
-
-Full recipe: `analysis/30_EXTERNAL_ACTION_BRIDGE_BLUEPRINT.md`.
 
 ## GC/lifetime rule
 
 Use strong GC handles during the proof.
 
-At minimum:
-
-- root the CancellationTokenSource until its state transition has been observed;
-- root Action through enqueue; retaining it until proof completion is acceptable for the first test;
-- free roots only after success/timeout cleanup is safe.
-
-Once an Action is successfully stored in the managed `ConcurrentQueue<Action>`, the queue itself owns a strong reference to it.
-
-## Invocation rule
-
-`il2cpp_runtime_invoke` is only an invocation primitive. It does not make arbitrary gameplay calls thread-safe.
-
-It may be used from a valid attached producer context for bridge operations or `MainThread.Execute`, because Execute only enqueues into the game-owned concurrent queue.
-
-Gameplay mutations still execute inside the queued Action on Unity Update.
-
-## Optional direct TID diagnostic
-
-The CTS false->true transition plus the already-VERIFIED static chain `Update -> DoExecuteWorks -> Action.Invoke` is sufficient as the primary end-to-end bridge proof.
-
-If direct TID equality is desired, use a diagnostic-only one-shot observation and record producer TID / callback TID / Unity Update TID. Do not add a permanent gameplay hook just for this.
-
-## Failure codes worth preserving
-
-```text
-DOMAIN_RESOLVE_FAIL
-THREAD_ATTACH_FAIL
-MAINTHREAD_INSTANCE_NULL
-TARGET_CLASS_FAIL
-TARGET_CTOR_FAIL
-CALLBACK_METHOD_FAIL
-ACTION_ALLOC_FAIL
-ACTION_CTOR_FAIL
-GCHANDLE_FAIL
-EXECUTE_EXCEPTION
-CALLBACK_TIMEOUT
-TARGET_STATE_UNCHANGED
-GC_LIFETIME_ERROR
-```
+- root CTS through later Poll;
+- root Action through enqueue; keeping it until PASS is fine for first proof;
+- retrieve target from GC handle during Poll rather than trusting a cached raw pointer;
+- cleanup must be idempotent and fail closed.
 
 ## Do not regress to
 
-- direct arbitrary-thread `Game.GoTo`, `UseSkill`, `ClickNPC`, Lua UI calls;
+- direct gameplay mutations inside the WH_GETMESSAGE hook;
+- direct arbitrary-worker-thread `Game.GoTo`, `UseSkill`, `ClickNPC`, Lua UI calls;
 - production CreateRemoteThread gameplay worker;
 - fake delegate memory layouts;
+- synchronous waiting for an enqueued Action on Unity main thread;
 - Sell/Abandon/Revive/party mutation as first bridge proof.
 
 ## Completion criteria
 
-Promote the external bridge to VERIFIED only after a legitimately constructed Action is queued and its isolated managed callback state is observed changing without lifetime/GC corruption. After that, test one low-risk semantic game action before migrating feature mutations.
+Promote external Action dispatch to VERIFIED only after:
+
+1. existing Unity-main-thread proof passes;
+2. CTS + Action are legitimately allocated/rooted;
+3. Begin command enqueues and returns immediately;
+4. a later Poll observes `IsCancellationRequested: false -> true`;
+5. repeated tests show no exception/crash/GC corruption;
+6. roots clean up safely.
+
+Then test one low-risk semantic game action before migrating feature mutations.
