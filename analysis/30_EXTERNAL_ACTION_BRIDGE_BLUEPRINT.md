@@ -64,32 +64,38 @@ This is useful for harmless proof callbacks and reduces the need to manufacture 
 
 ## 4. IL2CPP exports needed by the external producer are present
 
-The frozen `GameAssembly.dll` export surface includes the APIs needed for semantic runtime construction/resolution, including:
+The frozen `GameAssembly.dll` export surface contains the semantic resolver/allocation/thread/GC APIs required by a producer bridge.
 
-- `il2cpp_domain_get`
-- `il2cpp_domain_get_assemblies`
-- `il2cpp_assembly_get_image`
-- `il2cpp_class_from_name`
-- `il2cpp_class_get_method_from_name`
-- `il2cpp_class_get_methods`
-- `il2cpp_method_get_param_count`
-- `il2cpp_method_get_param`
-- `il2cpp_method_get_return_type`
-- `il2cpp_method_get_flags`
-- `il2cpp_type_get_name`
-- `il2cpp_class_get_type`
-- `il2cpp_type_get_object`
-- `il2cpp_method_get_object`
-- `il2cpp_object_new`
-- `il2cpp_runtime_invoke`
-- `il2cpp_thread_attach`
-- `il2cpp_thread_detach`
-- `il2cpp_gchandle_new`
-- `il2cpp_gchandle_get_target`
-- `il2cpp_gchandle_free`
-- `il2cpp_class_get_field_from_name`
-- `il2cpp_field_get_value`
-- `il2cpp_property_get_get_method`.
+Exact frozen-snapshot RVAs for the most important exports:
+
+| Export | RVA |
+|---|---:|
+| `il2cpp_domain_get` | `0x3B1940` |
+| `il2cpp_domain_get_assemblies` | `0x3B1950` |
+| `il2cpp_assembly_get_image` | `0x39F5C0` |
+| `il2cpp_class_from_name` | `0x3B1600` |
+| `il2cpp_class_get_method_from_name` | `0x3B16B0` |
+| `il2cpp_class_get_methods` | `0x3B16C0` |
+| `il2cpp_method_get_param` | `0x3B1E80` |
+| `il2cpp_method_get_param_count` | `0x3B1E90` |
+| `il2cpp_method_get_return_type` | `0x3B1EB0` |
+| `il2cpp_method_get_flags` | `0x3B1E40` |
+| `il2cpp_type_get_name` | `0x3B2720` |
+| `il2cpp_class_get_type` | `0x368770` |
+| `il2cpp_type_get_object` | `0x3B27D0` |
+| `il2cpp_method_get_object` | `0x3B1E70` |
+| `il2cpp_object_new` | `0x3B2070` |
+| `il2cpp_runtime_invoke` | `0x3B2160` |
+| `il2cpp_thread_attach` | `0x3B25D0` |
+| `il2cpp_thread_detach` | `0x3B25F0` |
+| `il2cpp_gchandle_new` | `0x3B1CC0` |
+| `il2cpp_gchandle_get_target` | `0x371E20` |
+| `il2cpp_gchandle_free` | `0x371D40` |
+| `il2cpp_class_get_field_from_name` | `0x3B1670` |
+| `il2cpp_field_get_value` | `0x3B19D0` |
+| `il2cpp_property_get_get_method` | `0x3B16D0` |
+
+These are **frozen-snapshot diagnostics**, not the preferred production resolver. Resolve exports by name from the live module whenever possible.
 
 This means the bridge can be semantic/resolver-driven instead of depending only on historic RVAs.
 
@@ -240,7 +246,27 @@ This can reduce dependency on delegate native layout, but the exact chosen overl
 
 For the frozen client, Strategy A currently has the strongest direct native donor evidence.
 
-## 12. Failure diagnostics
+## 12. Suggested bridge contract
+
+Expose one narrow producer primitive first:
+
+```text
+EnqueueManagedAction(targetObject, callbackMethodInfo)
+```
+
+Contract:
+
+- caller owns semantic resolution of target/callback;
+- bridge verifies callback has zero parameters and `void` return for `System.Action`;
+- bridge attaches producer thread if required;
+- bridge constructs and roots Action;
+- bridge invokes only `MainThread.Execute(Action)` from producer context;
+- bridge never directly invokes the requested gameplay callback on producer thread;
+- bridge reports construction/enqueue exception separately from callback state proof.
+
+Do not begin with a generic “invoke any method anywhere” API. Keep the first implementation deliberately narrow.
+
+## 13. Failure diagnostics
 
 Record explicit failure stages:
 
@@ -263,7 +289,7 @@ GC_LIFETIME_ERROR
 
 Do not collapse them into “MainThread failed”.
 
-## 13. Promotion rule
+## 14. Promotion rule
 
 After one CTS Action succeeds repeatedly without corruption:
 
@@ -274,7 +300,7 @@ After one CTS Action succeeds repeatedly without corruption:
 
 Do not start with Sell, Abandon, Revive, party mutation or map travel.
 
-## 14. What future AI must not redo
+## 15. What future AI must not redo
 
 Do not re-reverse:
 
