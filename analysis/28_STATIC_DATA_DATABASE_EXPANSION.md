@@ -2,7 +2,7 @@
 
 Status: **VERIFIED from decrypted Config XML; derived counts/classification are explicitly described below.**
 
-This phase converts the largest Config tables into machine-readable CSV chunks so future AI can answer data questions without reopening Unity bundles or reparsing large XML files.
+This phase identified and normalized the largest Config tables so future AI can answer automation-relevant data questions without reopening Unity bundles. **Important repository-state correction:** full normalized row chunks were generated during research, but the complete large CSV chunk sets are not currently committed under `database/static/...`. Do not claim a specific chunk exists until it is visible in the repository tree.
 
 ## Source tables and exact row counts
 
@@ -14,7 +14,7 @@ This phase converts the largest Config tables into machine-readable CSV chunks s
 
 ## Items
 
-Normalized fields include:
+Normalized fields identified during extraction:
 
 `ID, Name, Icon, ItemLevel, RequireLevel, BoundMoney, BasePrice, SellPrice, Throwable, Sellable, Bound, Stack, MaxUsageTimes, DurationHour, ScriptID, TypeDesc, IDFamily10M, ExtraHint, Description`.
 
@@ -27,11 +27,11 @@ From the 5,238 rows:
 - `Throwable=true`: **5,005**
 - `Throwable=false`: **233**.
 
-The numeric `IDFamily10M = floor(ID/10,000,000)` is included as a raw derived lookup aid because shipped Auto loot code itself uses this family split. It is not a replacement for semantic `Game.GetItemType` when runtime code needs the true type.
+The numeric `IDFamily10M = floor(ID/10,000,000)` is a useful derived lookup aid because shipped Auto loot code itself uses this family split. It is not a replacement for semantic `Game.GetItemType` when runtime code needs the true type.
 
 ## Skills
 
-Normalized fields include:
+Normalized fields identified:
 
 `ID, Name, Type, Style, FactionID, BookID, CanDirectlyStudy, RequireLevel, RequireWeapon, IsDamageSkill, TargetType, CastRange, AttackRadius, ProgressTime, CooldownGroup, AnimationDuration, MissileSpeed, MissileCount, FixedHitRate, FixedCritRate, Property, Tag, Icon, ActionID, ShortDescription, Description`.
 
@@ -56,7 +56,7 @@ These counts are useful for narrowing candidate support/attack skills without sc
 
 ## Magic attributes
 
-All 509 rows are normalized as:
+All 509 rows were normalized conceptually as:
 
 `Symbol, Description, IncludeSign`.
 
@@ -64,7 +64,7 @@ Examples include `magic_maxhp`, elemental attack/resistance/ignore-resistance fa
 
 ## Monsters
 
-Normalized fields include:
+Normalized fields identified:
 
 `ID, ResName, Name, Level, Type, MaxHP, Exp, PhysAtk, PhysDef, MagicAtk, MagicDef, Hit, Dodge, CritAtk, CritDef, MoveSpeed, elemental attack/resistance fields, Skills, AIID, Avarta, Scale`.
 
@@ -75,15 +75,15 @@ Snapshot monster-type distribution:
 - Normal: **1,030**
 - Static: **25**.
 
-This gives a real offline MonsterID/ResName/Name/Level/MaxHP/AI/skill lookup source for Auto Train/Quest/FuBen diagnostics.
+This establishes a real offline MonsterID/ResName/Name/Level/MaxHP/AI/skill source for Auto Train diagnostics once the required rows are materialized into queryable repository data.
 
 ## Equips — important distinction between Type and EquipPoint
 
-`Equips.xml` has two different concepts that must not be confused:
+`Equips.xml` has two different concepts that must not be confused.
 
 ### `Type`
 
-This is a more specific equipment form/category using `C_EquipType`, for example:
+This is a specific equipment form/category using `C_EquipType`, including:
 
 - 0 LongBlade
 - 1 Spear
@@ -117,7 +117,7 @@ This is a more specific equipment form/category using `C_EquipType`, for example
 
 ### `EquipPoint`
 
-This is the equipment slot/position semantic used by `C_EquipPosition` and by runtime `Game.GetEquipType(ItemID)`-style UI logic.
+This is the equipment slot/position semantic used by `C_EquipPosition` and runtime equipment classification.
 
 Exact frozen-client positions:
 
@@ -151,11 +151,11 @@ Do not infer “weapon” merely from `Type < 10` because additional weapon form
 
 ## Normalized Equip fields
 
-CSV rows include:
+Fields identified during extraction:
 
 `ID, Name, Type, TypeName, EquipPoint, EquipPositionName, IsWeaponPosition, Icon, Level, FactionID, BoundRule, BasePrice, SellPrice, Durability, Identifiable, Star, BuffID, DurationHour, SetID, VisualID, BaseAttributes, ExtraHint, Description`.
 
-Nested `<BaseAttribute Symbol=... Value=...>` nodes are flattened into `BaseAttributes` as `symbol=value|...` for quick AI inspection.
+Nested `<BaseAttribute Symbol=... Value=...>` nodes can be flattened into `BaseAttributes` as `symbol=value|...` for targeted inspection.
 
 ## Runtime rule remains stronger for mutable inventory
 
@@ -168,11 +168,17 @@ These static tables explain what a template **is**. A live bag action must still
 - `Game.IsItemSellable(ItemID)` = current semantic sellability guard
 - `Game.GetItemType/GetEquipType` = runtime semantic classification.
 
-Do not sell directly from an offline CSV without verifying the current live instance and current rules.
+Do not sell directly from an offline static row without verifying the current live instance and current rules.
 
-## Database layout
+## Repository materialization state
 
-Machine-readable chunks are stored under:
+Current truth:
+
+- schemas/counts/statistics above are VERIFIED;
+- map/NPC/packet and several smaller databases are already materialized elsewhere in `database/`;
+- the **full large Items/Skills/Magic/Monsters/Equips row chunks are not currently committed** under `database/static/...`.
+
+Planned query-oriented locations remain:
 
 - `database/static/items/`
 - `database/static/skills/`
@@ -180,4 +186,19 @@ Machine-readable chunks are stored under:
 - `database/static/monsters/`
 - `database/static/equips/`.
 
-Future AI should use those CSVs before reparsing the corresponding XML.
+When these are materialized, use small indexes plus chunks. Do not make future AI load all 22,763 equips or 17,121 monsters into context.
+
+Canonical current-state guidance:
+
+- `database/static/README.md`
+- `database/static/LOOKUP_GUIDE.md`
+- `research/TODO.md`.
+
+## Auto-tool priority
+
+Do not materialize every field/table merely because it exists. For the automation tool, priority is:
+
+1. Items/Equips fields needed for sell/keep/loot policy;
+2. Skills fields needed for Auto Train/Buff target/range/cooldown/condition logic;
+3. Monster identity fields needed for Train filtering/boss detection;
+4. everything else only when a concrete automation feature requires it.
