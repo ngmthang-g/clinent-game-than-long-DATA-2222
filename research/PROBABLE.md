@@ -1,122 +1,225 @@
-# PROBABLE findings — remaining after Phase 2
+# PROBABLE findings — only unresolved high-confidence conclusions
 
-> Phase 2 đã nâng nhiều giả thuyết cũ thành VERIFIED. File này chỉ giữ các kết luận còn có bằng chứng mạnh nhưng chưa đủ end-to-end/runtime proof.
+> Many earlier predictions were promoted by Phase 2/3 evidence. This file now keeps **only conclusions that remain strongly supported but not fully runtime/end-to-end VERIFIED**.
 
-## 1. `LuaSystemSharedData` là query layer chính cho runtime world scanner
+Do not duplicate facts already in `VERIFIED*.md`.
 
-**Confidence: VERY HIGH**
+---
 
-Evidence:
-- `GetNearbySprites`, `GetNearbyObjects`, `GetLocalMapObjects`, `GetNearByEnemies`, `GetNearByPeacePlayers`, `GetNearestNPC`, item-pack queries tồn tại;
-- built-in Auto Fight thực tế dùng nearby-sprite APIs để tìm quái.
-
-Prediction:
-- external read-only scanner có thể lấy world entities từ semantic query/data layer thay vì heap-scan toàn process.
-
-Chưa VERIFIED:
-- exact return type của từng API;
-- full field schema cho Player/NPC/Monster/Pet/Object.
-
-## 2. Nearby player/entity object chứa nhiều state hơn HP/position
-
-**Confidence: HIGH**
-
-Runtime cũ đã quan sát Name/RoleID/HP/MaxHP/position của player trong AOI. Engine/API/network vocabulary cho thấy faction/team/combat/death/target/buff concepts tồn tại.
-
-Likely fields hoặc related objects:
-- MP/MaxMP;
-- level/faction/class;
-- TeamID;
-- combat/PK/death/moving state;
-- target;
-- guild/title/appearance;
-- buff list/reference.
-
-Không được giả định offsets cho đến khi return object schema được map.
-
-## 3. `LangZhong1/2` là dấu hiệu rất mạnh của NPC y sư/trị liệu
-
-**Confidence: HIGH, nhưng service contract chưa runtime-confirmed**
-
-Evidence:
-- nhiều NPC có tên mang nghĩa y/dược dùng `ResName=LangZhong1/2`;
-- Lâu Lan có ba NPC liên tiếp 337/338/339 dùng `LangZhong1`, trong đó 339 là Đỗ Thanh Đằng;
-- Config còn có NPC 912 `Tháp trị liệu`, ResName `ZhiLiaoTa`.
-
-Prediction:
-- ResName family có thể dùng làm **candidate classifier** để tìm healer service NPC.
-
-Chưa VERIFIED:
-- mỗi NPC `LangZhong*` có cùng menu/service hay không;
-- selection text/ID cụ thể mà server trả ở từng map/state.
-
-## 4. NPC Trị liệu nên được chọn bằng active `GameDialog.Selections`
+## 1. `LuaSystemSharedData` can serve as the primary external semantic world-scan layer
 
 **Confidence: VERY HIGH**
 
-Evidence:
-- generic NPC dialog is server-driven;
-- selectionID được gắn vào visible text;
-- built-in FuBen auto đã có exact pattern lowercase/text-match rồi gửi actual selection ID.
+VERIFIED foundation:
+
+- nearby/world/item/team queries exist;
+- shipped UI/Auto code actually consumes several of them;
+- nearby peaceful-player and enemy schemas are already VERIFIED for the fields read by UI.
+
+Still not fully VERIFIED:
+
+- exact live return type/schema for **every** SharedData query;
+- all Player/NPC/Monster/Pet/ItemPack fields an external scanner may want;
+- whether every query is safe/useful from the chosen external runtime bridge path.
 
 Prediction:
-- treatment flow có thể ổn định bằng semantic text matching (`Trị liệu`, hoặc text tương đương do server trả) thay vì hardcode button pointer/selection ID.
 
-Cần runtime proof trên đúng NPC mong muốn và xác nhận outcome HP/money/dialog state.
+A production scanner can rely primarily on semantic query/data APIs and copy values into immutable external snapshots, avoiding broad heap/offset scanning.
 
-## 5. Buff-aware auto buff có thể dùng object buff data thay vì suy luận HP đơn thuần
+Canonical sources:
+
+- `database/API_QUICK_REFERENCE.md`
+- `analysis/14_NEARBY_ENTITY_UI_SCHEMA.md`
+- `analysis/22_MAP_MINIMAP_RUNTIME.md`.
+
+---
+
+## 2. Nearby actor records expose more useful state than the UI currently consumes
 
 **Confidence: HIGH**
 
-Evidence: `GetBuffs`, `HasBuff`, `GetBuffData`, `GetBuffProperties`, target buff icons tồn tại.
+Already VERIFIED for nearby peaceful players:
 
-Prediction:
-- sau khi map return schema có thể quyết định theo buff ID/duration/stack/source/target kết hợp HP policy.
+`RoleID, Name, Level, FactionID, HP, MaxHP, GuildName, AvartaID, TeamRank`.
 
-## 6. Ground-loot scanner có thể đọc semantic item-pack object
+Selected target additionally proves richer type/vitals/social state exists elsewhere in the runtime model.
+
+Likely additional nearby/world-object state that may be accessible through the same or related objects:
+
+- MP/MaxMP or percentages;
+- TeamID / GuildID / combat/PK/death/moving state;
+- exact position/range object;
+- current target/chase state;
+- richer buff state.
+
+Do not invent field offsets or claim these are present on every nearby-player record until the actual return object is inspected.
+
+---
+
+## 3. `LangZhong1/2` is a strong offline healer-service candidate classifier
 
 **Confidence: HIGH**
 
-Evidence: built-in Auto Fight dùng `GetNearbyItemPack`, `GetNearestItemPack`, `PickUpItemFromItemPack`.
+VERIFIED evidence:
+
+- multiple medicine/doctor-like NPC names use `ResName=LangZhong1/2`;
+- Lâu Lan NPCs 337/338/339 use `LangZhong1`;
+- NPC 339 = Đỗ Thanh Đằng, Map 5 Lâu Lan;
+- Config also contains NPC 912 `Tháp trị liệu`, `ResName=ZhiLiaoTa`.
 
 Prediction:
-- có thể enumerate drop package ID/position/distance/contents đủ để lọc loot tốt hơn macro click.
 
-Exact item-pack schema chưa map hoàn chỉnh.
+`ResName` family + visible name can be used to generate **candidate healer/service tags** for lookup/ranking.
 
-## 7. Portal graph có thể dùng làm offline coarse-route planner
+Not yet VERIFIED:
+
+- every `LangZhong*` NPC exposes identical treatment service;
+- exact active GameDialog text/selection ID for each server/map/state.
+
+Static archetype is not a service contract.
+
+---
+
+## 4. NPC Trị liệu should be robustly selected by semantic text from the active `GameDialog.Selections`
+
+**Confidence: VERY HIGH**
+
+VERIFIED foundation:
+
+- dialog selections are runtime/server-driven: `Selections[selectionID] = visibleText`;
+- built-in FuBen code already text-matches visible selection names and submits the **actual** selectionID;
+- there is no verified universal static treatment selection constant.
+
+Prediction:
+
+Treatment can be implemented reliably as:
+
+```text
+open intended healer NPC
+ -> wait actual GameDialog
+ -> normalize visible selection text
+ -> match Trị liệu / server-equivalent text
+ -> submit actual current selectionID
+ -> prove HP/money/dialog outcome
+```
+
+Still requires live proof on the intended healer and any second confirmation dialog.
+
+---
+
+## 5. Non-team Auto Buff can reuse the nearby peaceful-player source plus semantic skill actions
+
+**Confidence: HIGH**
+
+VERIFIED foundation:
+
+- nearby peaceful player HP/MaxHP/RoleID/faction/guild are exposed without party membership;
+- stock UI can `Game.SelectTarget(RoleID)`;
+- skill identity/cooldown/use semantics are known;
+- team-heal donor shows chase/range/target-skill flow.
+
+Prediction:
+
+A support controller can filter arbitrary nearby peaceful players and cast beneficial skills without requiring party membership.
+
+Still requires targeted runtime proof for:
+
+- server acceptance rules of each beneficial skill on non-team targets;
+- exact range/peace/relationship restrictions;
+- whether target buff state needed by policy is available beyond display icons without intrusive target switching.
+
+---
+
+## 6. Static portal graph is useful as an offline coarse-route/diagnostic planner
 
 **Confidence: MEDIUM-HIGH**
 
-Evidence:
-- 165 portal edges có From/To map và tọa độ;
-- built-in `Game.GoTo` đã hỗ trợ cross-map route abstraction.
+VERIFIED foundation:
+
+- 165 portal edges contain From/To map + coordinates;
+- 506 NPC-mediated transitions and 23 item destinations are also extracted;
+- runtime `Game.GoTo` already abstracts route execution.
 
 Prediction:
-- static graph có thể giúp chọn route/map topology, diagnostics hoặc fallback planning.
+
+The static graph can support:
+
+- map adjacency queries;
+- route diagnostics;
+- fallback planning;
+- explaining why a requested destination may require intermediate maps.
 
 Caveat:
-- portal có thể phụ thuộc level/quest/event/state;
-- runtime `Game.GoTo` vẫn nên là route executor ưu tiên.
 
-## 8. Một phần NPC service role có thể phân loại offline bằng Name/ResName
+Level/quest/event/state restrictions may invalidate a static edge at runtime. `Game.GoTo` remains the preferred executor.
+
+---
+
+## 7. Name/`ResName` can classify several NPC service archetypes offline
 
 **Confidence: MEDIUM-HIGH**
 
-Ví dụ semantic families như `LangZhong*`, `TieJiang`, `JiuDianLaoBan*`, `ShangRen`, `CaiFeng`, `YuFu` cho biết archetype/model và thường tương quan với nghề/service.
+Examples of semantic-looking families observed in Config include doctor/healer, blacksmith, merchant/hotel/tailor/fisher-like archetypes.
 
 Prediction:
-- có thể tạo candidate service tags để rút ngắn tìm kiếm NPC bán đồ/trị liệu/sửa đồ.
 
-Không được coi ResName là API contract; phải validate dialog/shop data trước khi action.
+An offline service-candidate index can dramatically narrow which NPCs to runtime-probe for:
 
-## 9. External tool có thể gọi built-in AutoFight engine ổn định nếu dispatch đúng main thread/state
+- treatment;
+- vendor/shop;
+- blacksmith/repair;
+- storage;
+- other city services.
+
+Do not promote a candidate to VERIFIED service until dialog/shop/runtime evidence confirms it.
+
+---
+
+## 8. External use of the built-in AutoFight engine should be substantially more stable through the solved MainThread queue than arbitrary-thread invocation
 
 **Confidence: HIGH**
 
-Lua semantics của engine đã rõ. Rủi ro còn lại là **bridge execution context** từ external tool vào Unity/Lua runtime.
+VERIFIED foundation:
+
+- AutoFight semantic Lua flow is known;
+- `MainThread.Execute(Action)` queue/Update/invoke chain is solved;
+- legitimate managed Action construction ABI is documented.
 
 Prediction:
-- dùng resolver + proven Unity main-thread dispatcher + max-one-action queue sẽ ổn định hơn gọi native arbitrary thread hoặc click nền.
 
-Cần implementation/runtime validation trên bridge hiện tại.
+Once the final live external Action construction/lifetime proof passes, invoking AutoFight/Lua semantic actions through the game-owned dispatcher should avoid a major class of arbitrary-thread re-entrancy/crash failures.
+
+Still not runtime VERIFIED end-to-end from the external bridge.
+
+---
+
+## 9. A detailed combat telemetry/recorder layer is probably possible from structured events
+
+**Confidence: MEDIUM-HIGH**
+
+VERIFIED vocabulary includes structured skill damage/heal, object death, buff and target/world events.
+
+Prediction:
+
+Enough runtime event data likely exists to record:
+
+- attacker/target identities;
+- skill identity;
+- damage/heal amounts;
+- death timing;
+- buff lifecycle;
+- possibly combat efficiency per target/spot.
+
+Still unknown:
+
+- exact payload schema for all relevant events;
+- crit/block/elemental details;
+- reliable loot/XP linkage.
+
+Use targeted Lua/event-handler tracing before claiming a complete recorder schema.
+
+---
+
+# Rule
+
+If new direct evidence resolves one of the above, move the exact fact into the appropriate `VERIFIED` ledger and shrink/remove the corresponding PROBABLE item. Do not leave stale uncertainty after a question has been solved.
