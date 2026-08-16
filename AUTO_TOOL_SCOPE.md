@@ -2,6 +2,15 @@
 
 This repository exists primarily to support building a large **Thần Long automation tool**. Research that does not materially improve automation reliability, state observation, decision logic, or semantic action execution is secondary and should not consume normal AI context or research time.
 
+## Auto-first quick references
+
+For implementation-oriented work, prefer these compact files before opening broad analysis:
+
+- `database/AUTO_TOOL_API_CATALOG.md` — auto-relevant state/query/action APIs, exact IDs/payloads and remaining targeted gaps.
+- `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md` — per-feature `state -> guard -> one action -> proof -> failure/rescan` contract.
+
+These files do not replace canonical evidence docs; they route a tool builder to the smallest useful implementation surface.
+
 ## P0 — always relevant to the auto tool
 
 1. Runtime scanner/state
