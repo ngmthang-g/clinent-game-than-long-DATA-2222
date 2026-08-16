@@ -2,21 +2,32 @@
 
 This repository is intentionally large. **Do not read the entire repository before starting a task.**
 
+## Mandatory project-control memory — read for every version/task
+
+Before modifying code, creating a version, investigating a regression, or doing new client analysis, read these two user-controlled rule files:
+
+1. `AI_PROJECT_KNOWLEDGE_PROTOCOL_V2_OPTIMIZED.md` — mandatory engineering-lineage / version-memory protocol. Source changes are incomplete until knowledge/history/runtime state are updated.
+2. `AI_CLIENT_ANALYSIS_RULES.txt` — mandatory research guard: read the index/knowledge first; do not broad reverse-engineer the client; inspect binary only when the exact fact required by the task is not already present in VERIFIED/database knowledge.
+
+These rules are persistent project memory and remain active until the user explicitly changes/replaces them.
+
 ## Primary scope
 
 The primary purpose of this KB is **building a large Thần Long automation tool**, not documenting every subsystem in the client.
 
-After this file, read `AUTO_TOOL_SCOPE.md`. Research unrelated to automation should be deferred unless a concrete auto feature depends on it.
+After the mandatory project-control files above, read `AUTO_TOOL_SCOPE.md`. Research unrelated to automation should be deferred unless a concrete auto feature depends on it.
 
 The correct workflow is:
 
 1. read this file;
-2. read `AUTO_TOOL_SCOPE.md`;
-3. read `AI_ROUTER.md`;
-4. choose exactly one matching `contexts/BUILD_*.md` pack;
-5. read only the REQUIRED documents named by that pack;
-6. query databases only for the specific IDs/records needed;
-7. open deeper analysis/raw evidence only when the context pack says it is necessary.
+2. read `AI_PROJECT_KNOWLEDGE_PROTOCOL_V2_OPTIMIZED.md`;
+3. read `AI_CLIENT_ANALYSIS_RULES.txt`;
+4. read `AUTO_TOOL_SCOPE.md`;
+5. read `AI_ROUTER.md`;
+6. choose exactly one matching `contexts/BUILD_*.md` pack;
+7. read only the REQUIRED documents named by that pack;
+8. query databases only for the specific IDs/records needed;
+9. open deeper analysis/raw evidence only when the context pack says it is necessary.
 
 ## Purpose
 
@@ -26,7 +37,7 @@ The KB preserves exact technical facts while deduplicating chat/research repetit
 
 ## Read-budget rule
 
-For a normal implementation task, target **5–10 documents maximum before coding**. Do not preload all `analysis/`, all CSVs, all Lua, or all client files.
+For a normal implementation task, target **5–10 documents maximum before coding**, plus the two short/mandatory project-control rule files above. Do not preload all `analysis/`, all CSVs, all Lua, or all client files.
 
 Large CSV/XML databases are lookup sources, not sequential reading material.
 
@@ -140,4 +151,4 @@ If conflict remains, do targeted verification and update the KB; do not broad-re
 
 ## Mandatory next step
 
-After reading this file, open `AUTO_TOOL_SCOPE.md`, then `AI_ROUTER.md`, and route the current automation task.
+After reading this file and the two mandatory project-control files, open `AUTO_TOOL_SCOPE.md`, then `AI_ROUTER.md`, and route the current automation task.
