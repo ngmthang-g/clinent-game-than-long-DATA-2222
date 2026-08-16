@@ -1,100 +1,101 @@
-# File-by-file catalog — client snapshot
+# File-by-file catalog — frozen client snapshot
 
-> Mục tiêu: future AI nhìn tên file là biết **file này là gì, có thể chứa gì, có đáng phân tích không và nên dùng khi nào**. Các bundle có nội dung dự đoán được gắn `PROBABLE` thay vì nói chắc.
+> Mục tiêu: future AI nhìn tên file là biết **file này là gì, chứa loại dữ liệu gì, giá trị reverse ở mức nào, và khi nào mới cần mở lại**.
 
-## Root repository
+Evidence rule:
 
-### `.gitattributes`
+- **VERIFIED** = đã đọc trực tiếp / metadata / disassembly / bundle extraction xác nhận.
+- **PROBABLE** = dự đoán mạnh nhưng chưa có extraction/evidence đủ để coi là fact.
+- Không được giữ một dự đoán cũ là `PROBABLE` nếu phase sau đã extract và chứng minh nó.
 
-**Role:** Git configuration, không phải client logic.
+---
 
-- cấu hình Git LFS cho `.dll`, `.dat`, `.exe`, `.bin`, `.bundle`;
-- không phân tích để tìm game logic.
+# Repository root
 
-### `README.md`
+## `.gitattributes`
 
-**Role:** entry point của knowledge base.
+**Priority:** 0/5 gameplay
 
-### `AI_INDEX.md`
+Git/LFS configuration only. Không có logic client.
 
-**Role:** AI routing/index. Phải đọc đầu tiên.
+## `README.md`, `AI_BOOTSTRAP.md`, `AI_ROUTER.md`, `AI_INDEX.md`
 
-### `CLIENT_MANIFEST.md`
+**Role:** knowledge-base navigation, không phải binary evidence.
 
-**Role:** định danh snapshot + nguồn binary chính.
+AI build bình thường phải đi:
 
-### `Manifest.xml`
+`AI_BOOTSTRAP -> AI_ROUTER -> one context pack -> required docs/database lookup`.
+
+## `KB_METHOD.md`
+
+Evidence/preservation policy. Dùng để phân biệt VERIFIED / PROBABLE / HYPOTHESIS và quy tắc lưu kiến thức.
+
+## `CLIENT_MANIFEST.md`
+
+Snapshot identity / source inventory. Repo này được owner giữ frozen; không cần broad version re-check mỗi session.
+
+## `Manifest.xml`
 
 **Priority:** 2/5
 
-Đã đọc trực tiếp:
+**VERIFIED:**
 
 - CDN Windows: `https://cdn.fgstudio.vn/windows`
 - `LauncherVersion=4`
 - `GameVersion=126`
-- executable: `Thần Long  Mobile.exe`
+- executable: `Thần Long  Mobile.exe`.
 
-**Use:** launcher/package versioning, update flow. Không chứa gameplay.
+Use: launcher/package/update context; không phải gameplay.
 
-### `Host.exe`
+## `Host.exe`
 
-**Priority:** 2.5/5
+**Priority:** 2.5/5 launcher; <1/5 gameplay
 
-**Type:** .NET Framework 4.7.2 PE32 console/helper.
+**VERIFIED type:** .NET Framework 4.7.2 PE32 helper/console.
 
-Đã thấy logic/string cho:
+Observed responsibilities include manifest/file download, CDN/version handling, zip extraction, process kill/check and HTTP client behavior.
 
-- manifest download;
-- file download;
-- CDN URL;
-- game/launcher version;
-- zip extraction;
-- process kill/check;
-- HTTP client.
+Use only for update/host orchestration questions.
 
-**Use:** nghiên cứu updater/host orchestration, không phải gameplay.
-
-### `Host.exe.config`
+## `Host.exe.config`
 
 **Priority:** 1/5
 
-Chỉ xác nhận .NET Framework 4.7.2 runtime.
+Runtime config; confirms .NET Framework target.
 
-### `Host.pdb`
+## `Host.pdb`
 
-**Priority:** 2/5 launcher, 0.5/5 gameplay
+**Priority:** 2/5 launcher; ~0 gameplay
 
-Debug symbols/PDB cho Host; hữu ích nếu decompile/reconstruct launcher host.
+Debug symbols for Host. Useful only when reconstructing launcher/host internals.
 
-### `Launcher.exe`
+## `Launcher.exe`
 
-**Priority:** 2.5–3/5 cho multi-client, 1/5 gameplay
+**Priority:** 2.5–3/5 multi-client/session; 1/5 gameplay
 
-**Type:** .NET Framework 4.7.2 WPF.
+**VERIFIED type:** .NET Framework 4.7.2 WPF.
 
-Đã thấy:
+Observed areas:
 
 - account/session/process management;
-- server selection;
-- direct game launch;
-- sync enable/master/group;
-- recording/playback theo process/group;
-- LauncherControlService;
-- script list/manager-related strings.
+- server selection/direct launch;
+- sync/master/group concepts;
+- recording/playback process/group behavior;
+- launcher control/service/script-manager strings.
 
-**Use:** multi-account/process orchestration. Không thay thế per-process game runtime bridge.
+This is not the canonical gameplay runtime source. Do not let launcher reverse distract Auto/skill/item/NPC tasks.
 
-### `Launcher.exe.config`
+## `Launcher.exe.config`
 
 **Priority:** 1/5
 
-.NET Framework 4.7.2 config.
+Framework config only.
 
-### `Launcher.pdb`
+## `Launcher.pdb`
 
-**Priority:** 2.5/5 nếu reverse launcher
+**Priority:** 2.5/5 if launcher task exists
 
-Có thể lộ source symbols/paths. Không ưu tiên cho gameplay IL2CPP.
+Potentially useful source symbols/paths; not a gameplay priority.
 
 ---
 
@@ -102,74 +103,65 @@ Có thể lộ source symbols/paths. Không ưu tiên cho gameplay IL2CPP.
 
 ## `Game/GameAssembly.dll`
 
-**Priority:** 5/5 — nguồn số 1 cho logic game.
+**Priority:** 5/5 — Tier S
 
-**Type:** PE32+ x64 IL2CPP native.
+**VERIFIED type:** Windows x64 Unity IL2CPP native image.
 
-**Contains / evidence:**
+Contains/recovered:
 
-- Assembly-CSharp native gameplay;
-- Lua bridge;
-- Game/GUI/Network APIs;
-- world/scene/path symbols;
-- inventory/item APIs;
-- skill/buff APIs;
-- network processors/command names;
-- extensive `il2cpp_*` exports.
+- Assembly-CSharp gameplay methods;
+- Lua bridge and shared-data APIs;
+- Game/GUI/Network API implementations;
+- world/path/inventory/skill/buff symbols;
+- packet processors and protocol vocabulary;
+- `FGStudio.Engine.Utilities.MainThread` dispatcher;
+- broad `il2cpp_*` runtime exports.
 
-**Use:** semantic resolver, class/method mapping, targeted disassembly.
+Use:
 
-**Do not:** re-scan toàn file cho mọi task; dùng docs/API quick reference trước.
+- semantic class/method resolution;
+- exact missing native contract;
+- targeted disassembly.
+
+Do **not** start every feature by re-scanning this binary. Lua/Config/database often answer the question more cheaply.
 
 ## `Game/Thần Long  Mobile.exe`
 
 **Priority:** 2/5
 
-Unity Windows executable/bootstrap.
-
-**Potential content:** process startup, module load, command line, Unity entry plumbing.
-
-**Not primary:** gameplay logic đã nằm chủ yếu ở GameAssembly.
+Unity Windows bootstrap executable. Useful for process/startup/module-load questions, not core gameplay logic.
 
 ## `Game/UnityPlayer.dll`
 
-**Priority:** 3/5
+**Priority:** 3/5 engine; 1–2/5 normal gameplay feature
 
-Unity native engine runtime.
+Unity native engine runtime: PlayerLoop, GameObject/Component/Transform, asset/render/input engine machinery.
 
-**Contains:** GameObject/Component/Transform, PlayerLoop, AssetBundle, Input, rendering/engine internals.
-
-**Use:** main-thread/Unity object/engine bridge questions.
+Use only when the missing problem is genuinely engine-level. Main gameplay semantics are already better exposed through GameAssembly/Lua.
 
 ## `Game/baselib.dll`
 
 **Priority:** 1/5 gameplay
 
-Unity low-level platform layer: memory/thread/socket/filesystem primitives.
+Unity low-level platform primitives (memory/thread/socket/filesystem). Targeted debugging only.
 
 ## `Game/UnityCrashHandler64.exe`
 
 **Priority:** 0.5/5 gameplay
 
-Crash handling. Chỉ hữu ích khi debug crash reports/dumps.
+Crash-report helper. Useful only for crash/debug investigations.
 
 ## `Game/D3D12/D3D12Core.dll`
 
 **Priority:** 0.5/5 gameplay
 
-Graphics/Direct3D runtime. Không liên quan NPC/item/combat logic.
+Graphics runtime. Ignore for NPC/item/skill/auto research.
 
-## `Game/Screenshots/*.jpg`
+## `Game/Screenshots/`
 
 **Priority:** 1/5 logic; 2/5 UI context
 
-Ảnh chụp trong game. Dùng để:
-
-- đối chiếu visual UI;
-- tên NPC/map/labels;
-- regression screenshots.
-
-Không dùng làm source-of-truth cho data khi API semantic tồn tại.
+Visual evidence only. Useful for matching visible labels/layout; semantic API/config data wins whenever available.
 
 ---
 
@@ -179,72 +171,56 @@ Không dùng làm source-of-truth cho data khi API semantic tồn tại.
 
 **Priority:** 1/5
 
-Đã đọc:
+**VERIFIED:** company/product identity:
 
 ```text
 FGStudio
 Thần Long  Mobile
 ```
 
-Xác nhận company/product identity.
-
 ## `boot.config`
 
 **Priority:** 2/5 architecture/debug
 
-Đã đọc:
+Observed values include graphics jobs/threading, debugger setting, HDR flag, GC time slice and build GUID.
 
-- `gfx-enable-gfx-jobs=1`
-- `gfx-threading-mode=6`
-- `wait-for-native-debugger=0`
-- `hdr-display-enabled=0`
-- `gc-max-time-slice=3`
-- build GUID present.
-
-**Use:** engine startup/performance/debug context.
+Use for engine startup/performance context only.
 
 ## `ScriptingAssemblies.json`
 
 **Priority:** 4/5 architecture inventory
 
-Xác nhận managed assembly landscape trước IL2CPP:
+**VERIFIED:** pre-IL2CPP managed assembly/dependency landscape includes Assembly-CSharp, UnityEngine modules, LiveKit, Burst/Collections/Mathematics, URP/render pipeline, protobuf libraries, Newtonsoft.Json, Unity Purchasing/Services and framework dependencies.
 
-- Assembly-CSharp / firstpass;
-- UnityEngine modules;
-- LiveKit;
-- Burst/Collections/Mathematics;
-- URP/render pipeline;
-- Google.Protobuf + protobuf-net;
-- Newtonsoft.Json;
-- Unity Purchasing/Services;
-- zlib.net, System.IO.Hashing, Unsafe, etc.
-
-**Use:** biết dependency/subsystem nào tồn tại mà không scan binary lại.
+Very useful as a dependency map; no need to rediscover which managed subsystems exist.
 
 ## `RuntimeInitializeOnLoads.json`
 
-**Priority:** 3.5/5
+**Priority:** 3.5/5 bootstrap
 
-Đã thấy startup entries:
+**VERIFIED observed startup entries include:**
 
 - `Assembly-CSharp.SyncBootstrap.AutoInit`;
 - LiveKit `MonoBehaviourContext.Init`;
-- `FfiClient.Init/GetMainContext`;
-- Burst initializers;
+- FFI client initialization/main-context acquisition;
+- Burst initialization;
 - Unity Services/Purchasing registration;
-- Unity thread info capture.
+- Unity thread-info capture.
 
-**Use:** bootstrap/main-thread/service initialization research.
+Use for bootstrap/main-thread/service initialization questions.
 
 ## `data.unity3d`
 
-**Priority:** 4/5
+**Priority:** 4/5 asset/resource branch
 
-**Type:** plain `UnityFS` bundle ~47.6 MB.
+**VERIFIED file:** plain large Unity bundle (~47.6 MB) with UnityFS/version evidence (`6000.3.6f1`).
 
-**Version text:** `6000.3.6f1`.
+Unlike Config/Interface, this file is not currently the primary semantic KB source. It may contain serialized/resource data valuable for model/prefab/resource questions.
 
-**Potential:** serialized game/resource data. Có thể extract bằng standard Unity bundle tooling trước khi cần FG decrypt.
+Recommended rule:
+
+- inspect it only when a task needs asset/resource content not already present in Config/Interface/Lua/metadata;
+- do not parse 47 MB merely because it exists.
 
 ---
 
@@ -252,33 +228,31 @@ Xác nhận managed assembly landscape trước IL2CPP:
 
 ## `FGClientTool_Windows.dll`
 
-**Priority:** 5/5 cho asset branch
+**Priority:** 5/5 asset/decrypt branch — Tier S
 
-**Type:** native x64 DLL riêng FGStudio.
-
-**Exports verified:**
+**VERIFIED exports:**
 
 - `FG_Encrypt`
 - `FG_Decrypt`
-- `HelloWorld`
+- `HelloWorld`.
 
-**Contains:** custom bundle transform/obfuscation logic; detect `UnityFS`, `UnityRaw`, `UnityWeb`; byte pair transforms; branch dùng `0x9E3779B9` + xorshift.
+Reverse work recovered the custom bundle transform sufficiently to extract important shipped Config/Interface data. It recognizes Unity bundle signatures and contains custom transformation/xorshift-style logic.
 
-**Use:** phục hồi Config/Interface/custom bundles.
+Its major research job is already accomplished. Reopen only if another FG-obfuscated bundle cannot be decoded with the existing method.
 
 ## `lib_burst_generated.dll`
 
 **Priority:** 2/5
 
-Unity Burst generated native jobs; nhiều hashed exports. Chỉ reverse targeted khi call graph chỉ vào đây.
+Burst-generated native jobs with hashed/generated exports. Targeted only when a call graph proves an important algorithm lives there.
 
 ## `livekit_ffi.dll`
 
-**Priority:** 1/5 gameplay, 4/5 voice/media
+**Priority:** 1/5 gameplay; 4/5 voice/media
 
-LiveKit/WebRTC native stack: audio/video/PeerConnection/ICE/RTP/DataChannel/FFI.
+LiveKit/WebRTC native stack (audio/video/PeerConnection/ICE/RTP/DataChannel/FFI).
 
-`Version.xml` xác nhận voice realtime backend LiveKit.
+Use for realtime voice/media questions, not Train/Buff/Sell/NPC logic.
 
 ---
 
@@ -288,7 +262,7 @@ LiveKit/WebRTC native stack: audio/video/PeerConnection/ICE/RTP/DataChannel/FFI.
 
 **Priority:** 1.5/5 gameplay
 
-Unity built-in/default resources. Có version text riêng; không dùng để kết luận core client version.
+Unity built-in resource data. Do not use its embedded version text as the canonical game/client version.
 
 ---
 
@@ -296,54 +270,38 @@ Unity built-in/default resources. Có version text riêng; không dùng để k�
 
 ## `global-metadata.dat`
 
-**Priority:** 5/5 — nguồn số 1 cùng GameAssembly.
+**Priority:** 5/5 — Tier S, paired with GameAssembly
 
-**Verified:**
+**VERIFIED:**
 
-- IL2CPP metadata magic;
-- version 39;
+- IL2CPP metadata magic/version 39;
 - ~16,080 type definitions;
 - 96 images/assemblies;
-- large method/field/parameter tables;
-- string heap chứa class/method/enum/command names.
+- large method/field/parameter/string tables.
 
-**Use:** map semantic namespace/class/method/field; tránh blind RVA-only reverse.
+Use:
+
+- semantic namespace/class/method/field/token lookup;
+- method identity before native disassembly;
+- enum/command/type discovery.
+
+Do not rely on guessed RVA alone when metadata identity exists.
 
 ---
 
 # `il2cpp_data/Resources/`
 
-Các file resource hiện quan sát:
+Observed framework resource files:
 
-### `Newtonsoft.Json.dll-resources.dat`
+- `Newtonsoft.Json.dll-resources.dat`
+- `System.Data.dll-resources.dat`
+- `System.Drawing.dll-resources.dat`
+- `System.ServiceModel.dll-resources.dat`
+- `mscorlib.dll-resources.dat`.
 
-**Priority:** 0.5/5 gameplay
+**Priority:** ~0.5/5 gameplay
 
-Managed resource satellite/data cho Newtonsoft.Json. Gần như không có game logic.
-
-### `System.Data.dll-resources.dat`
-
-**Priority:** 0.5/5
-
-Framework resource data.
-
-### `System.Drawing.dll-resources.dat`
-
-**Priority:** 0.5/5
-
-Framework resource data.
-
-### `System.ServiceModel.dll-resources.dat`
-
-**Priority:** 0.5/5
-
-Framework resource data.
-
-### `mscorlib.dll-resources.dat`
-
-**Priority:** 0.5/5
-
-Core library resources. Không reverse trước gameplay.
+Managed/framework resources, not primary game logic.
 
 ---
 
@@ -351,61 +309,96 @@ Core library resources. Không reverse trước gameplay.
 
 ## `Config.unity3d`
 
-**Priority:** 5/5 predicted static-data value
+**Priority:** 5/5 — Tier S semantic data
 
-Header custom/obfuscated.
+**STATUS: VERIFIED EXTRACTED.**
 
-**PROBABLE contents:** item/NPC/map/monster/skill/buff/magic/quest/portal config tables.
+This is no longer merely a “likely config bundle”. The custom bundle path was decoded and produced **75 Config XML TextAssets**.
 
-**Next action when needed:** run FG_Decrypt-compatible extraction, index TextAsset/MonoBehaviour/config outputs.
+High-value confirmed tables include:
+
+- `NPCs` — 1,003
+- `Maps` — 193
+- `AutoPath` — 1,618 records
+- `Items` — 5,238
+- `Equips` — 22,763
+- `Skills` — 2,091
+- `SkillProperties` — 2,044
+- `AutoSkills` — 300
+- `MagicAtrributes` — 509
+- `Monsters` — 17,121
+- `Tasks` — 516
+- `Pets` — 8,349
+- `Spirits` — 1,889
+- `Factions` — 17
+- `FuBenScenarios` — 19
+- plus dozens of equipment, guild, activity, cosmetic/model tables.
+
+Canonical navigation:
+
+- `database/CONFIG_TABLE_CATALOG.md`
+- `analysis/32_CONFIG_DOMAIN_ATLAS.md`
+- `analysis/33_UNDEREXPLORED_HIGH_VALUE_CONFIG.md`.
+
+Future AI should query normalized/docs first instead of decrypting this bundle again.
 
 ## `Interface.unity3d`
 
-**Priority:** 4.5/5
+**Priority:** 5/5 — Tier S UI/Lua semantic data
 
-Custom/obfuscated Unity bundle; binary still shows Unity/CAB/version traces.
+**STATUS: VERIFIED EXTRACTED.**
 
-**PROBABLE contents:** Lua/UI script definitions, prefab/resource names, callbacks for NPC/shop/revive/auto.
+Recovered semantic content includes:
+
+- **338 UI layout XML TextAssets**;
+- **1,469 handler bindings**;
+- **339 Lua script classes with colon-method definitions**;
+- global infrastructure such as `Global`, `Global_Constants`, `Global_Functions`, `Loader`, `TCPCmdHandler`, `TCPCmdEventHandler`, `TCPPacketDefine`;
+- readable scripts for AutoFight, AutoHp, Utilities, Revival, NPCShop, Bag, GameDialog, Task, Team, Pet and other systems.
+
+This bundle is one of the most valuable discoveries in the repo because Lua often exposes exact action/payload/state logic in human-readable form.
+
+Future order for a visible UI feature:
+
+`layout binding -> same-name Lua -> runtime/API/packet -> native only if still missing`.
+
+Canonical docs:
+
+- `analysis/09_PHASE2_DECRYPTED_DATA_LUA.md`
+- `database/LUA_SCRIPT_CATALOG.md`
+- `database/UI_LAYOUT_CALLBACKS.md`.
 
 ## `Translations.unity3d`
 
-**Priority:** 3.5/5
+**Priority:** 3.5/5 localization
 
-Localization/text bundle candidate. Useful to map IDs/keys -> display names after extract.
+**STATUS:** bundle exists (~1.83 MB). Full normalized localization database is not currently canonical in the KB.
+
+**PROBABLE value:** display-string/localization key mapping, useful when semantic IDs exist but user-facing names/text are missing.
+
+Target only when translation/display-text lookup becomes a blocker.
 
 ## `UnityServicesProjectConfiguration.json`
 
 **Priority:** 1.5/5 gameplay
 
-Đã đọc:
+**VERIFIED:** production environment plus Unity Services/Purchasing package configuration.
 
-- environment `production`;
-- Unity Services Core version `1.16.0`;
-- Unity Purchasing version `5.1.2`;
-- initializer assembly names.
-
-Useful for dependency inventory, not game mechanics.
+Dependency context only.
 
 ## `UpdateList.xml`
 
 **Priority:** 1/5
 
-Snapshot hiện tại chứa empty `<UpdateList>`.
+Snapshot contains empty `<UpdateList>`.
 
 ## `Version.xml`
 
-**Priority:** 2.5/5 environment/network services
+**Priority:** 2.5/5 service/environment
 
-Đã đọc:
+**VERIFIED observed:** CDN/application code and FGStudio account/server/log/voice service endpoints; realtime voice uses LiveKit.
 
-- CDN base;
-- application VerCode 125;
-- FGStudio account/server endpoints;
-- log endpoint;
-- voice blob service;
-- voice realtime LiveKit enabled.
-
-**Use:** service landscape, not internal combat/item logic.
+Useful for service landscape, not combat/item logic.
 
 ---
 
@@ -413,63 +406,62 @@ Snapshot hiện tại chứa empty `<UpdateList>`.
 
 ## `LoadingResources.unity3d`
 
-**Priority:** 2.5/5 UI
+**Priority:** 2.5/5 UI resources
 
-Likely loading-screen/shared UI resources. Header custom.
+Likely loading/shared resource bundle. Not a semantic gameplay priority unless a concrete UI asset is needed.
 
 ## `Logo.unity3d`
 
 **Priority:** 1/5 logic
 
-Likely logo/branding resources. Low gameplay value.
+Branding resources.
 
-## `Shared.unity3d`
-
-**Priority:** 3/5 UI/resource
-
-Shared interface bundle; may hold prefabs/materials/scripts/resources reused by multiple UIs.
-
-## `Shared_2.unity3d`
+## `Shared.unity3d`, `Shared_2.unity3d`
 
 **Priority:** 3/5 UI/resource
 
-Second shared interface bundle; same reasoning as Shared.
+Shared interface resources/prefabs/materials likely reused by multiple UIs. Target only for asset/prefab questions that Interface Lua/layout text cannot answer.
 
 ---
 
-# Giá trị reverse tổng hợp
+# Current reverse priority after completed phases
 
-## Tier S — phân tích trước
+The original “Tier S files” are not all equally unfinished anymore.
 
-1. `GameAssembly.dll`
-2. `global-metadata.dat`
-3. `FGClientTool_Windows.dll`
-4. `Config.unity3d`
-5. `Interface.unity3d`
+## Solved/mostly harvested semantic sources
 
-## Tier A
+1. `Config.unity3d` — decrypted/extracted, 75 tables cataloged.
+2. `Interface.unity3d` — decrypted/extracted, Lua/layout/handlers cataloged.
+3. `GameAssembly.dll` + `global-metadata.dat` — broad semantic/native mapping done; only targeted missing contracts should be reversed.
+4. `FGClientTool_Windows.dll` — decrypt branch sufficiently understood for the successful extraction work.
 
-6. `data.unity3d`
-7. Interface shared bundles
-8. `Translations.unity3d`
-9. `ScriptingAssemblies.json`
-10. `RuntimeInitializeOnLoads.json`
+## Still worth targeted inspection when a concrete task demands it
 
-## Tier B
+1. `data.unity3d` — assets/serialized game resources.
+2. `Translations.unity3d` — localization/text lookup.
+3. shared Interface bundles — prefab/resource-specific questions.
+4. UnityPlayer — engine-level/thread/object lifecycle issues only.
+5. launcher/host — only multi-client/update/session tasks.
+6. Burst — only when a proven call path enters generated job code.
 
-11. `UnityPlayer.dll`
-12. Launcher/Host nếu task liên quan multi-client/update/session
-13. `lib_burst_generated.dll` targeted only
+## Normally ignore for gameplay knowledge
 
-## Tier C
+- LiveKit unless voice/media task;
+- baselib;
+- D3D12;
+- crash handler;
+- framework `.dat` resources;
+- logos/screenshots except visual correlation.
 
-- LiveKit cho gameplay tasks
-- baselib
-- D3D12
-- crash handler
-- framework resource `.dat`
-- logos/screenshots (trừ UI context)
+---
 
-# Critical interpretation rule
+# Critical future-AI rule
 
-Tên file/bundle chỉ cung cấp context. Những câu như “Config chắc chắn chứa NPC table X” phải giữ `PROBABLE` cho tới khi extract thấy table cụ thể. Ngược lại, structural facts như IL2CPP metadata, exports, method names, bundle header, launcher CLR type là VERIFIED.
+Do not repeat the old phase-1 assumption that Config/Interface contents are only predictions. Their major semantic contents have been extracted and documented.
+
+At the same time, do not over-promote still-unread bundles such as Translations/shared resources into VERIFIED content claims. Preserve the distinction:
+
+```text
+extracted evidence = VERIFIED
+filename/header expectation only = PROBABLE
+```
