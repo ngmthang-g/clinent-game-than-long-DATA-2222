@@ -10,8 +10,9 @@ Do not select multiple context packs unless the task genuinely spans multiple su
 
 Before opening broad analysis, use these when useful:
 
+- `AUTO_FEATURE_READINESS.md` — solved vs targeted-proof vs design-only status for each automation feature.
 - `database/AUTO_TOOL_API_CATALOG.md` — auto-only state/query/action API catalog with exact high-value IDs/payloads and narrow remaining gaps.
-- `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md` — per-feature `state -> guard -> one action -> proof -> failure/rescan` contract.
+- `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md` — per-feature `state -> guard -> one action -> proof -> failure/rescan` matrix.
 
 They are compact implementation summaries; canonical subsystem documents remain the evidence source when exact provenance or edge cases matter.
 
