@@ -1,17 +1,38 @@
-# World / Entity / Map / Pathfinding
+# World / Entity / Map / Pathfinding — current semantic model
 
-## 1. Kết luận quan trọng
+> Phase 2/3 solved several questions that were still predictions in the original version of this file. This refresh separates VERIFIED runtime/static data from the few actor/path questions that remain targeted research.
 
-Client có bằng chứng cụ thể về một lớp query dữ liệu thế giới (`LuaSystemSharedData`) và một lớp scene/game-object (`FGStudio.Engine.Objects.GScene`). Vì vậy hướng mạnh nhất là **đi từ các query/game structures đã tồn tại**, không phải scan RAM toàn bộ để tìm từng entity bằng heuristic.
+---
 
-## 2. LuaSystemSharedData — world query layer
+## 1. Core conclusion
 
-Các method/string đã thấy:
+The client already exposes two strong world layers:
 
-- `GetNearestNPC(npcResID)`
-- `GetNearbySprites(includeDeath)`
+1. **semantic query/state layer** through `LuaSystemSharedData` / `LuaSystemAPI_Game`;
+2. **scene/native layer** through `FGStudio.Engine.Objects.GScene`, pathfinder/grid/object classes.
+
+Static Config additionally provides maps/NPCs/monsters/routes/scenarios.
+
+Therefore a robust world scanner/navigation system should prefer:
+
+```text
+static DB for template identity/topology
+ + runtime SharedData/Game APIs for what exists now
+ + GScene/native only for exact missing engine-level state
+```
+
+not broad process-memory heuristics.
+
+---
+
+## 2. `LuaSystemSharedData` — runtime world query layer
+
+High-value query names:
+
+- `GetNearestNPC`
+- `GetNearbySprites`
 - `GetNearbyTeamLeaders`
-- `GetNearTeammates(includeNonePlayers, lowHPPriority, maxTargets)`
+- `GetNearTeammates`
 - `GetNearByEnemyIDs`
 - `GetNearByEnemies`
 - `GetNearByPeacePlayers`
@@ -19,245 +40,423 @@ Các method/string đã thấy:
 - `GetLocalMapObjects`
 - `GetNearestItemPack`
 - `GetNearbyItemPack`
+- `get_LeaderRoleData`.
 
-Compiler-generated closures/lambdas gần subsystem này nhắc tới:
+Related world-data names include:
 
 - `npcData`
 - `monsterData`
 - `petData`
-- `markData`
 - `growPointData`
 - `portalData`
-- `zoneData`
+- `zoneData`.
 
-### Diễn giải
+### Already VERIFIED through shipped UI/Lua
 
-Khả năng cao game đã chuẩn hóa các object trong phạm vi client biết thành các data object mà Lua có thể query. Đây là entry point ưu tiên cho:
+#### Nearby peaceful players
 
-- nearby player list;
-- NPC scanner;
-- monster/boss scanner;
-- pet/object/item-pack scanner;
-- portal/zone lookup;
-- target filtering.
+`GetNearByPeacePlayers(limit)` supplies at least:
 
-Không cần giả định tồn tại class đúng tên `EntityManager`; bằng chứng hiện tại mạnh hơn nằm ở `LuaSystemSharedData`.
+- RoleID
+- Name
+- Level
+- FactionID
+- HP
+- MaxHP
+- GuildName
+- AvartaID
+- TeamRank.
 
-## 3. GScene
+#### Nearby enemies
 
-Đã thấy class `GScene` dưới namespace `FGStudio.Engine.Objects` cùng các member/string như:
+Shipped enemy UI reads the same core identity/vital fields.
+
+#### Team members
+
+Structured team state gives:
+
+- RoleID
+- RoleName
+- Level
+- FactionID
+- MapID
+- Hp
+- MaxHp
+- AvartaID
+- PosX
+- PosY.
+
+#### Selected target
+
+`Game.SelectedTarget` exposes a richer target object with identity/type/vital fields; selected-player UI additionally exposes social IDs.
+
+So the old statement “world object schemas are basically unknown” is no longer correct. Only **additional fields or object families not yet consumed by shipped code** remain to be mapped.
+
+---
+
+## 3. AOI / visibility boundary
+
+The client has real semantic data for nearby non-party players, but this does not mean it knows every actor on the entire server/map.
+
+Correct model:
+
+```text
+server world
+ -> AOI/visibility replication
+ -> local client object/data structures
+ -> SharedData/Game queries
+```
+
+Consequences:
+
+- a nearby player can expose HP/MaxHP without party membership;
+- a far-away actor not replicated into the client cannot be read from local runtime just because a static template exists;
+- static `Monsters`/`NPCs` databases tell what **can exist**, runtime queries tell what **exists now**.
+
+---
+
+## 4. `GScene` — scene/native world layer
+
+Class:
+
+`FGStudio.Engine.Objects.GScene`
+
+Observed high-value members include:
 
 - `GetGroundHeight`
 - `InSafeArea`
 - `CanEnter`
 - `ScreenToPosition`
-- `ShowSelectTargetDecoration`
-- `HideSelectTargetDecoration`
+- select-target decoration functions
 - `DoSyncPosition`
 - `DoVisionLogic`
 - `DoCheckPetLogic`
-- `LoadDecoBot`
 - `get_PathFinder`
-- `LoadRoleWeapon`
-- `LoadRoleSoul`
-- `LoadRoleWings`
-- `LoadRoleFashionOrnaments`
-- `LoadRoleModel`
-- `LoadLeader`
-- `LoadOtherRole`
-- `LoadTrap`
+- role/pet/trap/model load functions.
 
-### Ý nghĩa
-
-`GScene` không chỉ là renderer. Tên method cho thấy nó tham gia:
-
-- scene object loading;
-- target decoration;
-- position synchronization;
-- vision/AOI-style logic;
-- pet checking;
-- safe-area/enterability;
-- pathfinder access.
-
-`ClickNPC` đã được disassemble thấy gọi `GScene.SelectTarget`, củng cố vai trò trung tâm của scene/selection system.
-
-## 4. Pathfinding / map components
-
-Các symbol/string liên quan:
+Related types:
 
 - `PathFinder`
 - `NodeGrid`
 - `LocalMapComponents`
-- `Obstructions`
-- `DynamicObstructions`
-- `Regions`
-- `SafeAreas`
-- `gridX`
-- `gridY`
-- `InDynamicObs`
-- `zones`
-- dynamic obstruction labels
-
-Các data classes gần đó:
-
 - `NPCData`
 - `MonsterData`
 - `GrowPointData`
 - `ZoneData`
 - `PortalData`
 - `MapAreaSoundData`
+- `Obstructions`
+- `DynamicObstructions`
+- `Regions`
+- `SafeAreas`.
 
-### Hướng ứng dụng
+`ClickNPC` native disassembly calls scene selection logic, confirming GScene participates in gameplay object targeting rather than being only visual rendering code.
 
-Có cơ sở mạnh để nghiên cứu:
+### When to use GScene/native
 
-- current map -> local objects;
-- map cell/grid -> world distance;
-- obstacle-safe movement;
-- map NPC/portal DB;
-- train spot -> vendor NPC -> return path;
-- portal chain giữa map.
+Use only when semantic APIs are insufficient, e.g.:
 
-Nhưng chưa được phép khẳng định toàn bộ NavMesh/route graph đã có sẵn ở dạng dễ đọc; cần inspect data cụ thể trong `PathFinder/NodeGrid` hoặc asset bundle.
+- precise ground/obstruction/path-grid questions;
+- scene object internals not exposed to Lua;
+- exact safe-area/enterability behavior.
 
-## 5. Target/movement API liên quan
+Do not reverse GScene merely to get information already available from SharedData/Game APIs.
 
-Trong `LuaSystemAPI_Game` có:
+---
 
-- `SelectTarget`
-- `ClickToObject`
-- `ClickNPC`
-- `ChaseTarget`
-- `get_CurrentChaseTargetID`
-- `IsSelectTargetDie`
-- `IsAllowDeadTarget`
-- `StopAutoPath`
-- `HasPath`
-- `CanMove`
-- `IsMoving`
-- `GetDistance`
-- `CalculatePointOnLine`
-- `CellToDistance`
-- strings/lambdas quanh `MoveToEx`, `GoTo`.
+## 5. Runtime map / movement API — VERIFIED
 
-Điều này cho thấy movement/target layer của game có API semantic khá cao. Không nên mặc định phải gửi phím/WASD/mouse.
+Shipped code uses semantic members including:
 
-## 6. AOI — giới hạn dữ liệu cần nhớ
+- `Game.IsMapReady()`
+- `Game.GetMapName()`
+- `Game.GetMapSize()`
+- `Game.GetLocalMapObjects()`
+- `Game.GetNearbyObjects()`
+- `Game.GetCurrentMoveDestination()`
+- `Game.MoveTo(X,Y)`
+- `Game.MoveToEx(...)`
+- `Game.GoTo(MapID,X,Y,callback)`
+- `Game.HasPath(from,to)`
+- `Game.GetDistance`
+- `Game.GetNPCPosition(npcID)`
+- `Game.ClickNPC(npcID)`
+- `Game.ClickToObject(objectID)`
+- `Game.SelectTarget(RoleID)`
+- `Game.ChaseTarget(...)`.
 
-Việc client thấy HP/MaxHP người khác không cùng tổ đội chứng minh **server có replicate entity state trong phạm vi quan sát**. Nó không chứng minh client biết toàn bộ người trên toàn map.
+This means movement/navigation is already a high-level semantic subsystem. Physical WASD/mouse navigation should be a fallback, not the default architecture.
 
-Mô hình đúng:
+---
 
-```text
-Server world
- -> AOI/visibility replication
- -> client-side entity/object structures
- -> LuaSystemSharedData/GScene/query layer
-```
+## 6. Static map database — VERIFIED
 
-Do đó scanner chỉ có thể đọc object đã được server/client load. Một player rất xa, chưa được replicate, sẽ không tự nhiên tồn tại trong RAM để đọc.
+`Maps.xml` contains **193 map rows**.
 
-## 7. Những field/state có khả năng nằm cùng entity hoặc related data
+Normalized lookup:
 
-### Đã có quan sát runtime trước đó
+`database/MAPS.csv`.
 
+Typical fields include:
+
+- MapID
 - Name
-- RoleID
-- HP
-- MaxHP
-- Position
+- ResName
+- Level
+- Type
+- ServerID
+- music/color-related config.
 
-### PROBABLE dựa trên architecture/network/data names
+Example already verified:
 
-- MP/MaxMP
-- faction/class
-- level
-- TeamID
-- PK state/value
-- combat state
-- current target
-- movement/death state
-- buff/debuff list hoặc reference
-- current skill/action/animation state
-- guild/title/appearance info
+`Map 5 = Lâu Lan`, ResName `loulangucheng`, City, level 75.
 
-Các mục PROBABLE không được coi là field layout đã biết. AI sau này nên query object/type metadata hoặc SharedData output thay vì đoán offset.
+Static map identity is useful for lookup and routing policy. Runtime `Game.IsMapReady` / current map state remains authoritative for execution.
 
-## 8. NPC database và RESID
+---
 
-`GetNearestNPC(npcResID)` là bằng chứng trực tiếp rằng NPC có một identifier kiểu resource ID dùng cho query. `NPCData` và config bundles tạo nền tảng cho database:
+## 7. Static NPC database — VERIFIED
 
-```text
-MapID
- -> NPC RESID / object/template ID
- -> Name
- -> Position
- -> role/service flags (nếu config có)
-```
+`NPCs.xml` contains **1,003 NPC rows** with at least:
 
-Dự đoán mạnh: `Config.unity3d` hoặc data bundle chứa bảng tĩnh để map RESID -> tên/toạ độ/service. Nhưng chưa được đánh dấu VERIFIED cho tới khi bundle được extract và bảng cụ thể được đọc.
+- ID
+- Name
+- ResName
+- Avarta.
 
-## 9. Monster/boss scanner
+`AutoPath/NPCData` provides many NPC -> MapID associations.
 
-Bằng chứng `MonsterData`, nearby sprites/enemies và network object add/remove/death đủ để đánh giá khả năng rất cao:
+Normalized DB:
 
-- phân biệt monster từ nearby object;
-- đọc object/template ID;
-- HP/MaxHP nếu replicated;
-- position/distance;
-- alive/dead;
-- current target/combat state ở mức nào đó.
+`database/npcs/NPCS_*.csv`.
 
-Ứng dụng:
+Examples:
 
-- chọn mob thật thay vì pixel;
-- tránh target đã chết;
-- boss spawn detector trong AOI;
-- theo dõi boss HP.
+- NPC 328 Ba Nhĩ -> Map 5 Lâu Lan
+- NPC 337 Đỗ Bất Đằng -> `LangZhong1`, Map 5
+- NPC 338 Đỗ Hoàng Đằng -> `LangZhong1`, Map 5
+- NPC 339 Đỗ Thanh Đằng -> `LangZhong1`, Map 5
+- NPC 373 Mã Kiêu Minh -> Map 5.
 
-## 10. Ground item / ItemPack
+### Coordinate rule
 
-`GetNearestItemPack`, `GetNearbyItemPack` và `PickUpItemFromItemPack(itemPackID, slotIndex, UsingAuto)` là bằng chứng mạnh rằng loot trên đất có representation semantic, không chỉ visual object.
+`AutoPath/NPCData` does **not** provide the normal NPC X/Y used by runtime interaction.
 
-Có thể xây:
+Use:
 
-```text
-NearbyItemPack
- -> ItemPackID
- -> distance/position
- -> slots/items (cần map exact data)
- -> pickup action
-```
+`Game.GetNPCPosition(npcID)`.
 
-Exact fields của ItemPack chưa được dump đầy đủ trong KB này.
+Do not generate fake static coordinates from unrelated fields.
 
-## 11. State machine nên dựa vào world state
+### Service rule
 
-Ví dụ revive/train flow:
+Name/ResName can generate **service candidates** (doctor/vendor/blacksmith/storage), but actual service contract is server/runtime UI state.
+
+Use:
+
+`database/NPC_SERVICE_CANDIDATES.md`.
+
+---
+
+## 8. Built-in NPC navigation — VERIFIED
+
+Global helper flow:
 
 ```text
-Alive
- -> Dead
- -> Revive UI available
- -> action
- -> Loading/ChangeMap
- -> Spawned
- -> CurrentMap valid
- -> Position valid
- -> return to train point
- -> enable combat
+GoToNPC(mapID,npcID)
+ -> change map with Game.GoTo(map,-1,-1) if needed
+ -> Game.GetNPCPosition(npcID)
+ -> Game.GoTo(map,X,Y)
+ -> resolve nearest/current NPC
+ -> semantic interaction
 ```
 
-Không dùng delay 6 giây như logic chính. Delay chỉ nên là timeout/fallback.
+This is more robust than hardcoded per-NPC X/Y in the external tool.
 
-## 12. Mục tiêu targeted research nếu cần exact implementation
+---
 
-Ưu tiên theo thứ tự:
+## 9. Static AutoPath topology — VERIFIED
 
-1. Resolve `LuaSystemSharedData` instance/static methods.
-2. Dump return object types của `GetNearbySprites`, `GetNearbyObjects`, `GetLocalMapObjects`.
-3. Map `NPCData`, `MonsterData`, `PortalData` fields.
-4. Resolve `GScene` current instance/static access.
-5. Inspect `PathFinder`/`NodeGrid` data only khi cần route chính xác.
+`AutoPath.xml` contains 1,618 records overall.
 
-Không cần reverse toàn bộ UnityPlayer hoặc toàn bộ GameAssembly lại.
+Extracted route databases include:
+
+- **165 direct portal edges** -> `database/AUTOPATH_PORTAL_EDGES.csv`
+- **506 NPC-mediated transitions** -> `database/autopath_npc/AUTOPATH_NPC_EDGES_*.csv`
+- **23 item/destination records** -> `database/AUTOPATH_ITEM_DESTINATIONS.csv`
+- NPCData/map associations.
+
+### Use
+
+Good for:
+
+- map adjacency/topology;
+- explaining possible route chains;
+- route diagnostics/fallback planning.
+
+### Limitation
+
+A static edge may still depend on:
+
+- level;
+- quest;
+- event;
+- current server/state.
+
+Therefore runtime `Game.GoTo` remains preferred executor.
+
+---
+
+## 10. Monster database / runtime monster scanner
+
+Static `Monsters.xml` contains **17,121 rows** with normalized fields covering identity, level, MaxHP, combat stats, AI and skill references.
+
+This gives offline interpretation:
+
+```text
+MonsterID
+ -> Name / ResName / Level / MaxHP / AI / skills
+```
+
+Runtime nearby enemy/sprite/world queries give actual spawned actors in AOI.
+
+Potential reliable scanner model:
+
+```text
+runtime object
+ -> object/template/RoleID
+ -> static Monster row if applicable
+ -> current HP/state/position from runtime
+```
+
+Do not use static Monster MaxHP as proof of a live actor's current HP/state.
+
+---
+
+## 11. Grow points / gathering
+
+`GrowPoints.xml` contains **407 rows** with gather/life-skill/quest requirement semantics.
+
+This can join task objectives to semantic world object identity.
+
+Potential flow:
+
+```text
+current Task objective
+ -> GrowPoint template
+ -> nearby world object
+ -> path/interact
+ -> progress/event proof
+```
+
+Exact runtime GrowPoint object fields should be mapped only if a concrete gather feature needs them.
+
+---
+
+## 12. Ground item / ItemPack — VERIFIED semantic engine
+
+The old prediction that loot “probably has a semantic representation” is solved.
+
+Built-in Auto pickup uses:
+
+- `Game.GetNearbyItemPack(...)`
+- ItemPack `RoleID`
+- ItemPack `Position`
+- `Game.HasPath`
+- `Game.MoveToEx`
+- `Game.ClickToObject`
+- pack-content response
+- `Game.GetFreeBagSpace`
+- `Game.PickUpItemFromItemPack`.
+
+Observed pick-all:
+
+`Game.PickUpItemFromItemPack(itemPackID, -1, 1)`.
+
+Canonical detail:
+
+`analysis/27_LOOT_PICKUP_FILTER_ENGINE.md`.
+
+No OCR/pixel loot detection is needed.
+
+---
+
+## 13. PathFinder / NodeGrid — still targeted research
+
+Native symbols strongly suggest a grid/path/obstruction model.
+
+Potential future value:
+
+- offline obstacle/path diagnostics;
+- custom route planning;
+- map reachability analysis.
+
+But this is **not** currently needed for most automation because `Game.GoTo` / `HasPath` already exist.
+
+Only inspect exact `PathFinder/NodeGrid` data or `data.unity3d` if runtime pathing becomes a real blocker.
+
+Hypothesis is tracked in `research/HYPOTHESES.md`.
+
+---
+
+## 14. Runtime actor fields still worth targeted mapping
+
+Already verified for nearby players/team/selected target: substantial identity/vital/social state.
+
+Still plausible but not automatically verified on every nearby actor record:
+
+- MP/MaxMP;
+- precise Position object on every query variant;
+- TeamID/GuildID directly on nearby peaceful record;
+- current target/chase/combat/PK state;
+- richer target buff IDs/durations;
+- movement/action/animation state.
+
+Do not guess offsets. Inspect actual return object/class only when a feature needs one of these fields.
+
+---
+
+## 15. State-machine implication
+
+World actions should be proof-driven.
+
+Example cross-map return to train spot:
+
+```text
+stop/leave current action
+ -> Game.GoTo(targetMap,...)
+ -> wait current MapID == expected
+ -> wait IsMapReady == true
+ -> wait valid position
+ -> move to train point
+ -> wait distance <= tolerance
+ -> resume Train
+```
+
+Example death/revive:
+
+```text
+Dead
+ -> revive state/action available
+ -> one revive request
+ -> wait alive + map readiness
+ -> reacquire current world snapshot
+ -> navigate back
+ -> resume
+```
+
+Fixed delays are failure timeouts only.
+
+---
+
+## 16. Targeted research order from here
+
+Only if a concrete feature needs more:
+
+1. inspect exact runtime class returned by one relevant SharedData query;
+2. map only the missing fields;
+3. join to existing static Maps/NPCs/Monsters/GrowPoints DB;
+4. inspect GScene/PathFinder only if semantic APIs do not solve execution;
+5. inspect `data.unity3d` only for an exact asset/path/resource gap.
+
+Do not broad-reverse UnityPlayer/GameAssembly or recreate already-extracted static databases.
