@@ -1,110 +1,244 @@
-# HYPOTHESES — giả thuyết cần kiểm chứng
+# HYPOTHESES — unresolved research questions only
 
-> Đây là nơi cố ý lưu cả dự đoán để future AI có hướng đào, nhưng **không được nâng thành sự thật** nếu chưa có evidence mới.
+> This file intentionally stores directions that still need evidence. Several older hypotheses were removed because Phase 2/3 already solved them (Config tables exist, Interface contains Lua, Tasks exist, buff duration/stack exists, etc.).
 
-## H1 — Có một object/data model chung cho Player/Monster/NPC/Pet
+Do not promote any item below without new evidence.
 
-Evidence gián tiếp:
+---
 
-- nearby sprite/object queries;
-- GScene load nhiều object type;
-- shared world/network add/remove/death/movement events.
-
-Giả thuyết:
-
-Có base class/data hierarchy chung hoặc ít nhất interface/data shape chung cho world actors.
-
-Cách test tốt nhất:
-
-- inspect return types của `GetNearbySprites/GetNearbyObjects`;
-- compare classes of player/NPC/monster runtime objects.
-
-## H2 — HP/MaxHP của nearby players nằm trong role/sprite data object mà SharedData trả về
+## H1 — Player / Monster / NPC / Pet share a meaningful common runtime actor hierarchy
 
 Evidence:
 
-- đã quan sát realtime HP/MaxHP người ngoài team trong client RAM;
-- query layer nearby player/sprite tồn tại.
+- generic nearby sprite/object queries;
+- GScene loads multiple object types;
+- common add/remove/death/movement lifecycle concepts;
+- target APIs handle several actor types.
 
-Cần test:
+Hypothesis:
 
-- resolve field names/offsets từ actual return object;
-- compare với known RoleID/Name/HP sample.
+There is either a common base class/data hierarchy or a stable shared data shape across major world actor types.
 
-## H3 — `Config.unity3d` có bảng NPC service/type
+Best targeted test:
 
-Giả thuyết:
+- inspect actual runtime classes returned by `GetNearbySprites/GetNearbyObjects` for player/NPC/monster/pet samples;
+- compare inherited methods/fields rather than guessing offsets.
 
-Ngoài NPC RESID/name/position, config có field để biết NPC làm vendor/healer/quest/teleport… hoặc reference tới service/dialog data.
+Potential value:
 
-Nếu đúng, auto có thể tự chọn NPC gần nhất theo dịch vụ thay vì hardcode Mã Kiêu Minh/Ba Nhĩ.
+One generic external snapshot model could cover multiple actor families.
 
-## H4 — `Interface.unity3d` chứa exact Lua function name cho shop/treatment/revive/auto
+---
 
-Có cơ sở mạnh nhưng chưa extract hoàn chỉnh. Tìm TextAsset/Lua payload/script registration sau decrypt.
+## H2 — Nearby-player/world records expose richer combat/social state than current UI fields
 
-## H5 — `CMD_CLIENT_LUA` được dùng cho một phần action/gameplay do Lua điều khiển
+Known nearby peaceful-player fields are already VERIFIED.
 
-Tên command rất gợi ý client/server trao đổi payload Lua-specific. Chưa map callsites/payload.
+Hypothesis:
 
-Không gửi thử packet chỉ dựa trên tên; cần trace legitimate flow.
+The same object or adjacent runtime data may expose more of:
 
-## H6 — Built-in Auto Fight lưu radius/center/return constraints
+- MP/MaxMP;
+- TeamID/GuildID;
+- position/vector;
+- death/combat/PK/moving flags;
+- target/chase state;
+- richer buff references.
+
+Targeted test:
+
+Inspect the real returned class and only add fields proven by metadata/runtime reads.
+
+---
+
+## H3 — `CMD_CLIENT_LUA` carries server/client Lua-specific payloads useful to one or more gameplay systems
 
 Evidence:
 
-- `DrawCicleAutoFight`;
-- Ranger/Auto flag methods.
+- exact packet constant exists;
+- Lua system has explicit network bridge/event plumbing.
 
-Giả thuyết:
+Unknown:
 
-Auto subsystem có state như center point/radius/target policy. Nếu map được sẽ tốt hơn tự viết navigation loop từ đầu.
+- direction;
+- call sites;
+- payload schema;
+- whether it is gameplay-critical or only infrastructure.
 
-## H7 — Buff data có duration/stack/owner fields dễ đọc
+Do not send/test arbitrary payloads. Trace legitimate Lua call sites first.
 
-Các magic keys có max stacks, timeout, group… và buff APIs tồn tại. Giả thuyết return data có đủ fields cho precise buff timer.
+---
 
-Cần inspect `GetBuffData/GetBuffProperties` actual type.
+## H4 — Built-in AutoFight has additional reusable center/radius/return-to-origin state beyond what is already documented
 
-## H8 — Quest/task database nằm trong Config bundle
+Evidence:
 
-Network commands có assign/complete/update/abandon task; game chắc có task model. Chưa tìm table exact trong asset.
+- radius/lure settings in `AutoTrainMonster`;
+- `DrawCicleAutoFight` / auto/ranger-related APIs;
+- built-in Train engine has target/range policy.
 
-## H9 — Map path data có thể dùng offline
+Hypothesis:
 
-`PathFinder`, `NodeGrid`, obstruction/region/zone names cho thấy path model. Chưa biết graph/grid được load từ asset nào và có dễ serialize ra DB không.
+There may be reusable internal state for:
 
-Nếu đúng: có thể precompute/plan route NPC/portal/train offline.
+- train center;
+- allowed radius;
+- return-to-center behavior;
+- leash/lure policy;
+- saved previous state.
 
-## H10 — Launcher sync/record-playback có thể cung cấp official input/session orchestration
+Targeted method:
 
-Launcher strings cho thấy sync group/master + recording/playback. Chưa xác định nó sync high-level commands, raw input hay một control service riêng.
+Read the exact Lua fields/settings/state transitions before doing native reverse.
 
-Nếu nghiên cứu: decompile .NET Launcher trước, dễ hơn native reverse.
+---
 
-## H11 — `SyncBootstrap.AutoInit` liên quan launcher/client synchronization
+## H5 — Detailed navigable path/grid data can be extracted offline from asset data
 
-Tên method đáng chú ý nhưng chỉ biết nó được runtime initialize. Có thể liên quan sync feature, cũng có thể chỉ là generic bootstrap. Không suy luận thêm nếu chưa decompile/method-map.
+Evidence:
 
-## H12 — Server sends enough combat state for a detailed combat recorder
+- `PathFinder`, `NodeGrid`, region/obstruction/safe-area classes exist;
+- maps/portal routes are known;
+- `data.unity3d` is a large plain UnityFS asset bundle.
 
-Command names có skill damage/heal/death/buff. Giả thuyết payload đủ để thống kê damage/skill/target/timing. Crit flag và XP/loot linkage chưa được chứng minh.
+Hypothesis:
 
-## H13 — UI button object pointers bị recreate khi panel/script đổi
+Per-map graph/grid/obstruction data may be serializable into an offline route/diagnostic DB.
 
-Đây là cơ chế rất phù hợp với lỗi stale `UIButton*`. Unity/Lua UI thường destroy/reinstantiate/rebind. Đã có binary evidence `HandleClickEvent` dereference instance; việc pointer thay đổi theo từng UI transition cần runtime object-ID logging để chứng minh trực tiếp.
+Unknown:
 
-## H14 — Một số static config/resource bundle được obfuscate bằng nhiều transform variants
+- which bundle/object stores it;
+- format/size;
+- whether it is useful enough to beat runtime `Game.GoTo`.
 
-FG_Decrypt có nhiều branch/phase và bundle headers hiện có mức biến đổi khác nhau. Có thể transform lựa chọn dựa trên file size/header/version.
+Only investigate if runtime pathing becomes a real blocker.
 
-## H15 — Có thể xây knowledge DB gần như hoàn chỉnh mà không cần giữ mọi pointer/offset
+---
 
-Kết hợp:
+## H6 — Launcher sync / record-playback uses a reusable high-level process/input orchestration channel
 
-- metadata semantic names;
-- Lua Game/SharedData queries;
-- extracted static config;
-- runtime observer.
+Evidence:
 
-Giả thuyết kiến trúc: phần lớn tool có thể dựa trên ID/data object semantic và chỉ dùng native pointer ở resolver/bridge nội bộ, giảm phụ thuộc offset rất nhiều.
+Launcher symbols/strings indicate sync master/group and recording/playback concepts.
+
+Unknown:
+
+- raw keyboard/mouse mirroring vs high-level commands;
+- local service/protocol details;
+- usefulness to the gameplay tool architecture.
+
+Low priority. Do not pursue unless a concrete multi-client synchronization feature requires it.
+
+---
+
+## H7 — `SyncBootstrap.AutoInit` may initialize launcher/client synchronization or another shared control channel
+
+The method name and runtime-initialize entry are VERIFIED; its purpose is not.
+
+Hypothesis only.
+
+Targeted test if ever needed:
+
+- metadata/native inspect this method and direct callees;
+- correlate with launcher service behavior.
+
+Low priority for gameplay semantic research.
+
+---
+
+## H8 — Structured combat events are sufficient for a detailed combat recorder
+
+Evidence:
+
+Command/event vocabulary includes skill damage/heal, object death and buff lifecycle.
+
+Hypothesis:
+
+Inbound event payloads may permit a recorder with attacker/target/skill/value/timing and perhaps crit/elemental data.
+
+Targeted test:
+
+Trace legitimate `TCPCmdHandler/TCPCmdEventHandler` branches for those exact commands and map field names.
+
+---
+
+## H9 — UI object identity changes across open/close/rebuild transitions and explains stale `UIButton*` failures
+
+Known:
+
+`UIButton.HandleClickEvent` is an instance method and dereferences object state.
+
+Hypothesis:
+
+Specific UI panels destroy/reinstantiate/rebind button objects during transitions, making a cached object pointer stale even if the semantic panel/button name is unchanged.
+
+Best proof:
+
+Log managed object identity/instance pointer across repeated open-close cycles of one panel.
+
+Architectural rule remains valid regardless: resolve semantic UI/action at time of use; do not cache long-lived button pointers.
+
+---
+
+## H10 — Some asset families use additional FG transform/decrypt variants not yet needed by current extracted bundles
+
+Known:
+
+The current custom transform was understood sufficiently to decode Config/Interface/Translations/shared bundles.
+
+Hypothesis:
+
+Other future/optional bundles may select different transform branches based on header/size/version.
+
+Do not research pre-emptively. Only revisit `FGClientTool_Windows.dll` if a concrete bundle fails the existing decode path.
+
+---
+
+## H11 — `Translations.unity3d` can provide a compact localization key/value database useful for semantic text matching
+
+Known:
+
+- bundle was successfully decoded to valid UnityFS;
+- current KB does not yet contain a normalized localization table.
+
+Hypothesis:
+
+It can improve:
+
+- alternate wording matching for NPC dialog/service text;
+- UI label lookup;
+- Vietnamese/localized name resolution.
+
+Targeted work:
+
+Extract TextAssets/string tables and preserve key -> language/value mapping if present.
+
+---
+
+## H12 — `data.unity3d` contains high-value serialized scene/resource data not duplicated in Config/Interface
+
+Known:
+
+- plain UnityFS ~47.6 MB;
+- Unity version 6000.3.6f1.
+
+Hypothesis:
+
+It may contain serialized prefabs, map/resource references, scene-support data or other objects useful for model/path/world analysis.
+
+Because it is large, do not broad-extract it without a concrete missing question. Prefer indexed asset inventory first.
+
+---
+
+# Removed because already solved
+
+The following old hypotheses are **no longer hypotheses**:
+
+- Config contains NPC/item/map/skill/task/etc. semantic tables -> VERIFIED, 75 tables extracted.
+- Interface contains exact Lua/UI logic -> VERIFIED, 339 Lua classes + 338 layouts + 1,469 bindings.
+- nearby peaceful player HP/MaxHP is available semantically -> VERIFIED.
+- buff DurationTick/Stack exists -> VERIFIED.
+- task database exists in Config -> VERIFIED (`Tasks`, 516 rows).
+- ground-loot semantic ItemPack engine exists -> VERIFIED.
+
+Future AI must not resurrect these as uncertainty.
