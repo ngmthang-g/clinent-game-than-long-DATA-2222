@@ -111,11 +111,12 @@ arrive spot
 - nearby peaceful players are available from `Game.GetNearByPeacePlayers(MaxPlayers)`;
 - selected-player data exposes `TeamID` and other social IDs;
 - `GetNearbyTeamLeaders` exists as a useful candidate query;
-- exact request-to-join action is available through `C_OtherRoleCommand.TeamRequestJoin:RoleID` via `CMD_OTHER_ROLE_COMMAND`.
+- current team state is in `C_TeamData` and `Game.RoleData.TeamID`;
+- `C_TeamAction.LeaveTeam = 4`;
+- observed exact leave payload is `4:selfRoleID` through `CMD_TEAM_ACTION`;
+- the team action enum also contains `RequestJoin=7`, `AcceptJoin=5`, `RejectJoin=6`, `AcceptInvite=8`, `RejectInvite=9`, etc.; only use payload forms that are actually documented/verified for the requested operation.
 
-### Remaining targeted unknown
-
-Exact **leave-team** action/payload is not yet recorded in the canonical KB. Resolve it by targeted Lua/team-UI trace only; do not broad reverse the client.
+Canonical team evidence: `analysis/25_TEAM_RUNTIME_FOLLOW.md`.
 
 ### Anti-spam policy
 
@@ -350,7 +351,7 @@ AND position within tolerance
 ### Party proof
 
 ```text
-local/target TeamID or team-state changed as expected
+local/target TeamID or C_TeamData changed as expected
 ```
 
 ### Heal proof
@@ -507,10 +508,9 @@ Recommended order:
 5. implement map travel state proof;
 6. implement death rolling window + simple round-robin spot switch;
 7. implement bag observer + Auto Sell integration;
-8. targeted trace for leave-team action;
-9. implement PartyDiscovery/Join state;
-10. add loot-rate scoring;
-11. add adaptive SpotScore after enough telemetry exists.
+8. implement PartyDiscovery/Join using already-mapped team semantics and only targeted runtime validation for any still-unverified join-request payload path;
+9. add loot-rate scoring;
+10. add adaptive SpotScore after enough telemetry exists.
 
 Do not jump directly to adaptive scoring while action dispatch is still unstable.
 
@@ -535,10 +535,12 @@ Resolver
 
 Do not broad reverse the client for this feature. Remaining exact unknowns should be handled narrowly:
 
-- leave-team action/payload;
-- any missing live party-state proof not already exposed by selected/local role data;
-- final `MainThread.Execute -> queue -> Update/DoExecuteWorks` execution proof;
+- any still-unverified **join-party request payload/path** needed by the chosen implementation;
+- any missing live party-state proof not already exposed by selected/local role data or `C_TeamData`;
+- final external `MainThread.Execute -> queue -> Update/DoExecuteWorks` live execution proof;
 - server acceptance behavior for specific non-team beneficial skills;
 - optional GuildID acquisition path for nearby players without forcing intrusive target mutation.
+
+The leave-team action itself is already VERIFIED: `C_TeamAction.LeaveTeam=4`, payload `4:selfRoleID` through `CMD_TEAM_ACTION`. Do not waste time re-tracing it.
 
 Everything else should first reuse the existing KB.
