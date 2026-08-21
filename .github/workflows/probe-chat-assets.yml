@@ -1,0 +1,32 @@
+name: Probe Chat Assets
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'tools/probe_chat_assets.py'
+      - '.github/workflows/probe-chat-assets.yml'
+      - 'Game/Thần Long  Mobile_Data/StreamingAssets/Interface.unity3d'
+  workflow_dispatch:
+
+jobs:
+  probe-chat:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install UnityPy
+        run: python -m pip install --disable-pip-version-check UnityPy
+      - name: Probe chat Lua/TextAssets
+        run: python tools/probe_chat_assets.py | tee chat_probe.txt
+      - name: Upload probe result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chat-probe
+          path: chat_probe.txt
+          if-no-files-found: warn
