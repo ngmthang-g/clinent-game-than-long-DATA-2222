@@ -3,235 +3,112 @@ import re
 import struct
 import subprocess
 import sys
-import unicodedata
 
 import UnityPy
 
 DLL = Path("Game/Thần Long  Mobile_Data/Plugins/x86_64/FGClientTool_Windows.dll")
 ROOT = Path("Game/Thần Long  Mobile_Data/StreamingAssets")
-BUNDLES = [
-    ("INTERFACE", ROOT / "Interface.unity3d"),
-    ("CONFIG", ROOT / "Config.unity3d"),
-]
-
-TERMS = [
-    "CMD_FUBEN_AUTO_DATA", "CMD_FUBEN_KILL_PROGRESS", "CMD_FUBEN_QUERY_ALIVE",
-    "CMD_FUBEN_MATCHMAKING", "CMD_FUBEN_COMPLETE", "CMD_FUBEN_SYNC_TARGET",
-    "AutoFight_FuBen", "FuBen", "SelectedFuBen", "KillProgress", "QueryAlive",
-    "TimeLeft", "Timeout", "Activity", "Hoạt động", "Thủy Lao", "ThuyLao",
-    "Phạm nhân", "Thống lĩnh phạm nhân", "phạm nhân bình thường", "thống lĩnh",
-    "prison", "prisoner", "alive", "complete",
-]
-PRECISE = [
-    "CMD_FUBEN_AUTO_DATA", "CMD_FUBEN_KILL_PROGRESS", "CMD_FUBEN_QUERY_ALIVE",
-    "CMD_FUBEN_COMPLETE", "CMD_FUBEN_SYNC_TARGET", "AutoFight_FuBen",
-    "Thủy Lao", "ThuyLao", "Phạm nhân", "Thống lĩnh phạm nhân",
-]
+TARGET_FULL_INTERFACE = {
+    "MiniBox_MiniEventFrame", "MiniBox", "TCPCmdHandler", "AutoFight_FuBen",
+    "AutoFight_Main", "Loader", "AutoFuBen"
+}
+TARGET_FULL_CONFIG = {"FuBenScenarios", "Activities"}
+MONSTER_IDS = set(range(1650, 1770)) | set(range(2490, 2500)) | set(range(32490, 32500))
 
 
-def ensure_emulator_deps():
+def ensure_deps():
     try:
-        import pefile  # noqa: F401
-        import unicorn  # noqa: F401
-        return
+        import pefile  # noqa
+        import unicorn  # noqa
     except Exception:
-        pass
-    subprocess.check_call([
-        sys.executable, "-m", "pip", "install", "--disable-pip-version-check",
-        "pefile", "unicorn"
-    ])
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "--disable-pip-version-check", "pefile", "unicorn"])
 
 
-def align_up(v, a=0x1000):
-    return (v + a - 1) & ~(a - 1)
+def align_up(v, a=0x1000): return (v + a - 1) & ~(a - 1)
 
 
-def emulate_fg_decrypt(raw: bytes) -> bytes:
-    ensure_emulator_deps()
+def decrypt(raw: bytes) -> bytes:
+    ensure_deps()
     import pefile
     from unicorn import Uc, UC_ARCH_X86, UC_MODE_64
     from unicorn.x86_const import UC_X86_REG_RCX, UC_X86_REG_RDX, UC_X86_REG_RSP, UC_X86_REG_RIP
-
     pe = pefile.PE(str(DLL), fast_load=False)
-    image_base = int(pe.OPTIONAL_HEADER.ImageBase)
-    image_size = align_up(int(pe.OPTIONAL_HEADER.SizeOfImage))
-
-    export_rva = None
-    for sym in pe.DIRECTORY_ENTRY_EXPORT.symbols:
-        if sym.name == b"FG_Decrypt":
-            export_rva = int(sym.address)
-            break
-    if export_rva is None:
-        raise RuntimeError("FG_Decrypt export not found")
-
+    base = int(pe.OPTIONAL_HEADER.ImageBase)
+    size = align_up(int(pe.OPTIONAL_HEADER.SizeOfImage))
+    rva = next(int(s.address) for s in pe.DIRECTORY_ENTRY_EXPORT.symbols if s.name == b"FG_Decrypt")
     uc = Uc(UC_ARCH_X86, UC_MODE_64)
-    uc.mem_map(image_base, image_size)
-
-    dll_bytes = DLL.read_bytes()
-    headers_len = min(len(dll_bytes), int(pe.OPTIONAL_HEADER.SizeOfHeaders))
-    uc.mem_write(image_base, dll_bytes[:headers_len])
+    uc.mem_map(base, size)
+    b = DLL.read_bytes()
+    uc.mem_write(base, b[:min(len(b), int(pe.OPTIONAL_HEADER.SizeOfHeaders))])
     for sec in pe.sections:
-        data = sec.get_data()
-        if data:
-            uc.mem_write(image_base + int(sec.VirtualAddress), data)
-
+        d = sec.get_data()
+        if d: uc.mem_write(base + int(sec.VirtualAddress), d)
     data_addr = 0x10000000
-    data_size = align_up(len(raw) + 0x1000)
-    uc.mem_map(data_addr, data_size)
-    uc.mem_write(data_addr, raw)
-
-    stack_base = 0x30000000
-    stack_size = 0x20000
-    uc.mem_map(stack_base, stack_size)
-    sentinel = 0x40000000
-    uc.mem_map(sentinel, 0x1000)
-    uc.mem_write(sentinel, b"\xCC")
-
-    # Win64 function entry: RSP % 16 == 8, return address at [RSP],
-    # with caller shadow space available above it.
-    rsp = (stack_base + stack_size - 0x200) & ~0xF
-    rsp -= 8
+    uc.mem_map(data_addr, align_up(len(raw)+0x1000)); uc.mem_write(data_addr, raw)
+    stack = 0x30000000; uc.mem_map(stack, 0x20000)
+    sentinel = 0x40000000; uc.mem_map(sentinel, 0x1000); uc.mem_write(sentinel, b"\xcc")
+    rsp = ((stack + 0x20000 - 0x200) & ~0xf) - 8
     uc.mem_write(rsp, struct.pack("<Q", sentinel))
-    uc.reg_write(UC_X86_REG_RSP, rsp)
-    uc.reg_write(UC_X86_REG_RCX, data_addr)
-    uc.reg_write(UC_X86_REG_RDX, len(raw))
-
-    start = image_base + export_rva
-    try:
-        uc.emu_start(start, sentinel, timeout=20_000_000, count=200_000_000)
-    except Exception as exc:
-        rip = uc.reg_read(UC_X86_REG_RIP)
-        raise RuntimeError(f"FG_Decrypt emulation failed at RIP=0x{rip:x}: {exc}") from exc
-
-    return bytes(uc.mem_read(data_addr, len(raw)))
+    uc.reg_write(UC_X86_REG_RSP, rsp); uc.reg_write(UC_X86_REG_RCX, data_addr); uc.reg_write(UC_X86_REG_RDX, len(raw))
+    try: uc.emu_start(base+rva, sentinel, timeout=20_000_000, count=200_000_000)
+    except Exception as e:
+        raise RuntimeError(f"decrypt RIP={uc.reg_read(UC_X86_REG_RIP):x}: {e}")
+    out = bytes(uc.mem_read(data_addr, len(raw)))
+    if not out.startswith((b"UnityFS", b"UnityRaw", b"UnityWeb")): raise RuntimeError("bad signature")
+    return out
 
 
-def decode_script(raw):
-    if isinstance(raw, str):
-        return raw
-    if isinstance(raw, (bytes, bytearray)):
-        for enc in ("utf-8-sig", "utf-8", "utf-16-le", "latin-1"):
-            try:
-                return raw.decode(enc)
-            except Exception:
-                pass
-    return str(raw)
+def decode(v):
+    if isinstance(v, str): return v
+    for enc in ("utf-8-sig", "utf-8", "utf-16-le", "latin-1"):
+        try: return v.decode(enc)
+        except Exception: pass
+    return str(v)
 
 
-def norm(s):
-    s = unicodedata.normalize("NFD", s).lower()
-    return "".join(c for c in s if unicodedata.category(c) != "Mn")
-
-
-NTERMS = [(t, norm(t)) for t in TERMS]
-NPRECISE = [(t, norm(t)) for t in PRECISE]
-
-
-def matches(name, text):
-    hay = norm(name + "\n" + text)
-    return [raw for raw, needle in NTERMS if needle in hay]
-
-
-def precise(name, text):
-    hay = norm(name + "\n" + text)
-    return any(needle in hay for _, needle in NPRECISE)
-
-
-def contexts(text, radius=12):
-    lines = text.splitlines()
-    keep = set()
-    for i, line in enumerate(lines):
-        nl = norm(line)
-        if any(needle in nl for _, needle in NTERMS):
-            for j in range(max(0, i - radius), min(len(lines), i + radius + 1)):
-                keep.add(j)
-    out = []
-    last = -2
-    for i in sorted(keep):
-        if i != last + 1:
-            out.append("...")
-        out.append(f"{i+1:05d}: {lines[i]}")
-        last = i
-    return "\n".join(out)
-
-
-def scan_bundle(label, path):
-    raw = path.read_bytes()
-    print("#" * 120)
-    print(f"BUNDLE={label} FILE={path} SIZE={len(raw)} RAW_FIRST16={raw[:16].hex(' ')}")
-
-    dec = emulate_fg_decrypt(raw)
-    print(f"DECRYPTED_FIRST32={dec[:32]!r}")
-    print(f"DECRYPTED_HEX={dec[:32].hex(' ')}")
-    if not dec.startswith((b"UnityFS", b"UnityRaw", b"UnityWeb")):
-        raise RuntimeError(f"{label}: FG_Decrypt result has no Unity bundle signature")
-
-    tmp = Path(f"{label.lower()}_decrypted.unity3d")
-    tmp.write_bytes(dec)
-    env = UnityPy.load(str(tmp))
-
-    text_assets = []
-    type_counts = {}
+def load_assets(path: Path):
+    dec = decrypt(path.read_bytes())
+    tmp = Path(path.name + ".dec"); tmp.write_bytes(dec)
+    env = UnityPy.load(str(tmp)); out = {}
     for obj in env.objects:
-        type_counts[obj.type.name] = type_counts.get(obj.type.name, 0) + 1
-        if obj.type.name != "TextAsset":
-            continue
-        data = obj.read()
-        name = getattr(data, "m_Name", "") or ""
-        text = decode_script(getattr(data, "m_Script", b""))
-        text_assets.append((name, text))
+        if obj.type.name == "TextAsset":
+            d = obj.read(); out[getattr(d,"m_Name","") or ""] = decode(getattr(d,"m_Script",b""))
+    return out
 
-    print("TYPE_COUNTS=" + ", ".join(f"{k}:{v}" for k, v in sorted(type_counts.items())))
-    print(f"TEXT_ASSETS={len(text_assets)}")
 
-    # First show all semantically likely asset names even if localized strings differ.
-    likely = []
-    for name, text in text_assets:
-        nn = norm(name)
-        if any(k in nn for k in ("fuben", "activity", "tcp", "autofight", "monster", "map", "scenario")):
-            likely.append(name)
-    print("LIKELY_ASSET_NAMES=" + " | ".join(sorted(set(likely))))
-
-    hits = []
-    for name, text in text_assets:
-        mt = matches(name, text)
-        if mt:
-            hits.append((name, text, mt, precise(name, text)))
-    print(f"MATCHED_ASSETS={len(hits)} PRECISE_ASSETS={sum(1 for h in hits if h[3])}")
-
-    print("\nASSET HIT INDEX")
-    for i, (name, text, mt, pr) in enumerate(hits, 1):
-        print(f"{i:03d}\t{name}\tprecise={int(pr)}\t{','.join(mt)}")
-
-    print("\nTARGETED CONTEXTS")
-    for i, (name, text, mt, pr) in enumerate(hits, 1):
-        print("=" * 120)
-        print(f"ASSET {i}: {name} precise={int(pr)}")
-        print("MATCHED=" + ", ".join(mt))
-        methods = sorted(set(re.findall(r"function\s+([A-Za-z0-9_\.]+(?::|\.)[A-Za-z0-9_]+)\s*\(", text)))
-        methods = [m for m in methods if any(k in m.lower() for k in ("fuben", "kill", "alive", "complete", "activity", "time", "packet"))]
-        if methods:
-            print("METHODS=" + ", ".join(methods))
-        print("-" * 120)
-        print(contexts(text))
-
-    # AutoFight_FuBen is central and manageable: print it in full if present.
-    for name, text in text_assets:
-        if norm(name) == norm("AutoFight_FuBen"):
-            print("\n" + "#" * 120)
-            print("FULL AutoFight_FuBen")
-            print("#" * 120)
-            print(text)
-
-    return text_assets
+def print_full(name, text):
+    print("\n" + "="*140); print("FULL_ASSET=" + name); print("="*140); print(text)
 
 
 def main():
-    print(f"DLL={DLL} SIZE={DLL.stat().st_size if DLL.exists() else -1}")
-    for label, path in BUNDLES:
-        scan_bundle(label, path)
+    ia = load_assets(ROOT / "Interface.unity3d")
+    ca = load_assets(ROOT / "Config.unity3d")
+    print(f"INTERFACE_TEXTASSETS={len(ia)} CONFIG_TEXTASSETS={len(ca)}")
+    for name in sorted(TARGET_FULL_INTERFACE):
+        if name in ia: print_full(name, ia[name])
+    for name in sorted(TARGET_FULL_CONFIG):
+        if name in ca: print_full(name, ca[name])
+
+    monsters = ca.get("Monsters", "")
+    print("\n" + "="*140); print("THUY_LAO_MONSTER_ROWS"); print("="*140)
+    for line in monsters.splitlines():
+        m = re.search(r'<Monster\s+ID="(\d+)"', line)
+        if m and int(m.group(1)) in MONSTER_IDS:
+            print(line)
+
+    print("\n" + "="*140); print("GLOBAL_REFERENCES_TO_MINIEVENT_AND_FUBEN_PACKETS"); print("="*140)
+    needles = ["MiniEventFrame", "SetEventFrameVisible", "CMD_FUBEN_AUTO_DATA", "CMD_FUBEN_KILL_PROGRESS", "CMD_FUBEN_QUERY_ALIVE", "CMD_FUBEN_COMPLETE", "CMD_FUBEN_SYNC_TARGET"]
+    for name, text in sorted(ia.items()):
+        lines = text.splitlines()
+        hitidx = [i for i,l in enumerate(lines) if any(n in l for n in needles)]
+        if hitidx:
+            print(f"\n### ASSET {name}")
+            shown=set()
+            for i in hitidx:
+                for j in range(max(0,i-6),min(len(lines),i+7)):
+                    if j not in shown:
+                        print(f"{j+1:05d}: {lines[j]}"); shown.add(j)
+                print("...")
     return 0
 
-
-if __name__ == "__main__":
-    raise SystemExit(main())
+if __name__ == "__main__": raise SystemExit(main())
