@@ -1,18 +1,27 @@
 from pathlib import Path
-import sys
-
+import re
+import unicodedata
 import UnityPy
 
-BUNDLE = Path("Game/Thần Long  Mobile_Data/StreamingAssets/Interface.unity3d")
-KEYWORDS = (
-    "chat",
-    "cmd_client_chat",
-    "cmd_chat_data",
-    "sendpacket",
-    "displaychat",
-    "whisper",
-    "private",
-)
+ROOT = Path("Game/Thần Long  Mobile_Data/StreamingAssets")
+BUNDLES = [
+    ("INTERFACE", ROOT / "Interface.unity3d"),
+    ("CONFIG", ROOT / "Config.unity3d"),
+]
+
+TERMS = [
+    "CMD_FUBEN_AUTO_DATA", "CMD_FUBEN_KILL_PROGRESS", "CMD_FUBEN_QUERY_ALIVE",
+    "CMD_FUBEN_MATCHMAKING", "CMD_FUBEN_COMPLETE", "CMD_FUBEN_SYNC_TARGET",
+    "AutoFight_FuBen", "FuBen", "SelectedFuBen", "KillProgress", "QueryAlive",
+    "TimeLeft", "Timeout", "Activity", "Hoạt động", "Thủy Lao", "ThuyLao",
+    "Phạm nhân", "Thống lĩnh phạm nhân", "phạm nhân bình thường", "thống lĩnh",
+    "prison", "prisoner", "alive", "complete",
+]
+PRECISE = [
+    "CMD_FUBEN_AUTO_DATA", "CMD_FUBEN_KILL_PROGRESS", "CMD_FUBEN_QUERY_ALIVE",
+    "CMD_FUBEN_COMPLETE", "CMD_FUBEN_SYNC_TARGET", "AutoFight_FuBen",
+    "Thủy Lao", "ThuyLao", "Phạm nhân", "Thống lĩnh phạm nhân",
+]
 
 
 def decode_script(raw):
@@ -27,46 +36,96 @@ def decode_script(raw):
     return str(raw)
 
 
-def main() -> int:
-    if not BUNDLE.exists():
-        print(f"ERROR: bundle not found: {BUNDLE}")
-        return 2
+def norm(s):
+    s = unicodedata.normalize("NFD", s).lower()
+    return "".join(c for c in s if unicodedata.category(c) != "Mn")
 
-    env = UnityPy.load(str(BUNDLE))
-    hits = []
-    inspected = 0
+NTERMS = [(t, norm(t)) for t in TERMS]
+NPRECISE = [(t, norm(t)) for t in PRECISE]
 
+
+def matches(name, text):
+    h = norm(name + "\n" + text)
+    return [raw for raw, nt in NTERMS if nt in h]
+
+
+def is_precise(name, text):
+    h = norm(name + "\n" + text)
+    return any(nt in h for _, nt in NPRECISE)
+
+
+def contexts(text, radius=5):
+    lines = text.splitlines()
+    keep = set()
+    for i, line in enumerate(lines):
+        nl = norm(line)
+        if any(nt in nl for _, nt in NTERMS):
+            for j in range(max(0, i-radius), min(len(lines), i+radius+1)):
+                keep.add(j)
+    out, last = [], -2
+    for i in sorted(keep):
+        if i != last + 1:
+            out.append("...")
+        out.append(f"{i+1:05d}: {lines[i]}")
+        last = i
+    return "\n".join(out)
+
+
+def scan(label, path):
+    print("#" * 120)
+    print(f"BUNDLE {label}: {path}")
+    env = UnityPy.load(str(path))
+    assets = []
+    text_assets = 0
     for obj in env.objects:
         if obj.type.name != "TextAsset":
             continue
-        inspected += 1
-        try:
-            data = obj.read()
-            name = getattr(data, "m_Name", "") or ""
-            text = decode_script(getattr(data, "m_Script", b""))
-        except Exception as exc:
-            print(f"WARN: cannot read TextAsset path_id={obj.path_id}: {exc}", file=sys.stderr)
-            continue
-
-        haystack = f"{name}\n{text}".lower()
-        matched = [k for k in KEYWORDS if k in haystack]
-        if matched:
-            hits.append((name, matched, text))
-
-    print(f"TEXT_ASSETS_INSPECTED={inspected}")
-    print(f"MATCHED_ASSETS={len(hits)}")
+        text_assets += 1
+        data = obj.read()
+        name = getattr(data, "m_Name", "") or ""
+        text = decode_script(getattr(data, "m_Script", b""))
+        hit = matches(name, text)
+        if hit:
+            assets.append((name, text, hit, is_precise(name, text)))
+    print(f"TEXT_ASSETS={text_assets} MATCHED={len(assets)} PRECISE={sum(a[3] for a in assets)}")
     print()
 
-    for index, (name, matched, text) in enumerate(hits, 1):
-        print("=" * 100)
-        print(f"ASSET {index}: {name}")
-        print("MATCHED: " + ", ".join(matched))
-        print("-" * 100)
+    print("ASSET INDEX")
+    for idx, (name, text, hit, precise) in enumerate(assets, 1):
+        print(f"{idx:03d}\t{name}\tprecise={int(precise)}\t{','.join(hit)}")
+    print()
+
+    print("CONTEXT HITS")
+    for idx, (name, text, hit, precise) in enumerate(assets, 1):
+        print("=" * 120)
+        print(f"ASSET {idx}: {name} precise={int(precise)}")
+        print("MATCHED=" + ", ".join(hit))
+        meth = sorted(set(re.findall(r"function\s+([A-Za-z0-9_\.]+(?::|\.)[A-Za-z0-9_]+)\s*\(", text)))
+        meth = [m for m in meth if any(k in m.lower() for k in ("fuben", "kill", "alive", "complete", "activity", "time"))]
+        if meth:
+            print("METHODS=" + ", ".join(meth))
+        print("-" * 120)
+        print(contexts(text))
+        print()
+
+    print("PRECISE FULL ASSETS")
+    for idx, (name, text, hit, precise) in enumerate(assets, 1):
+        if not precise:
+            continue
+        print("=" * 120)
+        print(f"FULL ASSET {idx}: {name}")
+        print("MATCHED=" + ", ".join(hit))
+        print("-" * 120)
         print(text)
         print()
 
-    return 0 if hits else 3
 
+def main():
+    for label, path in BUNDLES:
+        if not path.exists():
+            raise SystemExit(f"missing bundle: {path}")
+        scan(label, path)
+    return 0
 
 if __name__ == "__main__":
     raise SystemExit(main())
