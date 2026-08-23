@@ -71,13 +71,33 @@ def contexts(text, radius=5):
     return "\n".join(out)
 
 
+def load_env(label, path):
+    raw = bytearray(path.read_bytes())
+    print(f"{label}_SIZE={len(raw)} FIRST16={bytes(raw[:16]).hex(' ')}")
+    # Frozen snapshot transform visibly preserves bytes 3..6 as 'tyFS' while corrupting
+    # the first three bytes of the standard UnityFS signature. Try the minimal recovery
+    # first; do not alter any other bytes unless evidence requires it.
+    if not raw.startswith(b"UnityFS") and len(raw) >= 7 and bytes(raw[3:7]) == b"tyFS":
+        print(f"{label}: restoring first 3 signature bytes to 'Uni'")
+        raw[0:3] = b"Uni"
+        patched = path.with_name(path.name + ".headerpatched")
+        patched.write_bytes(raw)
+        try:
+            return UnityPy.load(str(patched))
+        except Exception as exc:
+            print(f"{label}: minimal header patch failed: {type(exc).__name__}: {exc}")
+    return UnityPy.load(str(path))
+
+
 def scan(label, path):
     print("#" * 120)
     print(f"BUNDLE {label}: {path}")
-    env = UnityPy.load(str(path))
+    env = load_env(label, path)
     assets = []
     text_assets = 0
+    type_counts = {}
     for obj in env.objects:
+        type_counts[obj.type.name] = type_counts.get(obj.type.name, 0) + 1
         if obj.type.name != "TextAsset":
             continue
         text_assets += 1
@@ -87,6 +107,7 @@ def scan(label, path):
         hit = matches(name, text)
         if hit:
             assets.append((name, text, hit, is_precise(name, text)))
+    print("TYPE_COUNTS=" + ", ".join(f"{k}:{v}" for k, v in sorted(type_counts.items())))
     print(f"TEXT_ASSETS={text_assets} MATCHED={len(assets)} PRECISE={sum(a[3] for a in assets)}")
     print()
 
