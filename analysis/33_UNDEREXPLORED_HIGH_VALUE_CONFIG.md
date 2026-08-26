@@ -1,355 +1,144 @@
-# Underexplored High-Value Config — next data to normalize, not broad reverse
+# 33 — High-value Config coverage — normalization plan CLOSED
 
-Status: **VERIFIED table existence/counts from decrypted Config; proposed extraction schemas and expected build value are analysis/planning.**
+Status: **SUPERSEDED AS A TODO; retained as historical prioritization.** The high-value Config domains listed by the original version of this document are now materialized on `main`, and every one of the 75 recovered Config XML tables also has a structurally-lossless fallback database.
 
-Purpose: the client has already been broadly reverse-engineered. The remaining data work should focus on Config tables that can answer future build questions directly but are not yet represented as compact machine-readable databases in GitHub.
+Do not use this file as a reason to re-decrypt or re-normalize the frozen client.
 
-This document deliberately avoids reopening unrelated binaries.
+Canonical sources:
 
----
+- `database/TOOL_DATA_INDEX.md` — preferred tool-first lookup router.
+- `database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv` — specialized generated database inventory.
+- `database/config_full/CONFIG_FULL_CATALOG.csv` — all 75 Config tables.
+- `database/config_full/CONFIG_FULL_MANIFEST.csv` — generated fallback file inventory.
+- `tools/materialize_tool_data.py` — specialized generator.
+- `tools/materialize_all_config.py` — all-table fallback generator.
 
-## Priority 1 — Skills semantic stack
+## Closed priority 1 — Skills semantic stack
 
-### `Skills` — 2,091 rows
+Now materialized:
 
-Already known high-value fields include:
+- Skills 2,091
+- SkillProperties 2,044
+- AutoSkills 300
+- Factions 17
+- Books 128
+- BookLevelUpCost 9
+- MagicAttributes 509.
 
-`ID, Name, Type, Style, FactionID, BookID, CanDirectlyStudy, RequireLevel, RequireWeapon, IsDamageSkill, TargetType, CastRange, AttackRadius, ProgressTime, CooldownGroup, AnimationDuration, MissileSpeed, MissileCount, FixedHitRate, FixedCritRate, Property, Tag, Icon, ActionID, ShortDescription, Description`.
+Preferred directory:
 
-Future normalized lookup should support:
+`database/static/skills/`
 
-- skill by ID/name;
-- faction -> skill list;
-- support-vs-damage filtering;
-- target type (`Self`, `SelfAndAlly`, `PeacePlayer`, `Enemy`, etc.);
-- cast range / progress / cooldown grouping;
-- weapon requirement;
-- skill -> property join.
+Magic dictionary:
 
-Do not infer current ownership/readiness from static rows. Runtime `GetAbilities`, `CanUseSkill`, `GetSkillCooldown` remains authoritative.
+`database/static/magic/MAGIC_ATTRIBUTES.csv`
 
-### `SkillProperties` — 2,044 rows
+Use runtime `GetAbilities`, cooldown/target/range state for current action legality.
 
-This is one of the most valuable still-underused tables because the main `Skills` row often points to a property definition rather than fully explaining all effects.
+## Closed priority 2 — Item/equipment policy stack
 
-Extraction goal:
+Now materialized:
 
-```text
-PropertyID / key
-all direct scalar attributes
-all nested effect/property references
-all MagicAttribute symbols
-conditional/target-related fields
-```
+- Items 5,238
+- Equips 22,763
+- Medicines 692
+- Gems 1,154
+- tool-first keep/sell/drop indexes and full chunks.
 
-Future AI should be able to answer:
+Preferred directories:
 
-```text
-SkillID
- -> Skills.Property
- -> SkillProperties
- -> MagicAtrributes.Description
-```
+- `database/static/items/`
+- `database/static/equips/`
 
-without rereading XML.
+The static Weapon rule remains `EquipPoint == 0`.
 
-### `AutoSkills` — 300 rows
+Equipment support tables not promoted into a specialized tool-first file are still available under `database/config_full/<Table>/`.
 
-Verified catalog semantics: activation type/value/cooldown/SkillIDs.
+## Closed priority 3 — Tasks / gathering / activities
 
-Likely high build value:
+Now materialized in specialized form:
 
-- understand shipped automatic-skill triggers;
-- distinguish low-HP / timing / state-driven automatic behavior;
-- recover reusable policy without reproducing UI automation.
+- Tasks 516
+- Task objectives 591 normalized rows
+- GrowPoints 407
+- GuildTask 360
+- Activities 45.
 
-Required normalized columns should preserve every activation/condition field verbatim because enum meaning may need later cross-reference.
+Preferred directory:
 
-Do not rename numeric activation types into human semantics unless Lua/Config cross-check proves the mapping.
+`database/static/tasks/`
 
-### `Factions` — 17 rows
+Other reward/activity tables are available through `database/config_full/`.
 
-Verified catalog semantics include Books/F1/InitQuickSkills.
+## Closed priority 4 — Pet / Spirit template intelligence
 
-Normalize at minimum:
+Now materialized:
 
-```text
-FactionID
-Name if present
-Book references
-F1/default skill references
-initial quick-skill references
-all unrecognized fields preserved
-```
+- Pets 8,349
+- Spirits 1,889
+- PetFeatures
+- PetEquips
+- PetEquipSets
+- SpiritFeatures.
 
-This can make faction-specific skill setup and Nga My/support discovery much easier.
+Preferred directory:
 
-### `Books` — 128 rows / `BookLevelUpCost` — 9 rows
+`database/static/pets/`
 
-Join chain:
+## Closed priority 5 — lower-frequency Config domains
 
-```text
-Faction -> Book -> Skill(s) -> Level/Cost
-```
+The earlier document treated guild, role progression, appearance, titles, reputation, mounts and similar tables as future extraction candidates.
 
-Useful for skill progression and explaining why a skill exists but is not yet available.
-
----
-
-## Priority 2 — Item/equipment policy stack
-
-### `Items` — 5,238 rows
-
-Normalized schema is already documented. GitHub should eventually contain queryable chunks/indexes for:
-
-- sellable/throwable;
-- stack size;
-- price;
-- required level;
-- script/medicine/equipment/gem identity;
-- descriptions/search text.
-
-For Auto Sell, static `Sellable=true` is a candidate-policy input only. Runtime `Game.IsItemSellable(ItemID)` and live instance state remain the final guard.
-
-### `Equips` — 22,763 rows
-
-Critical preserved truth:
-
-`EquipPoint == 0` = Weapon.
-
-Do not simplify weapon classification to `Type < 10` because additional weapon subtypes exist.
-
-Useful query indexes:
+They no longer require new extraction work. The all-table fallback now provides every recovered Config table under:
 
 ```text
-ID -> Name/Type/EquipPoint/Level/Faction/Star/SellPrice
-Faction + EquipPoint + level range
-IsWeaponPosition
-SetID
-BuffID
-BaseAttributes symbols
+database/config_full/<Table>/ROWS_*.csv
 ```
 
-### `Medicines` — 692 rows
+Start with:
 
-This table deserves its own normalized database because medicine/recovery behavior is a common automation feature.
+`database/config_full/CONFIG_FULL_CATALOG.csv`
 
-Verified high-level fields from catalog: medicine price/level/stack/sellability.
+The catalog records table name, source XML, row count, direct attribute names, nested-child presence, maximum depth and chunk files.
 
-Extraction should preserve:
+## Closed priority 6 — PC/client Config semantics
 
-- medicine/template ID;
-- name;
-- level/requirement;
-- stack;
-- price/sellability;
-- all effect/script references;
-- all timing/cooldown/use-condition fields if present.
+`PCInputKeyBinding` is materialized as:
 
-Then join with `Items` and runtime bag instances.
+`database/PC_INPUT_KEY_BINDINGS.csv`
 
-### Equipment support tables
+The generic source row is also available in `database/config_full/PCInputKeyBinding/`.
 
-Normalize when equipment intelligence becomes a feature:
+For hidden-click/InputSync implementation, Config key bindings are not the canonical action layer. Use:
 
-- `EquipSets` — 272
-- `EquipEnhance` — 99
-- `EquipIdentifyValues` — 256
-- `EquipExtendedAttributes` — 29
+- `analysis/43_INPUT_SYNC_EXACT_SIGNATURES_AND_UI_LIFECYCLE.md`
+- `database/PC_INPUTSYNC_METHODS.csv`.
 
-These can support smarter keep/sell decisions, but only after the basic Item/Equip index exists.
+## All-75 structural preservation rule
 
----
+`tools/materialize_all_config.py` recovers exactly 75 Config XML TextAssets and stores every top-level row with:
 
-## Priority 3 — Tasks / gathering / activities
+- original direct attribute names/values as explicit CSV columns;
+- row tag/index;
+- recursive `ChildrenJSON` preserving nested tags, attributes and any non-whitespace text;
+- root metadata in `CONFIG_FULL_CATALOG.csv`.
 
-### `Tasks` — 516 rows
+In the current snapshot the catalog reports no non-whitespace XML text nodes outside attributes/child structure, so the fallback preserves the Config semantic tree without requiring another Unity bundle parse.
 
-Verified catalog semantics:
+This is a fallback, not a mandatory context pack. Tool-first specialized indexes remain preferred because they are smaller and have useful joins/derived fields.
 
-`task ID/type/rule/dialog/next/requirements`.
+## What remains genuinely underexplored
 
-The shipped client already has structured Auto Quest logic. A normalized task DB can make task automation explainable instead of opaque.
+Only investigate further when a real feature needs runtime/server truth not frozen in Config, for example:
 
-Recommended schema preserves:
+- dynamic GameDialog selection IDs;
+- current NPC shop IDs/session state;
+- server acceptance/rejection of a cast/trade/dungeon action;
+- live actor existence/position/death/buffs;
+- external MainThread bridge integration.
 
-```text
-TaskID
-Name/title if present
-TaskType
-requirements
-pre/next task references
-NPC/object/monster/item parameters
-map/destination references
-dialog text/references
-reward references
-all raw parameter arrays/strings
-```
+See `research/TODO.md` and `research/AUTO_RUNTIME_PROOF_QUEUE.md`.
 
-Do not discard “unknown” parameter columns; many task engines encode type-specific semantics positionally.
+## Hard rule
 
-### `GrowPoints` — 407 rows
-
-Verified semantics: gather point / life skill / quest requirements.
-
-Useful joins:
-
-```text
-Task objective
- -> GrowPoint template
- -> nearby world object
- -> path / click object
-```
-
-Potential tool features:
-
-- gather-object identification;
-- life-skill target filters;
-- quest objective explanation.
-
-### `Activities` — 45 / `DailyActivityAward` — 2
-
-These are useful for activity availability/display timing and reward UI context.
-
-Treat configured duration/visibility as client configuration, not proof that a server event is currently open.
-
-### `GuildTask` — 360
-
-Useful for guild task type/condition/description lookup. Execution still needs actual current task state and exact action semantics.
-
----
-
-## Priority 4 — Pet / Spirit template intelligence
-
-### `Pets` — 8,349 rows
-
-This is one of the largest non-monster tables and can substantially improve future Pet automation/inspection.
-
-Verified catalog semantics:
-
-`pet templates, growth/base stats, skills`.
-
-Recommended normalized fields:
-
-```text
-ID
-Name
-ResName/model
-level/tier/type
-base HP/attack/defense/growth fields
-personality/reborn/savvy references
-skill IDs / skill slots
-visual/avatar fields
-all uncommon raw attributes
-```
-
-Do not assume every row is a player-ownable pet; preserve category/type fields so later AI can separate templates safely.
-
-### `PetFeatures` — 11
-
-Verified semantics: reborn/personality/savvy costs/rates.
-
-This small table should be normalized in full rather than summarized.
-
-### `PetEquips` — 70 / `PetEquipSets` — 13
-
-Useful for pet gear classification, set recognition and future keep/store/sell rules.
-
-### `Spirits` — 1,889 / `SpiritFeatures` — 3
-
-Can join live Spirit state from `analysis/24_PET_SPIRIT_AUTO_RUNTIME.md` to static template/skill capacity/feature progression.
-
----
-
-## Priority 5 — Guild / role progression
-
-### `GuildConfig` — 14
-
-Verified semantics: guild level/skill/donation config.
-
-Small enough that the ideal database is a full normalized table, not prose only.
-
-### `RoleReputes` — 22
-
-Useful for reputation threshold/name/reward interpretation.
-
-### `RoleTitles` — 156
-
-Useful for title group/points/duration and explaining title IDs seen at runtime.
-
-These are useful for management/inspection features but lower priority than combat/inventory/task data.
-
----
-
-## Priority 6 — PC/client semantics
-
-### `PCInputKeyBinding` — 22
-
-This table should be extracted because the snapshot is a Windows client and it can explain:
-
-- default PC hotkeys;
-- which visible UI action a key maps to;
-- why physical F-key behavior differs from semantic skill identity.
-
-But it must be treated as **input presentation**, not the preferred automation action layer.
-
-### `LoginMaps` — 4
-
-Useful only for login/create/select-role scene understanding.
-
----
-
-## Index-first storage design
-
-Large datasets should not be dumped into one giant AI document.
-
-Recommended pattern:
-
-```text
-database/static/skills/SKILL_INDEX.csv
-database/static/skills/SKILLS_0001_0500.csv
-...
-
-database/static/pets/PET_INDEX.csv
-database/static/pets/PETS_0001_1000.csv
-...
-```
-
-Index rows should contain only high-search-value columns plus a `Chunk` field.
-
-Example Skill index:
-
-```text
-ID,Name,FactionID,Type,TargetType,RequireLevel,CastRange,Property,Chunk
-```
-
-Example Pet index:
-
-```text
-ID,Name,Type,Level,ResName,PrimarySkillIDs,Chunk
-```
-
-AI locates a record in the small index, then opens exactly one chunk.
-
----
-
-## Preservation rule for unknown columns
-
-When extracting XML, do not throw away fields merely because their meaning is unknown today.
-
-For each table:
-
-1. keep a normalized high-value CSV;
-2. preserve unrecognized scalar attributes in an `ExtraFields` JSON/string column or a lossless raw-row companion;
-3. preserve nested child nodes in a structured flattened representation;
-4. label inferred field semantics separately from exact attribute names.
-
-This prevents future AI from having to decrypt/reparse the bundle again just because one currently-unused attribute becomes important.
-
----
-
-## What not to do next
-
-Do not spend the next phase broadly disassembling UnityPlayer, baselib, LiveKit or graphics libraries.
-
-For tool-building knowledge, the highest remaining value is **normalizing the already-decrypted semantic Config/Lua data**, especially Skills/SkillProperties/AutoSkills, Items/Equips/Medicines, Tasks/GrowPoints and Pets/Spirits.
+**The frozen Config extraction/normalization phase is closed. If a future question concerns a static Config table, search `TOOL_DATA_INDEX` then `config_full` before doing any reverse/decrypt work.**
