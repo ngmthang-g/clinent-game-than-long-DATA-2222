@@ -16,6 +16,7 @@ Before opening broad analysis, use these when useful:
 - `database/AUTO_TOOL_API_CATALOG.md` — auto-only state/query API catalog.
 - `database/AUTO_TOOL_ACTION_CATALOG.md` — **exact semantic mutable actions**, packet IDs/payloads and result-proof rules.
 - `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md` — per-feature `state -> guard -> one action -> proof -> failure/rescan` matrix.
+- `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md` — exact static anchors for PC multi-instance InputSync, `TryClickUI`, UIButton and UI drag-state resolution; use for hidden-click/sync resolver failures.
 
 These are compact implementation summaries; canonical subsystem documents remain the evidence source when exact provenance or edge cases matter.
 
@@ -24,6 +25,7 @@ These are compact implementation summaries; canonical subsystem documents remain
 | Build/refactor tool architecture, multi-client, state machine, action arbitration | `contexts/BUILD_TOOL_CORE.md` |
 | Read nearby players/entities, local player, target, map objects, bag state | `contexts/BUILD_RUNTIME_SCANNER.md` |
 | Execute semantic actions safely on Unity thread, Action/delegate bridge | `contexts/BUILD_MAINTHREAD_BRIDGE.md` |
+| Hidden internal click / `TryClickUI` / InputSync / press-release-drag-state / multi-instance sync resolver | `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md` |
 | Auto Train / đánh quái / target/chase/skill/loot | `contexts/BUILD_AUTO_TRAIN.md` |
 | Auto Buff / Nga My / nearby-player heal / HP priority | `contexts/BUILD_AUTO_BUFF.md` |
 | Auto Sell / bag full / vendor / item filtering | `contexts/BUILD_AUTO_SELL.md` |
@@ -103,6 +105,17 @@ invite target -> CMD_OTHER_ROLE_COMMAND 200051 -> 5:targetRoleID
 
 Membership success still requires fresh TeamID/C_TeamData proof.
 
+### Hidden click / InputSync / multi-instance sync
+
+Start with:
+
+- `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md`
+- `analysis/07_SUPPORT_MODULES_LAUNCHER.md` only when launcher/session control is part of the problem.
+
+Verified static anchors include `SyncBootstrap.AutoInit`, `InputSyncManager`, `TryClickUI`, `FramePressState`, UI drag-state helpers, `UIButton.HandleClickEvent`, instance/master/group/UDP evidence and official record/playback components.
+
+Do **not** invent method signatures from string names. For a machine-specific failure, verify snapshot hashes and separate resolver/init/PID/window/Screen/UI-drag-state causes before blaming a different game build or CPU model.
+
 ### Feature is statically solved but one live behavior is missing
 
 Read:
@@ -150,7 +163,7 @@ Unless a concrete auto feature depends on them, do not spend context/research on
 
 - cosmetics/fashion/appearance/FX;
 - voice/LiveKit;
-- launcher/update internals;
+- launcher/update internals except when diagnosing the documented PC InputSync/launcher-control path;
 - D3D/rendering/baselib;
 - decorative UI assets;
 - guild/title/reputation systems;
@@ -179,6 +192,16 @@ Read:
 4. `contexts/BUILD_TOOL_CORE.md` only if action queue/state ownership is also broken.
 
 Do not restart GameAssembly-wide reverse.
+
+### “Fix hidden click / InputSync resolver failure on another PC”
+
+Read:
+
+1. `CLIENT_MANIFEST.md` for exact snapshot hashes;
+2. `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md`;
+3. `analysis/07_SUPPORT_MODULES_LAUNCHER.md` only if launcher master/group/session state is relevant.
+
+Do not assume Xeon/CPU or a different client binary before checking the hash, resolver, startup timing, PID, window/Screen and drag-state evidence.
 
 ### “Find NPC ID and make character walk to it”
 
