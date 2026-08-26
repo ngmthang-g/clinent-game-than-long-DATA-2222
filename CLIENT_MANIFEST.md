@@ -59,7 +59,46 @@ Repo này không được dùng như nơi cập nhật client liên tục. Chủ
 
 Các `.dll/.exe/.dat` lớn được Git LFS quản lý. GitHub Contents API có thể trả pointer text ~130 bytes thay vì original binary. Không phân tích LFS pointer như thể đó là DLL thật.
 
-Original bytes của archive nghiên cứu đã được đối chiếu với LFS object ID của `GameAssembly.dll` và `global-metadata.dat`, nên deep-analysis docs hiện tại thuộc đúng snapshot này.
+Original bytes của archive nghiên cứu đã được đối chiếu với LFS object ID của `GameAssembly.dll`, `global-metadata.dat`, và `FGClientTool_Windows.dll`; cả ba đều exact-match. Deep-analysis docs hiện tại thuộc đúng snapshot này.
+
+## Audit bổ sung 2026-08-26
+
+Multipart archive do chủ sở hữu cung cấp đã được reconstruct và CRC-test toàn bộ:
+
+- 77 ZIP entries;
+- 64 regular files;
+- 13 directories;
+- 223,017,995 uncompressed file bytes;
+- không có CRC-bad entry;
+- SHA-256 manifest cho toàn bộ 64 file nằm ở `database/CLIENT_FILE_MANIFEST_SHA256.csv`.
+
+Canonical audit:
+
+- `analysis/36_ARCHIVE_BYTE_AUDIT_2026-08-26.md`
+
+PC sync / hidden UI input evidence mới từ original `global-metadata.dat`:
+
+- `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md`
+
+Audit phân biệt rõ hai trường hợp:
+
+1. **path có trong repo nhưng GitHub API chỉ hiện LFS pointer** — không gọi là missing file;
+2. **path thật sự không tồn tại trong repo** — archive audit hiện chỉ xác định 11 screenshot mới từ 2026-08-17 đến 2026-08-24 so với `Game/Screenshots` tại thời điểm audit. Đây là visual evidence, không phải thiếu core gameplay/runtime binary.
+
+Expected primary snapshot hashes:
+
+```text
+GameAssembly.dll
+4c98c9934bc4260efa64f5492c58e0c5104c89359f0126e7cd402feb381fe3c7
+
+global-metadata.dat
+d199498dad7d3139e4c09f6742f4645bfc2a33c465e3d259196931199f6ee6a8
+
+FGClientTool_Windows.dll
+cab5148fa70ae231e7245d62d8448b7881c16ed64bd8c84558f68e21d6ecd9a0
+```
+
+Nếu các primary hashes này khớp, đừng mặc định một lỗi resolver/runtime là do client khác version. Ưu tiên kiểm tra semantic resolver, init timing, PID/session, window/Screen/UI state và stale pointers trước.
 
 ## Không cần làm lại
 
