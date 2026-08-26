@@ -1,235 +1,278 @@
-# Research TODO — automation-tool-focused knowledge base
+# Research TODO — current automation-tool gaps only
 
-> Main goal: turn this frozen client into a reusable **AI-readable knowledge base for building the Thần Long auto tool**. Do not expand unrelated client knowledge unless it materially improves an automation feature.
+Status updated after the 2026-08-26 full tool-data materialization.
 
-Read `AUTO_TOOL_SCOPE.md` and `AUTO_FEATURE_READINESS.md` before adding new research.
+Main goal: future AI should build the **Thần Long automation tool** from the frozen knowledge base and **not repeat client reverse/extraction that is already solved**.
 
-General architecture, bundle decrypt, Config/Interface extraction, major Lua/UI/runtime semantics, core packet/action discovery and MainThread native internals are DONE.
+Read first:
 
-**Do not broad reverse the client from zero.**
+- `AUTO_TOOL_SCOPE.md`
+- `AI_ROUTER.md`
+- `database/TOOL_DATA_INDEX.md`
+- `research/AUTO_RUNTIME_PROOF_QUEUE.md`.
 
----
+## Closed foundation work — do not redo
 
-# DONE — auto-tool foundation knowledge
+The following are DONE for the frozen client snapshot:
 
-- [x] Unity x64 + IL2CPP architecture / metadata v39.
-- [x] LuaSystemManager / SharedData / Game / GUI / Network bridges.
-- [x] semantic nearby-player/enemy/target state.
-- [x] map readiness / movement / GoTo / NPC navigation semantics.
-- [x] built-in Auto Train semantic start/stop and combat engine donor.
-- [x] skill cooldown / QuickSkill semantics.
-- [x] local buff BuffID/DurationTick/Stack.
-- [x] bag/item structured runtime state.
-- [x] exact NPC shop sell request and server-driven bag update lifecycle.
-- [x] revive / Đầu thai exact packet/value semantics + server Revival lifecycle/countdown.
-- [x] dynamic GameDialog selection mechanism.
-- [x] team/follow runtime schema + exact leave-team request.
-- [x] exact selected-player join-team request: `CMD_OTHER_ROLE_COMMAND=200051`, payload `9:targetRoleID`.
-- [x] storage move semantics.
-- [x] loot / ItemPack semantic engine.
-- [x] NPC/map/AutoPath databases.
-- [x] MainThread queue/Update/Action.Invoke internals.
-- [x] AI routing / context packs / atomic facts / anti-overread layer.
-- [x] compact automation API catalog: `database/AUTO_TOOL_API_CATALOG.md`.
-- [x] feature state/action/proof contract: `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md`.
-- [x] runtime per-PID immutable snapshot contract: `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md`.
-- [x] compact Auto Sell classification/policy contract: `database/AUTO_SELL_CLASSIFICATION.md`.
-- [x] solved-vs-gap matrix: `AUTO_FEATURE_READINESS.md`.
+- Unity x64 / IL2CPP metadata architecture.
+- LuaSystem / Game / GUI / Network semantic bridge discovery.
+- Config/Interface custom transform decode and extraction.
+- 75 Config XML table recovery.
+- Lua/UI callback cataloging and major automation flow tracing.
+- map/NPC/AutoPath databases.
+- runtime nearby-player/enemy/target/bag/buff/team/map schemas.
+- semantic Train start/stop, target/chase/skill/loot donor.
+- Auto Buff/Nga My core identities and action guards.
+- exact Sell request and server-driven inventory update lifecycle.
+- exact item Use/Abandon/Move/Split/Destroy semantics where documented.
+- Revive/Đầu thai packet/type semantics.
+- dynamic GameDialog architecture.
+- Team leave/join/invite/follow semantics.
+- Trade/dồn đồ invitation/session/actions and 9-slot capacity semantics.
+- FuBen scenario/action/Boss flow and control packet semantics.
+- AutoPK modes/target flow/retaliation semantics.
+- Pet/Spirit runtime donor.
+- MainThread queue/Update/Action.Invoke static internals.
+- InputSync/TryClickUI/press-release-drag-state static anchors.
+- per-PID runtime snapshot/action arbitration architecture.
 
----
+## Static Config data is now materialized — not a TODO
 
-# P0 — knowledge directly needed by the auto tool
+The previous P1 task to normalize Items/Equips/Skills/Monsters/Tasks/Pets/Spirits is CLOSED.
 
-## P0.1 Runtime scanner contracts
+Canonical generated-data manifest:
 
-Reusable external snapshot schemas are documented in `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md` and routed through `contexts/BUILD_RUNTIME_SCANNER.md`.
+`database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv`
 
-Completed:
+Canonical lookup router:
 
-- [x] local RoleData + busy/progress/map/selected-target snapshot contract.
-- [x] nearby PeacePlayer exact proven fields and explicit boundary around unproven generic Position/death.
-- [x] Train-target exact proven fields: `Type, IsDeath, RoleID, ResID, Position`.
-- [x] selected-target identity/type/HPPercent schema.
-- [x] map readiness/current position/movement-destination contract.
-- [x] bag free-space + live item identity/versioning contract.
-- [x] local buff + cooldown normalized snapshots.
-- [x] team HP/map/backup-position + nearby precise-position contract.
-- [x] GameDialog/NPCShop/Revival transaction snapshots.
-- [x] per-PID snapshot version and tool-owned world-generation invalidation model.
+`database/TOOL_DATA_INDEX.md`
 
-Only targeted gaps remain:
+Materialized on `main` includes:
 
-- [ ] arbitrary non-team PeacePlayer Position/death only if the chosen Auto Buff implementation actually needs it.
-- [ ] exact live HP/MaxHP for every unselected nearby monster only if a future Train policy requires absolute values.
-- [ ] richer arbitrary-target BuffID/duration list only if target buff icons + cast/HP proof are insufficient.
+- Monsters **17,121**; Boss templates **3,579**; grouped Boss names **578**.
+- Equips **22,763**; Weapon-position templates **4,685**.
+- Items **5,238**; Medicines **692**; Gems **1,154**.
+- Skills **2,091**; SkillProperties **2,044**; AutoSkills **300**; MagicAttributes **509**.
+- Tasks **516**; normalized objective rows **591**; GrowPoints **407**; GuildTasks **360**; Activities **45**.
+- Pets **8,349**; Spirits **1,889**.
+- FuBen **19 scenarios / 268 actions / 72 Kill actions** plus level-banded target mapping.
+- PC input bindings **22**.
 
-Do not map extra actor fields merely for completeness.
+Generator:
 
-## P0.2 Auto Train knowledge
+`tools/materialize_tool_data.py`
 
-- [x] `C_AutoModel.Train=1` and semantic StartAutoFight path.
-- [ ] capture any exact runtime flag/state needed by the external tool to distinguish Train running/stopped **only if** existing service/orchestrator ownership is insufficient during implementation.
-- [x] target selection/range/chase/skill semantic fields and action donor documented.
-- [x] train-center/radius settings documented: `IsTrainInRanger`, `RangerScan` default 500, `GiveUpMonsterOutRanger`, whitelist/lure/skill settings.
-- [x] stop/yield -> delegated feature -> map/position proof -> resume contract documented for Sell/Revive/Travel.
-- [x] adaptive spot-switch input model documented: rolling deaths, loot events/value, bag pressure, idle/target availability, travel/return proof.
+Workflow:
 
-## P0.3 Auto Buff / Nga My
+`.github/workflows/materialize-tool-data.yml`
 
-- [x] nearby PeacePlayer schema.
-- [x] key Nga My skill IDs and corrected identity.
-- [x] cooldown and local buff semantics.
-- [ ] verify non-team beneficial-skill acceptance per important skill/relationship actually used by the tool.
-- [x] target range/eligibility/chase/cast state guards used by the built-in support donor documented.
-- [x] success-proof contract documented: HP/buff/cooldown/progress + fresh rescan.
-- [x] production priority policy fields documented: HP%, MaxHP priority, RoleID/name/guild/faction/level filters, existing buff, range, target freshness/death.
-
-## P0.4 Auto Sell / inventory policy
-
-- [x] free bag-space semantic source.
-- [x] item instance/template/site/slot distinction.
-- [x] sell packet + exact payload.
-- [x] server-driven one-mutation -> wait -> rescan rule.
-- [x] compact classification/policy fields documented in `database/AUTO_SELL_CLASSIFICATION.md`:
-  - item name/type;
-  - sellable/throwable;
-  - equipment slot/type;
-  - level/star/value/bound-related fields;
-  - protected quest range;
-  - exact Weapon rule `EquipPoint==0`.
-- [ ] materialize targeted static Item/Equip rows/indexes only if the user's richer keep/sell policy needs data not available from runtime APIs/current compact schema.
-- [ ] promote/verify vendor candidates needed by the actual configured Train maps; do not map every merchant in the game unnecessarily.
-- [x] NPCShop-ready guard and sell completion proof documented.
-- [x] return-to-saved-Train map/position proof + resume contract documented.
-
-Do **not** normalize every cosmetic/equipment field merely because `Equips` has 22,763 rows.
-
-## P0.5 NPC Trị liệu
-
-- [x] NPC 339 Đỗ Thanh Đằng / Lâu Lan static identity.
-- [x] dynamic GameDialog mechanism.
-- [ ] capture actual healer dialog selections at runtime.
-- [ ] identify Trị liệu text + current selectionID.
-- [ ] record any confirmation step.
-- [ ] prove result by HP/money/dialog state.
-- [ ] repeat on additional maps only if Auto Heal needs multi-map service routing.
-
-## P0.6 Revive / death recovery
-
-- [x] exact revive packet/type values.
-- [x] server Revival state fields `TimeLeft`, newbie/skill availability and open/update/close lifecycle documented.
-- [x] death -> choose revive policy -> one action -> Revival close -> alive/spawn/map-ready proof documented.
-- [x] safe resume rule documented: do not resume Train until alive + map-ready + valid position.
-- [x] saved Train map/position + semantic GoTo return path documented.
-
-## P0.7 Party / follow / multi-client orchestration
-
-- [x] structured team member fields and Follow donor.
-- [x] exact leave-team action: `CMD_TEAM_ACTION`, payload `4:selfRoleID`.
-- [x] exact request-to-join selected target's team: `CMD_OTHER_ROLE_COMMAND=200051`, `TeamRequestJoin=9`, payload `9:targetRoleID`.
-- [x] exact invite-selected-target route: `CMD_OTHER_ROLE_COMMAND=200051`, `TeamInviter=5`, payload `5:targetRoleID`.
-- [x] server acceptance proof rule: request sent is not success; wait `Game.RoleData.TeamID` / `C_TeamData` update.
-- [x] per-PID independent snapshot/state/action ownership design documented.
-- [x] priority arbitration between Revive, map transition, survival, Heal/Buff, Sell, Party, Train, Loot and spot optimization documented.
-- [x] adaptive train-spot rotation policy inputs/outputs documented.
-
-No broad party reverse remains. Only runtime integration/anti-spam behavior belongs to implementation.
-
-## P0.8 MainThread / action boundary
-
-Static dispatcher knowledge is DONE and retained.
-
-Remaining live proof is implementation work:
-
-- [ ] construct/root one valid external managed `System.Action`, enqueue through `MainThread.Execute`, and observe the harmless callback state transition.
-
-Record new client-side facts here only if they are reusable across multiple auto features.
-
-Do not spend general research time re-proving the dispatcher internals.
+If the frozen `Config.unity3d` changes, regenerate/compare through the pipeline. Do not manually rediscover schemas or rerun broad reverse work.
 
 ---
 
-# P1 — static database expansion only where auto needs it
+# P0 — one production integration proof
 
-## Skills / combat-support subset
+## External managed Action -> MainThread callback
 
-Prioritize fields required for Auto Train/Buff:
-
-- SkillID / Name
-- FactionID
-- target type
-- cast range
-- cooldown/group
-- weapon/state requirements
-- relevant SkillProperties / MagicAttributes
-- AutoSkills relations when they explain built-in auto behavior.
-
-No need to fully model progression/book economy unless an auto feature uses it.
-
-## Items / equipment subset
-
-The compact Auto Sell policy schema is already documented. Materialize actual rows only when a concrete user policy requires specific template lookups beyond runtime `GetItemType/GetEquipType/IsItemSellable`.
-
-## Monsters / maps / NPC subset
-
-Prioritize only:
-
-- train target identity;
-- boss/monster filtering;
-- map/NPC service routing;
-- return paths / portal topology if `Game.GoTo` needs support.
-
-Do not normalize 17,121 monster rows into mandatory AI context; use compact index + chunks/lookup if needed.
-
----
-
-# P2 — conditional auto features only
-
-Only investigate when explicitly building that feature:
-
-- Auto Quest / Tasks / GrowPoints.
-- Pet/Spirit auto.
-- Storage/Bank automation.
-- medicine auto-use beyond current needs.
-- offline route planner if stock `Game.GoTo` becomes insufficient.
-- combat telemetry only when it improves decisions such as death rate, kill rate or spot switching.
-
----
-
-# Normally ignore
-
-Unless a concrete auto feature directly depends on them:
-
-- cosmetics/fashion/wings/appearance/model tables;
-- visual FX/audio tables;
-- LiveKit/voice;
-- launcher/update/record-playback internals;
-- D3D/rendering/baselib;
-- crash handler internals;
-- decorative UI resources;
-- guild/reputation/title systems;
-- exhaustive Translations or `data.unity3d` extraction with no automation use.
-
----
-
-# Knowledge format for every new auto discovery
-
-Prefer this compact contract:
+Static dispatcher architecture is solved:
 
 ```text
-Feature/subsystem
-State source
-Exact fields / IDs
-Guard conditions
-Semantic action
-Expected result / server event
-Failure / timeout / retry rule
-Evidence status
-Canonical source
+MainThread.Execute(System.Action)
+ -> ConcurrentQueue<Action>
+ -> Unity Update
+ -> DoExecuteWorks
+ -> Action.Invoke
 ```
 
-Every discovery should make a future build task **smaller**, not make the repository more encyclopedic.
+What remains is production-tool integration proof only:
 
-# Core rule
+```text
+external tool constructs + roots one valid managed Action
+ -> enqueue through MainThread.Execute
+ -> next Unity Update invokes callback
+ -> tool observes a harmless known state transition
+```
 
-If a piece of research does not help the tool **observe, decide, move, target, cast, interact, sell/store/loot, revive/heal/buff, coordinate clients, or verify success**, defer it.
+This is not a reason to reverse MainThread again.
+
+Debug only delegate construction/rooting/lifetime/resolver/thread-boundary if the proof fails.
+
+Canonical docs:
+
+- `analysis/21_MAIN_THREAD_DISPATCHER.md`
+- `analysis/29_MAINTHREAD_NETWORK_PRODUCER_DONORS.md`
+- `analysis/30_EXTERNAL_ACTION_BRIDGE_BLUEPRINT.md`
+- `contracts/MAINTHREAD_BRIDGE_V1.md`.
+
+---
+
+# P1 — runtime/server proofs for important features
+
+## Nga My beneficial skill acceptance outside team
+
+Already solved:
+
+- nearby PeacePlayer RoleID/HP/MaxHP/name/faction/guild;
+- skill IDs/static properties/range/cooldown semantics;
+- select/chase/cast action path.
+
+Still server-authoritative:
+
+- acceptance for the exact production skill when target is same team;
+- same guild but not team;
+- unrelated peaceful player;
+- self where applicable.
+
+Proof requires one real cast and fresh HP/buff/cooldown/progress result.
+
+Do not infer server acceptance solely from static TargetType.
+
+## NPC Trị liệu dynamic dialog
+
+Static NPC identity and GameDialog mechanism are solved.
+
+Still live/server-dependent:
+
+```text
+current NPC interaction
+ -> current GameDialog.Selections
+ -> exact visible Trị liệu/service text
+ -> current selectionID
+ -> possible confirmation dialog
+ -> HP/money/dialog result
+```
+
+SelectionID is dynamic session/dialog state, not a frozen global Config constant.
+
+## Auto Sell vendor promotion for configured maps
+
+Static NPC candidates, navigation and exact sell request are solved.
+
+For each vendor actually used by production:
+
+```text
+GoToNPC
+ -> current service/dialog selection
+ -> CMD_NPC_SHOP_DATA
+ -> fresh NpcShopID + ShopID + IsGuildShop
+ -> optional one safe test sale
+ -> RemoveItem/bag/money proof
+```
+
+Do not hardcode observed `NpcShopID/ShopID` as eternal constants without stability evidence.
+
+## FuBen server acceptance / dynamic lifecycle
+
+Static scenario/action/Boss data is now complete for the frozen Config and shipped Lua flow is traced.
+
+Only capture additional live proof if a concrete scenario fails in production, for example:
+
+- current matchmaking rejection reason;
+- current dynamic GameDialog selection change;
+- current server entry condition not represented in the frozen Config;
+- current completion/reward transition.
+
+Do not rediscover all 19 scenario routes because one server condition changed.
+
+## Trade/dồn đồ production session proof
+
+Protocol/session semantics are solved.
+
+Only implementation/live proof remains when production tool uses the semantic path:
+
+```text
+request by MAIN RoleID
+ -> active ExchangeID
+ -> add current live instances
+ -> verify ItemsTrade
+ -> both locks
+ -> Done
+ -> session close
+ -> fresh MAIN/CON bags
+```
+
+A completed click macro or elapsed time is not proof of successful transfer.
+
+---
+
+# P2 — optional richer runtime observations
+
+Investigate only when a concrete policy truly needs them.
+
+## Arbitrary non-team PeacePlayer Position/death
+
+Current PeacePlayer list already provides identity/HP/MaxHP and target/chase APIs can often handle range/navigation.
+
+Only map exact Position/death if the chosen Auto Buff policy cannot work reliably without it.
+
+## Absolute HP/MaxHP for every unselected nearby monster
+
+Basic Train/FuBen target selection does not require this because runtime target identity/death/Position and selected-target HP state are already sufficient.
+
+Only prove it for a concrete boss-health/lowest-HP telemetry policy.
+
+## Rich BuffID/duration for arbitrary targets
+
+Local buffs are structured. Other-target buff proof may be handled by buff icons/cast cooldown/HP change.
+
+Only pursue a richer arbitrary-target buff list if production recast suppression cannot be made reliable otherwise.
+
+## Translations
+
+`Translations.unity3d` has been decoded to valid UnityFS, but a full localization key/value DB is not currently necessary for normal tool work.
+
+Extract/index it only if dynamic dialog/UI matching hits a real localization ambiguity that Config + Interface + live text cannot solve.
+
+## data.unity3d / scene assets
+
+Do not broad-extract the ~47 MB `data.unity3d` bundle.
+
+Open it only for a concrete missing scene/path/prefab/resource question that cannot be answered by:
+
+- `Game.GoTo` / runtime path APIs;
+- Maps/NPC/AutoPath database;
+- Config/Interface semantics.
+
+---
+
+# What is implementation work, not research
+
+The following should normally be solved in the actual tool source rather than adding new reverse-engineering documents:
+
+- state-machine bugs;
+- stale snapshot/instance IDs;
+- retry/timeout/arbitration policies;
+- UI layout of the external tool;
+- persistent settings;
+- multi-PID scheduler behavior;
+- Telegram reporting;
+- licensing/update/security of the external tool;
+- feature-specific production policy such as which items to keep or which map to prioritize.
+
+Use the existing DATA to implement these; add new client facts only when the client/server contract itself was previously unknown.
+
+---
+
+# Evidence recording rule
+
+Any new runtime proof should record:
+
+```text
+client snapshot/hash
+feature
+pre-state
+exact IDs/action/payload
+observed event/state sequence
+final state
+PASS / FAIL / PARTIAL
+what it proves
+what it does NOT prove
+```
+
+Then update the canonical feature doc and `AUTO_FEATURE_READINESS.md` / `AUTO_RUNTIME_PROOF_QUEUE.md` as appropriate.
+
+## Hard rule
+
+**If `database/TOOL_DATA_INDEX.md`, the action/API catalogs, and the canonical feature analysis already answer the question, do not reverse/decrypt the client again.**
