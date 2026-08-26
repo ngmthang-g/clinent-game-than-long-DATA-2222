@@ -1,278 +1,260 @@
 # Tool Data Index — canonical machine-readable lookup map
 
-Status: **CURRENT for frozen client snapshot materialized on 2026-08-26.**
+Status: **CURRENT / CLOSED STATIC FOUNDATION for the frozen client snapshot.**
 
-Purpose: future AI/tool work should resolve static identity from this database first and should **not decrypt/reverse the client again** for data already present here.
+Purpose: future AI/tool work must resolve frozen static identity from this repository before considering any new reverse/decrypt work.
 
-## Core rule
+## Core lookup rule
 
 ```text
 feature/question
- -> smallest domain index below
+ -> specialized tool-first index below
  -> exact row/chunk only
- -> canonical analysis for semantics
- -> fresh runtime/server state for mutable actions
+ -> canonical feature analysis for semantics
+ -> database/config_full only if a specialized layer lacks the field/table
+ -> fresh runtime/server state for mutable/current truth
 ```
 
-Static Config answers what a template/configured route **is**. Runtime/server state answers what currently exists, is spawned, is accepted, and whether an action succeeded.
+Do not load large domains wholesale into context.
 
-## Materialization source and reproducibility
+## Reproducibility
 
-Authoritative source snapshot:
+Authoritative source:
 
 `Game/Thần Long  Mobile_Data/StreamingAssets/Config.unity3d`
 
-Reproducible generator:
+Specialized generator:
 
 `tools/materialize_tool_data.py`
 
-Automation workflow:
+All-75-table fallback generator:
+
+`tools/materialize_all_config.py`
+
+Workflow:
 
 `.github/workflows/materialize-tool-data.yml`
 
-Generation manifest:
+Manifests/catalogs:
 
-`database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv`
+- `TOOL_DATA_MATERIALIZATION_MANIFEST.csv`
+- `config_full/CONFIG_FULL_CATALOG.csv`
+- `config_full/CONFIG_FULL_MANIFEST.csv`.
 
-The pipeline performs:
-
-```text
-FG transform decode
- -> UnityFS extraction
- -> 75 Config XML TextAssets
- -> normalized/query-oriented CSV database
-```
-
-It was validated both locally and in GitHub Actions. Do not manually edit generated CSV rows unless fixing the generator/source interpretation.
+The all-Config workflow fails closed unless exactly **75 Config XML tables** are recovered.
 
 ---
 
-## 1. Maps / NPC / travel / portals
+## Maps / NPC / travel / portals
 
 Use:
 
 - `MAPS.csv` — 193 maps.
-- `npcs/NPCS_0001_0200.csv` ... `NPCS_1001_1003.csv` — all 1,003 NPC templates.
-- `autopath_npc/AUTOPATH_NPC_EDGES_*.csv` — 506 NPC-mediated route edges.
-- `AUTOPATH_PORTAL_EDGES.csv` — direct portal graph.
-- `AUTOPATH_ITEM_DESTINATIONS.csv` — item-linked destinations.
-- `NPC_SERVICE_CANDIDATES.md` — service candidate taxonomy; runtime proof still required for dynamic services.
+- `npcs/NPCS_*.csv` — all 1,003 NPC templates.
+- `autopath_npc/AUTOPATH_NPC_EDGES_*.csv` — NPC-mediated routes.
+- `AUTOPATH_PORTAL_EDGES.csv`
+- `AUTOPATH_ITEM_DESTINATIONS.csv`
+- `NPC_SERVICE_CANDIDATES.md`.
 
-Runtime movement authority remains `Game.GoTo`, `Game.GetNPCPosition`, current map readiness and current world objects.
+Runtime movement/service authority remains current `Game.GoTo`, `Game.GetNPCPosition`, live map objects, GameDialog and shop state.
 
----
+## FuBen / dungeon / Boss
 
-## 2. FuBen / dungeon / Boss route
+Directory: `fuben/`
 
-Directory: `database/fuben/`
+Lookup order:
 
-Use in this order:
-
-1. `FUBEN_SCENARIOS.csv` — 19 scenario definitions.
-2. `FUBEN_ENTRY_NPCS.csv` — 19 gather/entry NPC mappings.
-3. `FUBEN_ACTIONS_COMPACT.csv` — all 268 actions with common action fields.
-4. `FUBEN_KILL_TARGETS.csv` — all 72 configured Kill actions with boss evidence.
-5. `FUBEN_BOSS_LEVEL_BANDS.csv` — level-banded MonsterID resolution for FuBen targets.
-6. `actions/FUBEN_ACTIONS_*.csv` — chunked full action rows including less-common/raw attributes.
+1. `FUBEN_SCENARIOS.csv` — 19 scenarios.
+2. `FUBEN_ENTRY_NPCS.csv` — entry/gather NPCs.
+3. `FUBEN_ACTIONS_COMPACT.csv` — all 268 actions.
+4. `FUBEN_KILL_TARGETS.csv` — 72 Kill actions.
+5. `FUBEN_BOSS_LEVEL_BANDS.csv` — level-banded MonsterID resolution.
+6. `actions/FUBEN_ACTIONS_*.csv` — deeper action rows.
 
 Canonical semantics:
 
 - `analysis/38_FUBEN_BOSS_TASK_TOOL_STACK.md`
-- `features/AUTO_FUBEN.md`
+- `features/AUTO_FUBEN.md`.
 
-Important: NPC entry/service actor != combat Boss. Boss identity is resolved through Monster templates and then current spawned runtime actor.
+NPC entry actor != combat Boss.
 
----
+## Monsters / Bosses / Train targeting
 
-## 3. Monsters / Bosses / Auto Train target identity
+Directory: `static/monsters/`
 
-Directory: `database/static/monsters/`
+- `MONSTER_INDEX_*.csv` — **17,121** Monster templates.
+- `BOSS_INDEX_*.csv` — **3,579 exact Type=Boss templates**.
+- `BOSS_NAME_INDEX.csv` — **578 distinct Boss display names**.
 
-All frozen Monster rows are materialized:
+Static template ID/type/name/AI/level is frozen truth. Current spawn/RoleID/position/death is runtime truth.
 
-- `MONSTER_INDEX_00001_02500.csv` ... `MONSTER_INDEX_15001_17121.csv` — **17,121** templates.
-- `BOSS_INDEX_0001_1200.csv` ... `BOSS_INDEX_2401_3579.csv` — **3,579 exact `Type=Boss` templates**.
-- `BOSS_NAME_INDEX.csv` — **578 distinct Boss display names** grouped for fast name lookup.
+## Tasks / quest / gather / activities
 
-High-value fields include:
+Directory: `static/tasks/`
 
-`ID, ResName, Name, Level, Type, MaxHP, Exp, attacks/defenses, MoveSpeed, Skills, AIID, Avarta, Scale`.
+- `TASK_INDEX.csv` — **516** tasks.
+- `TASKS_*.csv` — full task chunks.
+- `TASK_OBJECTIVES.csv` — **591** normalized objectives.
+- `objectives/TASK_OBJECTIVES_*.csv`
+- `GROW_POINTS.csv` — **407**.
+- `GUILD_TASKS.csv` — **360**.
+- `ACTIVITIES.csv` — **45**.
 
-Use static Type/ID for classification; use runtime world state for current spawn, RoleID, Position, death and targetability.
+Canonical runtime semantics: `analysis/23_TASK_QUEST_AUTOMATION.md`.
 
----
+## Items / bag / sell / use / drop / medicine / gems
 
-## 4. Tasks / quests / gather / activities
+Directory: `static/items/`
 
-Directory: `database/static/tasks/`
+- `ITEM_TOOL_INDEX.csv` — all **5,238** Items.
+- `ITEM_INDEX.csv`
+- `ITEMS_*.csv`
+- `ITEM_POLICY_EXCEPTIONS.csv`
+- `ITEM_TYPE_COUNTS.csv`
+- `MEDICINES.csv` — **692**.
+- `GEMS_*.csv` — **1,154**.
 
-- `TASK_INDEX.csv` — all **516** task templates with offer/complete NPC/map joins.
-- `TASKS_0001_0260.csv`, `TASKS_0261_0516.csv` — full task rows with preserved nested structures.
-- `TASK_OBJECTIVES.csv` — **591 normalized objective records**.
-- `objectives/TASK_OBJECTIVES_*.csv` — objective chunks.
-- `GROW_POINTS.csv` — **407** gather/life-skill/quest target records.
-- `GUILD_TASKS.csv` — **360** guild-task records.
-- `ACTIVITIES.csv` — **45** activity records.
-
-Canonical runtime logic:
-
-`analysis/23_TASK_QUEST_AUTOMATION.md`
-
-Do not OCR quest text when template + live `dbTaskData.Parameters` already supply structured semantics.
-
----
-
-## 5. Items / bag / sell / use / drop / medicine / gems
-
-Directory: `database/static/items/`
-
-- `ITEM_TOOL_INDEX.csv` — all **5,238** Items with tool-relevant policy fields.
-- `ITEM_INDEX.csv` — routing/classification index including ID family.
-- `ITEMS_0001_1000.csv` ... `ITEMS_5001_5238.csv` — full Item chunks.
-- `ITEM_POLICY_EXCEPTIONS.csv` — templates requiring extra caution because of sell/throw/bound/script semantics.
-- `ITEM_TYPE_COUNTS.csv` — type distribution.
-- `MEDICINES.csv` — all **692** medicines.
-- `GEMS_0001_0600.csv`, `GEMS_0601_1154.csv` — all **1,154** gems.
-
-Canonical mutable semantics:
+Canonical mutation semantics:
 
 - `analysis/04_INVENTORY_ITEMS_SHOP.md`
 - `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`
 - `analysis/41_BAG_ITEM_USE_DROP_POLICY_STACK.md`
 - `features/AUTO_SELL.md`
-- `features/BAG_ITEM_POLICY.md`
+- `features/BAG_ITEM_POLICY.md`.
 
-Never mutate by template ItemID alone. Live `dbItemData.ID` is the item instance used by Use/Abandon/Destroy/Move/Sell/Trade actions.
+Never mutate by template ItemID alone. Use fresh live item instance ID.
 
----
+## Equipment / weapons
 
-## 6. Equipment / weapon classification
+Directory: `static/equips/`
 
-Directory: `database/static/equips/`
+- `EQUIP_INDEX_*.csv`
+- `EQUIPS_*.csv` — all **22,763** equipment templates.
+- `WEAPON_INDEX.csv` — **4,685** templates where `EquipPoint==0`.
+- `EQUIP_POSITION_TYPE_COUNTS.csv`.
 
-All **22,763** equipment templates are materialized:
+Hard rule: `EquipPoint == 0` is Weapon position. `Type < 10` is not a universal weapon test.
 
-- `EQUIP_INDEX_00001_04000.csv` ... `EQUIP_INDEX_20001_22763.csv` — compact lookup.
-- `EQUIPS_00001_02500.csv` ... `EQUIPS_22501_22763.csv` — deeper chunks with attributes/description.
-- `WEAPON_INDEX.csv` — **4,685** templates with `EquipPoint == 0`.
-- `EQUIP_POSITION_TYPE_COUNTS.csv` — slot/type distribution.
+## Skills / combat / buff
 
-Hard rule:
+Directory: `static/skills/`
 
-`EquipPoint == 0` = Weapon position.
-
-Do not use `Type < 10` as the universal weapon test.
-
----
-
-## 7. Skills / combat / buff
-
-Directory: `database/static/skills/`
-
-- `SKILL_TOOL_INDEX.csv` — all **2,091** skills, compact tool fields.
-- `index/SKILL_TOOL_INDEX_*.csv` — small search chunks.
-- `SKILL_INDEX.csv` — expanded lookup.
-- `SKILLS_0001_0700.csv` ... `SKILLS_1401_2091.csv` — full skill chunks.
-- `SKILL_PROPERTIES_0001_0700.csv` ... `SKILL_PROPERTIES_1401_2044.csv` — all **2,044** SkillProperties.
-- `AUTO_SKILLS.csv` — **300** automatic skill rules.
-- `FACTIONS.csv` — **17** factions.
-- `BOOKS.csv` — **128** books.
-- `BOOK_LEVEL_UP_COST.csv` — related progression cost table.
+- `SKILL_TOOL_INDEX.csv` — all **2,091** skills.
+- `index/SKILL_TOOL_INDEX_*.csv`
+- `SKILL_INDEX.csv`
+- `SKILLS_*.csv`
+- `SKILL_PROPERTIES_*.csv` — **2,044**.
+- `AUTO_SKILLS.csv` — **300**.
+- `FACTIONS.csv` — **17**.
+- `BOOKS.csv` — **128**.
+- `BOOK_LEVEL_UP_COST.csv`.
 
 Magic/effect dictionary:
 
-`database/static/magic/MAGIC_ATTRIBUTES.csv` — **509** semantic effect symbols.
+`static/magic/MAGIC_ATTRIBUTES.csv` — **509** rows.
 
-Canonical runtime semantics:
+Runtime ownership/cooldown/target legality/server acceptance remains authoritative.
 
-- `analysis/05_COMBAT_SKILLS_BUFFS.md`
-- `analysis/17_BUFF_RUNTIME_SCHEMA.md`
-- `analysis/18_SKILLBAR_COOLDOWN_QUICKSKILLS.md`
-- `features/AUTO_BUFF.md`
-- `features/AUTO_TRAIN.md`
+## Pets / Spirits
 
-Static range/target/property does not prove current ownership, cooldown or server acceptance.
+Directory: `static/pets/`
 
----
-
-## 8. Pets / Spirits
-
-Directory: `database/static/pets/`
-
-Pets:
-
-- `PET_INDEX_*.csv` — all **8,349** Pet templates, compact lookup.
-- `PETS_*.csv` — full chunks.
+- `PET_INDEX_*.csv`, `PETS_*.csv` — **8,349** Pets.
 - `PET_FEATURES.csv`
 - `PET_EQUIPS.csv`
 - `PET_EQUIP_SETS.csv`
+- `SPIRIT_INDEX_*.csv`, `SPIRITS_*.csv` — **1,889** Spirits.
+- `SPIRIT_FEATURES.csv`.
 
-Spirits:
+Runtime semantics: `analysis/24_PET_SPIRIT_AUTO_RUNTIME.md`.
 
-- `SPIRIT_INDEX_00001_01889.csv` — all **1,889** Spirit templates.
-- `SPIRITS_00001_01000.csv`, `SPIRITS_01001_01889.csv`
-- `SPIRIT_FEATURES.csv`
+## Full fallback for every Config domain
 
-Canonical runtime semantics:
+Directory: `config_full/`
 
-`analysis/24_PET_SPIRIT_AUTO_RUNTIME.md`
+Use only when the specialized tool-first layer lacks a table or field.
 
----
+Entry points:
 
-## 9. PC input / hidden click support
+- `config_full/README.md`
+- `config_full/CONFIG_FULL_CATALOG.csv` — **all 75 recovered Config tables**.
+- `config_full/CONFIG_FULL_MANIFEST.csv`.
 
-- `PC_INPUT_KEY_BINDINGS.csv` — **22** shipped PC key bindings for SkillBar, joystick, QuickItemsBar and Tab target change.
-- `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md` — InputSyncManager / TryClickUI / press-release-drag-state evidence.
+Each table is stored under:
 
-Prefer semantic game/UI actions over keyboard-coordinate simulation. The key-binding table is a presentation/input mapping and fallback reference.
+```text
+config_full/<Table>/ROWS_*.csv
+```
 
----
+Rows preserve original direct XML attributes plus recursive nested child structure. Therefore low-frequency domains such as titles, reputation, guild configuration, mount/progression, cosmetics and other Config tables no longer require a new Config decrypt/extract pass.
 
-## 10. Exact actions / packets / runtime APIs
+## PC input / InputSync / hidden click
 
-Use these before reverse engineering any request again:
+Presentation mappings:
+
+- `PC_INPUT_KEY_BINDINGS.csv` — 22 key bindings.
+
+Exact hidden-click method lookup:
+
+- `PC_INPUTSYNC_METHODS.csv`
+- `analysis/43_INPUT_SYNC_EXACT_SIGNATURES_AND_UI_LIFECYCLE.md`
+- `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md` for discovery/background.
+
+Important corrected ownership:
+
+- `TryClickUI/UpdateUIDrag/EndUIDrag/CancelUIDragState/ResetUIDragState` -> `InputSyncManager`.
+- `SetSyncState/GetSyncGroupId/SetSyncGroup` -> `InstanceRegistry`.
+- `FramePressState` -> `PointerEventData+FramePressState`.
+- `GetLastPointerEventData` -> `PointerInputModule`.
+- `Joystick.InjectSyncInput` -> `Joystick` in Assembly-CSharp-firstpass.
+
+Do not resolve those methods against the wrong declaring class.
+
+For the exact frozen binary, core InputSync signatures, metadata tokens, selected native RVAs, native argument ABI, coordinate conversion and persistent drag-state lifecycle are now statically solved. Runtime per-PID object/bootstrap/window validation still belongs to the production tool.
+
+## Exact actions / packets / runtime APIs
+
+Use before tracing a request again:
 
 - `AUTO_TOOL_API_CATALOG.md`
 - `AUTO_TOOL_ACTION_CATALOG.md`
 - `PACKET_IDS.csv`
 - `NETWORK_COMMAND_CATALOG.md`
 - `SUBSYSTEM_SOURCE_MAP.md`
-- `SEMANTIC_JOIN_MAP.md`
+- `SEMANTIC_JOIN_MAP.md`.
 
-Important solved domains include movement/target/skill, NPC/GameDialog, Sell, Use/Abandon/Move/Destroy, loot, Revive, Team, Trade and FuBen control.
+Solved domains include movement/target/skill, NPC/GameDialog, Sell, Use/Abandon/Move/Split/Destroy, loot, Revive, Team, Trade and FuBen control.
 
----
+## Static vs runtime boundary
 
-## 11. What still cannot be frozen into a static database
+Static database answers what a configured/template object **is**.
 
-These are **runtime/server proofs**, not missing reverse-engineered static data:
+Runtime/server state answers what currently exists/is accepted/succeeded, including:
 
-- external managed `System.Action` callback through `MainThread.Execute` from the production tool;
-- server acceptance of specific Nga My beneficial skills on non-team relationships;
-- current healer `GameDialog.Selections` IDs/text/confirmation and result;
-- current vendor dialog -> `NpcShopID/ShopID` promotion for selected maps;
-- optional richer arbitrary-target position/HP/buff state only when an implementation truly needs it.
+- spawned actor state;
+- current item instances and bag slots;
+- current task progress;
+- GameDialog selection IDs;
+- shop/session IDs;
+- team/trade/dungeon acceptance and completion;
+- current cooldown/buff/HP state.
 
-See `research/AUTO_RUNTIME_PROOF_QUEUE.md`.
+Remaining runtime proofs are tracked in `research/AUTO_RUNTIME_PROOF_QUEUE.md` and `research/TODO.md`.
 
-Do not call those “missing database rows”.
-
----
-
-## 12. Anti-overread rule for future AI
-
-Do not load every static row into context.
-
-Examples:
+## Anti-overread examples
 
 ```text
-Boss name -> BOSS_NAME_INDEX -> one BOSS_INDEX chunk
+Boss name -> BOSS_NAME_INDEX -> one Boss/Monster chunk
 MonsterID -> matching MONSTER_INDEX chunk
-ItemID -> ITEM_TOOL_INDEX / one ITEMS chunk
-EquipID -> matching EQUIP_INDEX chunk -> deeper EQUIPS chunk only if needed
-SkillID -> small SKILL_TOOL_INDEX chunk -> SkillProperties only if needed
-TaskID -> TASK_INDEX -> TASK_OBJECTIVES -> full TASKS chunk only if needed
-FuBen -> FUBEN_SCENARIOS -> compact actions -> exact action/full chunk
+ItemID -> ITEM_TOOL_INDEX -> one ITEMS chunk only if needed
+EquipID -> matching EQUIP_INDEX -> deeper EQUIPS chunk only if needed
+SkillID -> SKILL_TOOL_INDEX chunk -> SkillProperties only if needed
+TaskID -> TASK_INDEX -> TASK_OBJECTIVES -> full task chunk only if needed
+FuBen -> scenario -> compact actions -> exact action/full chunk
+Unknown Config table -> CONFIG_FULL_CATALOG -> one table chunk
+Hidden click -> PC_INPUTSYNC_METHODS -> analysis/43
 ```
 
-The database is deliberately complete enough for lookup while remaining routeable. Future AI should reverse native/client code only when a genuinely new semantic contract is absent from both this data layer and canonical analysis.
+## Hard rule
+
+**The frozen static foundation is closed. Search this repository before reversing/decrypting the client. Only reopen native/client analysis when the required semantic contract is genuinely absent or the client hashes change.**
