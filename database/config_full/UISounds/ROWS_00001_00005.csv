@@ -1,0 +1,6 @@
+﻿RowIndex,Tag,Type,SoundName,Text,ChildrenJSON
+1,UIComponent,Frame,character_window_open,,
+2,UIComponent,Button,click_common_1,,
+3,UIComponent,Toggle,quest_window_open,,
+4,UIComponent,InputField,click_common_1,,
+5,UIComponent,Scroll,scroll_down,,

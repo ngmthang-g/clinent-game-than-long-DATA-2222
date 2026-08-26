@@ -1,0 +1,9 @@
+﻿RowIndex,Tag,ItemID,MoneyCost,Quantity,WingIDs,Text,ChildrenJSON
+1,RoleAddAvarta,30008039,10000,,,,
+2,RoleAddFace,30008040,10000,,,,
+3,RoleAddHairColor,30008041,10000,,,,
+4,RoleAddHair,30008042,10000,,,,
+5,RoleChangeName,30008105,10000,,,,
+6,AddWing,20310055,100000,100,100;200;300;400;500;600;700;800;1100,,
+7,LevelUpWing,,,,,,"[{""Tag"":""Model"",""Attributes"":{""Type"":""Wing"",""ItemID"":""20310050"",""MoneyCost"":""50000"",""Quantities"":""200;500;1000"",""MaxLevel"":""4""}},{""Tag"":""Model"",""Attributes"":{""Type"":""Dragon"",""ItemID"":""20310051"",""MoneyCost"":""50000"",""Quantities"":""200;500;1000;2000"",""MaxLevel"":""5""}},{""Tag"":""Model"",""Attributes"":{""Type"":""Butterfly"",""ItemID"":""20310052"",""MoneyCost"":""50000"",""Quantities"":""200;500;1000"",""MaxLevel"":""4""}},{""Tag"":""Model"",""Attributes"":{""Type"":""Phoenix"",""ItemID"":""20310053"",""MoneyCost"":""50000"",""Quantities"":""200;500;1000;2000"",""MaxLevel"":""5""}},{""Tag"":""Model"",""Attributes"":{""Type"":""Crusty"",""ItemID"":""20310056"",""MoneyCost"":""50000"",""Quantities"":""200;500;1000;2000"",""MaxLevel"":""5""}},{""Tag"":""Model"",""Attributes"":{""Type"":""Fish"",""ItemID"":""20310057"",""MoneyCost"":""50000"",""Quantities"":""200;500;1000;2000"",""MaxLevel"":""5""}},{""Tag"":""Model"",""Attributes"":{""Type"":""Fly"",""ItemID"":""20310058"",""MoneyCost"":""50000"",""Quantities"":""200;500;1000;2000;5000"",""MaxLevel"":""6""}},{""Tag"":""Model"",""Attributes"":{""Type"":""Crane"",""ItemID"":""20310059"",""MoneyCost"":""50000"",""Quantities"":""200;500;1000;2000"",""MaxLevel"":""5""}},{""Tag"":""Model"",""Attributes"":{""Type"":""BoneWing"",""ItemID"":""20310060"",""MoneyCost"":""50000"",""Quantities"":""500;2200;4400;6600"",""MaxLevel"":""5""}}]"
+8,ChangeWingAppearance,20310054,100000,,,,
