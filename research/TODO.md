@@ -1,78 +1,100 @@
 # Research TODO — current automation-tool gaps only
 
-Status updated after the 2026-08-26 full tool-data materialization.
+Status: **static foundation closed for the frozen snapshot** after full tool-first + all-75 Config materialization and exact InputSync signature/lifecycle recovery.
 
-Main goal: future AI should build the **Thần Long automation tool** from the frozen knowledge base and **not repeat client reverse/extraction that is already solved**.
+Main goal: future AI should build the Thần Long automation tool from this KB and **not repeat reverse/extraction already solved**.
 
 Read first:
 
 - `AUTO_TOOL_SCOPE.md`
 - `AI_ROUTER.md`
 - `database/TOOL_DATA_INDEX.md`
+- `AUTO_FEATURE_READINESS.md`
 - `research/AUTO_RUNTIME_PROOF_QUEUE.md`.
 
 ## Closed foundation work — do not redo
 
-The following are DONE for the frozen client snapshot:
+DONE for the frozen client:
 
-- Unity x64 / IL2CPP metadata architecture.
+- Unity x64 / IL2CPP metadata architecture and snapshot hashes.
 - LuaSystem / Game / GUI / Network semantic bridge discovery.
-- Config/Interface custom transform decode and extraction.
-- 75 Config XML table recovery.
-- Lua/UI callback cataloging and major automation flow tracing.
+- Config/Interface transform decode and extraction.
+- exact recovery of **75 Config XML tables**.
+- specialized tool-first static databases for Monster/Boss, Items/Equips, Skills/Magic, Tasks, FuBen, Pets/Spirits and PC bindings.
+- structurally-lossless fallback for **every Config table** under `database/config_full/`.
 - map/NPC/AutoPath databases.
 - runtime nearby-player/enemy/target/bag/buff/team/map schemas.
-- semantic Train start/stop, target/chase/skill/loot donor.
-- Auto Buff/Nga My core identities and action guards.
-- exact Sell request and server-driven inventory update lifecycle.
-- exact item Use/Abandon/Move/Split/Destroy semantics where documented.
-- Revive/Đầu thai packet/type semantics.
+- Train, target/chase/skill/loot donor.
+- Auto Buff/Nga My identities and guards.
+- exact Sell request and inventory-update lifecycle.
+- item Use/Abandon/Move/Split/Destroy semantics.
+- Revive/Đầu thai semantics.
 - dynamic GameDialog architecture.
 - Team leave/join/invite/follow semantics.
-- Trade/dồn đồ invitation/session/actions and 9-slot capacity semantics.
-- FuBen scenario/action/Boss flow and control packet semantics.
-- AutoPK modes/target flow/retaliation semantics.
+- Trade/dồn đồ protocol/session and 9-slot capacity.
+- FuBen scenario/action/Boss flow and control packets.
+- PK/AutoPK/retaliation semantics.
 - Pet/Spirit runtime donor.
 - MainThread queue/Update/Action.Invoke static internals.
-- InputSync/TryClickUI/press-release-drag-state static anchors.
-- per-PID runtime snapshot/action arbitration architecture.
+- per-PID runtime snapshot/action arbitration model.
+- InputSync exact static contract for the frozen build: declaring types, signatures, metadata tokens, selected native RVAs, generated x64 ABI, screen conversion, ParseAndInject UI call graph and drag-state lifecycle.
 
-## Static Config data is now materialized — not a TODO
+### InputSync corrections now closed
 
-The previous P1 task to normalize Items/Equips/Skills/Monsters/Tasks/Pets/Spirits is CLOSED.
+Do not search the wrong class:
 
-Canonical generated-data manifest:
+```text
+TryClickUI / UpdateUIDrag / EndUIDrag / CancelUIDragState / ResetUIDragState
+ -> InputSyncManager
+
+SetSyncState / GetSyncGroupId / SetSyncGroup
+ -> InstanceRegistry
+
+FramePressState
+ -> PointerEventData+FramePressState
+
+GetLastPointerEventData
+ -> PointerInputModule
+
+Joystick.InjectSyncInput
+ -> Joystick in Assembly-CSharp-firstpass
+```
+
+Canonical InputSync implementation evidence:
+
+- `analysis/43_INPUT_SYNC_EXACT_SIGNATURES_AND_UI_LIFECYCLE.md`
+- `database/PC_INPUTSYNC_METHODS.csv`.
+
+Do not broad-disassemble GameAssembly again for this same hidden-click contract unless hashes change or a genuinely new method is required.
+
+## Static Config data is not a TODO
+
+Canonical specialized manifest:
 
 `database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv`
 
-Canonical lookup router:
+Canonical all-table catalog:
+
+`database/config_full/CONFIG_FULL_CATALOG.csv`
+
+Canonical router:
 
 `database/TOOL_DATA_INDEX.md`
 
-Materialized on `main` includes:
+Generators:
 
-- Monsters **17,121**; Boss templates **3,579**; grouped Boss names **578**.
-- Equips **22,763**; Weapon-position templates **4,685**.
-- Items **5,238**; Medicines **692**; Gems **1,154**.
-- Skills **2,091**; SkillProperties **2,044**; AutoSkills **300**; MagicAttributes **509**.
-- Tasks **516**; normalized objective rows **591**; GrowPoints **407**; GuildTasks **360**; Activities **45**.
-- Pets **8,349**; Spirits **1,889**.
-- FuBen **19 scenarios / 268 actions / 72 Kill actions** plus level-banded target mapping.
-- PC input bindings **22**.
-
-Generator:
-
-`tools/materialize_tool_data.py`
+- `tools/materialize_tool_data.py`
+- `tools/materialize_all_config.py`.
 
 Workflow:
 
 `.github/workflows/materialize-tool-data.yml`
 
-If the frozen `Config.unity3d` changes, regenerate/compare through the pipeline. Do not manually rediscover schemas or rerun broad reverse work.
+If a future Config snapshot changes, regenerate/compare. Do not manually rediscover schemas.
 
 ---
 
-# P0 — one production integration proof
+# P0 — production integration proof
 
 ## External managed Action -> MainThread callback
 
@@ -86,18 +108,16 @@ MainThread.Execute(System.Action)
  -> Action.Invoke
 ```
 
-What remains is production-tool integration proof only:
+Remaining work is production integration only:
 
 ```text
-external tool constructs + roots one valid managed Action
+external tool constructs + roots one valid Action
  -> enqueue through MainThread.Execute
  -> next Unity Update invokes callback
- -> tool observes a harmless known state transition
+ -> observe a harmless known state transition
 ```
 
-This is not a reason to reverse MainThread again.
-
-Debug only delegate construction/rooting/lifetime/resolver/thread-boundary if the proof fails.
+If this fails, debug delegate construction/rooting/lifetime/resolver/thread boundary. Do not reverse MainThread again.
 
 Canonical docs:
 
@@ -108,84 +128,62 @@ Canonical docs:
 
 ---
 
-# P1 — runtime/server proofs for important features
+# P1 — runtime/server proofs
 
-## Nga My beneficial skill acceptance outside team
+## Nga My beneficial-skill acceptance outside team
 
-Already solved:
+Already solved: nearby PeacePlayer state, skill IDs/properties/range/cooldown, select/chase/cast path.
 
-- nearby PeacePlayer RoleID/HP/MaxHP/name/faction/guild;
-- skill IDs/static properties/range/cooldown semantics;
-- select/chase/cast action path.
+Still server-authoritative: acceptance for the exact production skill on same team, same guild outside team, unrelated peaceful player and self where applicable.
 
-Still server-authoritative:
-
-- acceptance for the exact production skill when target is same team;
-- same guild but not team;
-- unrelated peaceful player;
-- self where applicable.
-
-Proof requires one real cast and fresh HP/buff/cooldown/progress result.
-
-Do not infer server acceptance solely from static TargetType.
+Proof requires one real cast plus fresh HP/buff/cooldown/progress result.
 
 ## NPC Trị liệu dynamic dialog
 
-Static NPC identity and GameDialog mechanism are solved.
+Static NPC identity/navigation and GameDialog mechanism are solved.
 
-Still live/server-dependent:
+Still live-dependent:
 
 ```text
-current NPC interaction
+current interaction
  -> current GameDialog.Selections
- -> exact visible Trị liệu/service text
+ -> exact visible service text
  -> current selectionID
- -> possible confirmation dialog
+ -> optional confirmation
  -> HP/money/dialog result
 ```
 
-SelectionID is dynamic session/dialog state, not a frozen global Config constant.
+SelectionID is dynamic state, not a frozen global constant.
 
-## Auto Sell vendor promotion for configured maps
+## Auto Sell vendor promotion
 
-Static NPC candidates, navigation and exact sell request are solved.
+Static NPC candidates/navigation and exact sell request are solved.
 
-For each vendor actually used by production:
+For each production vendor:
 
 ```text
 GoToNPC
  -> current service/dialog selection
  -> CMD_NPC_SHOP_DATA
- -> fresh NpcShopID + ShopID + IsGuildShop
- -> optional one safe test sale
- -> RemoveItem/bag/money proof
+ -> current NpcShopID + ShopID + IsGuildShop
+ -> optional safe test sale
+ -> bag/money proof
 ```
 
-Do not hardcode observed `NpcShopID/ShopID` as eternal constants without stability evidence.
+Do not hardcode observed shop/session IDs without stability evidence.
 
-## FuBen server acceptance / dynamic lifecycle
+## FuBen production lifecycle
 
-Static scenario/action/Boss data is now complete for the frozen Config and shipped Lua flow is traced.
-
-Only capture additional live proof if a concrete scenario fails in production, for example:
-
-- current matchmaking rejection reason;
-- current dynamic GameDialog selection change;
-- current server entry condition not represented in the frozen Config;
-- current completion/reward transition.
-
-Do not rediscover all 19 scenario routes because one server condition changed.
+Static 19-scenario routes/actions/Boss joins are solved. Add live evidence only when a concrete scenario fails due to current server condition/dialog/matchmaking/completion behavior.
 
 ## Trade/dồn đồ production session proof
 
-Protocol/session semantics are solved.
-
-Only implementation/live proof remains when production tool uses the semantic path:
+Protocol/session is solved. Live implementation proof remains:
 
 ```text
-request by MAIN RoleID
+request MAIN RoleID
  -> active ExchangeID
- -> add current live instances
+ -> add fresh live instances
  -> verify ItemsTrade
  -> both locks
  -> Done
@@ -193,69 +191,40 @@ request by MAIN RoleID
  -> fresh MAIN/CON bags
 ```
 
-A completed click macro or elapsed time is not proof of successful transfer.
+Elapsed time or click completion is not proof of item transfer.
 
 ---
 
-# P2 — optional richer runtime observations
+# P2 — optional richer observations
 
-Investigate only when a concrete policy truly needs them.
+Only investigate for a concrete feature need:
 
-## Arbitrary non-team PeacePlayer Position/death
+- arbitrary non-team PeacePlayer exact Position/death;
+- absolute HP/MaxHP for every unselected monster;
+- richer arbitrary-target BuffID/duration list;
+- localization/Translations only when live text matching becomes ambiguous;
+- `data.unity3d` scene/prefab details only when Maps/NPC/AutoPath/runtime path APIs cannot answer the specific problem.
 
-Current PeacePlayer list already provides identity/HP/MaxHP and target/chase APIs can often handle range/navigation.
-
-Only map exact Position/death if the chosen Auto Buff policy cannot work reliably without it.
-
-## Absolute HP/MaxHP for every unselected nearby monster
-
-Basic Train/FuBen target selection does not require this because runtime target identity/death/Position and selected-target HP state are already sufficient.
-
-Only prove it for a concrete boss-health/lowest-HP telemetry policy.
-
-## Rich BuffID/duration for arbitrary targets
-
-Local buffs are structured. Other-target buff proof may be handled by buff icons/cast cooldown/HP change.
-
-Only pursue a richer arbitrary-target buff list if production recast suppression cannot be made reliable otherwise.
-
-## Translations
-
-`Translations.unity3d` has been decoded to valid UnityFS, but a full localization key/value DB is not currently necessary for normal tool work.
-
-Extract/index it only if dynamic dialog/UI matching hits a real localization ambiguity that Config + Interface + live text cannot solve.
-
-## data.unity3d / scene assets
-
-Do not broad-extract the ~47 MB `data.unity3d` bundle.
-
-Open it only for a concrete missing scene/path/prefab/resource question that cannot be answered by:
-
-- `Game.GoTo` / runtime path APIs;
-- Maps/NPC/AutoPath database;
-- Config/Interface semantics.
+Do not broad-extract these merely for completeness.
 
 ---
 
-# What is implementation work, not research
+# Implementation work, not research
 
-The following should normally be solved in the actual tool source rather than adding new reverse-engineering documents:
+Normally solve in the actual tool source:
 
 - state-machine bugs;
-- stale snapshot/instance IDs;
-- retry/timeout/arbitration policies;
-- UI layout of the external tool;
-- persistent settings;
-- multi-PID scheduler behavior;
+- stale snapshots/item instances;
+- timeout/retry/arbitration;
+- multi-PID scheduler/isolation;
+- tool UI/settings;
 - Telegram reporting;
-- licensing/update/security of the external tool;
-- feature-specific production policy such as which items to keep or which map to prioritize.
+- licensing/update/security;
+- item keep/sell/drop policy;
+- map/spot prioritization;
+- InputSync per-machine bootstrap/PID/window/DPI validation using the now-known exact static contract.
 
-Use the existing DATA to implement these; add new client facts only when the client/server contract itself was previously unknown.
-
----
-
-# Evidence recording rule
+## Evidence recording rule
 
 Any new runtime proof should record:
 
@@ -271,8 +240,8 @@ what it proves
 what it does NOT prove
 ```
 
-Then update the canonical feature doc and `AUTO_FEATURE_READINESS.md` / `AUTO_RUNTIME_PROOF_QUEUE.md` as appropriate.
+Then update the canonical feature doc, `AUTO_FEATURE_READINESS.md` and the runtime proof queue.
 
 ## Hard rule
 
-**If `database/TOOL_DATA_INDEX.md`, the action/API catalogs, and the canonical feature analysis already answer the question, do not reverse/decrypt the client again.**
+**If `database/TOOL_DATA_INDEX.md`, `database/config_full`, the action/API catalogs and canonical analyses already answer the question, do not reverse/decrypt the client again.**
