@@ -1,72 +1,74 @@
 # Auto Feature Readiness — solved vs runtime proof
 
-Purpose: stop future AI from wasting time re-reversing automation features and static data that are already understood/materialized.
+Purpose: stop future AI from re-reversing client knowledge/static data that is already solved.
 
 Labels:
 
 - **SOLVED CLIENT KNOWLEDGE** — enough client/runtime/static knowledge exists to implement from the KB.
+- **SOLVED / MATERIALIZED** — queryable static data exists on `main`.
 - **PARTIAL / TARGETED PROOF** — architecture is solved; one narrow live/server behavior remains.
 - **IMPLEMENTATION BRIDGE** — client internals are solved but external-tool integration needs one live proof.
 - **DESIGN ONLY** — remaining work is tool policy/orchestration, not client research.
 
-Canonical static-data router: `database/TOOL_DATA_INDEX.md`.
+Canonical routes:
 
-Canonical generated-data audit: `database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv`.
-
-Canonical runtime snapshot: `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md`.
+- static: `database/TOOL_DATA_INDEX.md`
+- specialized manifest: `database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv`
+- all Config: `database/config_full/CONFIG_FULL_CATALOG.csv`
+- runtime snapshot: `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md`.
 
 ---
 
 | Auto feature | Readiness | Already solved/materialized | Remaining narrow gap |
 |---|---|---|---|
-| Frozen static Config database | **SOLVED / MATERIALIZED** | 75 Config XML tables extracted; tool-relevant domains written to ~102 generated CSV/index/chunk files; reproducible generator/workflow in repo | regenerate/compare only when source snapshot changes |
+| Frozen Config foundation | **SOLVED / MATERIALIZED** | exactly 75 Config XML tables; specialized tool-first databases plus `database/config_full/<Table>/ROWS_*.csv` fallback for every table; reproducible generators/workflow | regenerate/compare only when source snapshot changes |
 | Runtime local/map/bag/buff/cooldown scanner | **SOLVED CLIENT KNOWLEDGE** | semantic Game/RoleData queries + exact per-PID snapshot contract | external bridge must copy live values safely per PID |
-| Nearby PeacePlayer scanner | **SOLVED CLIENT KNOWLEDGE** | RoleID/Name/Level/FactionID/HP/MaxHP/GuildName/AvartaID/TeamRank | Position/death only if a concrete feature truly needs them |
-| Nearby monster/Train target discovery | **SOLVED CLIENT KNOWLEDGE** | target discovery Type/IsDeath/RoleID/ResID/Position + all 17,121 Monster templates materialized | absolute HP/MaxHP for every unselected monster only if future telemetry needs it |
-| Boss identity/filter | **SOLVED / MATERIALIZED** | 3,579 exact `Type=Boss` templates + 578 Boss-name groups | current spawn/RoleID/death/Position remains runtime state |
-| Train start/stop | **SOLVED CLIENT KNOWLEDGE** | `C_AutoModel.Train=1`; semantic `StartAutoFight(Train/None)` | none |
-| Target/chase/combat skill path | **SOLVED CLIENT KNOWLEDGE** | SelectTarget/ChaseTarget/HasPath/RequestUsingSkill* / cooldown/progress guards | runtime integration only |
-| Skills static lookup | **SOLVED / MATERIALIZED** | 2,091 Skills + 2,044 SkillProperties + 300 AutoSkills + 509 MagicAttributes | current ownership/cooldown/condition/server acceptance remains runtime |
-| Nga My skill identity | **SOLVED CLIENT KNOWLEDGE** | 406/407/408/423/424 exact identities; 407 Lua naming bug documented | none |
-| Auto Buff candidate selection | **SOLVED CLIENT KNOWLEDGE** | nearby PeacePlayer fields + HP/MaxHP priority/filter model | none for read-only policy |
-| Auto Buff cast on non-team PeacePlayer | **PARTIAL / TARGETED PROOF** | target/cast/range/cooldown donor path + static skill database known | prove server acceptance per intended skill/relationship |
+| Nearby PeacePlayer scanner | **SOLVED CLIENT KNOWLEDGE** | RoleID/Name/Level/FactionID/HP/MaxHP/GuildName/AvartaID/TeamRank | Position/death only if a concrete feature needs them |
+| Nearby monster/Train target discovery | **SOLVED CLIENT KNOWLEDGE** | Type/IsDeath/RoleID/ResID/Position + all 17,121 Monster templates | richer unselected-monster HP only for optional telemetry |
+| Boss identity/filter | **SOLVED / MATERIALIZED** | 3,579 exact Boss templates + 578 Boss-name groups | current spawn/RoleID/death/Position is runtime state |
+| Train start/stop | **SOLVED CLIENT KNOWLEDGE** | `C_AutoModel.Train=1`; semantic StartAutoFight | none |
+| Target/chase/combat skill path | **SOLVED CLIENT KNOWLEDGE** | SelectTarget/ChaseTarget/HasPath/RequestUsingSkill* + guards | runtime integration only |
+| Skills static lookup | **SOLVED / MATERIALIZED** | 2,091 Skills + 2,044 SkillProperties + 300 AutoSkills + 509 MagicAttributes | current ownership/cooldown/target legality/server acceptance remains runtime |
+| Nga My skill identity | **SOLVED CLIENT KNOWLEDGE** | exact 406/407/408/423/424 identities; 407 naming bug documented | none |
+| Auto Buff candidate selection | **SOLVED CLIENT KNOWLEDGE** | PeacePlayer fields + HP/MaxHP filter/priority model | none for read policy |
+| Auto Buff cast outside team | **PARTIAL / TARGETED PROOF** | cast/range/cooldown donor + static skill data | server acceptance per intended relationship/skill |
 | Bag full detection | **SOLVED CLIENT KNOWLEDGE** | `GetFreeBagSpace`, Bag site 10 | none |
-| Item identity/classification | **SOLVED / MATERIALIZED** | instance vs template vs slot/site semantics; 5,238 Items + 22,763 Equips + policy indexes/chunks | mutable action still requires fresh live item instance |
-| Medicine/gem lookup | **SOLVED / MATERIALIZED** | 692 Medicines + 1,154 Gems | production auto-use policy is tool design/runtime guard work |
-| Use / Abandon / Destroy / Move item | **SOLVED CLIENT KNOWLEDGE** | exact item-action family and destructive-action guard semantics documented | production policy/confirmation only |
+| Item identity/classification | **SOLVED / MATERIALIZED** | live-instance/template/slot/site semantics; 5,238 Items + 22,763 Equips | fresh live instance still required for mutation |
+| Medicine/gem lookup | **SOLVED / MATERIALIZED** | 692 Medicines + 1,154 Gems | auto-use policy is tool/runtime work |
+| Use/Abandon/Destroy/Move item | **SOLVED CLIENT KNOWLEDGE** | exact action family and destructive guards | production policy/confirmation only |
 | Auto Sell request | **SOLVED CLIENT KNOWLEDGE** | packet 200036 + exact `instanceID:NpcShopID:ShopID` | none; do not trace again |
-| Auto Sell transaction loop | **SOLVED CLIENT KNOWLEDGE** | one live instance -> sell -> wait server update -> rescan | runtime integration only |
-| Vendor routing | **SOLVED MECHANISM / PARTIAL SERVICE MAP** | NPC DB + navigation + shop-state proof + candidate maps | promote exact production vendor dialogs/shop IDs as needed |
-| NPC treatment navigation | **SOLVED MECHANISM** | NPC DB + GetNPCPosition/GoToNPC/GameDialog architecture | exact current healer service selection/confirmation/result |
-| Revive / Đầu thai | **SOLVED CLIENT KNOWLEDGE** | packet 200063; types 1/2/3; lifecycle proof rules | runtime integration only |
-| Loot/item-pack pickup | **SOLVED CLIENT KNOWLEDGE** | nearby ItemPack + path/move/click/pickup flow + item static DB | richer user loot policy only |
-| Team state / HP / position | **SOLVED CLIENT KNOWLEDGE** | C_TeamData/member fields/nearby positions | none for scanner/follow basics |
-| Leave/join/invite team | **SOLVED CLIENT KNOWLEDGE** | `4:selfRoleID`, `9:targetRoleID`, `5:targetRoleID` exact request routes | normal server membership proof after request |
-| Follow teammate | **SOLVED CLIENT KNOWLEDGE** | semantic follow + nearby MoveTo + cross-map GoTo | none |
-| Trade / dồn đồ protocol | **SOLVED CLIENT KNOWLEDGE** | RoleID invitation, ExchangeID session, AddItem/Lock/Done/Cancel, 9 slots, live instance rule | production session state proof/fresh bag loop only |
-| FuBen scenario/route/action data | **SOLVED / MATERIALIZED** | 19 scenarios, 268 actions, 72 Kill actions, 1,381 level-band mappings, entry NPCs, Boss joins | only current server acceptance/dynamic dialog differences if a scenario fails live |
-| Auto FuBen combat/control | **SOLVED CLIENT KNOWLEDGE** | shipped AutoFight_FuBen flow, query/sync/matchmaking packet semantics, Train-like combat donor | runtime integration and scenario-specific live proof as needed |
-| PK modes / direct PK actions | **SOLVED CLIENT KNOWLEDGE** | exact PK modes, mode change, Proclaim/Challenge routes | server/legal-state result proof during implementation |
-| AutoPK | **SOLVED CLIENT KNOWLEDGE** | C_AutoModel.PK, nearby-enemy target flow, retaliation trigger, skill/chase flow; unused UI filters documented | production targeting policy if user wants behavior beyond shipped selector |
-| Task static database | **SOLVED / MATERIALIZED** | 516 Tasks + 591 objective rows + GrowPoints/Activities/GuildTasks | live task Parameters/server progression only |
-| Auto Quest donor | **SOLVED CLIENT KNOWLEDGE** | built-in objective selection/navigation/monster/dialog composition documented | unsupported objective automation is feature implementation, not broad reverse |
-| Pet / Spirit static database | **SOLVED / MATERIALIZED** | 8,349 Pets + 1,889 Spirits + feature/equip support tables | current companion runtime state/action proof only |
-| Pet / Spirit auto donor | **SOLVED CLIENT KNOWLEDGE** | shipped runtime/action semantics documented | production policy/integration only |
-| PC input binding table | **SOLVED / MATERIALIZED** | 22 shipped PC key mappings | semantic actions remain preferred |
-| InputSync / hidden UI click static anchors | **SOLVED CLIENT KNOWLEDGE** | SyncBootstrap/InputSyncManager/TryClickUI/drag-state/UIButton anchors | exact resolver/signature work only if current implementation still cannot bind reliably |
-| MainThread internal dispatcher | **SOLVED CLIENT KNOWLEDGE** | Execute -> ConcurrentQueue -> Update -> Action.Invoke | none about dispatcher internals |
-| External managed Action -> MainThread | **IMPLEMENTATION BRIDGE** | Action ABI/producer donors/IL2CPP requirements documented | one harmless live construction/rooting/callback proof |
-| Captcha handling | **SOLVED SAFETY CONTRACT** | explicit Captcha state + manual submit path | tool must pause; no auto-solve/bypass |
-| Adaptive spot switching | **DESIGN ONLY, INPUTS SOLVED** | deaths/loot/bag/map/train/monster data available | tool scoring/tuning only |
-| Multi-client orchestration | **DESIGN ONLY, CLIENT INPUTS SOLVED** | per-PID snapshot/action ownership + InputSync evidence | implementation/isolation testing |
+| Auto Sell loop | **SOLVED CLIENT KNOWLEDGE** | live instance -> sell -> server update -> rescan | runtime integration only |
+| Vendor routing | **SOLVED MECHANISM / PARTIAL SERVICE MAP** | NPC DB + navigation + shop-state mechanism | promote exact live vendor dialog/shop IDs as needed |
+| NPC treatment | **PARTIAL / TARGETED PROOF** | navigation + dynamic GameDialog mechanism solved | exact current Trị liệu selection/confirmation/result |
+| Revive / Đầu thai | **SOLVED CLIENT KNOWLEDGE** | packet/types/lifecycle semantics | runtime integration only |
+| Loot pickup | **SOLVED CLIENT KNOWLEDGE** | ItemPack + path/move/click/pickup + static item DB | richer user loot policy only |
+| Team state / follow | **SOLVED CLIENT KNOWLEDGE** | C_TeamData, member fields, follow/movement path | none for basic implementation |
+| Leave/join/invite team | **SOLVED CLIENT KNOWLEDGE** | exact request routes | normal server membership proof after request |
+| Trade / dồn đồ protocol | **SOLVED CLIENT KNOWLEDGE** | RoleID invite, ExchangeID session, AddItem/Lock/Done/Cancel, 9 slots, live instance rule | production session/fresh-bag proof only |
+| FuBen static scenario/route/Boss data | **SOLVED / MATERIALIZED** | 19 scenarios, 268 actions, 72 Kill actions, 1,381 level bands, Boss joins | dynamic server conditions only if a live scenario fails |
+| Auto FuBen combat/control | **SOLVED CLIENT KNOWLEDGE** | shipped flow + query/sync/matchmaking + combat donor | runtime integration/live scenario proof as needed |
+| PK modes/direct actions | **SOLVED CLIENT KNOWLEDGE** | exact PK modes and request routes | legal/server result proof during implementation |
+| AutoPK | **SOLVED CLIENT KNOWLEDGE** | nearby-enemy target flow, retaliation, skill/chase; unused UI filters identified | user-specific targeting policy only |
+| Task database | **SOLVED / MATERIALIZED** | 516 Tasks + 591 objectives + GrowPoints/Activities/GuildTasks | live task progress/server progression only |
+| Auto Quest donor | **SOLVED CLIENT KNOWLEDGE** | objective/navigation/monster/dialog composition | feature implementation only |
+| Pet / Spirit database | **SOLVED / MATERIALIZED** | 8,349 Pets + 1,889 Spirits + support tables | current companion runtime state/action proof only |
+| Pet / Spirit auto donor | **SOLVED CLIENT KNOWLEDGE** | shipped runtime/action semantics | production policy/integration only |
+| Any low-frequency Config domain | **SOLVED / MATERIALIZED** | all 75 tables available through `database/config_full` with direct attrs + recursive child structure | runtime semantics only if a concrete feature needs them |
+| PC key bindings | **SOLVED / MATERIALIZED** | 22 shipped mappings | semantic actions preferred |
+| InputSync hidden-click static contract | **SOLVED CLIENT KNOWLEDGE** | exact TryClickUI/UpdateUIDrag/EndUIDrag/Cancel/Reset signatures, declaring types, tokens, selected RVAs, native ABI, ConvertPos, ParseAndInject call path, drag-field offsets/cleanup | live per-PID resolver/bootstrap/window/DPI/UI proof only |
+| MainThread internal dispatcher | **SOLVED CLIENT KNOWLEDGE** | Execute -> queue -> Update -> Action.Invoke | none about dispatcher internals |
+| External managed Action -> MainThread | **IMPLEMENTATION BRIDGE** | ABI/producer donors/requirements documented | one harmless live construction/rooting/callback proof |
+| Captcha handling | **SOLVED SAFETY CONTRACT** | explicit Captcha/manual path | tool pauses; no auto-bypass |
+| Adaptive spot switching | **DESIGN ONLY, INPUTS SOLVED** | required train/death/loot/bag/map data exists | scoring/tuning only |
+| Multi-client orchestration | **DESIGN ONLY, CLIENT INPUTS SOLVED** | per-PID state/action model + exact InputSync contract | implementation/isolation testing |
 
 ---
 
-## Static lookup is no longer a research gap
+## Static lookup is closed
 
-Future AI must not say that Items/Equips/Monsters/Skills/Tasks/Pets/Spirits are “only schemas” or “not present on GitHub”.
+Future AI must not claim that a frozen Config table needs a new decrypt/extract pass.
 
-They are materialized under:
+Use specialized domains first:
 
 ```text
 database/fuben/
@@ -79,40 +81,42 @@ database/static/tasks/
 database/static/pets/
 ```
 
-Use `database/TOOL_DATA_INDEX.md` to choose the smallest index/chunk.
+For anything else:
 
-## Do not re-reverse these solved facts
+```text
+database/config_full/CONFIG_FULL_CATALOG.csv
+ -> database/config_full/<Table>/ROWS_*.csv
+```
 
-Do not spend research time rediscovering:
+## InputSync static reverse is also closed for this snapshot
 
-- Train=1 / semantic StartAutoFight;
-- nearby PeacePlayer HP/MaxHP identity fields;
-- exact Sell packet/payload;
-- item instance ID vs ItemID/Position/Site;
-- Use/Abandon/Move/Split/Destroy action family already documented;
-- Weapon = `EquipPoint==0`;
-- exact Revive types;
-- dynamic GameDialog architecture;
-- `Game.GetNPCPosition` route principle;
-- Nga My 407/423 corrected identities;
-- Team leave/join/invite exact request routes;
-- Trade invitation/session/action values and 9-slot capacity;
-- FuBen scenario/action/Boss database and shipped AutoFuBen flow;
-- PK mode/AutoPK/retaliation donor;
-- MainThread queue/Update/Invoke internals;
-- InputSync/TryClickUI static anchors;
-- full static Config normalization already generated on `main`.
+Do not rediscover or misattribute:
 
-If implementation fails, debug fresh runtime state, resolver, action bridge, server rejection or result proof before reopening broad reverse work.
+- `TryClickUI(int, Vector2)` and UI drag methods on `InputSyncManager`;
+- `SetSyncState/GetSyncGroupId/SetSyncGroup` on `InstanceRegistry`;
+- `FramePressState` on `PointerEventData`;
+- `GetLastPointerEventData` on `PointerInputModule`;
+- `Joystick.InjectSyncInput` on `Joystick`;
+- `ParseAndInject -> ConvertPos/InjectMousePos/TryClickUI/UpdateUIDrag/EndUIDrag`;
+- `_uiDragging/_uiDragTarget/_uiDragData` cleanup lifecycle.
+
+Canonical files:
+
+- `analysis/43_INPUT_SYNC_EXACT_SIGNATURES_AND_UI_LIFECYCLE.md`
+- `database/PC_INPUTSYNC_METHODS.csv`.
+
+A same-hash machine failure is now a runtime binding/init/window/UI-state problem until evidence proves otherwise.
+
+## Other solved facts not to re-reverse
+
+Do not spend research time rediscovering Train=1, nearby PeacePlayer HP/MaxHP, exact Sell, item instance semantics, Weapon=`EquipPoint==0`, item action family, Revive, dynamic GameDialog architecture, NPC position routing, Nga My corrected identities, Team request routes, Trade session semantics, FuBen route/Boss database, PK/AutoPK donor or MainThread internal queue.
 
 ## Highest-value remaining proofs
 
-The research queue is now intentionally narrow:
+1. external valid managed `System.Action` -> `MainThread.Execute` callback;
+2. non-team relationship acceptance for production Nga My support skills;
+3. exact current Trị liệu dialog/outcome;
+4. exact current vendor service -> `NpcShopID/ShopID` promotion;
+5. optional richer actor fields only when a concrete implementation cannot proceed.
 
-1. external valid managed `System.Action` -> `MainThread.Execute` live callback;
-2. non-team relationship acceptance for exact Nga My support skills;
-3. exact current `Trị liệu` GameDialog sequence/outcome at chosen healer;
-4. exact current vendor service -> `NpcShopID/ShopID` promotion for production maps;
-5. optional actor fields only when a concrete implementation cannot proceed without them.
-
-Everything else should first move into tool implementation rather than more broad client research.
+Everything else should first move into tool implementation rather than more broad reverse engineering.
