@@ -1,202 +1,191 @@
 # Database navigation index
 
-> Machine/AI-readable data derived from the frozen client's decrypted Config/Interface/Lua plus verified runtime/native evidence. Primary purpose: support the **Thần Long auto tool**. If the database already answers an automation question, **do not broad-reverse the binaries again**.
+> Machine/AI-readable data derived from the frozen client's decrypted Config/Interface/Lua plus verified runtime/native evidence. Primary purpose: support the **Thần Long auto tool** so future AI does not broad-reverse solved client areas.
 
----
+## Start here
 
-## Fast lookup entrypoints
+For static/configured data lookup, the canonical router is now:
 
-Use the smallest entrypoint that matches the question:
+**`TOOL_DATA_INDEX.md`**
 
-- `AUTO_TOOL_API_CATALOG.md` — **best compact API/action lookup for automation work**.
-- `SUBSYSTEM_SOURCE_MAP.md` — best first file when asking “which source layer should answer this subsystem?”.
-- `FACTS_README.md` — how to use atomic facts.
-- `FACTS.jsonl` — high-value exact IDs/constants/contracts/counts.
-- `FINDING_TO_DOC_MAP.md` — finding/question -> canonical detailed document.
-- `SEMANTIC_JOIN_MAP.md` — how runtime IDs and Config tables connect; includes VERIFIED joins and clearly-labelled join candidates.
+For implementation/runtime semantics:
 
-For implementation tasks, use `AI_BOOTSTRAP.md -> AUTO_TOOL_SCOPE.md -> AI_ROUTER.md` first, then come here only for the needed records.
+- `AUTO_TOOL_API_CATALOG.md` — compact state/query API catalog.
+- `AUTO_TOOL_ACTION_CATALOG.md` — exact semantic mutable actions, packet IDs/payloads and proof rules.
+- `SUBSYSTEM_SOURCE_MAP.md` — subsystem -> runtime/Lua/static/action source.
+- `SEMANTIC_JOIN_MAP.md` — how IDs and layers join.
+- `FACTS.jsonl` — high-value exact facts/constants.
+- `TOOL_DATA_MATERIALIZATION_MANIFEST.csv` — generated database paths, byte sizes and row counts.
 
-Also see `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md` for the per-feature `state -> guard -> action -> proof` contract.
+General implementation route remains:
 
----
+```text
+AI_BOOTSTRAP.md
+ -> AUTO_TOOL_SCOPE.md
+ -> AI_ROUTER.md
+ -> one feature/context pack
+ -> TOOL_DATA_INDEX.md when static lookup is needed
+```
 
-## Automation-relevant static data
+## Static data is now materially present on `main`
 
-Only normalize/read static Config fields when they materially improve an auto feature.
+The old state where `database/static/` contained only planning READMEs is closed.
 
-### Highest value for current auto work
+The verified frozen Config snapshot is now materialized into query-oriented indexes/chunks, including:
 
-Combat/support:
+- **17,121 Monsters**, including **3,579 exact Boss templates / 578 Boss names**;
+- **22,763 Equips**, including **4,685 Weapon-position templates**;
+- **5,238 Items**, **692 Medicines**, **1,154 Gems**;
+- **2,091 Skills**, **2,044 SkillProperties**, **300 AutoSkills**, **509 MagicAttributes**;
+- **516 Tasks**, **591 normalized objective records**, **407 GrowPoints**, **45 Activities**, **360 GuildTasks**;
+- **8,349 Pets**, **1,889 Spirits**;
+- full FuBen scenario/action/kill/entry/level-band datasets;
+- 22 PC input key bindings.
 
-- Skills 2,091
-- SkillProperties 2,044
-- AutoSkills 300
-- MagicAtrributes 509
-- Factions 17
-- Books 128.
+Exact generated paths/counts: `TOOL_DATA_MATERIALIZATION_MANIFEST.csv`.
 
-Inventory/sell/loot:
+## World / map / NPC / route data
 
-- Items 5,238
-- Equips 22,763
-- Medicines 692
-- Gems 1,154.
+Already materialized outside `static/`:
 
-Train targeting/world:
-
-- Monsters 17,121
-- Maps 193
-- NPCs 1,003
-- AutoPath/portal/NPC route data.
-
-Conditional only if the tool feature is actually built:
-
-- Tasks/GrowPoints for Auto Quest;
-- Pets/Spirits for Pet/Spirit automation;
-- other Config domains only when directly required.
-
-Canonical navigation:
-
-- `CONFIG_TABLE_CATALOG.md`
-- `static/README.md`
-- `static/LOOKUP_GUIDE.md`
-- `SEMANTIC_JOIN_MAP.md`
-- `analysis/28_STATIC_DATA_DATABASE_EXPANSION.md`
-- `analysis/32_CONFIG_DOMAIN_ATLAS.md`.
-
-These are **lookup datasets**, not mandatory context.
-
----
-
-## World / map / NPC / routes
-
-Already materialized databases:
-
-- `MAPS.csv` — 193 map records.
-- `npcs/NPCS_0001_0200.csv` … `NPCS_1001_1003.csv` — all 1,003 NPC rows with identity and AutoPath map association where available.
-- `NPC_SERVICE_CANDIDATES.md` — doctor/vendor/blacksmith/storage candidate families; service inference remains clearly labelled until runtime proof.
-- `FUBEN_SCENARIOS.csv` — 19 dungeon/scenario definitions.
-- `AUTOPATH_PORTAL_EDGES.csv` — 165 direct portal edges.
-- `AUTOPATH_ITEM_DESTINATIONS.csv` — 23 item/destination records.
+- `MAPS.csv` — 193 maps.
+- `npcs/NPCS_0001_0200.csv` ... `NPCS_1001_1003.csv` — all 1,003 NPC rows.
 - `autopath_npc/AUTOPATH_NPC_EDGES_*.csv` — 506 NPC-mediated transitions.
+- `AUTOPATH_PORTAL_EDGES.csv` — direct portal topology.
+- `AUTOPATH_ITEM_DESTINATIONS.csv` — item/destination mappings.
+- `NPC_SERVICE_CANDIDATES.md` — candidate service taxonomy; dynamic service proof remains runtime-authoritative.
 
-Important rules:
+Do not invent live NPC X/Y from static data when `Game.GetNPCPosition(npcID)` exists.
 
-- NPC static data/map association does **not** provide the normal live NPC X/Y; use `Game.GetNPCPosition(npcID)`.
-- static route edges may have level/quest/event restrictions; runtime `Game.GoTo` is still the preferred executor.
-- `ResName` may classify a service **candidate**, not prove a service contract.
+## FuBen / Boss
 
----
+Use `fuben/`:
 
-## Protocol / exact action lookup
+1. `FUBEN_SCENARIOS.csv`
+2. `FUBEN_ENTRY_NPCS.csv`
+3. `FUBEN_ACTIONS_COMPACT.csv`
+4. `FUBEN_KILL_TARGETS.csv`
+5. `FUBEN_BOSS_LEVEL_BANDS.csv`
+6. `actions/FUBEN_ACTIONS_*.csv` for full rows.
 
-- `AUTO_TOOL_API_CATALOG.md` — automation-focused API/action shortlist.
-- `PACKET_IDS.csv` — all 169 exact `TCPPacketDefine` constants.
-- `PACKET_CATALOG.md` — important IDs and safety rules.
-- `NETWORK_COMMAND_CATALOG.md` — protocol vocabulary plus evidence levels.
-- `API_QUICK_REFERENCE.md` — broader runtime/Game/Lua/native API lookup.
+Boss templates themselves live under `static/monsters/`.
 
-Exact frozen examples already solved:
+NPC entry actor and combat Boss are different semantic classes.
 
-- Sell: `CMD_NPC_SHOP_SELL_REQUEST=200036`, payload `itemInstanceID:NpcShopID:ShopID`.
-- GameDialog: `CMD_SHOW_GAMEDIALOG=100007`, payload `selectionID:SelectedItemID`.
-- Revive: `CMD_REVIVE_DATA=200063`, normal/Đầu thai=1, newbie=2, skill=3.
-- Item action: `CMD_ITEM_ACTION=100005` with observed Equip/Use/Abandon/Move/Split action formats.
-- Bag sort: `CMD_BAG_SORT=100006`.
-- Team leave: `C_TeamAction.LeaveTeam=4`, observed payload `4:selfRoleID` through `CMD_TEAM_ACTION`.
+Canonical semantics: `analysis/38_FUBEN_BOSS_TASK_TOOL_STACK.md`.
 
-Packet name/ID alone does not prove payload. Use only legitimate Lua/native construction as exact request evidence.
+## Monsters / train targets / Bosses
 
----
+Use `static/monsters/`:
 
-## Lua / UI useful to automation
+- `MONSTER_INDEX_*` — all 17,121 templates.
+- `BOSS_INDEX_*` — all 3,579 exact `Type=Boss` templates.
+- `BOSS_NAME_INDEX.csv` — 578 grouped Boss names.
 
-- `LUA_SCRIPT_CATALOG.md` — high-value script catalog among 339 Lua classes.
-- `UI_LAYOUT_CALLBACKS.md` — callback/layout catalog from 338 layouts and 1,469 bindings.
-- `UI_PACKET_LIFECYCLE.md` — packet/event -> UI/state lifecycle.
-- `AUTO_SETTINGS_SCHEMA.md` — built-in Auto settings.
-- `NGAMY_SUPPORT_SKILLS.md` — corrected Nga My support skill identities.
+Static data classifies a target; current spawn/RoleID/Position/death remains runtime data.
 
-For a visible button/menu question, preferred order:
+## Items / equipment / use / sell / drop
 
-```text
-<Panel>_Layout
- -> same-name Lua script
- -> actual Game/GUI/Network call
- -> server/runtime result
-```
+Items: `static/items/`
 
-Do not start with mouse coordinates or a stale UIButton pointer.
+- `ITEM_TOOL_INDEX.csv`
+- `ITEM_INDEX.csv`
+- full `ITEMS_*` chunks
+- `ITEM_POLICY_EXCEPTIONS.csv`
+- `MEDICINES.csv`
+- `GEMS_*`.
 
----
+Equipment: `static/equips/`
 
-## Static-to-runtime shortcuts for auto features
+- `EQUIP_INDEX_*`
+- full `EQUIPS_*`
+- `WEAPON_INDEX.csv`
+- `EQUIP_POSITION_TYPE_COUNTS.csv`.
 
-See `SEMANTIC_JOIN_MAP.md` for detail.
+Hard rule: static Weapon position = `EquipPoint==0`.
 
-Important roots:
+For any mutation, current `dbItemData.ID` instance is not the same thing as template `ItemID` or bag `Position`.
 
-```text
-live item.ItemID -> Items / Equips
-runtime SkillID -> Skills -> SkillProperties -> MagicAtrributes
-NPCID -> NPCs -> AutoPath MapID -> runtime GetNPCPosition
-MapID -> Maps + AutoPath route graph
-runtime monster ResID -> Monsters template interpretation
-```
+## Skills / Buff / Auto Train / PK
 
-Only use Task/Pet joins when those automation features are actually in scope.
+Use `static/skills/`:
 
-Do not assume identical numeric values are joins without semantic evidence.
+- small `index/SKILL_TOOL_INDEX_*` chunks for normal lookup;
+- `SKILL_TOOL_INDEX.csv` / `SKILL_INDEX.csv` for broad local search;
+- full `SKILLS_*` rows;
+- `SKILL_PROPERTIES_*`;
+- `AUTO_SKILLS.csv`, `FACTIONS.csv`, `BOOKS.csv`.
 
----
+Magic dictionary: `static/magic/MAGIC_ATTRIBUTES.csv`.
+
+Runtime cooldown/ownership/target/acceptance remains authoritative.
+
+## Tasks / quest / activities / gather
+
+Use `static/tasks/`:
+
+- `TASK_INDEX.csv`
+- `TASK_OBJECTIVES.csv`
+- full `TASKS_*`
+- objective chunks
+- `GROW_POINTS.csv`
+- `ACTIVITIES.csv`
+- `GUILD_TASKS.csv`.
+
+Canonical runtime semantics: `analysis/23_TASK_QUEST_AUTOMATION.md`.
+
+## Pets / Spirits
+
+Use `static/pets/`:
+
+- `PET_INDEX_*` / `PETS_*`
+- `SPIRIT_INDEX_*` / `SPIRITS_*`
+- feature/equipment support tables.
+
+Canonical runtime semantics: `analysis/24_PET_SPIRIT_AUTO_RUNTIME.md`.
+
+## Protocol / exact actions
+
+Before reverse engineering a request, check:
+
+- `AUTO_TOOL_ACTION_CATALOG.md`
+- `PACKET_IDS.csv`
+- `NETWORK_COMMAND_CATALOG.md`
+- matching canonical feature analysis.
+
+Packet name existence alone does not prove request payload semantics.
+
+## PC input / hidden click
+
+- `PC_INPUT_KEY_BINDINGS.csv` — shipped key mapping.
+- `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md` — InputSync / TryClickUI / press-release-drag-state evidence.
+
+Prefer semantic Game/UI action routes over physical key/mouse emulation.
 
 ## Data interpretation rules
 
-1. Static template data describes **what something is**; runtime/server state describes **what exists/is true now**.
-2. Live inventory: `ID` instance != `ItemID` template != `Position` slot != `Site` container.
-3. `Equips.EquipPoint == 0` is the static Weapon slot identity; `Type < 10` is not a universal weapon test.
-4. `Game.GetNearByPeacePlayers(limit)` already exposes nearby non-party RoleID/Name/Level/FactionID/HP/MaxHP/GuildName/AvartaID/TeamRank.
-5. `Game.GetBuffs()` already exposes BuffID/DurationTick/Stack.
-6. Skill 407 is **Xung Hư Dưỡng Khí**; actual Kim Châm Độ Kiếp is 423.
-7. `FACTS.jsonl` is a retrieval index; its `source` document remains canonical for evidence/context.
-8. Unknown Config fields should be preserved during normalization instead of discarded.
-9. Response handlers are not request actions.
-10. Fixed delays are not success proof.
+1. Static Config describes **template/configured truth**.
+2. Runtime/server state describes **current/live truth and action success**.
+3. Item instance ID != ItemID != slot Position != Site.
+4. NPCID -> static identity; current position/service/dialog remains runtime-authoritative.
+5. Boss name alone is not enough: use exact Monster template/level-band when available.
+6. Fixed delay is never success proof.
+7. Response/event handler is not automatically a valid request action.
+8. Large databases are lookup systems, not mandatory context.
 
----
+## Regeneration / integrity
 
-## Particularly useful frozen-snapshot auto facts
+Generated database is reproducible directly from the frozen repo snapshot:
 
-- Train start = `GUI.FindUI("AutoFight_Main"):StartAutoFight(C_AutoModel.Train)`, Train=1.
-- Nearby PeacePlayer HP/MaxHP is structured semantic data; no party/CE/OCR requirement for the read-only list.
-- Skill cooldown is queryable by SkillID; physical F1/F2 is not skill identity.
-- Map 5 = Lâu Lan.
-- NPC 339 = Đỗ Thanh Đằng, `ResName=LangZhong1`, Map 5; strong healer candidate.
-- Exact “Trị liệu” selection remains active server `GameDialog.Selections`, not a fixed global numeric ID.
-- Auto Sell exact request is already solved; do not trace it again.
-- Revive/Đầu thai exact request is already solved; do not trace it again.
-- Team leave exact request is already solved; do not trace it again.
-- Static Weapon = `EquipPoint==0`.
+- generator: `../tools/materialize_tool_data.py`
+- workflow: `../.github/workflows/materialize-tool-data.yml`
+- source: `../Game/Thần Long  Mobile_Data/StreamingAssets/Config.unity3d`
+- manifest: `TOOL_DATA_MATERIALIZATION_MANIFEST.csv`.
 
----
+The GitHub workflow has successfully regenerated and committed the database. Future snapshot updates should modify the source snapshot/generator and regenerate instead of manually hand-editing thousands of rows.
 
-## Current database expansion priority
+## Remaining gaps are mostly runtime proofs
 
-Only expand data that reduces implementation uncertainty for the auto tool:
+Static data presence should no longer be confused with server/runtime validation.
 
-```text
-P0: skill/support fields needed by Train/Buff
- -> item/equip fields needed by Sell/Loot/Keep policy
- -> monster/NPC/map/route fields needed by Train/Travel/Service routing
-```
-
-Conditional:
-
-```text
-Tasks/GrowPoints only for Auto Quest
-Pets/Spirits only for Pet/Spirit automation
-Translations only for a real dialog-text matching gap
-```
-
-Full large row chunks are not currently present under `database/static/`; do not pretend they exist until they are actually committed.
+Use `research/AUTO_RUNTIME_PROOF_QUEUE.md` for unresolved live proofs such as dynamic healer/vendor dialogs, relationship-specific beneficial-skill acceptance, and production MainThread callback integration.
