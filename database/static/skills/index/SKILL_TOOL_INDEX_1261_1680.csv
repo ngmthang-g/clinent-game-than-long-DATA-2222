@@ -1,0 +1,421 @@
+﻿ID,Name,FactionID,Type,TargetType,RequireLevel,CastRange,Property
+201901,Tuyệt Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_juemiaoyiji_erji_child_1
+201902,Tuyệt Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_juemiaoyiji_erji_child_2
+201903,Tuyệt Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_juemiaoyiji_erji_child_3
+2020,Tuyệt Diệu Nhất Kích (Cấp 3),-1,Passive,Self,1,0,sq_juemiaoyiji_sanji
+202001,Tuyệt Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_juemiaoyiji_sanji_child_1
+202002,Tuyệt Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_juemiaoyiji_sanji_child_2
+202003,Tuyệt Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_juemiaoyiji_sanji_child_3
+2021,Tuyệt Diệu Nhất Kích (Cấp 4),-1,Passive,Self,1,0,sq_juemiaoyiji_siji
+202101,Tuyệt Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_juemiaoyiji_siji_child_1
+202102,Tuyệt Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_juemiaoyiji_siji_child_2
+202103,Tuyệt Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_juemiaoyiji_siji_child_3
+2022,Tuyệt Diệu Nhất Kích (Cấp 5),-1,Passive,Self,1,0,sq_juemiaoyiji_wuji
+202201,Tuyệt Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_juemiaoyiji_wuji_child_1
+202202,Tuyệt Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_juemiaoyiji_wuji_child_2
+202203,Tuyệt Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_juemiaoyiji_wuji_child_3
+2023,Tuyệt Diệu Nhất Kích (Cấp 6),-1,Passive,Self,1,0,sq_juemiaoyiji_liuji
+202301,Tuyệt Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_juemiaoyiji_liuji_child_1
+202302,Tuyệt Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_juemiaoyiji_liuji_child_2
+202303,Tuyệt Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_juemiaoyiji_liuji_child_3
+2024,Luyện Hồn - Phấn Lực Nhất Kích (Cấp 1),-1,Passive,Self,1,0,sq_lian_fenliyiji_wai_yiji
+202401,Luyện Hồn - Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_lian_fenliyiji_wai_yiji_child_1
+202402,Luyện Hồn - Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_lian_fenliyiji_wai_yiji_child_2
+202403,Luyện Hồn - Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_lian_fenliyiji_wai_yiji_child_3
+2025,Luyện Hồn - Phấn Lực Nhất Kích (Cấp 2),-1,Passive,Self,1,0,sq_lian_fenliyiji_wai_erji
+202501,Luyện Hồn - Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_lian_fenliyiji_wai_erji_child_1
+202502,Luyện Hồn - Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_lian_fenliyiji_wai_erji_child_2
+202503,Luyện Hồn - Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_lian_fenliyiji_wai_erji_child_3
+2026,Luyện Hồn - Phấn Lực Nhất Kích (Cấp 1),-1,Passive,Self,1,0,sq_lian_fenliyiji_nei_yiji
+202601,Luyện Hồn - Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_lian_fenliyiji_nei_yiji_child_1
+202602,Luyện Hồn - Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_lian_fenliyiji_nei_yiji_child_2
+202603,Luyện Hồn - Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_lian_fenliyiji_nei_yiji_child_3
+2027,Luyện Hồn - Phấn Lực Nhất Kích (Cấp 2),-1,Passive,Self,1,0,sq_lian_fenliyiji_nei_erji
+202701,Luyện Hồn - Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_lian_fenliyiji_nei_erji_child_1
+202702,Luyện Hồn - Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_lian_fenliyiji_nei_erji_child_2
+202703,Luyện Hồn - Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_lian_fenliyiji_nei_erji_child_3
+2028,Luyện Hồn - Tinh Diệu Nhất Kích (Cấp 1),-1,Passive,Self,1,0,sq_lian_xingmiaoyiji_yiji
+202801,Luyện Hồn - Tinh Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_lian_xingmiaoyiji_yiji_child_1
+202802,Luyện Hồn - Tinh Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_lian_xingmiaoyiji_yiji_child_2
+202803,Luyện Hồn - Tinh Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_lian_xingmiaoyiji_yiji_child_3
+2029,Luyện Hồn - Tinh Diệu Nhất Kích (Cấp 2),-1,Passive,Self,1,0,sq_lian_xingmiaoyiji_erji
+202901,Luyện Hồn - Tinh Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_lian_xingmiaoyiji_erji_child_1
+202902,Luyện Hồn - Tinh Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_lian_xingmiaoyiji_erji_child_2
+202903,Luyện Hồn - Tinh Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_lian_xingmiaoyiji_erji_child_3
+2030,Luyện Hồn - Tuyệt Diệu Nhất Kích (Cấp 1),-1,Passive,Self,1,0,sq_lian_juemiaoyiji_yiji
+203001,Luyện Hồn - Tuyệt Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_lian_juemiaoyiji_yiji_child_1
+203002,Luyện Hồn - Tuyệt Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_lian_juemiaoyiji_yiji_child_2
+203003,Luyện Hồn - Tuyệt Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_lian_juemiaoyiji_yiji_child_3
+2031,Luyện Hồn - Tuyệt Diệu Nhất Kích (Cấp 2),-1,Passive,Self,1,0,sq_lian_juemiaoyiji_erji
+203101,Luyện Hồn - Tuyệt Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_lian_juemiaoyiji_erji_child_1
+203102,Luyện Hồn - Tuyệt Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_lian_juemiaoyiji_erji_child_2
+203103,Luyện Hồn - Tuyệt Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_lian_juemiaoyiji_erji_child_3
+2032,Hấp Huyết Nhất Kích,-1,Passive,Self,1,0,sq_qixueyiji
+203201,Hấp Huyết Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_qixueyiji_child
+2033,Hấp Khí Nhất Kích,-1,Passive,Self,1,0,sq_qiqiyiji
+203301,Hấp Khí Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_qiqiyiji_child
+2034,Phá Trán Nhất Kích,-1,Passive,Self,1,0,sq_pozhanyiji
+203401,Phá Trán Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_pozhanyiji_child
+2035,Cương Ngạnh Nhất Kích,-1,Passive,Self,1,0,sq_ganggengyiji
+203501,Cương Ngạnh Nhất Kích - Giảm tốc,-1,Auto,Enemy,1,0,sq_ganggengyiji_child
+2036,Hư Nhược Nhất Kích,-1,Passive,Self,1,0,sq_xuruoyiji
+203601,Hư Nhược Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_xuruoyiji_child
+2037,Đả Nộ Nhất Kích,-1,Passive,Self,1,0,sq_danuyiji
+203701,Đả Nộ Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_danuyiji_child
+2038,Thông Linh - Hấp Huyết Nhất Kích,-1,Passive,Self,1,0,sq_tongling_qixueyiji
+203801,Thông Linh - Hấp Huyết Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_tongling_qixueyiji_child
+2039,Thông Linh - Hấp Khí Nhất Kích,-1,Passive,Self,1,0,sq_tongling_qiqiyiji
+203901,Thông Linh - Hấp Khí Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_tongling_qiqiyiji_child
+2040,Thông Linh - Phá Trán Nhất Kích,-1,Passive,Self,1,0,sq_tongling_pozhanyiji
+204001,Thông Linh - Phá Trán Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_tongling_pozhanyiji_child
+2041,Thông Linh - Cương Ngạnh Nhất Kích,-1,Passive,Self,1,0,sq_tongling_ganggengyiji
+204101,Thông Linh - Cương Ngạnh Nhất Kích - Giảm tốc,-1,Auto,Enemy,1,0,sq_tongling_ganggengyiji_child
+2042,Thông Linh - Hư Nhược Nhất Kích,-1,Passive,Self,1,0,sq_tongling_xuruoyiji
+204201,Thông Linh - Hư Nhược Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_tongling_xuruoyiji_child
+2043,Thông Linh - Đả Nộ Nhất Kích,-1,Passive,Self,1,0,sq_tongling_danuyiji
+204301,Thông Linh - Đả Nộ Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_tongling_danuyiji_child
+3000,Trùng Lâu Giới,-1,Passive,Self,1,0,zl_zhongloujie
+300001,Trùng Lâu Giới - Phong huyệt,-1,Auto,Enemy,1,0,zl_zhongloujie_child
+3001,Trùng Lâu Ngọc,-1,Passive,Self,1,0,zl_zhonglouyu
+300101,Trùng Lâu Ngọc - Tê liệt,-1,Auto,Enemy,1,0,zl_zhonglouyu_child
+3002,Trùng Lâu Kiên,-1,Passive,Self,1,0,zl_zhongloujian
+3003,Trùng Lâu Liên,-1,Passive,Self,1,0,zl_zhongloulian
+300301,Trùng Lâu Liên - Thất minh,-1,Auto,Enemy,1,0,zl_zhongloulian_child
+3004,Trùng Lâu Thủ,-1,Passive,Self,1,0,zl_zhongloushou
+3005,Trùng Lâu Khôi,-1,Passive,Self,1,0,zl_zhongloukui
+3006,Trùng Lâu Uyển,-1,Passive,Self,1,0,zl_zhonglouwan
+3007,Trùng Lâu Giáp,-1,Passive,Self,1,0,zl_zhongloujia
+3008,Trùng Lâu Ngoa,-1,Passive,Self,1,0,zl_zhonglouxue
+3009,Trùng Lâu Đới,-1,Passive,Self,1,0,zl_zhongloudai
+300901,Trùng Lâu Đới - Cuồng bạo,-1,Auto,Self,1,0,zl_zhongloudai_child
+300902,Trùng Lâu Đới - Bạo kích,-1,Auto,Enemy,1,0,zl_zhongloudai_child_2
+4000,Hoàn Đồng Quang Hoàn (Cấp 1),-1,Passive,Self,1,0,empty
+4001,Hoàn Đồng Quang Hoàn (Cấp 1),-1,Passive,Self,1,0,empty
+4002,Hoàn Đồng Quang Hoàn (Cấp 1),-1,Passive,Self,1,0,empty
+4003,Hoàn Đồng Quang Hoàn (Cấp 1),-1,Passive,Self,1,0,empty
+4004,Hoàn Đồng Quang Hoàn (Cấp 1),-1,Passive,Self,1,0,empty
+4010,Hoàn Đồng Quang Hoàn (Cấp 2),-1,Passive,Self,1,0,empty
+4011,Hoàn Đồng Quang Hoàn (Cấp 2),-1,Passive,Self,1,0,empty
+4012,Hoàn Đồng Quang Hoàn (Cấp 2),-1,Passive,Self,1,0,empty
+4013,Hoàn Đồng Quang Hoàn (Cấp 2),-1,Passive,Self,1,0,empty
+4014,Hoàn Đồng Quang Hoàn (Cấp 2),-1,Passive,Self,1,0,empty
+4020,Hoàn Đồng Quang Hoàn (Cấp 3),-1,Passive,Self,1,0,empty
+4021,Hoàn Đồng Quang Hoàn (Cấp 3),-1,Passive,Self,1,0,empty
+4022,Hoàn Đồng Quang Hoàn (Cấp 3),-1,Passive,Self,1,0,empty
+4023,Hoàn Đồng Quang Hoàn (Cấp 3),-1,Passive,Self,1,0,empty
+4024,Hoàn Đồng Quang Hoàn (Cấp 3),-1,Passive,Self,1,0,empty
+4100,Thần Long Chuyên Sinh,-1,Active,Self,1,0,dragon_lord_blessing
+50001,Hàn Băng Hóa Kinh (Cấp 1),-1,Passive,Self,1,0,heroicorder_hanbinghuajin_lv1
+50002,Hàn Băng Hóa Kinh (Cấp 2),-1,Passive,Self,1,0,heroicorder_hanbinghuajin_lv2
+50003,Hàn Băng Hóa Kinh (Cấp 3),-1,Passive,Self,1,0,heroicorder_hanbinghuajin_lv3
+50004,Hàn Băng Hóa Kinh (Cấp 4),-1,Passive,Self,1,0,heroicorder_hanbinghuajin_lv4
+50005,Hàn Băng Hóa Kinh (Cấp 5),-1,Passive,Self,1,0,heroicorder_hanbinghuajin_lv5
+50006,Hàn Băng Hóa Kinh (Cấp 6),-1,Passive,Self,1,0,heroicorder_hanbinghuajin_lv6
+50007,Hàn Băng Hóa Kinh (Cấp 7),-1,Passive,Self,1,0,heroicorder_hanbinghuajin_lv7
+50008,Hàn Băng Hóa Kinh (Cấp 8),-1,Passive,Self,1,0,heroicorder_hanbinghuajin_lv8
+50009,Hàn Băng Hóa Kinh (Cấp 9),-1,Passive,Self,1,0,heroicorder_hanbinghuajin_lv9
+5000011,Hàn Băng Hóa Kinh - Hóa Kinh (Cấp 1),-1,Auto,Self,1,0,heroicorder_hanbinghuajin_child_lv1
+5000012,Hàn Băng Hóa Kinh - Hóa Kinh (Cấp 2),-1,Auto,Self,1,0,heroicorder_hanbinghuajin_child_lv2
+5000013,Hàn Băng Hóa Kinh - Hóa Kinh (Cấp 3),-1,Auto,Self,1,0,heroicorder_hanbinghuajin_child_lv3
+5000014,Hàn Băng Hóa Kinh - Hóa Kinh (Cấp 4),-1,Auto,Self,1,0,heroicorder_hanbinghuajin_child_lv4
+5000015,Hàn Băng Hóa Kinh - Hóa Kinh (Cấp 5),-1,Auto,Self,1,0,heroicorder_hanbinghuajin_child_lv5
+5000016,Hàn Băng Hóa Kinh - Hóa Kinh (Cấp 6),-1,Auto,Self,1,0,heroicorder_hanbinghuajin_child_lv6
+5000017,Hàn Băng Hóa Kinh - Hóa Kinh (Cấp 7),-1,Auto,Self,1,0,heroicorder_hanbinghuajin_child_lv7
+5000018,Hàn Băng Hóa Kinh - Hóa Kinh (Cấp 8),-1,Auto,Self,1,0,heroicorder_hanbinghuajin_child_lv8
+5000019,Hàn Băng Hóa Kinh - Hóa Kinh (Cấp 9),-1,Auto,Self,1,0,heroicorder_hanbinghuajin_child_lv9
+50011,Viêm Khí Hóa Kinh (Cấp 1),-1,Passive,Self,1,0,heroicorder_yanqihuajin_lv1
+50012,Viêm Khí Hóa Kinh (Cấp 2),-1,Passive,Self,1,0,heroicorder_yanqihuajin_lv2
+50013,Viêm Khí Hóa Kinh (Cấp 3),-1,Passive,Self,1,0,heroicorder_yanqihuajin_lv3
+50014,Viêm Khí Hóa Kinh (Cấp 4),-1,Passive,Self,1,0,heroicorder_yanqihuajin_lv4
+50015,Viêm Khí Hóa Kinh (Cấp 5),-1,Passive,Self,1,0,heroicorder_yanqihuajin_lv5
+50016,Viêm Khí Hóa Kinh (Cấp 6),-1,Passive,Self,1,0,heroicorder_yanqihuajin_lv6
+50017,Viêm Khí Hóa Kinh (Cấp 7),-1,Passive,Self,1,0,heroicorder_yanqihuajin_lv7
+50018,Viêm Khí Hóa Kinh (Cấp 8),-1,Passive,Self,1,0,heroicorder_yanqihuajin_lv8
+50019,Viêm Khí Hóa Kinh (Cấp 9),-1,Passive,Self,1,0,heroicorder_yanqihuajin_lv9
+5001011,Viêm Khí Hóa Kinh - Hóa Kinh (Cấp 1),-1,Auto,Self,1,0,heroicorder_yanqihuajin_child_lv1
+5001012,Viêm Khí Hóa Kinh - Hóa Kinh (Cấp 2),-1,Auto,Self,1,0,heroicorder_yanqihuajin_child_lv2
+5001013,Viêm Khí Hóa Kinh - Hóa Kinh (Cấp 3),-1,Auto,Self,1,0,heroicorder_yanqihuajin_child_lv3
+5001014,Viêm Khí Hóa Kinh - Hóa Kinh (Cấp 4),-1,Auto,Self,1,0,heroicorder_yanqihuajin_child_lv4
+5001015,Viêm Khí Hóa Kinh - Hóa Kinh (Cấp 5),-1,Auto,Self,1,0,heroicorder_yanqihuajin_child_lv5
+5001016,Viêm Khí Hóa Kinh - Hóa Kinh (Cấp 6),-1,Auto,Self,1,0,heroicorder_yanqihuajin_child_lv6
+5001017,Viêm Khí Hóa Kinh - Hóa Kinh (Cấp 7),-1,Auto,Self,1,0,heroicorder_yanqihuajin_child_lv7
+5001018,Viêm Khí Hóa Kinh - Hóa Kinh (Cấp 8),-1,Auto,Self,1,0,heroicorder_yanqihuajin_child_lv8
+5001019,Viêm Khí Hóa Kinh - Hóa Kinh (Cấp 9),-1,Auto,Self,1,0,heroicorder_yanqihuajin_child_lv9
+50021,Huyền Pháp Hóa Kinh (Cấp 1),-1,Passive,Self,1,0,heroicorder_xuanfahuajin_lv1
+50022,Huyền Pháp Hóa Kinh (Cấp 2),-1,Passive,Self,1,0,heroicorder_xuanfahuajin_lv2
+50023,Huyền Pháp Hóa Kinh (Cấp 3),-1,Passive,Self,1,0,heroicorder_xuanfahuajin_lv3
+50024,Huyền Pháp Hóa Kinh (Cấp 4),-1,Passive,Self,1,0,heroicorder_xuanfahuajin_lv4
+50025,Huyền Pháp Hóa Kinh (Cấp 5),-1,Passive,Self,1,0,heroicorder_xuanfahuajin_lv5
+50026,Huyền Pháp Hóa Kinh (Cấp 6),-1,Passive,Self,1,0,heroicorder_xuanfahuajin_lv6
+50027,Huyền Pháp Hóa Kinh (Cấp 7),-1,Passive,Self,1,0,heroicorder_xuanfahuajin_lv7
+50028,Huyền Pháp Hóa Kinh (Cấp 8),-1,Passive,Self,1,0,heroicorder_xuanfahuajin_lv8
+50029,Huyền Pháp Hóa Kinh (Cấp 9),-1,Passive,Self,1,0,heroicorder_xuanfahuajin_lv9
+5002011,Huyền Pháp Hóa Kinh - Hóa Kinh (Cấp 1),-1,Auto,Self,1,0,heroicorder_xuanfahuajin_child_lv1
+5002012,Huyền Pháp Hóa Kinh - Hóa Kinh (Cấp 2),-1,Auto,Self,1,0,heroicorder_xuanfahuajin_child_lv2
+5002013,Huyền Pháp Hóa Kinh - Hóa Kinh (Cấp 3),-1,Auto,Self,1,0,heroicorder_xuanfahuajin_child_lv3
+5002014,Huyền Pháp Hóa Kinh - Hóa Kinh (Cấp 4),-1,Auto,Self,1,0,heroicorder_xuanfahuajin_child_lv4
+5002015,Huyền Pháp Hóa Kinh - Hóa Kinh (Cấp 5),-1,Auto,Self,1,0,heroicorder_xuanfahuajin_child_lv5
+5002016,Huyền Pháp Hóa Kinh - Hóa Kinh (Cấp 6),-1,Auto,Self,1,0,heroicorder_xuanfahuajin_child_lv6
+5002017,Huyền Pháp Hóa Kinh - Hóa Kinh (Cấp 7),-1,Auto,Self,1,0,heroicorder_xuanfahuajin_child_lv7
+5002018,Huyền Pháp Hóa Kinh - Hóa Kinh (Cấp 8),-1,Auto,Self,1,0,heroicorder_xuanfahuajin_child_lv8
+5002019,Huyền Pháp Hóa Kinh - Hóa Kinh (Cấp 9),-1,Auto,Self,1,0,heroicorder_xuanfahuajin_child_lv9
+50031,Bách Độc Hóa Kinh (Cấp 1),-1,Passive,Self,1,0,heroicorder_baiduhuajin_lv1
+50032,Bách Độc Hóa Kinh (Cấp 2),-1,Passive,Self,1,0,heroicorder_baiduhuajin_lv2
+50033,Bách Độc Hóa Kinh (Cấp 3),-1,Passive,Self,1,0,heroicorder_baiduhuajin_lv3
+50034,Bách Độc Hóa Kinh (Cấp 4),-1,Passive,Self,1,0,heroicorder_baiduhuajin_lv4
+50035,Bách Độc Hóa Kinh (Cấp 5),-1,Passive,Self,1,0,heroicorder_baiduhuajin_lv5
+50036,Bách Độc Hóa Kinh (Cấp 6),-1,Passive,Self,1,0,heroicorder_baiduhuajin_lv6
+50037,Bách Độc Hóa Kinh (Cấp 7),-1,Passive,Self,1,0,heroicorder_baiduhuajin_lv7
+50038,Bách Độc Hóa Kinh (Cấp 8),-1,Passive,Self,1,0,heroicorder_baiduhuajin_lv8
+50039,Bách Độc Hóa Kinh (Cấp 9),-1,Passive,Self,1,0,heroicorder_baiduhuajin_lv9
+5003011,Bách Độc Hóa Kinh - Hóa Kinh (Cấp 1),-1,Auto,Self,1,0,heroicorder_baiduhuajin_child_lv1
+5003012,Bách Độc Hóa Kinh - Hóa Kinh (Cấp 2),-1,Auto,Self,1,0,heroicorder_baiduhuajin_child_lv2
+5003013,Bách Độc Hóa Kinh - Hóa Kinh (Cấp 3),-1,Auto,Self,1,0,heroicorder_baiduhuajin_child_lv3
+5003014,Bách Độc Hóa Kinh - Hóa Kinh (Cấp 4),-1,Auto,Self,1,0,heroicorder_baiduhuajin_child_lv4
+5003015,Bách Độc Hóa Kinh - Hóa Kinh (Cấp 5),-1,Auto,Self,1,0,heroicorder_baiduhuajin_child_lv5
+5003016,Bách Độc Hóa Kinh - Hóa Kinh (Cấp 6),-1,Auto,Self,1,0,heroicorder_baiduhuajin_child_lv6
+5003017,Bách Độc Hóa Kinh - Hóa Kinh (Cấp 7),-1,Auto,Self,1,0,heroicorder_baiduhuajin_child_lv7
+5003018,Bách Độc Hóa Kinh - Hóa Kinh (Cấp 8),-1,Auto,Self,1,0,heroicorder_baiduhuajin_child_lv8
+5003019,Bách Độc Hóa Kinh - Hóa Kinh (Cấp 9),-1,Auto,Self,1,0,heroicorder_baiduhuajin_child_lv9
+50041,Liễm Thần Quan Quang (Cấp 1),-1,Passive,Self,1,0,heroicorder_lianshenguanguang_lv1
+50042,Liễm Thần Quan Quang (Cấp 2),-1,Passive,Self,1,0,heroicorder_lianshenguanguang_lv2
+50043,Liễm Thần Quan Quang (Cấp 3),-1,Passive,Self,1,0,heroicorder_lianshenguanguang_lv3
+50044,Liễm Thần Quan Quang (Cấp 4),-1,Passive,Self,1,0,heroicorder_lianshenguanguang_lv4
+50045,Liễm Thần Quan Quang (Cấp 5),-1,Passive,Self,1,0,heroicorder_lianshenguanguang_lv5
+50046,Liễm Thần Quan Quang (Cấp 6),-1,Passive,Self,1,0,heroicorder_lianshenguanguang_lv6
+50047,Liễm Thần Quan Quang (Cấp 7),-1,Passive,Self,1,0,heroicorder_lianshenguanguang_lv7
+50048,Liễm Thần Quan Quang (Cấp 8),-1,Passive,Self,1,0,heroicorder_lianshenguanguang_lv8
+50049,Liễm Thần Quan Quang (Cấp 9),-1,Passive,Self,1,0,heroicorder_lianshenguanguang_lv9
+5004011,Liễm Thần Quan Quang - Suy Thần (Cấp 1),-1,Auto,Enemy,1,0,heroicorder_lianshenguanguang_child_lv1
+5004012,Liễm Thần Quan Quang - Suy Thần (Cấp 2),-1,Auto,Enemy,1,0,heroicorder_lianshenguanguang_child_lv2
+5004013,Liễm Thần Quan Quang - Suy Thần (Cấp 3),-1,Auto,Enemy,1,0,heroicorder_lianshenguanguang_child_lv3
+5004014,Liễm Thần Quan Quang - Suy Thần (Cấp 4),-1,Auto,Enemy,1,0,heroicorder_lianshenguanguang_child_lv4
+5004015,Liễm Thần Quan Quang - Suy Thần (Cấp 5),-1,Auto,Enemy,1,0,heroicorder_lianshenguanguang_child_lv5
+5004016,Liễm Thần Quan Quang - Suy Thần (Cấp 6),-1,Auto,Enemy,1,0,heroicorder_lianshenguanguang_child_lv6
+5004017,Liễm Thần Quan Quang - Suy Thần (Cấp 7),-1,Auto,Enemy,1,0,heroicorder_lianshenguanguang_child_lv7
+5004018,Liễm Thần Quan Quang - Suy Thần (Cấp 8),-1,Auto,Enemy,1,0,heroicorder_lianshenguanguang_child_lv8
+5004019,Liễm Thần Quan Quang - Suy Thần (Cấp 9),-1,Auto,Enemy,1,0,heroicorder_lianshenguanguang_child_lv9
+50051,Bằng Hư Ngự Phong (Cấp 1),-1,Passive,Self,1,0,heroicorder_pingxuyufeng_lv1
+50052,Bằng Hư Ngự Phong (Cấp 2),-1,Passive,Self,1,0,heroicorder_pingxuyufeng_lv2
+50053,Bằng Hư Ngự Phong (Cấp 3),-1,Passive,Self,1,0,heroicorder_pingxuyufeng_lv3
+50054,Bằng Hư Ngự Phong (Cấp 4),-1,Passive,Self,1,0,heroicorder_pingxuyufeng_lv4
+50055,Bằng Hư Ngự Phong (Cấp 5),-1,Passive,Self,1,0,heroicorder_pingxuyufeng_lv5
+50056,Bằng Hư Ngự Phong (Cấp 6),-1,Passive,Self,1,0,heroicorder_pingxuyufeng_lv6
+50057,Bằng Hư Ngự Phong (Cấp 7),-1,Passive,Self,1,0,heroicorder_pingxuyufeng_lv7
+50058,Bằng Hư Ngự Phong (Cấp 8),-1,Passive,Self,1,0,heroicorder_pingxuyufeng_lv8
+50059,Bằng Hư Ngự Phong (Cấp 9),-1,Passive,Self,1,0,heroicorder_pingxuyufeng_lv9
+5005011,Bằng Hư Ngự Phong - Ngự Phong (Cấp 1),-1,Auto,Self,1,0,heroicorder_pingxuyufeng_child_lv1
+5005012,Bằng Hư Ngự Phong - Ngự Phong (Cấp 2),-1,Auto,Self,1,0,heroicorder_pingxuyufeng_child_lv2
+5005013,Bằng Hư Ngự Phong - Ngự Phong (Cấp 3),-1,Auto,Self,1,0,heroicorder_pingxuyufeng_child_lv3
+5005014,Bằng Hư Ngự Phong - Ngự Phong (Cấp 4),-1,Auto,Self,1,0,heroicorder_pingxuyufeng_child_lv4
+5005015,Bằng Hư Ngự Phong - Ngự Phong (Cấp 5),-1,Auto,Self,1,0,heroicorder_pingxuyufeng_child_lv5
+5005016,Bằng Hư Ngự Phong - Ngự Phong (Cấp 6),-1,Auto,Self,1,0,heroicorder_pingxuyufeng_child_lv6
+5005017,Bằng Hư Ngự Phong - Ngự Phong (Cấp 7),-1,Auto,Self,1,0,heroicorder_pingxuyufeng_child_lv7
+5005018,Bằng Hư Ngự Phong - Ngự Phong (Cấp 8),-1,Auto,Self,1,0,heroicorder_pingxuyufeng_child_lv8
+5005019,Bằng Hư Ngự Phong - Ngự Phong (Cấp 9),-1,Auto,Self,1,0,heroicorder_pingxuyufeng_child_lv9
+50061,Tứ Tượng Quy Nhất - Băng (Cấp 1),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_bing_lv1
+50062,Tứ Tượng Quy Nhất - Băng (Cấp 2),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_bing_lv2
+50063,Tứ Tượng Quy Nhất - Băng (Cấp 3),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_bing_lv3
+50064,Tứ Tượng Quy Nhất - Băng (Cấp 4),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_bing_lv4
+50065,Tứ Tượng Quy Nhất - Băng (Cấp 5),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_bing_lv5
+50066,Tứ Tượng Quy Nhất - Băng (Cấp 6),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_bing_lv6
+50067,Tứ Tượng Quy Nhất - Băng (Cấp 7),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_bing_lv7
+50068,Tứ Tượng Quy Nhất - Băng (Cấp 8),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_bing_lv8
+50069,Tứ Tượng Quy Nhất - Băng (Cấp 9),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_bing_lv9
+5006011,Tứ Tượng Quy Nhất - Băng - Quy Nhất (Cấp 1),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_bing_child_lv1
+5006012,Tứ Tượng Quy Nhất - Băng - Quy Nhất (Cấp 2),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_bing_child_lv2
+5006013,Tứ Tượng Quy Nhất - Băng - Quy Nhất (Cấp 3),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_bing_child_lv3
+5006014,Tứ Tượng Quy Nhất - Băng - Quy Nhất (Cấp 4),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_bing_child_lv4
+5006015,Tứ Tượng Quy Nhất - Băng - Quy Nhất (Cấp 5),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_bing_child_lv5
+5006016,Tứ Tượng Quy Nhất - Băng - Quy Nhất (Cấp 6),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_bing_child_lv6
+5006017,Tứ Tượng Quy Nhất - Băng - Quy Nhất (Cấp 7),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_bing_child_lv7
+5006018,Tứ Tượng Quy Nhất - Băng - Quy Nhất (Cấp 8),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_bing_child_lv8
+5006019,Tứ Tượng Quy Nhất - Băng - Quy Nhất (Cấp 9),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_bing_child_lv9
+50071,Tứ Tượng Quy Nhất - Hỏa (Cấp 1),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_huo_lv1
+50072,Tứ Tượng Quy Nhất - Hỏa (Cấp 2),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_huo_lv2
+50073,Tứ Tượng Quy Nhất - Hỏa (Cấp 3),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_huo_lv3
+50074,Tứ Tượng Quy Nhất - Hỏa (Cấp 4),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_huo_lv4
+50075,Tứ Tượng Quy Nhất - Hỏa (Cấp 5),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_huo_lv5
+50076,Tứ Tượng Quy Nhất - Hỏa (Cấp 6),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_huo_lv6
+50077,Tứ Tượng Quy Nhất - Hỏa (Cấp 7),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_huo_lv7
+50078,Tứ Tượng Quy Nhất - Hỏa (Cấp 8),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_huo_lv8
+50079,Tứ Tượng Quy Nhất - Hỏa (Cấp 9),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_huo_lv9
+5007011,Tứ Tượng Quy Nhất - Hỏa - Quy Nhất (Cấp 1),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_huo_child_lv1
+5007012,Tứ Tượng Quy Nhất - Hỏa - Quy Nhất (Cấp 2),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_huo_child_lv2
+5007013,Tứ Tượng Quy Nhất - Hỏa - Quy Nhất (Cấp 3),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_huo_child_lv3
+5007014,Tứ Tượng Quy Nhất - Hỏa - Quy Nhất (Cấp 4),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_huo_child_lv4
+5007015,Tứ Tượng Quy Nhất - Hỏa - Quy Nhất (Cấp 5),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_huo_child_lv5
+5007016,Tứ Tượng Quy Nhất - Hỏa - Quy Nhất (Cấp 6),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_huo_child_lv6
+5007017,Tứ Tượng Quy Nhất - Hỏa - Quy Nhất (Cấp 7),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_huo_child_lv7
+5007018,Tứ Tượng Quy Nhất - Hỏa - Quy Nhất (Cấp 8),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_huo_child_lv8
+5007019,Tứ Tượng Quy Nhất - Hỏa - Quy Nhất (Cấp 9),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_huo_child_lv9
+50081,Tứ Tượng Quy Nhất - Huyền (Cấp 1),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_xuan_lv1
+50082,Tứ Tượng Quy Nhất - Huyền (Cấp 2),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_xuan_lv2
+50083,Tứ Tượng Quy Nhất - Huyền (Cấp 3),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_xuan_lv3
+50084,Tứ Tượng Quy Nhất - Huyền (Cấp 4),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_xuan_lv4
+50085,Tứ Tượng Quy Nhất - Huyền (Cấp 5),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_xuan_lv5
+50086,Tứ Tượng Quy Nhất - Huyền (Cấp 6),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_xuan_lv6
+50087,Tứ Tượng Quy Nhất - Huyền (Cấp 7),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_xuan_lv7
+50088,Tứ Tượng Quy Nhất - Huyền (Cấp 8),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_xuan_lv8
+50089,Tứ Tượng Quy Nhất - Huyền (Cấp 9),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_xuan_lv9
+5008011,Tứ Tượng Quy Nhất - Huyền - Quy Nhất (Cấp 1),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_xuan_child_lv1
+5008012,Tứ Tượng Quy Nhất - Huyền - Quy Nhất (Cấp 2),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_xuan_child_lv2
+5008013,Tứ Tượng Quy Nhất - Huyền - Quy Nhất (Cấp 3),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_xuan_child_lv3
+5008014,Tứ Tượng Quy Nhất - Huyền - Quy Nhất (Cấp 4),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_xuan_child_lv4
+5008015,Tứ Tượng Quy Nhất - Huyền - Quy Nhất (Cấp 5),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_xuan_child_lv5
+5008016,Tứ Tượng Quy Nhất - Huyền - Quy Nhất (Cấp 6),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_xuan_child_lv6
+5008017,Tứ Tượng Quy Nhất - Huyền - Quy Nhất (Cấp 7),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_xuan_child_lv7
+5008018,Tứ Tượng Quy Nhất - Huyền - Quy Nhất (Cấp 8),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_xuan_child_lv8
+5008019,Tứ Tượng Quy Nhất - Huyền - Quy Nhất (Cấp 9),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_xuan_child_lv9
+50091,Tứ Tượng Quy Nhất - Độc (Cấp 1),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_du_lv1
+50092,Tứ Tượng Quy Nhất - Độc (Cấp 2),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_du_lv2
+50093,Tứ Tượng Quy Nhất - Độc (Cấp 3),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_du_lv3
+50094,Tứ Tượng Quy Nhất - Độc (Cấp 4),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_du_lv4
+50095,Tứ Tượng Quy Nhất - Độc (Cấp 5),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_du_lv5
+50096,Tứ Tượng Quy Nhất - Độc (Cấp 6),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_du_lv6
+50097,Tứ Tượng Quy Nhất - Độc (Cấp 7),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_du_lv7
+50098,Tứ Tượng Quy Nhất - Độc (Cấp 8),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_du_lv8
+50099,Tứ Tượng Quy Nhất - Độc (Cấp 9),-1,Passive,Self,1,0,heroicorder_sixiangguiyi_du_lv9
+5009011,Tứ Tượng Quy Nhất - Độc - Quy Nhất (Cấp 1),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_du_child_lv1
+5009012,Tứ Tượng Quy Nhất - Độc - Quy Nhất (Cấp 2),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_du_child_lv2
+5009013,Tứ Tượng Quy Nhất - Độc - Quy Nhất (Cấp 3),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_du_child_lv3
+5009014,Tứ Tượng Quy Nhất - Độc - Quy Nhất (Cấp 4),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_du_child_lv4
+5009015,Tứ Tượng Quy Nhất - Độc - Quy Nhất (Cấp 5),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_du_child_lv5
+5009016,Tứ Tượng Quy Nhất - Độc - Quy Nhất (Cấp 6),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_du_child_lv6
+5009017,Tứ Tượng Quy Nhất - Độc - Quy Nhất (Cấp 7),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_du_child_lv7
+5009018,Tứ Tượng Quy Nhất - Độc - Quy Nhất (Cấp 8),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_du_child_lv8
+5009019,Tứ Tượng Quy Nhất - Độc - Quy Nhất (Cấp 9),-1,Auto,Self,1,0,heroicorder_sixiangguiyi_du_child_lv9
+50101,Khí Định Thần Nhàn (Cấp 1),-1,Passive,Self,1,0,heroicorder_qidingshenxian_lv1
+50102,Khí Định Thần Nhàn (Cấp 2),-1,Passive,Self,1,0,heroicorder_qidingshenxian_lv2
+50103,Khí Định Thần Nhàn (Cấp 3),-1,Passive,Self,1,0,heroicorder_qidingshenxian_lv3
+50104,Khí Định Thần Nhàn (Cấp 4),-1,Passive,Self,1,0,heroicorder_qidingshenxian_lv4
+50105,Khí Định Thần Nhàn (Cấp 5),-1,Passive,Self,1,0,heroicorder_qidingshenxian_lv5
+50106,Khí Định Thần Nhàn (Cấp 6),-1,Passive,Self,1,0,heroicorder_qidingshenxian_lv6
+50107,Khí Định Thần Nhàn (Cấp 7),-1,Passive,Self,1,0,heroicorder_qidingshenxian_lv7
+50108,Khí Định Thần Nhàn (Cấp 8),-1,Passive,Self,1,0,heroicorder_qidingshenxian_lv8
+50109,Khí Định Thần Nhàn (Cấp 9),-1,Passive,Self,1,0,heroicorder_qidingshenxian_lv9
+5010011,Khí Định Thần Nhàn - Hội Thủ (Cấp 1),-1,Auto,Self,1,0,heroicorder_qidingshenxian_child_lv1
+5010012,Khí Định Thần Nhàn - Hội Thủ (Cấp 2),-1,Auto,Self,1,0,heroicorder_qidingshenxian_child_lv2
+5010013,Khí Định Thần Nhàn - Hội Thủ (Cấp 3),-1,Auto,Self,1,0,heroicorder_qidingshenxian_child_lv3
+5010014,Khí Định Thần Nhàn - Hội Thủ (Cấp 4),-1,Auto,Self,1,0,heroicorder_qidingshenxian_child_lv4
+5010015,Khí Định Thần Nhàn - Hội Thủ (Cấp 5),-1,Auto,Self,1,0,heroicorder_qidingshenxian_child_lv5
+5010016,Khí Định Thần Nhàn - Hội Thủ (Cấp 6),-1,Auto,Self,1,0,heroicorder_qidingshenxian_child_lv6
+5010017,Khí Định Thần Nhàn - Hội Thủ (Cấp 7),-1,Auto,Self,1,0,heroicorder_qidingshenxian_child_lv7
+5010018,Khí Định Thần Nhàn - Hội Thủ (Cấp 8),-1,Auto,Self,1,0,heroicorder_qidingshenxian_child_lv8
+5010019,Khí Định Thần Nhàn - Hội Thủ (Cấp 9),-1,Auto,Self,1,0,heroicorder_qidingshenxian_child_lv9
+50111,Lực Phá Càn Khôn (Cấp 1),-1,Passive,Self,1,0,heroicorder_lipoqiankun_lv1
+50112,Lực Phá Càn Khôn (Cấp 2),-1,Passive,Self,1,0,heroicorder_lipoqiankun_lv2
+50113,Lực Phá Càn Khôn (Cấp 3),-1,Passive,Self,1,0,heroicorder_lipoqiankun_lv3
+50114,Lực Phá Càn Khôn (Cấp 4),-1,Passive,Self,1,0,heroicorder_lipoqiankun_lv4
+50115,Lực Phá Càn Khôn (Cấp 5),-1,Passive,Self,1,0,heroicorder_lipoqiankun_lv5
+50116,Lực Phá Càn Khôn (Cấp 6),-1,Passive,Self,1,0,heroicorder_lipoqiankun_lv6
+50117,Lực Phá Càn Khôn (Cấp 7),-1,Passive,Self,1,0,heroicorder_lipoqiankun_lv7
+50118,Lực Phá Càn Khôn (Cấp 8),-1,Passive,Self,1,0,heroicorder_lipoqiankun_lv8
+50119,Lực Phá Càn Khôn (Cấp 9),-1,Passive,Self,1,0,heroicorder_lipoqiankun_lv9
+5011011,Lực Phá Càn Khôn - Phạm Vi (Cấp 1),-1,Auto,Enemy,1,20,heroicorder_lipoqiankun_child_lv1
+5011012,Lực Phá Càn Khôn - Phạm Vi (Cấp 2),-1,Auto,Enemy,1,20,heroicorder_lipoqiankun_child_lv2
+5011013,Lực Phá Càn Khôn - Phạm Vi (Cấp 3),-1,Auto,Enemy,1,20,heroicorder_lipoqiankun_child_lv3
+5011014,Lực Phá Càn Khôn - Phạm Vi (Cấp 4),-1,Auto,Enemy,1,20,heroicorder_lipoqiankun_child_lv4
+5011015,Lực Phá Càn Khôn - Phạm Vi (Cấp 5),-1,Auto,Enemy,1,20,heroicorder_lipoqiankun_child_lv5
+5011016,Lực Phá Càn Khôn - Phạm Vi (Cấp 6),-1,Auto,Enemy,1,20,heroicorder_lipoqiankun_child_lv6
+5011017,Lực Phá Càn Khôn - Phạm Vi (Cấp 7),-1,Auto,Enemy,1,20,heroicorder_lipoqiankun_child_lv7
+5011018,Lực Phá Càn Khôn - Phạm Vi (Cấp 8),-1,Auto,Enemy,1,20,heroicorder_lipoqiankun_child_lv8
+5011019,Lực Phá Càn Khôn - Phạm Vi (Cấp 9),-1,Auto,Enemy,1,20,heroicorder_lipoqiankun_child_lv9
+50121,Canh Khí Hộ Thể (Cấp 1),-1,Passive,Self,1,0,heroicorder_gangqihuti_lv1
+50122,Canh Khí Hộ Thể (Cấp 2),-1,Passive,Self,1,0,heroicorder_gangqihuti_lv2
+50123,Canh Khí Hộ Thể (Cấp 3),-1,Passive,Self,1,0,heroicorder_gangqihuti_lv3
+50124,Canh Khí Hộ Thể (Cấp 4),-1,Passive,Self,1,0,heroicorder_gangqihuti_lv4
+50125,Canh Khí Hộ Thể (Cấp 5),-1,Passive,Self,1,0,heroicorder_gangqihuti_lv5
+50126,Canh Khí Hộ Thể (Cấp 6),-1,Passive,Self,1,0,heroicorder_gangqihuti_lv6
+50127,Canh Khí Hộ Thể (Cấp 7),-1,Passive,Self,1,0,heroicorder_gangqihuti_lv7
+50128,Canh Khí Hộ Thể (Cấp 8),-1,Passive,Self,1,0,heroicorder_gangqihuti_lv8
+50129,Canh Khí Hộ Thể (Cấp 9),-1,Passive,Self,1,0,heroicorder_gangqihuti_lv9
+5012011,Canh Khí Hộ Thể - Hộ Thể (Cấp 1),-1,Auto,Self,1,0,heroicorder_gangqihuti_child_lv1
+5012012,Canh Khí Hộ Thể - Hộ Thể (Cấp 2),-1,Auto,Self,1,0,heroicorder_gangqihuti_child_lv2
+5012013,Canh Khí Hộ Thể - Hộ Thể (Cấp 3),-1,Auto,Self,1,0,heroicorder_gangqihuti_child_lv3
+5012014,Canh Khí Hộ Thể - Hộ Thể (Cấp 4),-1,Auto,Self,1,0,heroicorder_gangqihuti_child_lv4
+5012015,Canh Khí Hộ Thể - Hộ Thể (Cấp 5),-1,Auto,Self,1,0,heroicorder_gangqihuti_child_lv5
+5012016,Canh Khí Hộ Thể - Hộ Thể (Cấp 6),-1,Auto,Self,1,0,heroicorder_gangqihuti_child_lv6
+5012017,Canh Khí Hộ Thể - Hộ Thể (Cấp 7),-1,Auto,Self,1,0,heroicorder_gangqihuti_child_lv7
+5012018,Canh Khí Hộ Thể - Hộ Thể (Cấp 8),-1,Auto,Self,1,0,heroicorder_gangqihuti_child_lv8
+5012019,Canh Khí Hộ Thể - Hộ Thể (Cấp 9),-1,Auto,Self,1,0,heroicorder_gangqihuti_child_lv9
+50131,Tán Hồn Trận Thuật (Cấp 1),-1,Passive,Self,1,0,heroicorder_sanhunzhenshu_lv1
+50132,Tán Hồn Trận Thuật (Cấp 2),-1,Passive,Self,1,0,heroicorder_sanhunzhenshu_lv2
+50133,Tán Hồn Trận Thuật (Cấp 3),-1,Passive,Self,1,0,heroicorder_sanhunzhenshu_lv3
+50134,Tán Hồn Trận Thuật (Cấp 4),-1,Passive,Self,1,0,heroicorder_sanhunzhenshu_lv4
+50135,Tán Hồn Trận Thuật (Cấp 5),-1,Passive,Self,1,0,heroicorder_sanhunzhenshu_lv5
+50136,Tán Hồn Trận Thuật (Cấp 6),-1,Passive,Self,1,0,heroicorder_sanhunzhenshu_lv6
+50137,Tán Hồn Trận Thuật (Cấp 7),-1,Passive,Self,1,0,heroicorder_sanhunzhenshu_lv7
+50138,Tán Hồn Trận Thuật (Cấp 8),-1,Passive,Self,1,0,heroicorder_sanhunzhenshu_lv8
+50139,Tán Hồn Trận Thuật (Cấp 9),-1,Passive,Self,1,0,heroicorder_sanhunzhenshu_lv9
+5013011,Tán Hồn Trận Thuật - Trận (Cấp 1),-1,Auto,Enemy,1,20,heroicorder_sanhunzhenshu_child_lv1
+5013012,Tán Hồn Trận Thuật - Trận (Cấp 2),-1,Auto,Enemy,1,20,heroicorder_sanhunzhenshu_child_lv2
+5013013,Tán Hồn Trận Thuật - Trận (Cấp 3),-1,Auto,Enemy,1,20,heroicorder_sanhunzhenshu_child_lv3
+5013014,Tán Hồn Trận Thuật - Trận (Cấp 4),-1,Auto,Enemy,1,20,heroicorder_sanhunzhenshu_child_lv4
+5013015,Tán Hồn Trận Thuật - Trận (Cấp 5),-1,Auto,Enemy,1,20,heroicorder_sanhunzhenshu_child_lv5
+5013016,Tán Hồn Trận Thuật - Trận (Cấp 6),-1,Auto,Enemy,1,20,heroicorder_sanhunzhenshu_child_lv6
+5013017,Tán Hồn Trận Thuật - Trận (Cấp 7),-1,Auto,Enemy,1,20,heroicorder_sanhunzhenshu_child_lv7
+5013018,Tán Hồn Trận Thuật - Trận (Cấp 8),-1,Auto,Enemy,1,20,heroicorder_sanhunzhenshu_child_lv8
+5013019,Tán Hồn Trận Thuật - Trận (Cấp 9),-1,Auto,Enemy,1,20,heroicorder_sanhunzhenshu_child_lv9
+5013021,Tán Hồn Trận Thuật - Phát Nổ (Cấp 1),-1,Auto,Enemy,1,0,heroicorder_sanhunzhenshu_child_2_lv1
+5013022,Tán Hồn Trận Thuật - Phát Nổ (Cấp 2),-1,Auto,Enemy,1,0,heroicorder_sanhunzhenshu_child_2_lv2
+5013023,Tán Hồn Trận Thuật - Phát Nổ (Cấp 3),-1,Auto,Enemy,1,0,heroicorder_sanhunzhenshu_child_2_lv3
+5013024,Tán Hồn Trận Thuật - Phát Nổ (Cấp 4),-1,Auto,Enemy,1,0,heroicorder_sanhunzhenshu_child_2_lv4
+5013025,Tán Hồn Trận Thuật - Phát Nổ (Cấp 5),-1,Auto,Enemy,1,0,heroicorder_sanhunzhenshu_child_2_lv5
+5013026,Tán Hồn Trận Thuật - Phát Nổ (Cấp 6),-1,Auto,Enemy,1,0,heroicorder_sanhunzhenshu_child_2_lv6
+5013027,Tán Hồn Trận Thuật - Phát Nổ (Cấp 7),-1,Auto,Enemy,1,0,heroicorder_sanhunzhenshu_child_2_lv7
+5013028,Tán Hồn Trận Thuật - Phát Nổ (Cấp 8),-1,Auto,Enemy,1,0,heroicorder_sanhunzhenshu_child_2_lv8
+5013029,Tán Hồn Trận Thuật - Phát Nổ (Cấp 9),-1,Auto,Enemy,1,0,heroicorder_sanhunzhenshu_child_2_lv9
+50141,Khí Xung Tiêu Hán (Cấp 1),-1,Passive,Self,1,0,heroicorder_qichongxiaohan_lv1
+50142,Khí Xung Tiêu Hán (Cấp 2),-1,Passive,Self,1,0,heroicorder_qichongxiaohan_lv2
+50143,Khí Xung Tiêu Hán (Cấp 3),-1,Passive,Self,1,0,heroicorder_qichongxiaohan_lv3
+50144,Khí Xung Tiêu Hán (Cấp 4),-1,Passive,Self,1,0,heroicorder_qichongxiaohan_lv4
+50145,Khí Xung Tiêu Hán (Cấp 5),-1,Passive,Self,1,0,heroicorder_qichongxiaohan_lv5
+50146,Khí Xung Tiêu Hán (Cấp 6),-1,Passive,Self,1,0,heroicorder_qichongxiaohan_lv6
+50147,Khí Xung Tiêu Hán (Cấp 7),-1,Passive,Self,1,0,heroicorder_qichongxiaohan_lv7
+50148,Khí Xung Tiêu Hán (Cấp 8),-1,Passive,Self,1,0,heroicorder_qichongxiaohan_lv8
+50149,Khí Xung Tiêu Hán (Cấp 9),-1,Passive,Self,1,0,heroicorder_qichongxiaohan_lv9
+5014011,Khí Xung Tiêu Hán - Hồi Nộ (Cấp 1),-1,Auto,Self,1,0,heroicorder_qichongxiaohan_child_lv1
+5014012,Khí Xung Tiêu Hán - Hồi Nộ (Cấp 2),-1,Auto,Self,1,0,heroicorder_qichongxiaohan_child_lv2
+5014013,Khí Xung Tiêu Hán - Hồi Nộ (Cấp 3),-1,Auto,Self,1,0,heroicorder_qichongxiaohan_child_lv3
+5014014,Khí Xung Tiêu Hán - Hồi Nộ (Cấp 4),-1,Auto,Self,1,0,heroicorder_qichongxiaohan_child_lv4
+5014015,Khí Xung Tiêu Hán - Hồi Nộ (Cấp 5),-1,Auto,Self,1,0,heroicorder_qichongxiaohan_child_lv5
+5014016,Khí Xung Tiêu Hán - Hồi Nộ (Cấp 6),-1,Auto,Self,1,0,heroicorder_qichongxiaohan_child_lv6
+5014017,Khí Xung Tiêu Hán - Hồi Nộ (Cấp 7),-1,Auto,Self,1,0,heroicorder_qichongxiaohan_child_lv7
+5014018,Khí Xung Tiêu Hán - Hồi Nộ (Cấp 8),-1,Auto,Self,1,0,heroicorder_qichongxiaohan_child_lv8
+5014019,Khí Xung Tiêu Hán - Hồi Nộ (Cấp 9),-1,Auto,Self,1,0,heroicorder_qichongxiaohan_child_lv9
+50151,Thập Tam Thái Bảo (Cấp 1),-1,Passive,Self,1,0,heroicorder_shisantaibao_lv1
+50152,Thập Tam Thái Bảo (Cấp 2),-1,Passive,Self,1,0,heroicorder_shisantaibao_lv2
+50153,Thập Tam Thái Bảo (Cấp 3),-1,Passive,Self,1,0,heroicorder_shisantaibao_lv3
+50154,Thập Tam Thái Bảo (Cấp 4),-1,Passive,Self,1,0,heroicorder_shisantaibao_lv4
+50155,Thập Tam Thái Bảo (Cấp 5),-1,Passive,Self,1,0,heroicorder_shisantaibao_lv5
+50156,Thập Tam Thái Bảo (Cấp 6),-1,Passive,Self,1,0,heroicorder_shisantaibao_lv6
+50157,Thập Tam Thái Bảo (Cấp 7),-1,Passive,Self,1,0,heroicorder_shisantaibao_lv7
+50158,Thập Tam Thái Bảo (Cấp 8),-1,Passive,Self,1,0,heroicorder_shisantaibao_lv8
+50159,Thập Tam Thái Bảo (Cấp 9),-1,Passive,Self,1,0,heroicorder_shisantaibao_lv9
+5015011,Thập Tam Thái Bảo - Hoành Luyện (Cấp 1),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_lv1
+5015012,Thập Tam Thái Bảo - Hoành Luyện (Cấp 2),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_lv2
+5015013,Thập Tam Thái Bảo - Hoành Luyện (Cấp 3),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_lv3
+5015014,Thập Tam Thái Bảo - Hoành Luyện (Cấp 4),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_lv4
+5015015,Thập Tam Thái Bảo - Hoành Luyện (Cấp 5),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_lv5
+5015016,Thập Tam Thái Bảo - Hoành Luyện (Cấp 6),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_lv6
+5015017,Thập Tam Thái Bảo - Hoành Luyện (Cấp 7),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_lv7
+5015018,Thập Tam Thái Bảo - Hoành Luyện (Cấp 8),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_lv8
+5015019,Thập Tam Thái Bảo - Hoành Luyện (Cấp 9),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_lv9
+5015111,Thập Tam Thái Bảo - Miễn Dịch Ngoại Công (Cấp 1),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_11_lv1
+5015112,Thập Tam Thái Bảo - Miễn Dịch Ngoại Công (Cấp 2),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_11_lv2
+5015113,Thập Tam Thái Bảo - Miễn Dịch Ngoại Công (Cấp 3),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_11_lv3
+5015114,Thập Tam Thái Bảo - Miễn Dịch Ngoại Công (Cấp 4),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_11_lv4
+5015115,Thập Tam Thái Bảo - Miễn Dịch Ngoại Công (Cấp 5),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_11_lv5
+5015116,Thập Tam Thái Bảo - Miễn Dịch Ngoại Công (Cấp 6),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_11_lv6
+5015117,Thập Tam Thái Bảo - Miễn Dịch Ngoại Công (Cấp 7),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_11_lv7
+5015118,Thập Tam Thái Bảo - Miễn Dịch Ngoại Công (Cấp 8),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_11_lv8
+5015119,Thập Tam Thái Bảo - Miễn Dịch Ngoại Công (Cấp 9),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_11_lv9
+5015121,Thập Tam Thái Bảo - Miễn Dịch Nội Công (Cấp 1),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_12_lv1
+5015122,Thập Tam Thái Bảo - Miễn Dịch Nội Công (Cấp 2),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_12_lv2
+5015123,Thập Tam Thái Bảo - Miễn Dịch Nội Công (Cấp 3),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_12_lv3
+5015124,Thập Tam Thái Bảo - Miễn Dịch Nội Công (Cấp 4),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_12_lv4
+5015125,Thập Tam Thái Bảo - Miễn Dịch Nội Công (Cấp 5),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_12_lv5
+5015126,Thập Tam Thái Bảo - Miễn Dịch Nội Công (Cấp 6),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_12_lv6
+5015127,Thập Tam Thái Bảo - Miễn Dịch Nội Công (Cấp 7),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_12_lv7
+5015128,Thập Tam Thái Bảo - Miễn Dịch Nội Công (Cấp 8),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_12_lv8

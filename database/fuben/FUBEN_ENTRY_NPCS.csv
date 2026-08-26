@@ -1,4 +1,4 @@
-ScenarioID,ScenarioName,DungeonMapID,DungeonMapName,GatherMapID,GatherMapName,GatherNPCID,GatherNPCName,GatherNPCResName,GatherX,GatherY
+﻿ScenarioID,ScenarioName,DungeonMapID,DungeonMapName,GatherMapID,GatherMapName,GatherNPCID,GatherNPCName,GatherNPCResName,GatherX,GatherY
 ThuyLao,Thủy Lao,92,Thuỷ Lao,4,Tô Châu,650,Hô Diên Báo,YangWenYanC,10990,6466
 Q1_ToChau,Biên Giới Tống Liêu,93,Biên Giới Tống Liêu,4,Tô Châu,674,Tiền Hồng Vũ,LuoYangBing2,4400,8090
 Q2_ToChau,Trúc Lâm,94,Trúc Lâm,4,Tô Châu,707,Hoa Kiếm Vũ,BiaoTou,11300,9890

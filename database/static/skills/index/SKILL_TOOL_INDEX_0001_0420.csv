@@ -1,0 +1,421 @@
+﻿ID,Name,FactionID,Type,TargetType,RequireLevel,CastRange,Property
+0,Tấn công,-1,Active,Enemy,1,3,empty
+1,Tấn công Pet,-1,Active,Enemy,1,20,empty
+2,Đại Lý Hồi Thành Phù,-1,Active,Self,1,0,newbie_dali_portal
+3,Bảo Hộ,-1,Active,Self,1,0,protection
+4,Lạc Mã Tiễn,-1,Active,EnemyPlayer,1,20,luomajian
+5,Xuyên Vân Tiễn,-1,Active,EnemyPlayer,1,20,chuanyunjian
+6,Lôi đài tỷ võ - Khán giả,-1,Active,Self,1,0,challenge_watcher
+7,Cương Thể,-1,Active,Self,1,0,boss_immune_all_state
+8,Hứa Nguyện Chúc Phúc,-1,Active,Self,1,0,wisdom_tree_blessing
+9,Cường Thể,-1,Active,Self,1,0,boss_immune_all_state_1
+10,Ném ám khí,-1,Active,Enemy,40,20,dart_throw_physical
+11,Ném ám khí,-1,Active,Enemy,40,20,dart_throw_magical
+12,Ném ám khí,-1,Active,Enemy,40,20,dart_throw_ice
+13,Ném ám khí,-1,Active,Enemy,40,20,dart_throw_fire
+14,Ném ám khí,-1,Active,Enemy,40,20,dart_throw_light
+15,Ném ám khí,-1,Active,Enemy,40,20,dart_throw_poison
+16,Ném ám khí,-1,Active,Enemy,40,20,dart_throw_direct
+20,Ám khí đả huyệt,-2,Active,Enemy,70,20,dart_control_weakness_damage
+21,Ám khí đả huyệt,-2,Active,Enemy,70,20,dart_control_weakness_defense
+22,Ám khí đả huyệt,-2,Active,Enemy,70,20,dart_control_slow
+23,Ám khí đả huyệt,-2,Active,Enemy,70,20,dart_control_immobile
+24,Ám khí đả huyệt,-2,Active,Enemy,70,20,dart_control_silence
+25,Ám khí đả huyệt,-2,Active,Enemy,70,20,dart_control_blind
+26,Ám khí đả huyệt,-2,Active,Enemy,70,20,dart_control_incapacitate
+27,Ám khí đả huyệt,-2,Active,Enemy,70,20,dart_control_paralyse
+28,Ám khí đả huyệt,-2,Active,Enemy,70,20,dart_control_encircle
+29,Ám khí đả huyệt,-2,Active,Enemy,70,20,dart_control_sleep
+30,Ám khí đả huyệt,-2,Active,Enemy,70,20,dart_control_hpleak
+40,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_strength
+41,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_energy
+42,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_stamina
+43,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_intelligence
+44,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_dexterity
+45,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_hp_p
+46,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_mp_p
+47,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_physatk_p
+48,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_magicatk_p
+49,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_physdef_p
+50,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_magicdef_p
+51,Ám khí hộ thể,-3,Active,Self,90,0,dart_support_replenish
+101,Ngự Thể Chi Hồn (Cấp 1),-4,Passive,Self,30,0,soul_first_skill_armor_defense_lv1
+102,Ngự Thể Chi Hồn (Cấp 2),-4,Passive,Self,30,0,soul_first_skill_armor_defense_lv2
+103,Ngự Thể Chi Hồn (Cấp 3),-4,Passive,Self,30,0,soul_first_skill_armor_defense_lv3
+104,Ngự Thể Chi Hồn (Cấp 4),-4,Passive,Self,30,0,soul_first_skill_armor_defense_lv4
+105,Ngự Thể Chi Hồn (Cấp 5),-4,Passive,Self,30,0,soul_first_skill_armor_defense_lv5
+106,Võ Dũng Chi Hồn (Cấp 1),-4,Passive,Self,30,0,soul_first_skill_weapon_spear_lv1
+107,Võ Dũng Chi Hồn (Cấp 2),-4,Passive,Self,30,0,soul_first_skill_weapon_spear_lv2
+108,Võ Dũng Chi Hồn (Cấp 3),-4,Passive,Self,30,0,soul_first_skill_weapon_spear_lv3
+109,Võ Dũng Chi Hồn (Cấp 4),-4,Passive,Self,30,0,soul_first_skill_weapon_spear_lv4
+110,Võ Dũng Chi Hồn (Cấp 5),-4,Passive,Self,30,0,soul_first_skill_weapon_spear_lv5
+111,Hàn Phong Chi Hồn (Cấp 1),-4,Passive,Self,30,0,soul_first_skill_weapon_sword_lv1
+112,Hàn Phong Chi Hồn (Cấp 2),-4,Passive,Self,30,0,soul_first_skill_weapon_sword_lv2
+113,Hàn Phong Chi Hồn (Cấp 3),-4,Passive,Self,30,0,soul_first_skill_weapon_sword_lv3
+114,Hàn Phong Chi Hồn (Cấp 4),-4,Passive,Self,30,0,soul_first_skill_weapon_sword_lv4
+115,Hàn Phong Chi Hồn (Cấp 5),-4,Passive,Self,30,0,soul_first_skill_weapon_sword_lv5
+116,Thanh Dật Chi Hồn (Cấp 1),-4,Passive,Self,30,0,soul_first_skill_weapon_fan_circle_lv1
+117,Thanh Dật Chi Hồn (Cấp 2),-4,Passive,Self,30,0,soul_first_skill_weapon_fan_circle_lv2
+118,Thanh Dật Chi Hồn (Cấp 3),-4,Passive,Self,30,0,soul_first_skill_weapon_fan_circle_lv3
+119,Thanh Dật Chi Hồn (Cấp 4),-4,Passive,Self,30,0,soul_first_skill_weapon_fan_circle_lv4
+120,Thanh Dật Chi Hồn (Cấp 5),-4,Passive,Self,30,0,soul_first_skill_weapon_fan_circle_lv5
+121,Ưng Chuẩn Chi Hồn (Cấp 1),-4,Passive,Self,30,0,soul_first_skill_weapon_crossbow_lv1
+122,Ưng Chuẩn Chi Hồn (Cấp 2),-4,Passive,Self,30,0,soul_first_skill_weapon_crossbow_lv2
+123,Ưng Chuẩn Chi Hồn (Cấp 3),-4,Passive,Self,30,0,soul_first_skill_weapon_crossbow_lv3
+124,Ưng Chuẩn Chi Hồn (Cấp 4),-4,Passive,Self,30,0,soul_first_skill_weapon_crossbow_lv4
+125,Ưng Chuẩn Chi Hồn (Cấp 5),-4,Passive,Self,30,0,soul_first_skill_weapon_crossbow_lv5
+126,Ẩn Dật Chi Hồn (Cấp 1),-4,Passive,Self,30,0,soul_first_skill_weapon_staff_lv1
+127,Ẩn Dật Chi Hồn (Cấp 2),-4,Passive,Self,30,0,soul_first_skill_weapon_staff_lv2
+128,Ẩn Dật Chi Hồn (Cấp 3),-4,Passive,Self,30,0,soul_first_skill_weapon_staff_lv3
+129,Ẩn Dật Chi Hồn (Cấp 4),-4,Passive,Self,30,0,soul_first_skill_weapon_staff_lv4
+130,Ẩn Dật Chi Hồn (Cấp 5),-4,Passive,Self,30,0,soul_first_skill_weapon_staff_lv5
+131,Thanh Dã Chi Hồn (Cấp 1),-4,Passive,Self,30,0,soul_first_skill_weapon_flute_lv1
+132,Thanh Dã Chi Hồn (Cấp 2),-4,Passive,Self,30,0,soul_first_skill_weapon_flute_lv2
+133,Thanh Dã Chi Hồn (Cấp 3),-4,Passive,Self,30,0,soul_first_skill_weapon_flute_lv3
+134,Thanh Dã Chi Hồn (Cấp 4),-4,Passive,Self,30,0,soul_first_skill_weapon_flute_lv4
+135,Thanh Dã Chi Hồn (Cấp 5),-4,Passive,Self,30,0,soul_first_skill_weapon_flute_lv5
+136,Cầm Sắt Chi Hồn (Cấp 1),-4,Passive,Self,30,0,soul_first_skill_weapon_zither_lv1
+137,Cầm Sắt Chi Hồn (Cấp 2),-4,Passive,Self,30,0,soul_first_skill_weapon_zither_lv2
+138,Cầm Sắt Chi Hồn (Cấp 3),-4,Passive,Self,30,0,soul_first_skill_weapon_zither_lv3
+139,Cầm Sắt Chi Hồn (Cấp 4),-4,Passive,Self,30,0,soul_first_skill_weapon_zither_lv4
+140,Cầm Sắt Chi Hồn (Cấp 5),-4,Passive,Self,30,0,soul_first_skill_weapon_zither_lv5
+166,Để Nhận Chi Hồn (Cấp 1),-4,Passive,Self,30,0,soul_first_skill_weapon_blade_lv1
+167,Để Nhận Chi Hồn (Cấp 2),-4,Passive,Self,30,0,soul_first_skill_weapon_blade_lv2
+168,Để Nhận Chi Hồn (Cấp 3),-4,Passive,Self,30,0,soul_first_skill_weapon_blade_lv3
+169,Để Nhận Chi Hồn (Cấp 4),-4,Passive,Self,30,0,soul_first_skill_weapon_blade_lv4
+170,Để Nhận Chi Hồn (Cấp 5),-4,Passive,Self,30,0,soul_first_skill_weapon_blade_lv5
+246,Bất Cơ Chi Hồn (Cấp 1),-4,Passive,Self,30,0,soul_first_skill_weapon_sickle_lv1
+247,Bất Cơ Chi Hồn (Cấp 2),-4,Passive,Self,30,0,soul_first_skill_weapon_sickle_lv2
+248,Bất Cơ Chi Hồn (Cấp 3),-4,Passive,Self,30,0,soul_first_skill_weapon_sickle_lv3
+249,Bất Cơ Chi Hồn (Cấp 4),-4,Passive,Self,30,0,soul_first_skill_weapon_sickle_lv4
+250,Bất Cơ Chi Hồn (Cấp 5),-4,Passive,Self,30,0,soul_first_skill_weapon_sickle_lv5
+141,Ngưng Lực Chi Hồn (Cấp 1),-5,Active,Self,60,0,soul_second_skill_strength_lv1
+142,Ngưng Lực Chi Hồn (Cấp 2),-5,Active,Self,60,0,soul_second_skill_strength_lv2
+143,Ngưng Lực Chi Hồn (Cấp 3),-5,Active,Self,60,0,soul_second_skill_strength_lv3
+144,Ngưng Lực Chi Hồn (Cấp 4),-5,Active,Self,60,0,soul_second_skill_strength_lv4
+145,Ngưng Lực Chi Hồn (Cấp 5),-5,Active,Self,60,0,soul_second_skill_strength_lv5
+146,Tụ Linh Chi Hồn (Cấp 1),-5,Active,Self,60,0,soul_second_skill_energy_lv1
+147,Tụ Linh Chi Hồn (Cấp 2),-5,Active,Self,60,0,soul_second_skill_energy_lv2
+148,Tụ Linh Chi Hồn (Cấp 3),-5,Active,Self,60,0,soul_second_skill_energy_lv3
+149,Tụ Linh Chi Hồn (Cấp 4),-5,Active,Self,60,0,soul_second_skill_energy_lv4
+150,Tụ Linh Chi Hồn (Cấp 5),-5,Active,Self,60,0,soul_second_skill_energy_lv5
+151,Cường Thể Chi Hồn (Cấp 1),-5,Active,Self,60,0,soul_second_skill_stamina_lv1
+152,Cường Thể Chi Hồn (Cấp 2),-5,Active,Self,60,0,soul_second_skill_stamina_lv2
+153,Cường Thể Chi Hồn (Cấp 3),-5,Active,Self,60,0,soul_second_skill_stamina_lv3
+154,Cường Thể Chi Hồn (Cấp 4),-5,Active,Self,60,0,soul_second_skill_stamina_lv4
+155,Cường Thể Chi Hồn (Cấp 5),-5,Active,Self,60,0,soul_second_skill_stamina_lv5
+156,Cố Định Chi Hồn (Cấp 1),-5,Active,Self,60,0,soul_second_skill_intelligence_lv1
+157,Cố Định Chi Hồn (Cấp 2),-5,Active,Self,60,0,soul_second_skill_intelligence_lv2
+158,Cố Định Chi Hồn (Cấp 3),-5,Active,Self,60,0,soul_second_skill_intelligence_lv3
+159,Cố Định Chi Hồn (Cấp 4),-5,Active,Self,60,0,soul_second_skill_intelligence_lv4
+160,Cố Định Chi Hồn (Cấp 5),-5,Active,Self,60,0,soul_second_skill_intelligence_lv5
+161,Du Thân Chi Hồn (Cấp 1),-5,Active,Self,60,0,soul_second_skill_dexterity_lv1
+162,Du Thân Chi Hồn (Cấp 2),-5,Active,Self,60,0,soul_second_skill_dexterity_lv2
+163,Du Thân Chi Hồn (Cấp 3),-5,Active,Self,60,0,soul_second_skill_dexterity_lv3
+164,Du Thân Chi Hồn (Cấp 4),-5,Active,Self,60,0,soul_second_skill_dexterity_lv4
+165,Du Thân Chi Hồn (Cấp 5),-5,Active,Self,60,0,soul_second_skill_dexterity_lv5
+171,Cương Mãnh Trọng Kích (Cấp 1),-6,Active,Enemy,90,20,soul_third_skill_physical_lv1
+172,Cương Mãnh Trọng Kích (Cấp 2),-6,Active,Enemy,90,20,soul_third_skill_physical_lv2
+173,Cương Mãnh Trọng Kích (Cấp 3),-6,Active,Enemy,90,20,soul_third_skill_physical_lv3
+174,Cương Mãnh Trọng Kích (Cấp 4),-6,Active,Enemy,90,20,soul_third_skill_physical_lv4
+175,Cương Mãnh Trọng Kích (Cấp 5),-6,Active,Enemy,90,20,soul_third_skill_physical_lv5
+176,Nhu Xà Đột Tập (Cấp 1),-6,Active,Enemy,90,20,soul_third_skill_magic_lv1
+177,Nhu Xà Đột Tập (Cấp 2),-6,Active,Enemy,90,20,soul_third_skill_magic_lv2
+178,Nhu Xà Đột Tập (Cấp 3),-6,Active,Enemy,90,20,soul_third_skill_magic_lv3
+179,Nhu Xà Đột Tập (Cấp 4),-6,Active,Enemy,90,20,soul_third_skill_magic_lv4
+180,Nhu Xà Đột Tập (Cấp 5),-6,Active,Enemy,90,20,soul_third_skill_magic_lv5
+181,Hàn Băng Xuyên Thích (Cấp 1),-6,Active,Enemy,90,20,soul_third_skill_ice_lv1
+182,Hàn Băng Xuyên Thích (Cấp 2),-6,Active,Enemy,90,20,soul_third_skill_ice_lv2
+183,Hàn Băng Xuyên Thích (Cấp 3),-6,Active,Enemy,90,20,soul_third_skill_ice_lv3
+184,Hàn Băng Xuyên Thích (Cấp 4),-6,Active,Enemy,90,20,soul_third_skill_ice_lv4
+185,Hàn Băng Xuyên Thích (Cấp 5),-6,Active,Enemy,90,20,soul_third_skill_ice_lv5
+186,Liệt Diệm Chước Thân (Cấp 1),-6,Active,Enemy,90,20,soul_third_skill_fire_lv1
+187,Liệt Diệm Chước Thân (Cấp 2),-6,Active,Enemy,90,20,soul_third_skill_fire_lv2
+188,Liệt Diệm Chước Thân (Cấp 3),-6,Active,Enemy,90,20,soul_third_skill_fire_lv3
+189,Liệt Diệm Chước Thân (Cấp 4),-6,Active,Enemy,90,20,soul_third_skill_fire_lv4
+190,Liệt Diệm Chước Thân (Cấp 5),-6,Active,Enemy,90,20,soul_third_skill_fire_lv5
+191,Thiên Lôi Oanh Đỉnh (Cấp 1),-6,Active,Enemy,90,20,soul_third_skill_light_lv1
+192,Thiên Lôi Oanh Đỉnh (Cấp 2),-6,Active,Enemy,90,20,soul_third_skill_light_lv2
+193,Thiên Lôi Oanh Đỉnh (Cấp 3),-6,Active,Enemy,90,20,soul_third_skill_light_lv3
+194,Thiên Lôi Oanh Đỉnh (Cấp 4),-6,Active,Enemy,90,20,soul_third_skill_light_lv4
+195,Thiên Lôi Oanh Đỉnh (Cấp 5),-6,Active,Enemy,90,20,soul_third_skill_light_lv5
+196,Vụ Hủ Thực Độc (Cấp 1),-6,Active,Enemy,90,20,soul_third_skill_poison_lv1
+197,Vụ Hủ Thực Độc (Cấp 2),-6,Active,Enemy,90,20,soul_third_skill_poison_lv2
+198,Vụ Hủ Thực Độc (Cấp 3),-6,Active,Enemy,90,20,soul_third_skill_poison_lv3
+199,Vụ Hủ Thực Độc (Cấp 4),-6,Active,Enemy,90,20,soul_third_skill_poison_lv4
+200,Vụ Hủ Thực Độc (Cấp 5),-6,Active,Enemy,90,20,soul_third_skill_poison_lv5
+201,Lôi Đình Mãnh Kích (Cấp 1),-6,Active,Enemy,90,20,soul_third_skill_direct_lv1
+202,Lôi Đình Mãnh Kích (Cấp 2),-6,Active,Enemy,90,20,soul_third_skill_direct_lv2
+203,Lôi Đình Mãnh Kích (Cấp 3),-6,Active,Enemy,90,20,soul_third_skill_direct_lv3
+204,Lôi Đình Mãnh Kích (Cấp 4),-6,Active,Enemy,90,20,soul_third_skill_direct_lv4
+205,Lôi Đình Mãnh Kích (Cấp 5),-6,Active,Enemy,90,20,soul_third_skill_direct_lv5
+211,Diệt Thế Bát Phương (Cấp 1),-6,Active,Enemy,90,0,soul_forth_skill_physical_lv1
+212,Diệt Thế Bát Phương (Cấp 2),-6,Active,Enemy,90,0,soul_forth_skill_physical_lv2
+213,Diệt Thế Bát Phương (Cấp 3),-6,Active,Enemy,90,0,soul_forth_skill_physical_lv3
+214,Diệt Thế Bát Phương (Cấp 4),-6,Active,Enemy,90,0,soul_forth_skill_physical_lv4
+215,Diệt Thế Bát Phương (Cấp 5),-6,Active,Enemy,90,0,soul_forth_skill_physical_lv5
+216,Tuyệt Cảnh Tàn Sát (Cấp 1),-6,Active,Enemy,90,0,soul_forth_skill_magic_lv1
+217,Tuyệt Cảnh Tàn Sát (Cấp 2),-6,Active,Enemy,90,0,soul_forth_skill_magic_lv2
+218,Tuyệt Cảnh Tàn Sát (Cấp 3),-6,Active,Enemy,90,0,soul_forth_skill_magic_lv3
+219,Tuyệt Cảnh Tàn Sát (Cấp 4),-6,Active,Enemy,90,0,soul_forth_skill_magic_lv4
+220,Tuyệt Cảnh Tàn Sát (Cấp 5),-6,Active,Enemy,90,0,soul_forth_skill_magic_lv5
+221,Băng Phong Vạn Lý (Cấp 1),-6,Active,Enemy,90,0,soul_forth_skill_ice_lv1
+222,Băng Phong Vạn Lý (Cấp 2),-6,Active,Enemy,90,0,soul_forth_skill_ice_lv2
+223,Băng Phong Vạn Lý (Cấp 3),-6,Active,Enemy,90,0,soul_forth_skill_ice_lv3
+224,Băng Phong Vạn Lý (Cấp 4),-6,Active,Enemy,90,0,soul_forth_skill_ice_lv4
+225,Băng Phong Vạn Lý (Cấp 5),-6,Active,Enemy,90,0,soul_forth_skill_ice_lv5
+226,Thiên Hỏa Liêu Nguyên (Cấp 1),-6,Active,Enemy,90,0,soul_forth_skill_fire_lv1
+227,Thiên Hỏa Liêu Nguyên (Cấp 2),-6,Active,Enemy,90,0,soul_forth_skill_fire_lv2
+228,Thiên Hỏa Liêu Nguyên (Cấp 3),-6,Active,Enemy,90,0,soul_forth_skill_fire_lv3
+229,Thiên Hỏa Liêu Nguyên (Cấp 4),-6,Active,Enemy,90,0,soul_forth_skill_fire_lv4
+230,Thiên Hỏa Liêu Nguyên (Cấp 5),-6,Active,Enemy,90,0,soul_forth_skill_fire_lv5
+231,Cuồng Lôi Thiên Giáng (Cấp 1),-6,Active,Enemy,90,0,soul_forth_skill_light_lv1
+232,Cuồng Lôi Thiên Giáng (Cấp 2),-6,Active,Enemy,90,0,soul_forth_skill_light_lv2
+233,Cuồng Lôi Thiên Giáng (Cấp 3),-6,Active,Enemy,90,0,soul_forth_skill_light_lv3
+234,Cuồng Lôi Thiên Giáng (Cấp 4),-6,Active,Enemy,90,0,soul_forth_skill_light_lv4
+235,Cuồng Lôi Thiên Giáng (Cấp 5),-6,Active,Enemy,90,0,soul_forth_skill_light_lv5
+236,Kịch Độc Ôn Dịch (Cấp 1),-6,Active,Enemy,90,0,soul_forth_skill_poison_lv1
+237,Kịch Độc Ôn Dịch (Cấp 2),-6,Active,Enemy,90,0,soul_forth_skill_poison_lv2
+238,Kịch Độc Ôn Dịch (Cấp 3),-6,Active,Enemy,90,0,soul_forth_skill_poison_lv3
+239,Kịch Độc Ôn Dịch (Cấp 4),-6,Active,Enemy,90,0,soul_forth_skill_poison_lv4
+240,Kịch Độc Ôn Dịch (Cấp 5),-6,Active,Enemy,90,0,soul_forth_skill_poison_lv5
+241,Nộ Đào Liên Kích (Cấp 1),-6,Active,Enemy,90,0,soul_forth_skill_direct_lv1
+242,Nộ Đào Liên Kích (Cấp 2),-6,Active,Enemy,90,0,soul_forth_skill_direct_lv2
+243,Nộ Đào Liên Kích (Cấp 3),-6,Active,Enemy,90,0,soul_forth_skill_direct_lv3
+244,Nộ Đào Liên Kích (Cấp 4),-6,Active,Enemy,90,0,soul_forth_skill_direct_lv4
+245,Nộ Đào Liên Kích (Cấp 5),-6,Active,Enemy,90,0,soul_forth_skill_direct_lv5
+257,Đồng Khí Liên Chi,-1,Active,PeacePlayer,1,15,fuqi_tongqilianzhi
+258,Thiên Trường Địa Cửu,-1,Active,PeacePlayer,1,3,fuqi_tianchangdijiu
+259,Tâm Đầu Ý Hợp,-1,Active,PeacePlayer,1,15,fuqi_xintouyihe
+260,Ngoại Công Hộ Thể,-1,Active,Self,1,0,xinshou_shaolin_waigonghuti
+261,Ngoại Kình Công Kích,-1,Active,Enemy,1,3,xinshou_mingjiao_waijinggongji
+262,Công Kích Yếu Điểm,-1,Active,Enemy,1,3,xinshou_gaibang_yaohaigongji
+263,Nội Kình Công Kích,-1,Active,Enemy,1,20,xinshou_wudang_neijinggongji
+264,Trị Liệu Sơ Cấp,-1,Active,Self,1,0,xinshou_emei_chujizhiliao
+265,Nội Công Hộ Thể,-1,Active,Self,1,0,xinshou_xingxiu_neigonghuti
+266,Công Kích Sơ Hở,-1,Active,Enemy,1,20,xinshou_tianlong_pozhangongji
+267,Ẩn Độn Sơ Cấp,-1,Active,Self,1,0,xinshou_tianshan_chujiyindun
+268,Cạm Bẫy Sơ Cấp,-1,Active,Enemy,1,0,xinshou_xiaoyao_ranshaoxianjing
+269,Tinh Tuyền Phản Kích,-1,Active,Self,1,0,xinshou_murong_xingxuanfanji
+270,Thương Ưng Kỳ Tập,-1,Active,Self,1,0,xinshou_tangmen_cangyingqixi
+271,Khí Huyết Tương Sinh,-1,Active,Self,1,0,xinshou_guigu_qixuexiangsheng
+272,Nhất Dương Chi Thủy,-1,Active,Self,1,0,xinshou_taohua_yiyangzhishui
+274,Mệnh Hồn Hộ Thể,-1,Active,Self,1,0,xinshou_mantuo_minghunhuti
+275,Thân Dư Tương Hợp,-1,Active,Self,1,0,xinshou_jueqing_shenyuxianghe
+276,Đoạn Cốt Cường Thể,-1,Active,Self,1,0,xinshou_erengu_duanguqiangti
+273,Gặp cướp - Định thân,-1,Active,Enemy,1,0,caoyun_jiangjie
+27300,Gặp cướp - Cương ngạnh,-1,Active,Enemy,1,0,caoyun_jiangjie_child
+281,Phục Hổ Quyền,0,Active,Enemy,1,3,shaolin_fuhuquan
+282,Kim Cang Phục Ma Khuyên,0,Active,Enemy,10,0,shaolin_jingangfumoquan
+28201,Kim Cang Phục Ma Khuyên - Định thân,-1,Auto,Enemy,1,0,shaolin_jingangfumoquan_child
+283,Đại Lực Kim Cương Chưởng,0,Active,Enemy,45,3,shaolin_dalijingangzhang
+284,Nhất Vĩ Độ Giang,0,Active,Self,20,0,shaolin_yiweidujiang
+285,Niêm Hoa Chỉ,0,Active,Enemy,30,3,shaolin_nianhuazhi
+286,La Hán Trận,0,Active,SelfAndAlly,40,0,shaolin_luohanzhen
+287,Sư Tử Hống,0,Active,Self,20,0,shaolin_sizihou
+28701,Sư Tử Hống - Cương ngạnh,-1,Auto,Enemy,1,0,shaolin_sizihou_child
+288,Cà Sa Phục Ma Công,0,Active,PeacePlayer,30,15,shaolin_jiashafumogong
+289,Lễ Kính Như Lai,0,Active,Self,40,0,shaolin_lijingrulai
+290,Kim Chung Tráo,0,Passive,Self,1,0,shaolin_jinzhongzhao
+291,Ma Kha Vô Lượng,0,Active,Enemy,1,3,shaolin_mohewuliang
+29101,Ma Kha Vô Lượng - Hư nhược,-1,Auto,Enemy,1,0,shaolin_mohewuliang_child
+292,Thiết Bố Sam,0,Active,Self,30,0,shaolin_tiebushan
+293,Bách Vô Cấm Kỵ,0,Active,Self,50,0,shaolin_baiwujinji
+294,Phá Nạp Công,0,Passive,Self,1,0,shaolin_ponagong
+295,Nhất Phách Lưỡng Tản,0,Active,Enemy,1,3,shaolin_yipailiangzan
+29501,Nhất Phách Lưỡng Tản - Cương ngạnh,-1,Auto,Enemy,1,0,shaolin_yipailiangzan_child
+296,Vi Đà Chử,0,Active,Self,30,0,shaolin_weituozhu
+297,Khí Quán Trường Hồng,0,Active,Self,50,0,shaolin_qiguanchanghong
+298,Như Lai Thần Chưởng,0,Active,Enemy,10,3,shaolin_rulaishenzhang
+299,Minh Kính Đài,0,Active,Self,30,0,shaolin_mingjingtai
+300,Kim Cang Bất Hoại Thể,0,Active,Self,60,0,shaolin_jingangbuhuaiti
+301,Dịch Cân Đoạn Cốt,0,Active,Self,65,0,shaolin_yijinduangu
+30101,Dịch Cân Đoạn Cốt - Phục hồi,-1,Auto,Self,1,0,shaolin_yijinduangu_child
+302,Di Lặc Hộ Thân,0,Active,PeacePlayer,1,15,shaolin_milehushen
+303,Đảo Chuyển Càn Khôn,0,Active,PeacePlayer,1,15,shaolin_daozhuanqiankun
+304,Diệt Thử Triều Thực,0,Active,Self,1,0,shaolin_mieshuchaoshi
+305,Điệu Hổ Ly Sơn,0,Active,Self,45,0,shaolin_diaohulishan
+306,Từ Hàng Phổ Độ,0,Active,PeacePlayer,80,15,shaolin_cihangpudu
+30601,Từ Hàng Phổ Độ - Khống chế,-1,Auto,Enemy,1,0,shaolin_cihangpudu_child
+30602,Từ Hàng Phổ Độ - Tản công,-1,Auto,Enemy,1,0,shaolin_cihangpudu_child_2
+307,Huyền Ấn Ngộ Phật,0,Active,Enemy,1,3,eighthbook_damage_physical
+308,Từ Tâm Bi Mẫn,0,Active,Enemy,1,3,eighthbook_control_physical
+311,Thôi Tâm Chưởng,1,Active,Enemy,1,3,mingjiao_tuixinzhang
+312,Huyết Trận Bát Phương,1,Active,Enemy,10,0,mingjiao_xuezhenbafang
+313,Viêm Long Vô Song,1,Active,Enemy,45,3,mingjiao_yanlongwushuang
+314,Quỳ Hoa Trục Nhật,1,Active,Self,20,0,mingjiao_kuihuazhuri
+315,Quỳ Hoa Điểm Huyệt Thủ,1,Active,Enemy,30,3,mingjiao_kuihuadianxueshou
+316,Quỳ Hoa Hướng Dương,1,Active,SelfAndAlly,40,0,mingjiao_kuihuaxiangyang
+317,Nộ Phát Xung Quan,1,Active,Self,20,0,mingjiao_nufazhongguan
+318,Lý Đại Đào Cương,1,Active,Self,30,15,mingjiao_lidataogang
+319,Đấu Chiến Tinh Di,1,Active,Enemy,40,3,mingjiao_douzhanjingyi
+320,Kích Lưu Giáp,1,Passive,Self,1,0,mingjiao_jiliujia
+321,Thủy Yêm Thất Quân,1,Active,Enemy,1,3,mingjiao_shuiyanshijun
+32101,Thủy Yêm Thất Quân - Hư nhược,-1,Auto,Enemy,1,0,mingjiao_shuiyanshijun_child
+322,Thủy Thần Hạ Phàm,1,Active,Self,30,0,mingjiao_shuishenxiafan
+32201,Thủy Thần Hạ Phàm - Hư nhược,-1,Auto,Enemy,1,0,mingjiao_shuishenxiafan_child
+323,Trường Sinh Thủy,1,Active,PeacePlayer,50,15,mingjiao_changshengshui
+324,Liệt Diệm Đao,1,Passive,Self,1,0,mingjiao_lieyandao
+325,Hỏa Thiêu Xích Bích,1,Active,Enemy,1,3,mingjiao_huoqiaochibi
+32501,Hỏa Thiêu Xích Bích - Thiêu đốt,-1,Auto,Enemy,1,0,mingjiao_huoqiaochibi_child
+326,Hỏa Thần Hạ Phàm,1,Active,Self,30,0,mingjiao_huoshenxiafan
+327,Địa Ngục Hoả,1,Active,Enemy,50,0,mingjiao_diyuhuo
+328,Hỏa Diệm Liên Hoàn Trảm,1,Active,Enemy,10,3,mingjiao_huoyanlianhuanzhan
+329,Toạ Địa Cầu Toàn,1,Active,Self,30,0,mingjiao_zuodigouquan
+330,Vô Trung Sinh Hữu,1,Active,Self,60,0,mingjiao_wuzhongshengyou
+331,Thuần Dương Vô Cực,1,Active,Self,65,0,mingjiao_chunyangwuji
+332,Quỳ Hoa Thần Lực,1,Active,PeacePlayer,1,15,mingjiao_kuihuashenli
+333,Cự Hoả Thiêu Thiên,1,Active,PeacePlayer,1,15,mingjiao_juhuoqiaotian
+334,Phong Hỏa Liên Thành,1,Active,EnemyPlayer,45,15,mingjiao_fenghuoliancheng
+335,Nộ Hoả Liên Trảm,1,Active,Self,1,0,mingjiao_nuhuolianzhan
+33501,Nộ Hỏa Liên Trảm - Cuồng bạo,-1,Auto,Self,80,0,mingjiao_nuhuolianzhan_child
+336,Thiên Hỏa Nhiên Khung,1,Active,Enemy,1,3,eighthbook_damage_physical
+337,Phần Diễm Nhiễu Thân,1,Active,Enemy,1,3,eighthbook_control_physical
+341,Bàn Long Kích,2,Active,Enemy,1,3,gaibang_banlongji
+34101,Bàn Long Kích - Liên kích,-1,Auto,Self,1,0,gaibang_fuhuolianjidian
+342,Thiên Lý Hoành Hành,2,Active,Enemy,10,0,gaibang_tianlihengxing
+343,Xung Trận Trảm Tướng,2,Active,Enemy,45,3,gaibang_zhongzhenzhanxiang
+344,Bát Bộ Hãn Thiềm,2,Active,Self,20,0,gaibang_babugantian
+345,Tuyết Nê Hồng Trảo,2,Active,Enemy,30,3,gaibang_xuenihongzhao
+346,Niêm Y Thập Bát Điệt,2,Active,SelfAndAlly,40,0,gaibang_nianyishibadie
+347,Phi Long Tại Thiên,2,Active,Enemy,10,5,gaibang_feilongzaitian
+348,Tiềm Long Vật Dụng,2,Active,Enemy,30,0,gaibang_qianlongwuyong
+349,Kiến Long Tại Điền,2,Active,Self,40,0,gaibang_jianlongzaitian
+34901,Kiến Long Tại Điền - Trúng độc,-1,Auto,Enemy,1,0,gaibang_jianlongzaitian_child
+350,Tướng Quân Lệnh,2,Passive,Self,1,0,gaibang_xiangjunling
+351,Thanh Long Xuất Thủy,2,Active,Enemy,1,3,gaibang_qinglongchushui
+35101,Thanh Long Xuất Thủy - Hồi phục,-1,Auto,Self,1,0,gaibang_qinglongchushui_child
+352,Cầm Long Thức,2,Active,Self,30,0,gaibang_qinlongshi
+35201,Cầm Long Thức - Hư nhược,-1,Auto,Enemy,1,0,gaibang_qinlongshi_child
+353,Bái Nhiên Hữu Vũ,2,Active,Self,50,0,gaibang_bairanyouwu
+354,Phá Hổ Lệnh,2,Passive,Self,1,0,gaibang_pohuling
+355,Chấn Kinh Bách Lý,2,Active,Enemy,1,3,gaibang_zhenjingbaili
+356,Khống Hạc Thức,2,Active,Self,30,0,gaibang_kongheshi
+35601,Khống Hạc Thức - Liên kích,-1,Auto,Self,1,0,gaibang_kongheshi_child
+357,Lữ Sương Băng Chỉ,2,Active,Self,50,0,gaibang_lishuangbingzhi
+358,Kháng Long Hữu Hối,2,Active,Enemy,10,3,gaibang_kanglongyouhui
+359,Thần Long Bái Vĩ,2,Active,Self,30,0,gaibang_shanlongbaiwei
+360,Long Chiến Vu Dã,2,Active,Self,60,0,gaibang_longzhanwuye
+361,Thiên Hạ Vô Cẩu,2,Active,Enemy,65,0,gaibang_tianxiawugou
+36101,Thiên Hạ Vô Cẩu - Giảm tốc,-1,Auto,Enemy,1,0,gaibang_tianxiawugou_child
+362,Như Ảnh Tùy Hình,2,Active,PeacePlayer,1,15,gaibang_ruyingsuixing
+363,Bát Thảo Tầm Xà,2,Active,PeacePlayer,1,15,gaibang_bacaoxunshe
+364,Bổng Đả Cẩu Đầu,2,Active,EnemyPlayer,45,15,gaibang_bangdagoutou
+36401,Bổng Đả Cẩu Đầu - Phong huyệt,-1,Auto,Enemy,1,0,gaibang_bangdagoutou_child_1
+36402,Bổng Đả Cẩu Đầu - Giảm tốc,-1,Auto,Enemy,1,0,gaibang_bangdagoutou_child_2
+365,Hoành Tảo Càn Khôn,2,Active,Self,80,0,gaibang_hengsaoqiankun
+36501,Hoành Tảo Càn Khôn - Công kích,-1,Auto,Enemy,1,0,gaibang_hengsaoqiankun_child_1
+36502,Hoành Tảo Càn Khôn - Giảm tốc,-1,Auto,Enemy,1,0,gaibang_hengsaoqiankun_child_2
+366,Địa Trầm Hãm Ngân,2,Active,Enemy,1,3,eighthbook_damage_physical
+367,Liệt Thổ Lao Lung,2,Active,Enemy,1,3,eighthbook_control_physical
+371,Bát Quái Chưởng,3,Active,Enemy,1,20,wudang_baguaizhang
+372,Chân Thức Thất Tiết Trận,3,Active,Enemy,20,0,wudang_zhenwuqijiezhen
+373,Lưỡng Nghi Kiếm,3,Active,Enemy,45,20,wudang_liangyijian
+374,Tam Hoàn Sáo Nguyệt,3,Active,Enemy,20,20,wudang_sanhuansaoyue
+375,Lãm Tước Vĩ,3,Active,Enemy,30,20,wudang_lanjuewei
+376,Thiên Canh Bắc Đẩu Trận,3,Active,Self,40,0,wudang_tiangangbeidouzhen
+377,Thiên Mã Phi Bão,3,Active,Enemy,10,20,wudang_tianmafeibao
+378,Như Phong Tự Bế,3,Active,Enemy,30,20,wudang_rufengsibi
+37801,Như Phong Tự Bế - Khống chế,-1,Auto,Enemy,1,0,wudang_rufengsibi_child
+379,Thê Vân Tung,3,Active,Self,40,20,wudang_tiyunzong
+380,Hổ Bao Đầu,3,Passive,Self,1,0,wudang_hubaotou
+381,Tiên Nhân Chỉ Lộ,3,Active,Enemy,1,20,wudang_xianrenzhilu
+38101,Tiên Nhân Chỉ Lộ - Hư nhược,-1,Auto,Enemy,1,0,wudang_xianrenzhilu_child
+382,Khiêu Liêm Thức,3,Active,Self,30,0,wudang_qiaolianshi
+38201,Khiêu Liêm Thức - Hồi phục,-1,Auto,Self,1,0,wudang_qiaolianshi_child
+383,Lưu Tinh Cản Nguyệt,3,Active,Self,50,0,wudang_liuxingganyue
+384,Lãn Trát Y,3,Passive,Self,1,0,wudang_lanzhayi
+385,Ngọc Nữ Xuyên Xoa,3,Active,Enemy,1,20,wudang_yunvchuansuo
+38501,Ngọc Nữ Xuyên Xoa - Định thân,-1,Auto,Enemy,1,0,wudang_yunvchuansuo_child
+386,Tà Phi Thức,3,Active,Self,30,0,wudang_xiefeishi
+387,Bạch Hạc Lượng Sí,3,Active,Self,50,0,wudang_baiheliangshi
+388,Thần Môn Thập Tam Kiếm,3,Active,Enemy,10,20,wudang_taiyuanshisanjian
+389,Vô Giải Khả Kích,3,Active,Self,30,0,wudang_wujiekeji
+390,Du Nhẫn Hữu Dư,3,Active,Self,60,0,wudang_yourenyouyu
+391,Thiên Ngoại Phi Tiên,3,Active,Enemy,65,15,wudang_tianwaifeixian
+39101,Thiên Ngoại Phi Tiên - Phong huyệt,-1,Auto,Enemy,1,0,wudang_tianwaifeixian_child
+392,Tê Ngưu Vọng Nguyệt,3,Active,PeacePlayer,1,20,wudang_xiniuwangyue
+393,Không Minh Thức,3,Active,PeacePlayer,1,15,wudang_kongmingshi
+394,Tiên Phong Đạo Cốt,3,Active,Self,45,0,wudang_xianfangdaogu
+395,Thất Tinh Tụ Thủ,3,Active,Enemy,80,15,wudang_qixingjushou
+39501,Thất Tinh Tụ Thủ - Tê liệt,-1,Auto,Enemy,1,0,wudang_qixingjushou_child
+396,Trụ Diệu Thất Tinh,3,Active,Enemy,1,15,eighthbook_damage_magical
+397,Bát Quái Ánh Vi,3,Active,Enemy,1,15,eighthbook_control_magical
+401,Điêu Thuyền Bái Nguyệt,4,Active,Enemy,1,15,emei_diaochuanbaiyue
+402,Chiêu Quân Xuất Tái,4,Active,Enemy,10,15,emei_zhaojunchuji
+403,Tây Tử Bồng Tâm,4,Active,Enemy,45,15,emei_xizifangxin
+404,Kim Đỉnh Miên Chưởng,4,Active,Enemy,1,15,emei_jindingmianzhang
+40401,Kim Đỉnh Miên Chưởng - Cương ngạnh,-1,Auto,Enemy,1,0,emei_jindingmianzhang_child
+405,Nguyệt Lạc Tây Sơn,4,Active,Enemy,30,0,emei_yueluoxishan
+406,Phật Quang Phổ Chiếu,4,Active,SelfAndAlly,40,15,emei_foguangpuzhao
+407,Xung Hư Dưỡng Khí,4,Active,PeacePlayer,20,15,emei_zhongxuyangqi
+408,Khởi Tử Hồi Sinh,4,Active,PeacePlayer,30,3,emei_qisihuansheng
+409,Diên Niên Ích Thọ,4,Active,Self,40,0,emei_yuannianyishou
+410,Yểu Điệu Thục Nữ,4,Passive,Self,1,0,emei_yaotiaoshunv
+411,Hồi Thiên Thuật,4,Active,Self,10,15,emei_huitianshu
+41101,Hồi Thiên Thuật - Hồi phục,-1,Auto,Self,1,0,emei_huitianshu_child
+412,Tuyệt Kiếm Thức,4,Active,Self,30,0,emei_juejianshi
+413,Hộ Tâm Quyết,4,Active,Self,50,0,emei_huxinjue
+414,Quân Tử Hảo Cầu,4,Passive,Self,1,0,emei_junzihaogou
+415,Chướng Nhãn Pháp,4,Active,Enemy,1,15,emei_zhangyanfa
+41501,Chướng Nhãn Pháp - Thất minh,-1,Auto,Enemy,1,0,emei_zhangyanfa_child
+416,Diệt Kiếm Thức,4,Active,Self,30,0,emei_miejianshi
+41601,Diệt Kiếm Thức - Hư nhược,-1,Auto,Enemy,1,0,emei_miejianshi_child
+417,Trảm Tình Quyết,4,Active,Self,50,15,emei_zhanqingjue
+418,Đà Nê Đới Thủy,4,Active,Enemy,10,15,emei_taneidaishui
+419,Hành Thi Tẩu Nhục,4,Active,Self,30,0,emei_xingshizourou
+420,Ngai Nhược Mộc Kê,4,Active,Self,60,0,emei_airuomuji
+421,Cửu Âm Thần Trảo,4,Active,Enemy,65,15,emei_jiuyinshenzhao
+42101,Cửu Âm Thần Trảo - Giảm huyết,-1,Auto,Enemy,1,0,emei_jiuyinshenzhao_child
+422,Toạ Hoài Bất Loạn,4,Active,PeacePlayer,1,15,emei_zuohuaibuluan
+423,Kim Châm Độ Kiếp,4,Active,PeacePlayer,1,15,emei_jinzhendujie
+424,Thanh Tâm Phổ Thiện Chú,4,Active,PeacePlayer,45,15,emei_qingxinputianzhou
+425,Cửu Âm Độc Long Công,4,Active,PeacePlayer,1,15,emei_jiuyindulonggong
+426,Xuân Hoa Thu Nguyệt,4,Active,Enemy,80,15,emei_chunhuaqiuyue
+42601,Xuân Hoa Thu Nguyệt - Đồng đội,-1,Auto,SelfAndAlly,1,0,emei_chunhuaqiuyue_child
+427,Hỗn Giang Phá Nhai,4,Active,Enemy,1,15,eighthbook_damage_magical
+428,U Tuyền Thẩm Châu,4,Active,Enemy,1,15,eighthbook_control_magical
+431,Lam Sa Thủ,5,Active,Enemy,1,15,xingxiu_lanshashou
+432,Liên Châu Hủ Thi Độc,5,Active,Enemy,10,0,xingxiu_lianzhuxiushidu
+43201,Liên Châu Hủ Thi Độc - Trúng độc,-1,Auto,Enemy,1,0,xingxiu_lianzhuxiushidu_child
+433,Huyền Minh Thần Chưởng,5,Active,Enemy,45,15,xingxiu_xuanmingshenzhang
+434,Hạt Vĩ Trâm,5,Active,Enemy,20,15,xingxiu_xieweizan
+435,Cáp Mô Công,5,Active,Enemy,30,15,xingxiu_hamogong
+436,Ngô Công Trận,5,Active,SelfAndAlly,40,0,xingxiu_wugongzhen
+437,Tiếu Lý Tàng Đao,5,Active,Enemy,20,15,xingxiu_xiaolizangdao
+438,Đàm Tiếu Tự Nhược,5,Active,Self,30,0,xingxiu_tanxiaoziruo
+439,Hàm Tiếu Cửu Tuyền,5,Active,Self,40,0,xingxiu_hanxiaojiuxuan
+440,Mộc Giáp Thuật,5,Passive,Self,1,0,xingxiu_mujiashu
+441,Thanh Xà Độc Chưởng,5,Active,Enemy,1,15,xingxiu_qingsheduzhang
+44101,Thanh Xà Độc Chưởng - Hư nhược,-1,Auto,Enemy,1,0,xingxiu_qingsheduzhang_child
+442,Mộc Độn,5,Active,Self,30,0,xingxiu_mudun
+443,Chỉ Lộc Vi Mã,5,Active,Enemy,50,15,xingxiu_zhiluweima
+444,Tôi Độc Thuật,5,Passive,Self,1,0,xingxiu_cuidushu
+445,Băng Tằm Độc Chưởng,5,Active,Enemy,1,15,xingxiu_bingcanduzhang
+44501,Băng Tằm Độc Chưởng - Hư nhược,-1,Auto,Enemy,1,0,xingxiu_bingcanduzhang_child
+446,Thủy Độn,5,Active,Self,30,0,xingxiu_shuidun
+44601,Thủy Độn - Trúng độc,-1,Auto,Enemy,1,0,xingxiu_shuidun_child
+447,Kinh Mạch Nghịch Hành,5,Active,Self,50,0,xingxiu_jingmaiyixing
+448,Ngọc Toái Côn Cương,5,Active,Enemy,10,0,xingxiu_yusuigungang
+449,Kim Thạch Câu Phần,5,Active,Self,30,0,xingxiu_jinshigoufen
+450,Thiên Địa Đồng Thọ,5,Active,Enemy,60,15,xingxiu_tiandidongshou
+45001,Thiên Địa Đồng Thọ - Sát thương,-1,Auto,Enemy,1,0,xingxiu_tiandidongshou_child
+451,Hoá Cốt Miên Chưởng,5,Active,Enemy,65,15,xingxiu_huagumianzhang
+45101,Hoá Cốt Miên Chưởng - Hư nhược,-1,Auto,Enemy,1,0,xingxiu_huagumianzhang_child
+452,Bách Độc Bất Xâm,5,Active,PeacePlayer,1,15,xingxiu_baidubuqin
+453,Hoá Huyết Thần Độc,5,Active,PeacePlayer,1,15,xingxiu_huaxueshendu
+454,Hàm Tiếu Bán Bộ Diên,5,Active,Enemy,45,15,xingxiu_hanxiaobanbudian
+45401,Hàm Tiếu Bán Bộ Diên - Khống chế,-1,Auto,Enemy,1,0,xingxiu_hanxiaobanbudian_child
+455,Nhất Nhật Táng Mệnh Tán,5,Active,Enemy,80,15,xingxiu_yirizangmingzan
+45501,Nhất Nhật Táng Mệnh Tán - Công kích,-1,Auto,Enemy,1,0,xingxiu_yirizangmingzan_child_1
+45502,Nhất Nhật Táng Mệnh Tán - Phát tán,-1,Auto,Enemy,1,0,xingxiu_yirizangmingzan_child_2
+45503,Nhất Nhật Táng Mệnh Tán - Thất minh,-1,Auto,Enemy,1,0,xingxiu_yirizangmingzan_child_3
+456,Hoang Dã U Hồn,5,Active,Enemy,1,15,eighthbook_damage_magical
+457,Ảm Phiên Khốn Linh,5,Active,Enemy,1,15,eighthbook_control_magical
+461,Chính Dương Thủ,6,Active,Enemy,1,15,tianlong_zhengyangshou
+462,Tam Dương Khai Thái,6,Active,Enemy,10,0,tianlong_sanyangkaitai
+463,Nhất Dương Chỉ,6,Active,Enemy,45,15,tianlong_yiyangzhi
+464,Hàm Mai Tật Tẩu,6,Active,Self,20,0,tianlong_hanmeijizou
+465,Bát Môn Kim Toả,6,Active,Enemy,30,15,tianlong_bamenjinsuo
+466,Dĩ Dật Đãi Lao,6,Active,SelfAndAlly,40,0,tianlong_yiyidailao
+467,Chỉ Điểm Giang Sơn,6,Active,Enemy,10,15,tianlong_zhidianjiangshan

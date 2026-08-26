@@ -1,0 +1,1741 @@
+﻿ID,Name,ItemLevel,RequireLevel,SellPrice,Throwable,Sellable,Bound,Stack,MaxUsageTimes,DurationHour,ScriptID,TypeDesc
+20200000,Ngân Phiếu,1,1,1,false,false,false,15000,-1,-1,21007,Ngân phiếu
+20200001,Kim Nguyên Bảo Phiếu,1,1,1,false,false,false,15000,-1,-1,21007,Kim nguyên bảo phiếu
+20200002,Ngân Phiếu (Giao Tử),1,1,1,false,false,false,15000,-1,-1,21007,Ngân phiếu
+20200003,Kim Nguyên Bảo Phiếu (Khóa),1,1,1,false,false,false,15000,-1,-1,21007,Kim nguyên bảo phiếu
+20310000,Yến Huyền Ngọc,1,1,1,true,true,true,15000,-1,-1,-1,Vật phẩm đặc thù
+20310164,Linh Hồn Toái Phiến - Xích,1,1,1,true,true,false,15000,-1,-1,9999994,Vật phẩm đặc thù
+20310165,Linh Hồn Toái Phiến - Tranh,1,1,1,true,true,false,15000,-1,-1,9999994,Vật phẩm đặc thù
+20310166,Linh Hồn Toái Phiến - Hoàng,1,1,1,true,true,false,15000,-1,-1,9999994,Vật phẩm đặc thù
+20310182,Long Hồn Ngọc,1,10,1,true,true,true,15000,-1,-1,-1,Vật liệu đặc thù
+20310183,Linh Thú Tinh Phách,1,1,1,true,true,true,50,-1,-1,-1,Vật liệu đặc thù
+20310184,Chinh Nam Tiên Phong Ấn,1,1,1,true,true,true,15000,-1,-1,-1,Vật phẩm đặc thù
+20310186,Cổ Mộ Hành Công Yếu Quyết,1,10,1,true,true,true,15000,-1,-1,9999984,Đạo cụ đặc thù
+20310187,Toàn Chân Hành Công Yếu Quyết,1,10,1,true,true,true,15000,-1,-1,9999984,Đạo cụ đặc thù
+30000000,Bảo Tàng Đồ,1,1,31,true,true,false,1,-1,-1,21001,Bảo tàng đồ
+30001000,Thương Nhân Ngân Phiếu,1,1,1,false,false,true,1,-1,-1,-1,Thương Nhân Ngân Phiếu
+30008001,Đường đậu xuất sư,1,1,25,true,false,true,1,-1,-1,-1,Vật phẩm xuất sư
+30008018,Thanh Tâm Đan,5,10,1,true,false,false,15000,-1,-1,21005,Dược phẩm đặc biệt
+30008004,Đại Tẩy Tủy Đan,5,10,1,true,false,false,15000,-1,-1,22009,Dược phẩm đặc biệt
+30008007,Thổ Linh Châu,10,10,1,true,false,false,1,10,-1,21002,Đạo cụ đặc thù
+30008010,Âm Kim Bảo Sương,10,1,1,true,true,false,15000,-1,-1,9999999,Đạo cụ đặc thù
+30008012,Âm Kim Thược Thi Xuyến,10,10,10,true,false,false,1,99,-1,-1,Đạo cụ đặc thù
+30008030,Thổ Độn Châu,10,10,1,true,false,false,1,10,-1,21002,Đạo cụ đặc thù
+30308000,Bí tịch: Dịch Cân Kinh,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308001,Bí tịch: Cửu Dương Thiên Thư,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308002,Bí tịch: Đả Cẩu Bổng Pháp,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308003,Bí tịch: Tiên Thiên Công,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308004,Bí tịch: Cửu Âm Thiên Thư,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308005,Bí tịch: Hóa Công Đại Pháp,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308006,Bí tịch: Lục Mạch Thần Kiếm,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308007,Bí tịch: Sinh Tử Phù,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308008,Bí tịch: Bắc Minh Thần Công,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308009,Bí tịch: Tinh Tuyền Kiếm Điển,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308010,Bí tịch: Ngũ Độc Kỳ Kinh,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308011,Bí tịch: Tam Viên Đấu Số Kinh,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308012,Bí tịch: Truyền Tập Lục - Thủy Thệ,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308013,Bí tịch: Thị Hoa Lục,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308014,Bí tịch: Dữ Tâm Thư - Phản Chế,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308015,Bí tịch: Vô Tận Quyết,1,35,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái
+30308050,Bí tịch: Huyền Cương Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308051,Bí tịch: Thiên Thần Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308052,Bí tịch: Địa Vẫn Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308053,Bí tịch: Trụ Khung Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308054,Bí tịch: Hỗn Mang Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308055,Bí tịch: Hoang Lũy Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308056,Bí tịch: Hoàng Sầm Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308057,Bí tịch: Hồng Tinh Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308058,Bí tịch: Vũ Cực Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308059,Bí tịch: Độn Dân Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308060,Bí tịch: Huyễn Nhật Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308061,Bí tịch: Thần Túc Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308062,Bí tịch: Quan Hồ Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308063,Bí tịch: Truân Mân Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308064,Bí tịch: Tu Viễn Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308065,Bí tịch: Thiên Mệnh Điển Bí,1,80,1000,true,true,false,15000,-1,-1,9999997,Bí tịch môn phái thất truyền
+30308100,Yếu quyết: Đảo Chuyển Càn Khôn,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308101,Yếu quyết: Cự Hoả Thiêu Thiên,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308102,Yếu quyết: Bát Thảo Tầm Xà,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308103,Yếu quyết: Không Minh Thức,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308104,Yếu quyết: Cửu Âm Độc Long Công,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308105,Yếu quyết: Hoá Huyết Thần Độc,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308106,Yếu quyết: Thiếu Xung Kiếm Pháp,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308107,Yếu quyết: Thiên Địa Hàn Băng,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308108,Yếu quyết: Diên Động Thương Minh,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308109,Yếu quyết: Cô Tô Kiếm Khách,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308110,Yếu quyết: Ảnh Tử Thích Khách,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308111,Yếu quyết: Thái Cực Thần Công,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308112,Yếu quyết: Tiêu Kiếm Chi Âm,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308113,Yếu quyết: Ngự Cầm Phiêu Hoa,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308114,Yếu quyết: Phán Chỉ Âm Dương,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308115,Yếu quyết: Loạn Tâm Nhẫn,1,35,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308150,Yếu quyết: Điệu Hổ Ly Sơn,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308151,Yếu quyết: Phong Hỏa Liên Thành,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308152,Yếu quyết: Bổng Đả Cẩu Đầu,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308153,Yếu quyết: Tiên Phong Đạo Cốt,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308154,Yếu quyết: Thanh Tâm Phổ Thiện Chú,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308155,Yếu quyết: Hàm Tiếu Bán Bộ Diên,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308156,Yếu quyết: Thương Dương Kiếm,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308157,Yếu quyết: Thiên Địa Minh Diệt,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308158,Yếu quyết: Định Hải Thần Châm,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308159,Yếu quyết: Phá Thiên Thức,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308160,Yếu quyết: Khổng Tước Linh,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308161,Yếu quyết: Súc Địa Thành Thốn,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308162,Yếu quyết: Khổ Trú Đoạn,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308163,Yếu quyết: Vấn Hoa - Vô Kế Lưu Xuân,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308164,Yếu quyết: Quân Nhập Úng,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308165,Yếu quyết: Sinh Tử Do Ngã,1,45,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308170,Yếu quyết: Dịch Cân Đoạn Cốt,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308171,Yếu quyết: Thuần Dương Vô Cực,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308172,Yếu quyết: Thiên Hạ Vô Cẩu,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308173,Yếu quyết: Thiên Ngoại Phi Tiên,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308174,Yếu quyết: Cửu Âm Thần Trảo,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308175,Yếu quyết: Hoá Cốt Miên Chưởng,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308176,Yếu quyết: Thiếu Trạch Kiếm,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308177,Yếu quyết: Đồng Sinh Cộng Tử,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308178,Yếu quyết: Côn Dược Bắc Minh,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308179,Yếu quyết: Hóa Khí Thức,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308180,Yếu quyết: Khôi Lỗi Hương,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308181,Yếu quyết: Tuyệt Tinh Trận - Thất Sát,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308182,Yếu quyết: Khuyến Quân Tửu,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308183,Yếu quyết: Huyền Lộng Hoa Ảnh,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308184,Yếu quyết: Bách Luyện Thối Nhận,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308185,Yếu quyết: Chỉ Thiên Mạ Địa,1,65,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308200,Yếu quyết: Từ Hàng Phổ Độ,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308201,Yếu quyết: Nộ Hỏa Liên Trảm,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308202,Yếu quyết: Hoành Tảo Càn Khôn,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308203,Yếu quyết: Thất Tinh Tụ Thủ,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308204,Yếu quyết: Xuân Hoa Thu Nguyệt,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308205,Yếu quyết: Nhất Nhật Tang Mệnh Tán,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308206,Yếu quyết: Trung Xung Kiếm,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308207,Yếu quyết: Băng Ngưng Sương Hoa,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308208,Yếu quyết: Bộ Bộ Sinh Hoa,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308209,Yếu quyết: Lăng Thần Thức,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308210,Yếu quyết: Thập Phương Câu Diệt,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308211,Yếu quyết: Tuyệt Tinh Trận - Tham Lang,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308212,Yếu quyết: Bách Xuyên Nhập Hải,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308213,Yếu quyết: Phi Hoa - Loạn Hồng Thâm Xứ,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308214,Yếu quyết: Dữ Hổ Mưu Bì,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308215,Yếu quyết: Hồn Ly Phách Tán,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308250,Yếu quyết: Diệt Thử Triều Thực,1,30,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308251,Yếu quyết: Kim Châm Độ Kiếp,1,30,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308252,Yếu quyết: Liễu Ám Hoa Minh,1,30,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308253,Yếu quyết: Phi Hành Viễn Khứ,1,30,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết môn phái
+30308300,Yếu quyết: Huyền Ấn Ngộ Phật,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308301,Yếu quyết: Thiên Hỏa Nhiên Khung,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308302,Yếu quyết: Địa Trầm Hãm Ngân,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308303,Yếu quyết: Trụ Diệu Thất Tinh,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308304,Yếu quyết: Hỗn Giang Phá Nhai,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308305,Yếu quyết: Hoang Dã U Hồn,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308306,Yếu quyết: Hoàng Long Nộ Minh,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308307,Yếu quyết: Hồng Đào Bích Lãng,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308308,Yếu quyết: Vũ Việt Tinh Hiện,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308309,Yếu quyết: Độn Dị Triều Lạc,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308310,Yếu quyết: Lạc Nhật Truy Tinh,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308311,Yếu quyết: Vạn Túc Thần Quang,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308312,Yếu quyết: Lương Dạ Du,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308313,Yếu quyết: Phi Hoa Diệu Du,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308314,Yếu quyết: Dung Hải Xuyên,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308315,Yếu quyết: Phệ Hồn Cửu Thối,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308350,Yếu quyết: Từ Tâm Bi Mẫn,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308351,Yếu quyết: Phần Diễm Nhiễu Thân,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308352,Yếu quyết: Liệt Thổ Lao Lung,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308353,Yếu quyết: Bát Quái Ánh Vi,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308354,Yếu quyết: U Tuyền Thẩm Châu,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308355,Yếu quyết: Ảm Phiên Khốn Linh,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308356,Yếu quyết: Long Bàn Đẩu Lý,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308357,Yếu quyết: Tứ Thuỷ Vi Thành,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308358,Yếu quyết: Tử Vụ Nhiễu Tâm,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308359,Yếu quyết: Toái Châu Nhập Uyên,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308360,Yếu quyết: Lục Hợp Cấm Vực,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308361,Yếu quyết: Bộ Canh Đạp Đẩu,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308362,Yếu quyết: Hồ Sinh Vân Diệt,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308363,Yếu quyết: Tán Hoa Vấn Khúc,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308364,Yếu quyết: Ý Trường Lưu,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308365,Yếu quyết: Phọc Hồn Cuồng Liêm,1,80,1000,true,true,false,15000,-1,-1,9999997,Yếu quyết thất truyền
+30308400,Yếu quyết: Lạc Mã Tiễn,1,40,1,true,true,false,15000,-1,-1,9999997,Yếu quyết giang hồ
+30308401,Yếu quyết: Xuyên Vân Tiễn,1,40,1,true,true,false,15000,-1,-1,9999997,Yếu quyết giang hồ
+30308501,Tào Vận Ngân Phiếu,1,1,0,false,false,true,1,-1,-1,-1,Tào Vận Ngân Phiếu
+30311001,Vân Dao Thượng Thuỷ Kiếm,1,75,1000,true,true,true,1,-1,-1,-1,<color=#00d000>Bí Tịch Sơ Cấp
+30311002,Bạch Hồng Chưởng,1,75,1000,true,true,true,1,-1,-1,-1,<color=#00d000>Bí Tịch Sơ Cấp
+30311003,Đoạt Mệnh Liên Hoàn Tam Tiên Kiếm,1,75,1000,true,true,true,1,-1,-1,-1,<color=#00d000>Bí Tịch Sơ Cấp
+30311004,Độc Kinh,1,75,1000,true,true,true,1,-1,-1,-1,<color=#00d000>Bí Tịch Sơ Cấp
+30311005,Đạt Ma Quyền,1,75,1000,true,true,true,1,-1,-1,-1,<color=#00d000>Bí Tịch Sơ Cấp
+30311006,Hàn Băng Chân Khí,2,75,1000,true,true,true,1,-1,-1,-1,<color=#2980ff>Bí Tịch Hy Hữu
+30311007,Hàm Cốc Bát Tuyệt,2,75,1000,true,true,true,1,-1,-1,-1,<color=#2980ff>Bí Tịch Hy Hữu
+30311008,Vân Vũ Thập Tam Kiếm,2,75,1000,true,true,true,1,-1,-1,-1,<color=#2980ff>Bí Tịch Hy Hữu
+30311009,Ngũ Độc Mật Truyền,2,75,1000,true,true,true,1,-1,-1,-1,<color=#2980ff>Bí Tịch Hy Hữu
+30311010,Thuỵ Mộng La Hán Quyền,2,75,1000,true,true,true,1,-1,-1,-1,<color=#2980ff>Bí Tịch Hy Hữu
+30311011,Thái „t Huyền Môn Kiếm,3,75,1000,true,true,true,1,-1,-1,-1,<color=#cc33cc>Truyền Thế Bí Tịch
+30311012,Cửu Dương Chân Kinh,3,75,1000,true,true,true,1,-1,-1,-1,<color=#cc33cc>Truyền Thế Bí Tịch
+30311013,Long Tượng Bán Nhược Kinh,3,75,1000,true,true,true,1,-1,-1,-1,<color=#cc33cc>Truyền Thế Bí Tịch
+30311014,Độc Cô cửu kiếm,4,75,1000,true,true,true,1,-1,-1,-1,<color=#ff6600>Bí Tịch Tuyệt Thế
+30311015,Cửu Âm Chân Kinh,4,75,1000,true,true,true,1,-1,-1,-1,<color=#ff6600>Bí Tịch Tuyệt Thế
+30311016,Thần Chiếu Kinh,4,75,1000,true,true,true,1,-1,-1,-1,<color=#ff6600>Bí Tịch Tuyệt Thế
+30311205,Đạt Ma Quyền,1,75,1000,false,false,true,1,-1,-1,-1,<color=#00d000>Bí Tịch Sơ Cấp
+30311210,Thuỵ Mộng La Hán Quyền,2,75,1000,true,true,true,1,-1,-1,-1,<color=#2980ff>Bí Tịch Hy Hữu
+30501001,Môn phái triệu tập lệnh,1,10,100,true,true,true,20,-1,-1,21003,Tạp Vật
+30501004,Thông dụng truyền tống phù,1,20,250,true,true,false,1,1,-1,20010,Tạp Vật
+30501005,Thông dụng truyền tống phù,1,20,250,true,true,false,1,10,-1,20010,Tạp Vật
+30501006,Thông dụng truyền tống phù,1,20,250,true,true,false,1,100,-1,20010,Tạp Vật
+30501017,Hồng Sắc Định Vị Phù,1,10,1,true,false,false,1,13,-1,21004,Tạp Vật
+30501018,Lam sắc định vị phù,1,10,1,true,false,false,1,50,-1,21004,Tạp Vật
+30501019,Bạch sắc định vị phù,1,10,1,true,false,false,1,20,-1,21004,Tạp Vật
+30501020,Lục sắc định vị phù,1,10,1,true,false,false,1,100,-1,21004,Tạp Vật
+30501021,Hoàng sắc định vị phù,1,10,1,true,false,false,1,8,-1,21004,Tạp Vật
+30501022,Tử sắc định vị phù,1,10,1,true,false,false,1,150,-1,21004,Tạp Vật
+30501023,Hồng Sắc Định Vị Phù,2,10,1,true,false,false,1,13,-1,21004,Tạp Vật
+30501024,Lam sắc định vị phù,2,10,1,true,false,false,1,50,-1,21004,Tạp Vật
+30501025,Bạch sắc định vị phù,2,10,1,true,false,false,1,20,-1,21004,Tạp Vật
+30501026,Lục sắc định vị phù,2,10,1,true,false,false,1,100,-1,21004,Tạp Vật
+30501027,Hoàng sắc định vị phù,2,10,1,true,false,false,1,8,-1,21004,Tạp Vật
+30501028,Tử sắc định vị phù,2,10,1,true,false,false,1,150,-1,21004,Tạp Vật
+30501029,Hồng Sắc Định Vị Phù,3,10,1,true,false,false,1,13,-1,21004,Tạp Vật
+30501030,Lam sắc định vị phù,3,10,1,true,false,false,1,50,-1,21004,Tạp Vật
+30501031,Bạch sắc định vị phù,3,10,1,true,false,false,1,20,-1,21004,Tạp Vật
+30501032,Lục sắc định vị phù,3,10,1,true,false,false,1,100,-1,21004,Tạp Vật
+30501033,Hoàng sắc định vị phù,3,10,1,true,false,false,1,8,-1,21004,Tạp Vật
+30501034,Tử sắc định vị phù,3,10,1,true,false,false,1,150,-1,21004,Tạp Vật
+30501036,Kim nguyên bảo phiếu,1,1,1,false,false,false,1,-1,-1,-1,Kim nguyên bảo phiếu
+30501037,Hồng Sắc Định Vị Phù,4,10,1,true,false,false,1,13,-1,21004,Tạp Vật
+30501038,Lam sắc định vị phù,4,10,1,true,false,false,1,50,-1,21004,Tạp Vật
+30501039,Bạch sắc định vị phù,4,10,1,true,false,false,1,20,-1,21004,Tạp Vật
+30501040,Lục sắc định vị phù,4,10,1,true,false,false,1,100,-1,21004,Tạp Vật
+30501041,Hoàng sắc định vị phù,4,10,1,true,false,false,1,8,-1,21004,Tạp Vật
+30501042,Tử sắc định vị phù,4,10,1,true,false,false,1,150,-1,21004,Tạp Vật
+30501201,Tàn Khuyết Thần Tiết (Cấp 1),42,42,1,false,false,true,1,-1,-1,22010,Đạo cụ Thần Khí
+30501202,Tàn Khuyết Thần Tiết (Cấp 2),52,52,1,false,false,true,1,-1,-1,22010,Đạo cụ Thần Khí
+30501203,Tàn Khuyết Thần Tiết (Cấp 3),62,62,1,false,false,true,1,-1,-1,22010,Đạo cụ Thần Khí
+30501204,Tàn Khuyết Thần Tiết (Cấp 4),72,72,1,false,false,true,1,-1,-1,22010,Đạo cụ Thần Khí
+30501205,Tàn Khuyết Thần Tiết (Cấp 5),82,82,1,false,false,true,1,-1,-1,22010,Đạo cụ Thần Khí
+30501206,Tàn Khuyết Thần Tiết (Cấp 6),92,92,1,false,false,true,1,-1,-1,22010,Đạo cụ Thần Khí
+30501207,Tàn Khuyết Thần Tiết (Cấp 7),102,102,1,false,false,true,1,-1,-1,22010,Đạo cụ Thần Khí
+30501221,Liên Nhung Thần Tiết (Cấp 1),42,42,1,false,false,true,1,-1,-1,-1,Đạo cụ Thần Khí
+30501222,Liên Nhung Thần Tiết (Cấp 2),52,52,1,false,false,true,1,-1,-1,-1,Đạo cụ Thần Khí
+30501223,Liên Nhung Thần Tiết (Cấp 3),62,62,1,false,false,true,1,-1,-1,-1,Đạo cụ Thần Khí
+30501224,Liên Nhung Thần Tiết (Cấp 4),72,72,1,false,false,true,1,-1,-1,-1,Đạo cụ Thần Khí
+30501225,Liên Nhung Thần Tiết (Cấp 5),82,82,1,false,false,true,1,-1,-1,-1,Đạo cụ Thần Khí
+30501226,Liên Nhung Thần Tiết (Cấp 6),92,92,1,false,false,true,1,-1,-1,-1,Đạo cụ Thần Khí
+30501227,Liên Nhung Thần Tiết (Cấp 7),102,102,1,false,false,true,1,-1,-1,-1,Đạo cụ Thần Khí
+30501231,Quái Vật Đồ Tường (Cấp 1),42,42,1,false,false,false,15000,-1,-1,-1,Đạo cụ Thần Khí
+30501232,Quái Vật Đồ Tường (Cấp 2),52,52,1,false,false,false,15000,-1,-1,-1,Đạo cụ Thần Khí
+30501233,Quái Vật Đồ Tường (Cấp 3),62,62,1,false,false,false,15000,-1,-1,-1,Đạo cụ Thần Khí
+30501234,Quái Vật Đồ Tường (Cấp 4),72,72,1,false,false,false,15000,-1,-1,-1,Đạo cụ Thần Khí
+30501235,Quái Vật Đồ Tường (Cấp 5),82,82,1,false,false,false,15000,-1,-1,-1,Đạo cụ Thần Khí
+30501236,Quái Vật Đồ Tường (Cấp 6),92,92,1,false,false,false,15000,-1,-1,-1,Đạo cụ Thần Khí
+30501237,Quái Vật Đồ Tường (Cấp 7),102,102,1,false,false,false,15000,-1,-1,-1,Đạo cụ Thần Khí
+30503127,Mã Lan Hoa Thần Kỳ,1,30,1,true,true,true,1,-1,-1,-1,Đạo cụ đặc thù
+30503128,Mã Lan Hoa Biện,1,1,1,true,true,true,50,-1,-1,-1,Đạo cụ đặc thù
+30504706,Lễ bao tân thủ,1,1,0,true,false,true,1,-1,-1,9999999,Hỗ trợ tân thủ
+30505060,Thư nhà của dũng sĩ,1,80,0,true,false,false,1,-1,-1,-1,Nhiệm vụ đạo cụ
+30505061,Đầu lâu của A Chi,1,60,0,true,false,false,1,-1,-1,-1,Nhiệm vụ đạo cụ
+30505062,Hoả Pháo truyền tin,1,1,0,false,false,true,1,-1,-1,-1,Nhiệm vụ đạo cụ
+30505092,Long Bài,1,65,1,true,true,false,15000,-1,-1,9999995,Vật phẩm hiếm có
+30505100,Phổ Thông Thỉnh Thiệp,1,1,1,true,true,false,15000,-1,-1,9999999,Hôn lễ thỉnh thiệp
+30505101,Cao Cấp Thỉnh Thiệp,1,1,1,true,true,false,15000,-1,-1,9999999,Hôn lễ thỉnh thiệp
+30505102,Hào Hoa Thỉnh Thiệp,1,1,1,true,true,false,15000,-1,-1,9999999,Hôn lễ thỉnh thiệp
+30505126,Ngọc Thố Linh Đang,1,5,1,true,true,false,15000,-1,-1,9999995,Vật phẩm hiếm có
+30505127,Hạo Nguyệt Ngọc Thố Linh Đang,1,45,1,true,true,false,15000,-1,-1,9999995,Vật phẩm hiếm có
+30505128,Thiểm Cung Ngọc Thố Linh Đang,1,55,1,true,true,false,15000,-1,-1,9999995,Vật phẩm hiếm có
+30505129,Hằng Nga Ngọc Thố Linh Đang,1,65,1,true,true,false,15000,-1,-1,9999995,Vật phẩm hiếm có
+30505130,Trác Lộc Báo Danh Thư,1,1,1,true,true,true,15000,-1,-1,-1,Vật phẩm hiếm có
+30509500,Thú Lan (Cấp 1),1,1,1,true,true,false,15000,-1,-1,20006,Đồ dùng Trân thú
+30509501,Thú Lan (Cấp 2),2,1,1,true,true,false,15000,-1,-1,20006,Đồ dùng Trân thú
+30509502,Thú Lan (Cấp 3),3,1,1,true,true,false,15000,-1,-1,20006,Đồ dùng Trân thú
+30509503,Thú Lan (Cấp 4),4,1,1,true,true,false,15000,-1,-1,20006,Đồ dùng Trân thú
+30509504,Thú Lan Siêu Cấp,4,1,1,true,true,false,15000,-1,-1,20006,Đồ dùng Trân thú
+30601001,Hoàng Tích Đạn Cung,1,1,2,true,true,false,15000,-1,-1,20007,Đồ dùng Trân thú
+30601002,Bích Ngọc Đạn Cung,2,2,6,true,true,false,15000,-1,-1,20007,Đồ dùng Trân thú
+30601003,Lam Thái Đạn Cung,3,3,15,true,true,false,15000,-1,-1,20007,Đồ dùng Trân thú
+30601004,Hồi Toàn Kim Cầu,4,1,50,true,true,false,15000,-1,-1,20007,Đồ dùng Trân thú
+30601005,Tích Lịch Thái Cầu,5,5,75,true,true,false,15000,-1,-1,20007,Đồ dùng Trân thú
+30601006,Lam Hải Trọng Cầu,6,6,156,true,true,false,15000,-1,-1,20007,Đồ dùng Trân thú
+30601007,Trọng Sắc Đáp Mộc,7,7,210,true,true,false,15000,-1,-1,20007,Đồ dùng Trân thú
+30601008,Phi Hồng Tích Mộc,8,8,306,true,true,false,15000,-1,-1,20007,Đồ dùng Trân thú
+30601009,Song Y Tích Mộc,9,9,400,true,true,false,15000,-1,-1,20007,Đồ dùng Trân thú
+30601010,Thiên Vân Đáp Mộc,10,10,506,true,true,false,15000,-1,-1,20007,Đồ dùng Trân thú
+30702005,Rương Chọn Điêu Văn Đổ Tường Đỏ,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+30702006,Rương Chọn Điêu Văn Đổ Tường Vàng,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+30702007,Rương Chọn Điêu Văn Đổ Tường Xanh,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+30702008,Rương Chọn Điêu Văn Đổ Tường Tím,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+30702009,Rương Chọn Điêu Văn Đổ Tường Lam,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+30702010,Rương Chọn Nguyên Liệu Điêu Văn,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+30702011,Rương Chọn Nguyên Liệu Điêu Văn (Khóa),1,1,1,true,true,true,15000,-1,-1,9999998,Kỳ vật sự kiệni
+30070502,Huyền Cơ Dược Trần,1,1,1,true,true,false,15000,-1,-1,9999992,Nguyên liệu đặc thù
+30070503,Thương Hạc Dược Phách,1,1,1,true,true,false,15000,-1,-1,9999992,Nguyên liệu đặc thù
+30070504,Băng Tủy Dược Linh,1,1,1,true,true,false,15000,-1,-1,9999992,Nguyên liệu đặc thù
+30070505,Thiên Hối Dược Trần,1,1,1,true,true,false,15000,-1,-1,9999992,Nguyên liệu đặc thù
+30070509,Thiên Hối Dược Trần Trung Cấp,1,1,1,true,true,false,15000,-1,-1,9999992,Nguyên liệu đặc thù
+30070510,Thiên Hối Dược Trần Cao Cấp,1,1,1,true,true,false,15000,-1,-1,9999992,Nguyên liệu đặc thù
+30070511,Huyền Cơ Dược Trần Trung Cấp,1,1,1,true,true,false,15000,-1,-1,9999992,Nguyên liệu đặc thù
+30070512,Huyền Cơ Dược Trần Cao Cấp,1,1,1,true,true,false,15000,-1,-1,9999992,Nguyên liệu đặc thù
+30070600,Chân Nguyên Phách,1,1,1,true,true,false,15000,-1,-1,9999991,Nguyên liệu đặc thù
+30070601,Chân Nguyên Tinh Phách,1,1,1,true,true,false,15000,-1,-1,9999991,Nguyên liệu đặc thù
+30070602,Chân Nguyên Linh Phách,1,1,1,true,true,false,15000,-1,-1,9999991,Nguyên liệu đặc thù
+30070603,Chân Nguyên Thần Phách,1,1,1,true,true,false,15000,-1,-1,9999991,Nguyên liệu đặc thù
+30900068,Xu Kim Tệ Khóa,1,1,500,true,true,true,15000,-1,-1,-1,Vật phẩm Cạnh Kỹ Trường
+30900070,Đồng Kim Tệ Khóa,1,1,100000,true,true,true,15000,-1,-1,-1,Vật phẩm Cạnh Kỹ Trường
+30900072,Đại Hoàn Đơn,10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm Cạnh Kỹ Trường
+31000200,Chiêu Hồn Ngọc - Test,1,1,1,true,true,false,15000,-1,-1,9999990,Chiêu hồn đạo cụ
+31000500,Quân Thiên Thông Hành Lệnh,1,1,1,true,true,true,15000,-1,-1,-1,Đạo cụ đặc thù
+31000501,Triều Kinh Thông Hành Lệnh,1,1,1,true,true,true,15000,-1,-1,-1,Đạo cụ đặc thù
+31000502,La Phù Thông Hành Lệnh,1,1,1,true,true,true,15000,-1,-1,-1,Đạo cụ đặc thù
+31010000,Thỏi Vàng Thô,1,1,200000,true,true,true,15000,-1,-1,-1,Vật liệu đặc thù
+31030000,Thần Bí Bảo Hạp - Phiêu Phiêu Áp,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030001,Thần Bí Bảo Hạp - Phiêu Phiêu Thố,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030002,Thần Bí Bảo Hạp - Thố,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030003,Thần Bí Bảo Hạp - Thố,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030004,Thần Bí Bảo Hạp - Yến Tử,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030005,Thần Bí Bảo Hạp - Yến Tử,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030006,Thần Bí Bảo Hạp - Quy,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030007,Thần Bí Bảo Hạp - Quy,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030008,Thần Bí Bảo Hạp - Anh Vũ A,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030009,Thần Bí Bảo Hạp - Anh Vũ B,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030010,Thần Bí Bảo Hạp - Anh Vũ C,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030011,Thần Bí Bảo Hạp - Anh Vũ D,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030012,Thần Bí Bảo Hạp - Tích Dịch A,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030013,Thần Bí Bảo Hạp - Tích Dịch B,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030014,Thần Bí Bảo Hạp - Tích Dịch C,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030015,Thần Bí Bảo Hạp - Tích Dịch D,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030016,Thần Bí Bảo Hạp - Miêu Đầu Ưng A,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030017,Thần Bí Bảo Hạp - Miêu Đầu Ưng B,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030018,Thần Bí Bảo Hạp - Miêu Đầu Ưng C,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030019,Thần Bí Bảo Hạp - Miêu Đầu Ưng D,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030020,Thần Bí Bảo Hạp - Ưng A,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030021,Thần Bí Bảo Hạp - Ưng B,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030022,Thần Bí Bảo Hạp - Ưng C,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030023,Thần Bí Bảo Hạp - Ưng D,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030024,Thần Bí Bảo Hạp - Ưng E,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030025,Thần Bí Bảo Hạp - Băng Điêu Long,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+31030026,Thần Bí Bảo Hạp - Linh Mị Nhi,1,1,1,true,true,false,15000,-1,-1,9999987,Phụ thân bảo hạp
+36000000,Bách Biến Như Ý - Phiêu Phiêu Áp,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000001,Bách Biến Như Ý - Tiểu Thần Long,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000002,Bách Biến Như Ý - Thố Tử Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000003,Bách Biến Như Ý - Thố Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000004,Bách Biến Như Ý - Quy Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000005,Bách Biến Như Ý - Quy Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000006,Bách Biến Như Ý - Cẩu Tử Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000007,Bách Biến Như Ý - Cẩu Tử Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000008,Bách Biến Như Ý - Anh Vũ Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000009,Bách Biến Như Ý - Anh Vũ Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000010,Bách Biến Như Ý - Anh Vũ Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000011,Bách Biến Như Ý - Đường Lang Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000012,Bách Biến Như Ý - Đường Lang Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000013,Bách Biến Như Ý - Đường Lang Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000014,Bách Biến Như Ý - Yến Tử Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000015,Bách Biến Như Ý - Yến Tử Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000016,Bách Biến Như Ý - Nhím Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000017,Bách Biến Như Ý - Nhím Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000018,Bách Biến Như Ý - Hầu Tử Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000019,Bách Biến Như Ý - Hầu Tử Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000020,Bách Biến Như Ý - Tùng Thử Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000021,Bách Biến Như Ý - Tùng Thử Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000022,Bách Biến Như Ý - Tùng Thử Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000023,Bách Biến Như Ý - Hoán Hùng Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000024,Bách Biến Như Ý - Hoán Hùng Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000025,Bách Biến Như Ý - Hoán Hùng Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000026,Bách Biến Như Ý - Tích Dịch Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000027,Bách Biến Như Ý - Tích Dịch Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000028,Bách Biến Như Ý - Tích Dịch Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000029,Bách Biến Như Ý - Biên Bức Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000030,Bách Biến Như Ý - Biên Bức Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000031,Bách Biến Như Ý - Biên Bức Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000032,Bách Biến Như Ý - Ngạc Ngư Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000033,Bách Biến Như Ý - Ngạc Ngư Biến Dị,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000034,Bách Biến Như Ý - Ngạc Ngư Bảo Bảo,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000035,Bách Biến Như Ý - Tuần Lộc,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+36000036,Bách Biến Như Ý - Tiêu Tiêu,1,1,1,true,true,false,15000,-1,-1,9999989,Biến thân phù
+39000000,Hộp Quà Biến Thân,1,1,1,true,true,true,1,-1,-1,9999999,Kỳ vật sự kiện
+37000000,Bang Môn Khuếch Trương,1,30,1,true,true,true,15000,-1,-1,-1,Vật liệu đặc thù
+37000001,Phối Sức: Phẩm Trúc Nhi Ca,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37000002,Phối Sức: Mạch Ẩn Thanh Tri,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37000003,Phối Sức: Lưu Kim Phi Vũ,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37000004,Phối Sức: Kim Ô Diệu Thế,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37000005,Phối Sức: Lông Công,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37000006,Phối Sức: Hộ Bối Kỳ,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37000007,Phối Sức: Thanh Hoa Ánh Huy,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37000008,Phối Sức: Bát Thi Trục Nhật,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37000009,Phối Sức: Tai Thỏ Dễ Thương,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37000010,Phối Sức: Một Ngàn Lẻ Một Đêm,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37000011,Phối Sức: Phong Vũ Đồng Quy,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37000012,Phối Sức: Hùng Miêu Hiệp,1,1,1,true,true,false,15000,-1,-1,9999986,Phối sức thời trang
+37010024,Trứng trân thú: Thố Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010025,Trứng trân thú: Yến Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010026,Trứng trân thú: Quy (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010027,Trứng trân thú: Cẩu Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010028,Trứng trân thú: Nhím (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010029,Trứng trân thú: Hầu Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010030,Trứng trân thú: Tùng Thử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010031,Trứng trân thú: Hoán Hùng (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010032,Trứng trân thú: Anh Vũ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010033,Trứng trân thú: Tích Dịch (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010034,Trứng trân thú: Biên Bức (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010035,Trứng trân thú: Đường Lang (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010036,Trứng trân thú: Ngạc Ngư (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010037,Trứng trân thú: Miêu Đầu Ưng (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010038,Trứng trân thú: Chồn (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010039,Trứng trân thú: Hổ (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010040,Trứng trân thú: Dã Trư (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010041,Trứng trân thú: Băng Tằm (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010042,Trứng trân thú: Ưng (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010043,Trứng trân thú: Đà Điểu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010044,Trứng trân thú: Báo (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010045,Trứng trân thú: Bắc Cực Hùng (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010046,Trứng trân thú: Khổng Tước (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010047,Trứng trân thú: Kiếm Xỉ Hổ (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010048,Trứng trân thú: Tinh Tinh (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010049,Trứng trân thú: Tê Ngưu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010050,Trứng trân thú: Tuyết Điêu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010051,Trứng trân thú: Long Kiếm (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010052,Trứng trân thú: Bác Mã (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010053,Trứng trân thú: Sồ Phụng (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010054,Trứng trân thú: Niên Thú (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010055,Trứng trân thú: Long Quy (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010056,Trứng trân thú: Anh Chiêu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010057,Trứng trân thú: Kỳ Lân (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010058,Trứng trân thú: Giao Long (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010059,Trứng trân thú: Sài Miêu (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010060,Trứng trân thú: Kê (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010061,Trứng trân thú: Áp Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010062,Trứng trân thú: Kỹ Gia Dương (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010063,Trứng trân thú: Mao Lư (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010064,Trứng trân thú: Nga (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010065,Trứng trân thú: Bá Vương Long (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010066,Trứng trân thú: Xí Nga (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010067,Trứng trân thú: Đại Thử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010068,Trứng trân thú: Áp Chủy Thú (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010069,Trứng trân thú: Trư (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010070,Trứng trân thú: Thanh Oa (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010071,Trứng trân thú: Tiểu Tượng (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010072,Trứng trân thú: Tuyết Hồ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010073,Trứng trân thú: Lang (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010074,Trứng trân thú: Long (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010075,Trứng trân thú: Long Miêu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010076,Trứng trân thú: Cường Long Miêu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010077,Trứng trân thú: Trân Long Miêu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010078,Trứng trân thú: Siêu Long Miêu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010079,Trứng trân thú: Thần Long Miêu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010080,Miêu hạng quyển: Mặc Kính Miêu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010081,Miêu hạng quyển: Lưu Hành Miêu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010082,Miêu hạng quyển: Thời Thượng Miêu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010083,Miêu hạng quyển: Ngẫu Tượng Miêu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010084,Miêu hạng quyển: Quán Quân Miêu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010085,Trứng trân thú: Tê Điểu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010086,Trứng trân thú: Linh Tê Điểu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010087,Trứng trân thú: Trân Tê Điểu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010088,Trứng trân thú: Siêu Tê Điểu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010089,Trứng trân thú: Thần Tê Điểu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010090,Trứng trân thú: Hùng Miêu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010091,Trứng trân thú: Cường Hùng Miêu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010092,Trứng trân thú: Trân Hùng Miêu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010093,Trứng trân thú: Siêu Hùng Miêu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010094,Trứng trân thú: Thần Hùng Miêu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010095,Trứng trân thú: Bàng Giải (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010096,Trứng trân thú: Thanh Giải (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010097,Trứng trân thú: Đại Áp Giải (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010098,Trứng trân thú: Triều Hành Giải (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010099,Trứng trân thú: Nhung Ngao Giải (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010100,Trứng trân thú: Phấn Điệp (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010101,Trứng trân thú: Ban Điệp (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010102,Trứng trân thú: Quyên Điệp (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010103,Trứng trân thú: Hoàn Điệp (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010104,Trứng trân thú: Vĩ Điệp (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010105,Trứng trân thú: Oa Ngưu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010106,Trứng trân thú: Tráng Oa Ngưu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010107,Trứng trân thú: Trân Oa Ngưu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010108,Trứng trân thú: Siêu Oa Ngưu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010109,Trứng trân thú: Thần Oa Ngưu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010110,Trứng trân thú: Độc Hạt (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010111,Trứng trân thú: Linh Hạt (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010112,Trứng trân thú: Trân Hạt (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010113,Trứng trân thú: Thiên Hạt (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010114,Trứng trân thú: Ma Hạt (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010115,Trứng trân thú: Tiểu Mô (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010116,Trứng trân thú: Tráng Mô (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010117,Trứng trân thú: Trân Mô (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010118,Trứng trân thú: Thánh Mô (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010119,Trứng trân thú: Thần Mô (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010120,Trứng trân thú: Giáp Trùng (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010121,Trứng trân thú: Cường Giáp Trùng (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010122,Trứng trân thú: Trân Giáp Trùng (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010123,Trứng trân thú: Thánh Giáp Trùng (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010124,Trứng trân thú: Thần Giáp Trùng (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010125,Trứng trân thú: Đương Hỗ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010126,Trứng trân thú: Linh Đương Hỗ (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010127,Trứng trân thú: Trân Đương Hỗ (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010128,Trứng trân thú: Thánh Đương Hỗ (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010129,Trứng trân thú: Thần Đương Hỗ (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010130,Trứng trân thú: Thần Xí Nga (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010131,Trứng trân thú: Quai Xí Nga (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010132,Trứng trân thú: Linh Xí Nga (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010133,Trứng trân thú: Thánh Xí Nga (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010134,Trứng trân thú: Hỏa Tông Thử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010135,Trứng trân thú: Viêm Hỏa Tông Thử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010136,Trứng trân thú: Huyền Dực Thú (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010137,Trứng trân thú: Xuy Huyền Dực Thú (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010138,Trứng trân thú: Ngọc Thố (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010139,Trứng trân thú: Hạo Nguyệt (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010140,Trứng trân thú: Thiềm Cung (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010141,Trứng trân thú: Thỏ Hằng Nga (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010142,Trứng trân thú: Tiêm Nha Bạo Long (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010143,Trứng trân thú: Lợi Nha Bạo Long (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010144,Trứng trân thú: Cang Nha Bạo Long (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010145,Trứng trân thú: Huyết Nha Bạo Long (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010146,Trứng trân thú: Áp Chủy Thú (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010147,Trứng trân thú: Áp Chủy Thú (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010148,Trứng trân thú: Áp Chủy Thú (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010149,Trứng trân thú: Áp Chủy Thú (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010150,Trứng trân thú: Áp Chủy Thú (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010151,Trứng trân thú: Áp Chủy Thú (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010152,Trứng trân thú: Áp Chủy Thú (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010153,Trứng trân thú: Tuyết Hồ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010154,Trứng trân thú: Tuyết Hồ (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010155,Trứng trân thú: Tuyết Hồ (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010156,Trứng trân thú: Tuyết Hồ (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010157,Trứng trân thú: Tuyết Hồ (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010158,Trứng trân thú: Tuyết Hồ (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010159,Trứng trân thú: Tuyết Hồ (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010160,Trứng trân thú: Long Miêu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010161,Trứng trân thú: Long Miêu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010162,Trứng trân thú: Long Miêu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010163,Trứng trân thú: Long Miêu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010164,Trứng trân thú: Long Miêu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010165,Trứng trân thú: Long Miêu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010166,Trứng trân thú: Long Miêu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010167,Trứng trân thú: Tê Điểu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010168,Trứng trân thú: Tê Điểu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010169,Trứng trân thú: Tê Điểu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010170,Trứng trân thú: Tê Điểu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010171,Trứng trân thú: Tê Điểu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010172,Trứng trân thú: Tê Điểu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010173,Trứng trân thú: Tê Điểu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010174,Trứng trân thú: Hùng Miêu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010175,Trứng trân thú: Hùng Miêu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010176,Trứng trân thú: Hùng Miêu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010177,Trứng trân thú: Hùng Miêu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010178,Trứng trân thú: Hùng Miêu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010179,Trứng trân thú: Hùng Miêu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010180,Trứng trân thú: Hùng Miêu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010181,Trứng trân thú: Bàng Giải (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010182,Trứng trân thú: Bàng Giải (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010183,Trứng trân thú: Bàng Giải (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010184,Trứng trân thú: Bàng Giải (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010185,Trứng trân thú: Bàng Giải (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010186,Trứng trân thú: Bàng Giải (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010187,Trứng trân thú: Bàng Giải (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010188,Trứng trân thú: Hồ Điệp (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010189,Trứng trân thú: Hồ Điệp (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010190,Trứng trân thú: Hồ Điệp (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010191,Trứng trân thú: Hồ Điệp (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010192,Trứng trân thú: Hồ Điệp (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010193,Trứng trân thú: Hồ Điệp (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010194,Trứng trân thú: Hồ Điệp (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010195,Trứng trân thú: Oa Ngưu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010196,Trứng trân thú: Oa Ngưu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010197,Trứng trân thú: Oa Ngưu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010198,Trứng trân thú: Oa Ngưu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010199,Trứng trân thú: Oa Ngưu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010200,Trứng trân thú: Oa Ngưu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010201,Trứng trân thú: Oa Ngưu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010202,Trứng trân thú: Hạt Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010203,Trứng trân thú: Hạt Tử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010204,Trứng trân thú: Hạt Tử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010205,Trứng trân thú: Hạt Tử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010206,Trứng trân thú: Hạt Tử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010207,Trứng trân thú: Hạt Tử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010208,Trứng trân thú: Hạt Tử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010209,Trứng trân thú: Xuyên Sơn Giáp (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010210,Trứng trân thú: Xuyên Sơn Giáp (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010211,Trứng trân thú: Xuyên Sơn Giáp (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010212,Trứng trân thú: Xuyên Sơn Giáp (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010213,Trứng trân thú: Xuyên Sơn Giáp (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010214,Trứng trân thú: Lôi Lân (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010215,Trứng trân thú: Xuyên Sơn Giáp (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010216,Trứng trân thú: Huyền Giáp Lôi Xà (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010217,Trứng trân thú: Huyền Giáp Lôi Xà (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010218,Trứng trân thú: Huyền Giáp Lôi Xà (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010219,Trứng trân thú: Huyền Giáp Lôi Xà (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010220,Trứng trân thú: Huyền Giáp Lôi Xà (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010221,Trứng trân thú: Huyền Giáp Lôi Xà (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010222,Trứng trân thú: Huyền Giáp Lôi Xà (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010223,Trứng trân thú: Đương Hỗ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010224,Trứng trân thú: Đương Hỗ (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010225,Trứng trân thú: Đương Hỗ (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010226,Trứng trân thú: Đương Hỗ (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010227,Trứng trân thú: Đương Hỗ (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010228,Trứng trân thú: Đương Hỗ (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010229,Trứng trân thú: Đương Hỗ (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010230,Trứng trân thú: Hải Tặc Thử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010231,Trứng trân thú: Hải Tặc Thử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010232,Trứng trân thú: Hải Tặc Thử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010233,Trứng trân thú: Hải Tặc Thử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010234,Trứng trân thú: Hải Tặc Thử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010235,Trứng trân thú: Hải Tặc Thử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010236,Trứng trân thú: Hải Tặc Thử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010237,Trứng trân thú: Bảo Rương Đồng Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010238,Trứng trân thú: Bảo Rương Đồng Tử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010239,Trứng trân thú: Bảo Rương Đồng Tử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010240,Trứng trân thú: Bảo Rương Đồng Tử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010241,Trứng trân thú: Bảo Rương Đồng Tử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010242,Trứng trân thú: Bảo Rương Đồng Tử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010243,Trứng trân thú: Bảo Rương Đồng Tử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010244,Trứng trân thú: Thụ Đại Hùng (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010245,Trứng trân thú: Thụ Đại Hùng (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010246,Trứng trân thú: Thụ Đại Hùng (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010247,Trứng trân thú: Thụ Đại Hùng (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010248,Trứng trân thú: Thụ Đại Hùng (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010249,Trứng trân thú: Thụ Đại Hùng (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010250,Trứng trân thú: Thụ Đại Hùng (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010251,Trứng trân thú: Hoan Lạc Trư (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010252,Trứng trân thú: Hoan Lạc Trư (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010253,Trứng trân thú: Hoan Lạc Trư (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010254,Trứng trân thú: Hoan Lạc Trư (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010255,Trứng trân thú: Hoan Lạc Trư (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010256,Trứng trân thú: Hoan Lạc Trư (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010257,Trứng trân thú: Hoan Lạc Trư (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010258,Trứng trân thú: Hỏa Tông Yêu Thử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010259,Trứng trân thú: Viêm Hỏa Yêu Thử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010260,Trứng trân thú: Huyền Dực Ma Thú (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010261,Trứng trân thú: Xuy Huyền Ma Thú (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010262,Trứng trân thú: Trân Kỳ Thử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010263,Trứng trân thú: Kỳ Lân (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010264,Miêu hạng quyển: Cát Tường Miêu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010265,Trứng trân thú: Trân Kỳ Thử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010266,Trứng trân thú: Trân Kỳ Thử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010267,Trứng trân thú: Trân Kỳ Thử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010268,Trứng trân thú: Ma Nha Bạo Long (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010269,Trứng trân thú: Đường Trang Thử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010270,Trứng trân thú: Đường Trang Thử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010271,Trứng trân thú: Đường Trang Thử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010272,Trứng trân thú: Đường Trang Thử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010273,Trứng trân thú: Đường Trang Thử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010274,Trứng trân thú: Đường Trang Thử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010275,Trứng trân thú: Đường Trang Thử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010276,Trứng trân thú: Niên Thú (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010277,Trứng trân thú: Niên Thú (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010278,Trứng trân thú: Niên Thú (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010279,Trứng trân thú: Niên Thú (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010280,Trứng trân thú: Niên Thú (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010281,Trứng trân thú: Niên Thú (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010282,Trứng trân thú: Niên Thú (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010283,Trứng trân thú: Uyên ương (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010284,Trứng trân thú: Uyên ương (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010285,Trứng trân thú: Uyên ương (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010286,Trứng trân thú: Uyên ương (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010287,Trứng trân thú: Uyên ương (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010288,Trứng trân thú: Uyên ương (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010289,Trứng trân thú: Uyên ương (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010290,Trứng trân thú: Cầu Long (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010291,Trứng trân thú: Mao Lư (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010292,Trứng trân thú: Mao Lư (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010293,Trứng trân thú: Mao Lư (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010294,Trứng trân thú: Cùng Kỳ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010295,Trứng trân thú: Cùng Kỳ (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010296,Trứng trân thú: Cùng Kỳ (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010297,Trứng trân thú: Cùng Kỳ (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010298,Trứng trân thú: Cùng Kỳ (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010299,Trứng trân thú: Cùng Kỳ (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010300,Trứng trân thú: Cùng Kỳ (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010301,Trứng trân thú: Tiểu Hồ Tiên (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010302,Trứng trân thú: Tiểu Hồ Tiên (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010303,Trứng trân thú: Tiểu Hồ Tiên (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010304,Trứng trân thú: Tiểu Hồ Tiên (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010305,Trứng trân thú: Tiểu Hồ Tiên (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010306,Trứng trân thú: Tiểu Hồ Tiên (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010307,Trứng trân thú: Tiểu Hồ Tiên (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010308,Trứng trân thú: Cầu Long (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010309,Trứng trân thú: Bỉ Dực Điểu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010310,Trứng trân thú: Bỉ Dực Điểu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010311,Trứng trân thú: Bỉ Dực Điểu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010312,Trứng trân thú: Bỉ Dực Điểu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010313,Trứng trân thú: Bỉ Dực Điểu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010314,Trứng trân thú: Bỉ Dực Điểu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010315,Trứng trân thú: Bỉ Dực Điểu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010316,Trứng trân thú: Ngốc Ngốc Ngưu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010317,Trứng trân thú: Ngốc Ngốc Ngưu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010318,Trứng trân thú: Ngốc Ngốc Ngưu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010319,Trứng trân thú: Ngốc Ngốc Ngưu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010320,Trứng trân thú: Ngốc Ngốc Ngưu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010321,Trứng trân thú: Ngốc Ngốc Ngưu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010322,Trứng trân thú: Ngốc Ngốc Ngưu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010323,Trứng trân thú: Trân Kỳ Ngưu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010324,Trứng trân thú: Trân Kỳ Ngưu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010325,Trứng trân thú: Trân Kỳ Ngưu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010326,Trứng trân thú: Trân Kỳ Ngưu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010327,Trứng trân thú: Trân Kỳ Ngưu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010328,Trứng trân thú: Trân Kỳ Ngưu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010329,Trứng trân thú: Trân Kỳ Ngưu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010330,Trứng trân thú: Kỳ Lân (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010331,Trứng trân thú: Kỳ Lân (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010332,Trứng trân thú: Kỳ Lân (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010333,Trứng trân thú: Kỳ Lân (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010334,Trứng trân thú: Kỳ Lân (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010335,Trứng trân thú: Kỳ Lân (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010336,Trứng trân thú: Kỳ Lân (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010337,Trứng trân thú: Go Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010338,Trứng trân thú: Go Tử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010339,Trứng trân thú: Go Tử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010340,Trứng trân thú: Go Tử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010341,Trứng trân thú: Go Tử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010342,Trứng trân thú: Go Tử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010343,Trứng trân thú: Go Tử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010344,Trứng trân thú: Thần Viên (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010345,Trứng trân thú: Thần Viên (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010346,Trứng trân thú: Nham Hồn (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010347,Trứng trân thú: Nham Hồn (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010348,Trứng trân thú: Nham Hồn (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010349,Trứng trân thú: Nham Hồn (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010350,Trứng trân thú: Nham Hồn (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010351,Trứng trân thú: Nham Hồn (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010352,Trứng trân thú: Nham Hồn (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010353,Trứng trân thú: Thất Tịch Uyên Ương (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010354,Trứng trân thú: Thất Tịch Uyên Ương (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010355,Trứng trân thú: Thất Tịch Uyên Ương (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010356,Trứng trân thú: Thất Tịch Uyên Ương (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010357,Trứng trân thú: Thất Tịch Uyên Ương (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010358,Trứng trân thú: Thất Tịch Uyên Ương (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010359,Trứng trân thú: Thất Tịch Uyên Ương (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010360,Trứng trân thú: Phế Sài (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010361,Trứng trân thú: Phế Sài (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010362,Trứng trân thú: Phế Sài (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010363,Trứng trân thú: Phế Sài (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010364,Trứng trân thú: Phế Sài (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010365,Trứng trân thú: Phế Sài (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010366,Trứng trân thú: Phế Sài (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010367,Trứng trân thú: Linh Thố Thú (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010368,Trứng trân thú: Linh Thố Thú (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010369,Trứng trân thú: Linh Thố Thú (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010370,Trứng trân thú: Linh Thố Thú (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010371,Trứng trân thú: Linh Thố Thú (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010372,Trứng trân thú: Linh Thố Thú (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010373,Trứng trân thú: Linh Thố Thú (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010374,Trứng trân thú: Chí Tôn Thần Thú (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010375,Trứng trân thú: Chí Tôn Thần Thú (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010376,Trứng trân thú: Chí Tôn Thần Thú (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010377,Trứng trân thú: Chí Tôn Thần Thú (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010378,Trứng trân thú: Chí Tôn Thần Thú (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010379,Trứng trân thú: Chí Tôn Thần Thú (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010380,Trứng trân thú: Chí Tôn Thần Thú (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010381,Trứng trân thú: Khải Khải Sư (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010382,Trứng trân thú: Hương Điềm Hỏa Kê (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010383,Trứng trân thú: Thố Tiêu Hỏa Kê (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010384,Trứng trân thú: Ba Gia Hỏa Kê (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010385,Trứng trân thú: Lam Môi Hỏa Kê (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010386,Trứng trân thú: Toán Nê Hỏa Kê (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010387,Trứng trân thú: Già Ly Hỏa Kê (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010388,Trứng trân thú: Nãi Du Hỏa Kê (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010389,Trứng trân thú: Sửu Tiểu Áp (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010390,Trứng trân thú: Sửu Tiểu Áp (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010391,Trứng trân thú: Sửu Tiểu Áp (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010392,Trứng trân thú: Hoa Tiên Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010393,Trứng trân thú: Hoa Tiên Tử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010394,Trứng trân thú: Hoa Tiên Tử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010395,Trứng trân thú: Hoa Tiên Tử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010396,Trứng trân thú: Hoa Tiên Tử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010397,Trứng trân thú: Hoa Tiên Tử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010398,Trứng trân thú: Hoa Tiên Tử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010399,Trứng trân thú: Tuần Lộc (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010400,Trứng trân thú: Tuần Lộc (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010401,Trứng trân thú: Tuần Lộc (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010402,Trứng trân thú: Tuần Lộc (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010403,Trứng trân thú: Tuần Lộc (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010404,Trứng trân thú: Tuần Lộc (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010405,Trứng trân thú: Tuần Lộc (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010406,Trứng trân thú: Trân Kỳ Hổ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010407,Trứng trân thú: Trân Kỳ Hổ (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010408,Trứng trân thú: Trân Kỳ Hổ (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010409,Trứng trân thú: Trân Kỳ Hổ (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010410,Trứng trân thú: Trân Kỳ Hổ (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010411,Trứng trân thú: Trân Kỳ Hổ (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010412,Trứng trân thú: Trân Kỳ Hổ (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010413,Trứng trân thú: Bố Lão Hổ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010414,Trứng trân thú: Bố Lão Hổ (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010415,Trứng trân thú: Bố Lão Hổ (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010416,Trứng trân thú: Bố Lão Hổ (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010417,Trứng trân thú: Bố Lão Hổ (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010418,Trứng trân thú: Bố Lão Hổ (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010419,Trứng trân thú: Bố Lão Hổ (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010420,Trứng trân thú: Băng Điêu Long (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010421,Trứng trân thú: Ấu Xỉ Long (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010422,Trứng trân thú: Ấu Xỉ Long (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010423,Trứng trân thú: Ấu Xỉ Long (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010424,Trứng trân thú: Ấu Xỉ Long (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010425,Trứng trân thú: Ấu Xỉ Long (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010426,Trứng trân thú: Ấu Xỉ Long (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010427,Trứng trân thú: Ấu Xỉ Long (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010428,Trứng trân thú: Hùng Miêu Song Hiệp (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010429,Trứng trân thú: Hùng Miêu Song Hiệp (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010430,Trứng trân thú: Hùng Miêu Song Hiệp (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010431,Trứng trân thú: Hùng Miêu Song Hiệp (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010432,Trứng trân thú: Hùng Miêu Song Hiệp (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010433,Trứng trân thú: Hùng Miêu Song Hiệp (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010434,Trứng trân thú: Hùng Miêu Song Hiệp (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010435,Trứng trân thú: Chiêu Sài Miêu (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010436,Trứng trân thú: Chương Ngư (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010437,Trứng trân thú: Chương Ngư (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010438,Trứng trân thú: Chương Ngư (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010439,Trứng trân thú: Chương Ngư (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010440,Trứng trân thú: Chương Ngư (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010441,Trứng trân thú: Chương Ngư (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010442,Trứng trân thú: Chương Ngư (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010443,Trứng trân thú: Điệp Luyến Hoa (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010444,Trứng trân thú: Điệp Luyến Hoa (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010445,Trứng trân thú: Điệp Luyến Hoa (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010446,Trứng trân thú: Điệp Luyến Hoa (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010447,Trứng trân thú: Điệp Luyến Hoa (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010448,Trứng trân thú: Điệp Luyến Hoa (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010449,Trứng trân thú: Điệp Luyến Hoa (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010450,Trứng trân thú: Khôi Lỗi Lang (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010451,Trứng trân thú: Khôi Lỗi Lang (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010452,Trứng trân thú: Khôi Lỗi Lang (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010453,Trứng trân thú: Khôi Lỗi Lang (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010454,Trứng trân thú: Khôi Lỗi Lang (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010455,Trứng trân thú: Khôi Lỗi Lang (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010456,Trứng trân thú: Khôi Lỗi Lang (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010457,Trứng trân thú: Cương Thi (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010458,Trứng trân thú: Ngũ Sắc Thần Ngưu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010459,Trứng trân thú: Ngũ Sắc Thần Ngưu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010460,Trứng trân thú: Ngũ Sắc Thần Ngưu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010461,Trứng trân thú: Ngũ Sắc Thần Ngưu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010462,Trứng trân thú: Ngũ Sắc Thần Ngưu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010463,Trứng trân thú: Ngũ Sắc Thần Ngưu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010464,Trứng trân thú: Ngũ Sắc Thần Ngưu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010465,Trứng trân thú: Cương Thi (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010466,Trứng trân thú: Cương Thi (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010467,Trứng trân thú: Cương Thi (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010468,Trứng trân thú: Cương Thi (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010469,Trứng trân thú: Cương Thi (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010470,Trứng trân thú: Cương Thi (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010471,Trứng trân thú: U Minh Lang Yêu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010472,Trứng trân thú: U Minh Lang Yêu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010473,Trứng trân thú: U Minh Lang Yêu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010474,Trứng trân thú: U Minh Lang Yêu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010475,Trứng trân thú: U Minh Lang Yêu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010476,Trứng trân thú: U Minh Lang Yêu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010477,Trứng trân thú: U Minh Lang Yêu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010478,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010479,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010480,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010481,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010482,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010483,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010484,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010485,Trứng trân thú: Ngọc Loan Phụng (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010486,Trứng trân thú: Ngọc Loan Phụng (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010487,Trứng trân thú: Ngọc Loan Phụng (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010488,Trứng trân thú: Ngọc Loan Phụng (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010489,Trứng trân thú: Ngọc Loan Phụng (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010490,Trứng trân thú: Ngọc Loan Phụng (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010491,Trứng trân thú: Ngọc Loan Phụng (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân bảo bảothú
+37010492,Trứng trân thú: Thần Xí Nga (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010493,Trứng trân thú: Thần Xí Nga (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010494,Trứng trân thú: Thần Xí Nga (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010495,Trứng trân thú: Thần Xí Nga (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010496,Trứng trân thú: Thần Xí Nga (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010497,Trứng trân thú: Thần Xí Nga (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010498,Trứng trân thú: Linh Thố Song Kiệt (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010499,Trứng trân thú: Linh Thố Song Kiệt (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010500,Trứng trân thú: Linh Thố Song Kiệt (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010501,Trứng trân thú: Linh Thố Song Kiệt (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010502,Trứng trân thú: Linh Thố Song Kiệt (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010503,Trứng trân thú: Linh Thố Song Kiệt (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010504,Trứng trân thú: Linh Thố Song Kiệt (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010505,Trứng trân thú: Man Thạch Quái (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010506,Trứng trân thú: Man Thạch Quái (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010507,Trứng trân thú: Man Thạch Quái (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010508,Trứng trân thú: Man Thạch Quái (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010509,Trứng trân thú: Man Thạch Quái (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010510,Trứng trân thú: Man Thạch Quái (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010511,Trứng trân thú: Man Thạch Quái (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010512,Trứng trân thú: Tinh Linh Thố (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010513,Trứng trân thú: Tinh Linh Thố (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010514,Trứng trân thú: Tinh Linh Thố (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010515,Trứng trân thú: Tinh Linh Thố (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010516,Trứng trân thú: Tinh Linh Thố (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010517,Trứng trân thú: Tinh Linh Thố (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010518,Trứng trân thú: Tinh Linh Thố (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010519,Trứng trân thú: Cẩm Mao Thử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010520,Trứng trân thú: Cẩm Mao Thử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010521,Trứng trân thú: Cẩm Mao Thử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010522,Trứng trân thú: Cẩm Mao Thử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010523,Trứng trân thú: Cẩm Mao Thử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010524,Trứng trân thú: Cẩm Mao Thử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010525,Trứng trân thú: Cẩm Mao Thử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010526,Trứng trân thú: Đa Ngoạn Hùng (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010527,Trứng trân thú: Hùng (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010528,Trứng trân thú: Mão Nhật Tinh (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010529,Trứng trân thú: Củng Thiên thỉ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010530,Trứng trân thú: Đông Phong Loa (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010531,Trứng trân thú: Tinh Hà Ngọc Thố (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010532,Trứng trân thú: Cửu Thiên Ngọc Thố (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010533,Trứng trân thú: Ngọc Thố (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010534,Trứng trân thú: Thần Tinh Ngọc Thố (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010535,Trứng trân thú: Nguyệt Quế Ngọc Thố (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010536,Trứng trân thú: Thiên Cung Ngọc Thố (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010537,Trứng trân thú: Bách Biến Miêu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010538,Trứng trân thú: Bách Biến Miêu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010539,Trứng trân thú: Bách Biến Miêu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010540,Trứng trân thú: Bách Biến Miêu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010541,Trứng trân thú: Bách Biến Miêu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010542,Trứng trân thú: Bách Biến Miêu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010543,Trứng trân thú: Bách Biến Miêu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010544,Trứng trân thú: Tung Thử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010545,Trứng trân thú: Nhân Ngẫu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010546,Trứng trân thú: Tuyền Linh Nhân Ngẫu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010547,Trứng trân thú: Tinh Minh Nhân Ngẫu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010548,Trứng trân thú: Võ Huyền Nhân Ngẫu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010549,Trứng trân thú: Diêm Thần Nhân Ngẫu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010550,Trứng trân thú: Phạm Thánh Nhân Ngẫu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010551,Trứng trân thú: Thông Thiên Nhân Ngẫu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010552,Trứng trân thú: Đậu Đậu Long (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010553,Trứng trân thú: Đậu Đậu Long (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010554,Trứng trân thú: Đậu Đậu Long (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010555,Trứng trân thú: Đậu Đậu Long (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010556,Trứng trân thú: Đậu Đậu Long (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010557,Trứng trân thú: Đậu Đậu Long (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010558,Trứng trân thú: Đậu Đậu Long (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010559,Trứng trân thú: Xuất Vân Long Mãng (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010560,Trứng trân thú: Xuất Vân Long Mãng (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010561,Trứng trân thú: Xuất Vân Long Mãng (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010562,Trứng trân thú: Xuất Vân Long Mãng (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010563,Trứng trân thú: Xuất Vân Long Mãng (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010564,Trứng trân thú: Xuất Vân Long Mãng (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010565,Trứng trân thú: Xuất Vân Long Mãng (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010566,Trứng trân thú: Du Cửu Manh Manh Miêu (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010567,Trứng trân thú: Ngạo Vân Thương Long (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010568,Trứng trân thú: Ngạo Vân Thương Long (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010569,Trứng trân thú: Ngạo Vân Thương Long (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010570,Trứng trân thú: Ngạo Vân Thương Long (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010571,Trứng trân thú: Ngạo Vân Thương Long (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010572,Trứng trân thú: Ngạo Vân Thương Long (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010573,Trứng trân thú: Ngạo Vân Thương Long (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010574,Trứng trân thú: Thái Cổ Long Hồn (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010575,Trứng trân thú: Thái Cổ Long Hồn (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010576,Trứng trân thú: Thái Cổ Long Hồn (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010577,Trứng trân thú: Thái Cổ Long Hồn (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010578,Trứng trân thú: Thái Cổ Long Hồn (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010579,Trứng trân thú: Thái Cổ Long Hồn (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010580,Trứng trân thú: Thái Cổ Long Hồn (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010581,Trứng trân thú: Yển Thử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010582,Trứng trân thú: Yển Thử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010583,Trứng trân thú: Yển Thử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010584,Trứng trân thú: Yển Thử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010585,Trứng trân thú: Yển Thử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010586,Trứng trân thú: Yển Thử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010587,Trứng trân thú: Yển Thử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010588,Trứng trân thú: Đảo Đản Thử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010589,Trứng trân thú: Đảo Đản Thử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010590,Trứng trân thú: Đảo Đản Thử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010591,Trứng trân thú: Đảo Đản Thử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010592,Trứng trân thú: Đảo Đản Thử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010593,Trứng trân thú: Đảo Đản Thử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010594,Trứng trân thú: Đảo Đản Thử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010595,Trứng trân thú: Mị Tiểu Manh (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010596,Trứng trân thú: Mị Tiểu Manh (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010597,Trứng trân thú: Mị Tiểu Manh (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010598,Trứng trân thú: Mị Tiểu Manh (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010599,Trứng trân thú: Mị Tiểu Manh (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010600,Trứng trân thú: Mị Tiểu Manh (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010601,Trứng trân thú: Mị Tiểu Manh (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010602,Trứng trân thú: Cầu Cầu Hùng (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010603,Trứng trân thú: Mỹ Nhân Ngư (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010604,Trứng trân thú: Mỹ Nhân Ngư (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010605,Trứng trân thú: Mỹ Nhân Ngư (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010606,Trứng trân thú: Mỹ Nhân Ngư (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010607,Trứng trân thú: Mỹ Nhân Ngư (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010608,Trứng trân thú: Mỹ Nhân Ngư (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010609,Trứng trân thú: Mỹ Nhân Ngư (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010610,Trứng trân thú: Thiên Bồng Lãm Nguyệt (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010611,Trứng trân thú: Thiên Bồng Lãm Nguyệt (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010612,Trứng trân thú: Thiên Bồng Lãm Nguyệt (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010613,Trứng trân thú: Thiên Bồng Lãm Nguyệt (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010614,Trứng trân thú: Thiên Bồng Lãm Nguyệt (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010615,Trứng trân thú: Thiên Bồng Lãm Nguyệt (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010616,Trứng trân thú: Cửu Lê Yêu Hổ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010617,Trứng trân thú: Cửu Lê Yêu Hổ (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010618,Trứng trân thú: Cửu Lê Yêu Hổ (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010619,Trứng trân thú: Cửu Lê Yêu Hổ (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010620,Trứng trân thú: Cửu Lê Yêu Hổ (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010621,Trứng trân thú: Cửu Lê Yêu Hổ (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010622,Trứng trân thú: Cửu Lê Yêu Hổ (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010623,Trứng trân thú: Hiên Viên Thiên Phượng (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010624,Trứng trân thú: Hiên Viên Thiên Phượng (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010625,Trứng trân thú: Hiên Viên Thiên Phượng (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010626,Trứng trân thú: Hiên Viên Thiên Phượng (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010627,Trứng trân thú: Hiên Viên Thiên Phượng (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010628,Trứng trân thú: Hiên Viên Thiên Phượng (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010629,Trứng trân thú: Hiên Viên Thiên Phượng (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010630,Trứng trân thú: Bách Biến Uông Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010631,Trứng trân thú: Bách Biến Uông Tử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010632,Trứng trân thú: Bách Biến Uông Tử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010633,Trứng trân thú: Bách Biến Uông Tử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010634,Trứng trân thú: Bách Biến Uông Tử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010635,Trứng trân thú: Bách Biến Uông Tử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010636,Trứng trân thú: Bách Biến Uông Tử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010637,Trứng trân thú: Huyền Hoang Đằng Xà (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010638,Trứng trân thú: Huyền Hoang Đằng Xà (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010639,Trứng trân thú: Huyền Hoang Đằng Xà (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010640,Trứng trân thú: Huyền Hoang Đằng Xà (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010641,Trứng trân thú: Huyền Hoang Đằng Xà (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010642,Trứng trân thú: Huyền Hoang Đằng Xà (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010643,Trứng trân thú: Huyền Hoang Đằng Xà (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010644,Trứng trân thú: Oa Hoàng Long Mãng (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010645,Trứng trân thú: Oa Hoàng Long Mãng (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010646,Trứng trân thú: Oa Hoàng Long Mãng (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010647,Trứng trân thú: Oa Hoàng Long Mãng (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010648,Trứng trân thú: Oa Hoàng Long Mãng (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010649,Trứng trân thú: Oa Hoàng Long Mãng (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010650,Trứng trân thú: Oa Hoàng Long Mãng (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010651,Trứng trân thú: Thái Cổ Long Hồn (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010652,Trứng trân thú: Ngạo Vân Thương Long (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010653,Trứng trân thú: Oa Hoàng Long Mãng (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010654,Trứng trân thú: Huyền Hoang Đằng Xà (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010655,Trứng trân thú: Tịnh Tịnh Mã (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010656,Trứng trân thú: Huyền Nữ Xà (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010657,Trứng trân thú: Huyền Nữ Xà (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010658,Trứng trân thú: Huyền Nữ Xà (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010659,Trứng trân thú: Huyền Nữ Xà (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010660,Trứng trân thú: Huyền Nữ Xà (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010661,Trứng trân thú: Huyền Nữ Xà (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010662,Trứng trân thú: Huyền Nữ Xà (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010663,Trứng trân thú: Tuần Du Tiểu Tiên (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010664,Trứng trân thú: Chung Tiểu Hoa (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010665,Trứng trân thú: Tiểu Lãng Nhân (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010666,Trứng trân thú: Phong Điểu (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010667,Trứng trân thú: An Tử (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010668,Trứng trân thú: Chung Tiểu Hắc (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010669,Trứng trân thú: Mao Mao Ngưu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010670,Trứng trân thú: Mao Mao Ngưu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010671,Trứng trân thú: Mao Mao Ngưu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010672,Trứng trân thú: Mao Mao Ngưu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010673,Trứng trân thú: Mao Mao Ngưu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010674,Trứng trân thú: Mao Mao Ngưu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010675,Trứng trân thú: Mao Mao Ngưu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010676,Trứng trân thú: Thánh Trang Tiểu Lộc (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010677,Trứng trân thú: Thánh Trang Tiểu Lộc (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010678,Trứng trân thú: Thánh Trang Tiểu Lộc (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010679,Trứng trân thú: Thánh Trang Tiểu Lộc (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010680,Trứng trân thú: Thánh Trang Tiểu Lộc (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010681,Trứng trân thú: Thánh Trang Tiểu Lộc (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010682,Trứng trân thú: Thánh Trang Tiểu Lộc (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010683,Trứng trân thú: Côn Lôn Tiên Tuấn (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010684,Trứng trân thú: Côn Lôn Tiên Tuấn (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010685,Trứng trân thú: Côn Lôn Tiên Tuấn (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010686,Trứng trân thú: Côn Lôn Tiên Tuấn (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010687,Trứng trân thú: Côn Lôn Tiên Tuấn (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010688,Trứng trân thú: Côn Lôn Tiên Tuấn (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010689,Trứng trân thú: Côn Lôn Tiên Tuấn (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010690,Trứng trân thú: Thái Thương Long Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010691,Trứng trân thú: Thái Thương Long Tử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010692,Trứng trân thú: Thái Thương Long Tử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010693,Trứng trân thú: Thái Thương Long Tử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010694,Trứng trân thú: Thái Thương Long Tử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010695,Trứng trân thú: Thái Thương Long Tử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010696,Trứng trân thú: Thái Thương Long Tử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010697,Trứng trân thú: Bạo Tẩu Hùng Miêu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010698,Trứng trân thú: Bạo Tẩu Hùng Miêu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010699,Trứng trân thú: Bạo Tẩu Hùng Miêu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010700,Trứng trân thú: Bạo Tẩu Hùng Miêu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010701,Trứng trân thú: Bạo Tẩu Hùng Miêu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010702,Trứng trân thú: Bạo Tẩu Hùng Miêu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010703,Trứng trân thú: Bạo Tẩu Hùng Miêu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010704,Trứng trân thú: Minh Âm Hoa Linh (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010705,Trứng trân thú: Minh Âm Hoa Linh (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010706,Trứng trân thú: Minh Âm Hoa Linh (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010707,Trứng trân thú: Minh Âm Hoa Linh (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010708,Trứng trân thú: Minh Âm Hoa Linh (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010709,Trứng trân thú: Minh Âm Hoa Linh (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010710,Trứng trân thú: Minh Âm Hoa Linh (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010711,Trứng trân thú: Tiểu Dị (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010712,Trứng trân thú: Tiểu Mã Ca (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010713,Trứng trân thú: Tiểu Mã Ca (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010714,Trứng trân thú: Tiểu Mã Ca (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010715,Trứng trân thú: Tiểu Mã Ca (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010716,Trứng trân thú: Tiểu Mã Ca (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010717,Trứng trân thú: Tiểu Mã Ca (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010718,Trứng trân thú: Tiểu Mã Ca (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010719,Trứng trân thú: Bách Chiến Kim Cang (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010720,Trứng trân thú: Bách Chiến Kim Cang (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010721,Trứng trân thú: Bách Chiến Kim Cang (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010722,Trứng trân thú: Bách Chiến Kim Cang (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010723,Trứng trân thú: Bách Chiến Kim Cang (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010724,Trứng trân thú: Bách Chiến Kim Cang (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010725,Trứng trân thú: Bách Chiến Kim Cang (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010726,Trứng trân thú: Thanh Dương (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010727,Trứng trân thú: Thanh Dương (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010728,Trứng trân thú: Thanh Dương (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010729,Trứng trân thú: Thanh Dương (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010730,Trứng trân thú: Thanh Dương (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010731,Trứng trân thú: Thanh Dương (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010732,Trứng trân thú: Thanh Dương (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010733,Trứng trân thú: Dương Thiên Đại Thánh (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010734,Trứng trân thú: Dương Thiên Đại Thánh (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010735,Trứng trân thú: Dương Thiên Đại Thánh (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010736,Trứng trân thú: Dương Thiên Đại Thánh (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010737,Trứng trân thú: Dương Thiên Đại Thánh (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010738,Trứng trân thú: Dương Thiên Đại Thánh (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010739,Trứng trân thú: Dương Thiên Đại Thánh (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010740,Trứng trân thú: Kim Đồng Ngọc Nữ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010741,Trứng trân thú: Kim Đồng Ngọc Nữ (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010742,Trứng trân thú: Kim Đồng Ngọc Nữ (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010743,Trứng trân thú: Kim Đồng Ngọc Nữ (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010744,Trứng trân thú: Kim Đồng Ngọc Nữ (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010745,Trứng trân thú: Kim Đồng Ngọc Nữ (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010746,Trứng trân thú: Kim Đồng Ngọc Nữ (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010747,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010748,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010749,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010750,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010751,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010752,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010753,Trứng trân thú: Thất Xảo Ly Miêu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010754,Trứng trân thú: Gấu Ham Chơi (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010755,Trứng trân thú: Gấu Ham Chơi (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010756,Trứng trân thú: Gấu Ham Chơi (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010757,Trứng trân thú: Gấu Ham Chơi (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010758,Trứng trân thú: Gấu Ham Chơi (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010759,Trứng trân thú: Gấu Ham Chơi (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010760,Trứng trân thú: Gấu Ham Chơi (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010761,Trứng trân thú: Nguyên Nguyên (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010762,Trứng trân thú: Công Chúa Nhân Ngư (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010763,Trứng trân thú: Công Chúa Nhân Ngư (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010764,Trứng trân thú: Công Chúa Nhân Ngư (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010765,Trứng trân thú: Công Chúa Nhân Ngư (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010766,Trứng trân thú: Công Chúa Nhân Ngư (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010767,Trứng trân thú: Công Chúa Nhân Ngư (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010768,Trứng trân thú: Công Chúa Nhân Ngư (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010769,Trứng trân thú: Bàng Giải (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010770,Trứng trân thú: Chiến Tu La (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010771,Trứng trân thú: Chiến Tu La (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010772,Trứng trân thú: Chiến Tu La (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010773,Trứng trân thú: Chiến Tu La (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010774,Trứng trân thú: Chiến Tu La (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010775,Trứng trân thú: Chiến Tu La (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010776,Trứng trân thú: Chiến Tu La (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010777,Trứng trân thú: Tà Linh (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010778,Trứng trân thú: Tà Linh (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010779,Trứng trân thú: Tà Linh (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010780,Trứng trân thú: Tà Linh (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010781,Trứng trân thú: Tà Linh (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010782,Trứng trân thú: Tà Linh (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010783,Trứng trân thú: Tà Linh (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010784,Trứng trân thú: Hồ Yêu Kiếm Quân (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010785,Trứng trân thú: Hồ Yêu Kiếm Quân (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010786,Trứng trân thú: Hồ Yêu Kiếm Quân (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010787,Trứng trân thú: Hồ Yêu Kiếm Quân (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010788,Trứng trân thú: Hồ Yêu Kiếm Quân (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010789,Trứng trân thú: Hồ Yêu Kiếm Quân (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010790,Trứng trân thú: Hồ Yêu Kiếm Quân (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010791,Trứng trân thú: Cửu Tiêu Chiến Long (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010792,Trứng trân thú: Cửu Tiêu Chiến Long (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010793,Trứng trân thú: Cửu Tiêu Chiến Long (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010794,Trứng trân thú: Cửu Tiêu Chiến Long (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010795,Trứng trân thú: Cửu Tiêu Chiến Long (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010796,Trứng trân thú: Cửu Tiêu Chiến Long (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010797,Trứng trân thú: Cửu Tiêu Chiến Long (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010798,Trứng trân thú: Đồng Tâm Uyên Ương (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010799,Trứng trân thú: Đồng Tâm Uyên Ương (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010800,Trứng trân thú: Đồng Tâm Uyên Ương (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010801,Trứng trân thú: Đồng Tâm Uyên Ương (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010802,Trứng trân thú: Đồng Tâm Uyên Ương (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010803,Trứng trân thú: Đồng Tâm Uyên Ương (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010804,Trứng trân thú: Đồng Tâm Uyên Ương (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010805,Trứng trân thú: Thiết Phiến Công Chúa (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010806,Trứng trân thú: Thiết Phiến Công Chúa (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010807,Trứng trân thú: Thiết Phiến Công Chúa (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010808,Trứng trân thú: Thiết Phiến Công Chúa (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010809,Trứng trân thú: Thiết Phiến Công Chúa (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010810,Trứng trân thú: Thiết Phiến Công Chúa (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010811,Trứng trân thú: Thiết Phiến Công Chúa (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010812,Trứng trân thú: Tùng Thử (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010813,Trứng trân thú: Thông Tí Viên Hầu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010814,Trứng trân thú: Thông Tí Viên Hầu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010815,Trứng trân thú: Thông Tí Viên Hầu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010816,Trứng trân thú: Thông Tí Viên Hầu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010817,Trứng trân thú: Thông Tí Viên Hầu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010818,Trứng trân thú: Thông Tí Viên Hầu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010819,Trứng trân thú: Thông Tí Viên Hầu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010820,Trứng trân thú: Đại Sa Ngư (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010821,Trứng trân thú: Đại Sa Ngư (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010822,Trứng trân thú: Đại Sa Ngư (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010823,Trứng trân thú: Đại Sa Ngư (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010824,Trứng trân thú: Đại Sa Ngư (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010825,Trứng trân thú: Đại Sa Ngư (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010826,Trứng trân thú: Đại Sa Ngư (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010827,Trứng trân thú: Mỹ Hầu Vương (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010828,Trứng trân thú: Mỹ Hầu Vương (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010829,Trứng trân thú: Mỹ Hầu Vương (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010830,Trứng trân thú: Mỹ Hầu Vương (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010831,Trứng trân thú: Mỹ Hầu Vương (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010832,Trứng trân thú: Mỹ Hầu Vương (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010833,Trứng trân thú: Mỹ Hầu Vương (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010834,Trứng trân thú: Tề Thiên Đại Thánh (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010835,Trứng trân thú: Tề Thiên Đại Thánh (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010836,Trứng trân thú: Tề Thiên Đại Thánh (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010837,Trứng trân thú: Tề Thiên Đại Thánh (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010838,Trứng trân thú: Tề Thiên Đại Thánh (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010839,Trứng trân thú: Tề Thiên Đại Thánh (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010840,Trứng trân thú: Tề Thiên Đại Thánh (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010841,Trứng trân thú: Trĩ Nguyệt Linh (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010842,Trứng trân thú: Trĩ Nguyệt Linh (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010843,Trứng trân thú: Trĩ Nguyệt Linh (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010844,Trứng trân thú: Trĩ Nguyệt Linh (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010845,Trứng trân thú: Trĩ Nguyệt Linh (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010846,Trứng trân thú: Trĩ Nguyệt Linh (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010847,Trứng trân thú: Trĩ Nguyệt Linh (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010848,Trứng trân thú: Nhị Lang Chân Quân (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010849,Trứng trân thú: Nhị Lang Chân Quân (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010850,Trứng trân thú: Nhị Lang Chân Quân (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010851,Trứng trân thú: Nhị Lang Chân Quân (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010852,Trứng trân thú: Nhị Lang Chân Quân (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010853,Trứng trân thú: Nhị Lang Chân Quân (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010854,Trứng trân thú: Nhị Lang Chân Quân (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010855,Trứng trân thú: Đông Tử (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010856,Trứng trân thú: Long Tam Thái Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010857,Trứng trân thú: Long Tam Thái Tử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010858,Trứng trân thú: Long Tam Thái Tử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010859,Trứng trân thú: Long Tam Thái Tử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010860,Trứng trân thú: Long Tam Thái Tử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010861,Trứng trân thú: Long Tam Thái Tử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010862,Trứng trân thú: Long Tam Thái Tử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010863,Trứng trân thú: Hồ Tiểu Tiên (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010864,Trứng trân thú: Hồ Tiểu Tiên (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010865,Trứng trân thú: Hồ Tiểu Tiên (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010866,Trứng trân thú: Hồ Tiểu Tiên (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010867,Trứng trân thú: Hồ Tiểu Tiên (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010868,Trứng trân thú: Hồ Tiểu Tiên (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010869,Trứng trân thú: Hồ Tiểu Tiên (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010870,Trứng trân thú: Manh Bảo Trư (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010871,Trứng trân thú: Manh Bảo Trư (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010872,Trứng trân thú: Manh Bảo Trư (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010873,Trứng trân thú: Manh Bảo Trư (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010874,Trứng trân thú: Manh Bảo Trư (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010875,Trứng trân thú: Manh Bảo Trư (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010876,Trứng trân thú: Manh Bảo Trư (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010877,Trứng trân thú: Oa Hoàng Long Quân (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010878,Trứng trân thú: Linh Mị Nhi (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010879,Trứng trân thú: Linh Mị Nhi (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010880,Trứng trân thú: Linh Mị Nhi (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010881,Trứng trân thú: Linh Mị Nhi (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010882,Trứng trân thú: Linh Mị Nhi (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010883,Trứng trân thú: Linh Mị Nhi (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010884,Trứng trân thú: Linh Mị Nhi (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010885,Trứng trân thú: Oa Hoàng Long Đế (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010886,Trứng trân thú: Khôi Lỗi Lang (Cấp 20),20,20,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010887,Trứng trân thú: Bích Lạc Thanh Loan (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010888,Trứng trân thú: Bích Lạc Thanh Loan (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010889,Trứng trân thú: Bích Lạc Thanh Loan (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010890,Trứng trân thú: Bích Lạc Thanh Loan (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010891,Trứng trân thú: Bích Lạc Thanh Loan (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010892,Trứng trân thú: Bích Lạc Thanh Loan (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010893,Trứng trân thú: Bích Lạc Thanh Loan (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010894,Trứng trân thú: Thiên Mệnh Huyền Phượng (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010895,Trứng trân thú: Thiên Mệnh Huyền Phượng (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010896,Trứng trân thú: Thiên Mệnh Huyền Phượng (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010897,Trứng trân thú: Thiên Mệnh Huyền Phượng (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010898,Trứng trân thú: Thiên Mệnh Huyền Phượng (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010899,Trứng trân thú: Thiên Mệnh Huyền Phượng (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010900,Trứng trân thú: Thiên Mệnh Huyền Phượng (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010901,Trứng trân thú: Diệu Thử Tiểu Tiên (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010902,Trứng trân thú: Diệu Thử Tiểu Tiên (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010903,Trứng trân thú: Diệu Thử Tiểu Tiên (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010904,Trứng trân thú: Diệu Thử Tiểu Tiên (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010905,Trứng trân thú: Diệu Thử Tiểu Tiên (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010906,Trứng trân thú: Diệu Thử Tiểu Tiên (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010907,Trứng trân thú: Diệu Thử Tiểu Tiên (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010908,Trứng trân thú: Thần Kỳ Tiểu Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010909,Trứng trân thú: Thần Kỳ Tiểu Tử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010910,Trứng trân thú: Thần Kỳ Tiểu Tử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010911,Trứng trân thú: Thần Kỳ Tiểu Tử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010912,Trứng trân thú: Thần Kỳ Tiểu Tử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010913,Trứng trân thú: Thần Kỳ Tiểu Tử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010914,Trứng trân thú: Thần Kỳ Tiểu Tử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010915,Trứng trân thú: Vân Tiêu ngọc thỏ (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010916,Trứng trân thú: Vân Tiêu ngọc thỏ (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010917,Trứng trân thú: Vân Tiêu ngọc thỏ (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010918,Trứng trân thú: Vân Tiêu ngọc thỏ (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010919,Trứng trân thú: Vân Tiêu ngọc thỏ (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010920,Trứng trân thú: Vân Tiêu ngọc thỏ (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010921,Trứng trân thú: Vân Tiêu ngọc thỏ (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010922,Trứng trân thú: Linh Châu Tử (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010923,Trứng trân thú: Linh Châu Tử (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010924,Trứng trân thú: Linh Châu Tử (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010925,Trứng trân thú: Linh Châu Tử (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010926,Trứng trân thú: Linh Châu Tử (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010927,Trứng trân thú: Linh Châu Tử (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010928,Trứng trân thú: Linh Châu Tử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010929,Trứng trân thú: Phệ Nguyệt Thương cẩu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010930,Trứng trân thú: Phệ Nguyệt Thương cẩu (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010931,Trứng trân thú: Phệ Nguyệt Thương cẩu (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010932,Trứng trân thú: Phệ Nguyệt Thương cẩu (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010933,Trứng trân thú: Phệ Nguyệt Thương cẩu (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010934,Trứng trân thú: Phệ Nguyệt Thương cẩu (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010935,Trứng trân thú: Phệ Nguyệt Thương cẩu (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010936,Trứng trân thú: Tử Tiêu Huyền Lang (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010937,Trứng trân thú: Tử Tiêu Huyền Lang (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010938,Trứng trân thú: Tử Tiêu Huyền Lang (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010939,Trứng trân thú: Tử Tiêu Huyền Lang (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010940,Trứng trân thú: Tử Tiêu Huyền Lang (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010941,Trứng trân thú: Tử Tiêu Huyền Lang (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010942,Trứng trân thú: Tử Tiêu Huyền Lang (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010943,Trứng trân thú: Chiêu Tài Cẩm Hồ (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010944,Trứng trân thú: Đản Đản Kê (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010945,Trứng trân thú: Đản Đản Kê (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010946,Trứng trân thú: Đản Đản Kê (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010947,Trứng trân thú: Đản Đản Kê (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010948,Trứng trân thú: Đản Đản Kê (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010949,Trứng trân thú: Đản Đản Kê (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010950,Trứng trân thú: Đản Đản Kê (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010951,Trứng trân thú: Ly Mỹ Nhân (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010952,Trứng trân thú: Ly Mỹ Nhân (Cấp 45),45,45,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010953,Trứng trân thú: Ly Mỹ Nhân (Cấp 55),55,55,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010954,Trứng trân thú: Ly Mỹ Nhân (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010955,Trứng trân thú: Ly Mỹ Nhân (Cấp 75),75,75,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010956,Trứng trân thú: Ly Mỹ Nhân (Cấp 85),85,85,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010957,Trứng trân thú: Ly Mỹ Nhân (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010958,Trứng trân thú: Thiên Ất Quý Nhân (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37010959,Trứng trân thú: Thiên Ất Quý Nhân (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020000,Trứng trân thú: Thần Long Mãng (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020001,Trứng trân thú: Thần Long Cát Tường Miêu (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020002,Trứng trân thú: Thần Long Ngọc Thố (Cấp 5),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020003,Trứng trân thú: Tiểu Long Thần Biến Dị (Cấp 95),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020004,Trứng trân thú: Tiểu Long Thần Biến Dị (Cấp 65),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020005,Trứng trân thú: Oa Hoàng Long Đế (Cấp 60),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020006,Trứng trân thú: Oa Hoàng Long Quân (Cấp 60),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020007,Trứng trân thú: Oa Hoàng Long Tướng (Cấp 60),5,5,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020008,Trứng trân thú: Vịnh Ái Công Chúa (Cấp 65),65,65,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020009,Trứng trân thú: Vịnh Ái Công Chúa (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020010,Trứng trân thú: Long Tam Thái Tử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020011,Trứng trân thú: Long Tam Thái Tử (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020012,Trứng trân thú: Thiên Mệnh Huyền Phượng (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020013,Trứng trân thú: Thiên Mệnh Huyền Phượng (Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+37020014,Rương Trân Thú Cực Phẩm,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+37020015,Rương Trân Thú Đặc Biệt,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+38000500,999 Đoá Lam Sắc Yêu Cơ,11,1,8000000,true,false,true,15000,-1,-1,-1,Hoa Mãng
+38001600,Hộp Xuyết Mộng Linh Thạch Sơ Cấp,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38001601,Hộp Xuyết Mộng Linh Thạch Trung Cấp,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38001602,Hộp Xuyết Mộng Linh Thạch Cao Cấp,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38001603,Hộp Xuyết Mộng Linh Thạch Sơ Cấp,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38001604,Hộp Xuyết Mộng Linh Thạch Trung Cấp,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38001605,Hộp Xuyết Mộng Linh Thạch Cao Cấp,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38002000,Hộp Quà Tặng x2,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38002001,Hộp Quà Tặng Ám Khí,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38002002,Hộp Quà Tặng Huyễn Hóa,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38002003,Hộp Quà Trân Thú,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38002004,Hộp Quà Hồi Phục,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38002005,Hộp Quà Thời Trang,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38002006,Hộp Quà Thú Cưỡi,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38002007,Hộp Quà Phụ Thể,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+38002008,Hộp Quà Bí Kíp,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật sự kiện
+39910091,Đại Hoàn Đan (Cấp 1),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910092,Đại Hoàn Đan (Cấp 2),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910093,Đại Hoàn Đan (Cấp 3),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910094,Đại Hoàn Đan (Cấp 4),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910095,Đại Hoàn Đan (Cấp 5),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910096,Đại Hoàn Đan (Cấp 6),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910097,Đại Hoàn Đan (Cấp 7),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910098,Đại Hoàn Đan (Cấp 8),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910099,Đại Hoàn Đan (Cấp 9),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910100,Đại Hoàn Đan (Cấp 10),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910101,Bổ Thú Đan (Cấp 1),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910102,Bổ Thú Đan (Cấp 2),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910103,Bổ Thú Đan (Cấp 3),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910104,Bổ Thú Đan (Cấp 4),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910105,Bổ Thú Đan (Cấp 5),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910106,Bổ Thú Đan (Cấp 6),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910107,Bổ Thú Đan (Cấp 7),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910108,Bổ Thú Đan (Cấp 8),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910109,Bổ Thú Đan (Cấp 9),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910110,Bổ Thú Đan (Cấp 10),10,10,100,true,true,false,15000,-1,-1,9999993,Vật phẩm sự kiện
+39910111,Thuốc Kinh Nghiệm,10,10,1,true,true,false,15000,-1,-1,9999985,Vật phẩm đặc biệt
+39910112,Thuốc Kinh Nghiệm Đặc Biệt,10,10,1,true,true,false,15000,-1,-1,9999985,Vật phẩm đặc biệt
+39910113,Thuốc Kinh Nghiệm Sơ Cấp,10,10,1,true,true,false,15000,-1,-1,9999985,Vật phẩm đặc biệt
+39910114,Thuốc Kinh Nghiệm Trung Cấp,10,10,1,true,true,false,15000,-1,-1,9999985,Vật phẩm đặc biệt
+39910115,Thuốc Kinh Nghiệm Cao Cấp,10,10,1,true,true,false,15000,-1,-1,9999985,Vật phẩm đặc biệt
+39920000,Rương tống liêu Sơ cấp,10,10,100,true,true,true,15000,-1,-1,9999999,Vật phẩm sự kiện
+39920001,Rương tống liêu Cao Cấp,11,10,100,true,true,true,15000,-1,-1,9999999,Vật phẩm sự kiện
+39920002,Tống Liêu Kim Tệ,1,1,1,true,true,true,15000,-1,-1,-1,Vật phẩm chiến trường
+39920003,Rương Tống Liêu Bảo Thạch Cao Cấp,1,1,1,true,true,true,1,-1,-1,9999998,Vật phẩm chiến trường
+39920004,Rương Tống Liêu Bảo Thạch Trung Cấp,1,1,1,true,true,true,1,-1,-1,9999998,Vật phẩm chiến trường
+39920005,Rương Tống Liêu Bảo Thạch Sơ Cấp,1,1,1,true,true,true,1,-1,-1,9999998,Vật phẩm chiến trường
+39920006,Quà Trang Bị Lục Bác 4 Sao,1,1,1,true,true,true,1,-1,-1,9999998,Vật phẩm chiến trường
+39920007,Quà Trang Bị Lục Bác 5 Sao,1,1,1,true,true,true,1,-1,-1,9999998,Vật phẩm chiến trường
+39920008,Quà Trang Bị Lục Bác 6 Sao,1,1,1,true,true,true,1,-1,-1,9999998,Vật phẩm chiến trường
+39920051,Nam Hải Minh Châu,1,1,500,true,true,true,15000,-1,-1,-1,Vật phẩm hoạt động
+39920052,Tàn Phẩm,1,1,50,true,true,true,15000,-1,-1,-1,Vật phẩm hoạt động
+39920100,Túi Quà Giáng Sinh,1,1,1,true,true,false,15000,-1,72,9999999,Hộp quà sự kiện
+39920104,Trứng Phục Sinh,1,1,100,true,true,false,15000,-1,24,9999999,Kỳ vật sự kiện
+39920105,Lệnh bài Yếu quyết môn phái cấp 45,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920106,Lì Xì Đầu Năm,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920111,Rương Bảo Thạch Cấp 3 Ngẫu Nhiên,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920112,Hộp Quà Vui Vẻ,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920113,Hộp Quà Như Ý,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920114,Hộp Quà Cát Tường,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920115,Rương Thời Trang Event OFFLINE,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920116,Rương Thú Cưỡi Event OFFLINE,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920117,Rương Đạo Cụ Event OFFLINE,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920118,Rương Thời Trang Offline Bang,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920119,Rương Thú Cưỡi Offline Bang,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+40000000,Rương Võ Hồn,1,1,1,true,true,true,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920150,Rương Sự Kiện Bang Hội,1,1,1,true,true,true,1,-1,-1,9999999,Vật phẩm chiến trường
+39920151,Rương Kỷ Niệm Chiến Thắng Miền Nam,1,1,1,true,true,true,1,-1,-1,9999999,Vật phẩm chiến trường
+39920152,Rương Sự Kiện Bang Hội Thời Trang,1,1,1,true,true,true,1,-1,-1,9999999,Vật phẩm chiến trường
+39920153,Rương Sự Kiện Bang Hội Thú Cưỡi,1,1,1,true,true,true,1,-1,-1,9999999,Vật phẩm chiến trường
+39920207,Túi Quà Yếu quyết môn phái cấp 80,1,1,1500000,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920208,Túi Quà Yếu quyết môn phái cấp 80(khóa),1,1,1,true,true,true,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920251,Rương Bảo Thạch Cấp 3 Tùy Chọn,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật môn phái
+39920252,Phiếu Thú Cưỡi Cấp 3 Tùy Chọn,1,1,1,true,true,false,1,-1,-1,9999998,Kỳ vật môn phái
+39920301,Rương Thời Trang Tùy Chọn,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920353,Hộp Bảo Thạch Trí Tuệ Cấp 3 ,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920354,Hộp Bảo Thạch Mị Lực Cấp 3,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920355,Hộp Bảo Thạch Vận Mệnh Cấp 3,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920356,Hộp Thời Trang BIGUPDATE,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920357,Hộp Thú Cưỡi BIGUPDATE,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920358,Hộp Huyễn Sắc,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920359,Rương Trân Thú Cấp 65,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920360,Rương Mảnh Nguyên Liệu Chế Tạo,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920361,Rương Nguyên Liệu Cấp 1,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920362,Kim Cương Bảo Hạp,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920363,Căn Cốt Bảo Hạp,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920364,Thiên Cang Bảo Hạp,1,1,1,true,true,false,15000,-1,-1,9999999,Vật Phẩm sự kiện
+39920365,Thiên Linh Bảo Hạp,1,1,1,true,true,false,1,-1,-1,9999999,Vật Phẩm sự kiện
+39920400,Vé Mỹ Nhan,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920401,Rương Phụ Thể,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920402,Rương Ngọc Thời Trang,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920403,Rương Tẩy Ám Khí,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920404,Rương Ngọc Huyễn Sắc,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920405,Hộp Quà Trân Thú,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920406,Hộp Quà Thú Cưỡi,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920407,Túi Phụ Thể Tùy Chọn,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920408,Túi Ngọc Huyễn Sắc,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920500,Rương Long Châu,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920603,Hộp Quà Thời Trang,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920604,Hộp Quà Thú Cưỡi,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920605,Hộp Quà Trân Thú,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920606,Hộp Nguyên Liệu Trân Thú Sơ,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920607,Hộp Nguyên Liệu Trân Thú Trung,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920608,Hộp Nguyên Liệu Trân Thú Cao,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920611,Hộp Quà Trân Thú,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920612,Hộp Quà Thú Cưỡi,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920613,Hộp Quà Thời Trang,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920614,Rương Tẩy Võ Hồn,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920615,Rương Huyền Hạo Ngọc,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920617,Rương Nhuận Hồn Thạch,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920632,Hộp Quà Thú Cưỡi,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920633,Hộp Quà Thời Trang,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920634,Rương Huyền Cực Ngọc,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920635,Rương Huyền Cực Ngọc (Khóa),1,1,1,true,true,true,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920652,Hộp Quà Trân Thú,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920653,Hộp Quà Thời Trang,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920673,Hộp Quà Trân Thú,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920674,Hộp Quà Thời Trang,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920675,Hộp Quà Thú Cưỡi,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920676,Rương Chọn Võ Hồn,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920677,Túi Quà Giáng Sinh,1,1,0,true,true,false,15000,-1,-1,9999999,Hộp quà sự kiện
+39920678,Chìa Khóa Giáng Sinh,1,1,0,true,true,false,15000,-1,-1,9999999,Hộp quà sự kiện
+39920700,Rương Căn Cốt Đan Trung,1,1,1,true,true,true,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920701,Rương Căn Cốt Đan Cao,1,1,1,true,true,true,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920714,Bạch Kim Bảo Sương,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920715,Hoàng Kim Bảo Sương,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920800,Rương Tu Luyện,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920801,Rương Nguyên Liệu Cấp 2,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920802,Rương Căn Cốt Đan Ngẫu Nhiên,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920803,Rương Bí Kíp Trân Thú Sơ,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920804,Rương Bí Kíp Trân Thú Trung,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920805,Rương Bí Kíp Trân Thú Cao,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920806,Rương Linh Thú Đan Ngẫu Nhiên,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920901,Rương Tặng Phụ Thân,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920912,Rương Kỹ Năng Phụ Thân Sơ,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920913,Rương Kỹ Năng Phụ Thân Trung,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920914,Rương Kỹ Năng Phụ Thân Cao,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920915,Rương Long Văn,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920919,Hộp Thuần Tịnh Thông Bảo Trí Tuệ Cấp 6 ,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật giải đấu
+39920920,Hộp Thuần Tịnh Thông Bảo Mị Lực Cấp 6,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật giải đấu
+39920921,Hộp Thuần Tịnh Thông Bảo Vận Mệnh Cấp 6,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật giải đấu
+39920922,Rương Mảnh Sự Kiện (Khóa),1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920923,Rương Mảnh Phối Sức (Khóa),1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920924,Rương Ưu Đãi Đặc Biệt,1,1,1,true,true,false,1,-1,-1,9999999,Kỳ vật sự kiện
+39920926,Hộp Huyễn Sắc (Khóa),1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920927,Rương Sơ Kim Tàm Ty,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920928,Rương Sơ Hoàng Chỉ Cao Cấp,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920929,Rương Trung Kim Tàm Ty,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920930,Rương Trung Hoàng Chỉ Cao Cấp,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920931,Rương Cao Kim Tàm Ty,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920932,Rương Cao Hoàng Chỉ Cao Cấp,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920933,Rương Ưu Đãi Sinh Tiêu,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiệni
+39920942,Rương Sinh Tiêu Nhị Niên,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920943,Rương Thần Long Nhị Niên,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920946,Rương Ưu Đãi Bảo Sương,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiệni
+39920947,Rương Tiên Linh Thảo,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920948,Rương Công Lực Đan,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920949,Túi Mừng Tuổi,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiệni
+39920952,Rương Cốt Dực Nhỏ,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920953,Rương Cốt Dực Lớn,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920954,Rương Thời Trang Đơn Sắc,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920955,Rương Thời Trang Đa Sắc,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920956,Rương Thời Trang Tuyệt Sắc,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920963,Túi Quẻ,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920972,Rương 12 Con Giáp,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920973,Rương Thánh Thú Lân,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920974,Rương Thánh Thú Nha,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920975,Rương Huyền Hạo Ngọc,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920976,Rương Hoàn Đồng Đan I,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ Vật
+39920977,Rương Hoàn Đồng Đan II,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ Vật
+39920978,Rương Hoàn Đồng Đan III,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ Vật
+39920979,Rương Hoàn Đồng Đan IV,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ Vật
+39920980,Rương Hoàn Đồng Đan V,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ Vật
+39920985,Hộp Quà Thống Nhất,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920987,Hoa Sen,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920989,Rương Kim Lân Phách,1,1,1,true,true,false,15000,-1,-1,9999998,Tinh Thông
+39920990,Rương Kim Lân Phách,1,1,1,true,true,false,15000,-1,-1,9999998,Tinh Thông
+39920991,Rương Kim Lân Phách,1,1,1,true,true,false,15000,-1,-1,9999998,Tinh Thông
+39920993,Rương Sự Kiện Đặc Biệt,1,1,1,true,true,false,15000,-1,-1,9999998,Kỳ vật sự kiện
+39920995,Rương Ưu Đãi Sinh Tiêu Nhỏ,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39920996,Rương Ưu Đãi Sinh Tiêu Vừa,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39921002,Rương Hồng Vận Nhỏ,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39921003,Rương Hồng Vận Vừa,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39921004,Rương Hồng Vận Lớn,1,1,1,true,true,false,15000,-1,-1,9999999,Kỳ vật sự kiện
+39921005,Rương Ưu Đãi Hồng Vận Sơ,1,1,1,true,true,false,15000,-1,-1,9999999,Vật Phẩm Sự Kiện
+39921006,Rương Ưu Đãi Hồng Vận Trung,1,1,1,true,true,false,15000,-1,-1,9999999,Vật Phẩm Sự Kiện
+39921007,Rương Ưu Đãi Hồng Vận Cao,1,1,1,true,true,false,15000,-1,-1,9999999,Vật Phẩm Sự Kiện
+39922000,Rương Kim Lân Phách(Khóa),1,1,1,true,true,false,15000,-1,-1,9999998,Tinh Thông
+40001039,Vỏ Cây Kỳ Lạ,1,1,0,false,false,false,20,-1,-1,-1,Đạo cụ nhiệm vụ
+40001112,Kỳ Hồn Tinh Phách,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002000,Ngân Phiếu,1,1,0,false,false,false,1,-1,-1,-1,Ngân Phiếu
+40002050,Ngọn Đuốc Chưa Được Châm Lửa,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002051,Chấn Hồn Chi Nhẫn,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002052,Tu La Thất Tinh Đinh,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002053,Lang Tộc Phù Ấn,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002054,Tơ Của Hồng Bào Tri Thù,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002055,Vỏ Cây Kỳ Lạ,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002056,Mật Tín Của Tần Gia Trại,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002057,Hoàn Mỹ Khôi Hùng Bì,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002058,Thư Được Mũi Tên Đưa Đến,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002059,Hồng Thiết Trảo Bì,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002060,Hồng Quả Phụ Ty,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002061,Khúc Đoan Gia Thư,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002062,Nam Vực Ngạc Ngư Huyết Dịch,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002063,Mông Cổ Hắc Phong Thích,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002064,Khăn Tay Của Quận Chúa,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002065,Nguyễn Thành Bội Kiếm,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002066,Bạch Lang Đại Vương Nhĩ Hoàn,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002067,Hắc Phong Mật,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002068,Bạch Lang Bì,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002069,Can Lang Phần,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002070,Hỏa Chiết Tử,1,75,0,true,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002071,Thư Nhà Của Dũng Sĩ,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002072,Quất Hạch,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002073,Nam Vực Kiếm Phái Ngoại Y,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002074,Ngũ Lôi Thạch,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002075,Huyết Y,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002076,Thạch Phiến Khắc Ấn,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002077,Nhạc Bất Bình Mật Tín,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002078,Thư Của Mã Hán,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002079,Long Văn Ngân Tỏa Phiến,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002080,Phượng Văn Ngân Tỏa Phiến,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002081,Yêu Bài Của Cầu Lão Thất,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002082,Ảm Đạm Tu La Trưng Ký,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002083,Tuyết Sơn Lang Bì,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002084,Tuyết Sơn Lang Bì Ngoại Y,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002085,Chiểu Trạch Ngạc Ngư Bì,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002086,Hắc Miêu Hộ Thân Phù,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002087,Ách Tu La Hộ Thân Phù,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002088,Vĩnh Dạ Tu La Hộ Thân Phù,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002089,Vạn Kiếp Tu La Hộ Thân Phù,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002090,Chỉ Thị Của Tu La Vương,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002091,Răng Của Cao Sơn Bạch Viên,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002092,Nọc Độc Của Đại Hoàng Phong,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002093,Thư Của Mã Ngũ Đức,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002094,Thư Của Tân Song Thanh,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002095,Hổ Bì,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002096,Hùng Đảm,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002097,Lục Phẩm Diệp Nhân Sâm,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002098,Toa Thuốc Của Nam Vực Thần Y,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002099,Cờ Của Nữ Chân Tộc Thủ Lĩnh,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002100,Thượng Đẳng Hổ Bì,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002101,Thượng Đẳng Hổ Cốt,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002102,Thư Của Kha Lý Bố,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002103,Dược Tửu,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002104,Bạch Hoa Thụ Bì,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002105,Yêu Bài Của Hoắc Tư,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002106,Long Trung Đối,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002107,Hỏa Pháo Truyền Tin,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002108,Thư Đề Cử,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002109,Tào Vận Hóa Thuyền,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002110,1 Rương Dụng Cụ Bếp,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002111,Kiếm Của Dương Thiết Tín,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002112,Trang Sức Của A Chi,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002113,Chân Của Kịch Độc Tri Thù,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002114,Kịch Độc Tri Thù Ty,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002115,Giấy Viết Thư Của Thiếu Lâm,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002116,Giấy Viết Thư Của Minh Giáo,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002117,Giấy Viết Thư Của Cái Bang,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002118,Giấy Viết Thư Của Võ Đang,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002119,Giấy Viết Thư Của Nga My,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002120,Giấy Viết Thư Của Tinh Túc,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002121,Giấy Viết Thư Của Thiên Long,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002122,Giấy Viết Thư Của Thiên Sơn,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002123,Giấy Viết Thư Của Tiêu Dao,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002124,Đại Tảo Trửu (Chiếc Chỗi Lớn),1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002125,Củi Tản Mát,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002126,Nấm Tản Mát,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002127,Quả Tùng Tản Mát,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002128,Chìa Khóa Thư Khố,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002129,Thuốc An Thần,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002130,Chìa Khóa Bảo Tàng Màu Hồng,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002131,Chìa Khóa Bảo Tàng Màu Vàng,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002132,Chìa Khóa Bảo Tàng Màu Xanh,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002133,Thư Cầu Viện Của Khương Gia Tập,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002134,Thư Của Hồi Cốt Vương Nữ,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002135,Kiếm Của Lý Trọng Quý,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002136,Cây Chổi Màu Đỏ,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002137,Phất Trần Màu Đỏ,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002138,Ngọn Nến Bị Thổi Tắt,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002139,Tung Dương Đoạn Trường Thảo,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002140,Thụ Bì Khắc Ấn,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002141,Phù Lục Khắc Ấn,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002142,Tông Hùng Bì,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002143,Chìa Khóa Xích Lang Nhân,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002144,Lương Thực Của Lang Nhân,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002145,Thiên Lang Trượng,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002146,Thư Của Tát Mã,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002147,Cẩm Nang Của Tát Tang,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002148,Hàm Tiếu Hoa,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002149,Thư Của Tử Vi,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002150,Long Phụng Ngọc Bội,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002151,Quy Phong Bí Cấp,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002152,Thiên Sư Thần Kiếm,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002153,Linh Kiện Của Vân Mẫu Thạch,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002154,Linh Kiện Long Huyết Thạch,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40002155,Cảm Thiên Thần Cung,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002156,Mão Của A Y Na Làm Ra.,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002157,Dược Tể Của Cổ Lỗ Lạp,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002158,Lệnh Kỳ Của Dương Văn Quảng,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002159,Kim Ty Hương Nang,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002160,Thiệp Sách Lâm,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002161,Y Điển,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002162,Nọc Ong Độc,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002163,Liềm Hái Thuốc Của Tô Phi,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002164,Hộp Phủ Đầy Bụi,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002165,Tử Ngọ Châm Cứu Kinh Tàn Diệp,1,1,0,false,false,false,30,-1,-1,-1,Đạo cụ nhiệm vụ
+40002166,Trang Đính Hảo Đích Tử Ngọ Châm Cứu Kinh,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002167,Hành Quân Bút Ký Tàn Hiệt,1,1,0,false,false,false,20,-1,-1,-1,Đạo cụ nhiệm vụ
+40002168,Yên Chi Chiến Kỷ Lược,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40002169,Bột Mì,1,1,0,false,false,true,1,-1,-1,-1,Đạo cụ hoạt động
+40004000,Trừng Ác Lệnh,1,1,0,false,false,false,1,-1,-1,21000,Đạo cụ nhiệm vụ
+40004315,Dư Độc Lệnh Bài,1,1,0,false,false,false,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40004316,Thư của Hoa Kiếm Vũ,1,1,0,false,false,false,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40004410,Tinh Trí Trang Liêm,1,1,0,false,false,false,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40004411,Yến Sơn Yên Chi,1,1,0,false,false,false,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40004412,Đại Nội Cung Hoa,1,1,0,false,false,false,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40004414,Kính Hồ Thiên Niên Thảo,10,1,100,false,false,false,1,-1,4,-1,Dược liệu hiếm
+40004415,Dược Đỉnh,10,1,100,false,false,false,1,-1,-1,-1,Đạo cụ đặc thù
+40004416,Mã Thừa Sảnh Mật Hàm,1,1,0,false,false,false,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40004417,Hồi Thư Của Gia Luật Mạc Ca,1,1,0,false,false,false,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40004418,Thư Sám Hối Của Ông Quý Chi,1,1,0,false,false,false,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40004419,Thư Của Tát Mã,1,1,0,false,false,false,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40004426,Ngân Bì Lệnh Tiễn,1,1,0,false,false,true,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40004431,Thiệp,1,1,0,false,false,true,1,-1,48,-1,Vật phẩm hiếm
+40004432,Thiệp,1,1,0,false,false,true,1,-1,48,-1,Vật phẩm hiếm
+40004433,Thiệp,1,1,0,false,false,true,1,-1,48,-1,Vật phẩm hiếm
+40004434,Đồng Yêu Đai Toái Phiến,1,1,1,true,true,true,15000,-1,-1,-1,Vật phẩm hiếm
+40004435,Tầm Lộ Chi Tâm,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40004436,Tầm Lộ Chi Tâm,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40004437,Tầm Lộ Chi Tâm,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40004438,Tầm Lộ Chi Tâm,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40004439,Dạ Minh Châu Vương Tài,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40004440,Thịt Diêm Hồ Ngạc Ngư,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40004441,Mộc Nhân Trục Thừa,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40004442,Chu Du Đích Can Lương Đại,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40004443,Tuyết Nguyên Lang Bì,1,1,0,false,false,false,10,-1,-1,-1,Đạo cụ nhiệm vụ
+40004444,Hỏa Bả,1,1,1,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40004445,Sinh Mệnh Chi Hoả,1,1,0,false,false,false,24,-1,-1,-1,Đạo cụ nhiệm vụ
+40004446,Thiêm Danh Bài,1,1,1,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40004447,Thánh Hỏa Hỏa Cự,1,1,0,false,false,false,1,-1,-1,-1,Đạo cụ nhiệm vụ
+40004448,Tân Thủ Lệnh Bài Cấp 1,1,1,1,false,false,false,1,-1,-1,9999998,Đạo cụ nhiệm vụ
+40004449,Tân Thủ Lệnh Bài Cấp 2,1,1,1,false,false,false,1,-1,-1,9999998,Đạo cụ nhiệm vụ
+40004450,Tân Thủ Lệnh Bài Cấp 3,1,1,1,false,false,false,1,-1,-1,9999998,Đạo cụ nhiệm vụ
+40005451,Trang bị Ngự Tứ Cấp 20,1,1,1,false,false,false,1,-1,-1,9999998,Đạo cụ nhiệm vụ
+40005452,Trang bị Ngự Tứ Cấp 30,1,1,1,false,false,false,1,-1,-1,9999998,Đạo cụ nhiệm vụ
+40005453,Trang bị Ngự Tứ Cấp 40,1,1,1,false,false,false,1,-1,-1,9999998,Đạo cụ nhiệm vụ
+40005454,Trang bị Ngự Tứ Cấp 50,1,1,1,false,false,false,1,-1,-1,9999998,Đạo cụ nhiệm vụ
+40005455,Trang bị Ngự Tứ Cấp 60,1,1,1,false,false,false,1,-1,-1,9999998,Đạo cụ nhiệm vụ
+40005456,Trang bị Ngự Tứ Cấp 70,1,1,1,false,false,false,1,-1,-1,9999998,Đạo cụ nhiệm vụ
+40010003,Thủ Ô,1,1,0,false,false,false,15000,-1,-1,-1,Nhiệm vụ đạo cụ
+40010004,Long Huyết Khoáng Thạch,1,1,0,false,false,false,15000,-1,-1,-1,Nhiệm vụ đạo cụ
+40010005,Yến huyền ngọc Nhiệm Vụ,1,1,1,false,false,false,15000,-1,-1,-1,Nhiệm vụ đạo cụ
+40010006,Vạn Linh Thạch Nhiệm Vụ,1,1,1,false,false,false,15000,-1,-1,-1,Nhiệm vụ đạo cụ
+40010007,Bát bảo tháp Nhiệm Vụ,1,1,1,false,false,false,15000,-1,-1,-1,Nhiệm vụ đạo cụ
+40010008,Tỳ Bà,3,3,1,false,false,false,15000,-1,-1,-1,Nhiệm vụ đạo cụ
+40010009,Cương Sa Thô,1,1,0,false,false,true,15000,-1,-1,-1,Nhiệm vụ đạo cụ
+40010010,Địa Sát Tinh Hoa,1,1,0,false,false,true,15000,-1,-1,-1,Nhiệm vụ đạo cụ
+40010011,Mảnh Ám Khí,1,1,0,false,false,true,15000,-1,-1,-1,Nhiệm vụ đạo cụ
+40010012,Tinh Khí Tán (Sơ cấp),1,1,0,true,true,false,15000,-1,-1,20004,Đạo cụ đặc thù
+40010013,Tinh Khí Tán (Trung cấp),2,1,1,true,true,false,15000,-1,-1,20004,Đạo cụ đặc thù
+40010014,Tinh Khí Tán (Cao cấp),3,1,1,true,true,false,15000,-1,-1,20004,Đạo cụ đặc thù
+40010015,Hoạt Khí Tán (Sơ cấp),1,1,1,true,true,false,15000,-1,-1,20004,Đạo cụ đặc thù
+40010016,Hoạt Khí Tán (Trung cấp),2,1,1,true,true,false,15000,-1,-1,20004,Đạo cụ đặc thù
+40010017,Hoạt Khí Tán (Cao cấp),3,1,1,true,true,false,15000,-1,-1,20004,Đạo cụ đặc thù
+40010018,Tinh Hoạt Khí Tán (Sơ cấp),1,1,1,true,true,false,15000,-1,-1,20004,Đạo cụ đặc thù
+40010019,Tinh Hoạt Khí Tán (Trung cấp),2,1,1,true,true,false,15000,-1,-1,20004,Đạo cụ đặc thù
+40010020,Tinh Hoạt Khí Tán (Cao cấp),3,1,1,true,true,false,15000,-1,-1,20004,Đạo cụ đặc thù
+40010021,Thiết Khoáng Thạch,1,1,0,false,false,true,15000,-1,-1,-1,Nhiệm vụ đạo cụ
+40010022,Ngân Khoáng Thạch,1,1,0,false,false,true,15000,-1,-1,-1,Nhiệm vụ đạo cụ
+40010023,Đoạn Kiều Hoa,1,20,0,false,false,true,200,-1,-1,-1,Đạo cụ nhiệm vụ
+40010960,Lệnh Bài Thương Tiệm 1 Ngày,1,1,1,true,true,false,15000,-1,-1,21006,Đạo cụ Bày Bán
+40010961,Lệnh Bài Thương Tiệm 3 Ngày,1,1,1,true,true,false,15000,-1,-1,21006,Đạo cụ Bày Bán
+40010962,Lệnh Bài Thương Tiệm 7 Ngày,1,1,1,true,true,false,15000,-1,-1,21006,Đạo cụ Bày Bán
+40010963,Lệnh Bài Thương Tiệm 15 Ngày,1,1,1,true,true,false,15000,-1,-1,21006,Đạo cụ Bày Bán
+40010964,Lệnh Bài Thương Tiệm 30 Ngày,1,1,1,true,true,false,15000,-1,-1,21006,Đạo cụ Bày Bán
+40010971,Thần Long Kim Tệ,1,1,1,true,true,false,15000,-1,-1,9999996,Phiếu vàng
+40010972,Thần Long Kim Tệ,1,1,1,true,true,false,15000,-1,-1,9999996,Phiếu vàng
+40010973,Thần Long Kim Tệ,1,1,1,true,true,false,15000,-1,-1,9999996,Phiếu vàng
+40010974,Thần Long Kim Tệ,1,1,1,true,true,false,15000,-1,-1,9999996,Phiếu vàng
+40010975,Thần Long Kim Tệ,1,1,1,true,true,false,15000,-1,-1,9999996,Phiếu vàng
+40010976,Thần Long Kim Tệ,1,1,1,true,true,false,15000,-1,-1,9999996,Phiếu vàng
+40010978,Thẻ Tài Phú,1,1,1,false,false,true,1,-1,-1,-1,Thẻ Tài Phú
+40010979,Thần Long Kim Tệ,1,1,1,false,false,true,15000,-1,-1,9999996,Phiếu vàng
+40010980,Thần Long Kim Tệ,1,1,1,false,false,true,15000,-1,-1,9999996,Phiếu vàng
+40010981,Thần Long Kim Tệ,1,1,1,false,false,true,15000,-1,-1,9999996,Phiếu vàng
+40010982,Thần Long Kim Tệ,1,1,1,false,false,true,15000,-1,-1,9999996,Phiếu vàng
+40010983,Túi Quà Giáng Sinh,1,1,0,true,true,false,15000,-1,-1,9999999,Hộp quà sự kiện
+40011000,Phiếu Kim Nguyên Bảo Khóa,1,1,1,false,false,true,10,-1,-1,9999996,Phiếu Kim nguyên bảo
+40004453,Hoàng Kim Chi Liên,1,1,1,false,false,true,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40004454,Huyền Phật Châu,1,1,1,false,false,true,15000,-1,-1,-1,Đạo cụ nhiệm vụ
+40005000,Họa Long Phấn,1,1,10000,false,false,true,15000,-1,-1,9999988,Thần Long Điểm Nhãn
+40005001,Họa Long Nhan - Lục,1,1,10000,false,false,true,15000,-1,-1,-1,Thần Long Điểm Nhãn
+40005002,Họa Long Nhan - Hồng,1,1,10000,false,false,true,15000,-1,-1,-1,Thần Long Điểm Nhãn
+40005003,Họa Long Nhan - Tử,1,1,10000,false,false,true,15000,-1,-1,-1,Thần Long Điểm Nhãn
+40005004,Thần Long Nhãn,1,1,10000,false,false,true,15000,-1,-1,-1,Thần Long Điểm Nhãn
+40005005,Thần Long Ngọc Bội,1,1,10000,false,false,true,15000,-1,-1,-1,Thần Long Điểm Nhãn
+38000000,Trứng trân thú: Huyền Nữ Vương Xà(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+38000001,Trứng trân thú: Thiên Phong Chiến Hiết Bảo Bảo(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010000,Trứng trân thú: Tý(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010001,Trứng trân thú: Sửu(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010002,Trứng trân thú: Dần(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010003,Trứng trân thú: Mão(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010004,Trứng trân thú: Thìn(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010005,Trứng trân thú: Tỵ(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010006,Trứng trân thú: Ngọ(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010007,Trứng trân thú: Mùi(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010008,Trứng trân thú: Thân(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010009,Trứng trân thú: Dậu(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010010,Trứng trân thú: Tuất(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+39010011,Trứng trân thú: Hợi(Cấp 95),95,95,0,true,true,false,1,-1,-1,9999995,Trứng trân thú
+40010965,Kim Nguyên Bảo Phiếu,1,1,1,false,false,true,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010966,Kim Nguyên Bảo Phiếu,1,1,1,false,false,true,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010967,Kim Nguyên Bảo Phiếu,1,1,1,false,false,true,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010968,Kim Nguyên Bảo Phiếu (Khóa),1,1,1,false,false,true,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010969,Kim Nguyên Bảo Phiếu (Khóa),1,1,1,false,false,true,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010970,Kim Nguyên Bảo Phiếu (Khóa),1,1,1,false,false,true,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010977,Kim Nguyên Bảo Phiếu (Khóa),1,1,1,false,false,true,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010988,Kim Nguyên Bảo Phiếu,1,1,1,false,false,false,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010989,Kim Nguyên Bảo Phiếu,1,1,1,false,false,false,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010990,Kim Nguyên Bảo Phiếu,1,1,1,false,false,false,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010991,Kim Nguyên Bảo Phiếu,1,1,1,false,false,false,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010992,Kim Nguyên Bảo Phiếu,1,1,1,false,false,false,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010993,Kim Nguyên Bảo Phiếu,1,1,1,false,false,false,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010994,Kim Nguyên Bảo Phiếu,1,1,1,false,false,false,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010995,Kim Nguyên Bảo Phiếu,1,1,1,false,false,false,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010996,Kim Nguyên Bảo Phiếu,1,1,1,false,false,false,15000,-1,-1,9999996,Kim nguyên bảo phiếu
+40010997,Kim Nguyên Bảo Phiếu,1,1,1,false,false,false,15000,-1,-1,9999996,Kim nguyên bảo phiếu

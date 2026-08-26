@@ -1,0 +1,890 @@
+﻿ID,ResName,Avarta,Name,MaxSkills,MaxEnergy,ModelScale
+1001,ZhenShou20090917XiongMao4,CommonNPCHeader14_24,Hùng Miêu Song Hiệp Biến Bị,1,100,0.3
+1002,ZhenShou20090917XiongMao5,CommonNPCHeader14_24,Hùng Miêu Song Hiệp Biến Bị,1,100,0.3
+1003,ZhenShou20090917XiongMao6,CommonNPCHeader14_24,Hùng Miêu Song Hiệp Biến Bị,1,100,0.3
+1004,ZhenShou20090917XiongMao7,CommonNPCHeader14_24,Hùng Miêu Song Hiệp Biến Bị,1,100,0.3
+1005,ZhenShou20090917XiongMao8,CommonNPCHeader14_24,Hùng Miêu Song Hiệp Biến Bị,1,100,0.3
+1006,ZhenShou20090917XiongMao9,CommonNPCHeader14_24,Hùng Miêu Song Hiệp Biến Bị,1,100,0.3
+1007,HuangSeChaiMao,PetHeader1_21,Chiêu Sài Miêu,1,100,0.3
+1008,BaiMao,PetHeader1_21,Chiêu Sài Miêu,1,100,0.3
+1009,FenSeChaiMao,PetHeader1_21,Chiêu Sài Miêu,1,100,0.3
+1010,HuangSeChaiMao,PetHeader1_21,Chiêu Sài Miêu,1,100,0.3
+1011,ZhenShou100412ZhangYu1,PetHeader5_5,Chương Ngư,1,100,0.3
+1012,ZhenShou100412ZhangYu2,PetHeader5_5,Chương Ngư,1,100,0.3
+1013,ZhenShou100412ZhangYu3,PetHeader5_5,Chương Ngư,1,100,0.3
+1014,ZhenShou100412ZhangYu1,PetHeader5_5,Chương Ngư,1,100,0.3
+1015,ZhenShou100412ZhangYu4,PetHeader5_5,Chương Ngư,1,100,0.3
+1016,ZhenShou100412ZhangYu5,PetHeader5_5,Chương Ngư,1,100,0.3
+1017,ZhenShou100412ZhangYu6,PetHeader5_5,Chương Ngư,1,100,0.3
+1018,ZhenShou100412ZhangYu7,PetHeader5_5,Chương Ngư,1,100,0.3
+1019,ZhenShou100412ZhangYu8,PetHeader5_5,Chương Ngư,1,100,0.3
+1020,ZhenShou100412ZhangYu9,PetHeader5_5,Chương Ngư,1,100,0.3
+1021,ZhenShou100510HuaLingShou1,PetHeader5_6,Điệp Luyến Hoa,1,100,0.3
+1022,ZhenShou100510HuaLingShou2,PetHeader5_6,Điệp Luyến Hoa,1,100,0.3
+1023,ZhenShou100510HuaLingShou3,PetHeader5_6,Điệp Luyến Hoa,1,100,0.3
+1024,ZhenShou100510HuaLingShou1,PetHeader5_6,Điệp Luyến Hoa,1,100,0.3
+1025,ZhenShou100510HuaLingShou4,PetHeader5_6,Điệp Luyến Hoa,1,100,0.3
+1026,ZhenShou100510HuaLingShou5,PetHeader5_6,Điệp Luyến Hoa,1,100,0.3
+1027,ZhenShou100510HuaLingShou6,PetHeader5_6,Điệp Luyến Hoa,1,100,0.3
+1028,ZhenShou100510HuaLingShou7,PetHeader5_6,Điệp Luyến Hoa,1,100,0.3
+1029,ZhenShou100510HuaLingShou8,PetHeader5_6,Điệp Luyến Hoa,1,100,0.3
+1030,ZhenShou100510HuaLingShou9,PetHeader5_6,Điệp Luyến Hoa,1,100,0.3
+1031,ZhenShou100531GuiLeiLang1,PetHeader5_7,Khôi Lỗi Lang,1,100,0.3
+1032,ZhenShou100531GuiLeiLang2,PetHeader5_7,Khôi Lỗi Lang,1,100,0.3
+1033,ZhenShou100531GuiLeiLang3,PetHeader5_7,Khôi Lỗi Lang,1,100,0.3
+1034,ZhenShou100531GuiLeiLang1,PetHeader5_7,Khôi Lỗi Lang,1,100,0.3
+1035,ZhenShou100531GuiLeiLang4,PetHeader5_7,Khôi Lỗi Lang,1,100,0.3
+1036,ZhenShou100531GuiLeiLang5,PetHeader5_7,Khôi Lỗi Lang,1,100,0.3
+1037,ZhenShou100531GuiLeiLang6,PetHeader5_7,Khôi Lỗi Lang,1,100,0.3
+1038,ZhenShou100531GuiLeiLang7,PetHeader5_7,Khôi Lỗi Lang,1,100,0.3
+1039,ZhenShou100531GuiLeiLang8,PetHeader5_7,Khôi Lỗi Lang,1,100,0.3
+1040,ZhenShou100531GuiLeiLang9,PetHeader5_7,Khôi Lỗi Lang,1,100,0.3
+1041,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Cương Thi,1,100,0.3
+1042,ZhenShou20101013JiangShi2,haiwaizhuanyong1_9,Cương Thi,1,100,0.3
+1043,ZhenShou20101013JiangShi3,haiwaizhuanyong1_9,Cương Thi,1,100,0.3
+1044,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Cương Thi,1,100,0.3
+1045,ZhenShou100809WuSeShenNiu1,PetHeader5_8,Ngũ Sắc Thần Ngưu,1,100,0.3
+1046,ZhenShou100809WuSeShenNiu2,PetHeader5_8,Ngũ Sắc Thần Ngưu,1,100,0.3
+1047,ZhenShou100809WuSeShenNiu3,PetHeader5_8,Ngũ Sắc Thần Ngưu,1,100,0.3
+1048,ZhenShou100809WuSeShenNiu1,PetHeader5_8,Ngũ Sắc Thần Ngưu,1,100,0.3
+1049,ZhenShou100809WuSeShenNiu4,PetHeader5_8,Ngũ Sắc Thần Ngưu,1,100,0.3
+1050,ZhenShou100809WuSeShenNiu5,PetHeader5_8,Ngũ Sắc Thần Ngưu,1,100,0.3
+1051,ZhenShou100809WuSeShenNiu6,PetHeader5_8,Ngũ Sắc Thần Ngưu,1,100,0.3
+1052,ZhenShou100809WuSeShenNiu7,PetHeader5_8,Ngũ Sắc Thần Ngưu,1,100,0.3
+1053,ZhenShou100809WuSeShenNiu8,PetHeader5_8,Ngũ Sắc Thần Ngưu,1,100,0.3
+1054,ZhenShou100809WuSeShenNiu9,PetHeader5_8,Ngũ Sắc Thần Ngưu,1,100,0.3
+1055,ZhenShou20101013JiangShi4,haiwaizhuanyong1_9,Cương Thi,1,100,0.3
+1056,ZhenShou20101013JiangShi7,haiwaizhuanyong1_9,Cương Thi,1,100,0.3
+1057,ZhenShou20101013JiangShi6,haiwaizhuanyong1_9,Cương Thi,1,100,0.3
+1058,ZhenShou20101013JiangShi5,haiwaizhuanyong1_9,Cương Thi,1,100,0.3
+1059,ZhenShou20101013JiangShi8,haiwaizhuanyong1_9,Cương Thi,1,100,0.3
+1060,ZhenShou20101013JiangShi9,haiwaizhuanyong1_9,Cương Thi,1,100,0.3
+1061,ZhenShouJianLangBaoBao1,PetHeader5_21,U Minh Lang Yêu,1,100,0.3
+1062,ZhenShouJianLangBaoBao2,PetHeader5_21,U Minh Lang Yêu,1,100,0.3
+1063,ZhenShouJianLangBaoBao3,PetHeader5_21,U Minh Lang Yêu,1,100,0.3
+1064,ZhenShouJianLangBaoBao1,PetHeader5_21,U Minh Lang Yêu,1,100,0.3
+1065,ZhenShouJianLangBaoBao4,PetHeader5_21,U Minh Lang Yêu,1,100,0.3
+1066,ZhenShouJianLangBaoBao5,PetHeader5_21,U Minh Lang Yêu,1,100,0.3
+1067,ZhenShouJianLangBaoBao6,PetHeader5_21,U Minh Lang Yêu,1,100,0.3
+1068,ZhenShouJianLangBaoBao7,PetHeader5_21,U Minh Lang Yêu,1,100,0.3
+1069,ZhenShouJianLangBaoBao9,PetHeader5_21,U Minh Lang Yêu,1,100,0.3
+1070,ZhenShouJianLangBaoBao8,PetHeader5_21,U Minh Lang Yêu,1,100,0.3
+1071,ZhenShou101104LiMaoBaoBao1,PetHeader5_22,Thất Xảo Ly Miêu,1,100,0.3
+1072,ZhenShou101104LiMaoBaoBao2,PetHeader5_22,Thất Xảo Ly Miêu,1,100,0.3
+1073,ZhenShou101104LiMaoBaoBao3,PetHeader5_22,Thất Xảo Ly Miêu,1,100,0.3
+1074,ZhenShou101104LiMaoBaoBao1,PetHeader5_22,Thất Xảo Ly Miêu,1,100,0.3
+1075,ZhenShou101104LiMaoBaoBao4,PetHeader5_22,Thất Xảo Ly Miêu,1,100,0.3
+1076,ZhenShou101104LiMaoBaoBao5,PetHeader5_22,Thất Xảo Ly Miêu,1,100,0.3
+1077,ZhenShou101104LiMaoBaoBao6,PetHeader5_22,Thất Xảo Ly Miêu,1,100,0.3
+1078,ZhenShou101104LiMaoBaoBao7,PetHeader5_22,Thất Xảo Ly Miêu,1,100,0.3
+1079,ZhenShou101104LiMaoBaoBao8,PetHeader5_22,Thất Xảo Ly Miêu,1,100,0.3
+1080,ZhenShou101104LiMaoBaoBao9,PetHeader5_22,Thất Xảo Ly Miêu,1,100,0.3
+1081,ZhenShou20101210YuLuanFeng1,PetHeader5_23,Ngọc Loan Phụng,1,100,0.3
+1082,ZhenShou20101210YuLuanFeng2,PetHeader5_23,Ngọc Loan Phụng,1,100,0.3
+1083,ZhenShou20101210YuLuanFeng3,PetHeader5_23,Ngọc Loan Phụng,1,100,0.3
+1084,ZhenShou20101210YuLuanFeng1,PetHeader5_23,Ngọc Loan Phụng,1,100,0.3
+1085,ZhenShou20101210YuLuanFeng4,PetHeader5_23,Ngọc Loan Phụng,1,100,0.3
+1086,ZhenShou20101210YuLuanFeng5,PetHeader5_23,Ngọc Loan Phụng,1,100,0.3
+1087,ZhenShou20101210YuLuanFeng6,PetHeader5_23,Ngọc Loan Phụng,1,100,0.3
+1088,ZhenShou20101210YuLuanFeng7,PetHeader5_23,Ngọc Loan Phụng,1,100,0.3
+1089,ZhenShou20101210YuLuanFeng8,PetHeader5_23,Ngọc Loan Phụng,1,100,0.3
+1090,ZhenShou20101210YuLuanFeng9,PetHeader5_23,Ngọc Loan Phụng,1,100,0.3
+1091,QiEWangJin,FightNPCHeader8_20,Thần Xí Nga,1,100,0.3
+1092,QiEWangFen,FightNPCHeader8_20,Thần Xí Nga,1,100,0.3
+1093,QiEWang9,FightNPCHeader8_20,Thần Xí Nga,1,100,0.3
+1094,ZhenShou101202TuZi1,PetHeader5_24,Linh Thố Song Kiệt,1,100,0.3
+1095,ZhenShou101202TuZi2,PetHeader5_24,Linh Thố Song Kiệt,1,100,0.3
+1096,ZhenShou101202TuZi3,PetHeader5_24,Linh Thố Song Kiệt,1,100,0.3
+1097,ZhenShou101202TuZi1,PetHeader5_24,Linh Thố Song Kiệt,1,100,0.3
+1098,ZhenShou101202TuZi4,PetHeader5_24,Linh Thố Song Kiệt,1,100,0.3
+1099,ZhenShou101202TuZi8,PetHeader5_24,Linh Thố Song Kiệt,1,100,0.3
+1100,ZhenShou101202TuZi5,PetHeader5_24,Linh Thố Song Kiệt,1,100,0.3
+1101,ZhenShou101202TuZi7,PetHeader5_24,Linh Thố Song Kiệt,1,100,0.3
+1102,ZhenShou101202TuZi6,PetHeader5_24,Linh Thố Song Kiệt,1,100,0.3
+1103,ZhenShou101202TuZi9,PetHeader5_24,Linh Thố Song Kiệt,1,100,0.3
+1104,ZhenShou101028ShiLing1,PetHeader5_25,Man Thạch Quái,1,100,0.3
+1105,ZhenShou101028ShiLing2,PetHeader5_25,Man Thạch Quái,1,100,0.3
+1106,ZhenShou101028ShiLing3,PetHeader5_25,Man Thạch Quái,1,100,0.3
+1107,ZhenShou101028ShiLing1,PetHeader5_25,Man Thạch Quái,1,100,0.3
+1108,ZhenShou101028ShiLing4,PetHeader5_25,Man Thạch Quái,1,100,0.3
+1109,ZhenShou101028ShiLing5,PetHeader5_25,Man Thạch Quái,1,100,0.3
+1110,ZhenShou101028ShiLing6,PetHeader5_25,Man Thạch Quái,1,100,0.3
+1111,ZhenShou101028ShiLing7,PetHeader5_25,Man Thạch Quái,1,100,0.3
+1112,ZhenShou101028ShiLing8,PetHeader5_25,Man Thạch Quái,1,100,0.3
+1113,ZhenShou101028ShiLing9,PetHeader5_25,Man Thạch Quái,1,100,0.3
+1114,ZhenShou101203TuZiKeAiBan1,PetHeader6_1,Tinh Linh Thố,1,100,0.3
+1115,ZhenShou101203TuZiKeAiBan2,PetHeader6_1,Tinh Linh Thố,1,100,0.3
+1116,ZhenShou101203TuZiKeAiBan3,PetHeader6_1,Tinh Linh Thố,1,100,0.3
+1117,ZhenShou101203TuZiKeAiBan1,PetHeader6_1,Tinh Linh Thố,1,100,0.3
+1118,ZhenShou101203TuZiKeAiBan4,PetHeader6_1,Tinh Linh Thố,1,100,0.3
+1119,ZhenShou101203TuZiKeAiBan5,PetHeader6_1,Tinh Linh Thố,1,100,0.3
+1120,ZhenShou101203TuZiKeAiBan6,PetHeader6_1,Tinh Linh Thố,1,100,0.3
+1121,ZhenShou101203TuZiKeAiBan7,PetHeader6_1,Tinh Linh Thố,1,100,0.3
+1122,ZhenShou101203TuZiKeAiBan8,PetHeader6_1,Tinh Linh Thố,1,100,0.3
+1123,ZhenShou101203TuZiKeAiBan9,PetHeader6_1,Tinh Linh Thố,1,100,0.3
+1124,ZhenShou101217CangShuKeAiBan1,PetHeader6_2,Cẩm Mao Thử,1,100,0.3
+1125,ZhenShou101217CangShuKeAiBan2,PetHeader6_2,Cẩm Mao Thử,1,100,0.3
+1126,ZhenShou101217CangShuKeAiBan3,PetHeader6_2,Cẩm Mao Thử,1,100,0.3
+1127,ZhenShou101217CangShuKeAiBan1,PetHeader6_2,Cẩm Mao Thử,1,100,0.3
+1128,ZhenShou101217CangShuKeAiBan4,PetHeader6_2,Cẩm Mao Thử,1,100,0.3
+1129,ZhenShou101217CangShuKeAiBan5,PetHeader6_2,Cẩm Mao Thử,1,100,0.3
+1130,ZhenShou101217CangShuKeAiBan6,PetHeader6_2,Cẩm Mao Thử,1,100,0.3
+1131,ZhenShou101217CangShuKeAiBan7,PetHeader6_2,Cẩm Mao Thử,1,100,0.3
+1132,ZhenShou101217CangShuKeAiBan8,PetHeader6_2,Cẩm Mao Thử,1,100,0.3
+1133,ZhenShou101217CangShuKeAiBan9,PetHeader6_2,Cẩm Mao Thử,1,100,0.3
+1134,ZhenShou20110128yyXiong1,PetHeader6_3,Đa Ngoạn Hùng,1,100,0.3
+1135,ZhenShou20110128yyXiong2,PetHeader6_3,Đa Ngoạn Hùng,1,100,0.3
+1136,ZhenShou20110128yyXiong3,PetHeader6_3,Đa Ngoạn Hùng,1,100,0.3
+1137,ZhenShou20110128yyXiong1,PetHeader6_3,Đa Ngoạn Hùng,1,100,0.3
+1138,ZhenShou20110128yyXiong1,PetHeader6_3,Hùng,1,100,0.3
+1139,ZhenShou20110128yyXiong2,PetHeader6_3,Hùng,1,100,0.3
+1140,ZhenShou20110128yyXiong3,PetHeader6_3,Hùng,1,100,0.3
+1141,ZhenShou20110128yyXiong1,PetHeader6_3,Hùng,1,100,0.3
+1142,HuangYuHeiLingGongJi,PetHeader1_23,Mão Nhật Tinh,1,100,0.3
+1143,HuoHongYuMaoGongJi,PetHeader1_23,Mão Nhật Tinh,1,100,0.3
+1144,FenYuHeiLingGongJi,PetHeader1_23,Mão Nhật Tinh,1,100,0.3
+1145,HuangYuHeiLingGongJi,PetHeader1_23,Mão Nhật Tinh,1,100,0.3
+1146,FenHongSeZhu,PetHeader1_19,Củng Thiên thỉ,1,100,0.3
+1147,HeiSeZhu,PetHeader1_19,Củng Thiên thỉ,1,100,0.3
+1148,FenHongSeZhu,PetHeader1_19,Củng Thiên thỉ,1,100,0.3
+1149,HuangChongWuGuaNiu,PetHeader3_22,Đông Phong Loa,1,100,0.3
+1150,LanChongWuGuaNiu,PetHeader3_22,Đông Phong Loa,1,100,0.3
+1151,HuangChongWuGuaNiu,PetHeader3_22,Đông Phong Loa,1,100,0.3
+1152,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Tinh Hà Ngọc Thố,1,100,0.3
+1153,ZhenShou20110803QiXiJieTuZi2,PetHeader6_4,Tinh Hà Ngọc Thố,1,100,0.3
+1154,ZhenShou20110803QiXiJieTuZi3,PetHeader6_4,Tinh Hà Ngọc Thố,1,100,0.3
+1155,ZhenShou20110803QiXiJieTuZi4,PetHeader6_4,Tinh Hà Ngọc Thố,1,100,0.3
+1156,ZhenShou20110803QiXiJieTuZi5,PetHeader6_4,Tinh Hà Ngọc Thố,1,100,0.3
+1157,ZhenShou20110803QiXiJieTuZi6,PetHeader6_4,Tinh Hà Ngọc Thố,1,100,0.3
+1158,ZhenShou20110803QiXiJieTuZi7,PetHeader6_4,Tinh Hà Ngọc Thố,1,100,0.3
+1159,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Tinh Hà Ngọc Thố,1,100,0.3
+1160,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Cửu Thiên Ngọc Thố,1,100,0.3
+1161,ZhenShou20110803QiXiJieTuZi2,PetHeader6_4,Cửu Thiên Ngọc Thố,1,100,0.3
+1162,ZhenShou20110803QiXiJieTuZi3,PetHeader6_4,Cửu Thiên Ngọc Thố,1,100,0.3
+1163,ZhenShou20110803QiXiJieTuZi4,PetHeader6_4,Cửu Thiên Ngọc Thố,1,100,0.3
+1164,ZhenShou20110803QiXiJieTuZi5,PetHeader6_4,Cửu Thiên Ngọc Thố,1,100,0.3
+1165,ZhenShou20110803QiXiJieTuZi6,PetHeader6_4,Cửu Thiên Ngọc Thố,1,100,0.3
+1166,ZhenShou20110803QiXiJieTuZi7,PetHeader6_4,Cửu Thiên Ngọc Thố,1,100,0.3
+1167,ZhenShou20110803QiXiJieTuZi8,PetHeader6_4,Cửu Thiên Ngọc Thố,1,100,0.3
+1168,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Cửu Thiên Ngọc Thố,1,100,0.3
+1169,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Ngọc Thố,1,100,0.3
+1170,ZhenShou20110803QiXiJieTuZi2,PetHeader6_4,Ngọc Thố,1,100,0.3
+1171,ZhenShou20110803QiXiJieTuZi3,PetHeader6_4,Ngọc Thố,1,100,0.3
+1172,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Ngọc Thố,1,100,0.3
+1173,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Thần Tinh Ngọc Thố,1,100,0.3
+1174,ZhenShou20110803QiXiJieTuZi2,PetHeader6_4,Thần Tinh Ngọc Thố,1,100,0.3
+1175,ZhenShou20110803QiXiJieTuZi3,PetHeader6_4,Thần Tinh Ngọc Thố,1,100,0.3
+1176,ZhenShou20110803QiXiJieTuZi4,PetHeader6_4,Thần Tinh Ngọc Thố,1,100,0.3
+1177,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Thần Tinh Ngọc Thố,1,100,0.3
+1178,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Nguyệt Quế Ngọc Thố,1,100,0.3
+1179,ZhenShou20110803QiXiJieTuZi2,PetHeader6_4,Nguyệt Quế Ngọc Thố,1,100,0.3
+1180,ZhenShou20110803QiXiJieTuZi3,PetHeader6_4,Nguyệt Quế Ngọc Thố,1,100,0.3
+1181,ZhenShou20110803QiXiJieTuZi4,PetHeader6_4,Nguyệt Quế Ngọc Thố,1,100,0.3
+1182,ZhenShou20110803QiXiJieTuZi5,PetHeader6_4,Nguyệt Quế Ngọc Thố,1,100,0.3
+1183,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Nguyệt Quế Ngọc Thố,1,100,0.3
+1184,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Thiên Cung Ngọc Thố,1,100,0.3
+1185,ZhenShou20110803QiXiJieTuZi2,PetHeader6_4,Thiên Cung Ngọc Thố,1,100,0.3
+1186,ZhenShou20110803QiXiJieTuZi3,PetHeader6_4,Thiên Cung Ngọc Thố,1,100,0.3
+1187,ZhenShou20110803QiXiJieTuZi4,PetHeader6_4,Thiên Cung Ngọc Thố,1,100,0.3
+1188,ZhenShou20110803QiXiJieTuZi5,PetHeader6_4,Thiên Cung Ngọc Thố,1,100,0.3
+1189,ZhenShou20110803QiXiJieTuZi6,PetHeader6_4,Thiên Cung Ngọc Thố,1,100,0.3
+1190,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Thiên Cung Ngọc Thố,1,100,0.3
+1191,ZhenShou110503ZhaoFuMaoBianZhuang1,PetHeader6_5,Bách Biến Miêu,1,100,0.3
+1192,ZhenShou110503ZhaoFuMaoBianZhuang2,PetHeader6_5,Bách Biến Miêu,1,100,0.3
+1193,ZhenShou110503ZhaoFuMaoBianZhuang3,PetHeader6_5,Bách Biến Miêu,1,100,0.3
+1194,ZhenShou110503ZhaoFuMaoBianZhuang1,PetHeader6_5,Bách Biến Miêu,1,100,0.3
+1195,ZhenShou110503ZhaoFuMaoBianZhuang4,PetHeader6_5,Bách Biến Miêu,1,100,0.3
+1196,ZhenShou110503ZhaoFuMaoBianZhuang5,PetHeader6_5,Bách Biến Miêu,1,100,0.3
+1197,ZhenShou110503ZhaoFuMaoBianZhuang6,PetHeader6_5,Bách Biến Miêu,1,100,0.3
+1198,ZhenShou110503ZhaoFuMaoBianZhuang7,PetHeader6_5,Bách Biến Miêu,1,100,0.3
+1199,ZhenShou110503ZhaoFuMaoBianZhuang8,PetHeader6_5,Bách Biến Miêu,1,100,0.3
+1200,ZhenShou110503ZhaoFuMaoBianZhuang9,PetHeader6_5,Bách Biến Miêu,1,100,0.3
+1201,HuiSeSongShu,PetHeader1_12,Tung Thử,1,100,0.3
+1202,DanLanSeSongShu,PetHeader1_12,Tung Thử,1,100,0.3
+1203,BaiSeHeiWeiSongShu,PetHeader1_12,Tung Thử,1,100,0.3
+1204,HuiSeSongShu,PetHeader1_12,Tung Thử,1,100,0.3
+1205,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Nhân Ngẫu,1,100,0.3
+1206,ZhenShou20101013JiangShi2,haiwaizhuanyong1_9,Nhân Ngẫu,1,100,0.3
+1207,ZhenShou20101013JiangShi3,haiwaizhuanyong1_9,Nhân Ngẫu,1,100,0.3
+1208,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Nhân Ngẫu,1,100,0.3
+1209,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Tuyền Linh Nhân Ngẫu,1,100,0.3
+1210,ZhenShou20101013JiangShi2,haiwaizhuanyong1_9,Tuyền Linh Nhân Ngẫu,1,100,0.3
+1211,ZhenShou20101013JiangShi3,haiwaizhuanyong1_9,Tuyền Linh Nhân Ngẫu,1,100,0.3
+1212,ZhenShou20101013JiangShi4,haiwaizhuanyong1_9,Tuyền Linh Nhân Ngẫu,1,100,0.3
+1213,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Tuyền Linh Nhân Ngẫu,1,100,0.3
+1214,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Tinh Minh Nhân Ngẫu,1,100,0.3
+1215,ZhenShou20101013JiangShi2,haiwaizhuanyong1_9,Tinh Minh Nhân Ngẫu,1,100,0.3
+1216,ZhenShou20101013JiangShi3,haiwaizhuanyong1_9,Tinh Minh Nhân Ngẫu,1,100,0.3
+1217,ZhenShou20101013JiangShi4,haiwaizhuanyong1_9,Tinh Minh Nhân Ngẫu,1,100,0.3
+1218,ZhenShou20101013JiangShi7,haiwaizhuanyong1_9,Tinh Minh Nhân Ngẫu,1,100,0.3
+1219,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Tinh Minh Nhân Ngẫu,1,100,0.3
+1220,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Võ Huyền Nhân Ngẫu,1,100,0.3
+1221,ZhenShou20101013JiangShi2,haiwaizhuanyong1_9,Võ Huyền Nhân Ngẫu,1,100,0.3
+1222,ZhenShou20101013JiangShi3,haiwaizhuanyong1_9,Võ Huyền Nhân Ngẫu,1,100,0.3
+1223,ZhenShou20101013JiangShi4,haiwaizhuanyong1_9,Võ Huyền Nhân Ngẫu,1,100,0.3
+1224,ZhenShou20101013JiangShi7,haiwaizhuanyong1_9,Võ Huyền Nhân Ngẫu,1,100,0.3
+1225,ZhenShou20101013JiangShi6,haiwaizhuanyong1_9,Võ Huyền Nhân Ngẫu,1,100,0.3
+1226,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Võ Huyền Nhân Ngẫu,1,100,0.3
+1227,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Diêm Thần Nhân Ngẫu,1,100,0.3
+1228,ZhenShou20101013JiangShi2,haiwaizhuanyong1_9,Diêm Thần Nhân Ngẫu,1,100,0.3
+1229,ZhenShou20101013JiangShi3,haiwaizhuanyong1_9,Diêm Thần Nhân Ngẫu,1,100,0.3
+1230,ZhenShou20101013JiangShi4,haiwaizhuanyong1_9,Diêm Thần Nhân Ngẫu,1,100,0.3
+1231,ZhenShou20101013JiangShi7,haiwaizhuanyong1_9,Diêm Thần Nhân Ngẫu,1,100,0.3
+1232,ZhenShou20101013JiangShi6,haiwaizhuanyong1_9,Diêm Thần Nhân Ngẫu,1,100,0.3
+1233,ZhenShou20101013JiangShi5,haiwaizhuanyong1_9,Diêm Thần Nhân Ngẫu,1,100,0.3
+1234,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Diêm Thần Nhân Ngẫu,1,100,0.3
+1235,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Phạm Thánh Nhân Ngẫu,1,100,0.3
+1236,ZhenShou20101013JiangShi2,haiwaizhuanyong1_9,Phạm Thánh Nhân Ngẫu,1,100,0.3
+1237,ZhenShou20101013JiangShi3,haiwaizhuanyong1_9,Phạm Thánh Nhân Ngẫu,1,100,0.3
+1238,ZhenShou20101013JiangShi4,haiwaizhuanyong1_9,Phạm Thánh Nhân Ngẫu,1,100,0.3
+1239,ZhenShou20101013JiangShi7,haiwaizhuanyong1_9,Phạm Thánh Nhân Ngẫu,1,100,0.3
+1240,ZhenShou20101013JiangShi6,haiwaizhuanyong1_9,Phạm Thánh Nhân Ngẫu,1,100,0.3
+1241,ZhenShou20101013JiangShi5,haiwaizhuanyong1_9,Phạm Thánh Nhân Ngẫu,1,100,0.3
+1242,ZhenShou20101013JiangShi8,haiwaizhuanyong1_9,Phạm Thánh Nhân Ngẫu,1,100,0.3
+1243,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Phạm Thánh Nhân Ngẫu,1,100,0.3
+1244,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Thông Thiên Nhân Ngẫu,1,100,0.3
+1245,ZhenShou20101013JiangShi2,haiwaizhuanyong1_9,Thông Thiên Nhân Ngẫu,1,100,0.3
+1246,ZhenShou20101013JiangShi3,haiwaizhuanyong1_9,Thông Thiên Nhân Ngẫu,1,100,0.3
+1247,ZhenShou20101013JiangShi4,haiwaizhuanyong1_9,Thông Thiên Nhân Ngẫu,1,100,0.3
+1248,ZhenShou20101013JiangShi7,haiwaizhuanyong1_9,Thông Thiên Nhân Ngẫu,1,100,0.3
+1249,ZhenShou20101013JiangShi6,haiwaizhuanyong1_9,Thông Thiên Nhân Ngẫu,1,100,0.3
+1250,ZhenShou20101013JiangShi5,haiwaizhuanyong1_9,Thông Thiên Nhân Ngẫu,1,100,0.3
+1251,ZhenShou20101013JiangShi8,haiwaizhuanyong1_9,Thông Thiên Nhân Ngẫu,1,100,0.3
+1252,ZhenShou20101013JiangShi9,haiwaizhuanyong1_9,Thông Thiên Nhân Ngẫu,1,100,0.3
+1253,ZhenShou20101013JiangShi1,haiwaizhuanyong1_9,Thông Thiên Nhân Ngẫu,1,100,0.3
+1254,ZhenShou20111125ShengDanJieLongBaoBao1,PetHeader6_6,Đậu Đậu Long,1,100,0.3
+1255,ZhenShou20111125ShengDanJieLongBaoBao3,PetHeader6_6,Đậu Đậu Long,1,100,0.3
+1256,ZhenShou20111125ShengDanJieLongBaoBao4,PetHeader6_6,Đậu Đậu Long,1,100,0.3
+1257,ZhenShou20111125ShengDanJieLongBaoBao1,PetHeader6_6,Tiểu Long Thần,1,100,0.3
+1258,ZhenShou20111125ShengDanJieLongBaoBao5,PetHeader6_6,Đậu Đậu Long,1,100,0.3
+1259,ZhenShou20111125ShengDanJieLongBaoBao8,PetHeader6_6,Đậu Đậu Long,1,100,0.3
+1260,ZhenShou20111125ShengDanJieLongBaoBao9,PetHeader6_6,Đậu Đậu Long,1,100,0.3
+1261,ZhenShou20111125ShengDanJieLongBaoBao6,PetHeader6_6,Đậu Đậu Long,1,100,0.3
+1262,ZhenShou20111125ShengDanJieLongBaoBao7,PetHeader6_6,Đậu Đậu Long,1,100,0.3
+1263,ZhenShou20111125ShengDanJieLongBaoBao2,PetHeader6_6,Đậu Đậu Long,1,100,0.3
+1264,ZhenShou101213LingShe1,PetHeader6_7,Xuất Vân Long Mãng,1,100,0.3
+1265,ZhenShou101213LingShe2,PetHeader6_7,Xuất Vân Long Mãng,1,100,0.3
+1266,ZhenShou101213LingShe3,PetHeader6_7,Xuất Vân Long Mãng,1,100,0.3
+1267,ZhenShou101213LingShe1,PetHeader6_7,Xuất Vân Long Mãng,1,100,0.3
+1268,ZhenShou101213LingShe4,PetHeader6_7,Xuất Vân Long Mãng,1,100,0.3
+1269,ZhenShou101213LingShe5,PetHeader6_7,Xuất Vân Long Mãng,1,100,0.3
+1270,ZhenShou101213LingShe6,PetHeader6_7,Xuất Vân Long Mãng,1,100,0.3
+1271,ZhenShou101213LingShe7,PetHeader6_7,Xuất Vân Long Mãng,1,100,0.3
+1272,ZhenShou101213LingShe8,PetHeader6_7,Xuất Vân Long Mãng,1,100,0.3
+1273,ZhenShou101213LingShe9,PetHeader6_7,Xuất Vân Long Mãng,1,100,0.3
+1274,DanHeWanXiong,PetHeader1_5,Du Cửu Manh Manh Miêu,1,100,0.3
+1275,DanHuangWanXiong,PetHeader1_5,Du Cửu Manh Manh Miêu,1,100,0.3
+1276,DanQingWanXiong,PetHeader1_5,Du Cửu Manh Manh Miêu,1,100,0.3
+1277,DanHeWanXiong,PetHeader1_5,Du Cửu Manh Manh Miêu,1,100,0.3
+1278,ZhenShou111128XinNianvipLong1,PetHeader6_8,Ngạo Vân Thương Long,1,100,0.3
+1279,ZhenShou111128XinNianvipLong2,PetHeader6_8,Ngạo Vân Thương Long,1,100,0.3
+1280,ZhenShou111128XinNianvipLong3,PetHeader6_8,Ngạo Vân Thương Long,1,100,0.3
+1281,ZhenShou111128XinNianvipLong1,PetHeader6_8,Ngạo Vân Thương Long,1,100,0.3
+1282,ZhenShou111128XinNianvipLong4,PetHeader6_8,Ngạo Vân Thương Long,1,100,0.3
+1283,ZhenShou111128XinNianvipLong5,PetHeader6_8,Ngạo Vân Thương Long,1,100,0.3
+1284,ZhenShou111128XinNianvipLong6,PetHeader6_8,Ngạo Vân Thương Long,1,100,0.3
+1285,ZhenShou111128XinNianvipLong7,PetHeader6_8,Ngạo Vân Thương Long,1,100,0.3
+1286,ZhenShou111128XinNianvipLong9,PetHeader6_8,Ngạo Vân Thương Long,1,100,0.3
+1287,ZhenShou111128XinNianvipLong8,PetHeader6_8,Ngạo Vân Thương Long,1,100,0.3
+1288,ZhenShouZuanShivip20111208Long1,PetHeader6_9,Thái Cổ Long Hồn Thử,1,100,0.3
+1289,ZhenShouZuanShivip20111208Long2,PetHeader6_9,Thái Cổ Long Hồn,1,100,0.3
+1290,ZhenShouZuanShivip20111208Long3,PetHeader6_9,Thái Cổ Long Hồn,1,100,0.3
+1291,ZhenShouZuanShivip20111208Long1,PetHeader6_9,Thái Cổ Long Hồn,1,100,0.3
+1292,ZhenShouZuanShivip20111208Long4,PetHeader6_9,Thái Cổ Long Hồn,1,100,0.3
+1293,ZhenShouZuanShivip20111208Long5,PetHeader6_9,Thái Cổ Long Hồn,1,100,0.3
+1294,ZhenShouZuanShivip20111208Long6,PetHeader6_9,Thái Cổ Long Hồn,1,100,0.3
+1295,ZhenShouZuanShivip20111208Long7,PetHeader6_9,Thái Cổ Long Hồn,1,100,0.3
+1296,ZhenShouZuanShivip20111208Long8,PetHeader6_9,Thái Cổ Long Hồn,1,100,0.3
+1297,ZhenShouZuanShivip20111208Long9,PetHeader6_9,Thái Cổ Long Hồn,1,100,0.3
+1298,BaiDiSuoXiaoBan,FightNPCHeader8_1,Ảo Hóa Băng Yêu,1,100,0.3
+1299,ZhenShoubossGongSunSheng20100630,PetHeader5_9,Huyễn Hoá Công Tôn Thánh,1,100,0.3
+1300,CuJubossSuoXiaoBan,FightNPCHeader8_5,Ảo Hóa Tôn Mỹ Mỹ,1,100,0.3
+1301,ZhenShoubossLinChong20100630,PetHeader5_16,Huyễn Hoá Lâm Sung,1,100,0.3
+1302,XuanboosSuoXiaoBan,FightNPCHeader8_11,Ảo Hóa Thủy Phỉ Đầu Lĩnh,1,100,0.3
+1303,ZhenShoubossLuJunYi20100630,PetHeader5_11,Huyễn Hoá Lô Quân Dật,1,100,0.3
+1304,DiGongbossQinWangSuoXiaoBan,FightNPCHeader9_21,Ảo Hóa Tần Vương,1,100,0.3
+1305,ZhenShoubossGuanSheng20100630,PetHeader5_10,Huyễn Hoá Quan Thịnh,1,100,0.3
+1306,QiJuShouLingSuoXiaoBan,FightNPCHeader3_4,Ảo Hóa Viễn Cổ Kỳ Hồn,1,100,0.3
+1307,ZhenShoubossSongJiang20100630,PetHeader5_14,Huyễn Hoá Tống Khương,1,100,0.3
+1308,bossPiaoMiaoFengHaDaBaSuoXiaoBan,FightNPCHeader9_16,Ảo Hóa Cáp Đại Bá,1,100,0.3
+1309,ZhenShoubossLuZhiShen20100630,PetHeader5_20,Huyễn Hoá Lỗ Chí Sanh,1,100,0.3
+1310,,,Ảo Hóa Thủy Phỉ Đầu Lĩnh,1,100,0.3
+1311,,,Huyễn Hoá Lô Quân Dật,1,100,0.3
+1312,,,Ảo Hóa Cáp Đại Bá,1,100,0.3
+1313,,,Huyễn Hoá Lỗ Chí Sanh,1,100,0.3
+1314,,,Ảo Hóa Băng Yêu,1,100,0.3
+1315,,,Huyễn Hoá Công Tôn Thánh,1,100,0.3
+1316,,,Ảo Hóa Viễn Cổ Kỳ Hồn,1,100,0.3
+1317,,,Huyễn Hoá Tống Khương,1,100,0.3
+1318,,,Ảo Hóa Tôn Mỹ Mỹ,1,100,0.3
+1319,,,Huyễn Hoá Lâm Sung,1,100,0.3
+1320,,,Ảo Hóa Tần Vương,1,100,0.3
+1321,,,Huyễn Hoá Quan Thịnh,1,100,0.3
+1322,ZhenShou20110928YanShuBaoBao1,PetHeader6_10,Yển Thử Thử,1,100,0.3
+1323,ZhenShou20110928YanShuBaoBao2,PetHeader6_10,Yển Thử,1,100,0.3
+1324,ZhenShou20110928YanShuBaoBao3,PetHeader6_10,Yển Thử,1,100,0.3
+1325,ZhenShou20110928YanShuBaoBao1,PetHeader6_10,Yển Thử,1,100,0.3
+1326,ZhenShou20110928YanShuBaoBao4,PetHeader6_10,Yển Thử,1,100,0.3
+1327,ZhenShou20110928YanShuBaoBao5,PetHeader6_10,Yển Thử,1,100,0.3
+1328,ZhenShou20110928YanShuBaoBao6,PetHeader6_10,Yển Thử,1,100,0.3
+1329,ZhenShou20110928YanShuBaoBao7,PetHeader6_10,Yển Thử,1,100,0.3
+1330,ZhenShou20110928YanShuBaoBao8,PetHeader6_10,Yển Thử,1,100,0.3
+1331,ZhenShou20110928YanShuBaoBao9,PetHeader6_10,Yển Thử,1,100,0.3
+1332,ZhenShou20110928YanShuBaoBao1,PetHeader6_10,Đảo Đản Thử,1,100,0.3
+1333,ZhenShou20110928YanShuBaoBao2,PetHeader6_10,Đảo Đản Thử,1,100,0.3
+1334,ZhenShou20110928YanShuBaoBao3,PetHeader6_10,Đảo Đản Thử,1,100,0.3
+1335,ZhenShou20110928YanShuBaoBao1,PetHeader6_10,Đảo Đản Thử,1,100,0.3
+1336,ZhenShou20110928YanShuBaoBao4,PetHeader6_10,Đảo Đản Thử,1,100,0.3
+1337,ZhenShou20110928YanShuBaoBao5,PetHeader6_10,Đảo Đản Thử,1,100,0.3
+1338,ZhenShou20110928YanShuBaoBao6,PetHeader6_10,Đảo Đản Thử,1,100,0.3
+1339,ZhenShou20110928YanShuBaoBao7,PetHeader6_10,Đảo Đản Thử,1,100,0.3
+1340,ZhenShou20110928YanShuBaoBao8,PetHeader6_10,Đảo Đản Thử,1,100,0.3
+1341,ZhenShou20110928YanShuBaoBao9,PetHeader6_10,Đảo Đản Thử,1,100,0.3
+1342,ZhenShou20110922XiaoYang1,PetHeader6_11,Mị Tiểu Manh,1,100,0.3
+1343,ZhenShou20110922XiaoYang2,PetHeader6_11,Mị Tiểu Manh,1,100,0.3
+1344,ZhenShou20110922XiaoYang3,PetHeader6_11,Mị Tiểu Manh,1,100,0.3
+1345,ZhenShou20110922XiaoYang1,PetHeader6_11,Mị Tiểu Manh,1,100,0.3
+1346,ZhenShou20110922XiaoYang4,PetHeader6_11,Mị Tiểu Manh,1,100,0.3
+1347,ZhenShou20110922XiaoYang5,PetHeader6_11,Mị Tiểu Manh,1,100,0.3
+1348,ZhenShou20110922XiaoYang8,PetHeader6_11,Mị Tiểu Manh,1,100,0.3
+1349,ZhenShou20110922XiaoYang9,PetHeader6_11,Mị Tiểu Manh,1,100,0.3
+1350,ZhenShou20110922XiaoYang6,PetHeader6_11,Mị Tiểu Manh,1,100,0.3
+1351,ZhenShou20110922XiaoYang7,PetHeader6_11,Mị Tiểu Manh,1,100,0.3
+1352,ZhenShouTengXunHeiXiong120313,PetHeader6_13,Cầu Cầu Hùng,1,100,0.3
+1353,ZhenShouTengXunZongXiong120313,PetHeader6_13,Cầu Cầu Hùng,1,100,0.3
+1354,ZhenShouTengXunBaiXiong120313,PetHeader6_13,Cầu Cầu Hùng,1,100,0.3
+1355,ZhenShouTengXunHeiXiong120313,PetHeader6_13,Cầu Cầu Hùng,1,100,0.3
+1356,ZhenShouHaiDiMeiRenYu1,PetHeader6_14,Mỹ Nhân Ngư,1,100,0.3
+1357,ZhenShouHaiDiMeiRenYu2,PetHeader6_14,Mỹ Nhân Ngư,1,100,0.3
+1358,ZhenShouHaiDiMeiRenYu3,PetHeader6_14,Mỹ Nhân Ngư,1,100,0.3
+1359,ZhenShouHaiDiMeiRenYu1,PetHeader6_14,Mỹ Nhân Ngư,1,100,0.3
+1360,ZhenShouHaiDiMeiRenYu4,PetHeader6_14,Mỹ Nhân Ngư,1,100,0.3
+1361,ZhenShouHaiDiMeiRenYu5,PetHeader6_14,Mỹ Nhân Ngư,1,100,0.3
+1362,ZhenShouHaiDiMeiRenYu6,PetHeader6_14,Mỹ Nhân Ngư,1,100,0.3
+1363,ZhenShouHaiDiMeiRenYu7,PetHeader6_14,Mỹ Nhân Ngư,1,100,0.3
+1364,ZhenShouHaiDiMeiRenYu8,PetHeader6_14,Mỹ Nhân Ngư,1,100,0.3
+1365,ZhenShouHaiDiMeiRenYu1,PetHeader6_14,Mỹ Nhân Ngư,1,100,0.3
+1366,ZhenShou20111223QingRenJieZhuYaoFuFuNan5,PetHeader6_12,Thiên Bồng Lãm Nguyệt,1,100,0.3
+1367,ZhenShou20111223QingRenJieZhuYaoFuFuNan1,PetHeader6_12,Thiên Bồng Lãm Nguyệt,1,100,0.3
+1368,ZhenShou20111223QingRenJieZhuYaoFuFuNan2,PetHeader6_12,Thiên Bồng Lãm Nguyệt,1,100,0.3
+1369,ZhenShou20111223QingRenJieZhuYaoFuFuNan5,PetHeader6_12,Thiên Bồng Lãm Nguyệt,1,100,0.3
+1370,ZhenShou20111223QingRenJieZhuYaoFuFuNan3,PetHeader6_12,Thiên Bồng Lãm Nguyệt,1,100,0.3
+1371,ZhenShou20111223QingRenJieZhuYaoFuFuNan7,PetHeader6_12,Thiên Bồng Lãm Nguyệt,1,100,0.3
+1372,ZhenShou20111223QingRenJieZhuYaoFuFuNan4,PetHeader6_12,Thiên Bồng Lãm Nguyệt,1,100,0.3
+1373,ZhenShou20111223QingRenJieZhuYaoFuFuNan9,PetHeader6_12,Thiên Bồng Lãm Nguyệt,1,100,0.3
+1374,ZhenShou20111223QingRenJieZhuYaoFuFuNan8,PetHeader6_12,Thiên Bồng Lãm Nguyệt,1,100,0.3
+1375,ZhenShou120613JieRiLiBaoHu1,PetHeader6_15,Cửu Lê Yêu Hổ,1,100,0.3
+1376,ZhenShou120613JieRiLiBaoHu2,PetHeader6_15,Cửu Lê Yêu Hổ,1,100,0.3
+1377,ZhenShou120613JieRiLiBaoHu3,PetHeader6_15,Cửu Lê Yêu Hổ,1,100,0.3
+1378,ZhenShou120613JieRiLiBaoHu1,PetHeader6_15,Cửu Lê Yêu Hổ,1,100,0.3
+1379,ZhenShou120613JieRiLiBaoHu4,PetHeader6_15,Cửu Lê Yêu Hổ,1,100,0.3
+1380,ZhenShou120613JieRiLiBaoHu5,PetHeader6_15,Cửu Lê Yêu Hổ,1,100,0.3
+1381,ZhenShou120613JieRiLiBaoHu6,PetHeader6_15,Cửu Lê Yêu Hổ,1,100,0.3
+1382,ZhenShou120613JieRiLiBaoHu7,PetHeader6_15,Cửu Lê Yêu Hổ,1,100,0.3
+1383,ZhenShou120613JieRiLiBaoHu8,PetHeader6_15,Cửu Lê Yêu Hổ,1,100,0.3
+1384,ZhenShou120613JieRiLiBaoHu9,PetHeader6_15,Cửu Lê Yêu Hổ,1,100,0.3
+1385,ZhenShou20120830FengHuang1,PetHeader6_16,Hiên Viên Thiên Phượng,1,100,0.3
+1386,ZhenShou20120830FengHuang2,PetHeader6_16,Hiên Viên Thiên Phượng,1,100,0.3
+1387,ZhenShou20120830FengHuang3,PetHeader6_16,Hiên Viên Thiên Phượng,1,100,0.3
+1388,ZhenShou20120830FengHuang1,PetHeader6_16,Hiên Viên Thiên Phượng,1,100,0.3
+1389,ZhenShou20120830FengHuang4,PetHeader6_16,Hiên Viên Thiên Phượng,1,100,0.3
+1390,ZhenShou20120830FengHuang8,PetHeader6_16,Hiên Viên Thiên Phượng,1,100,0.3
+1391,ZhenShou20120830FengHuang5,PetHeader6_16,Hiên Viên Thiên Phượng,1,100,0.3
+1392,ZhenShou20120830FengHuang6,PetHeader6_16,Hiên Viên Thiên Phượng,1,100,0.3
+1393,ZhenShou20120830FengHuang7,PetHeader6_16,Hiên Viên Thiên Phượng,1,100,0.3
+1394,ZhenShou20120830FengHuang9,PetHeader6_16,Hiên Viên Thiên Phượng,1,100,0.3
+1395,ZhenShou20121105ShengDanZhenShou01,PetHeader6_17,Bách Biến Uông Tử,1,100,0.3
+1396,ZhenShou20121105ShengDanZhenShou02,PetHeader6_17,Bách Biến Uông Tử,1,100,0.3
+1397,ZhenShou20121105ShengDanZhenShou03,PetHeader6_17,Bách Biến Uông Tử,1,100,0.3
+1398,ZhenShou20121105ShengDanZhenShou01,PetHeader6_17,Bách Biến Uông Tử,1,100,0.3
+1399,ZhenShou20121105ShengDanZhenShou04,PetHeader6_17,Bách Biến Uông Tử,1,100,0.3
+1400,ZhenShou20121105ShengDanZhenShou05,PetHeader6_17,Bách Biến Uông Tử,1,100,0.3
+1401,ZhenShou20121105ShengDanZhenShou06,PetHeader6_17,Bách Biến Uông Tử,1,100,0.3
+1402,ZhenShou20121105ShengDanZhenShou07,PetHeader6_17,Bách Biến Uông Tử,1,100,0.3
+1403,ZhenShou20121105ShengDanZhenShou08,PetHeader6_17,Bách Biến Uông Tử,1,100,0.3
+1404,ZhenShou20121105ShengDanZhenShou09,PetHeader6_17,Bách Biến Uông Tử,1,100,0.3
+1405,ZhenShou121204vipShe1,PetHeader6_18,Huyền Hoang Đằng Xà,1,100,0.3
+1406,ZhenShou121204vipShe2,PetHeader6_18,Huyền Hoang Đằng Xà,1,100,0.3
+1407,ZhenShou121204vipShe3,PetHeader6_18,Huyền Hoang Đằng Xà,1,100,0.3
+1408,ZhenShou121204vipShe1,PetHeader6_18,Huyền Hoang Đằng Xà,1,100,0.3
+1409,ZhenShou121204vipShe4,PetHeader6_18,Huyền Hoang Đằng Xà,1,100,0.3
+1410,ZhenShou121204vipShe5,PetHeader6_18,Huyền Hoang Đằng Xà,1,100,0.3
+1411,ZhenShou121204vipShe6,PetHeader6_18,Huyền Hoang Đằng Xà,1,100,0.3
+1412,ZhenShou121204vipShe7,PetHeader6_18,Huyền Hoang Đằng Xà,1,100,0.3
+1413,ZhenShou121204vipShe8,PetHeader6_18,Huyền Hoang Đằng Xà,1,100,0.3
+1414,ZhenShou121204vipShe9,PetHeader6_18,Huyền Hoang Đằng Xà,1,100,0.3
+1415,ZhenShou121218ZuanShiVIPShe1,PetHeader6_19,Oa Hoàng Long Mãng,1,100,0.3
+1416,ZhenShou121218ZuanShiVIPShe2,PetHeader6_19,Oa Hoàng Long Mãng,1,100,0.3
+1417,ZhenShou121218ZuanShiVIPShe3,PetHeader6_19,Oa Hoàng Long Mãng,1,100,0.3
+1418,ZhenShou121218ZuanShiVIPShe1,PetHeader6_19,Oa Hoàng Long Mãng,1,100,0.3
+1419,ZhenShou121218ZuanShiVIPShe4,PetHeader6_19,Oa Hoàng Long Mãng,1,100,0.3
+1420,ZhenShou121218ZuanShiVIPShe5,PetHeader6_19,Oa Hoàng Long Mãng,1,100,0.3
+1421,ZhenShou121218ZuanShiVIPShe6,PetHeader6_19,Oa Hoàng Long Mãng,1,100,0.3
+1422,ZhenShou121218ZuanShiVIPShe7,PetHeader6_19,Oa Hoàng Long Mãng,1,100,0.3
+1423,ZhenShou121218ZuanShiVIPShe8,PetHeader6_19,Oa Hoàng Long Mãng,1,100,0.3
+1424,ZhenShou121218ZuanShiVIPShe9,PetHeader6_19,Oa Hoàng Long Mãng,1,100,0.3
+1425,ZhenShouZuanShivip20111208Long1,PetHeader6_9,Thái Cổ Long Hồn,1,100,0.3
+1426,DanHuangSeBoMa,PetHeader1_3,Tịnh Tịnh Mã,1,100,0.3
+1427,DanHuangHeiTiHeiJiaoBoMa,PetHeader1_3,Tịnh Tịnh Mã,1,100,0.3
+1428,ChunBaiBoMa,PetHeader1_3,Tịnh Tịnh Mã,1,100,0.3
+1429,DanHuangSeBoMa,PetHeader1_3,Tịnh Tịnh Mã,1,100,0.3
+1430,ZhenShou20130614MeiNuShe1,PetHeader6_20,Huyền Nữ Xà,1,100,0.3
+1431,ZhenShou20130614MeiNuShe2,PetHeader6_20,Huyền Nữ Xà,1,100,0.3
+1432,ZhenShou20130614MeiNuShe3,PetHeader6_20,Huyền Nữ Xà,1,100,0.3
+1433,ZhenShou20130614MeiNuShe1,PetHeader6_20,Huyền Nữ Xà,1,100,0.3
+1434,ZhenShou20130614MeiNuShe5,PetHeader6_20,Huyền Nữ Xà,1,100,0.3
+1435,ZhenShou20130614MeiNuShe4,PetHeader6_20,Huyền Nữ Xà,1,100,0.3
+1436,ZhenShou20130614MeiNuShe7,PetHeader6_20,Huyền Nữ Xà,1,100,0.3
+1437,ZhenShou20130614MeiNuShe8,PetHeader6_20,Huyền Nữ Xà,1,100,0.3
+1438,ZhenShou20130614MeiNuShe9,PetHeader6_20,Huyền Nữ Xà,1,100,0.3
+1439,ZhenShou20130614MeiNuShe6,PetHeader6_20,Huyền Nữ Xà,1,100,0.3
+1440,ZhenShouChuJi20130808,PetHeader6_21,Tuần Du Tiểu Tiên,1,100,0.3
+1441,ZhenShouPang20130802,PetHeader6_21,Tuần Du Tiểu Tiên,1,100,0.3
+1442,ZhenShouShou20130729,PetHeader6_21,Tuần Du Tiểu Tiên,1,100,0.3
+1443,ZhenShouChuJi20130808,PetHeader6_21,Tuần Du Tiểu Tiên,1,100,0.3
+1444,ZhenShouXiongMaoHeiHua1,PetHeader7_1,Chung Tiểu Hoa,1,100,0.3
+1445,ZhenShouXiongMaoHeiHua2,PetHeader7_1,Chung Tiểu Hoa,1,100,0.3
+1446,ZhenShouXiongMaoHeiHua3,PetHeader7_1,Chung Tiểu Hoa,1,100,0.3
+1447,ZhenShouXiongMaoHeiHua4,PetHeader7_1,Chung Tiểu Hoa,1,100,0.3
+1448,ZhenShouXiongMaoHeiHua1,PetHeader7_1,Chung Tiểu Hoa,1,100,0.3
+1449,ZhenShouXiaoLangRen130904,PetHeader6_24,Tiểu Lãng Nhân,1,100,0.3
+1450,ZhenShouXiaoLangRen130904,PetHeader6_24,Tiểu Lãng Nhân,1,100,0.3
+1451,ZhenShouXiaoLangRen130904,PetHeader6_24,Tiểu Lãng Nhân,1,100,0.3
+1452,ZhenShouXunLeiFengNiao130911,PetHeader6_25,Phong Điểu,1,100,0.3
+1453,ZhenShouXunLeiFengNiao130911,PetHeader6_25,Phong Điểu,1,100,0.3
+1454,ZhenShouXunLeiFengNiao130911,PetHeader6_25,Phong Điểu,1,100,0.3
+1455,ZhenShouAnZi130906,PetHeader6_23,An Tử,1,100,0.3
+1456,ZhenShouAnZiNanYong130906,PetHeader6_23,An Tử,1,100,0.3
+1457,ZhenShouAnZiNanYongBai130906,PetHeader6_23,An Tử,1,100,0.3
+1458,ZhenShouAnZi130906,PetHeader6_23,An Tử,1,100,0.3
+1459,ZhenShouXiongMaoHeiHua1,PetHeader7_1,Chung Tiểu Hắc,1,100,0.3
+1460,ZhenShouXiongMaoHeiHua2,PetHeader7_1,Chung Tiểu Hắc,1,100,0.3
+1461,ZhenShouXiongMaoHeiHua3,PetHeader7_1,Chung Tiểu Hắc,1,100,0.3
+1462,ZhenShouXiongMaoHeiHua1,PetHeader7_1,Chung Tiểu Hắc,1,100,0.3
+1463,ZhenShouShanDianDiao130729,PetHeader6_22,Thiểm điện điêu,1,100,0.3
+1464,ZhenShouMaoMaoNiu1,PetHeader7_2,Mao Mao Ngưu,1,100,0.3
+1465,ZhenShouMaoMaoNiu2,PetHeader7_2,Mao Mao Ngưu,1,100,0.3
+1466,ZhenShouMaoMaoNiu3,PetHeader7_2,Mao Mao Ngưu,1,100,0.3
+1467,ZhenShouMaoMaoNiu1,PetHeader7_2,Mao Mao Ngưu,1,100,0.3
+1468,ZhenShouMaoMaoNiu4,PetHeader7_2,Mao Mao Ngưu,1,100,0.3
+1469,ZhenShouMaoMaoNiu5,PetHeader7_2,Mao Mao Ngưu,1,100,0.3
+1470,ZhenShouMaoMaoNiu6,PetHeader7_2,Mao Mao Ngưu,1,100,0.3
+1471,ZhenShouMaoMaoNiu7,PetHeader7_2,Mao Mao Ngưu,1,100,0.3
+1472,ZhenShouMaoMaoNiu8,PetHeader7_2,Mao Mao Ngưu,1,100,0.3
+1473,ZhenShouMaoMaoNiu9,PetHeader7_2,Mao Mao Ngưu,1,100,0.3
+1474,ZhenShou20131015ShengDanJieXiaoLu1,PetHeader7_3,Thánh Trang Tiểu Lộc,1,100,0.3
+1475,ZhenShou20131015ShengDanJieXiaoLu2,PetHeader7_3,Thánh Trang Tiểu Lộc,1,100,0.3
+1476,ZhenShou20131015ShengDanJieXiaoLu3,PetHeader7_3,Thánh Trang Tiểu Lộc,1,100,0.3
+1477,ZhenShou20131015ShengDanJieXiaoLu1,PetHeader7_3,Thánh Trang Tiểu Lộc,1,100,0.3
+1478,ZhenShou20131015ShengDanJieXiaoLu4,PetHeader7_3,Thánh Trang Tiểu Lộc,1,100,0.3
+1479,ZhenShou20131015ShengDanJieXiaoLu5,PetHeader7_3,Thánh Trang Tiểu Lộc,1,100,0.3
+1480,ZhenShou20131015ShengDanJieXiaoLu6,PetHeader7_3,Thánh Trang Tiểu Lộc,1,100,0.3
+1481,ZhenShou20131015ShengDanJieXiaoLu7,PetHeader7_3,Thánh Trang Tiểu Lộc,1,100,0.3
+1482,ZhenShou20131015ShengDanJieXiaoLu8,PetHeader7_3,Thánh Trang Tiểu Lộc,1,100,0.3
+1483,ZhenShou20131015ShengDanJieXiaoLu9,PetHeader7_3,Thánh Trang Tiểu Lộc,1,100,0.3
+1484,ZhenShou131106vipMa1,PetHeader7_4,Côn Lôn Tiên Tuấn,1,100,0.3
+1485,ZhenShou131106vipMa2,PetHeader7_4,Côn Lôn Tiên Tuấn,1,100,0.3
+1486,ZhenShou131106vipMa6,PetHeader7_4,Côn Lôn Tiên Tuấn,1,100,0.3
+1487,ZhenShou131106vipMa1,PetHeader7_4,Côn Lôn Tiên Tuấn,1,100,0.3
+1488,ZhenShou131106vipMa3,PetHeader7_4,Côn Lôn Tiên Tuấn,1,100,0.3
+1489,ZhenShou131106vipMa7,PetHeader7_4,Côn Lôn Tiên Tuấn,1,100,0.3
+1490,ZhenShou131106vipMa8,PetHeader7_4,Côn Lôn Tiên Tuấn,1,100,0.3
+1491,ZhenShou131106vipMa9,PetHeader7_4,Côn Lôn Tiên Tuấn,1,100,0.3
+1492,ZhenShou131106vipMa4,PetHeader7_4,Côn Lôn Tiên Tuấn,1,100,0.3
+1493,ZhenShou131106vipMa5,PetHeader7_4,Côn Lôn Tiên Tuấn,1,100,0.3
+1494,ZhenShou131112ZuanShivipMa1,PetHeader7_5,Thái Thương Long Tử,1,100,0.3
+1495,ZhenShou131112ZuanShivipMa2,PetHeader7_5,Thái Thương Long Tử,1,100,0.3
+1496,ZhenShou131112ZuanShivipMa3,PetHeader7_5,Thái Thương Long Tử,1,100,0.3
+1497,ZhenShou131112ZuanShivipMa1,PetHeader7_5,Thái Thương Long Tử,1,100,0.3
+1498,ZhenShou131112ZuanShivipMa4,PetHeader7_5,Thái Thương Long Tử,1,100,0.3
+1499,ZhenShou131112ZuanShivipMa6,PetHeader7_5,Thái Thương Long Tử,1,100,0.3
+1500,ZhenShou131112ZuanShivipMa7,PetHeader7_5,Thái Thương Long Tử,1,100,0.3
+1501,ZhenShou131112ZuanShivipMa8,PetHeader7_5,Thái Thương Long Tử,1,100,0.3
+1502,ZhenShou131112ZuanShivipMa9,PetHeader7_5,Thái Thương Long Tử,1,100,0.3
+1503,ZhenShou131112ZuanShivipMa5,PetHeader7_5,Thái Thương Long Tử,1,100,0.3
+1504,ZhenShou131125XinNianHuoPaoXiongMao01,PetHeader7_6,Bạo Tẩu Hùng Miêu,1,100,0.3
+1505,ZhenShou131125XinNianHuoPaoXiongMao02,PetHeader7_6,Bạo Tẩu Hùng Miêu,1,100,0.3
+1506,ZhenShou131125XinNianHuoPaoXiongMao03,PetHeader7_6,Bạo Tẩu Hùng Miêu,1,100,0.3
+1507,ZhenShou131125XinNianHuoPaoXiongMao01,PetHeader7_6,Bạo Tẩu Hùng Miêu,1,100,0.3
+1508,ZhenShou131125XinNianHuoPaoXiongMao05,PetHeader7_6,Bạo Tẩu Hùng Miêu,1,100,0.3
+1509,ZhenShou131125XinNianHuoPaoXiongMao04,PetHeader7_6,Bạo Tẩu Hùng Miêu,1,100,0.3
+1510,ZhenShou131125XinNianHuoPaoXiongMao06,PetHeader7_6,Bạo Tẩu Hùng Miêu,1,100,0.3
+1511,ZhenShou131125XinNianHuoPaoXiongMao07,PetHeader7_6,Bạo Tẩu Hùng Miêu,1,100,0.3
+1512,ZhenShou131125XinNianHuoPaoXiongMao08,PetHeader7_6,Bạo Tẩu Hùng Miêu,1,100,0.3
+1513,ZhenShou131125XinNianHuoPaoXiongMao09,PetHeader7_6,Bạo Tẩu Hùng Miêu,1,100,0.3
+1514,ZhenShou131031YinYouJingLing01,PetHeader7_7,Minh Âm Hoa Linh,1,100,0.3
+1515,ZhenShou131031YinYouJingLing02,PetHeader7_7,Minh Âm Hoa Linh,1,100,0.3
+1516,ZhenShou131031YinYouJingLing03,PetHeader7_7,Minh Âm Hoa Linh,1,100,0.3
+1517,ZhenShou131031YinYouJingLing01,PetHeader7_7,Minh Âm Hoa Linh,1,100,0.3
+1518,ZhenShou131031YinYouJingLing07,PetHeader7_7,Minh Âm Hoa Linh,1,100,0.3
+1519,ZhenShou131031YinYouJingLing08,PetHeader7_7,Minh Âm Hoa Linh,1,100,0.3
+1520,ZhenShou131031YinYouJingLing05,PetHeader7_7,Minh Âm Hoa Linh,1,100,0.3
+1521,ZhenShou131031YinYouJingLing06,PetHeader7_7,Minh Âm Hoa Linh,1,100,0.3
+1522,ZhenShou131031YinYouJingLing04,PetHeader7_7,Minh Âm Hoa Linh,1,100,0.3
+1523,ZhenShou131031YinYouJingLing09,PetHeader7_7,Minh Âm Hoa Linh,1,100,0.3
+1524,HongDouEr140331,PetHeader7_9,Tiểu Dị,1,100,0.3
+1525,HongDouErHeiYi140331,PetHeader7_9,Tiểu Dị,1,100,0.3
+1526,HongDouErHuangYi140331,PetHeader7_9,Tiểu Dị,1,100,0.3
+1527,HongDouEr140331,PetHeader7_9,Tiểu Dị,1,100,0.3
+1528,ZhenShou140208MaShangYou01,PetHeader7_8,Tiểu Mã Ca,1,100,0.3
+1529,ZhenShou140208MaShangYou02,PetHeader7_8,Tiểu Mã Ca,1,100,0.3
+1530,ZhenShou140208MaShangYou03,PetHeader7_8,Tiểu Mã Ca,1,100,0.3
+1531,ZhenShou140208MaShangYou01,PetHeader7_8,Tiểu Mã Ca,1,100,0.3
+1532,ZhenShou140208MaShangYou04,PetHeader7_8,Tiểu Mã Ca,1,100,0.3
+1533,ZhenShou140208MaShangYou05,PetHeader7_8,Tiểu Mã Ca,1,100,0.3
+1534,ZhenShou140208MaShangYou06,PetHeader7_8,Tiểu Mã Ca,1,100,0.3
+1535,ZhenShou140208MaShangYou07,PetHeader7_8,Tiểu Mã Ca,1,100,0.3
+1536,ZhenShou140208MaShangYou08,PetHeader7_8,Tiểu Mã Ca,1,100,0.3
+1537,ZhenShou140208MaShangYou09,PetHeader7_8,Tiểu Mã Ca,1,100,0.3
+1538,ZhenShou20140326JiQiRen01,PetHeader7_13,Bách Chiến Kim Cang,1,100,0.3
+1539,ZhenShou20140326JiQiRen02,PetHeader7_13,Bách Chiến Kim Cang,1,100,0.3
+1540,ZhenShou20140326JiQiRen03,PetHeader7_13,Bách Chiến Kim Cang,1,100,0.3
+1541,ZhenShou20140326JiQiRen01,PetHeader7_13,Bách Chiến Kim Cang,1,100,0.3
+1542,ZhenShou20140326JiQiRen04,PetHeader7_13,Bách Chiến Kim Cang,1,100,0.3
+1543,ZhenShou20140326JiQiRen06,PetHeader7_13,Bách Chiến Kim Cang,1,100,0.3
+1544,ZhenShou20140326JiQiRen05,PetHeader7_13,Bách Chiến Kim Cang,1,100,0.3
+1545,ZhenShou20140326JiQiRen08,PetHeader7_13,Bách Chiến Kim Cang,1,100,0.3
+1546,ZhenShou20140326JiQiRen09,PetHeader7_13,Bách Chiến Kim Cang,1,100,0.3
+1547,ZhenShou20140326JiQiRen07,PetHeader7_13,Bách Chiến Kim Cang,1,100,0.3
+1548,ZhenShou141020vipZhanDouYangRen01,PetHeader7_17,Thanh Dương,1,100,0.3
+1549,ZhenShou141020vipZhanDouYangRen07,PetHeader7_17,Thanh Dương,1,100,0.3
+1550,ZhenShou141020vipZhanDouYangRen03,PetHeader7_17,Thanh Dương,1,100,0.3
+1551,ZhenShou141020vipZhanDouYangRen01,PetHeader7_17,Thanh Dương,1,100,0.3
+1552,ZhenShou141020vipZhanDouYangRen06,PetHeader7_17,Thanh Dương,1,100,0.3
+1553,ZhenShou141020vipZhanDouYangRen02,PetHeader7_17,Thanh Dương,1,100,0.3
+1554,ZhenShou141020vipZhanDouYangRen04,PetHeader7_17,Thanh Dương,1,100,0.3
+1555,ZhenShou141020vipZhanDouYangRen08,PetHeader7_17,Thanh Dương,1,100,0.3
+1556,ZhenShou141020vipZhanDouYangRen09,PetHeader7_17,Thanh Dương,1,100,0.3
+1557,ZhenShou141020vipZhanDouYangRen05,PetHeader7_17,Thanh Dương,1,100,0.3
+1558,ZhenShou141020ZuanShivipShenYangRen01,PetHeader7_18,Dương Thiên Đại Thánh,1,100,0.3
+1559,ZhenShou141020ZuanShivipShenYangRen02,PetHeader7_18,Dương Thiên Đại Thánh,1,100,0.3
+1560,ZhenShou141020ZuanShivipShenYangRen03,PetHeader7_18,Dương Thiên Đại Thánh,1,100,0.3
+1561,ZhenShou141020ZuanShivipShenYangRen01,PetHeader7_18,Dương Thiên Đại Thánh,1,100,0.3
+1562,ZhenShou141020ZuanShivipShenYangRen04,PetHeader7_18,Dương Thiên Đại Thánh,1,100,0.3
+1563,ZhenShou141020ZuanShivipShenYangRen05,PetHeader7_18,Dương Thiên Đại Thánh,1,100,0.3
+1564,ZhenShou141020ZuanShivipShenYangRen06,PetHeader7_18,Dương Thiên Đại Thánh,1,100,0.3
+1565,ZhenShou141020ZuanShivipShenYangRen07,PetHeader7_18,Dương Thiên Đại Thánh,1,100,0.3
+1566,ZhenShou141020ZuanShivipShenYangRen08,PetHeader7_18,Dương Thiên Đại Thánh,1,100,0.3
+1567,ZhenShou141020ZuanShivipShenYangRen09,PetHeader7_18,Dương Thiên Đại Thánh,1,100,0.3
+1568,ZhenShou20140822YuZiJinTong1,PetHeader7_16,Kim Đồng Ngọc Nữ,1,100,0.3
+1569,ZhenShou20140822YuZiJinTong2,PetHeader7_16,Kim Đồng Ngọc Nữ,1,100,0.3
+1570,ZhenShou20140822YuZiJinTong5,PetHeader7_16,Kim Đồng Ngọc Nữ,1,100,0.3
+1571,ZhenShou20140822YuZiJinTong1,PetHeader7_16,Kim Đồng Ngọc Nữ,1,100,0.3
+1572,ZhenShou20140822YuZiJinTong4,PetHeader7_16,Kim Đồng Ngọc Nữ,1,100,0.3
+1573,ZhenShou20140822YuZiJinTong3,PetHeader7_16,Kim Đồng Ngọc Nữ,1,100,0.3
+1574,ZhenShou20140822YuZiJinTong8,PetHeader7_16,Kim Đồng Ngọc Nữ,1,100,0.3
+1575,ZhenShou20140822YuZiJinTong7,PetHeader7_16,Kim Đồng Ngọc Nữ,1,100,0.3
+1576,ZhenShou20140822YuZiJinTong6,PetHeader7_16,Kim Đồng Ngọc Nữ,1,100,0.3
+1577,ZhenShou20140822YuZiJinTong9,PetHeader7_16,Kim Đồng Ngọc Nữ,1,100,0.3
+1578,ZhenShou140403ZuiJiuXiong01,PetHeader7_10,Gấu Ham Chơi,1,100,0.3
+1579,ZhenShou140403ZuiJiuXiong02,PetHeader7_10,Gấu Ham Chơi,1,100,0.3
+1580,ZhenShou140403ZuiJiuXiong03,PetHeader7_10,Gấu Ham Chơi,1,100,0.3
+1581,ZhenShou140403ZuiJiuXiong01,PetHeader7_10,Gấu Ham Chơi,1,100,0.3
+1582,ZhenShou140403ZuiJiuXiong05,PetHeader7_10,Gấu Ham Chơi,1,100,0.3
+1583,ZhenShou140403ZuiJiuXiong04,PetHeader7_10,Gấu Ham Chơi,1,100,0.3
+1584,ZhenShou140403ZuiJiuXiong06,PetHeader7_10,Gấu Ham Chơi,1,100,0.3
+1585,ZhenShou140403ZuiJiuXiong07,PetHeader7_10,Gấu Ham Chơi,1,100,0.3
+1586,ZhenShou140403ZuiJiuXiong08,PetHeader7_10,Gấu Ham Chơi,1,100,0.3
+1587,ZhenShou140403ZuiJiuXiong09,PetHeader7_10,Gấu Ham Chơi,1,100,0.3
+1588,ZhenShou140520JueXingBaoBaoYuanYuan02,PetHeader7_11,Nguyên Nguyên,1,100,0.3
+1589,ZhenShou140520JueXingBaoBaoYuanYuan01,PetHeader7_11,Nguyên Nguyên,1,100,0.3
+1590,ZhenShou140520JueXingBaoBaoYuanYuan02,PetHeader7_11,Nguyên Nguyên,1,100,0.3
+1591,ZhenShou20140520MeiRenYuZhenShou1,PetHeader7_14,Công Chúa Nhân Ngư,1,100,0.3
+1592,ZhenShou20140520MeiRenYuZhenShou2,PetHeader7_14,Công Chúa Nhân Ngư,1,100,0.3
+1593,ZhenShou20140520MeiRenYuZhenShou3,PetHeader7_14,Công Chúa Nhân Ngư,1,100,0.3
+1594,ZhenShou20140520MeiRenYuZhenShou1,PetHeader7_14,Công Chúa Nhân Ngư,1,100,0.3
+1595,ZhenShou20140520MeiRenYuZhenShou4,PetHeader7_14,Công Chúa Nhân Ngư,1,100,0.3
+1596,ZhenShou20140520MeiRenYuZhenShou5,PetHeader7_14,Công Chúa Nhân Ngư,1,100,0.3
+1597,ZhenShou20140520MeiRenYuZhenShou6,PetHeader7_14,Công Chúa Nhân Ngư,1,100,0.3
+1598,ZhenShou20140520MeiRenYuZhenShou7,PetHeader7_14,Công Chúa Nhân Ngư,1,100,0.3
+1599,ZhenShou20140520MeiRenYuZhenShou8,PetHeader7_14,Công Chúa Nhân Ngư,1,100,0.3
+1600,ZhenShou20140520MeiRenYuZhenShou9,PetHeader7_14,Công Chúa Nhân Ngư,1,100,0.3
+1601,ChongWuPangXie,PetHeader3_23,Bàng Giải,1,100,0.3
+1602,ChongWuPangXie1,PetHeader3_23,Bàng Giải,1,100,0.3
+1603,ChongWuPangXie2,PetHeader3_23,Bàng Giải,1,100,0.3
+1604,ChongWuPangXie,PetHeader3_23,Bàng Giải,1,100,0.3
+1605,ZhenShou140529ZhuRong1,PetHeader7_15,Chiến Tu La,1,100,0.3
+1606,ZhenShou140529ZhuRong2,PetHeader7_15,Chiến Tu La,1,100,0.3
+1607,ZhenShou140529ZhuRong3,PetHeader7_15,Chiến Tu La,1,100,0.3
+1608,ZhenShou140529ZhuRong1,PetHeader7_15,Chiến Tu La,1,100,0.3
+1609,ZhenShou140529ZhuRong4,PetHeader7_15,Chiến Tu La,1,100,0.3
+1610,ZhenShou140529ZhuRong5,PetHeader7_15,Chiến Tu La,1,100,0.3
+1611,ZhenShou140529ZhuRong6,PetHeader7_15,Chiến Tu La,1,100,0.3
+1612,ZhenShou140529ZhuRong7,PetHeader7_15,Chiến Tu La,1,100,0.3
+1613,ZhenShou140529ZhuRong8,PetHeader7_15,Chiến Tu La,1,100,0.3
+1614,ZhenShou140529ZhuRong9,PetHeader7_15,Chiến Tu La,1,100,0.3
+1615,ZhenShou150127LingHunShouGeZhe01,PetHeader7_19,Tà Linh,1,100,0.3
+1616,ZhenShou150127LingHunShouGeZhe02,PetHeader7_19,Tà Linh,1,100,0.3
+1617,ZhenShou150127LingHunShouGeZhe03,PetHeader7_19,Tà Linh,1,100,0.3
+1618,ZhenShou150127LingHunShouGeZhe01,PetHeader7_19,Tà Linh,1,100,0.3
+1619,ZhenShou150127LingHunShouGeZhe04,PetHeader7_19,Tà Linh,1,100,0.3
+1620,ZhenShou150127LingHunShouGeZhe05,PetHeader7_19,Tà Linh,1,100,0.3
+1621,ZhenShou150127LingHunShouGeZhe06,PetHeader7_19,Tà Linh,1,100,0.3
+1622,ZhenShou150127LingHunShouGeZhe07,PetHeader7_19,Tà Linh,1,100,0.3
+1623,ZhenShou150127LingHunShouGeZhe08,PetHeader7_19,Tà Linh,1,100,0.3
+1624,ZhenShou150127LingHunShouGeZhe09,PetHeader7_19,Tà Linh,1,100,0.3
+1625,ZhenShou150114JianXinHuLi01,PetHeader7_20,Hồ Yêu Kiếm Quân,1,100,0.3
+1626,ZhenShou150114JianXinHuLi02,PetHeader7_20,Hồ Yêu Kiếm Quân,1,100,0.3
+1627,ZhenShou150114JianXinHuLi03,PetHeader7_20,Hồ Yêu Kiếm Quân,1,100,0.3
+1628,ZhenShou150114JianXinHuLi01,PetHeader7_20,Hồ Yêu Kiếm Quân,1,100,0.3
+1629,ZhenShou150114JianXinHuLi04,PetHeader7_20,Hồ Yêu Kiếm Quân,1,100,0.3
+1630,ZhenShou150114JianXinHuLi05,PetHeader7_20,Hồ Yêu Kiếm Quân,1,100,0.3
+1631,ZhenShou150114JianXinHuLi06,PetHeader7_20,Hồ Yêu Kiếm Quân,1,100,0.3
+1632,ZhenShou150114JianXinHuLi07,PetHeader7_20,Hồ Yêu Kiếm Quân,1,100,0.3
+1633,ZhenShou150114JianXinHuLi08,PetHeader7_20,Hồ Yêu Kiếm Quân,1,100,0.3
+1634,ZhenShou150114JianXinHuLi09,PetHeader7_20,Hồ Yêu Kiếm Quân,1,100,0.3
+1635,ZhenShou150213GangQuanLongRen01,PetHeader7_21,Cửu Tiêu Chiến Long,1,100,0.3
+1636,ZhenShou150213GangQuanLongRen02,PetHeader7_21,Cửu Tiêu Chiến Long,1,100,0.3
+1637,ZhenShou150213GangQuanLongRen03,PetHeader7_21,Cửu Tiêu Chiến Long,1,100,0.3
+1638,ZhenShou150213GangQuanLongRen01,PetHeader7_21,Cửu Tiêu Chiến Long,1,100,0.3
+1639,ZhenShou150213GangQuanLongRen04,PetHeader7_21,Cửu Tiêu Chiến Long,1,100,0.3
+1640,ZhenShou150213GangQuanLongRen05,PetHeader7_21,Cửu Tiêu Chiến Long,1,100,0.3
+1641,ZhenShou150213GangQuanLongRen06,PetHeader7_21,Cửu Tiêu Chiến Long,1,100,0.3
+1642,ZhenShou150213GangQuanLongRen07,PetHeader7_21,Cửu Tiêu Chiến Long,1,100,0.3
+1643,ZhenShou150213GangQuanLongRen08,PetHeader7_21,Cửu Tiêu Chiến Long,1,100,0.3
+1644,ZhenShou150213GangQuanLongRen09,PetHeader7_21,Cửu Tiêu Chiến Long,1,100,0.3
+1645,YuanYangFangDaBan,PetHeader4_11,Đồng Tâm Uyên Ương,1,100,0.3
+1646,YuanYangFangDaBan1,PetHeader4_11,Đồng Tâm Uyên Ương,1,100,0.3
+1647,YuanYangFangDaBan2,PetHeader4_11,Đồng Tâm Uyên Ương,1,100,0.3
+1648,YuanYangFangDaBan,PetHeader4_11,Đồng Tâm Uyên Ương,1,100,0.3
+1649,YuanYangFangDaBan3,PetHeader4_11,Đồng Tâm Uyên Ương,1,100,0.3
+1650,YuanYangFangDaBan4,PetHeader4_11,Đồng Tâm Uyên Ương,1,100,0.3
+1651,YuanYangFangDaBan5,PetHeader4_11,Đồng Tâm Uyên Ương,1,100,0.3
+1652,YuanYangFangDaBan6,PetHeader4_11,Đồng Tâm Uyên Ương,1,100,0.3
+1653,YuanYangFangDaBan7,PetHeader4_11,Đồng Tâm Uyên Ương,1,100,0.3
+1654,YuanYangFangDaBan8,PetHeader4_11,Đồng Tâm Uyên Ương,1,100,0.3
+1655,ZhenShou150525NiuLangZhiNu01,PetHeader7_22,Thiết Phiến Công Chúa,1,100,0.3
+1656,ZhenShou150525NiuLangZhiNu02,PetHeader7_22,Thiết Phiến Công Chúa,1,100,0.3
+1657,ZhenShou150525NiuLangZhiNu03,PetHeader7_22,Thiết Phiến Công Chúa,1,100,0.3
+1658,ZhenShou150525NiuLangZhiNu01,PetHeader7_22,Thiết Phiến Công Chúa,1,100,0.3
+1659,ZhenShou150525NiuLangZhiNu04,PetHeader7_22,Thiết Phiến Công Chúa,1,100,0.3
+1660,ZhenShou150525NiuLangZhiNu05,PetHeader7_22,Thiết Phiến Công Chúa,1,100,0.3
+1661,ZhenShou150525NiuLangZhiNu06,PetHeader7_22,Thiết Phiến Công Chúa,1,100,0.3
+1662,ZhenShou150525NiuLangZhiNu07,PetHeader7_22,Thiết Phiến Công Chúa,1,100,0.3
+1663,ZhenShou150525NiuLangZhiNu08,PetHeader7_22,Thiết Phiến Công Chúa,1,100,0.3
+1664,ZhenShou150525NiuLangZhiNu09,PetHeader7_22,Thiết Phiến Công Chúa,1,100,0.3
+1665,ZhenShou150811HouZi01,PetHeader7_23,Thông Tí Viên Hầu,1,100,0.3
+1666,ZhenShou150811HouZi02,PetHeader7_23,Thông Tí Viên Hầu,1,100,0.3
+1667,ZhenShou150811HouZi03,PetHeader7_23,Thông Tí Viên Hầu,1,100,0.3
+1668,ZhenShou150811HouZi01,PetHeader7_23,Thông Tí Viên Hầu,1,100,0.3
+1669,ZhenShou150811HouZi04,PetHeader7_23,Thông Tí Viên Hầu,1,100,0.3
+1670,ZhenShou150811HouZi05,PetHeader7_23,Thông Tí Viên Hầu,1,100,0.3
+1671,ZhenShou150811HouZi06,PetHeader7_23,Thông Tí Viên Hầu,1,100,0.3
+1672,ZhenShou150811HouZi07,PetHeader7_23,Thông Tí Viên Hầu,1,100,0.3
+1673,ZhenShou150811HouZi08,PetHeader7_23,Thông Tí Viên Hầu,1,100,0.3
+1674,ZhenShou150811HouZi09,PetHeader7_23,Thông Tí Viên Hầu,1,100,0.3
+1675,ZhenShou140416DaShaYu01,PetHeader7_12,Đại Sa Ngư,1,100,0.3
+1676,ZhenShou140416DaShaYu02,PetHeader7_12,Đại Sa Ngư,1,100,0.3
+1677,ZhenShou140416DaShaYu03,PetHeader7_12,Đại Sa Ngư,1,100,0.3
+1678,ZhenShou140416DaShaYu01,PetHeader7_12,Đại Sa Ngư,1,100,0.3
+1679,ZhenShou140416DaShaYu04,PetHeader7_12,Đại Sa Ngư,1,100,0.3
+1680,ZhenShou140416DaShaYu05,PetHeader7_12,Đại Sa Ngư,1,100,0.3
+1681,ZhenShou140416DaShaYu06,PetHeader7_12,Đại Sa Ngư,1,100,0.3
+1682,ZhenShou140416DaShaYu07,PetHeader7_12,Đại Sa Ngư,1,100,0.3
+1683,ZhenShou140416DaShaYu08,PetHeader7_12,Đại Sa Ngư,1,100,0.3
+1684,ZhenShou140416DaShaYu09,PetHeader7_12,Đại Sa Ngư,1,100,0.3
+1685,ZhenShou150910DaSheng01,PetHeader7_24,Mỹ Hầu Vương,1,100,0.3
+1686,ZhenShou150910DaSheng02,PetHeader7_24,Mỹ Hầu Vương,1,100,0.3
+1687,ZhenShou150910DaSheng03,PetHeader7_24,Mỹ Hầu Vương,1,100,0.3
+1688,ZhenShou150910DaSheng01,PetHeader7_24,Mỹ Hầu Vương,1,100,0.3
+1689,ZhenShou150910DaSheng04,PetHeader7_24,Mỹ Hầu Vương,1,100,0.3
+1690,ZhenShou150910DaSheng05,PetHeader7_24,Mỹ Hầu Vương,1,100,0.3
+1691,ZhenShou150910DaSheng06,PetHeader7_24,Mỹ Hầu Vương,1,100,0.3
+1692,ZhenShou150910DaSheng07,PetHeader7_24,Mỹ Hầu Vương,1,100,0.3
+1693,ZhenShou150910DaSheng08,PetHeader7_24,Mỹ Hầu Vương,1,100,0.3
+1694,ZhenShou150910DaSheng09,PetHeader7_24,Mỹ Hầu Vương,1,100,0.3
+1695,ZhenShou151027ZuanShiVIPDaSheng01,PetHeader7_25,Tề Thiên Đại Thánh,1,100,0.3
+1696,ZhenShou151027ZuanShiVIPDaSheng01,PetHeader7_25,BobCon,1,100,0.3
+1697,ZhenShou151027ZuanShiVIPDaSheng02,PetHeader7_25,Tề Thiên Đại Thánh,1,100,0.3
+1698,ZhenShou151027ZuanShiVIPDaSheng03,PetHeader7_25,Tề Thiên Đại Thánh,1,100,0.3
+1699,ZhenShou151027ZuanShiVIPDaSheng01,PetHeader7_25,Tề Thiên Đại Thánh,1,100,0.3
+1700,ZhenShou151027ZuanShiVIPDaSheng04,PetHeader7_25,Tề Thiên Đại Thánh,1,100,0.3
+1701,ZhenShou151027ZuanShiVIPDaSheng05,PetHeader7_25,Tề Thiên Đại Thánh,1,100,0.3
+1702,ZhenShou151027ZuanShiVIPDaSheng06,PetHeader7_25,Tề Thiên Đại Thánh,1,100,0.3
+1703,ZhenShou151027ZuanShiVIPDaSheng07,PetHeader7_25,Tề Thiên Đại Thánh,1,100,0.3
+1704,ZhenShou151027ZuanShiVIPDaSheng08,PetHeader7_25,Tề Thiên Đại Thánh,1,100,0.3
+1705,ZhenShou151027ZuanShiVIPDaSheng09,PetHeader7_25,Tề Thiên Đại Thánh,1,100,0.3
+1706,ZhenShou150810YueLiangShaoNu01,PetHeader8_1,Trĩ Nguyệt Linh,1,100,0.3
+1707,ZhenShou150810YueLiangShaoNu02,PetHeader8_1,Trĩ Nguyệt Linh,1,100,0.3
+1708,ZhenShou150810YueLiangShaoNu03,PetHeader8_1,Trĩ Nguyệt Linh,1,100,0.3
+1709,ZhenShou150810YueLiangShaoNu01,PetHeader8_1,Trĩ Nguyệt Linh,1,100,0.3
+1710,ZhenShou150810YueLiangShaoNu04,PetHeader8_1,Trĩ Nguyệt Linh,1,100,0.3
+1711,ZhenShou150810YueLiangShaoNu05,PetHeader8_1,Trĩ Nguyệt Linh,1,100,0.3
+1712,ZhenShou150810YueLiangShaoNu06,PetHeader8_1,Trĩ Nguyệt Linh,1,100,0.3
+1713,ZhenShou150810YueLiangShaoNu07,PetHeader8_1,Trĩ Nguyệt Linh,1,100,0.3
+1714,ZhenShou150810YueLiangShaoNu08,PetHeader8_1,Trĩ Nguyệt Linh,1,100,0.3
+1715,ZhenShou150810YueLiangShaoNu09,PetHeader8_1,Trĩ Nguyệt Linh,1,100,0.3
+1716,ZhenShou151012ErLangShen01,PetHeader8_2,Nhị Lang Chân Quân,1,100,0.3
+1717,ZhenShou151012ErLangShen02,PetHeader8_2,Nhị Lang Chân Quân,1,100,0.3
+1718,ZhenShou151012ErLangShen03,PetHeader8_2,Nhị Lang Chân Quân,1,100,0.3
+1719,ZhenShou151012ErLangShen01,PetHeader8_2,Nhị Lang Chân Quân,1,100,0.3
+1720,ZhenShou151012ErLangShen04,PetHeader8_2,Nhị Lang Chân Quân,1,100,0.3
+1721,ZhenShou151012ErLangShen05,PetHeader8_2,Nhị Lang Chân Quân,1,100,0.3
+1722,ZhenShou151012ErLangShen07,PetHeader8_2,Nhị Lang Chân Quân,1,100,0.3
+1723,ZhenShou151012ErLangShen06,PetHeader8_2,Nhị Lang Chân Quân,1,100,0.3
+1724,ZhenShou151012ErLangShen08,PetHeader8_2,Nhị Lang Chân Quân,1,100,0.3
+1725,ZhenShou151012ErLangShen09,PetHeader8_2,Nhị Lang Chân Quân,1,100,0.3
+1726,ZhenShou160411JingDongGou01,PetHeader8_3,Đông Tử,1,100,0.3
+1727,ZhenShou160411JingDongGou02,PetHeader8_3,Đông Tử,1,100,0.3
+1728,ZhenShou160411JingDongGou03,PetHeader8_3,Đông Tử,1,100,0.3
+1729,ZhenShou160411JingDongGou01,PetHeader8_3,Đông Tử,1,100,0.3
+1730,ZhenShou160309TaiZiLong01,PetHeader8_4,Long Tam Thái Tử,1,150,0.7
+1731,ZhenShou160309TaiZiLong02,PetHeader8_4,Long Tam Thái Tử,1,150,0.7
+1732,ZhenShou160309TaiZiLong03,PetHeader8_4,Long Tam Thái Tử,1,150,0.7
+1733,ZhenShou160309TaiZiLong01,PetHeader8_4,Long Tam Thái Tử,1,150,0.7
+1734,ZhenShou160309TaiZiLong04,PetHeader8_4,Long Tam Thái Tử,1,150,0.7
+1735,ZhenShou160309TaiZiLong05,PetHeader8_4,Long Tam Thái Tử,1,150,0.7
+1736,ZhenShou160309TaiZiLong06,PetHeader8_4,Long Tam Thái Tử,1,150,0.7
+1737,ZhenShou160309TaiZiLong07,PetHeader8_4,Long Tam Thái Tử,1,150,0.7
+1738,ZhenShou160309TaiZiLong08,PetHeader8_4,Long Tam Thái Tử,1,150,0.7
+1739,ZhenShou160309TaiZiLong09,PetHeader8_4,Long Tam Thái Tử,1,150,0.7
+1740,ZhenShou160325ZhenShouMiao01,PetHeader8_5,Hồ Tiểu Tiên,1,100,0.3
+1741,ZhenShou160325ZhenShouMiao02,PetHeader8_5,Hồ Tiểu Tiên,1,100,0.3
+1742,ZhenShou160325ZhenShouMiao03,PetHeader8_5,Hồ Tiểu Tiên,1,100,0.3
+1743,ZhenShou160325ZhenShouMiao01,PetHeader8_5,Hồ Tiểu Tiên,1,100,0.3
+1744,ZhenShou160325ZhenShouMiao04,PetHeader8_5,Hồ Tiểu Tiên,1,100,0.3
+1745,ZhenShou160325ZhenShouMiao05,PetHeader8_5,Hồ Tiểu Tiên,1,100,0.3
+1746,ZhenShou160325ZhenShouMiao06,PetHeader8_5,Hồ Tiểu Tiên,1,100,0.3
+1747,ZhenShou160325ZhenShouMiao07,PetHeader8_5,Hồ Tiểu Tiên,1,100,0.3
+1748,ZhenShou160325ZhenShouMiao08,PetHeader8_5,Hồ Tiểu Tiên,1,100,0.3
+1749,ZhenShou160325ZhenShouMiao09,PetHeader8_5,Hồ Tiểu Tiên,1,100,0.3
+1750,ZhenShou140416ChongWuZhu01,PetHeader8_6,Manh Bảo Trư,1,100,0.3
+1751,ZhenShou140416ChongWuZhu02,PetHeader8_6,Manh Bảo Trư,1,100,0.3
+1752,ZhenShou140416ChongWuZhu03,PetHeader8_6,Manh Bảo Trư,1,100,0.3
+1753,ZhenShou140416ChongWuZhu01,PetHeader8_6,Manh Bảo Trư,1,100,0.3
+1754,ZhenShou140416ChongWuZhu04,PetHeader8_6,Manh Bảo Trư,1,100,0.3
+1755,ZhenShou140416ChongWuZhu05,PetHeader8_6,Manh Bảo Trư,1,100,0.3
+1756,ZhenShou140416ChongWuZhu06,PetHeader8_6,Manh Bảo Trư,1,100,0.3
+1757,ZhenShou140416ChongWuZhu07,PetHeader8_6,Manh Bảo Trư,1,100,0.3
+1758,ZhenShou140416ChongWuZhu08,PetHeader8_6,Manh Bảo Trư,1,100,0.3
+1759,ZhenShou140416ChongWuZhu09,PetHeader8_6,Manh Bảo Trư,1,100,0.3
+1760,ZhenShou121218ZuanShiVIPShe1,PetHeader8_8,Oa Hoàng Long Quân,1,100,0.3
+1761,ZhenShou160927JueXingLongMang,PetHeader8_8,Oa Hoàng Long Quân,1,100,0.3
+1762,ZhenShou121218ZuanShiVIPShe1,PetHeader8_8,Oa Hoàng Long Quân,1,100,0.3
+1763,ZhenShou160725YouYouQiu01,PetHeader8_7,Linh Mị Nhi,1,150,0.3
+1764,ZhenShou160725YouYouQiu07,PetHeader8_7,Linh Mị Nhi,1,150,0.3
+1765,ZhenShou160725YouYouQiu06,PetHeader8_7,Linh Mị Nhi,1,150,0.3
+1766,ZhenShou160725YouYouQiu01,PetHeader8_7,Linh Mị Nhi,1,150,0.3
+1767,ZhenShou160725YouYouQiu04,PetHeader8_7,Linh Mị Nhi,1,150,0.3
+1768,ZhenShou160725YouYouQiu05,PetHeader8_7,Linh Mị Nhi,1,150,0.3
+1769,ZhenShou160725YouYouQiu03,PetHeader8_7,Linh Mị Nhi,1,150,0.3
+1770,ZhenShou160725YouYouQiu02,PetHeader8_7,Linh Mị Nhi,1,150,0.3
+1771,ZhenShou160725YouYouQiu09,PetHeader8_7,Linh Mị Nhi,1,150,0.3
+1772,ZhenShou160725YouYouQiu08,PetHeader8_7,Linh Mị Nhi,1,150,0.3
+1773,ZhenShou121218ZuanShiVIPShe1,PetHeader8_9,Oa Hoàng Long Đế,1,100,0.3
+1774,ZhenShou160927JueXingLongMang2,PetHeader8_9,Oa Hoàng Long Đế,1,100,0.3
+1775,ZhenShou121218ZuanShiVIPShe1,PetHeader8_9,Oa Hoàng Long Đế,1,100,0.3
+1776,ZhenShou161112VIPFengHuang01,PetHeader8_10,Bích Lạc Thanh Loan,1,100,0.3
+1777,ZhenShou161112VIPFengHuang02,PetHeader8_10,Bích Lạc Thanh Loan,1,100,0.3
+1778,ZhenShou161112VIPFengHuang03,PetHeader8_10,Bích Lạc Thanh Loan,1,100,0.3
+1779,ZhenShou161112VIPFengHuang01,PetHeader8_10,Bích Lạc Thanh Loan,1,100,0.3
+1780,ZhenShou161112VIPFengHuang04,PetHeader8_10,Bích Lạc Thanh Loan,1,100,0.3
+1781,ZhenShou161112VIPFengHuang05,PetHeader8_10,Bích Lạc Thanh Loan,1,100,0.3
+1782,ZhenShou161112VIPFengHuang07,PetHeader8_10,Bích Lạc Thanh Loan,1,100,0.3
+1783,ZhenShou161112VIPFengHuang06,PetHeader8_10,Bích Lạc Thanh Loan,1,100,0.3
+1784,ZhenShou161112VIPFengHuang09,PetHeader8_10,Bích Lạc Thanh Loan,1,100,0.3
+1785,ZhenShou161112VIPFengHuang08,PetHeader8_10,Bích Lạc Thanh Loan,1,100,0.3
+1786,ZhenShou161112ZuanShiVIPFengHuang01,PetHeader8_11,Thiên Mệnh Huyền Phượng,1,100,0.3
+1787,ZhenShou161112ZuanShiVIPFengHuang02,PetHeader8_11,Thiên Mệnh Huyền Phượng,1,100,0.3
+1788,ZhenShou161112ZuanShiVIPFengHuang03,PetHeader8_11,Thiên Mệnh Huyền Phượng,1,100,0.3
+1789,ZhenShou161112ZuanShiVIPFengHuang01,PetHeader8_11,Thiên Mệnh Huyền Phượng,1,100,0.3
+1790,ZhenShou161112ZuanShiVIPFengHuang04,PetHeader8_11,Thiên Mệnh Huyền Phượng,1,100,0.3
+1791,ZhenShou161112ZuanShiVIPFengHuang05,PetHeader8_11,Thiên Mệnh Huyền Phượng,1,100,0.3
+1792,ZhenShou161112ZuanShiVIPFengHuang07,PetHeader8_11,Thiên Mệnh Huyền Phượng,1,100,0.3
+1793,ZhenShou161112ZuanShiVIPFengHuang06,PetHeader8_11,Thiên Mệnh Huyền Phượng,1,100,0.3
+1794,ZhenShou161112ZuanShiVIPFengHuang09,PetHeader8_11,Thiên Mệnh Huyền Phượng,1,100,0.3
+1795,ZhenShou161112ZuanShiVIPFengHuang08,PetHeader8_11,Thiên Mệnh Huyền Phượng,1,100,0.3
+1796,ZhenShou161120TaiJiShu01,PetHeader8_12,Diệu Thử Tiểu,1,100,0.3
+1797,ZhenShou161120TaiJiShu02,PetHeader8_12,Diệu Thử Tiểu Tiên,1,100,0.3
+1798,ZhenShou161120TaiJiShu04,PetHeader8_12,Diệu Thử Tiểu Tiên,1,100,0.3
+1799,ZhenShou161120TaiJiShu01,PetHeader8_12,Diệu Thử Tiểu Tiên,1,100,0.3
+1800,ZhenShou161120TaiJiShu03,PetHeader8_12,Diệu Thử Tiểu Tiên,1,100,0.3
+1801,ZhenShou161120TaiJiShu05,PetHeader8_12,Diệu Thử Tiểu Tiên,1,100,0.3
+1802,ZhenShou161120TaiJiShu06,PetHeader8_12,Diệu Thử Tiểu Tiên,1,100,0.3
+1803,ZhenShou161120TaiJiShu07,PetHeader8_12,Diệu Thử Tiểu Tiên,1,100,0.3
+1804,ZhenShou161120TaiJiShu08,PetHeader8_12,Diệu Thử Tiểu Tiên,1,100,0.3
+1805,ZhenShou161120TaiJiShu09,PetHeader8_12,Diệu Thử Tiểu Tiên,1,100,0.3
+1806,ZhenShou20161025XiaoPaoShou1,PetHeader8_13,Thần Kỳ Tiểu Tử,1,100,0.3
+1807,ZhenShou20161025XiaoPaoShou2,PetHeader8_13,Thần Kỳ Tiểu Tử,1,100,0.3
+1808,ZhenShou20161025XiaoPaoShou3,PetHeader8_13,Thần Kỳ Tiểu Tử,1,100,0.3
+1809,ZhenShou20161025XiaoPaoShou1,PetHeader8_13,Thần Kỳ Tiểu Tử,1,100,0.3
+1810,ZhenShou20161025XiaoPaoShou4,PetHeader8_13,Thần Kỳ Tiểu Tử,1,100,0.3
+1811,ZhenShou20161025XiaoPaoShou5,PetHeader8_13,Thần Kỳ Tiểu Tử,1,100,0.3
+1812,ZhenShou20161025XiaoPaoShou6,PetHeader8_13,Thần Kỳ Tiểu Tử,1,100,0.3
+1813,ZhenShou20161025XiaoPaoShou7,PetHeader8_13,Thần Kỳ Tiểu Tử,1,100,0.3
+1814,ZhenShou20161025XiaoPaoShou8,PetHeader8_13,Thần Kỳ Tiểu Tử,1,100,0.3
+1815,ZhenShou20161025XiaoPaoShou9,PetHeader8_13,Thần Kỳ Tiểu Tử,1,100,0.3
+1816,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Vân Tiêu Ngọc Thố,1,100,0.3
+1817,ZhenShou20110803QiXiJieTuZi2,PetHeader6_4,Vân Tiêu Ngọc Thố,1,100,0.3
+1818,ZhenShou20110803QiXiJieTuZi3,PetHeader6_4,Vân Tiêu Ngọc Thố,1,100,0.3
+1819,ZhenShou20110803QiXiJieTuZi1,PetHeader6_4,Vân Tiêu Ngọc Thố,1,100,0.3
+1820,ZhenShou20110803QiXiJieTuZi4,PetHeader6_4,Vân Tiêu Ngọc Thố,1,100,0.3
+1821,ZhenShou20110803QiXiJieTuZi5,PetHeader6_4,Vân Tiêu Ngọc Thố,1,100,0.3
+1822,ZhenShou20110803QiXiJieTuZi6,PetHeader6_4,Vân Tiêu Ngọc Thố,1,100,0.3
+1823,ZhenShou20110803QiXiJieTuZi7,PetHeader6_4,Vân Tiêu Ngọc Thố,1,100,0.3
+1824,ZhenShou20110803QiXiJieTuZi8,PetHeader6_4,Vân Tiêu Ngọc Thố,1,100,0.3
+1825,ZhenShou20110803QiXiJieTuZi9,PetHeader6_4,Vân Tiêu Ngọc Thố,1,100,0.3
+1826,ZhenShou170909NaZha01,PetHeader8_14,Linh Châu Tử,1,100,0.3
+1827,ZhenShou170909NaZha03,PetHeader8_14,Linh Châu Tử,1,100,0.3
+1828,ZhenShou170909NaZha02,PetHeader8_14,Linh Châu Tử,1,100,0.3
+1829,ZhenShou170909NaZha01,PetHeader8_14,Linh Châu Tử,1,100,0.3
+1830,ZhenShou170909NaZha04,PetHeader8_14,Linh Châu Tử,1,100,0.3
+1831,ZhenShou170909NaZha05,PetHeader8_14,Linh Châu Tử,1,100,0.3
+1832,ZhenShou170909NaZha06,PetHeader8_14,Linh Châu Tử,1,100,0.3
+1833,ZhenShou170909NaZha07,PetHeader8_14,Linh Châu Tử,1,100,0.3
+1834,ZhenShou170909NaZha08,PetHeader8_14,Linh Châu Tử,1,100,0.3
+1835,ZhenShou170909NaZha09,PetHeader8_14,Linh Châu Tử,1,100,0.3
+1836,ZhenShou171027ZuanShiVIPGou01,PetHeader8_16,Phệ Nguyệt Thương cẩu,1,100,0.3
+1837,ZhenShou171027ZuanShiVIPGou02,PetHeader8_16,Phệ Nguyệt Thương cẩu,1,100,0.3
+1838,ZhenShou171027ZuanShiVIPGou03,PetHeader8_16,Phệ Nguyệt Thương cẩu,1,100,0.3
+1839,ZhenShou171027ZuanShiVIPGou01,PetHeader8_16,Phệ Nguyệt Thương cẩu,1,100,0.3
+1840,ZhenShou171027ZuanShiVIPGou04,PetHeader8_16,Phệ Nguyệt Thương cẩu,1,100,0.3
+1841,ZhenShou171027ZuanShiVIPGou05,PetHeader8_16,Phệ Nguyệt Thương cẩu,1,100,0.3
+1842,ZhenShou171027ZuanShiVIPGou06,PetHeader8_16,Phệ Nguyệt Thương cẩu,1,100,0.3
+1843,ZhenShou171027ZuanShiVIPGou07,PetHeader8_16,Phệ Nguyệt Thương cẩu,1,100,0.3
+1844,ZhenShou171027ZuanShiVIPGou08,PetHeader8_16,Phệ Nguyệt Thương cẩu,1,100,0.3
+1845,ZhenShou171027ZuanShiVIPGou09,PetHeader8_16,Phệ Nguyệt Thương cẩu,1,100,0.3
+1846,ZhenShou171008vipGou01,PetHeader8_15,Tử Tiêu Huyền Lang,1,100,0.3
+1847,ZhenShou171008vipGou02,PetHeader8_15,Dị Biến Tử Tiêu Huyền Lang,1,100,0.3
+1848,ZhenShou171008vipGou03,PetHeader8_15,Dị Biến Tử Tiêu Huyền Lang,1,100,0.3
+1849,ZhenShou171008vipGou01,PetHeader8_15,Tử Tiêu Huyền Lang,1,100,0.3
+1850,ZhenShou171008vipGou04,PetHeader8_15,Dị Biến Tử Tiêu Huyền Lang,1,100,0.3
+1851,ZhenShou171008vipGou05,PetHeader8_15,Dị Biến Tử Tiêu Huyền Lang,1,100,0.3
+1852,ZhenShou171008vipGou06,PetHeader8_15,Dị Biến Tử Tiêu Huyền Lang,1,100,0.3
+1853,ZhenShou171008vipGou07,PetHeader8_15,Dị Biến Tử Tiêu Huyền Lang,1,100,0.3
+1854,ZhenShou171008vipGou08,PetHeader8_15,Dị Biến Tử Tiêu Huyền Lang,1,100,0.3
+1855,ZhenShou171008vipGou09,PetHeader8_15,Dị Biến Tử Tiêu Huyền Lang,1,100,0.3
+1856,ZhenShou170321XinHuXianWuQi01,PetHeader8_17,Chiêu Tài Cẩm Hồ,1,100,0.3
+1857,ZhenShou170321XinHuXianWuQi06,PetHeader8_17,Chiêu Tài Cẩm Hồ,1,100,0.3
+1858,ZhenShou170321XinHuXianWuQi04,PetHeader8_17,Chiêu Tài Cẩm Hồ,1,100,0.3
+1859,ZhenShou170321XinHuXianWuQi03,PetHeader8_17,Chiêu Tài Cẩm Hồ,1,100,0.3
+1860,ZhenShou170321XinHuXianWuQi05,PetHeader8_17,Chiêu Tài Cẩm Hồ,1,100,0.3
+1861,ZhenShou170321XinHuXianWuQi02,PetHeader8_17,Chiêu Tài Cẩm Hồ,1,100,0.3
+1862,ZhenShou170321XinHuXianWuQi08,PetHeader8_17,Chiêu Tài Cẩm Hồ,1,100,0.3
+1863,ZhenShou170321XinHuXianWuQi07,PetHeader8_17,Chiêu Tài Cẩm Hồ,1,100,0.3
+1864,ZhenShou170321XinHuXianWuQi09,PetHeader8_17,Chiêu Tài Cẩm Hồ,1,100,0.3
+1865,ZhenShou170321XinHuXianWuQi01,PetHeader8_17,Chiêu Tài Cẩm Hồ,1,100,0.3
+1866,ZhenShou180324DanDanJi01,PetHeader8_18,Đản Đản Kê,1,100,0.3
+1867,ZhenShou180324DanDanJi05,PetHeader8_18,Đản Đản Kê,1,100,0.3
+1868,ZhenShou180324DanDanJi03,PetHeader8_18,Đản Đản Kê,1,100,0.3
+1869,ZhenShou180324DanDanJi01,PetHeader8_18,Đản Đản Kê,1,100,0.3
+1870,ZhenShou180324DanDanJi06,PetHeader8_18,Đản Đản Kê,1,100,0.3
+1871,ZhenShou180324DanDanJi02,PetHeader8_18,Đản Đản Kê,1,100,0.3
+1872,ZhenShou180324DanDanJi07,PetHeader8_18,Đản Đản Kê,1,100,0.3
+1873,ZhenShou180324DanDanJi04,PetHeader8_18,Đản Đản Kê,1,100,0.3
+1874,ZhenShou180324DanDanJi08,PetHeader8_18,Đản Đản Kê,1,100,0.3
+1875,ZhenShou180324DanDanJi09,PetHeader8_18,Tiêu Tiêu,1,100,0.3
+1876,ZhenShou180621MeiMao03,PetHeader8_19,Ly Mỹ Nhân,1,100,0.3
+1877,ZhenShou180621MeiMao04,PetHeader8_19,Ly Mỹ Nhân,1,100,0.3
+1878,ZhenShou180621MeiMao06,PetHeader8_19,Ly Mỹ Nhân,1,100,0.3
+1879,ZhenShou180621MeiMao03,PetHeader8_19,Ly Mỹ Nhân,1,100,0.3
+1880,ZhenShou180621MeiMao05,PetHeader8_19,Ly Mỹ Nhân,1,100,0.3
+1881,ZhenShou180621MeiMao02,PetHeader8_19,Ly Mỹ Nhân,1,100,0.3
+1882,ZhenShou180621MeiMao01,PetHeader8_19,Ly Mỹ Nhân,1,100,0.3
+1883,ZhenShou180621MeiMao08,PetHeader8_19,Ly Mỹ Nhân,1,100,0.3
+1884,ZhenShou180621MeiMao07,PetHeader8_19,Ly Mỹ Nhân,1,100,0.3
+1885,ZhenShou180621MeiMao09,PetHeader8_19,Ly Mỹ Nhân,1,100,0.3
+1886,ZhenShou121218ZuanShiVIPShe8,PetHeader6_19,Thần Long Mãng,1,100,0.3
+1887,MoJingMao8a,PetHeader2_21,Thần Long Cát Tường Miêu,1,100,0.3
+1888,ZhenShou20110803QiXiJieTuZi9a,PetHeader6_4,Thần Long Ngọc Thố,1,100,0.3
+1889,ZhenShou20111125ShengDanJieLongBaoBao9,PetHeader6_6,Tiểu Long Thần,1,100,0.3

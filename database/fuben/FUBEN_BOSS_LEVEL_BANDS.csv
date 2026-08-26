@@ -1,0 +1,1382 @@
+﻿ScenarioID,ScenarioName,StepIndex,StepID,StepDesc,MonsterID,LevelRange,MonsterName,MonsterResName,MonsterType
+ThuyLao,Thủy Lao,2,quai1,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,2,quai1,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,2,quai1,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,2,quai1,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,2,quai1,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,2,quai1,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,2,quai1,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,2,quai1,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,2,quai1,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,2,quai1,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,3,boss1,Tiêu Vô Thường,1650,10-19,Tiêu Vô Thường,ZhanDouLiaoBing,Boss
+ThuyLao,Thủy Lao,3,boss1,Tiêu Vô Thường,1651,20-29,Tiêu Vô Thường,ZhanDouLiaoBing,Boss
+ThuyLao,Thủy Lao,3,boss1,Tiêu Vô Thường,1652,30-39,Tiêu Vô Thường,ZhanDouLiaoBing,Boss
+ThuyLao,Thủy Lao,3,boss1,Tiêu Vô Thường,1653,40-49,Tiêu Vô Thường,ZhanDouLiaoBing,Boss
+ThuyLao,Thủy Lao,3,boss1,Tiêu Vô Thường,1654,50-59,Tiêu Vô Thường,ZhanDouLiaoBing,Boss
+ThuyLao,Thủy Lao,3,boss1,Tiêu Vô Thường,1655,60-69,Tiêu Vô Thường,ZhanDouLiaoBing,Boss
+ThuyLao,Thủy Lao,3,boss1,Tiêu Vô Thường,1656,70-79,Tiêu Vô Thường,ZhanDouLiaoBing,Boss
+ThuyLao,Thủy Lao,3,boss1,Tiêu Vô Thường,1657,80-89,Tiêu Vô Thường,ZhanDouLiaoBing,Boss
+ThuyLao,Thủy Lao,3,boss1,Tiêu Vô Thường,1658,90-99,Tiêu Vô Thường,ZhanDouLiaoBing,Boss
+ThuyLao,Thủy Lao,3,boss1,Tiêu Vô Thường,1659,100-999,Tiêu Vô Thường,ZhanDouLiaoBing,Boss
+ThuyLao,Thủy Lao,4,quai2,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,4,quai2,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,4,quai2,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,4,quai2,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,4,quai2,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,4,quai2,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,4,quai2,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,4,quai2,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,4,quai2,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,4,quai2,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,5,boss2,Vân Trung Nhạn,1660,10-19,Vân Trung Nhạn,QinJiaZhaiJiaoTou,Boss
+ThuyLao,Thủy Lao,5,boss2,Vân Trung Nhạn,1661,20-29,Vân Trung Nhạn,QinJiaZhaiJiaoTou,Boss
+ThuyLao,Thủy Lao,5,boss2,Vân Trung Nhạn,1662,30-39,Vân Trung Nhạn,QinJiaZhaiJiaoTou,Boss
+ThuyLao,Thủy Lao,5,boss2,Vân Trung Nhạn,1663,40-49,Vân Trung Nhạn,QinJiaZhaiJiaoTou,Boss
+ThuyLao,Thủy Lao,5,boss2,Vân Trung Nhạn,1664,50-59,Vân Trung Nhạn,QinJiaZhaiJiaoTou,Boss
+ThuyLao,Thủy Lao,5,boss2,Vân Trung Nhạn,1665,60-69,Vân Trung Nhạn,QinJiaZhaiJiaoTou,Boss
+ThuyLao,Thủy Lao,5,boss2,Vân Trung Nhạn,1666,70-79,Vân Trung Nhạn,QinJiaZhaiJiaoTou,Boss
+ThuyLao,Thủy Lao,5,boss2,Vân Trung Nhạn,1667,80-89,Vân Trung Nhạn,QinJiaZhaiJiaoTou,Boss
+ThuyLao,Thủy Lao,5,boss2,Vân Trung Nhạn,1668,90-99,Vân Trung Nhạn,QinJiaZhaiJiaoTou,Boss
+ThuyLao,Thủy Lao,5,boss2,Vân Trung Nhạn,1669,100-999,Vân Trung Nhạn,QinJiaZhaiJiaoTou,Boss
+ThuyLao,Thủy Lao,6,quai3,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,6,quai3,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,6,quai3,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,6,quai3,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,6,quai3,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,6,quai3,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,6,quai3,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,6,quai3,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,6,quai3,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,6,quai3,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,7,boss3,Mãng Cái Thám Tử,1670,10-19,Mãng Cái Thám Tử,BaLunMangGai,Boss
+ThuyLao,Thủy Lao,7,boss3,Mãng Cái Thám Tử,1671,20-29,Mãng Cái Thám Tử,BaLunMangGai,Boss
+ThuyLao,Thủy Lao,7,boss3,Mãng Cái Thám Tử,1672,30-39,Mãng Cái Thám Tử,BaLunMangGai,Boss
+ThuyLao,Thủy Lao,7,boss3,Mãng Cái Thám Tử,1673,40-49,Mãng Cái Thám Tử,BaLunMangGai,Boss
+ThuyLao,Thủy Lao,7,boss3,Mãng Cái Thám Tử,1674,50-59,Mãng Cái Thám Tử,BaLunMangGai,Boss
+ThuyLao,Thủy Lao,7,boss3,Mãng Cái Thám Tử,1675,60-69,Mãng Cái Thám Tử,BaLunMangGai,Boss
+ThuyLao,Thủy Lao,7,boss3,Mãng Cái Thám Tử,1676,70-79,Mãng Cái Thám Tử,BaLunMangGai,Boss
+ThuyLao,Thủy Lao,7,boss3,Mãng Cái Thám Tử,1677,80-89,Mãng Cái Thám Tử,BaLunMangGai,Boss
+ThuyLao,Thủy Lao,7,boss3,Mãng Cái Thám Tử,1678,90-99,Mãng Cái Thám Tử,BaLunMangGai,Boss
+ThuyLao,Thủy Lao,7,boss3,Mãng Cái Thám Tử,1679,100-999,Mãng Cái Thám Tử,BaLunMangGai,Boss
+ThuyLao,Thủy Lao,8,quai4,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,8,quai4,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,8,quai4,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,8,quai4,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,8,quai4,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,8,quai4,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,8,quai4,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,8,quai4,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,8,quai4,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,8,quai4,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,9,boss4,Điền Doãn,1680,10-19,Điền Doãn,ZhanDouMingJiaoDiZi,Boss
+ThuyLao,Thủy Lao,9,boss4,Điền Doãn,1681,20-29,Điền Doãn,ZhanDouMingJiaoDiZi,Boss
+ThuyLao,Thủy Lao,9,boss4,Điền Doãn,1682,30-39,Điền Doãn,ZhanDouMingJiaoDiZi,Boss
+ThuyLao,Thủy Lao,9,boss4,Điền Doãn,1683,40-49,Điền Doãn,ZhanDouMingJiaoDiZi,Boss
+ThuyLao,Thủy Lao,9,boss4,Điền Doãn,1684,50-59,Điền Doãn,ZhanDouMingJiaoDiZi,Boss
+ThuyLao,Thủy Lao,9,boss4,Điền Doãn,1685,60-69,Điền Doãn,ZhanDouMingJiaoDiZi,Boss
+ThuyLao,Thủy Lao,9,boss4,Điền Doãn,1686,70-79,Điền Doãn,ZhanDouMingJiaoDiZi,Boss
+ThuyLao,Thủy Lao,9,boss4,Điền Doãn,1687,80-89,Điền Doãn,ZhanDouMingJiaoDiZi,Boss
+ThuyLao,Thủy Lao,9,boss4,Điền Doãn,1688,90-99,Điền Doãn,ZhanDouMingJiaoDiZi,Boss
+ThuyLao,Thủy Lao,9,boss4,Điền Doãn,1689,100-999,Điền Doãn,ZhanDouMingJiaoDiZi,Boss
+ThuyLao,Thủy Lao,10,quai5,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,10,quai5,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,10,quai5,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,10,quai5,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,10,quai5,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,10,quai5,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,10,quai5,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,10,quai5,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,10,quai5,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,10,quai5,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,11,boss5,Bách Hoa Sát,1690,10-19,Bách Hoa Sát,HeiMiaoWeiBing,Boss
+ThuyLao,Thủy Lao,11,boss5,Bách Hoa Sát,1691,20-29,Bách Hoa Sát,HeiMiaoWeiBing,Boss
+ThuyLao,Thủy Lao,11,boss5,Bách Hoa Sát,1692,30-39,Bách Hoa Sát,HeiMiaoWeiBing,Boss
+ThuyLao,Thủy Lao,11,boss5,Bách Hoa Sát,1693,40-49,Bách Hoa Sát,HeiMiaoWeiBing,Boss
+ThuyLao,Thủy Lao,11,boss5,Bách Hoa Sát,1694,50-59,Bách Hoa Sát,HeiMiaoWeiBing,Boss
+ThuyLao,Thủy Lao,11,boss5,Bách Hoa Sát,1695,60-69,Bách Hoa Sát,HeiMiaoWeiBing,Boss
+ThuyLao,Thủy Lao,11,boss5,Bách Hoa Sát,1696,70-79,Bách Hoa Sát,HeiMiaoWeiBing,Boss
+ThuyLao,Thủy Lao,11,boss5,Bách Hoa Sát,1697,80-89,Bách Hoa Sát,HeiMiaoWeiBing,Boss
+ThuyLao,Thủy Lao,11,boss5,Bách Hoa Sát,1698,90-99,Bách Hoa Sát,HeiMiaoWeiBing,Boss
+ThuyLao,Thủy Lao,11,boss5,Bách Hoa Sát,1699,100-999,Bách Hoa Sát,HeiMiaoWeiBing,Boss
+ThuyLao,Thủy Lao,12,quai6,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,12,quai6,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,12,quai6,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,12,quai6,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,12,quai6,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,12,quai6,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,12,quai6,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,12,quai6,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,12,quai6,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,12,quai6,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,13,boss6,Vô Phương Hoà Thượng,1700,10-19,Vô Phương Hoà Thượng,ZhanDouShaoLinWuSeng,Boss
+ThuyLao,Thủy Lao,13,boss6,Vô Phương Hoà Thượng,1701,20-29,Vô Phương Hoà Thượng,ZhanDouShaoLinWuSeng,Boss
+ThuyLao,Thủy Lao,13,boss6,Vô Phương Hoà Thượng,1702,30-39,Vô Phương Hoà Thượng,ZhanDouShaoLinWuSeng,Boss
+ThuyLao,Thủy Lao,13,boss6,Vô Phương Hoà Thượng,1703,40-49,Vô Phương Hoà Thượng,ZhanDouShaoLinWuSeng,Boss
+ThuyLao,Thủy Lao,13,boss6,Vô Phương Hoà Thượng,1704,50-59,Vô Phương Hoà Thượng,ZhanDouShaoLinWuSeng,Boss
+ThuyLao,Thủy Lao,13,boss6,Vô Phương Hoà Thượng,1705,60-69,Vô Phương Hoà Thượng,ZhanDouShaoLinWuSeng,Boss
+ThuyLao,Thủy Lao,13,boss6,Vô Phương Hoà Thượng,1706,70-79,Vô Phương Hoà Thượng,ZhanDouShaoLinWuSeng,Boss
+ThuyLao,Thủy Lao,13,boss6,Vô Phương Hoà Thượng,1707,80-89,Vô Phương Hoà Thượng,ZhanDouShaoLinWuSeng,Boss
+ThuyLao,Thủy Lao,13,boss6,Vô Phương Hoà Thượng,1708,90-99,Vô Phương Hoà Thượng,ZhanDouShaoLinWuSeng,Boss
+ThuyLao,Thủy Lao,13,boss6,Vô Phương Hoà Thượng,1709,100-999,Vô Phương Hoà Thượng,ZhanDouShaoLinWuSeng,Boss
+ThuyLao,Thủy Lao,14,quai7,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,14,quai7,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,14,quai7,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,14,quai7,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,14,quai7,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,14,quai7,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,14,quai7,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,14,quai7,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,14,quai7,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,14,quai7,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,15,boss7,Cách Liệt Mã,1710,10-19,Cách Liệt Mã,LangRenTuSi,Boss
+ThuyLao,Thủy Lao,15,boss7,Cách Liệt Mã,1711,20-29,Cách Liệt Mã,LangRenTuSi,Boss
+ThuyLao,Thủy Lao,15,boss7,Cách Liệt Mã,1712,30-39,Cách Liệt Mã,LangRenTuSi,Boss
+ThuyLao,Thủy Lao,15,boss7,Cách Liệt Mã,1713,40-49,Cách Liệt Mã,LangRenTuSi,Boss
+ThuyLao,Thủy Lao,15,boss7,Cách Liệt Mã,1714,50-59,Cách Liệt Mã,LangRenTuSi,Boss
+ThuyLao,Thủy Lao,15,boss7,Cách Liệt Mã,1715,60-69,Cách Liệt Mã,LangRenTuSi,Boss
+ThuyLao,Thủy Lao,15,boss7,Cách Liệt Mã,1716,70-79,Cách Liệt Mã,LangRenTuSi,Boss
+ThuyLao,Thủy Lao,15,boss7,Cách Liệt Mã,1717,80-89,Cách Liệt Mã,LangRenTuSi,Boss
+ThuyLao,Thủy Lao,15,boss7,Cách Liệt Mã,1718,90-99,Cách Liệt Mã,LangRenTuSi,Boss
+ThuyLao,Thủy Lao,15,boss7,Cách Liệt Mã,1719,100-999,Cách Liệt Mã,LangRenTuSi,Boss
+ThuyLao,Thủy Lao,16,quai8,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,16,quai8,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,16,quai8,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,16,quai8,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,16,quai8,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,16,quai8,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,16,quai8,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,16,quai8,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,16,quai8,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,16,quai8,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,17,boss8,Hô Diên Bình,1720,10-19,Hô Diên Bình,NuZhenJiang,Boss
+ThuyLao,Thủy Lao,17,boss8,Hô Diên Bình,1721,20-29,Hô Diên Bình,NuZhenJiang,Boss
+ThuyLao,Thủy Lao,17,boss8,Hô Diên Bình,1722,30-39,Hô Diên Bình,NuZhenJiang,Boss
+ThuyLao,Thủy Lao,17,boss8,Hô Diên Bình,1723,40-49,Hô Diên Bình,NuZhenJiang,Boss
+ThuyLao,Thủy Lao,17,boss8,Hô Diên Bình,1724,50-59,Hô Diên Bình,NuZhenJiang,Boss
+ThuyLao,Thủy Lao,17,boss8,Hô Diên Bình,1725,60-69,Hô Diên Bình,NuZhenJiang,Boss
+ThuyLao,Thủy Lao,17,boss8,Hô Diên Bình,1726,70-79,Hô Diên Bình,NuZhenJiang,Boss
+ThuyLao,Thủy Lao,17,boss8,Hô Diên Bình,1727,80-89,Hô Diên Bình,NuZhenJiang,Boss
+ThuyLao,Thủy Lao,17,boss8,Hô Diên Bình,1728,90-99,Hô Diên Bình,NuZhenJiang,Boss
+ThuyLao,Thủy Lao,17,boss8,Hô Diên Bình,1729,100-999,Hô Diên Bình,NuZhenJiang,Boss
+ThuyLao,Thủy Lao,18,quai9,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,18,quai9,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,18,quai9,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,18,quai9,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,18,quai9,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,18,quai9,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,18,quai9,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,18,quai9,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,18,quai9,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,18,quai9,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,19,boss9,Diên Kiên,1730,10-19,Diên Kiên,QinJiaZhaiHuWei,Boss
+ThuyLao,Thủy Lao,19,boss9,Diên Kiên,1731,20-29,Diên Kiên,QinJiaZhaiHuWei,Boss
+ThuyLao,Thủy Lao,19,boss9,Diên Kiên,1732,30-39,Diên Kiên,QinJiaZhaiHuWei,Boss
+ThuyLao,Thủy Lao,19,boss9,Diên Kiên,1733,40-49,Diên Kiên,QinJiaZhaiHuWei,Boss
+ThuyLao,Thủy Lao,19,boss9,Diên Kiên,1734,50-59,Diên Kiên,QinJiaZhaiHuWei,Boss
+ThuyLao,Thủy Lao,19,boss9,Diên Kiên,1735,60-69,Diên Kiên,QinJiaZhaiHuWei,Boss
+ThuyLao,Thủy Lao,19,boss9,Diên Kiên,1736,70-79,Diên Kiên,QinJiaZhaiHuWei,Boss
+ThuyLao,Thủy Lao,19,boss9,Diên Kiên,1737,80-89,Diên Kiên,QinJiaZhaiHuWei,Boss
+ThuyLao,Thủy Lao,19,boss9,Diên Kiên,1738,90-99,Diên Kiên,QinJiaZhaiHuWei,Boss
+ThuyLao,Thủy Lao,19,boss9,Diên Kiên,1739,100-999,Diên Kiên,QinJiaZhaiHuWei,Boss
+ThuyLao,Thủy Lao,20,quai10,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,20,quai10,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,20,quai10,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,20,quai10,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,20,quai10,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,20,quai10,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,20,quai10,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,20,quai10,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,20,quai10,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,20,quai10,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,21,boss10,Hứa Đạo Nhân,1740,10-19,Hứa Đạo Nhân,ZhanDouWuDangDiZi,Boss
+ThuyLao,Thủy Lao,21,boss10,Hứa Đạo Nhân,1741,20-29,Hứa Đạo Nhân,ZhanDouWuDangDiZi,Boss
+ThuyLao,Thủy Lao,21,boss10,Hứa Đạo Nhân,1742,30-39,Hứa Đạo Nhân,ZhanDouWuDangDiZi,Boss
+ThuyLao,Thủy Lao,21,boss10,Hứa Đạo Nhân,1743,40-49,Hứa Đạo Nhân,ZhanDouWuDangDiZi,Boss
+ThuyLao,Thủy Lao,21,boss10,Hứa Đạo Nhân,1744,50-59,Hứa Đạo Nhân,ZhanDouWuDangDiZi,Boss
+ThuyLao,Thủy Lao,21,boss10,Hứa Đạo Nhân,1745,60-69,Hứa Đạo Nhân,ZhanDouWuDangDiZi,Boss
+ThuyLao,Thủy Lao,21,boss10,Hứa Đạo Nhân,1746,70-79,Hứa Đạo Nhân,ZhanDouWuDangDiZi,Boss
+ThuyLao,Thủy Lao,21,boss10,Hứa Đạo Nhân,1747,80-89,Hứa Đạo Nhân,ZhanDouWuDangDiZi,Boss
+ThuyLao,Thủy Lao,21,boss10,Hứa Đạo Nhân,1748,90-99,Hứa Đạo Nhân,ZhanDouWuDangDiZi,Boss
+ThuyLao,Thủy Lao,21,boss10,Hứa Đạo Nhân,1749,100-999,Hứa Đạo Nhân,ZhanDouWuDangDiZi,Boss
+ThuyLao,Thủy Lao,22,quai11,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,22,quai11,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,22,quai11,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,22,quai11,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,22,quai11,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,22,quai11,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,22,quai11,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,22,quai11,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,22,quai11,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,22,quai11,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,23,boss11,Tiêu Vu Nhi,1750,10-19,Tiêu Vu Nhi,PengMin,Boss
+ThuyLao,Thủy Lao,23,boss11,Tiêu Vu Nhi,1751,20-29,Tiêu Vu Nhi,PengMin,Boss
+ThuyLao,Thủy Lao,23,boss11,Tiêu Vu Nhi,1752,30-39,Tiêu Vu Nhi,PengMin,Boss
+ThuyLao,Thủy Lao,23,boss11,Tiêu Vu Nhi,1753,40-49,Tiêu Vu Nhi,PengMin,Boss
+ThuyLao,Thủy Lao,23,boss11,Tiêu Vu Nhi,1754,50-59,Tiêu Vu Nhi,PengMin,Boss
+ThuyLao,Thủy Lao,23,boss11,Tiêu Vu Nhi,1755,60-69,Tiêu Vu Nhi,PengMin,Boss
+ThuyLao,Thủy Lao,23,boss11,Tiêu Vu Nhi,1756,70-79,Tiêu Vu Nhi,PengMin,Boss
+ThuyLao,Thủy Lao,23,boss11,Tiêu Vu Nhi,1757,80-89,Tiêu Vu Nhi,PengMin,Boss
+ThuyLao,Thủy Lao,23,boss11,Tiêu Vu Nhi,1758,90-99,Tiêu Vu Nhi,PengMin,Boss
+ThuyLao,Thủy Lao,23,boss11,Tiêu Vu Nhi,1759,100-999,Tiêu Vu Nhi,PengMin,Boss
+ThuyLao,Thủy Lao,24,quai12,Phạm nhân bình thường,2490,10-19,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,24,quai12,Phạm nhân bình thường,2491,20-29,Phạm nhân bình thường,ShuiGuiTanZi,Normal
+ThuyLao,Thủy Lao,24,quai12,Phạm nhân bình thường,2492,30-39,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,24,quai12,Phạm nhân bình thường,2493,40-49,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,24,quai12,Phạm nhân bình thường,2494,50-59,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,24,quai12,Phạm nhân bình thường,2495,60-69,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,24,quai12,Phạm nhân bình thường,2496,70-79,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,24,quai12,Phạm nhân bình thường,2497,80-89,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,24,quai12,Phạm nhân bình thường,2498,90-99,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,24,quai12,Phạm nhân bình thường,2499,100-999,Phạm nhân bình thường,ShuiGuiTanZi,Hater
+ThuyLao,Thủy Lao,25,boss12,Tào Song,1760,10-19,Tào Song,ZhanDouBuKuai2,Boss
+ThuyLao,Thủy Lao,25,boss12,Tào Song,1761,20-29,Tào Song,ZhanDouBuKuai2,Boss
+ThuyLao,Thủy Lao,25,boss12,Tào Song,1762,30-39,Tào Song,ZhanDouBuKuai2,Boss
+ThuyLao,Thủy Lao,25,boss12,Tào Song,1763,40-49,Tào Song,ZhanDouBuKuai2,Boss
+ThuyLao,Thủy Lao,25,boss12,Tào Song,1764,50-59,Tào Song,ZhanDouBuKuai2,Boss
+ThuyLao,Thủy Lao,25,boss12,Tào Song,1765,60-69,Tào Song,ZhanDouBuKuai2,Boss
+ThuyLao,Thủy Lao,25,boss12,Tào Song,1766,70-79,Tào Song,ZhanDouBuKuai2,Boss
+ThuyLao,Thủy Lao,25,boss12,Tào Song,1767,80-89,Tào Song,ZhanDouBuKuai2,Boss
+ThuyLao,Thủy Lao,25,boss12,Tào Song,1768,90-99,Tào Song,ZhanDouBuKuai2,Boss
+ThuyLao,Thủy Lao,25,boss12,Tào Song,1769,100-999,Tào Song,ZhanDouBuKuai2,Boss
+Q1_ToChau,Biên Giới Tống Liêu,2,quai1,Ngụy Tống Binh,4060,10-19,Nguỵ Tống binh,DaCaoGuSongBingTouMu,Normal
+Q1_ToChau,Biên Giới Tống Liêu,2,quai1,Ngụy Tống Binh,4061,20-29,Nguỵ Tống binh,DaCaoGuSongBingTouMu,Normal
+Q1_ToChau,Biên Giới Tống Liêu,2,quai1,Ngụy Tống Binh,4062,30-39,Nguỵ Tống binh,DaCaoGuSongBingTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,2,quai1,Ngụy Tống Binh,4063,40-49,Nguỵ Tống binh,DaCaoGuSongBingTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,2,quai1,Ngụy Tống Binh,4064,50-59,Nguỵ Tống binh,DaCaoGuSongBingTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,2,quai1,Ngụy Tống Binh,4065,60-69,Nguỵ Tống binh,DaCaoGuSongBingTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,2,quai1,Ngụy Tống Binh,4066,70-79,Nguỵ Tống binh,DaCaoGuSongBingTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,2,quai1,Ngụy Tống Binh,4067,80-89,Nguỵ Tống binh,DaCaoGuSongBingTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,2,quai1,Ngụy Tống Binh,4068,90-99,Nguỵ Tống binh,DaCaoGuSongBingTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,2,quai1,Ngụy Tống Binh,4069,100-999,Nguỵ Tống binh,DaCaoGuSongBingTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,3,boss1,Ngụy Tống Quân Đô Thống,4090,10-19,Nguỵ Tống Quân Đô Thống,YeWaiShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,3,boss1,Ngụy Tống Quân Đô Thống,4091,20-29,Nguỵ Tống Quân Đô Thống,YeWaiShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,3,boss1,Ngụy Tống Quân Đô Thống,4092,30-39,Nguỵ Tống Quân Đô Thống,YeWaiShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,3,boss1,Ngụy Tống Quân Đô Thống,4093,40-49,Nguỵ Tống Quân Đô Thống,YeWaiShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,3,boss1,Ngụy Tống Quân Đô Thống,4094,50-59,Nguỵ Tống Quân Đô Thống,YeWaiShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,3,boss1,Ngụy Tống Quân Đô Thống,4095,60-69,Nguỵ Tống Quân Đô Thống,YeWaiShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,3,boss1,Ngụy Tống Quân Đô Thống,4096,70-79,Nguỵ Tống Quân Đô Thống,YeWaiShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,3,boss1,Ngụy Tống Quân Đô Thống,4097,80-89,Nguỵ Tống Quân Đô Thống,YeWaiShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,3,boss1,Ngụy Tống Quân Đô Thống,4098,90-99,Nguỵ Tống Quân Đô Thống,YeWaiShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,3,boss1,Ngụy Tống Quân Đô Thống,4099,100-999,Nguỵ Tống Quân Đô Thống,YeWaiShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,4,quai10,Đào Thoán Phỉ Loại,4070,10-19,Đào Thoán Phỉ Loại,MaFeiTanZiTouMu,Normal
+Q1_ToChau,Biên Giới Tống Liêu,4,quai10,Đào Thoán Phỉ Loại,4071,20-29,Đào Thoán Phỉ Loại,MaFeiTanZiTouMu,Normal
+Q1_ToChau,Biên Giới Tống Liêu,4,quai10,Đào Thoán Phỉ Loại,4072,30-39,Đào Thoán Phỉ Loại,MaFeiTanZiTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,4,quai10,Đào Thoán Phỉ Loại,4073,40-49,Đào Thoán Phỉ Loại,MaFeiTanZiTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,4,quai10,Đào Thoán Phỉ Loại,4074,50-59,Đào Thoán Phỉ Loại,MaFeiTanZiTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,4,quai10,Đào Thoán Phỉ Loại,4075,60-69,Đào Thoán Phỉ Loại,MaFeiTanZiTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,4,quai10,Đào Thoán Phỉ Loại,4076,70-79,Đào Thoán Phỉ Loại,MaFeiTanZiTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,4,quai10,Đào Thoán Phỉ Loại,4077,80-89,Đào Thoán Phỉ Loại,MaFeiTanZiTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,4,quai10,Đào Thoán Phỉ Loại,4078,90-99,Đào Thoán Phỉ Loại,MaFeiTanZiTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,4,quai10,Đào Thoán Phỉ Loại,4079,100-999,Đào Thoán Phỉ Loại,MaFeiTanZiTouMu,Hater
+Q1_ToChau,Biên Giới Tống Liêu,5,boss2,Ngụy Tống Quân Phó Đô Thống,4080,10-19,Nguỵ Tống Quân Phó Đô Thống,YeWaiXiaoShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,5,boss2,Ngụy Tống Quân Phó Đô Thống,4081,20-29,Nguỵ Tống Quân Phó Đô Thống,YeWaiXiaoShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,5,boss2,Ngụy Tống Quân Phó Đô Thống,4082,30-39,Nguỵ Tống Quân Phó Đô Thống,YeWaiXiaoShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,5,boss2,Ngụy Tống Quân Phó Đô Thống,4083,40-49,Nguỵ Tống Quân Phó Đô Thống,YeWaiXiaoShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,5,boss2,Ngụy Tống Quân Phó Đô Thống,4084,50-59,Nguỵ Tống Quân Phó Đô Thống,YeWaiXiaoShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,5,boss2,Ngụy Tống Quân Phó Đô Thống,4085,60-69,Nguỵ Tống Quân Phó Đô Thống,YeWaiXiaoShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,5,boss2,Ngụy Tống Quân Phó Đô Thống,4086,70-79,Nguỵ Tống Quân Phó Đô Thống,YeWaiXiaoShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,5,boss2,Ngụy Tống Quân Phó Đô Thống,4087,80-89,Nguỵ Tống Quân Phó Đô Thống,YeWaiXiaoShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,5,boss2,Ngụy Tống Quân Phó Đô Thống,4088,90-99,Nguỵ Tống Quân Phó Đô Thống,YeWaiXiaoShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,5,boss2,Ngụy Tống Quân Phó Đô Thống,4089,100-999,Nguỵ Tống Quân Phó Đô Thống,YeWaiXiaoShouLing,Boss
+Q1_ToChau,Biên Giới Tống Liêu,6,boss3,Dư Độc,4100,10-19,Dư Độc,RenLeiShouLing2,Boss
+Q1_ToChau,Biên Giới Tống Liêu,6,boss3,Dư Độc,4101,20-29,Dư Độc,RenLeiShouLing2,Boss
+Q1_ToChau,Biên Giới Tống Liêu,6,boss3,Dư Độc,4102,30-39,Dư Độc,RenLeiShouLing2,Boss
+Q1_ToChau,Biên Giới Tống Liêu,6,boss3,Dư Độc,4103,40-49,Dư Độc,RenLeiShouLing2,Boss
+Q1_ToChau,Biên Giới Tống Liêu,6,boss3,Dư Độc,4104,50-59,Dư Độc,RenLeiShouLing2,Boss
+Q1_ToChau,Biên Giới Tống Liêu,6,boss3,Dư Độc,4105,60-69,Dư Độc,RenLeiShouLing2,Boss
+Q1_ToChau,Biên Giới Tống Liêu,6,boss3,Dư Độc,4106,70-79,Dư Độc,RenLeiShouLing2,Boss
+Q1_ToChau,Biên Giới Tống Liêu,6,boss3,Dư Độc,4107,80-89,Dư Độc,RenLeiShouLing2,Boss
+Q1_ToChau,Biên Giới Tống Liêu,6,boss3,Dư Độc,4108,90-99,Dư Độc,RenLeiShouLing2,Boss
+Q1_ToChau,Biên Giới Tống Liêu,6,boss3,Dư Độc,4109,100-999,Dư Độc,RenLeiShouLing2,Boss
+Q2_ToChau,Trúc Lâm,2,zone1,Dã Hùng,4110,10-19,Dã Hùng,HuiXiong,Normal
+Q2_ToChau,Trúc Lâm,2,zone1,Dã Hùng,4111,20-29,Dã Hùng,HuiXiong,Normal
+Q2_ToChau,Trúc Lâm,2,zone1,Dã Hùng,4112,30-39,Dã Hùng,HuiXiong,Hater
+Q2_ToChau,Trúc Lâm,2,zone1,Dã Hùng,4113,40-49,Dã Hùng,HuiXiong,Hater
+Q2_ToChau,Trúc Lâm,2,zone1,Dã Hùng,4114,50-59,Dã Hùng,HuiXiong,Hater
+Q2_ToChau,Trúc Lâm,2,zone1,Dã Hùng,4115,60-69,Dã Hùng,HuiXiong,Hater
+Q2_ToChau,Trúc Lâm,2,zone1,Dã Hùng,4116,70-79,Dã Hùng,HuiXiong,Hater
+Q2_ToChau,Trúc Lâm,2,zone1,Dã Hùng,4117,80-89,Dã Hùng,HuiXiong,Hater
+Q2_ToChau,Trúc Lâm,2,zone1,Dã Hùng,4118,90-99,Dã Hùng,HuiXiong,Hater
+Q2_ToChau,Trúc Lâm,2,zone1,Dã Hùng,4119,100-999,Dã Hùng,HuiXiong,Hater
+Q2_ToChau,Trúc Lâm,3,boss,Hồng Hùng Vương,4120,10-19,Hồng Hùng Vương,HongXiongWang,Boss
+Q2_ToChau,Trúc Lâm,3,boss,Hồng Hùng Vương,4121,20-29,Hồng Hùng Vương,HongXiongWang,Boss
+Q2_ToChau,Trúc Lâm,3,boss,Hồng Hùng Vương,4122,30-39,Hồng Hùng Vương,HongXiongWang,Boss
+Q2_ToChau,Trúc Lâm,3,boss,Hồng Hùng Vương,4123,40-49,Hồng Hùng Vương,HongXiongWang,Boss
+Q2_ToChau,Trúc Lâm,3,boss,Hồng Hùng Vương,4124,50-59,Hồng Hùng Vương,HongXiongWang,Boss
+Q2_ToChau,Trúc Lâm,3,boss,Hồng Hùng Vương,4125,60-69,Hồng Hùng Vương,HongXiongWang,Boss
+Q2_ToChau,Trúc Lâm,3,boss,Hồng Hùng Vương,4126,70-79,Hồng Hùng Vương,HongXiongWang,Boss
+Q2_ToChau,Trúc Lâm,3,boss,Hồng Hùng Vương,4127,80-89,Hồng Hùng Vương,HongXiongWang,Boss
+Q2_ToChau,Trúc Lâm,3,boss,Hồng Hùng Vương,4128,90-99,Hồng Hùng Vương,HongXiongWang,Boss
+Q2_ToChau,Trúc Lâm,3,boss,Hồng Hùng Vương,4129,100-999,Hồng Hùng Vương,HongXiongWang,Boss
+Q3_ToChau,Dã Ngoại Trại Phỉ,2,boss,Cát Vinh,4130,10-19,Sơn Trại Đại Vương,bossGeRongShengJi090801,Boss
+Q3_ToChau,Dã Ngoại Trại Phỉ,2,boss,Cát Vinh,4131,20-29,Sơn Trại Đại Vương,bossGeRongShengJi090801,Boss
+Q3_ToChau,Dã Ngoại Trại Phỉ,2,boss,Cát Vinh,4132,30-39,Sơn Trại Đại Vương,bossGeRongShengJi090801,Boss
+Q3_ToChau,Dã Ngoại Trại Phỉ,2,boss,Cát Vinh,4133,40-49,Sơn Trại Đại Vương,bossGeRongShengJi090801,Boss
+Q3_ToChau,Dã Ngoại Trại Phỉ,2,boss,Cát Vinh,4134,50-59,Sơn Trại Đại Vương,bossGeRongShengJi090801,Boss
+Q3_ToChau,Dã Ngoại Trại Phỉ,2,boss,Cát Vinh,4135,60-69,Sơn Trại Đại Vương,bossGeRongShengJi090801,Boss
+Q3_ToChau,Dã Ngoại Trại Phỉ,2,boss,Cát Vinh,4136,70-79,Sơn Trại Đại Vương,bossGeRongShengJi090801,Boss
+Q3_ToChau,Dã Ngoại Trại Phỉ,2,boss,Cát Vinh,4137,80-89,Sơn Trại Đại Vương,bossGeRongShengJi090801,Boss
+Q3_ToChau,Dã Ngoại Trại Phỉ,2,boss,Cát Vinh,4138,90-99,Sơn Trại Đại Vương,bossGeRongShengJi090801,Boss
+Q3_ToChau,Dã Ngoại Trại Phỉ,2,boss,Cát Vinh,4139,100-999,Sơn Trại Đại Vương,bossGeRongShengJi090801,Boss
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1770,10-19,Cờ Trắng,BaiQiZi2,Normal
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1771,20-29,Cờ Trắng,BaiQiZi2,Normal
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1772,30-39,Cờ Trắng,BaiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1773,40-49,Cờ Trắng,BaiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1774,50-59,Cờ Trắng,BaiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1775,60-69,Cờ Trắng,BaiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1776,70-79,Cờ Trắng,BaiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1777,80-89,Cờ Trắng,BaiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1778,90-99,Cờ Trắng,BaiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1779,100-999,Cờ Trắng,BaiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1780,10-19,Cờ Đen,HeiQiZi2,Normal
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1781,20-29,Cờ Đen,HeiQiZi2,Normal
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1782,30-39,Cờ Đen,HeiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1783,40-49,Cờ Đen,HeiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1784,50-59,Cờ Đen,HeiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1785,60-69,Cờ Đen,HeiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1786,70-79,Cờ Đen,HeiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1787,80-89,Cờ Đen,HeiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1788,90-99,Cờ Đen,HeiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1789,100-999,Cờ Đen,HeiQiZi2,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1790,10-19,Bạch Kỳ Hồn,ShiRenYanShi,Normal
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1791,20-29,Bạch Kỳ Hồn,ShiRenYanShi,Normal
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1792,30-39,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1793,40-49,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1794,50-59,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1795,60-69,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1796,70-79,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1797,80-89,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1798,90-99,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1799,100-999,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1800,10-19,Hắc Kỳ Hồn,DaYanShi,Normal
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1801,20-29,Hắc Kỳ Hồn,DaYanShi,Normal
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1802,30-39,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1803,40-49,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1804,50-59,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1805,60-69,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1806,70-79,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1807,80-89,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1808,90-99,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),2,zone1,Tiêu diệt quân cờ,1809,100-999,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo1,Trân Long Kỳ Cuộc (thường),3,boss,Viễn Cổ Kỳ Hồn,1850,10-19,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo1,Trân Long Kỳ Cuộc (thường),3,boss,Viễn Cổ Kỳ Hồn,1851,20-29,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo1,Trân Long Kỳ Cuộc (thường),3,boss,Viễn Cổ Kỳ Hồn,1852,30-39,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo1,Trân Long Kỳ Cuộc (thường),3,boss,Viễn Cổ Kỳ Hồn,1853,40-49,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo1,Trân Long Kỳ Cuộc (thường),3,boss,Viễn Cổ Kỳ Hồn,1854,50-59,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo1,Trân Long Kỳ Cuộc (thường),3,boss,Viễn Cổ Kỳ Hồn,1855,60-69,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo1,Trân Long Kỳ Cuộc (thường),3,boss,Viễn Cổ Kỳ Hồn,1856,70-79,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo1,Trân Long Kỳ Cuộc (thường),3,boss,Viễn Cổ Kỳ Hồn,1857,80-89,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo1,Trân Long Kỳ Cuộc (thường),3,boss,Viễn Cổ Kỳ Hồn,1858,90-99,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo1,Trân Long Kỳ Cuộc (thường),3,boss,Viễn Cổ Kỳ Hồn,1859,100-999,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1770,10-19,Cờ Trắng,BaiQiZi2,Normal
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1771,20-29,Cờ Trắng,BaiQiZi2,Normal
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1772,30-39,Cờ Trắng,BaiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1773,40-49,Cờ Trắng,BaiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1774,50-59,Cờ Trắng,BaiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1775,60-69,Cờ Trắng,BaiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1776,70-79,Cờ Trắng,BaiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1777,80-89,Cờ Trắng,BaiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1778,90-99,Cờ Trắng,BaiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1779,100-999,Cờ Trắng,BaiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1780,10-19,Cờ Đen,HeiQiZi2,Normal
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1781,20-29,Cờ Đen,HeiQiZi2,Normal
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1782,30-39,Cờ Đen,HeiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1783,40-49,Cờ Đen,HeiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1784,50-59,Cờ Đen,HeiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1785,60-69,Cờ Đen,HeiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1786,70-79,Cờ Đen,HeiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1787,80-89,Cờ Đen,HeiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1788,90-99,Cờ Đen,HeiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1789,100-999,Cờ Đen,HeiQiZi2,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1790,10-19,Bạch Kỳ Hồn,ShiRenYanShi,Normal
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1791,20-29,Bạch Kỳ Hồn,ShiRenYanShi,Normal
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1792,30-39,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1793,40-49,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1794,50-59,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1795,60-69,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1796,70-79,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1797,80-89,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1798,90-99,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1799,100-999,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1800,10-19,Hắc Kỳ Hồn,DaYanShi,Normal
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1801,20-29,Hắc Kỳ Hồn,DaYanShi,Normal
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1802,30-39,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1803,40-49,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1804,50-59,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1805,60-69,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1806,70-79,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1807,80-89,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1808,90-99,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),2,zone1,Tiêu diệt quân cờ,1809,100-999,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),3,boss,Viễn Cổ Kỳ Hồn,1850,10-19,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),3,boss,Viễn Cổ Kỳ Hồn,1851,20-29,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),3,boss,Viễn Cổ Kỳ Hồn,1852,30-39,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),3,boss,Viễn Cổ Kỳ Hồn,1853,40-49,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),3,boss,Viễn Cổ Kỳ Hồn,1854,50-59,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),3,boss,Viễn Cổ Kỳ Hồn,1855,60-69,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),3,boss,Viễn Cổ Kỳ Hồn,1856,70-79,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),3,boss,Viễn Cổ Kỳ Hồn,1857,80-89,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),3,boss,Viễn Cổ Kỳ Hồn,1858,90-99,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),3,boss,Viễn Cổ Kỳ Hồn,1859,100-999,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1770,10-19,Cờ Trắng,BaiQiZi2,Normal
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1771,20-29,Cờ Trắng,BaiQiZi2,Normal
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1772,30-39,Cờ Trắng,BaiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1773,40-49,Cờ Trắng,BaiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1774,50-59,Cờ Trắng,BaiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1775,60-69,Cờ Trắng,BaiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1776,70-79,Cờ Trắng,BaiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1777,80-89,Cờ Trắng,BaiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1778,90-99,Cờ Trắng,BaiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1779,100-999,Cờ Trắng,BaiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1780,10-19,Cờ Đen,HeiQiZi2,Normal
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1781,20-29,Cờ Đen,HeiQiZi2,Normal
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1782,30-39,Cờ Đen,HeiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1783,40-49,Cờ Đen,HeiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1784,50-59,Cờ Đen,HeiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1785,60-69,Cờ Đen,HeiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1786,70-79,Cờ Đen,HeiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1787,80-89,Cờ Đen,HeiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1788,90-99,Cờ Đen,HeiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1789,100-999,Cờ Đen,HeiQiZi2,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1790,10-19,Bạch Kỳ Hồn,ShiRenYanShi,Normal
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1791,20-29,Bạch Kỳ Hồn,ShiRenYanShi,Normal
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1792,30-39,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1793,40-49,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1794,50-59,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1795,60-69,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1796,70-79,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1797,80-89,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1798,90-99,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1799,100-999,Bạch Kỳ Hồn,ShiRenYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1800,10-19,Hắc Kỳ Hồn,DaYanShi,Normal
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1801,20-29,Hắc Kỳ Hồn,DaYanShi,Normal
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1802,30-39,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1803,40-49,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1804,50-59,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1805,60-69,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1806,70-79,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1807,80-89,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1808,90-99,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),2,zone1,Tiêu diệt quân cờ,1809,100-999,Hắc Kỳ Hồn,DaYanShi,Hater
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),3,boss,Viễn Cổ Kỳ Hồn,1850,10-19,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),3,boss,Viễn Cổ Kỳ Hồn,1851,20-29,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),3,boss,Viễn Cổ Kỳ Hồn,1852,30-39,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),3,boss,Viễn Cổ Kỳ Hồn,1853,40-49,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),3,boss,Viễn Cổ Kỳ Hồn,1854,50-59,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),3,boss,Viễn Cổ Kỳ Hồn,1855,60-69,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),3,boss,Viễn Cổ Kỳ Hồn,1856,70-79,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),3,boss,Viễn Cổ Kỳ Hồn,1857,80-89,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),3,boss,Viễn Cổ Kỳ Hồn,1858,90-99,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),3,boss,Viễn Cổ Kỳ Hồn,1859,100-999,Viễn Cổ Kỳ Hồn,QiJuShouLing,Boss
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12102,75-79,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12103,80-89,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12104,90-99,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12105,100-109,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12106,110-119,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12107,120-129,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12108,130-139,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12109,140-149,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12110,150-999,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12111,75-79,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12112,80-89,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12113,90-99,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12114,100-109,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12115,110-119,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12116,120-129,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12117,130-139,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12118,140-149,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12119,150-999,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12120,75-79,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12121,80-89,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12122,90-99,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12123,100-109,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12124,110-119,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12125,120-129,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12126,130-139,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12127,140-149,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12128,150-999,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12129,75-79,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12130,80-89,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12131,90-99,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12132,100-109,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12133,110-119,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12134,120-129,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12135,130-139,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12136,140-149,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),2,zone1,Tiêu diệt bảo sương,12137,150-999,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),3,boss,Trấn Bảo Long Vương,12138,75-79,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),3,boss,Trấn Bảo Long Vương,12139,80-89,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),3,boss,Trấn Bảo Long Vương,12140,90-99,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),3,boss,Trấn Bảo Long Vương,12141,100-109,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),3,boss,Trấn Bảo Long Vương,12142,110-119,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),3,boss,Trấn Bảo Long Vương,12143,120-129,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),3,boss,Trấn Bảo Long Vương,12144,130-139,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),3,boss,Trấn Bảo Long Vương,12145,140-149,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),3,boss,Trấn Bảo Long Vương,12146,150-999,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12102,75-79,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12103,80-89,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12104,90-99,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12105,100-109,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12106,110-119,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12107,120-129,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12108,130-139,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12109,140-149,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12110,150-999,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12111,75-79,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12112,80-89,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12113,90-99,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12114,100-109,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12115,110-119,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12116,120-129,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12117,130-139,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12118,140-149,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12119,150-999,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12120,75-79,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12121,80-89,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12122,90-99,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12123,100-109,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12124,110-119,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12125,120-129,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12126,130-139,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12127,140-149,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12128,150-999,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12129,75-79,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12130,80-89,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12131,90-99,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12132,100-109,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12133,110-119,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12134,120-129,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12135,130-139,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12136,140-149,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),2,zone1,Tiêu diệt bảo sương,12137,150-999,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),3,boss,Trấn Bảo Long Vương,12138,75-79,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),3,boss,Trấn Bảo Long Vương,12139,80-89,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),3,boss,Trấn Bảo Long Vương,12140,90-99,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),3,boss,Trấn Bảo Long Vương,12141,100-109,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),3,boss,Trấn Bảo Long Vương,12142,110-119,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),3,boss,Trấn Bảo Long Vương,12143,120-129,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),3,boss,Trấn Bảo Long Vương,12144,130-139,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),3,boss,Trấn Bảo Long Vương,12145,140-149,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),3,boss,Trấn Bảo Long Vương,12146,150-999,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12102,75-79,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12103,80-89,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12104,90-99,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12105,100-109,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12106,110-119,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12107,120-129,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12108,130-139,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12109,140-149,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12110,150-999,Thượng Cổ Ngân Bảo Tương,npcGuaiBaoXiangQiZi1,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12111,75-79,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12112,80-89,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12113,90-99,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12114,100-109,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12115,110-119,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12116,120-129,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12117,130-139,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12118,140-149,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12119,150-999,Thượng Cổ Kim Bảo Tương,npcGuaiBaoXiangQiZi2,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12120,75-79,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12121,80-89,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12122,90-99,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12123,100-109,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12124,110-119,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12125,120-129,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12126,130-139,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12127,140-149,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12128,150-999,Ngân Bảo Tương Đồng Tử,npcBaoXiangTongZi5,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12129,75-79,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12130,80-89,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12131,90-99,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12132,100-109,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12133,110-119,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12134,120-129,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12135,130-139,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12136,140-149,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),2,zone1,Tiêu diệt bảo sương,12137,150-999,Kim Bảo Tương Đồng Tử,npcBaoXiangTongZi6,Hater
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),3,boss,Trấn Bảo Long Vương,12138,75-79,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),3,boss,Trấn Bảo Long Vương,12139,80-89,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),3,boss,Trấn Bảo Long Vương,12140,90-99,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),3,boss,Trấn Bảo Long Vương,12141,100-109,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),3,boss,Trấn Bảo Long Vương,12142,110-119,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),3,boss,Trấn Bảo Long Vương,12143,120-129,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),3,boss,Trấn Bảo Long Vương,12144,130-139,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),3,boss,Trấn Bảo Long Vương,12145,140-149,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),3,boss,Trấn Bảo Long Vương,12146,150-999,Trấn Bảo Long Vương,bossLieJinMingWang,Boss
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3680,10-19,Hoàng Sắc Túc cầu,CuJuHuangQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3681,20-29,Hoàng Sắc Túc cầu,CuJuHuangQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3682,30-39,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3683,40-49,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3684,50-59,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3685,60-69,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3686,70-79,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3687,80-89,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3688,90-99,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3689,100-999,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3690,10-19,Hồng sắc túc cầu,CuJuHongQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3691,20-29,Hồng sắc túc cầu,CuJuHongQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3692,30-39,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3693,40-49,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3694,50-59,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3695,60-69,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3696,70-79,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3697,80-89,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3698,90-99,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3699,100-999,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3700,10-19,Lam sắc túc cầu,CuJuLanQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3701,20-29,Lam sắc túc cầu,CuJuLanQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3702,30-39,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3703,40-49,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3704,50-59,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3705,60-69,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3706,70-79,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3707,80-89,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3708,90-99,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3709,100-999,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3710,10-19,Hoa Sắc Túc Cầu,CuJuHuaQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3711,20-29,Hoa Sắc Túc Cầu,CuJuHuaQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3712,30-39,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3713,40-49,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3714,50-59,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3715,60-69,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3716,70-79,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3717,80-89,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3718,90-99,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,3719,100-999,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9160,10-19,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9161,20-29,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9162,30-39,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9163,40-49,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9164,50-59,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9165,60-69,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9166,70-79,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9167,80-89,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9168,90-99,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9169,100-999,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9170,10-19,Hồng Sắc Đại túc cầu,CuJuHongQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9171,20-29,Hồng Sắc Đại túc cầu,CuJuHongQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9172,30-39,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9173,40-49,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9174,50-59,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9175,60-69,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9176,70-79,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9177,80-89,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9178,90-99,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9179,100-999,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9180,10-19,Lam Sắc Đại túc cầu,CuJuLanQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9181,20-29,Lam Sắc Đại túc cầu,CuJuLanQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9182,30-39,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9183,40-49,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9184,50-59,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9185,60-69,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9186,70-79,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9187,80-89,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9188,90-99,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9189,100-999,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9190,10-19,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9191,20-29,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Normal
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9192,30-39,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9193,40-49,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9194,50-59,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9195,60-69,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9196,70-79,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9197,80-89,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9198,90-99,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),2,zone1,Tiêu diệt túc cầu,9199,100-999,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_1,Túc Cầu (thường),3,boss,Tôn Mỹ Mỹ,3720,10-19,BOSS túc cầu,CuJuboss,Boss
+TucCau_1,Túc Cầu (thường),3,boss,Tôn Mỹ Mỹ,3721,20-29,BOSS túc cầu,CuJuboss,Boss
+TucCau_1,Túc Cầu (thường),3,boss,Tôn Mỹ Mỹ,3722,30-39,BOSS túc cầu,CuJuboss,Boss
+TucCau_1,Túc Cầu (thường),3,boss,Tôn Mỹ Mỹ,3723,40-49,BOSS túc cầu,CuJuboss,Boss
+TucCau_1,Túc Cầu (thường),3,boss,Tôn Mỹ Mỹ,3724,50-59,BOSS túc cầu,CuJuboss,Boss
+TucCau_1,Túc Cầu (thường),3,boss,Tôn Mỹ Mỹ,3725,60-69,BOSS túc cầu,CuJuboss,Boss
+TucCau_1,Túc Cầu (thường),3,boss,Tôn Mỹ Mỹ,3726,70-79,BOSS túc cầu,CuJuboss,Boss
+TucCau_1,Túc Cầu (thường),3,boss,Tôn Mỹ Mỹ,3727,80-89,BOSS túc cầu,CuJuboss,Boss
+TucCau_1,Túc Cầu (thường),3,boss,Tôn Mỹ Mỹ,3728,90-99,BOSS túc cầu,CuJuboss,Boss
+TucCau_1,Túc Cầu (thường),3,boss,Tôn Mỹ Mỹ,3729,100-999,BOSS túc cầu,CuJuboss,Boss
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3680,10-19,Hoàng Sắc Túc cầu,CuJuHuangQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3681,20-29,Hoàng Sắc Túc cầu,CuJuHuangQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3682,30-39,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3683,40-49,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3684,50-59,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3685,60-69,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3686,70-79,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3687,80-89,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3688,90-99,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3689,100-999,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3690,10-19,Hồng sắc túc cầu,CuJuHongQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3691,20-29,Hồng sắc túc cầu,CuJuHongQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3692,30-39,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3693,40-49,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3694,50-59,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3695,60-69,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3696,70-79,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3697,80-89,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3698,90-99,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3699,100-999,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3700,10-19,Lam sắc túc cầu,CuJuLanQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3701,20-29,Lam sắc túc cầu,CuJuLanQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3702,30-39,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3703,40-49,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3704,50-59,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3705,60-69,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3706,70-79,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3707,80-89,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3708,90-99,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3709,100-999,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3710,10-19,Hoa Sắc Túc Cầu,CuJuHuaQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3711,20-29,Hoa Sắc Túc Cầu,CuJuHuaQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3712,30-39,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3713,40-49,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3714,50-59,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3715,60-69,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3716,70-79,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3717,80-89,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3718,90-99,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,3719,100-999,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9160,10-19,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9161,20-29,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9162,30-39,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9163,40-49,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9164,50-59,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9165,60-69,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9166,70-79,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9167,80-89,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9168,90-99,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9169,100-999,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9170,10-19,Hồng Sắc Đại túc cầu,CuJuHongQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9171,20-29,Hồng Sắc Đại túc cầu,CuJuHongQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9172,30-39,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9173,40-49,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9174,50-59,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9175,60-69,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9176,70-79,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9177,80-89,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9178,90-99,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9179,100-999,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9180,10-19,Lam Sắc Đại túc cầu,CuJuLanQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9181,20-29,Lam Sắc Đại túc cầu,CuJuLanQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9182,30-39,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9183,40-49,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9184,50-59,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9185,60-69,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9186,70-79,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9187,80-89,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9188,90-99,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9189,100-999,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9190,10-19,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9191,20-29,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Normal
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9192,30-39,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9193,40-49,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9194,50-59,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9195,60-69,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9196,70-79,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9197,80-89,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9198,90-99,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),2,zone1,Tiêu diệt túc cầu,9199,100-999,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_2,Túc Cầu (nhanh),3,boss,Tôn Mỹ Mỹ,3720,10-19,BOSS túc cầu,CuJuboss,Boss
+TucCau_2,Túc Cầu (nhanh),3,boss,Tôn Mỹ Mỹ,3721,20-29,BOSS túc cầu,CuJuboss,Boss
+TucCau_2,Túc Cầu (nhanh),3,boss,Tôn Mỹ Mỹ,3722,30-39,BOSS túc cầu,CuJuboss,Boss
+TucCau_2,Túc Cầu (nhanh),3,boss,Tôn Mỹ Mỹ,3723,40-49,BOSS túc cầu,CuJuboss,Boss
+TucCau_2,Túc Cầu (nhanh),3,boss,Tôn Mỹ Mỹ,3724,50-59,BOSS túc cầu,CuJuboss,Boss
+TucCau_2,Túc Cầu (nhanh),3,boss,Tôn Mỹ Mỹ,3725,60-69,BOSS túc cầu,CuJuboss,Boss
+TucCau_2,Túc Cầu (nhanh),3,boss,Tôn Mỹ Mỹ,3726,70-79,BOSS túc cầu,CuJuboss,Boss
+TucCau_2,Túc Cầu (nhanh),3,boss,Tôn Mỹ Mỹ,3727,80-89,BOSS túc cầu,CuJuboss,Boss
+TucCau_2,Túc Cầu (nhanh),3,boss,Tôn Mỹ Mỹ,3728,90-99,BOSS túc cầu,CuJuboss,Boss
+TucCau_2,Túc Cầu (nhanh),3,boss,Tôn Mỹ Mỹ,3729,100-999,BOSS túc cầu,CuJuboss,Boss
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3680,10-19,Hoàng Sắc Túc cầu,CuJuHuangQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3681,20-29,Hoàng Sắc Túc cầu,CuJuHuangQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3682,30-39,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3683,40-49,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3684,50-59,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3685,60-69,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3686,70-79,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3687,80-89,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3688,90-99,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3689,100-999,Hoàng Sắc Túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3690,10-19,Hồng sắc túc cầu,CuJuHongQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3691,20-29,Hồng sắc túc cầu,CuJuHongQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3692,30-39,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3693,40-49,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3694,50-59,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3695,60-69,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3696,70-79,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3697,80-89,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3698,90-99,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3699,100-999,Hồng sắc túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3700,10-19,Lam sắc túc cầu,CuJuLanQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3701,20-29,Lam sắc túc cầu,CuJuLanQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3702,30-39,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3703,40-49,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3704,50-59,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3705,60-69,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3706,70-79,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3707,80-89,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3708,90-99,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3709,100-999,Lam sắc túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3710,10-19,Hoa Sắc Túc Cầu,CuJuHuaQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3711,20-29,Hoa Sắc Túc Cầu,CuJuHuaQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3712,30-39,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3713,40-49,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3714,50-59,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3715,60-69,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3716,70-79,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3717,80-89,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3718,90-99,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,3719,100-999,Hoa Sắc Túc Cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9160,10-19,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9161,20-29,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9162,30-39,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9163,40-49,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9164,50-59,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9165,60-69,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9166,70-79,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9167,80-89,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9168,90-99,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9169,100-999,Hoàng Sắc Đại túc cầu,CuJuHuangQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9170,10-19,Hồng Sắc Đại túc cầu,CuJuHongQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9171,20-29,Hồng Sắc Đại túc cầu,CuJuHongQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9172,30-39,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9173,40-49,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9174,50-59,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9175,60-69,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9176,70-79,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9177,80-89,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9178,90-99,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9179,100-999,Hồng Sắc Đại túc cầu,CuJuHongQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9180,10-19,Lam Sắc Đại túc cầu,CuJuLanQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9181,20-29,Lam Sắc Đại túc cầu,CuJuLanQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9182,30-39,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9183,40-49,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9184,50-59,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9185,60-69,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9186,70-79,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9187,80-89,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9188,90-99,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9189,100-999,Lam Sắc Đại túc cầu,CuJuLanQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9190,10-19,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9191,20-29,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Normal
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9192,30-39,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9193,40-49,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9194,50-59,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9195,60-69,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9196,70-79,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9197,80-89,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9198,90-99,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),2,zone1,Tiêu diệt túc cầu,9199,100-999,Hoa Sắc Đại túc cầu,CuJuHuaQiu,Hater
+TucCau_3,Túc Cầu (siêu tốc),3,boss,Tôn Mỹ Mỹ,3720,10-19,BOSS túc cầu,CuJuboss,Boss
+TucCau_3,Túc Cầu (siêu tốc),3,boss,Tôn Mỹ Mỹ,3721,20-29,BOSS túc cầu,CuJuboss,Boss
+TucCau_3,Túc Cầu (siêu tốc),3,boss,Tôn Mỹ Mỹ,3722,30-39,BOSS túc cầu,CuJuboss,Boss
+TucCau_3,Túc Cầu (siêu tốc),3,boss,Tôn Mỹ Mỹ,3723,40-49,BOSS túc cầu,CuJuboss,Boss
+TucCau_3,Túc Cầu (siêu tốc),3,boss,Tôn Mỹ Mỹ,3724,50-59,BOSS túc cầu,CuJuboss,Boss
+TucCau_3,Túc Cầu (siêu tốc),3,boss,Tôn Mỹ Mỹ,3725,60-69,BOSS túc cầu,CuJuboss,Boss
+TucCau_3,Túc Cầu (siêu tốc),3,boss,Tôn Mỹ Mỹ,3726,70-79,BOSS túc cầu,CuJuboss,Boss
+TucCau_3,Túc Cầu (siêu tốc),3,boss,Tôn Mỹ Mỹ,3727,80-89,BOSS túc cầu,CuJuboss,Boss
+TucCau_3,Túc Cầu (siêu tốc),3,boss,Tôn Mỹ Mỹ,3728,90-99,BOSS túc cầu,CuJuboss,Boss
+TucCau_3,Túc Cầu (siêu tốc),3,boss,Tôn Mỹ Mỹ,3729,100-999,BOSS túc cầu,CuJuboss,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,2,zone,Huyền Lôi Pha Thổ Phỉ,13000,75-79,Huyền Lôi Pha thổ phỉ,QinJiaZhaiTanZi,Hater
+Q1_LauLan,Hoàng Kim Chi Liên,2,zone,Huyền Lôi Pha Thổ Phỉ,13001,80-84,Huyền Lôi Pha thổ phỉ,QinJiaZhaiTanZi,Hater
+Q1_LauLan,Hoàng Kim Chi Liên,2,zone,Huyền Lôi Pha Thổ Phỉ,13002,85-89,Huyền Lôi Pha thổ phỉ,QinJiaZhaiTanZi,Hater
+Q1_LauLan,Hoàng Kim Chi Liên,2,zone,Huyền Lôi Pha Thổ Phỉ,13003,90-94,Huyền Lôi Pha thổ phỉ,QinJiaZhaiTanZi,Hater
+Q1_LauLan,Hoàng Kim Chi Liên,2,zone,Huyền Lôi Pha Thổ Phỉ,13004,95-99,Huyền Lôi Pha thổ phỉ,QinJiaZhaiTanZi,Hater
+Q1_LauLan,Hoàng Kim Chi Liên,2,zone,Huyền Lôi Pha Thổ Phỉ,13005,100-104,Huyền Lôi Pha thổ phỉ,QinJiaZhaiTanZi,Hater
+Q1_LauLan,Hoàng Kim Chi Liên,2,zone,Huyền Lôi Pha Thổ Phỉ,13006,105-109,Huyền Lôi Pha thổ phỉ,QinJiaZhaiTanZi,Hater
+Q1_LauLan,Hoàng Kim Chi Liên,2,zone,Huyền Lôi Pha Thổ Phỉ,13007,110-114,Huyền Lôi Pha thổ phỉ,QinJiaZhaiTanZi,Hater
+Q1_LauLan,Hoàng Kim Chi Liên,2,zone,Huyền Lôi Pha Thổ Phỉ,13008,115-119,Huyền Lôi Pha thổ phỉ,QinJiaZhaiTanZi,Hater
+Q1_LauLan,Hoàng Kim Chi Liên,2,zone,Huyền Lôi Pha Thổ Phỉ,13009,120-999,Huyền Lôi Pha thổ phỉ,QinJiaZhaiTanZi,Hater
+Q1_LauLan,Hoàng Kim Chi Liên,3,boss,Ngưu Khúc,13020,75-79,Ngưu Khúc,QinJiaZhaiJiaoTouTouMu,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,3,boss,Ngưu Khúc,13021,80-84,Ngưu Khúc,QinJiaZhaiJiaoTouTouMu,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,3,boss,Ngưu Khúc,13022,85-89,Ngưu Khúc,QinJiaZhaiJiaoTouTouMu,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,3,boss,Ngưu Khúc,13023,90-94,Ngưu Khúc,QinJiaZhaiJiaoTouTouMu,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,3,boss,Ngưu Khúc,13024,95-99,Ngưu Khúc,QinJiaZhaiJiaoTouTouMu,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,3,boss,Ngưu Khúc,13025,100-104,Ngưu Khúc,QinJiaZhaiJiaoTouTouMu,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,3,boss,Ngưu Khúc,13026,105-109,Ngưu Khúc,QinJiaZhaiJiaoTouTouMu,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,3,boss,Ngưu Khúc,13027,110-114,Ngưu Khúc,QinJiaZhaiJiaoTouTouMu,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,3,boss,Ngưu Khúc,13028,115-119,Ngưu Khúc,QinJiaZhaiJiaoTouTouMu,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,3,boss,Ngưu Khúc,13029,120-999,Ngưu Khúc,QinJiaZhaiJiaoTouTouMu,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,4,boss1,Ngưu Kỳ,13040,75-79,Ngưu Kỳ,YeWaiXiaoShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,4,boss1,Ngưu Kỳ,13041,80-84,Ngưu Kỳ,YeWaiXiaoShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,4,boss1,Ngưu Kỳ,13042,85-89,Ngưu Kỳ,YeWaiXiaoShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,4,boss1,Ngưu Kỳ,13043,90-94,Ngưu Kỳ,YeWaiXiaoShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,4,boss1,Ngưu Kỳ,13044,95-99,Ngưu Kỳ,YeWaiXiaoShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,4,boss1,Ngưu Kỳ,13045,100-104,Ngưu Kỳ,YeWaiXiaoShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,4,boss1,Ngưu Kỳ,13046,105-109,Ngưu Kỳ,YeWaiXiaoShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,4,boss1,Ngưu Kỳ,13047,110-114,Ngưu Kỳ,YeWaiXiaoShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,4,boss1,Ngưu Kỳ,13048,115-119,Ngưu Kỳ,YeWaiXiaoShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,4,boss1,Ngưu Kỳ,13049,120-999,Ngưu Kỳ,YeWaiXiaoShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,5,boss2,Vương Diêm,13060,75-79,Vương Diêm,bossShengSiLeiTaiLuJunYi,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,5,boss2,Vương Diêm,13061,80-84,Vương Diêm,YeWaiShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,5,boss2,Vương Diêm,13062,85-89,Vương Diêm,YeWaiShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,5,boss2,Vương Diêm,13063,90-94,Vương Diêm,YeWaiShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,5,boss2,Vương Diêm,13064,95-99,Vương Diêm,YeWaiShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,5,boss2,Vương Diêm,13065,100-104,Vương Diêm,YeWaiShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,5,boss2,Vương Diêm,13066,105-109,Vương Diêm,YeWaiShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,5,boss2,Vương Diêm,13067,110-114,Vương Diêm,YeWaiShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,5,boss2,Vương Diêm,13068,115-119,Vương Diêm,YeWaiShouLing,Boss
+Q1_LauLan,Hoàng Kim Chi Liên,5,boss2,Vương Diêm,13069,120-999,Vương Diêm,YeWaiShouLing,Boss
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13080,75-79,Độc Chướng Tiểu Quái,ShanYueDaoKe,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13081,80-84,Độc Chướng Tiểu Quái,ShanYueDaoKe,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13082,85-89,Độc Chướng Tiểu Quái,ShanYueDaoKe,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13083,90-94,Độc Chướng Tiểu Quái,ShanYueDaoKe,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13084,95-99,Độc Chướng Tiểu Quái,ShanYueDaoKe,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13085,100-104,Độc Chướng Tiểu Quái,ShanYueDaoKe,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13086,105-109,Độc Chướng Tiểu Quái,ShanYueDaoKe,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13087,110-114,Độc Chướng Tiểu Quái,ShanYueDaoKe,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13088,115-119,Độc Chướng Tiểu Quái,ShanYueDaoKe,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13089,120-999,Độc Chướng Tiểu Quái,ShanYueDaoKe,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13100,75-79,Trạch Địa Độc Chu,ShanZhu2,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13101,80-84,Trạch Địa Độc Chu,ShanZhu2,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13102,85-89,Trạch Địa Độc Chu,ShanZhu2,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13103,90-94,Trạch Địa Độc Chu,ShanZhu2,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13104,95-99,Trạch Địa Độc Chu,ShanZhu2,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13105,100-104,Trạch Địa Độc Chu,ShanZhu2,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13106,105-109,Trạch Địa Độc Chu,ShanZhu2,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13107,110-114,Trạch Địa Độc Chu,ShanZhu2,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13108,115-119,Trạch Địa Độc Chu,ShanZhu2,Hater
+Q2_LauLan,Huyền Phật Châu,2,zone,Độc Chướng Tiểu Quái,13109,120-999,Trạch Địa Độc Chu,ShanZhu2,Hater
+Q2_LauLan,Huyền Phật Châu,3,boss_1,Tê Phong Ma,13120,75-79,Tê Phong Ma,npc150212Bingboss,Boss
+Q2_LauLan,Huyền Phật Châu,3,boss_1,Tê Phong Ma,13121,80-84,Tê Phong Ma,npc150212Bingboss,Boss
+Q2_LauLan,Huyền Phật Châu,3,boss_1,Tê Phong Ma,13122,85-89,Tê Phong Ma,npc150212Bingboss,Boss
+Q2_LauLan,Huyền Phật Châu,3,boss_1,Tê Phong Ma,13123,90-94,Tê Phong Ma,npc150212Bingboss,Boss
+Q2_LauLan,Huyền Phật Châu,3,boss_1,Tê Phong Ma,13124,95-99,Tê Phong Ma,npc150212Bingboss,Boss
+Q2_LauLan,Huyền Phật Châu,3,boss_1,Tê Phong Ma,13125,100-104,Tê Phong Ma,npc150212Bingboss,Boss
+Q2_LauLan,Huyền Phật Châu,3,boss_1,Tê Phong Ma,13126,105-109,Tê Phong Ma,npc150212Bingboss,Boss
+Q2_LauLan,Huyền Phật Châu,3,boss_1,Tê Phong Ma,13127,110-114,Tê Phong Ma,npc150212Bingboss,Boss
+Q2_LauLan,Huyền Phật Châu,3,boss_1,Tê Phong Ma,13128,115-119,Tê Phong Ma,npc150212Bingboss,Boss
+Q2_LauLan,Huyền Phật Châu,3,boss_1,Tê Phong Ma,13129,120-999,Tê Phong Ma,npc150212Bingboss,Boss
+Q2_LauLan,Huyền Phật Châu,4,boss_2,Liệt Địa Hành Giả,13140,75-79,Liệt Địa Hành Giả,npc150301boosLiuZhua,Boss
+Q2_LauLan,Huyền Phật Châu,4,boss_2,Liệt Địa Hành Giả,13141,80-84,Liệt Địa Hành Giả,npc150301boosLiuZhua,Boss
+Q2_LauLan,Huyền Phật Châu,4,boss_2,Liệt Địa Hành Giả,13142,85-89,Liệt Địa Hành Giả,npc150301boosLiuZhua,Boss
+Q2_LauLan,Huyền Phật Châu,4,boss_2,Liệt Địa Hành Giả,13143,90-94,Liệt Địa Hành Giả,npc150301boosLiuZhua,Boss
+Q2_LauLan,Huyền Phật Châu,4,boss_2,Liệt Địa Hành Giả,13144,95-99,Liệt Địa Hành Giả,npc150301boosLiuZhua,Boss
+Q2_LauLan,Huyền Phật Châu,4,boss_2,Liệt Địa Hành Giả,13145,100-104,Liệt Địa Hành Giả,npc150301boosLiuZhua,Boss
+Q2_LauLan,Huyền Phật Châu,4,boss_2,Liệt Địa Hành Giả,13146,105-109,Liệt Địa Hành Giả,npc150301boosLiuZhua,Boss
+Q2_LauLan,Huyền Phật Châu,4,boss_2,Liệt Địa Hành Giả,13147,110-114,Liệt Địa Hành Giả,npc150301boosLiuZhua,Boss
+Q2_LauLan,Huyền Phật Châu,4,boss_2,Liệt Địa Hành Giả,13148,115-119,Liệt Địa Hành Giả,npc150301boosLiuZhua,Boss
+Q2_LauLan,Huyền Phật Châu,4,boss_2,Liệt Địa Hành Giả,13149,120-999,Liệt Địa Hành Giả,npc150301boosLiuZhua,Boss
+Q2_LauLan,Huyền Phật Châu,5,boss_3,Võ Huyền Tướng,13160,75-79,Võ Huyền Tướng,npc150210XuanbossMengJiang,Boss
+Q2_LauLan,Huyền Phật Châu,5,boss_3,Võ Huyền Tướng,13161,80-84,Võ Huyền Tướng,npc150210XuanbossMengJiang,Boss
+Q2_LauLan,Huyền Phật Châu,5,boss_3,Võ Huyền Tướng,13162,85-89,Võ Huyền Tướng,npc150210XuanbossMengJiang,Boss
+Q2_LauLan,Huyền Phật Châu,5,boss_3,Võ Huyền Tướng,13163,90-94,Võ Huyền Tướng,npc150210XuanbossMengJiang,Boss
+Q2_LauLan,Huyền Phật Châu,5,boss_3,Võ Huyền Tướng,13164,95-99,Võ Huyền Tướng,npc150210XuanbossMengJiang,Boss
+Q2_LauLan,Huyền Phật Châu,5,boss_3,Võ Huyền Tướng,13165,100-104,Võ Huyền Tướng,npc150210XuanbossMengJiang,Boss
+Q2_LauLan,Huyền Phật Châu,5,boss_3,Võ Huyền Tướng,13166,105-109,Võ Huyền Tướng,npc150210XuanbossMengJiang,Boss
+Q2_LauLan,Huyền Phật Châu,5,boss_3,Võ Huyền Tướng,13167,110-114,Võ Huyền Tướng,npc150210XuanbossMengJiang,Boss
+Q2_LauLan,Huyền Phật Châu,5,boss_3,Võ Huyền Tướng,13168,115-119,Võ Huyền Tướng,npc150210XuanbossMengJiang,Boss
+Q2_LauLan,Huyền Phật Châu,5,boss_3,Võ Huyền Tướng,13169,120-999,Võ Huyền Tướng,npc150210XuanbossMengJiang,Boss
+Q2_LauLan,Huyền Phật Châu,6,boss_4,Ngũ Độc Ma Sứ,13180,75-79,Ngũ Độc Ma Sứ,npc20150212DuboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,6,boss_4,Ngũ Độc Ma Sứ,13181,80-84,Ngũ Độc Ma Sứ,npc20150212DuboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,6,boss_4,Ngũ Độc Ma Sứ,13182,85-89,Ngũ Độc Ma Sứ,npc20150212DuboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,6,boss_4,Ngũ Độc Ma Sứ,13183,90-94,Ngũ Độc Ma Sứ,npc20150212DuboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,6,boss_4,Ngũ Độc Ma Sứ,13184,95-99,Ngũ Độc Ma Sứ,npc20150212DuboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,6,boss_4,Ngũ Độc Ma Sứ,13185,100-104,Ngũ Độc Ma Sứ,npc20150212DuboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,6,boss_4,Ngũ Độc Ma Sứ,13186,105-109,Ngũ Độc Ma Sứ,npc20150212DuboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,6,boss_4,Ngũ Độc Ma Sứ,13187,110-114,Ngũ Độc Ma Sứ,npc20150212DuboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,6,boss_4,Ngũ Độc Ma Sứ,13188,115-119,Ngũ Độc Ma Sứ,npc20150212DuboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,6,boss_4,Ngũ Độc Ma Sứ,13189,120-999,Ngũ Độc Ma Sứ,npc20150212DuboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,7,boss_5,Phá Diệm Tôn Giả,13200,75-79,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,7,boss_5,Phá Diệm Tôn Giả,13201,80-84,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,7,boss_5,Phá Diệm Tôn Giả,13202,85-89,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,7,boss_5,Phá Diệm Tôn Giả,13203,90-94,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,7,boss_5,Phá Diệm Tôn Giả,13204,95-99,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,7,boss_5,Phá Diệm Tôn Giả,13205,100-104,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,7,boss_5,Phá Diệm Tôn Giả,13206,105-109,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,7,boss_5,Phá Diệm Tôn Giả,13207,110-114,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,7,boss_5,Phá Diệm Tôn Giả,13208,115-119,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,7,boss_5,Phá Diệm Tôn Giả,13209,120-999,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,8,boss_6,Hồng Cúc Yêu Vương,13200,75-79,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,8,boss_6,Hồng Cúc Yêu Vương,13201,80-84,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,8,boss_6,Hồng Cúc Yêu Vương,13202,85-89,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,8,boss_6,Hồng Cúc Yêu Vương,13203,90-94,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,8,boss_6,Hồng Cúc Yêu Vương,13204,95-99,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,8,boss_6,Hồng Cúc Yêu Vương,13205,100-104,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,8,boss_6,Hồng Cúc Yêu Vương,13206,105-109,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,8,boss_6,Hồng Cúc Yêu Vương,13207,110-114,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,8,boss_6,Hồng Cúc Yêu Vương,13208,115-119,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q2_LauLan,Huyền Phật Châu,8,boss_6,Hồng Cúc Yêu Vương,13209,120-999,Phá Diệm Tôn Giả,npc20150211HuoboosSiZu,Boss
+Q3_LauLan,Dung Nham Chi Địa,2,zone,Yêu Ma Tùy Tùng,13240,75-79,Yêu Ma Tùy Tùng,TieYiNiu,Hater
+Q3_LauLan,Dung Nham Chi Địa,2,zone,Yêu Ma Tùy Tùng,13241,80-84,Yêu Ma Tùy Tùng,TieYiNiu,Hater
+Q3_LauLan,Dung Nham Chi Địa,2,zone,Yêu Ma Tùy Tùng,13242,85-89,Yêu Ma Tùy Tùng,TieYiNiu,Hater
+Q3_LauLan,Dung Nham Chi Địa,2,zone,Yêu Ma Tùy Tùng,13243,90-94,Yêu Ma Tùy Tùng,TieYiNiu,Hater
+Q3_LauLan,Dung Nham Chi Địa,2,zone,Yêu Ma Tùy Tùng,13244,95-99,Yêu Ma Tùy Tùng,TieYiNiu,Hater
+Q3_LauLan,Dung Nham Chi Địa,2,zone,Yêu Ma Tùy Tùng,13245,100-104,Yêu Ma Tùy Tùng,TieYiNiu,Hater
+Q3_LauLan,Dung Nham Chi Địa,2,zone,Yêu Ma Tùy Tùng,13246,105-109,Yêu Ma Tùy Tùng,TieYiNiu,Hater
+Q3_LauLan,Dung Nham Chi Địa,2,zone,Yêu Ma Tùy Tùng,13247,110-114,Yêu Ma Tùy Tùng,TieYiNiu,Hater
+Q3_LauLan,Dung Nham Chi Địa,2,zone,Yêu Ma Tùy Tùng,13248,115-119,Yêu Ma Tùy Tùng,TieYiNiu,Hater
+Q3_LauLan,Dung Nham Chi Địa,2,zone,Yêu Ma Tùy Tùng,13249,120-999,Yêu Ma Tùy Tùng,TieYiNiu,Hater
+Q3_LauLan,Dung Nham Chi Địa,3,boss_1,Hỏa Diệm Yêu Ma,13260,75-79,Hỏa Diễm Yêu Ma,npc150211Huoboss,Boss
+Q3_LauLan,Dung Nham Chi Địa,3,boss_1,Hỏa Diệm Yêu Ma,13261,80-84,Hỏa Diễm Yêu Ma,npc150211Huoboss,Boss
+Q3_LauLan,Dung Nham Chi Địa,3,boss_1,Hỏa Diệm Yêu Ma,13262,85-89,Hỏa Diễm Yêu Ma,npc150211Huoboss,Boss
+Q3_LauLan,Dung Nham Chi Địa,3,boss_1,Hỏa Diệm Yêu Ma,13263,90-94,Hỏa Diễm Yêu Ma,npc150211Huoboss,Boss
+Q3_LauLan,Dung Nham Chi Địa,3,boss_1,Hỏa Diệm Yêu Ma,13264,95-99,Hỏa Diễm Yêu Ma,npc150211Huoboss,Boss
+Q3_LauLan,Dung Nham Chi Địa,3,boss_1,Hỏa Diệm Yêu Ma,13265,100-104,Hỏa Diễm Yêu Ma,npc150211Huoboss,Boss
+Q3_LauLan,Dung Nham Chi Địa,3,boss_1,Hỏa Diệm Yêu Ma,13266,105-109,Hỏa Diễm Yêu Ma,npc150211Huoboss,Boss
+Q3_LauLan,Dung Nham Chi Địa,3,boss_1,Hỏa Diệm Yêu Ma,13267,110-114,Hỏa Diễm Yêu Ma,npc150211Huoboss,Boss
+Q3_LauLan,Dung Nham Chi Địa,3,boss_1,Hỏa Diệm Yêu Ma,13268,115-119,Hỏa Diễm Yêu Ma,npc150211Huoboss,Boss
+Q3_LauLan,Dung Nham Chi Địa,3,boss_1,Hỏa Diệm Yêu Ma,13269,120-999,Hỏa Diễm Yêu Ma,npc150211Huoboss,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13430,45-79,Tống Khương,bossShengSiLeiTaiSongJiang,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13431,50-84,Tống Khương,bossShengSiLeiTaiSongJiang,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13432,60-89,Tống Khương,bossShengSiLeiTaiSongJiang,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13433,70-94,Tống Khương,bossShengSiLeiTaiSongJiang,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13434,80-99,Tống Khương,bossShengSiLeiTaiSongJiang,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13435,90-104,Tống Khương,bossShengSiLeiTaiSongJiang,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13436,100-109,Tống Khương,bossShengSiLeiTaiSongJiang,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13437,110-119,Tống Khương,bossShengSiLeiTaiSongJiang,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13438,120-999,Tống Khương,bossShengSiLeiTaiSongJiang,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13439,45-79,Lý Khôi,bossShengSiLeiTaiLiKui,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13440,50-84,Lý Khôi,bossShengSiLeiTaiLiKui,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13441,60-89,Lý Khôi,bossShengSiLeiTaiLiKui,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13442,70-94,Lý Khôi,bossShengSiLeiTaiLiKui,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13443,80-99,Lý Khôi,bossShengSiLeiTaiLiKui,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13444,90-104,Lý Khôi,bossShengSiLeiTaiLiKui,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13445,100-109,Lý Khôi,bossShengSiLeiTaiLiKui,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13446,110-119,Lý Khôi,bossShengSiLeiTaiLiKui,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13447,120-999,Lý Khôi,bossShengSiLeiTaiLiKui,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13448,45-79,Ngô Vĩnh,bossShengSiLeiTaiWuYong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13449,50-84,Ngô Vĩnh,bossShengSiLeiTaiWuYong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13450,60-89,Ngô Vĩnh,bossShengSiLeiTaiWuYong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13451,70-94,Ngô Vĩnh,bossShengSiLeiTaiWuYong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13452,80-99,Ngô Vĩnh,bossShengSiLeiTaiWuYong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13453,90-104,Ngô Vĩnh,bossShengSiLeiTaiWuYong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13454,100-109,Ngô Vĩnh,bossShengSiLeiTaiWuYong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13455,110-119,Ngô Vĩnh,bossShengSiLeiTaiWuYong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13456,120-999,Ngô Vĩnh,bossShengSiLeiTaiWuYong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13538,45-79,Sát Tinh Lâu La,ShouXueQingNianXiaKe,Hater
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13539,50-84,Sát Tinh Lâu La,ShouXueQingNianXiaKe,Hater
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13540,60-89,Sát Tinh Lâu La,ShouXueQingNianXiaKe,Hater
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13541,70-94,Sát Tinh Lâu La,ShouXueQingNianXiaKe,Hater
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13542,80-99,Sát Tinh Lâu La,ShouXueQingNianXiaKe,Hater
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13543,90-104,Sát Tinh Lâu La,ShouXueQingNianXiaKe,Hater
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13544,100-109,Sát Tinh Lâu La,ShouXueQingNianXiaKe,Hater
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13545,110-119,Sát Tinh Lâu La,ShouXueQingNianXiaKe,Hater
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13546,120-999,Sát Tinh Lâu La,ShouXueQingNianXiaKe,Hater
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13457,45-999,Lư Quân Dật,bossShengSiLeiTaiLuJunYi,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13458,50-999,Lư Quân Dật,bossShengSiLeiTaiLuJunYi,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13459,60-999,Lư Quân Dật,bossShengSiLeiTaiLuJunYi,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13460,70-999,Lư Quân Dật,bossShengSiLeiTaiLuJunYi,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13461,80-999,Lư Quân Dật,bossShengSiLeiTaiLuJunYi,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13462,90-999,Lư Quân Dật,bossShengSiLeiTaiLuJunYi,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13463,100-999,Lư Quân Dật,bossShengSiLeiTaiLuJunYi,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13464,110-999,Lư Quân Dật,bossShengSiLeiTaiLuJunYi,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13465,120-999,Lư Quân Dật,bossShengSiLeiTaiLuJunYi,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13466,45-79,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13467,50-84,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13468,60-89,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13469,70-94,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13470,80-99,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13471,90-104,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13472,100-109,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13473,110-119,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13474,120-999,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13709,45-999,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13710,50-999,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13711,60-999,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13712,70-999,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13713,80-999,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13714,90-999,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13715,100-999,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13716,110-999,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13717,120-999,Công Tôn Thánh,bossShengSiLeiTaiGongSunSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13475,45-999,Quan Thịnh,bossShengSiLeiTaiGuanSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13476,50-999,Quan Thịnh,bossShengSiLeiTaiGuanSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13477,60-999,Quan Thịnh,bossShengSiLeiTaiGuanSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13478,70-999,Quan Thịnh,bossShengSiLeiTaiGuanSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13479,80-999,Quan Thịnh,bossShengSiLeiTaiGuanSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13480,90-999,Quan Thịnh,bossShengSiLeiTaiGuanSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13481,100-999,Quan Thịnh,bossShengSiLeiTaiGuanSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13482,110-999,Quan Thịnh,bossShengSiLeiTaiGuanSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13483,120-999,Quan Thịnh,bossShengSiLeiTaiGuanSheng,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13484,45-999,Lỗ Chí Sinh,bossShengSiLeiTaiLuZhiShen,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13485,50-999,Lỗ Chí Sinh,bossShengSiLeiTaiLuZhiShen,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13486,60-999,Lỗ Chí Sinh,bossShengSiLeiTaiLuZhiShen,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13487,70-999,Lỗ Chí Sinh,bossShengSiLeiTaiLuZhiShen,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13488,80-999,Lỗ Chí Sinh,bossShengSiLeiTaiLuZhiShen,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13489,90-999,Lỗ Chí Sinh,bossShengSiLeiTaiLuZhiShen,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13490,100-999,Lỗ Chí Sinh,bossShengSiLeiTaiLuZhiShen,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13491,110-999,Lỗ Chí Sinh,bossShengSiLeiTaiLuZhiShen,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13492,120-999,Lỗ Chí Sinh,bossShengSiLeiTaiLuZhiShen,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13493,45-999,Hô Diên Trác,bossShengSiLeiTaiHuYanZhuo,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13494,50-999,Hô Diên Trác,bossShengSiLeiTaiHuYanZhuo,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13495,60-999,Hô Diên Trác,bossShengSiLeiTaiHuYanZhuo,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13496,70-999,Hô Diên Trác,bossShengSiLeiTaiHuYanZhuo,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13497,80-999,Hô Diên Trác,bossShengSiLeiTaiHuYanZhuo,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13498,90-999,Hô Diên Trác,bossShengSiLeiTaiHuYanZhuo,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13499,100-999,Hô Diên Trác,bossShengSiLeiTaiHuYanZhuo,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13500,110-999,Hô Diên Trác,bossShengSiLeiTaiHuYanZhuo,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13501,120-999,Hô Diên Trác,bossShengSiLeiTaiHuYanZhuo,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13502,45-999,Lâm Sung,bossShengSiLeiTaiLinChong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13503,50-999,Lâm Sung,bossShengSiLeiTaiLinChong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13504,60-999,Lâm Sung,bossShengSiLeiTaiLinChong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13505,70-999,Lâm Sung,bossShengSiLeiTaiLinChong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13506,80-999,Lâm Sung,bossShengSiLeiTaiLinChong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13507,90-999,Lâm Sung,bossShengSiLeiTaiLinChong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13508,100-999,Lâm Sung,bossShengSiLeiTaiLinChong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13509,110-999,Lâm Sung,bossShengSiLeiTaiLinChong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13510,120-999,Lâm Sung,bossShengSiLeiTaiLinChong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13511,45-999,Tần Minh,bossShengSiLeiTaiQinMing,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13512,50-999,Tần Minh,bossShengSiLeiTaiQinMing,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13513,60-999,Tần Minh,bossShengSiLeiTaiQinMing,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13514,70-999,Tần Minh,bossShengSiLeiTaiQinMing,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13515,80-999,Tần Minh,bossShengSiLeiTaiQinMing,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13516,90-999,Tần Minh,bossShengSiLeiTaiQinMing,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13517,100-999,Tần Minh,bossShengSiLeiTaiQinMing,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13518,110-999,Tần Minh,bossShengSiLeiTaiQinMing,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13519,120-999,Tần Minh,bossShengSiLeiTaiQinMing,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13520,45-999,Hoa Dung,bossShengSiLeiTaiHuaRong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13521,50-999,Hoa Dung,bossShengSiLeiTaiHuaRong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13522,60-999,Hoa Dung,bossShengSiLeiTaiHuaRong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13523,70-999,Hoa Dung,bossShengSiLeiTaiHuaRong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13524,80-999,Hoa Dung,bossShengSiLeiTaiHuaRong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13525,90-999,Hoa Dung,bossShengSiLeiTaiHuaRong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13526,100-999,Hoa Dung,bossShengSiLeiTaiHuaRong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13527,110-999,Hoa Dung,bossShengSiLeiTaiHuaRong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13528,120-999,Hoa Dung,bossShengSiLeiTaiHuaRong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13529,45-999,Vũ Tụng,bossShengSiLeiTaiWuSong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13530,50-999,Vũ Tụng,bossShengSiLeiTaiWuSong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13531,60-999,Vũ Tụng,bossShengSiLeiTaiWuSong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13532,70-999,Vũ Tụng,bossShengSiLeiTaiWuSong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13533,80-999,Vũ Tụng,bossShengSiLeiTaiWuSong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13534,90-999,Vũ Tụng,bossShengSiLeiTaiWuSong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13535,100-999,Vũ Tụng,bossShengSiLeiTaiWuSong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13536,110-999,Vũ Tụng,bossShengSiLeiTaiWuSong,Boss
+SatTinh,Thập Nhị Sát Tinh,2,boss_1,,13537,120-999,Vũ Tụng,bossShengSiLeiTaiWuSong,Boss
+PMVL,Yến Tử Ô,3,Step2,,9340,10-19,Nhạc Lão Tam,NanHaiEShen,Boss
+PMVL,Yến Tử Ô,3,Step2,,9341,20-29,Nhạc Lão Tam,NanHaiEShen,Boss
+PMVL,Yến Tử Ô,3,Step2,,9342,30-39,Nhạc Lão Tam,NanHaiEShen,Boss
+PMVL,Yến Tử Ô,3,Step2,,9343,40-49,Nhạc Lão Tam,NanHaiEShen,Boss
+PMVL,Yến Tử Ô,3,Step2,,9344,50-59,Nhạc Lão Tam,NanHaiEShen,Boss
+PMVL,Yến Tử Ô,3,Step2,,9345,60-69,Nhạc Lão Tam,NanHaiEShen,Boss
+PMVL,Yến Tử Ô,3,Step2,,9346,70-79,Nhạc Lão Tam,NanHaiEShen,Boss
+PMVL,Yến Tử Ô,3,Step2,,9347,80-89,Nhạc Lão Tam,NanHaiEShen,Boss
+PMVL,Yến Tử Ô,3,Step2,,9348,90-99,Nhạc Lão Tam,NanHaiEShen,Boss
+PMVL,Yến Tử Ô,3,Step2,,9349,100-999,Nhạc Lão Tam,NanHaiEShen,Boss
+PMVL,Yến Tử Ô,3,Step2,,9350,10-19,Vân Trung Hạc,YunZhongHe,Boss
+PMVL,Yến Tử Ô,3,Step2,,9351,20-29,Vân Trung Hạc,YunZhongHe,Boss
+PMVL,Yến Tử Ô,3,Step2,,9352,30-39,Vân Trung Hạc,YunZhongHe,Boss
+PMVL,Yến Tử Ô,3,Step2,,9353,40-49,Vân Trung Hạc,YunZhongHe,Boss
+PMVL,Yến Tử Ô,3,Step2,,9354,50-59,Vân Trung Hạc,YunZhongHe,Boss
+PMVL,Yến Tử Ô,3,Step2,,9355,60-69,Vân Trung Hạc,YunZhongHe,Boss
+PMVL,Yến Tử Ô,3,Step2,,9356,70-79,Vân Trung Hạc,YunZhongHe,Boss
+PMVL,Yến Tử Ô,3,Step2,,9357,80-89,Vân Trung Hạc,YunZhongHe,Boss
+PMVL,Yến Tử Ô,3,Step2,,9358,90-99,Vân Trung Hạc,YunZhongHe,Boss
+PMVL,Yến Tử Ô,3,Step2,,9359,100-999,Vân Trung Hạc,YunZhongHe,Boss
+PMVL,Yến Tử Ô,3,Step2,,9330,10-19,Diệp Nhị Nương,XieErNiang,Boss
+PMVL,Yến Tử Ô,3,Step2,,9331,20-29,Diệp Nhị Nương,XieErNiang,Boss
+PMVL,Yến Tử Ô,3,Step2,,9332,30-39,Diệp Nhị Nương,XieErNiang,Boss
+PMVL,Yến Tử Ô,3,Step2,,9333,40-49,Diệp Nhị Nương,XieErNiang,Boss
+PMVL,Yến Tử Ô,3,Step2,,9334,50-59,Diệp Nhị Nương,XieErNiang,Boss
+PMVL,Yến Tử Ô,3,Step2,,9335,60-69,Diệp Nhị Nương,XieErNiang,Boss
+PMVL,Yến Tử Ô,3,Step2,,9336,70-79,Diệp Nhị Nương,XieErNiang,Boss
+PMVL,Yến Tử Ô,3,Step2,,9337,80-89,Diệp Nhị Nương,XieErNiang,Boss
+PMVL,Yến Tử Ô,3,Step2,,9338,90-99,Diệp Nhị Nương,XieErNiang,Boss
+PMVL,Yến Tử Ô,3,Step2,,9339,100-999,Diệp Nhị Nương,XieErNiang,Boss
+PMVL,Yến Tử Ô,3,Step2,,9320,10-19,Đoàn Diên Khánh,DuanYanQing,Boss
+PMVL,Yến Tử Ô,3,Step2,,9321,20-29,Đoàn Diên Khánh,DuanYanQing,Boss
+PMVL,Yến Tử Ô,3,Step2,,9322,30-39,Đoàn Diên Khánh,DuanYanQing,Boss
+PMVL,Yến Tử Ô,3,Step2,,9323,40-49,Đoàn Diên Khánh,DuanYanQing,Boss
+PMVL,Yến Tử Ô,3,Step2,,9324,50-59,Đoàn Diên Khánh,DuanYanQing,Boss
+PMVL,Yến Tử Ô,3,Step2,,9325,60-69,Đoàn Diên Khánh,DuanYanQing,Boss
+PMVL,Yến Tử Ô,3,Step2,,9326,70-79,Đoàn Diên Khánh,DuanYanQing,Boss
+PMVL,Yến Tử Ô,3,Step2,,9327,80-89,Đoàn Diên Khánh,DuanYanQing,Boss
+PMVL,Yến Tử Ô,3,Step2,,9328,90-99,Đoàn Diên Khánh,DuanYanQing,Boss
+PMVL,Yến Tử Ô,3,Step2,,9329,100-999,Đoàn Diên Khánh,DuanYanQing,Boss
+PMVL,Yến Tử Ô,5,Step4,,9360,10-19,Diêu Bá Đương,QinJiaZhaiJiaoTouTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9361,20-29,Diêu Bá Đương,QinJiaZhaiJiaoTouTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9362,30-39,Diêu Bá Đương,QinJiaZhaiJiaoTouTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9363,40-49,Diêu Bá Đương,QinJiaZhaiJiaoTouTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9364,50-59,Diêu Bá Đương,QinJiaZhaiJiaoTouTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9365,60-69,Diêu Bá Đương,QinJiaZhaiJiaoTouTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9366,70-79,Diêu Bá Đương,QinJiaZhaiJiaoTouTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9367,80-89,Diêu Bá Đương,QinJiaZhaiJiaoTouTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9368,90-99,Diêu Bá Đương,QinJiaZhaiJiaoTouTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9369,100-999,Diêu Bá Đương,QinJiaZhaiJiaoTouTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9370,10-19,Tư Mã Lâm,DaYanShiTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9371,20-29,Tư Mã Lâm,DaYanShiTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9372,30-39,Tư Mã Lâm,DaYanShiTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9373,40-49,Tư Mã Lâm,DaYanShiTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9374,50-59,Tư Mã Lâm,DaYanShiTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9375,60-69,Tư Mã Lâm,DaYanShiTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9376,70-79,Tư Mã Lâm,DaYanShiTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9377,80-89,Tư Mã Lâm,DaYanShiTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9378,90-99,Tư Mã Lâm,DaYanShiTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9379,100-999,Tư Mã Lâm,DaYanShiTouMu,Boss
+PMVL,Yến Tử Ô,5,Step4,,9380,10-19,Cưu Ma Trí,JiuMoZhi,Boss
+PMVL,Yến Tử Ô,5,Step4,,9381,20-29,Cưu Ma Trí,JiuMoZhi,Boss
+PMVL,Yến Tử Ô,5,Step4,,9382,30-39,Cưu Ma Trí,JiuMoZhi,Boss
+PMVL,Yến Tử Ô,5,Step4,,9383,40-49,Cưu Ma Trí,JiuMoZhi,Boss
+PMVL,Yến Tử Ô,5,Step4,,9384,50-59,Cưu Ma Trí,JiuMoZhi,Boss
+PMVL,Yến Tử Ô,5,Step4,,9385,60-69,Cưu Ma Trí,JiuMoZhi,Boss
+PMVL,Yến Tử Ô,5,Step4,,9386,70-79,Cưu Ma Trí,JiuMoZhi,Boss
+PMVL,Yến Tử Ô,5,Step4,,9387,80-89,Cưu Ma Trí,JiuMoZhi,Boss
+PMVL,Yến Tử Ô,5,Step4,,9388,90-99,Cưu Ma Trí,JiuMoZhi,Boss
+PMVL,Yến Tử Ô,5,Step4,,9389,100-999,Cưu Ma Trí,JiuMoZhi,Boss
+PMVL,Yến Tử Ô,7,Step6,,9390,10-19,Công Dã Càn,BiaoTou,Boss
+PMVL,Yến Tử Ô,7,Step6,,9391,20-29,Công Dã Càn,BiaoTou,Boss
+PMVL,Yến Tử Ô,7,Step6,,9392,30-39,Công Dã Càn,BiaoTou,Boss
+PMVL,Yến Tử Ô,7,Step6,,9393,40-49,Công Dã Càn,BiaoTou,Boss
+PMVL,Yến Tử Ô,7,Step6,,9394,50-59,Công Dã Càn,BiaoTou,Boss
+PMVL,Yến Tử Ô,7,Step6,,9395,60-69,Công Dã Càn,BiaoTou,Boss
+PMVL,Yến Tử Ô,7,Step6,,9396,70-79,Công Dã Càn,BiaoTou,Boss
+PMVL,Yến Tử Ô,7,Step6,,9397,80-89,Công Dã Càn,BiaoTou,Boss
+PMVL,Yến Tử Ô,7,Step6,,9398,90-99,Công Dã Càn,BiaoTou,Boss
+PMVL,Yến Tử Ô,7,Step6,,9399,100-999,Công Dã Càn,BiaoTou,Boss
+PMVL,Yến Tử Ô,7,Step6,,9400,10-19,Đặng Bách Xuyên,ZhongNianShuSheng,Boss
+PMVL,Yến Tử Ô,7,Step6,,9401,20-29,Đặng Bách Xuyên,ZhongNianShuSheng,Boss
+PMVL,Yến Tử Ô,7,Step6,,9402,30-39,Đặng Bách Xuyên,ZhongNianShuSheng,Boss
+PMVL,Yến Tử Ô,7,Step6,,9403,40-49,Đặng Bách Xuyên,ZhongNianShuSheng,Boss
+PMVL,Yến Tử Ô,7,Step6,,9404,50-59,Đặng Bách Xuyên,ZhongNianShuSheng,Boss
+PMVL,Yến Tử Ô,7,Step6,,9405,60-69,Đặng Bách Xuyên,ZhongNianShuSheng,Boss
+PMVL,Yến Tử Ô,7,Step6,,9406,70-79,Đặng Bách Xuyên,ZhongNianShuSheng,Boss
+PMVL,Yến Tử Ô,7,Step6,,9407,80-89,Đặng Bách Xuyên,ZhongNianShuSheng,Boss
+PMVL,Yến Tử Ô,7,Step6,,9408,90-99,Đặng Bách Xuyên,ZhongNianShuSheng,Boss
+PMVL,Yến Tử Ô,7,Step6,,9409,100-999,Đặng Bách Xuyên,ZhongNianShuSheng,Boss
+PMVL,Yến Tử Ô,7,Step6,,9410,10-19,Bao Bất Đồng,KuiWuZhongNianXiaShi,Boss
+PMVL,Yến Tử Ô,7,Step6,,9411,20-29,Bao Bất Đồng,KuiWuZhongNianXiaShi,Boss
+PMVL,Yến Tử Ô,7,Step6,,9412,30-39,Bao Bất Đồng,KuiWuZhongNianXiaShi,Boss
+PMVL,Yến Tử Ô,7,Step6,,9413,40-49,Bao Bất Đồng,KuiWuZhongNianXiaShi,Boss
+PMVL,Yến Tử Ô,7,Step6,,9414,50-59,Bao Bất Đồng,KuiWuZhongNianXiaShi,Boss
+PMVL,Yến Tử Ô,7,Step6,,9415,60-69,Bao Bất Đồng,KuiWuZhongNianXiaShi,Boss
+PMVL,Yến Tử Ô,7,Step6,,9416,70-79,Bao Bất Đồng,KuiWuZhongNianXiaShi,Boss
+PMVL,Yến Tử Ô,7,Step6,,9417,80-89,Bao Bất Đồng,KuiWuZhongNianXiaShi,Boss
+PMVL,Yến Tử Ô,7,Step6,,9418,90-99,Bao Bất Đồng,KuiWuZhongNianXiaShi,Boss
+PMVL,Yến Tử Ô,7,Step6,,9419,100-999,Bao Bất Đồng,KuiWuZhongNianXiaShi,Boss
+PMVL,Yến Tử Ô,8,Step7,,9460,10-19,Ba Thiên Thạch,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9461,20-29,Ba Thiên Thạch,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9462,30-39,Ba Thiên Thạch,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9463,40-49,Ba Thiên Thạch,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9464,50-59,Ba Thiên Thạch,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9465,60-69,Ba Thiên Thạch,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9466,70-79,Ba Thiên Thạch,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9467,80-89,Ba Thiên Thạch,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9468,90-99,Ba Thiên Thạch,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9469,100-999,Ba Thiên Thạch,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9470,10-19,Phạm Hoa,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9471,20-29,Phạm Hoa,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9472,30-39,Phạm Hoa,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9473,40-49,Phạm Hoa,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9474,50-59,Phạm Hoa,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9475,60-69,Phạm Hoa,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9476,70-79,Phạm Hoa,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9477,80-89,Phạm Hoa,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9478,90-99,Phạm Hoa,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9479,100-999,Phạm Hoa,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9480,10-19,Hoa Hách Cấn,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9481,20-29,Hoa Hách Cấn,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9482,30-39,Hoa Hách Cấn,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9483,40-49,Hoa Hách Cấn,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9484,50-59,Hoa Hách Cấn,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9485,60-69,Hoa Hách Cấn,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9486,70-79,Hoa Hách Cấn,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9487,80-89,Hoa Hách Cấn,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9488,90-99,Hoa Hách Cấn,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9489,100-999,Hoa Hách Cấn,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9490,10-19,Chử Vạn Lý,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9491,20-29,Chử Vạn Lý,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9492,30-39,Chử Vạn Lý,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9493,40-49,Chử Vạn Lý,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9494,50-59,Chử Vạn Lý,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9495,60-69,Chử Vạn Lý,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9496,70-79,Chử Vạn Lý,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9497,80-89,Chử Vạn Lý,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9498,90-99,Chử Vạn Lý,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9499,100-999,Chử Vạn Lý,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9500,10-19,Cổ Đốc Thành,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9501,20-29,Cổ Đốc Thành,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9502,30-39,Cổ Đốc Thành,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9503,40-49,Cổ Đốc Thành,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9504,50-59,Cổ Đốc Thành,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9505,60-69,Cổ Đốc Thành,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9506,70-79,Cổ Đốc Thành,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9507,80-89,Cổ Đốc Thành,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9508,90-99,Cổ Đốc Thành,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9509,100-999,Cổ Đốc Thành,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9510,10-19,Phó Tư Quy,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9511,20-29,Phó Tư Quy,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9512,30-39,Phó Tư Quy,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9513,40-49,Phó Tư Quy,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9514,50-59,Phó Tư Quy,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9515,60-69,Phó Tư Quy,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9516,70-79,Phó Tư Quy,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9517,80-89,Phó Tư Quy,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9518,90-99,Phó Tư Quy,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9519,100-999,Phó Tư Quy,PuTongXiaShi2,Boss
+PMVL,Yến Tử Ô,8,Step7,,9520,10-19,Chu Đan Thần,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9521,20-29,Chu Đan Thần,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9522,30-39,Chu Đan Thần,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9523,40-49,Chu Đan Thần,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9524,50-59,Chu Đan Thần,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9525,60-69,Chu Đan Thần,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9526,70-79,Chu Đan Thần,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9527,80-89,Chu Đan Thần,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9528,90-99,Chu Đan Thần,BiaoTou,Boss
+PMVL,Yến Tử Ô,8,Step7,,9529,100-999,Chu Đan Thần,BiaoTou,Boss
+PMVL,Yến Tử Ô,9,Step8,,9440,10-19,,,
+PMVL,Yến Tử Ô,9,Step8,,9441,20-29,Đoàn Dự,DuanYu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9442,30-39,Đoàn Dự,DuanYu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9443,40-49,Đoàn Dự,DuanYu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9444,50-59,Đoàn Dự,DuanYu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9445,60-69,Đoàn Dự,DuanYu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9446,70-79,Đoàn Dự,DuanYu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9447,80-89,Đoàn Dự,DuanYu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9448,90-99,Đoàn Dự,DuanYu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9449,100-999,Đoàn Dự,DuanYu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9450,10-19,Vương Ngữ Yên,WangYuYan,Normal
+PMVL,Yến Tử Ô,9,Step8,,9451,20-29,Vương Ngữ Yên,WangYuYan,Normal
+PMVL,Yến Tử Ô,9,Step8,,9452,30-39,Vương Ngữ Yên,WangYuYan,Hater
+PMVL,Yến Tử Ô,9,Step8,,9453,40-49,Vương Ngữ Yên,WangYuYan,Hater
+PMVL,Yến Tử Ô,9,Step8,,9454,50-59,Vương Ngữ Yên,WangYuYan,Hater
+PMVL,Yến Tử Ô,9,Step8,,9455,60-69,Vương Ngữ Yên,WangYuYan,Hater
+PMVL,Yến Tử Ô,9,Step8,,9456,70-79,Vương Ngữ Yên,WangYuYan,Hater
+PMVL,Yến Tử Ô,9,Step8,,9457,80-89,Vương Ngữ Yên,WangYuYan,Hater
+PMVL,Yến Tử Ô,9,Step8,,9458,90-99,Vương Ngữ Yên,WangYuYan,Hater
+PMVL,Yến Tử Ô,9,Step8,,9459,100-999,Vương Ngữ Yên,WangYuYan,Hater
+PMVL,Yến Tử Ô,9,Step8,,9430,10-19,Mộ Dung Phục,MuRongFu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9431,20-29,Mộ Dung Phục,MuRongFu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9432,30-39,Mộ Dung Phục,MuRongFu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9433,40-49,Mộ Dung Phục,MuRongFu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9434,50-59,Mộ Dung Phục,MuRongFu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9435,60-69,Mộ Dung Phục,MuRongFu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9436,70-79,Mộ Dung Phục,MuRongFu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9437,80-89,Mộ Dung Phục,MuRongFu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9438,90-99,Mộ Dung Phục,MuRongFu,Boss
+PMVL,Yến Tử Ô,9,Step8,,9439,100-999,Mộ Dung Phục,MuRongFu,Boss
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2510,10-19,Kính Hồ Thuỷ Phỉ,TaiHuShuiGui,Normal
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2511,20-29,Kính Hồ Thuỷ Phỉ,TaiHuShuiGui,Normal
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2512,30-39,Kính Hồ Thuỷ Phỉ,TaiHuShuiGui,Hater
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2513,40-49,Kính Hồ Thuỷ Phỉ,TaiHuShuiGui,Hater
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2514,50-59,Kính Hồ Thuỷ Phỉ,TaiHuShuiGui,Hater
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2515,60-69,Kính Hồ Thuỷ Phỉ,TaiHuShuiGui,Hater
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2516,70-79,Kính Hồ Thuỷ Phỉ,TaiHuShuiGui,Hater
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2517,80-89,Kính Hồ Thuỷ Phỉ,TaiHuShuiGui,Hater
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2518,90-99,Kính Hồ Thuỷ Phỉ,TaiHuShuiGui,Hater
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2519,100-999,Kính Hồ Thuỷ Phỉ,TaiHuShuiGui,Hater
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2520,10-19,Kính Hồ Thuỷ Phỉ Tinh Anh,TaiHuShuiGuiTouMu,Boss
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2521,20-29,Kính Hồ Thuỷ Phỉ Tinh Anh,TaiHuShuiGuiTouMu,Boss
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2522,30-39,Kính Hồ Thuỷ Phỉ Tinh Anh,TaiHuShuiGuiTouMu,Boss
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2523,40-49,Kính Hồ Thuỷ Phỉ Tinh Anh,TaiHuShuiGuiTouMu,Boss
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2524,50-59,Kính Hồ Thuỷ Phỉ Tinh Anh,TaiHuShuiGuiTouMu,Boss
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2525,60-69,Kính Hồ Thuỷ Phỉ Tinh Anh,TaiHuShuiGuiTouMu,Boss
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2526,70-79,Kính Hồ Thuỷ Phỉ Tinh Anh,TaiHuShuiGuiTouMu,Boss
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2527,80-89,Kính Hồ Thuỷ Phỉ Tinh Anh,TaiHuShuiGuiTouMu,Boss
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2528,90-99,Kính Hồ Thuỷ Phỉ Tinh Anh,TaiHuShuiGuiTouMu,Boss
+PhiKH,Diệt Phỉ Kính Hồ,2,zone1,Kính Hồ Thuỷ Phỉ,2529,100-999,Kính Hồ Thuỷ Phỉ Tinh Anh,TaiHuShuiGuiTouMu,Boss
+PhiKH,Diệt Phỉ Kính Hồ,3,boss,Kính Hồ Thủy Phỉ Đầu Lĩnh,2530,10-19,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,3,boss,Kính Hồ Thủy Phỉ Đầu Lĩnh,2531,20-29,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,3,boss,Kính Hồ Thủy Phỉ Đầu Lĩnh,2532,30-39,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,3,boss,Kính Hồ Thủy Phỉ Đầu Lĩnh,2533,40-49,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,3,boss,Kính Hồ Thủy Phỉ Đầu Lĩnh,2534,50-59,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,3,boss,Kính Hồ Thủy Phỉ Đầu Lĩnh,2535,60-69,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,3,boss,Kính Hồ Thủy Phỉ Đầu Lĩnh,2536,70-79,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,3,boss,Kính Hồ Thủy Phỉ Đầu Lĩnh,2537,80-89,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,3,boss,Kính Hồ Thủy Phỉ Đầu Lĩnh,2538,90-99,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,3,boss,Kính Hồ Thủy Phỉ Đầu Lĩnh,2539,100-999,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,4,boss_1,Kính Hồ Thủy Phỉ Đầu Lĩnh,2530,10-19,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,4,boss_1,Kính Hồ Thủy Phỉ Đầu Lĩnh,2531,20-29,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,4,boss_1,Kính Hồ Thủy Phỉ Đầu Lĩnh,2532,30-39,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,4,boss_1,Kính Hồ Thủy Phỉ Đầu Lĩnh,2533,40-49,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,4,boss_1,Kính Hồ Thủy Phỉ Đầu Lĩnh,2534,50-59,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,4,boss_1,Kính Hồ Thủy Phỉ Đầu Lĩnh,2535,60-69,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,4,boss_1,Kính Hồ Thủy Phỉ Đầu Lĩnh,2536,70-79,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,4,boss_1,Kính Hồ Thủy Phỉ Đầu Lĩnh,2537,80-89,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,4,boss_1,Kính Hồ Thủy Phỉ Đầu Lĩnh,2538,90-99,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss
+PhiKH,Diệt Phỉ Kính Hồ,4,boss_1,Kính Hồ Thủy Phỉ Đầu Lĩnh,2539,100-999,Kính Hồ Thuỷ Phỉ Đầu Lĩnh,Xuanboos,Boss

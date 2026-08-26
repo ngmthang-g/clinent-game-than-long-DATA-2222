@@ -1,0 +1,408 @@
+﻿ID,Name,ResName,LifeSkillID,LifeSkillLevel,LifeSkillExp,RequireQuestID,CollectTicks
+0,Vật phẩm rơi,Pocket,-1,-1,-1,-1,-1
+1,Mỏ đồng,CaoYaoKuangShiTongKuangShi,10,1,10,-1,10000
+2,Mỏ sắt,CaoYaoKuangShiTieKuangShi,10,2,20,-1,10000
+3,Mỏ bạc,CaoYaoKuangShiYinKuangShi,10,3,30,-1,10000
+4,Mỏ hàn thiết,CaoYaoKuangShiHanTieKuangShi,10,4,40,-1,10000
+5,Mỏ Vàng,CaoYaoKuangShiJinKuangShi,10,5,50,-1,10000
+6,Mỏ huyền thiết,CaoYaoKuangShiXuanTieKuangShi,10,6,60,-1,10000
+7,Mỏ pha lê,CaoYaoKuangShiShuiJingKuangShi,10,7,70,-1,10000
+8,Mỏ phỉ thúy,CaoYaoKuangShiFeiCuiKuangShi,10,8,80,-1,10000
+9,Mỏ Chân Vũ,CaoYaoKuangShiZhenWuKuangShi,10,9,90,-1,10000
+10,Mỏ Long Huyết,CaoYaoKuangShiLongXieKuangShi,10,10,100,-1,10000
+11,Mỏ Phụng Huyết,CaoYaoKuangShiFengXieKuangShi,10,10,110,-1,10000
+12,Nữ Oa Thạch,CaoYaoKuangShiNuWaShi,10,10,120,-1,10000
+13,Côn sơn khoáng ngọc,CaoYaoKuangShiKunShanKuangYu,10,10,130,-1,10000
+14,Chúng sinh khoáng thạch,CaoYaoKuangShiZhongShengKuangShi,10,10,140,-1,10000
+15,Mỏ Chân Vũ,CaoYaoKuangShiZhenWuKuangShi,10,10,150,-1,10000
+16,Mỏ Long Huyết,CaoYaoKuangShiLongXieKuangShi,10,10,160,-1,10000
+31,Biển hiệu trồng trọt,0WuPinTieHuangZi,-1,-1,-1,-1,5000
+32,Tiểu Mạch,0GuanMuXiaoGuan1,-1,-1,-1,-1,5000
+33,Lúa mì chín,0GuanMuDaGuan1,-1,-1,-1,-1,5000
+34,Bình nước xuất quỷ,0WuPinShuiGang1,-1,-1,-1,-1,5000
+35,Bầy cá,XiaoDongWuYuQun02,-1,-1,-1,-1,5000
+36,Chỗ chôn bảo vật,0WuPinShuiGang1,-1,-1,-1,-1,5000
+49,Rương bảo vật của Bạch Lang đại vương,0WuPinBiaoXiang,-1,-1,-1,-1,5000
+50,Phong Hỏa đài,0WuPinBiaoXiang,-1,-1,-1,-1,5000
+51,Lục Phẩm Diệp Nhân Sâm,ChangBaiShanRenCan2,-1,-1,-1,-1,5000
+93,Củi Tản Mát,ShiMenRenWuMuChai,-1,-1,-1,-1,5000
+94,Nấm Tản Mát,ShiMenRenWuMoGu,-1,-1,-1,-1,5000
+95,Quả Tùng Tản Mát,ShiMenRenWuSongGuo,-1,-1,-1,-1,5000
+96,Mãn Nguyệt,ShiMenRenWuManYue,-1,-1,-1,-1,5000
+97,Nhãn Nhi Mị,ShiMenRenWuYanErMei,-1,-1,-1,-1,5000
+98,Hồng Trang Tố Khoả,ShiMenRenWuHongZhuangSuGuo,-1,-1,-1,-1,5000
+99,Xé rách mặt mỹ nhân,0WuPinXianLianZi,-1,-1,-1,-1,5000
+101,Bạch Anh,CaoYaoKuangShiHongHua,11,1,10,-1,10000
+102,Bồ Hoàng,CaoYaoKuangShiQingXie,11,1,10,-1,10000
+103,Xuyên Bối,CaoYaoKuangShiChuanBei,11,2,20,-1,10000
+104,Nguyên Hồ,CaoYaoKuangShiYuanHu,11,2,20,-1,10000
+105,Tỳ Bà,CaoYaoKuangShiPiPa,11,3,30,-1,10000
+106,Cam Thảo,CaoYaoKuangShiGanCao,11,3,30,-1,10000
+107,Kim Ngân Hoa,CaoYaoKuangShiGouQiZi,11,3,30,-1,10000
+108,Hoàng Cầm,CaoYaoKuangShiHuangQin,11,4,40,-1,10000
+109,Câu Kỷ,CaoYaoKuangShiGouQiZi,11,4,40,-1,10000
+110,Trầm Hương,CaoYaoKuangShiPiPa,11,4,40,-1,10000
+111,Đỗ Trọng,CaoYaoKuangShiDuZhong,11,5,50,-1,10000
+112,Thương Thuật,CaoYaoKuangShiCangZhu,11,5,50,-1,10000
+113,Phục Linh,CaoYaoKuangShiFuLing,11,5,50,-1,10000
+114,Phòng Phong,CaoYaoKuangShiFangFeng,11,6,60,-1,10000
+115,Hương Nhu,CaoYaoKuangShiXiangRu,11,6,60,-1,10000
+116,Hoàng Liên,CaoYaoKuangShiYuanHu,11,6,60,-1,10000
+117,Đương Qui,CaoYaoKuangShiQingXie,11,7,70,-1,10000
+118,Quế Tâm,CaoYaoKuangShiShuangHua,11,7,70,-1,10000
+119,Hương Phụ,CaoYaoKuangShiWeiZi,11,7,70,-1,10000
+120,Hoắc Hương,CaoYaoKuangShiCangZhu,11,8,80,-1,10000
+121,Hồi Thần Thảo,CaoYaoKuangShiXiangRu,11,8,80,-1,10000
+122,Thủ Ô,CaoYaoKuangShiYuanHu,11,8,80,-1,10000
+123,Đông Trùng Hạ Thảo,CaoYaoKuangShiHongHua,11,9,90,-1,10000
+124,Long Quì Tử,CaoYaoKuangShiHuangQin,11,9,90,-1,10000
+125,Tượng Bối,CaoYaoKuangShiPiPa,11,10,100,-1,10000
+126,Nhân Sâm,CaoYaoKuangShiChuanBei,11,10,100,-1,10000
+127,Linh Chi,CaoYaoKuangShiFangFeng,11,10,110,-1,10000
+128,Tuân Thảo,CaoYaoKuangShiFuLing,11,10,110,-1,10000
+129,Liên Tử,CaoYaoKuangShiGanCao,11,10,120,-1,10000
+130,Khô Mộc Xuân,CaoYaoKuangShiGouQiZi,11,10,120,-1,10000
+201,Thảo Ngư,XiaoDongWuYuQun03,12,1,10,-1,3600000
+202,Tức Ngư,XiaoDongWuYuQun03,12,2,20,-1,3600000
+203,Liên Ngư,XiaoDongWuYuQun03,12,3,30,-1,3600000
+204,Bình Ngư,XiaoDongWuYuQun03,12,4,40,-1,3600000
+205,Thiện Ngư,XiaoDongWuYuQun03,12,5,50,-1,3600000
+206,Hắc Ngư,XiaoDongWuYuQun03,12,6,60,-1,3600000
+207,Đấu Ngư,XiaoDongWuYuQun03,12,7,70,-1,3600000
+208,Xương Ngư,XiaoDongWuYuQun03,12,8,80,-1,3600000
+209,Ngân Ngư,XiaoDongWuYuQun03,12,9,90,-1,3600000
+210,Khuê Ngư,XiaoDongWuYuQun03,12,10,100,-1,3600000
+211,Cốt Thiệt Ngư,XiaoDongWuYuQun03,12,10,110,-1,3600000
+212,Lục Tuyến Ngư,XiaoDongWuYuQun03,12,10,120,-1,3600000
+213,Thanh Ngư,XiaoDongWuYuQun04,12,1,10,-1,3600000
+214,Tiễn Ngư,XiaoDongWuYuQun04,12,2,20,-1,3600000
+215,Lư Ngư,XiaoDongWuYuQun04,12,3,30,-1,3600000
+216,Biển Đầu Ngư,XiaoDongWuYuQun04,12,4,40,-1,3600000
+217,Đầu Lực Ngư,XiaoDongWuYuQun04,12,5,50,-1,3600000
+218,Thu Đao Ngư,XiaoDongWuYuQun04,12,6,60,-1,3600000
+219,Soa Ngư,XiaoDongWuYuQun04,12,7,70,-1,3600000
+220,Quang Bối Ngư,XiaoDongWuYuQun04,12,8,80,-1,3600000
+221,Câu Ngư,XiaoDongWuYuQun04,12,9,90,-1,3600000
+222,Bãi Kỳ Ngư,XiaoDongWuYuQun04,12,10,100,-1,3600000
+223,Trân Châu Ngư,XiaoDongWuYuQun04,12,10,110,-1,3600000
+224,Văn Xương Ngư,XiaoDongWuYuQun04,12,10,120,-1,3600000
+225,Thảo Ngư,XiaoDongWuYuQun01,12,1,10,-1,3600000
+226,Tức Ngư,XiaoDongWuYuQun01,12,2,20,-1,3600000
+227,Liên Ngư,XiaoDongWuYuQun01,12,3,30,-1,3600000
+228,Bình Ngư,XiaoDongWuYuQun01,12,4,40,-1,3600000
+229,Thiện Ngư,XiaoDongWuYuQun01,12,5,50,-1,3600000
+230,Hắc Ngư,XiaoDongWuYuQun01,12,6,60,-1,3600000
+231,Đấu Ngư,XiaoDongWuYuQun01,12,7,70,-1,3600000
+232,Xương Ngư,XiaoDongWuYuQun01,12,8,80,-1,3600000
+233,Ngân Ngư,XiaoDongWuYuQun01,12,9,90,-1,3600000
+234,Khuê Ngư,XiaoDongWuYuQun01,12,10,100,-1,3600000
+235,Cốt Thiệt Ngư,XiaoDongWuYuQun01,12,10,110,-1,3600000
+236,Lục Tuyến Ngư,XiaoDongWuYuQun01,12,10,120,-1,3600000
+237,Thanh Ngư,XiaoDongWuYuQun02,12,1,10,-1,3600000
+238,Tiễn Ngư,XiaoDongWuYuQun02,12,2,20,-1,3600000
+239,Lư Ngư,XiaoDongWuYuQun02,12,3,30,-1,3600000
+240,Biển Đầu Ngư,XiaoDongWuYuQun02,12,4,40,-1,3600000
+241,Đầu Lực Ngư,XiaoDongWuYuQun02,12,5,50,-1,3600000
+242,Thu Đao Ngư,XiaoDongWuYuQun02,12,6,60,-1,3600000
+243,Soa Ngư,XiaoDongWuYuQun02,12,7,70,-1,3600000
+244,Quang Bối Ngư,XiaoDongWuYuQun02,12,8,80,-1,3600000
+245,Câu Ngư,XiaoDongWuYuQun02,12,9,90,-1,3600000
+246,Bãi Kỳ Ngư,XiaoDongWuYuQun02,12,10,100,-1,3600000
+247,Trân Châu Ngư,XiaoDongWuYuQun02,12,10,110,-1,3600000
+248,Văn Xương Ngư,XiaoDongWuYuQun02,12,10,120,-1,3600000
+249,Yên Chi Ngư,XiaoDongWuYuQun02,12,10,130,-1,3600000
+250,Thất Tinh Ngư,XiaoDongWuYuQun01,12,10,140,-1,3600000
+251,Trường Vẫn Ngư,XiaoDongWuYuQun01,12,10,150,-1,3600000
+252,Đa Kỳ Ngư,XiaoDongWuYuQun01,12,10,160,-1,3600000
+253,Kiều chủy hồng bạc,XiaoDongWuYuQun02,-1,-1,-1,-1,5000
+254,Thu bạch khuê,XiaoDongWuYuQun01,-1,-1,-1,-1,5000
+255,Điệp kỳ ngư,XiaoDongWuYuQun01,-1,-1,-1,-1,5000
+256,Văn diêu ngư,XiaoDongWuYuQun01,-1,-1,-1,-1,5000
+501,Lúa mì sản xuất sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+502,Lúa mì sản xuất sớm (đang lớn),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+503,Lúa mì sản xuất sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+504,Gạo sản xuất sớm (còn non),ChongZhiDaMiXiao,-1,-1,-1,-1,5000
+505,Gạo sản xuất sớm (đang lớn),ChongZhiDaMiZhong,-1,-1,-1,-1,5000
+506,Gạo sản xuất sớm,ChongZhiDaMiDa,-1,-1,-1,-1,5000
+507,Ngô sản xuất sớm (còn non),ChongZhiChongZhiYuMiXiao,-1,-1,-1,-1,5000
+508,Ngô sản xuất sớm (đang lớn),ChongZhiChongZhiYuMiZhong,-1,-1,-1,-1,5000
+509,Ngô sản xuất sớm,ChongZhiChongZhiYuMiDa,-1,-1,-1,-1,5000
+510,Đậu phụng sản xuất sớm (còn non),ChongZhiHuaShengXiao,-1,-1,-1,-1,5000
+511,Đậu phụng sản xuất sớm (đang lớn),ChongZhiHuaShengZhong,-1,-1,-1,-1,5000
+512,Đậu phụng sản xuất sớm,ChongZhiHuaShengDa,-1,-1,-1,-1,5000
+513,Khoai lang sản xuất sớm (còn non),ChongZhiHongShuXiao,-1,-1,-1,-1,5000
+514,Khoai lang sản xuất sớm (đang lớn),ChongZhiHongShuZhong,-1,-1,-1,-1,5000
+515,Khoai lang sản xuất sớm,ChongZhiHongShuDa,-1,-1,-1,-1,5000
+516,Cao lương sản xuất sớm (còn non),ChongZhiGaoLiangXiao,-1,-1,-1,-1,5000
+517,Cao lương sản xuất sớm (đang lớn),ChongZhiGaoLiangZhong,-1,-1,-1,-1,5000
+518,Cao lương sản xuất sớm,ChongZhiGaoLiangDa,-1,-1,-1,-1,5000
+519,Mè sản xuất sớm (còn non),ChongZhiZhiMaXiao,-1,-1,-1,-1,5000
+520,Mè sản xuất sớm (đang lớn),ChongZhiZhiMaZhong,-1,-1,-1,-1,5000
+521,Mè sản xuất sớm,ChongZhiZhiMaDa,-1,-1,-1,-1,5000
+522,Đâu xanh sản xuất sớm (còn non),ChongZhiLuDouXiao,-1,-1,-1,-1,5000
+523,Đậu xanh sản xuất sớm (đang lớn),ChongZhiLuDouZhong,-1,-1,-1,-1,5000
+524,Đậu xanh sản xuất sớm,ChongZhiLuDouDa,-1,-1,-1,-1,5000
+525,Đậu nành sản xuất sớm (còn non),ChongZhiHuangDouXiao,-1,-1,-1,-1,5000
+526,Đậu nành sản xuất sớm (đang lớn),ChongZhiHuangDouZhong,-1,-1,-1,-1,5000
+527,Đậu nành sản xuất sớm,ChongZhiHuangDouDa,-1,-1,-1,-1,5000
+528,Đậu tằm sản xuất sớm (còn non),ChongZhiTianDouXiao,-1,-1,-1,-1,5000
+529,Đậu tằm sản xuất sớm (đang lớn),ChongZhiTianDouZhong,-1,-1,-1,-1,5000
+530,Đậu tằm sản xuất sớm,ChongZhiTianDouDa,-1,-1,-1,-1,5000
+531,Khoai tây sản xuất sớm (còn non),ChongZhiTuDouXiao,-1,-1,-1,-1,5000
+532,Khoai tây sản xuất sớm (đang lớn),ChongZhiTuDouZhong,-1,-1,-1,-1,5000
+533,Khoai tây sản xuất sớm,ChongZhiTuDouDa,-1,-1,-1,-1,5000
+534,Khoai môn sản xuất sớm (còn non),ChongZhiYuTouXiao,-1,-1,-1,-1,5000
+535,Khoai môn sản xuất sớm (đang lớn),ChongZhiYuTouZhong,-1,-1,-1,-1,5000
+536,Khoai môn sản xuất sớm,ChongZhiYuTouDa,-1,-1,-1,-1,5000
+537,Trữ Ma thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+538,Trữ Ma thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+539,Trữ Ma thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+540,Thảo Miên thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+541,Thảo Miên thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+542,Thảo Miên thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+543,Á Ma thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+544,Á Ma thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+545,Á Ma thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+546,Mộc Miên thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+547,Mộc Miên thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+548,Mộc Miên thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+549,Hoàng Ma thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+550,Hoàng Ma thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+551,Hoàng Ma thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+552,Vân Miên thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+553,Vân Miên thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+554,Vân Miên thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+555,Cẩn Ma thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+556,Cẩn Ma thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+557,Cẩn Ma thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+558,Nhung Miên thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+559,Nhung Miên thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+560,Nhung Miên thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+561,Thanh Ma thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+562,Thanh Ma thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+563,Thanh Ma thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+564,Thái Miên thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+565,Thái Miên thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+566,Thái Miên thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+567,La Bố Ma thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+568,La Bố Ma thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+569,La Bố Ma thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+570,Lục Địa Miên thu hoạch sớm (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+571,Lục Địa Miên thu hoạch sớm (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+572,Lục Địa Miên thu hoạch sớm,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+573,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+574,Tiểu Thanh Xà,RenWuShe1,-1,-1,-1,-1,5000
+575,Tiểu Bạch Xà,RenWuShe2,-1,-1,-1,-1,5000
+576,Tiểu Hoàng Xà,RenWuShe3,-1,-1,-1,-1,5000
+577,Ký Hiệu Quân Tống,ShiMenRenWuXiang,-1,-1,-1,-1,5000
+578,Ký Hiệu Ba Tư,ShiMenRenWuPingZi4,-1,-1,-1,-1,5000
+579,Ký Hiệu Quân Liêu,ShiMenRenWuMiKuang,-1,-1,-1,-1,5000
+580,Võ Đang Linh Chi,ShiMenRenWuLingZhi,-1,-1,-1,-1,5000
+581,Võ Đang Thủ Ô,ShiMenRenWuHeShouWu,-1,-1,-1,-1,5000
+582,Võ Đang Nhân Sâm ,ShiMenRenWuRenCan2,-1,-1,-1,-1,5000
+583,Linh Kiện Mộc Chế,ShiMenRenWuGuiLeiZhongYangMoZu,-1,-1,-1,-1,5000
+584,Linh Kiện Thạch Chế,ShiMenRenWuGuiLeiShuJuCunChuQi,-1,-1,-1,-1,5000
+585,Linh Kiện Đồng Chế,ShiMenRenWuGuiLeiCiPanQuDongQi,-1,-1,-1,-1,5000
+586,Tiểu hoàng hầu,RenWuHouZi1,-1,-1,-1,-1,5000
+587,Tiều hắc hầu,RenWuHouZi2,-1,-1,-1,-1,5000
+588,Tiểu bạch hầu,RenWuHouZi3,-1,-1,-1,-1,5000
+589,Độc Ngô Công ,RenWuWuGong,-1,-1,-1,-1,5000
+590,Độc Thiềm Thừ ,RenWuChanChu,-1,-1,-1,-1,5000
+591,Độc Tri Thù ,RenWuZhiZhu,-1,-1,-1,-1,5000
+592,Bồ Đào Can ,ShiMenRenWuPuTaoGan,-1,-1,-1,-1,5000
+593,Tuyết Liên Hoa ,ShiMenRenWuXueLianHua,-1,-1,-1,-1,5000
+594,Dưa Cáp Mật ,ShiMenRenWuHaMiGua,-1,-1,-1,-1,5000
+595,Rương bảo vật,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+596,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+597,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+598,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+599,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+600,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+601,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+602,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+603,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+604,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+605,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+606,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+607,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+608,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+609,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+610,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+611,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+612,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+613,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+614,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+615,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+616,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+617,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+618,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+619,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+620,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+621,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+622,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+623,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+624,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+625,Bảo vật phân tán,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+701,Lúa mì sản xuất muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+702,Lúa mì sản xuất muộn (đang lớn),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+703,Lúa mì sản xuất muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+704,Gạo sản xuất muộn (còn non),ChongZhiDaMiXiao,-1,-1,-1,-1,5000
+705,Gạo sản xuất muộn (đang lớn),ChongZhiDaMiZhong,-1,-1,-1,-1,5000
+706,Gạo sản xuất muộn,ChongZhiDaMiDa,-1,-1,-1,-1,5000
+707,Ngô sản xuất muộn (còn non),ChongZhiChongZhiYuMiXiao,-1,-1,-1,-1,5000
+708,Ngô sản xuất muộn (đang lớn),ChongZhiChongZhiYuMiZhong,-1,-1,-1,-1,5000
+709,Ngô sản xuất muộn,ChongZhiChongZhiYuMiDa,-1,-1,-1,-1,5000
+710,Đậu phụng sản xuất muộn (còn non),ChongZhiHuaShengXiao,-1,-1,-1,-1,5000
+711,Đậu phụng sản xuất muộn (đang lớn),ChongZhiHuaShengZhong,-1,-1,-1,-1,5000
+712,Đâu phụng sản xuất muộn,ChongZhiHuaShengDa,-1,-1,-1,-1,5000
+713,Khoai lang sản xuất muộn (còn non),ChongZhiHongShuXiao,-1,-1,-1,-1,5000
+714,Khoai lang sản xuất muộn (đang lớn),ChongZhiHongShuZhong,-1,-1,-1,-1,5000
+715,Khoai lang sản xuất muộn,ChongZhiHongShuDa,-1,-1,-1,-1,5000
+716,Cao lương sản xuất muộn (còn non),ChongZhiGaoLiangXiao,-1,-1,-1,-1,5000
+717,Cao lương sản xuất muộn (đang lớn),ChongZhiGaoLiangZhong,-1,-1,-1,-1,5000
+718,Cao lương sản xuất muộn,ChongZhiGaoLiangDa,-1,-1,-1,-1,5000
+719,Mè sản xuất muộn (còn non),ChongZhiZhiMaXiao,-1,-1,-1,-1,5000
+720,Mè sản xuất muộn (đang lớn),ChongZhiZhiMaZhong,-1,-1,-1,-1,5000
+721,Mè sản xuất muộn,ChongZhiZhiMaDa,-1,-1,-1,-1,5000
+722,Đậu xanh sản xuất muộn (còn non),ChongZhiLuDouXiao,-1,-1,-1,-1,5000
+723,Đậu xanh sản xuất muộn (đang lớn),ChongZhiLuDouZhong,-1,-1,-1,-1,5000
+724,Đậu xanh sản xuất muộn,ChongZhiLuDouDa,-1,-1,-1,-1,5000
+725,Đậu nành sản xuất muộn (còn non),ChongZhiHuangDouXiao,-1,-1,-1,-1,5000
+726,Đậu nành sản xuất muộn (đang lớn),ChongZhiHuangDouZhong,-1,-1,-1,-1,5000
+727,Đậu nành sản xuất muộn,ChongZhiHuangDouDa,-1,-1,-1,-1,5000
+728,Đậu tằm sản xuất muộn (còn non),ChongZhiTianDouXiao,-1,-1,-1,-1,5000
+729,Đậu tằm sản xuất muộn (đang lớn),ChongZhiTianDouZhong,-1,-1,-1,-1,5000
+730,Đậu tằm sản xuất muộn,ChongZhiTianDouDa,-1,-1,-1,-1,5000
+731,Khoai tây sản xuất muộn (còn non),ChongZhiTuDouXiao,-1,-1,-1,-1,5000
+732,Khoai tây sản xuất muộn (đang lớn),ChongZhiTuDouZhong,-1,-1,-1,-1,5000
+733,Khoai tây sản xuất muộn,ChongZhiTuDouDa,-1,-1,-1,-1,5000
+734,Khoai môn sản xuất muộn (còn non),ChongZhiYuTouXiao,-1,-1,-1,-1,5000
+735,Khoai môn sản xuất muộn (đang lớn),ChongZhiYuTouZhong,-1,-1,-1,-1,5000
+736,Khoai môn sản xuất muộn,ChongZhiYuTouDa,-1,-1,-1,-1,5000
+737,Trữ Ma thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+738,Trữ Ma thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+739,Trữ Ma thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+740,Thảo Miên thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+741,Thảo Miên thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+742,Thảo Miên thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+743,Á Ma thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+744,Á Ma thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+745,Á Ma thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+746,Mộc Miên thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+747,Mộc Miên thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+748,Mộc Miên thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+749,Hoàng Ma thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+750,Hoàng Ma thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+751,Hoàng Ma thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+752,Vân Miên thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+753,Vân Miên thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+754,Vân Miên thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+755,Cẩn Ma thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+756,Cẩn Ma thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+757,Cẩn Ma thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+758,Nhung Miên thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+759,Nhung Miên thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+760,Nhung Miên thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+761,Thanh Ma thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+762,Thanh Ma thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+763,Thanh Ma thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+764,Thái Miên thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+765,Thái Miên thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+766,Thái Miên thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+767,La Bố Ma thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+768,La Bố Ma thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+769,La Bố Ma thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+770,Lục Địa Miên thu hoạch muộn (còn non),ChongZhiXiaoMaiXiao,-1,-1,-1,-1,5000
+771,Lục Địa Miên thu hoạch muộn (Đang sinh trưởng),ChongZhiXiaoMaiZhong,-1,-1,-1,-1,5000
+772,Lục Địa Miên thu hoạch muộn,ChongZhiXiaoMaiDa,-1,-1,-1,-1,5000
+773,Kẹo hỉ thông thường,XiBaoPuTongXiBao,-1,-1,-1,-1,5000
+774,Kẹo hỉ cao cấp,XiBaoGaoJiXiBao,-1,-1,-1,-1,5000
+775,Kẹo hỉ thượng hạng,XiBaoHaoHuaXiBao,-1,-1,-1,-1,5000
+776,Kính Hồ Thiên Niên Thảo,CaoYaoKuangShiXianDanLingYao,-1,-1,-1,-1,5000
+777,Đom Đóm,CaoYaoKuangShiYingHuoChong,-1,-1,-1,-1,5000
+778,Đồi tuyết ,0WuPinnpcXueDui,-1,-1,-1,-1,5000
+779,Bảo rương giáng sinh,XiBaoHaoHuaXiBao,-1,-1,-1,-1,5000
+780,Niên Thú Bảo Rương,XiBaoHaoHuaXiBao,-1,-1,-1,-1,5000
+781,Niên Thú Bảo Rương,XiBaoGaoJiXiBao,-1,-1,-1,-1,5000
+782,Khổng Minh Đăng,CaoYaoKuangShiKongMingDeng1,-1,-1,-1,-1,5000
+783,Khổng Minh Đăng,CaoYaoKuangShiKongMingDeng2,-1,-1,-1,-1,5000
+784,Khổng Minh Đăng,CaoYaoKuangShiKongMingDeng3,-1,-1,-1,-1,5000
+785,Hương Huân,CaoYaoKuangShiXiangRu,-1,-1,-1,-1,5000
+786,Chi Tử,CaoYaoKuangShiWeiZi,-1,-1,-1,-1,5000
+787,Song Hoa,CaoYaoKuangShiShuangHua,-1,-1,-1,-1,5000
+788,Thanh Diệp,CaoYaoKuangShiQingXie,-1,-1,-1,-1,5000
+789,Hồng Hoa,CaoYaoKuangShiHongHua,-1,-1,-1,-1,5000
+790,Từ bích khoáng thạch,CaoYaoKuangShiZiBiKuangShi,7,1,-1,-1,5000
+791,Lịch Thạch,CaoYaoKuangShiGuangHuaDeShiTou,-1,-1,-1,-1,5000
+792,Nhạn Linh,CaoYaoKuangShiDaYanYuMao,-1,-1,-1,-1,5000
+793,Thất Diệp Liên,CaoYaoKuangShiQiXieLian,-1,-1,-1,-1,5000
+794,Bạch Hổ Thạch,CaoYaoKuangShikvkBaiHuShi,-1,-1,-1,-1,5000
+795,Bàn Cổ Thạch,CaoYaoKuangShikvkNuWaShi,-1,-1,-1,-1,5000
+796,Thanh Long Thạch,CaoYaoKuangShikvkQingLongShi,-1,-1,-1,-1,5000
+797,Huyền Vũ Thạch,CaoYaoKuangShikvkXuanWuShi,-1,-1,-1,-1,5000
+798,Chu Tước Thạch,CaoYaoKuangShikvkZhuQueShi,-1,-1,-1,-1,5000
+799,Hứa Nguyện Lễ Bao,XiBaoHaoHuaXiBao,-1,-1,-1,-1,5000
+800,Hy Hữu Hoa Bồn,0WuPinnpc20091111MoLiHuaPen,-1,-1,-1,-1,5000
+801,Bách Hợp Hoa,0WuPinnpc20091111MoLiHua,-1,-1,-1,-1,5000
+803,Khôi Giáp Thất Lạc,ShiMenRenWunpcSanLuoDeKaiJia100113,-1,-1,-1,-1,5000
+804,Thuẫn Bài Thất Lạc,ShiMenRenWunpcSanLuoDeDunPai100113,-1,-1,-1,-1,5000
+805,Binh Khí Thất Lạc,ShiMenRenWunpcSanLuoDeBingQi100113,-1,-1,-1,-1,5000
+806,Rương bảo vật,ShiMenRenWuBaiYanSeBaoXiang,-1,-1,-1,-1,5000
+807,Lễ Hộp Cầu Phúc,XiBaoHaoHuaXiBao,-1,-1,-1,-1,5000
+808,Hộp Dưa Hấu,XiBaoHaoHuaXiBao,-1,-1,-1,-1,5000
+809,Đồi tuyết ,0WuPinnpcXueDui,-1,-1,-1,-1,5000
+810,Thiên Mạch Huyền Tinh,CaoYaoKuangShinpc2022tianmaixuanjingB,54,1,-1,-1,5000
+811,Thiên Mạch Huyền Tinh,CaoYaoKuangShinpc2022tianmaixuanjingS,54,1,-1,-1,5000
+812,Tân lạc dương tuần du bảo rương,ShiMenRenWuBaoXiang,-1,-1,-1,-1,5000
+813,Long Diên Thảo,CaoYaoKuangShiLongDanCao110224,-1,-1,-1,-1,5000
+814,Vân Giang Lư,CaoYaoKuangShinpcDiaoYuDian01,-1,-1,-1,-1,5000
+815,Phụng Huyết Khoáng (Test),CaoYaoKuangShiFengXieKuangShi,7,1,-1,-1,5000
+816,Thiên Mạch Huyền Tinh,CaoYaoKuangShinpc2022tianmaixuanjingS,54,1,-1,-1,5000
+817,Thiên Mạch Huyền Tinh,CaoYaoKuangShinpc2022tianmaixuanjingS,54,1,-1,-1,5000
+818,Vinh Thảo,CaoYaoKuangShiXiaGuCao110224,-1,-1,-1,-1,5000
+819,Dao Thảo,CaoYaoKuangShiJinQianCao110224,-1,-1,-1,-1,5000
+820,Cá Thanh Giang,CaoYaoKuangShinpcDiaoYuDian02,-1,-1,-1,-1,5000
+821,Lươn,CaoYaoKuangShinpcDiaoYuDian03,-1,-1,-1,-1,5000
+822,Mộc Vương Tri Thù,ShiMenRenWu_ShanZhu1,-1,-1,-1,-1,5000
+823,Mộc Nhân phá hoại,ShiMenRenWu_YiQiMuRen,-1,-1,-1,-1,5000
+824,Ác Viên huân đảo,ShiMenRenWu_ShuDaoHeiYuan,-1,-1,-1,-1,5000
+825,Uất Kết Tâm Ma,ShiMenRenWu_JingHuHuaYao,-1,-1,-1,-1,5000
+826,Yêu Ma Khôi Lỗi,ShiMenRenWu_YiQiTongRen,-1,-1,-1,-1,5000
+827,Tuyết Quái Định Trụ,ShiMenRenWu_XueRen,-1,-1,-1,-1,5000
+828,Hoa Thạch Khôi Lỗi,ShiMenRenWu_ShiRen,-1,-1,-1,-1,5000
+829,Nữ Tặc Khóc Lóc,ShiMenRenWu_npcGuaiGuSuMenPaiQingGongFeiZei20091229,-1,-1,-1,-1,5000
+830,Thâu Tửu Hầu Tử,ShiMenRenWu_GaoShanBaiYuan,-1,-1,-1,-1,5000
+831,Mật Thám Huân Đảo,ShiMenRenWu_QinJiaZhaiTanZi,-1,-1,-1,-1,5000
+832,Cây Ngải,0WuPinAiHao,-1,-1,-1,-1,5000
+833,Vân Trấm Linh,ShiMenRenWuYunHeXiang,-1,-1,-1,-1,5000
+834,Thanh Đồng,ShiMenRenWuQingTong,-1,-1,-1,-1,5000
+835,Hàn Tuyết Đoàn Thạch,ShiMenRenWuHanXueDuanShi,-1,-1,-1,-1,5000
+836,Tu Hành Khôi Lỗi,ShiMenRenWuNPCDunXiaDeTangMenXiuXingGuiLei130701,-1,-1,-1,-1,5000
+837,Dung Thi Thảo,0GuanMunpcRongShiCao20130917,-1,-1,-1,-1,5000
+838,Dưỡng Tâm Thảo,CaoYaoKuangShinpcYangXinCao20130917,-1,-1,-1,-1,5000
+839,Tình Nhân Thảo,CaoYaoKuangShinpcYangXinCao20130917,-1,-1,-1,-1,5000
+840,Hoàng Hoa Tử Cận,CaoYaoKuangShinpcXinHuangHuaZiJin130924,-1,-1,-1,-1,5000
+841,Nhân Sâm Thiên Niên,CaoYaoKuangShinpcXinQianNianRenCan130924,-1,-1,-1,-1,5000
+842,Kim Ti Hồ Lô,CaoYaoKuangShinpcJinSiHuLu130925,-1,-1,-1,-1,5000
+843,Linh Mộc Hoa Quế,CaoYaoKuangShinpcLingMuGuiHua130924,-1,-1,-1,-1,5000
+844,Đông Trùng Hạ Thảo,CaoYaoKuangShinpcDongChongXiaCao130924,-1,-1,-1,-1,5000
+845,Nhất Điểm Hồng,CaoYaoKuangShinpcXinDianHong130924,-1,-1,-1,-1,5000
+846,Thất Diệp Liên,CaoYaoKuangShinpcXinQiXieLian130924,-1,-1,-1,-1,5000
+847,Nhập Địa Kim Ngưu,CaoYaoKuangShinpcXinRuDiJinNiu130924,-1,-1,-1,-1,5000
+848,Giấy Màu,CaoYaoKuangShinpc20150708CaiZhi,-1,-1,-1,-1,5000
+849,Ảo Trận Huyền Đàn,ShiMenRenWunpc160831GuiGuHuanZhenXuanTan,-1,-1,-1,-1,5000
+850,Bát Quái Kính,ShiMenRenWunpc160901GuiGuBaGuaJing,-1,-1,-1,-1,5000
+851,Lệnh Kỳ,ShiMenRenWunpc160906GuiGuLingQi,-1,-1,-1,-1,5000
+852,Lục Diện Pháp „n,ShiMenRenWunpc160906GuiGuFaYin,-1,-1,-1,-1,5000
+853,Ly Nhân Khinh Giáp,npcTaoHuaDaoYinZhiChiRenJia20190821,-1,-1,-1,-1,5000
+854,Dẫn Phách Chung,npcTaoHuaDaoYinPoZhong20190821,-1,-1,-1,-1,5000
+855,Ảo Hải Trầm Hương,HuanHaiChenXiangShu,-1,-1,-1,-1,5000
+856,Hoa Vong Ưu,npcTaoHuaDaoWangYouHua20190821,-1,-1,-1,-1,5000
+857,Mộc Bản,XinTianWaiCaiJiMuCai,-1,-1,-1,-1,5000
+858,Toái Thạch Đôi,XinTianWaiCaiJiShiTou,-1,-1,-1,-1,5000
+859,Kinh Cúc,XinTianWaiCaiJiHuaDuo,-1,-1,-1,-1,5000
+860,Bia Đá Đao Hình,npcCongRenDaoXingShiBei,-1,-1,-1,-1,5000
+861,Ô Vũ,npcCongRenWuYu,-1,-1,-1,-1,5000
+862,Phong Đàn,npcCongRenFengTan,-1,-1,-1,-1,5000
+863,Đá Lưu Ly,npcCongRenLiuLiShi,-1,-1,-1,-1,5000
+864,Tứ Tuyệt Chung,npcSiJueZhuangSiJueZhong2010012,-1,-1,-1,-1,5000

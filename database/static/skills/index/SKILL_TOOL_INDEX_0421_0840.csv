@@ -1,0 +1,421 @@
+﻿ID,Name,FactionID,Type,TargetType,RequireLevel,CastRange,Property
+468,Thiên Canh Chính Khí,6,Active,Self,30,0,tianlong_tiangangzhanqi
+469,Tĩnh Ảnh Trầm Bích,6,Active,Enemy,40,15,tianlong_jingyingchenbi
+470,Đồ Tất Thuật,6,Passive,Self,1,0,tianlong_tuxishu
+471,Dục Cầm Địch Tung,6,Active,Enemy,1,15,tianlong_yuqindisong
+47101,Dục Cầm Địch Tung - Hư nhược,-1,Auto,Enemy,1,0,tianlong_yuqindisong_child
+472,Tiết Quyền Thức,6,Active,Self,30,0,tianlong_jiequanshi
+473,Bạch Hồng Quán Nhật,6,Active,Self,50,0,tianlong_baihongguanri
+474,Ma Lệ Thuật,6,Passive,Self,1,0,tianlong_molishu
+475,Tuyết Ủng Lam Quan,6,Active,Enemy,1,15,tianlong_xueyonglanguan
+47501,Tuyết Ủng Lam Quan - Phong huyệt,-1,Auto,Enemy,1,0,tianlong_xueyonglanguan_child
+476,Phá Kiếm Thức,6,Active,Self,30,0,tianlong_pojianshi
+47601,Phá Kiếm Thức - Hư nhược,-1,Auto,Enemy,1,0,tianlong_pojianshi_child
+477,Kim Ngọc Mãn Đường,6,Active,Self,50,0,tianlong_jinyumantang
+478,Vạn Nhạc Triều Tông,6,Active,Enemy,10,15,tianlong_wanyuechaozong
+479,Phi Khô Phi Vinh,6,Active,Self,30,0,tianlong_feikufeiyong
+480,Bách Bộ Xuyên Dương,6,Active,Self,60,0,tianlong_baibuchuanyang
+481,Thiếu Trạch Kiếm,6,Active,Enemy,65,15,tianlong_shaozhaijian
+48101,Thiếu Trạch Kiếm - Hư nhược,-1,Auto,Enemy,1,0,tianlong_shaozhaijian_child
+482,Chính Khí Hạo Nhiên,6,Active,PeacePlayer,1,15,tianlong_zhengqihaoran
+483,Thiếu Xung Kiếm Pháp,6,Active,PeacePlayer,1,15,tianlong_shaochongjianfa
+487,Thương Dương Kiếm,6,Active,Enemy,45,15,tianlong_shangyangjian
+48701,Thương Dương Kiếm - Xuất huyết,-1,Auto,Enemy,1,0,tianlong_shangyangjian_child
+488,Trung Xung Kiếm,6,Active,Enemy,80,15,tianlong_zhongchongjian
+48801,Trung Xung Kiếm - Hư nhược,-1,Auto,Enemy,1,0,tianlong_zhongchongjian_child_1
+48802,Trung Xung Kiếm - Hư nhược,-1,Auto,Enemy,1,0,tianlong_zhongchongjian_child_2
+48803,Trung Xung Kiếm - Hư nhược,-1,Auto,Enemy,1,0,tianlong_zhongchongjian_child_3
+489,Hoàng Long Nộ Minh,6,Active,Enemy,1,15,eighthbook_damage_balanced
+490,Long Bàn Đẩu Lý,6,Active,Enemy,1,15,eighthbook_control_balanced
+491,Nhạn Nam Phi,7,Active,Enemy,1,3,tianshan_yannanfei
+492,Ưng Kích Trường Không,7,Active,Enemy,10,0,tianshan_yingjichangkong
+493,Phụng Vũ Cửu Thiên,7,Active,Enemy,45,3,tianshan_fengyujiutian
+494,Bạch Câu Quá Khích,7,Active,Self,20,0,tianshan_baigouguoji
+495,Thiết Toả Hoành Giang,7,Active,Enemy,30,15,tianshan_tiecuohengjiang
+496,Thập Diện Mai Phục,7,Active,SelfAndAlly,40,0,tianshan_shimianmaifu
+497,Kim Thiền Thoát Xác,7,Active,Self,20,0,tianshan_jinchantuoqiao
+498,Di Hoa Tiếp Mộc,7,Active,Self,30,0,tianshan_yihuajiemu
+49801,Di Hoa Tiếp Mộc - Công kích,-1,Auto,Enemy,1,0,tianshan_yihuajiemu_child
+499,Lan Hoa Điểm Huyệt Thủ,7,Active,Enemy,40,15,tianshan_lanhuadianxueshou
+500,Ngưng Sương Giáp,7,Passive,Self,1,0,tianshan_ningshuangjia
+501,Tuyết Hoa Lục Xuất,7,Active,Enemy,1,3,tianshan_xuehualuchu
+501001,Tuyết Hoa Lục Xuất - Hội tâm,-1,Auto,Self,1,0,tianshan_xuehualuchu_child
+502,Dung Tuyết Thức,7,Active,Self,30,0,tianshan_yongxueshi
+503,Đạp Tuyết Vô Ngấn,7,Active,Self,50,20,tianshan_taxuewuhen
+50301,Đạp Tuyết Vô Ngấn - Ẩn thân,-1,Auto,Self,1,0,tianshan_taxuewuhen_child
+504,Sơ Ảnh Phiến,7,Passive,Self,1,0,tianshan_shuyingshan
+505,Mai Hoa Tam Lộng,7,Active,Enemy,1,3,tianshan_meihuasanlong
+50501,Mai Hoa Tam Lộng - Cương ngạnh,-1,Auto,Enemy,1,0,tianshan_meihuasanlong_child
+506,Chiết Mai Thức,7,Active,Self,30,0,tianshan_zhemeishi
+507,Hàn Mai Nở Rộ,7,Active,Enemy,50,15,tianshan_hanmeinufang
+50701,Hàn Mai Nở Rộ - Công kích,-1,Auto,Enemy,1,0,tianshan_hanmeinufang_child
+508,Dương Ca Thiên Quân,7,Active,Enemy,10,3,tianshan_yanggetianjun
+509,Dương Xuân Bạch Tuyết,7,Active,Self,30,0,tianshan_yangchunbaixue
+510,Dương Quan Tam Điệp,7,Active,Self,60,0,tianshan_yangguansandie
+511,Đồng Sinh Cộng Tử,7,Active,Enemy,65,15,tianshan_tongshenggongsi
+51101,Đồng Sinh Cộng Tử - Phong huyệt,-1,Auto,Enemy,1,0,tianshan_tongshenggongsi_child
+512,Băng Cơ Ngọc Cốt,7,Active,PeacePlayer,1,15,tianshan_bingjiyugu
+513,Thiên Địa Hàn Băng,7,Active,PeacePlayer,1,15,tianshan_tiandihanbing
+514,Liễu Ám Hoa Minh,7,Active,PeacePlayer,1,15,tianshan_liaoanhuaming
+515,Thiên Địa Minh Diệt,7,Active,EnemyPlayer,45,15,tianshan_tiandimingmie
+51501,Thiên Địa Minh Diệt - Đóng băng,-1,Auto,Enemy,1,0,tianshan_tiandimingmie_child
+516,Băng Ngưng Sương Hoa,7,Active,Enemy,80,3,tianshan_bingningshuanghua
+517,Hồng Đào Bích Lãng,7,Active,Enemy,1,3,eighthbook_damage_physical
+518,Tứ Thuỷ Vi Thành,7,Active,Enemy,1,3,eighthbook_control_physical
+521,Lạc Anh Kiếm,8,Active,Enemy,1,15,xiaoyao_luoyingjian
+522,Đào Hoa Trận,8,Active,Enemy,1,0,xiaoyao_taohuazhen
+523,Đàn Chỉ Thần Công,8,Active,Enemy,45,15,xiaoyao_danzhishengong
+524,Lăng Ba Vi Bộ,8,Active,Self,20,20,xiaoyao_lingboweibu
+525,Họa Địa Vi Lao,8,Active,Enemy,30,15,xiaoyao_huadiweilao
+526,Vân Thể Phong Thân,8,Active,SelfAndAlly,40,0,xiaoyao_yuntifengshen
+527,Bát Trận Đồ,8,Active,Enemy,20,0,xiaoyao_bazhentu
+52701,Bát Trận Đồ - Phát nổ,-1,Auto,Enemy,1,0,xiaoyao_bazhentu_child
+528,Hỏa Nhãn Kim Tinh,8,Active,Self,30,0,xiaoyao_huoyanjinxing
+529,Tru Tiên Trận,8,Active,Enemy,40,0,xiaoyao_zhuxianzhen
+52901,Tru Tiên Trận - Phát nổ,-1,Auto,Enemy,1,0,xiaoyao_zhuxianzhen_child
+530,Bách Điểu Triều Phụng,8,Passive,Self,1,0,xiaoyao_bainiaochaofeng
+531,Cao Sơn Lưu Thủy,8,Active,Self,20,0,xiaoyao_gaoshanliushui
+532,Đại Phong Ca,8,Active,Self,30,0,xiaoyao_dafengge
+53201,Đại Phong Ca - Cương ngạnh,-1,Auto,Enemy,1,0,xiaoyao_dafengge_child
+533,Tiêu Tương Dạ Vũ,8,Active,Enemy,50,15,xiaoyao_xiaoxiangyeyu
+53301,Tiêu Tương Dạ Vũ - Thất minh,-1,Auto,Enemy,1,0,xiaoyao_xiaoxiangyeyu_child
+534,Vạn Hách Tùng Phong,8,Passive,Self,1,0,xiaoyao_wanxisongfeng
+535,Khê Sơn Hành Lữ,8,Active,Enemy,1,15,xiaoyao_jishanxinglv
+53501,Khê Sơn Hành Lữ - Hư nhược,-1,Auto,Enemy,1,0,xiaoyao_jishanxinglv_child
+536,Lạc Thần Đồ,8,Active,Self,30,0,xiaoyao_leshentu
+53601,Lạc Thần Đồ - Thiêu đốt,-1,Auto,Enemy,1,0,xiaoyao_leshentu_child
+537,Giang Hành Sơ Tuyết,8,Active,Self,40,0,xiaoyao_jiangxingchuxue
+538,Bài Sơn Đảo Hải,8,Active,Enemy,10,15,xiaoyao_baishandaohai
+539,Ba Lan Bất Kinh,8,Active,Self,30,0,xiaoyao_bolanbujing
+540,Kinh Đào Hãi Lãng,8,Active,Enemy,60,0,xiaoyao_jingdaohailang
+541,Côn Dược Bắc Minh,8,Active,Enemy,65,15,xiaoyao_gunyaobeiming
+54101,Côn Dược Bắc Minh - Chuyển hóa,-1,Auto,Self,1,0,xiaoyao_gunyaobeiming_child
+542,Mặc Thủ Thành Quy,8,Active,PeacePlayer,1,15,xiaoyao_moshouchenggui
+543,Diên Động Thương Minh,8,Active,PeacePlayer,1,15,xiaoyao_diandongcangming
+544,Định Hải Thần Châm,8,Active,Enemy,45,0,xiaoyao_dinghaishenzhen
+545,Bộ Bộ Sinh Hoa,8,Active,Self,80,0,xiaoyao_bubushenghua
+54501,Bộ Bộ Sinh Hoa - Cạm bẫy,-1,Auto,Enemy,1,0,xiaoyao_bubushenghua_child
+54502,Bộ Bộ Sinh Hoa - Tản công,-1,Auto,Enemy,1,0,xiaoyao_bubushenghua_child_1
+546,Vũ Việt Tinh Hiện,8,Active,Enemy,1,15,eighthbook_damage_magical
+547,Tử Vụ Nhiễu Tâm,8,Active,Enemy,1,15,eighthbook_control_magical
+760,Liễu Phất Y,10,Active,Enemy,1,3,murong_liaofoyi
+761,Khí Định Lục Hợp,10,Active,Enemy,10,0,murong_qidingluhe
+762,Thiên Tăng Tuế Nguyệt,10,Active,PeacePlayer,1,15,murong_tianzengsuiyue
+763,Hoàng Kiếm Cương Trường,10,Active,Enemy,45,3,murong_huangjiangangchang
+764,Mạch Thượng Hành,10,Active,Self,20,0,murong_maishangxing
+765,Thám Dinh Tướng Thủ,10,Active,Enemy,30,15,murong_tanyingxiangshou
+766,Kích Cổ Linh,10,Active,SelfAndAlly,40,0,murong_jiguling
+767,Thất Hà Ánh Nhật,10,Active,SelfAndAlly,20,0,murong_qiheyingri
+768,Diệu Dương Thực Sâm,10,Active,Enemy,30,0,murong_miaoyangshiqin
+769,Xuân Quang Tứ Mộc,10,Active,Self,40,15,murong_chunguangsimu
+770,Lưu Vân Tụ,10,Passive,Self,1,0,murong_liuyunju
+771,Trùng Vân Yếm Nhật,10,Active,Enemy,1,3,murong_zhongyunyanri
+77101,Trùng Vân Yếm Nhật - Hư nhược,-1,Auto,Enemy,1,0,murong_zhongyunyanri_child
+772,Súc Vân Dục Vũ,10,Active,Self,30,0,murong_suyunyuyu
+77201,Súc Vân Dục Vũ - Súc khí,-1,Auto,Self,1,0,murong_suyunyuyu_child
+77202,Súc Vân Dục Vũ - Định thân,-1,Auto,Self,1,0,murong_suyunyuyu_child_1
+77203,Súc Vân Dục Vũ - Tản công,-1,Auto,Self,1,0,murong_suyunyuyu_child_1
+77204,Súc Vân Dục Vũ - Phong huyệt,-1,Auto,Self,1,0,murong_suyunyuyu_child_1
+77205,Súc Vân Dục Vũ - Thất minh,-1,Auto,Self,1,0,murong_suyunyuyu_child_1
+77206,Súc Vân Dục Vũ - Tê liệt,-1,Auto,Self,1,0,murong_suyunyuyu_child_1
+773,Bỉ Hành Ngã Thích,10,Active,Enemy,50,15,murong_bixingwoci
+77301,Bỉ Hành Ngã Thích - Định thân,-1,Auto,Enemy,1,0,murong_bixingwoci_child_1
+77302,Bỉ Hành Ngã Thích - Tản công,-1,Auto,Enemy,1,0,murong_bixingwoci_child_2
+77303,Bỉ Hành Ngã Thích - Phong huyệt,-1,Auto,Enemy,1,0,murong_bixingwoci_child_3
+77304,Bỉ Hành Ngã Thích - Thất minh,-1,Auto,Enemy,1,0,murong_bixingwoci_child_4
+77305,Bỉ Hành Ngã Thích - Tê liệt,-1,Auto,Enemy,1,0,murong_bixingwoci_child_5
+774,Ỷ Kiếm Thuật,10,Passive,Self,1,0,murong_yijianshu
+775,Kiếm Tỏa Giang Sơn,10,Active,Enemy,1,3,murong_jiansuojiangshan
+77501,Kiếm Tỏa Giang Sơn - Tản công,-1,Auto,Enemy,1,0,murong_jiansuojiangshan_child
+776,Tâm Kiếm Giao Dung,10,Active,Self,30,0,murong_xinjianjiaoyong
+77601,Tâm Kiếm Giao Dung - Hư nhược,-1,Auto,Enemy,1,0,murong_xinjianjiaoyong_child_1
+77602,Tâm Kiếm Giao Dung - Tá lực,-1,Auto,Self,1,0,murong_xinjianjiaoyong_child_2
+777,Tá Lực Phản Thi,10,Active,Enemy,50,15,murong_zuolifanshi
+77701,Tá Lực Phản Thi - Bạo phát,-1,Auto,Enemy,1,0,murong_zuolifanshi_child
+778,Tinh Hỏa Thiểm,10,Active,Enemy,10,3,murong_xinghuoshan
+779,Tĩnh Tâm Quan Nguyệt,10,Active,Self,30,0,murong_jingxinguanyue
+780,Tinh Hà Hồng Hấp,10,Active,Enemy,60,3,murong_xinghehongxi
+78001,Tinh Hà Hồng Hấp - Định thân,-1,Auto,Enemy,1,0,murong_xinghehongxi_child
+781,Hóa Khí Thức,10,Active,Enemy,65,15,murong_huaqishi
+782,Cô Tô Kiếm Khách,10,Active,PeacePlayer,1,15,murong_gusujianke
+784,Phá Thiên Thức,10,Active,Self,45,0,murong_potianshi
+78401,Phá Thiên Thức - Kiếm trận,-1,Auto,Enemy,1,0,murong_potianshi_child_1
+78402,Phá Thiên Thức - Tê liệt,-1,Auto,Enemy,1,0,murong_potianshi_child_2
+785,Lăng Thần Thức,10,Active,Enemy,80,20,murong_lingshenshi
+786,Độn Di Triều Lạc,10,Active,Enemy,1,3,eighthbook_damage_magical
+787,Toái Châu Nhập Uyên,10,Active,Enemy,1,15,eighthbook_control_magical
+800,Lưu Vân Tiễn,11,Active,Enemy,1,15,tangmen_liuyunshi
+801,Vạn Tiễn Tề Phát,11,Active,Enemy,10,15,tangmen_wanjianjifa
+802,Tẩy Kinh Phạt Mạch,11,Active,PeacePlayer,1,15,tangmen_xijingfamai
+803,Cửu Thiên Lãm Nguyệt,11,Active,Enemy,45,15,tangmen_jiutianlanyue
+804,Phù Quang Lược Ảnh,11,Active,Self,20,20,tangmen_fuguanglueying
+80401,Phù Quang Lược Ảnh - Tăng tốc,-1,Auto,Self,1,0,tangmen_fuguanglueying_child
+805,Bạo Vũ Lê Hoa Châm,11,Active,Enemy,30,15,tangmen_baoyulihuazhen
+806,Đồng Thành Thiết Bích,11,Active,SelfAndAlly,40,0,tangmen_tongchengtiebi
+807,Lực Tích Thái Hư,11,Active,Self,20,0,tangmen_lijitaixu
+808,Quỷ Mị Tùy Hành,11,Active,SelfAndAlly,30,0,tangmen_guimisuixing
+809,Duy Tâm Sở Dục,11,Active,Self,40,0,tangmen_weixinsuoyu
+810,Hộ Tâm Kính,11,Passive,Self,1,0,tangmen_huxinjing
+811,Thiết Tật Lê,11,Active,Enemy,1,15,tangmen_tiejili
+81101,Thiết Tật Lê - Hư nhược,-1,Auto,Enemy,1,0,tangmen_tiejili_child
+812,Thôi Tiễn Thức,11,Active,Self,30,0,tangmen_tuijianshi
+813,Nhuyễn Vị Tiên Thân,11,Active,Self,50,0,tangmen_ruanweixianshen
+814,Thiên Cơ Nỗ,11,Passive,Self,1,0,tangmen_tianjinv
+815,Nhất Hiệp Chướng Mục,11,Active,Enemy,1,15,tangmen_yixiezhangmu
+81501,Nhất Hiệp Chướng Mục - Thất minh,-1,Auto,Enemy,1,0,tangmen_yixiezhangmu_child
+816,Chấn Tiễn Thức,11,Active,Self,30,0,tangmen_zhenjianshi
+817,Phong Lôi Vạn Quân,11,Active,Enemy,50,20,tangmen_fengleiwanjun
+818,Thiên Nữ Tán Hoa,11,Active,Enemy,10,15,tangmen_tiannvzanhua
+819,Băng Tiêu Đồng Thích,11,Active,Self,30,0,tangmen_bingxiaotongti
+820,Hàm Sa Xạ Ảnh,11,Active,Self,60,0,tangmen_hanshasheying
+82001,Hàm Sa Xạ Ảnh - Thất minh,-1,Auto,Enemy,1,0,tangmen_hanshasheying_child
+821,Khôi Lỗi Hương,11,Active,Enemy,65,0,tangmen_kuileixiang
+82101,Khôi Lỗi Hương - Định thân,-1,Auto,Enemy,1,0,tangmen_kuileixiang_child
+822,Khổng Tước Linh,11,Active,Enemy,45,15,tangmen_kongqueling
+823,Thập Phương Câu Diệt,11,Active,Self,80,0,tangmen_shifanggoumie
+82301,Thập Phương Câu Diệt - Hội tâm,-1,Auto,Self,1,0,tangmen_shifanggoumie_child
+824,Lạc Nhật Truy Tinh,11,Active,Enemy,1,15,eighthbook_damage_magical
+825,Lục Hợp Cấm Vực,11,Active,Enemy,1,15,eighthbook_control_magical
+826,Ảnh Tử Thích Khách,11,Active,PeacePlayer,1,15,tangmen_yingzicike
+830,Càn Khôn Dẫn,12,Active,Enemy,1,15,guigu_qiankunyin
+831,Thái Thượng Vong Tình,12,Active,Enemy,10,15,guigu_taishangwangqing
+832,Tạo Hóa Tam Sinh,12,Active,PeacePlayer,1,15,guigu_zaohuasansheng
+833,Nhất Khí Tam Thanh,12,Active,Enemy,45,15,guigu_yiqisanqing
+834,Phù Dao Trực Thượng,12,Active,Self,20,0,guigu_fuyaozhishang
+835,Đào Nhiên Nhất Túy,12,Active,Enemy,30,15,guigu_taoranyizui
+836,Bão Nguyên Thủ Nhất,12,Active,SelfAndAlly,40,0,guigu_baoyuanshouyi
+837,Huỳnh Hoặc Thủ Tâm,12,Active,Enemy,20,15,guigu_yinghuoshouxin
+83701,Huỳnh Hoặc Thủ Tâm - Thiêu đốt,-1,Auto,Enemy,1,0,guigu_yinghuoshouxin_child
+838,Tụ Tinh Trận - Trường Sinh,12,Active,SelfAndAlly,30,0,guigu_juxingzhen_changsheng
+83801,Tụ Tinh Trận - Trường Sinh - Phục hồi,-1,Auto,SelfAndAlly,1,0,guigu_juxingzhen_changsheng_child
+839,Tuyệt Tinh Trận - Phá Quân,12,Active,Enemy,40,0,guigu_juexingzhen_pojun
+83901,Tuyệt Tinh Trận - Phá Quân - Hư nhược,-1,Auto,Enemy,1,0,guigu_juexingzhen_pojun_child
+840,Bất Diệt Thân,12,Passive,Self,1,0,guigu_bumieshen
+841,Vị Lão Tiên Suy,12,Active,Enemy,1,15,guigu_weilaoxianshuai
+84101,Vị Lão Tiên Suy - Hư nhược,-1,Auto,Enemy,1,0,guigu_weilaoxianshuai_child
+842,Tiêu Dao Du,12,Active,Self,30,0,guigu_xiaoyaoyou
+843,Ngũ Khí Triều Nguyên,12,Active,Self,50,0,guigu_wuqichaoyuan
+844,Đạo Pháp Tâm,12,Passive,Self,1,0,guigu_daofaxin
+845,Phong Vân Phản Phúc,12,Active,Enemy,1,15,guigu_fengyunfanfu
+84501,Phong Vân Phản Phúc - Tản công,-1,Auto,Enemy,1,0,guigu_fengyunfanfu_child
+846,Ý Tung Hoành,12,Active,Self,30,0,guigu_yizongheng
+847,Tụ Tinh Trận - Âm Dương,12,Active,SelfAndAlly,50,0,guigu_juxingzhen_yinyang
+84701,Tụ Tinh Trận - Âm Dương - Hỗ trợ,-1,Auto,SelfAndAlly,1,0,guigu_juxingzhen_yinyang_child
+848,Thanh Khê Trường Ca,12,Active,Enemy,10,0,guigu_qingxichangge
+849,Thiên Nhân Hợp Nhất,12,Active,Self,30,0,guigu_tianrenheyi
+850,Trích Tiên Mộng Ảnh,12,Active,Self,60,0,guigu_zhexianmengying
+851,Tuyệt Tinh Trận - Thất Sát,12,Active,Enemy,65,0,guigu_juexingzhen_qisha
+85101,Tuyệt Tinh Trận - Thất Sát - Cương ngạnh,-1,Auto,Enemy,1,0,guigu_juexingzhen_qisha_child
+852,Súc Địa Thành Thốn,12,Active,Self,45,15,guigu_suodichengcun
+853,Tuyệt Tinh Trận - Tham Lang,12,Active,SelfAndAlly,80,0,guigu_juexingzhen_tanlang
+85301,Tuyệt Tinh Trận - Tham Lang - Hỗ trợ,-1,Auto,SelfAndAlly,1,0,guigu_juexingzhen_tanlang_child
+854,Vạn Túc Thần Quang,12,Active,Enemy,1,15,eighthbook_damage_magical
+855,Bộ Canh Đạp Đẩu,12,Active,Enemy,1,15,eighthbook_control_magical
+856,Thái Cực Thần Công,12,Active,PeacePlayer,1,15,guigu_taijishengong
+900,Nhã Tụng Chi Âm,13,Active,Enemy,1,15,taohua_yasongzhiyin
+901,Bát Liệt Chi Vũ,13,Active,Enemy,10,15,taohua_baliezhiwu
+90101,Ám Thương,-1,Auto,Enemy,1,0,taohua_anshang
+90102,Giảm Thương,-1,Auto,Self,1,0,taohua_jianshang
+902,Trịnh Vĩ Chi Khúc,13,Active,PeacePlayer,1,15,taohua_zhengweizhiqu
+903,Nhân Chi Khả Tru,13,Active,Enemy,45,15,taohua_renzhikezhu
+904,Lạc Mã Quy Yên,13,Active,Self,10,0,taohua_lemaguian
+90401,Lạc Mã Quy Yên - Tê liệt,-1,Auto,Enemy,1,0,taohua_lemaguian_child
+905,Khứ Trí Khứ Cổ,13,Active,Enemy,30,15,taohua_quzhiqugu
+906,Liễm Cơ Khứ Cổ,13,Active,Self,40,0,taohua_lianqiyuyi
+90601,Liễm Cơ Khứ Cổ - Tê liệt,-1,Auto,Enemy,1,0,taohua_lianqiyuyi_child
+907,Mưu Động Can Qua,13,Active,Self,20,0,taohua_moudonggange
+90701,Mưu Động Can Qua - Tê liệt,-1,Auto,Enemy,1,0,taohua_moudonggange_child
+908,Tần Hoàng Đông Khán,13,Active,Self,30,15,taohua_qinhuangdongqian
+90801,Tần Hoàng Đông Khán - Hỗ trợ,-1,Auto,Self,1,0,taohua_qinhuangdongqian_child
+909,Cao Đường Vân Tán,13,Active,Enemy,40,0,taohua_gaotangyunsan
+90901,Cao Đường Vân Tán - Hư nhược,-1,Auto,Enemy,1,0,taohua_gaotangyunsan_child
+910,Cơ Mệnh Duy Tân,13,Passive,Self,1,0,taohua_qimingweixin
+911,Nhật Nguyệt Chi Minh,13,Active,Enemy,1,15,taohua_riyuezhiming
+91101,Nhật Nguyệt Chi Minh - Cương ngạnh,-1,Auto,Enemy,1,0,taohua_riyuezhiming_child
+912,Nhân Dĩ Thủ Bản,13,Active,Self,30,0,taohua_renyishouben
+913,Tiêu Hồi Trú Chuyển,13,Active,Self,50,0,taohua_xiaohuizhouzhuan
+914,Hình Phạt Hữu Lý,13,Passive,Self,1,0,taohua_xingfayouli
+915,Tội Nhân Bất Oán,13,Active,Enemy,1,15,taohua_zuirenbuyuan
+91501,Tội Nhân Bất Oán - Tê liệt,-1,Auto,Enemy,1,0,taohua_zuirenbuyuan_child
+916,Chiến Khả Đắc Uy,13,Active,Self,30,0,taohua_zhankedewei
+91601,Chiến Khả Đắc Uy - Hội tâm,-1,Auto,Self,1,0,taohua_zhankedewei_child
+917,Dĩ Chiến Chỉ Chiến,13,Active,Self,50,0,taohua_yizhanzhizhan
+918,Lục Hợp Đồng Phong,13,Active,Enemy,10,15,taohua_luhedongfeng
+919,Giải Ngã Tâm Ưu,13,Active,Self,30,0,taohua_jiewoxinyou
+920,Trác Ca Trung Lưu,13,Active,Enemy,60,15,taohua_zhegezhongliu
+92001,Trác Ca Trung Lưu - Hư nhược,-1,Auto,Enemy,1,0,taohua_zhegezhongliu_child
+921,Khổ Trú Đoạn,13,Active,Self,45,0,taohua_kuzhouduan
+92101,Khổ Trú Đoạn - Phục hồi,-1,Auto,Self,1,0,taohua_kuzhouduan_child
+922,Khuyến Quân Tửu,13,Active,Enemy,65,15,taohua_quanjunjiu
+92201,Khuyến Quân Tửu - Cương ngạnh,-1,Auto,Enemy,1,0,taohua_quanjunjiu_child_1
+92202,Khuyến Quân Tửu - Tản công,-1,Auto,Enemy,1,0,taohua_quanjunjiu_child_2
+923,Bách Xuyên Nhập Hải,13,Active,Self,80,0,taohua_baichuanruhai
+92301,Bách Xuyên Nhập Hải - Phục hồi,-1,Auto,Self,1,0,taohua_baichuanruhai_child
+924,Lương Dạ Du,13,Active,Enemy,1,15,eighthbook_damage_physical
+925,Hồ Sinh Vân Diệt,13,Active,Enemy,1,15,eighthbook_control_physical
+926,Tiêu Kiếm Chi Âm,13,Active,Self,1,0,taohua_xiaojianzhiyin
+927,Phi Hành Viễn Khứ,13,Active,Self,1,0,taohua_feixingyuanqu
+92701,Phi Hành Viễn Khứ - Tê liệt,-1,Auto,Enemy,1,0,taohua_feixingyuanqu_child
+930,Dư Âm Diệu Diệu,100,Active,Enemy,1,15,mantuo_yuyinniaoniao
+931,Hàn Giang Tuyết,100,Active,Enemy,10,15,mantuo_hanjiangxue
+93101,Hàn Giang Tuyết - Cương ngạnh,-1,Auto,Enemy,1,0,mantuo_hanjiangxue_child
+932,Vọng Xuyên Thu Thủy,100,Active,PeacePlayer,1,15,mantuo_wangchuanqiushui
+933,Kiệt Thạch Điệu,100,Active,Enemy,45,15,mantuo_jieshidiao
+934,Liệt Tử Ngự Phong,100,Active,Self,20,15,mantuo_lieziyufeng
+935,Túy Hoa - Phương Phỉ Thì,100,Active,Enemy,30,15,mantuo_zuihuafangfeishi
+93501,Túy Hoa - Phương Phỉ Thì - Tê liệt,-1,Auto,Enemy,1,0,mantuo_zuihuafangfeishi_child
+936,Thiên Phong Hoàn Phối,100,Active,SelfAndAlly,40,0,mantuo_tianfenghuanpei
+937,Niêm Hoa - Nhãn Nhi Mị,100,Active,Enemy,20,15,mantuo_nianhuayanermei
+93701,Niêm Hoa - Nhãn Nhi Mị - Sơ hở,-1,Auto,Enemy,1,0,mantuo_nianhuayanermei_child
+938,Táng Hoa - Mộ Xuân Ngâm,100,Active,Enemy,30,15,mantuo_zanghuamuchunyin
+939,Lương Phong Hữu Tín,100,Active,Enemy,40,15,mantuo_liangfengyouxin
+93901,Lương Phong Hữu Tín - Phục hồi,-1,Auto,Self,1,0,mantuo_liangfengyouxin_child
+940,Tâm Vô Bàng Vụ,100,Passive,Self,1,0,mantuo_xinwupangwu
+941,Trường Tương Tư,100,Active,Enemy,1,15,mantuo_changxiangsi
+94101,Trường Tương Tư - Suy yếu,-1,Auto,Enemy,1,0,mantuo_changxiangsi_child
+942,Bão Hương Chi Đầu,100,Active,Self,30,0,mantuo_baoxiangzhitou
+94201,Bão Hương Chi Đầu - Phục hồi,-1,Auto,Self,1,0,mantuo_baoxiangzhitou_child
+943,Thập Hoa - Lạc Hồng Hữu Tình,100,Active,Self,50,0,mantuo_shihualuohongyouqing
+944,Trác Cầm Pháp Thức,100,Passive,Self,1,0,mantuo_zhuoqinfashi
+945,Như Mộng Lệnh,100,Active,Enemy,1,15,mantuo_rumengling
+94501,Như Mộng Lệnh - Thất minh,-1,Auto,Enemy,1,0,mantuo_rumengling_child
+946,Nhất Khúc Xuân Hiểu,100,Active,Self,30,0,mantuo_yiquchunxiao
+94601,Mạn Đà La Hoa,-1,Auto,Self,1,0,mantuo_yiquchunxiao_child
+947,Tẩm Viên Xuân,100,Active,Self,50,0,mantuo_qinyuanchun
+948,Tịnh Đế Sinh,100,Active,Self,10,0,mantuo_bingdisheng
+949,Phong Nhập Tùng,100,Active,Self,30,0,mantuo_fengrusong
+950,Quảng Lăng Tán,100,Active,Enemy,60,15,mantuo_guanglingsan
+95001,Quảng Lăng Tán - Phát kích,-1,Auto,Enemy,1,0,mantuo_guanglingsan_child
+951,Vấn Hoa - Vô Kế Lưu Xuân,100,Active,Enemy,45,15,mantuo_wenhuawujiliuchun
+95101,Vấn Hoa - Vô Kế Lưu Xuân - Hư nhược,-1,Auto,Enemy,1,0,mantuo_wenhuawujiliuchun_child
+952,Huyền Lộng Hoa Ảnh,100,Active,Enemy,65,15,mantuo_xiannonghuaying
+95201,Hoa Ảnh,-1,Auto,Self,1,0,mantuo_xiannonghuaying_child
+953,Phi Hoa - Loạn Hồng Thâm Xứ,100,Active,Self,80,0,mantuo_feihualuanhongshenchu
+95301,Phi Hoa - Loạn Hồng Thâm Xứ - Hấp huyết,-1,Auto,Enemy,1,0,mantuo_feihualuanhongshenchu_child
+95302,Phi Hoa - Loạn Hồng Thâm Xứ - Làm chậm,-1,Auto,Enemy,1,0,mantuo_feihualuanhongshenchu_child_2
+95303,Phi Hoa - Loạn Hồng Thâm Xứ - Tê liệt,-1,Auto,Enemy,1,0,mantuo_feihualuanhongshenchu_child_3
+954,Phi Hoa Diệu Du,100,Active,Enemy,1,15,eighthbook_damage_magical
+955,Tán Hoa Vấn Khúc,100,Active,Enemy,1,15,eighthbook_control_magical
+956,Ngự Cầm Phiêu Hoa,100,Active,Self,1,0,mantuo_yuqinpiaohua
+960,Nhận Kích Thiên Lý,14,Active,Enemy,1,15,jueqing_nanjiqianli
+96001,Đao Ý,-1,Auto,Self,1,0,jueqing_daoyi
+96002,Đao Ấn,-1,Auto,Enemy,1,0,jueqing_daoyin
+96003,Liên Khống,-1,Auto,Self,1,0,jueqing_liankong
+961,Đãng Thiên Quân,14,Active,Self,10,15,jueqing_dangqianjun
+96101,Đãng Thiên Quân - Trận pháp,14,Active,Enemy,30,0,jueqing_dangqianjun_child
+96102,Đãng Thiên Quân - Trận pháp - Bản thân,-1,Auto,Self,1,0,jueqing_dangqianjun_child_3
+96103,Đãng Thiên Quân - Trận pháp - Khống chế,-1,Auto,Enemy,1,0,jueqing_dangqianjun_child_2
+96104,Đãng Thiên Quân - Công kích,-1,Auto,Enemy,1,0,jueqing_dangqianjun_child_4
+96105,Đãng Thiên Quân - Tê liệt,-1,Auto,Enemy,1,0,jueqing_dangqianjun_child_5
+962,Hồn Phi Mục Đoạn,14,Active,PeacePlayer,1,15,jueqing_hunfeimuduan
+963,Liệt Hỏa Liệu Tình,14,Active,Enemy,45,5,jueqing_liehuoliaoqing
+964,Nhậm Vân Phi,14,Active,Self,20,0,jueqing_renyunfei
+965,Huy Nhận Phong Hầu,14,Active,Enemy,30,5,jueqing_huirenfenghou
+96501,Huy Nhận Phong Hầu - Định thân,-1,Auto,Enemy,1,0,jueqing_huirenfenghou_child
+96502,Huy Nhận Phong Hầu - Tê liệt,-1,Auto,Enemy,1,0,jueqing_huirenfenghou_child_2
+966,Dẫn Hoa Nhiễu Lương,14,Active,SelfAndAlly,40,0,jueqing_yinhuaraoliang
+967,Chỉ Tung Huyền Ấn,14,Active,Enemy,30,15,jueqing_zhizongxuanyin
+968,Tảo Thiên Cơ,14,Active,Enemy,30,5,jueqing_saoqianji
+96801,Tảo Thiên Cơ - Tản công,-1,Auto,Enemy,1,0,jueqing_saoqianji_child
+969,Chế Lục Hợp,14,Active,Enemy,40,5,jueqing_zhiliuhe
+96901,Chế Lục Hợp - Định thân,-1,Auto,Enemy,1,0,jueqing_zhiliuhe_child
+970,Sơn Chỉ Xuyên Hành,14,Passive,Self,1,0,jueqing_shanzhichuanxing
+971,Hoà Quang Đồng Trần,14,Passive,Self,1,0,jueqing_heguangtongchen
+97101,Hoà Quang Đồng Trần - Đao Ý,-1,Auto,Self,1,0,jueqing_heguangtongchen_child
+97102,Hoà Quang Đồng Trần - Phản,-1,Auto,Self,1,0,jueqing_heguangtongchen_child_2
+972,Định Thương Sinh,14,Active,Enemy,30,5,jueqing_dingcangsheng
+97201,Định Thương Sinh - Công kích,-1,Auto,Enemy,1,0,jueqing_dingcangsheng_child
+97202,Định Thương Sinh - Tê liệt,-1,Auto,Enemy,1,0,jueqing_dingcangsheng_child_2
+97203,Định Thương Sinh - Giải khống,-1,Auto,Self,1,0,jueqing_dingcangsheng_child_3
+973,Tiếu Ân Thù,14,Active,Self,50,0,jueqing_xiaoenchou
+974,Khuất Nhân Chi Binh,14,Passive,Self,1,0,jueqing_qurenzhibing
+975,Huy Xích Phương Tùy,14,Active,Enemy,50,5,jueqing_huichifangqiu
+97501,Huy Xích Phương Tùy - Giải trừ,-1,Auto,Self,1,0,jueqing_huichifangqiu_child
+976,Phi Thanh Bất Độ,14,Passive,Self,30,0,jueqing_feishengbudu
+977,Ninh Minh Bất Mặc,14,Active,Enemy,10,5,jueqing_ningmingbomo
+97701,Ninh Minh Bất Mặc - Bạo kích,-1,Auto,Self,1,0,jueqing_ningmingbomo_child
+978,Tình Hoa Dẫn,14,Active,Enemy,10,5,jueqing_qinghuayin
+979,Tình Tận Doanh Huyết,14,Active,Self,30,0,jueqing_qingjinyingxue
+97901,Tình Tận Doanh Huyết - Phục hồi,-1,Auto,Self,1,0,jueqing_qingjinyingxue_child
+980,Ngô Đạo Tức Chân,14,Active,Self,60,0,jueqing_wudaojizhen
+981,Quân Nhập Úng,14,Active,Enemy,45,0,jueqing_junruweng
+982,Bách Luyện Thối Nhận,14,Passive,Self,65,0,jueqing_bailiancuiren
+983,Dữ Hổ Mưu Bì,14,Active,Enemy,80,15,jueqing_yuhumoupi
+98301,Dữ Hổ Mưu Bì - Phong huyệt,-1,Auto,Enemy,1,0,jueqing_yuhumoupi_child
+984,Dung Hải Xuyên,14,Active,Enemy,1,15,eighthbook_damage_physical
+985,Ý Trường Lưu,14,Active,Enemy,1,15,eighthbook_control_physical
+986,Phán Chỉ Âm Dương,14,Active,PeacePlayer,1,15,jueqing_panzhiyinyang
+990,Loan Tâm Liêm,15,Active,Enemy,1,15,erengu_wanxinlian
+991,Thôi Hồn Định Phách,15,Active,Enemy,10,15,erengu_cuihundingpo
+992,Ngân Câu Tẩu Hạt,15,Active,PeacePlayer,1,15,erengu_yinggouzouxie
+993,Câu Hồn - Địa,15,Active,Enemy,45,15,erengu_juhundi
+99301,Câu Hồn - Địa Sát,-1,Auto,Self,1,0,erengu_juhundi_child
+99302,Thất Hồn - Địa Sát,-1,Auto,Enemy,1,0,erengu_juhundi_child_2
+994,Ác Quỷ Đạp Giang,15,Active,Self,20,10,erengu_eguitajiao
+99401,Ác Quỷ Đạp Giang - Tăng tốc,-1,Auto,Self,1,0,erengu_eguitajiao_child
+995,Tỏa Hồn Trảm,15,Active,Enemy,30,15,erengu_suohunzhan
+996,Vạn Ác Đồng Xá,15,Active,SelfAndAlly,40,0,erengu_wanedongshe
+997,Câu Hồn - Mệnh,15,Active,Enemy,20,15,erengu_juhunming
+99701,Câu Hồn - Mệnh Sát,-1,Auto,Self,1,0,erengu_juhunming_child
+99702,Thất Hồn - Mệnh Sát,-1,Auto,Enemy,1,0,erengu_juhunming_child_2
+99703,Câu Hồn - Mệnh Sát - Phục hồi,-1,Auto,Self,1,0,erengu_juhunming_child_3
+998,Bách Bội Phụng Hoàn,15,Active,Enemy,30,15,erengu_baibeifenghuan
+999,Câu Hồn - Thiên,15,Active,Enemy,40,15,erengu_juhuntian
+99901,Câu Hồn - Thiên Sát,-1,Auto,Self,1,0,erengu_juhuntian_child
+99902,Thất Hồn - Thiên Sát,-1,Auto,Enemy,1,0,erengu_juhuntian_child_2
+1000,Thiết Cốt,15,Passive,Self,1,0,erengu_tiegu
+1001,Thích Hồn Tiêu Cốt,15,Active,Enemy,1,15,erengu_tihunxiaogu
+100101,Thích Hồn Tiêu Cốt - Suy yếu,-1,Auto,Enemy,1,0,erengu_tihunxiaogu_child
+1002,Kinh Hồn,15,Active,Self,30,0,erengu_jinghun
+1003,Vô Ngã Tam Giới,15,Active,Self,50,0,erengu_wuwosanjie
+100301,Vô Ngã Tam Giới - Hồi quy,-1,Auto,Self,1,0,erengu_wuwosanjie_child
+1004,Liệt Phách,15,Passive,Self,1,0,erengu_liepo
+1005,Lô Thượng Thanh Yên,15,Active,Enemy,1,15,erengu_lushangqingyan
+100501,Lô Thượng Thanh Yên - Thất minh,-1,Auto,Enemy,1,0,erengu_lushangqingyan_child
+1006,Liêm Quyết,15,Active,Self,30,0,erengu_lianjue
+1007,Thiên Địa Bất Nhân,15,Active,Enemy,50,15,erengu_tiandiburen
+1008,Đoạn Môn Sao,15,Active,Enemy,1,15,erengu_duanmenchao
+1009,Liên Cốt Tùng Cân,15,Active,Self,30,0,erengu_liangusongjin
+1010,Câu Hồn - Vô Yếm,15,Active,Enemy,50,15,erengu_juhunwuyan
+1011,Sinh Tử Do Ngã,15,Active,Self,1,0,erengu_shengsiyouwo
+1012,Chỉ Thiên Mạ Địa,15,Active,Enemy,1,15,erengu_zhitianmadi
+101201,Chỉ Thiên Mạ Địa - Tê liệt,-1,Auto,Enemy,1,0,erengu_zhitianmadi_child
+1013,Hồn Ly Phách Tán,15,Active,Enemy,1,15,erengu_hunliposan
+101301,Hồn Ly Phách Tán - Thất minh,-1,Auto,Enemy,1,0,erengu_hunliposan_child
+1014,Phệ Hồn Cửu Thối,15,Active,Enemy,1,15,eighthbook_damage_magical
+1015,Phọc Hồn Cuồng Liêm,15,Active,Enemy,1,15,eighthbook_control_magical
+1016,Loạn Tâm Nhẫn,15,Active,PeacePlayer,1,15,erengu_luanxinren
+652,Băng tinh,-1,Active,Self,-1,-1,pet_bingxing
+653,Hỏa linh,-1,Active,Self,-1,-1,pet_huoling
+654,Độc cổ,-1,Active,Self,-1,-1,pet_dugu
+655,Huyền thú,-1,Active,Self,-1,-1,pet_xuanling
+656,Trì độn,-1,Active,Self,-1,-1,pet_chidun
+657,Giảo hoạt,-1,Active,Self,-1,-1,pet_jiaohuo
+658,Mộc mạc,-1,Active,Self,-1,-1,pet_hanhou
+659,Bính mệnh,-1,Active,Self,-1,-1,pet_pinming
+660,Pháp hồn,-1,Active,Self,-1,-1,pet_fahun
+661,Man lực,-1,Active,Self,-1,-1,pet_manli
+662,Tá lực,-1,Active,Owner,-1,-1,pet_jieli
+663,Cao Tá lực,-1,Active,Owner,-1,-1,pet_gaojijieli
+664,Di hồn,-1,Active,Owner,-1,-1,pet_yihun
+665,Cao Di hồn,-1,Active,Owner,-1,-1,pet_gaojiyihun
+666,Thuấn ảnh,-1,Active,Owner,-1,-1,pet_shunying
+667,Cao Thuấn ảnh,-1,Active,Owner,-1,-1,pet_gaojishunying
+668,Cường thân,-1,Active,Owner,-1,-1,pet_qiangshen
+669,Cao Cường thân,-1,Active,Owner,-1,-1,pet_gaojiqiangshen
+670,Ngưng thần,-1,Active,Owner,-1,-1,pet_ningshen
+671,Cao Ngưng thần,-1,Active,Owner,-1,-1,pet_gaojiningshen
+672,Cực băng ngưng sát,-1,PetActive,Enemy,-1,20,pet_jibingningsha
+673,Kiếp hỏa phần sát,-1,PetActive,Enemy,-1,20,pet_jiehuofensha
+674,Hủ độc thực sát,-1,PetActive,Enemy,-1,20,pet_fudushisha
+675,Huyền lôi kích sát,-1,PetActive,Enemy,-1,20,pet_xuanleijisha
+676,Huyết bão,-1,PetActive,Enemy,-1,20,pet_xuebao
+677,Cao Huyết bão,-1,PetActive,Enemy,-1,20,pet_gaojixuebao
+742,Băng thiên tuyết địa,-1,PetActive,Enemy,-1,20,pet_bingtianxuedi
+743,Liệt hoả liệu nguyên,-1,PetActive,Enemy,-1,20,pet_liehuoliaoyuan
+744,Huyết độc vạn lý,-1,PetActive,Enemy,-1,20,pet_xueduwanli
+745,Ngũ lôi hoành đỉnh,-1,PetActive,Enemy,-1,20,pet_wuleihongding
+747,Gầm thét,-1,PetActive,Enemy,-1,-1,pet_paoxiao
+682,Tĩnh hóa,-1,PetActive,Owner,-1,-1,pet_jinghua
+683,Cao Tĩnh hoá,-1,PetActive,Owner,-1,-1,pet_gaojijinghua
+684,Trùng sinh,-1,PetActive,Self,-1,-1,pet_zhongsheng

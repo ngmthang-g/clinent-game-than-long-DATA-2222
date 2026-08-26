@@ -1,0 +1,421 @@
+﻿ID,Name,FactionID,Type,TargetType,RequireLevel,CastRange,Property
+685,Cao Trùng sinh,-1,PetActive,Self,-1,-1,pet_gaojizhongsheng
+686,Cộng sinh,-1,PetActive,Self,-1,-1,pet_gongsheng
+687,Cao Cộng sinh,-1,PetActive,Self,-1,-1,pet_gaojigongsheng
+688,Trị liệu,-1,PetActive,Self,-1,-1,pet_zhiliao
+689,Cao Trị Liệu,-1,PetActive,Self,-1,-1,pet_gaojizhiliao
+690,Nhục tường,-1,PetActive,Self,-1,-1,pet_ruqiang
+691,Cao Nhục Tường,-1,PetActive,Self,-1,-1,pet_gaojiruqiang
+692,Thần hựu,-1,PetActive,Owner,-1,-1,pet_shenyou
+693,Cao Thần hựu,-1,PetActive,Owner,-1,-1,pet_gaojishenyou
+694,Thị huyết,-1,PetActive,Self,-1,-1,pet_shixue
+695,Cao Thị huyết,-1,PetActive,Self,-1,-1,pet_gaojishixue
+696,Huyết tế,-1,PetActive,Self,-1,-1,pet_xueji
+697,Cao Huyết tế,-1,PetActive,Self,-1,-1,pet_gaojixueji
+702,Hàn băng chú,-1,Active,Enemy,-1,20,pet_hanbingzhou
+703,Liệt hỏa chú,-1,Active,Enemy,-1,20,pet_liehuozhou
+704,Huyết độc chú,-1,Active,Enemy,-1,20,pet_xueduzhou
+705,Huyền lôi chú,-1,Active,Enemy,-1,20,pet_xuanleizhou
+706,Phản kích,-1,Active,Self,-1,-1,pet_fanji
+707,Cao Phản kích,-1,Active,Self,-1,-1,pet_gaojifanji
+708,Hấp huyết,-1,Active,Self,-1,-1,pet_xixue
+709,Cao Hấp Huyết,-1,Active,Self,-1,-1,pet_gaojixixue
+710,Phản chấn,-1,Active,Self,-1,-1,pet_fanzhen
+711,Cao Phản Chấn,-1,Active,Self,-1,-1,pet_gaojifanzhen
+712,Linh động,-1,Active,Self,-1,-1,pet_lingdong
+713,Cao Linh Động,-1,Active,Self,-1,-1,pet_gaojilingdong
+718,Trung tâm,-1,Active,Self,-1,-1,pet_zhongxin
+719,Cao Trung tâm,-1,Active,Self,-1,-1,pet_gaojizhongxin
+714,Hấp khí,-1,Active,Self,-1,-1,pet_xiqi
+715,Cao Hấp Khí,-1,Active,Self,-1,-1,pet_gaojixiqi
+716,Đả nộ,-1,Active,Self,-1,-1,pet_danu
+717,Cao Đả Nộ,-1,Active,Self,-1,-1,pet_gaojidanu
+720,Nội lực,-1,Active,Self,-1,-1,pet_lingqi
+721,Cao Nội Lực,-1,Active,Self,-1,-1,pet_gaojilingqi
+724,Thức phá,-1,Active,Self,-1,-1,pet_shipo
+725,Cao Thức Phá,-1,Active,Self,-1,-1,pet_gaojishipo
+722,Mãnh kích,-1,Active,Enemy,-1,20,pet_mengji
+723,Cao Mãnh kích,-1,Active,Enemy,-1,20,pet_gaojimengji
+726,Liên kích,-1,Active,Enemy,-1,20,pet_lianji
+727,Cao Liên kích,-1,Active,Enemy,-1,20,pet_gaojilianji
+728,Thống kích,-1,Active,Enemy,-1,20,pet_tongji
+729,Cao Thống kích,-1,Active,Enemy,-1,20,pet_gaojitongji
+730,Hư Nhược,-1,Active,Enemy,-1,20,pet_xuruo
+731,Cao Hư Nhược,-1,Active,Enemy,-1,20,pet_gaojixuruo
+732,Phá Triền,-1,Active,Enemy,-1,20,pet_pozhan
+733,Cao Phá Triền,-1,Active,Enemy,-1,20,pet_gaojipozhan
+734,Vật ngã,-1,Active,Enemy,-1,20,pet_shuaiban
+735,Cao Vật ngã,-1,Active,Enemy,-1,20,pet_gaojishuaiban
+736,Giải huyệt,-1,PetActive,Owner,-1,-1,pet_jiexue
+737,Thanh tỉnh,-1,PetActive,Owner,-1,-1,pet_qingjing
+738,Minh mục,-1,PetActive,Owner,-1,-1,pet_mingmu
+739,Kinh linh,-1,PetActive,Owner,-1,-1,pet_jingling
+740,Cố nguyên,-1,PetActive,Owner,-1,-1,pet_guyuan
+741,Sái thoát,-1,PetActive,Owner,-1,-1,pet_cuituo
+1116,Siêu Cấp Tá Lực (Cấp 1),-1,Active,Owner,-1,-1,pet_chaojijieli_yiji
+1117,Siêu Cấp Tá Lực (Cấp 2),-1,Active,Owner,-1,-1,pet_chaojijieli_erji
+1118,Siêu Cấp Tá Lực (Cấp 3),-1,Active,Owner,-1,-1,pet_chaojijieli_sanji
+1119,Siêu Cấp Tá Lực (Cấp 4),-1,Active,Owner,-1,-1,pet_chaojijieli_siji
+1120,Siêu Cấp Tá Lực (Cấp 5),-1,Active,Owner,-1,-1,pet_chaojijieli_wuji
+1121,Siêu Cấp Tá Lực (Cấp 6),-1,Active,Owner,-1,-1,pet_chaojijieli_liuji
+1122,Siêu Cấp Tá Lực (Cấp 7),-1,Active,Owner,-1,-1,pet_chaojijieli_qiji
+1123,Siêu Cấp Tá Lực (Cấp 8),-1,Active,Owner,-1,-1,pet_chaojijieli_baji
+1124,Siêu Cấp Tá Lực (Cấp 9),-1,Active,Owner,-1,-1,pet_chaojijieli_jiuji
+1125,Siêu Cấp Di Hồn (Cấp 1),-1,Active,Owner,-1,-1,pet_chaojiyihun_yiji
+1126,Siêu Cấp Di Hồn (Cấp 2),-1,Active,Owner,-1,-1,pet_chaojiyihun_erji
+1127,Siêu Cấp Di Hồn (Cấp 3),-1,Active,Owner,-1,-1,pet_chaojiyihun_sanji
+1128,Siêu Cấp Di Hồn (Cấp 4),-1,Active,Owner,-1,-1,pet_chaojiyihun_siji
+1129,Siêu Cấp Di Hồn (Cấp 5),-1,Active,Owner,-1,-1,pet_chaojiyihun_wuji
+1130,Siêu Cấp Di Hồn (Cấp 6),-1,Active,Owner,-1,-1,pet_chaojiyihun_liuji
+1131,Siêu Cấp Di Hồn (Cấp 7),-1,Active,Owner,-1,-1,pet_chaojiyihun_qiji
+1132,Siêu Cấp Di Hồn (Cấp 8),-1,Active,Owner,-1,-1,pet_chaojiyihun_baji
+1133,Siêu Cấp Di Hồn (Cấp 9),-1,Active,Owner,-1,-1,pet_chaojiyihun_jiuji
+1134,Siêu Cấp Thuấn Ảnh (Cấp 1),-1,Active,Owner,-1,-1,pet_chaojishunying_yiji
+1135,Siêu Cấp Thuấn Ảnh (Cấp 2),-1,Active,Owner,-1,-1,pet_chaojishunying_erji
+1136,Siêu Cấp Thuấn Ảnh (Cấp 3),-1,Active,Owner,-1,-1,pet_chaojishunying_sanji
+1137,Siêu Cấp Thuấn Ảnh (Cấp 4),-1,Active,Owner,-1,-1,pet_chaojishunying_siji
+1138,Siêu Cấp Thuấn Ảnh (Cấp 5),-1,Active,Owner,-1,-1,pet_chaojishunying_wuji
+1139,Siêu Cấp Thuấn Ảnh (Cấp 6),-1,Active,Owner,-1,-1,pet_chaojishunying_liuji
+1140,Siêu Cấp Thuấn Ảnh (Cấp 7),-1,Active,Owner,-1,-1,pet_chaojishunying_qiji
+1141,Siêu Cấp Thuấn Ảnh (Cấp 8),-1,Active,Owner,-1,-1,pet_chaojishunying_baji
+1142,Siêu Cấp Thuấn Ảnh (Cấp 9),-1,Active,Owner,-1,-1,pet_chaojishunying_jiuji
+1143,Siêu Cấp Cường Thân (Cấp 1),-1,Active,Owner,-1,-1,pet_chaojiqiangshen_yiji
+1144,Siêu Cấp Cường Thân (Cấp 2),-1,Active,Owner,-1,-1,pet_chaojiqiangshen_erji
+1145,Siêu Cấp Cường Thân (Cấp 3),-1,Active,Owner,-1,-1,pet_chaojiqiangshen_sanji
+1146,Siêu Cấp Cường Thân (Cấp 4),-1,Active,Owner,-1,-1,pet_chaojiqiangshen_siji
+1147,Siêu Cấp Cường Thân (Cấp 5),-1,Active,Owner,-1,-1,pet_chaojiqiangshen_wuji
+1148,Siêu Cấp Cường Thân (Cấp 6),-1,Active,Owner,-1,-1,pet_chaojiqiangshen_liuji
+1149,Siêu Cấp Cường Thân (Cấp 7),-1,Active,Owner,-1,-1,pet_chaojiqiangshen_qiji
+1150,Siêu Cấp Cường Thân (Cấp 8),-1,Active,Owner,-1,-1,pet_chaojiqiangshen_baji
+1151,Siêu Cấp Cường Thân (Cấp 9),-1,Active,Owner,-1,-1,pet_chaojiqiangshen_jiuji
+1152,Siêu Cấp Ngưng Thần (Cấp 1),-1,Active,Owner,-1,-1,pet_chaojiningshen_yiji
+1153,Siêu Cấp Ngưng Thần (Cấp 2),-1,Active,Owner,-1,-1,pet_chaojiningshen_erji
+1154,Siêu Cấp Ngưng Thần (Cấp 3),-1,Active,Owner,-1,-1,pet_chaojiningshen_sanji
+1155,Siêu Cấp Ngưng Thần (Cấp 4),-1,Active,Owner,-1,-1,pet_chaojiningshen_siji
+1156,Siêu Cấp Ngưng Thần (Cấp 5),-1,Active,Owner,-1,-1,pet_chaojiningshen_wuji
+1157,Siêu Cấp Ngưng Thần (Cấp 6),-1,Active,Owner,-1,-1,pet_chaojiningshen_liuji
+1158,Siêu Cấp Ngưng Thần (Cấp 7),-1,Active,Owner,-1,-1,pet_chaojiningshen_qiji
+1159,Siêu Cấp Ngưng Thần (Cấp 8),-1,Active,Owner,-1,-1,pet_chaojiningshen_baji
+1160,Siêu Cấp Ngưng Thần (Cấp 9),-1,Active,Owner,-1,-1,pet_chaojiningshen_jiuji
+1161,Băng Cương (Cấp 1),-1,Active,Self,-1,-1,pet_binggang_yiji
+1162,Băng Cương (Cấp 2),-1,Active,Self,-1,-1,pet_binggang_erji
+1163,Băng Cương (Cấp 3),-1,Active,Self,-1,-1,pet_binggang_sanji
+1164,Băng Cương (Cấp 4),-1,Active,Self,-1,-1,pet_binggang_siji
+1165,Băng Cương (Cấp 5),-1,Active,Self,-1,-1,pet_binggang_wuji
+1166,Băng Cương (Cấp 6),-1,Active,Self,-1,-1,pet_binggang_liuji
+1167,Băng Cương (Cấp 7),-1,Active,Self,-1,-1,pet_binggang_qiji
+1168,Băng Cương (Cấp 8),-1,Active,Self,-1,-1,pet_binggang_baji
+1169,Băng Cương (Cấp 9),-1,Active,Self,-1,-1,pet_binggang_jiuji
+1170,Hỏa Cương (Cấp 1),-1,Active,Self,-1,-1,pet_huogang_yiji
+1171,Hỏa Cương (Cấp 2),-1,Active,Self,-1,-1,pet_huogang_erji
+1172,Hỏa Cương (Cấp 3),-1,Active,Self,-1,-1,pet_huogang_sanji
+1173,Hỏa Cương (Cấp 4),-1,Active,Self,-1,-1,pet_huogang_siji
+1174,Hỏa Cương (Cấp 5),-1,Active,Self,-1,-1,pet_huogang_wuji
+1175,Hỏa Cương (Cấp 6),-1,Active,Self,-1,-1,pet_huogang_liuji
+1176,Hỏa Cương (Cấp 7),-1,Active,Self,-1,-1,pet_huogang_qiji
+1177,Hỏa Cương (Cấp 8),-1,Active,Self,-1,-1,pet_huogang_baji
+1178,Hỏa Cương (Cấp 9),-1,Active,Self,-1,-1,pet_huogang_jiuji
+1179,Độc Cương (Cấp 1),-1,Active,Self,-1,-1,pet_dugang_yiji
+1180,Độc Cương (Cấp 2),-1,Active,Self,-1,-1,pet_dugang_erji
+1181,Độc Cương (Cấp 3),-1,Active,Self,-1,-1,pet_dugang_sanji
+1182,Độc Cương (Cấp 4),-1,Active,Self,-1,-1,pet_dugang_siji
+1183,Độc Cương (Cấp 5),-1,Active,Self,-1,-1,pet_dugang_wuji
+1184,Độc Cương (Cấp 6),-1,Active,Self,-1,-1,pet_dugang_liuji
+1185,Độc Cương (Cấp 7),-1,Active,Self,-1,-1,pet_dugang_qiji
+1186,Độc Cương (Cấp 8),-1,Active,Self,-1,-1,pet_dugang_baji
+1187,Độc Cương (Cấp 9),-1,Active,Self,-1,-1,pet_dugang_jiuji
+1188,Huyền Cương (Cấp 1),-1,Active,Self,-1,-1,pet_xuangang_yiji
+1189,Huyền Cương (Cấp 2),-1,Active,Self,-1,-1,pet_xuangang_erji
+1190,Huyền Cương (Cấp 3),-1,Active,Self,-1,-1,pet_xuangang_sanji
+1191,Huyền Cương (Cấp 4),-1,Active,Self,-1,-1,pet_xuangang_siji
+1192,Huyền Cương (Cấp 5),-1,Active,Self,-1,-1,pet_xuangang_wuji
+1193,Huyền Cương (Cấp 6),-1,Active,Self,-1,-1,pet_xuangang_liuji
+1194,Huyền Cương (Cấp 7),-1,Active,Self,-1,-1,pet_xuangang_qiji
+1195,Huyền Cương (Cấp 8),-1,Active,Self,-1,-1,pet_xuangang_baji
+1196,Huyền Cương (Cấp 9),-1,Active,Self,-1,-1,pet_xuangang_jiuji
+1197,Đại Trí Nhược Nhu (Cấp 1),-1,Active,Self,-1,-1,pet_dazhiruoyu_yiji
+1198,Đại Trí Nhược Nhu (Cấp 2),-1,Active,Self,-1,-1,pet_dazhiruoyu_erji
+1199,Đại Trí Nhược Nhu (Cấp 3),-1,Active,Self,-1,-1,pet_dazhiruoyu_sanji
+1200,Đại Trí Nhược Nhu (Cấp 4),-1,Active,Self,-1,-1,pet_dazhiruoyu_siji
+1201,Đại Trí Nhược Nhu (Cấp 5),-1,Active,Self,-1,-1,pet_dazhiruoyu_wuji
+1202,Đại Trí Nhược Nhu (Cấp 6),-1,Active,Self,-1,-1,pet_dazhiruoyu_liuji
+1203,Đại Trí Nhược Nhu (Cấp 7),-1,Active,Self,-1,-1,pet_dazhiruoyu_qiji
+1204,Đại Trí Nhược Nhu (Cấp 8),-1,Active,Self,-1,-1,pet_dazhiruoyu_baji
+1205,Đại Trí Nhược Nhu (Cấp 9),-1,Active,Self,-1,-1,pet_dazhiruoyu_jiuji
+1206,Cổ Linh Tinh Quái (Cấp 1),-1,Active,Self,-1,-1,pet_gulingjingguai_yiji
+1207,Cổ Linh Tinh Quái (Cấp 2),-1,Active,Self,-1,-1,pet_gulingjingguai_erji
+1208,Cổ Linh Tinh Quái (Cấp 3),-1,Active,Self,-1,-1,pet_gulingjingguai_sanji
+1209,Cổ Linh Tinh Quái (Cấp 4),-1,Active,Self,-1,-1,pet_gulingjingguai_siji
+1210,Cổ Linh Tinh Quái (Cấp 5),-1,Active,Self,-1,-1,pet_gulingjingguai_wuji
+1211,Cổ Linh Tinh Quái (Cấp 6),-1,Active,Self,-1,-1,pet_gulingjingguai_liuji
+1212,Cổ Linh Tinh Quái (Cấp 7),-1,Active,Self,-1,-1,pet_gulingjingguai_qiji
+1213,Cổ Linh Tinh Quái (Cấp 8),-1,Active,Self,-1,-1,pet_gulingjingguai_baji
+1214,Cổ Linh Tinh Quái (Cấp 9),-1,Active,Self,-1,-1,pet_gulingjingguai_jiuji
+1215,Thô Trung Hữu Tế (Cấp 1),-1,Active,Self,-1,-1,pet_cuzhongyouxi_yiji
+1216,Thô Trung Hữu Tế (Cấp 2),-1,Active,Self,-1,-1,pet_cuzhongyouxi_erji
+1217,Thô Trung Hữu Tế (Cấp 3),-1,Active,Self,-1,-1,pet_cuzhongyouxi_sanji
+1218,Thô Trung Hữu Tế (Cấp 4),-1,Active,Self,-1,-1,pet_cuzhongyouxi_siji
+1219,Thô Trung Hữu Tế (Cấp 5),-1,Active,Self,-1,-1,pet_cuzhongyouxi_wuji
+1220,Thô Trung Hữu Tế (Cấp 6),-1,Active,Self,-1,-1,pet_cuzhongyouxi_liuji
+1221,Thô Trung Hữu Tế (Cấp 7),-1,Active,Self,-1,-1,pet_cuzhongyouxi_qiji
+1222,Thô Trung Hữu Tế (Cấp 8),-1,Active,Self,-1,-1,pet_cuzhongyouxi_baji
+1223,Thô Trung Hữu Tế (Cấp 9),-1,Active,Self,-1,-1,pet_cuzhongyouxi_jiuji
+1224,Bính Tử Tương Bác (Cấp 1),-1,Active,Self,-1,-1,pet_biansixiangbo_yiji
+1225,Bính Tử Tương Bác (Cấp 2),-1,Active,Self,-1,-1,pet_biansixiangbo_erji
+1226,Bính Tử Tương Bác (Cấp 3),-1,Active,Self,-1,-1,pet_biansixiangbo_sanji
+1227,Bính Tử Tương Bác (Cấp 4),-1,Active,Self,-1,-1,pet_biansixiangbo_siji
+1228,Bính Tử Tương Bác (Cấp 5),-1,Active,Self,-1,-1,pet_biansixiangbo_wuji
+1229,Bính Tử Tương Bác (Cấp 6),-1,Active,Self,-1,-1,pet_biansixiangbo_liuji
+1230,Bính Tử Tương Bác (Cấp 7),-1,Active,Self,-1,-1,pet_biansixiangbo_qiji
+1231,Bính Tử Tương Bác (Cấp 8),-1,Active,Self,-1,-1,pet_biansixiangbo_baji
+1232,Bính Tử Tương Bác (Cấp 9),-1,Active,Self,-1,-1,pet_biansixiangbo_jiuji
+1233,Thần Du Tứ Hải (Cấp 1),-1,Active,Self,-1,-1,pet_shenyousihai_yiji
+1234,Thần Du Tứ Hải (Cấp 2),-1,Active,Self,-1,-1,pet_shenyousihai_erji
+1235,Thần Du Tứ Hải (Cấp 3),-1,Active,Self,-1,-1,pet_shenyousihai_sanji
+1236,Thần Du Tứ Hải (Cấp 4),-1,Active,Self,-1,-1,pet_shenyousihai_siji
+1237,Thần Du Tứ Hải (Cấp 5),-1,Active,Self,-1,-1,pet_shenyousihai_wuji
+1238,Thần Du Tứ Hải (Cấp 6),-1,Active,Self,-1,-1,pet_shenyousihai_liuji
+1239,Thần Du Tứ Hải (Cấp 7),-1,Active,Self,-1,-1,pet_shenyousihai_qiji
+1240,Thần Du Tứ Hải (Cấp 8),-1,Active,Self,-1,-1,pet_shenyousihai_baji
+1241,Thần Du Tứ Hải (Cấp 9),-1,Active,Self,-1,-1,pet_shenyousihai_jiuji
+1242,Lực Bạt Sơn Hà (Cấp 1),-1,Active,Self,-1,-1,pet_libashenhe_yiji
+1243,Lực Bạt Sơn Hà (Cấp 2),-1,Active,Self,-1,-1,pet_libashenhe_erji
+1244,Lực Bạt Sơn Hà (Cấp 3),-1,Active,Self,-1,-1,pet_libashenhe_sanji
+1245,Lực Bạt Sơn Hà (Cấp 4),-1,Active,Self,-1,-1,pet_libashenhe_siji
+1246,Lực Bạt Sơn Hà (Cấp 5),-1,Active,Self,-1,-1,pet_libashenhe_wuji
+1247,Lực Bạt Sơn Hà (Cấp 6),-1,Active,Self,-1,-1,pet_libashenhe_liuji
+1248,Lực Bạt Sơn Hà (Cấp 7),-1,Active,Self,-1,-1,pet_libashenhe_qiji
+1249,Lực Bạt Sơn Hà (Cấp 8),-1,Active,Self,-1,-1,pet_libashenhe_baji
+1250,Lực Bạt Sơn Hà (Cấp 9),-1,Active,Self,-1,-1,pet_libashenhe_jiuji
+1251,Siêu Cấp Thống Kích (Cấp 1),-1,Active,Enemy,-1,15,pet_chaojitongji_yiji
+1252,Siêu Cấp Thống Kích (Cấp 2),-1,Active,Enemy,-1,15,pet_chaojitongji_erji
+1253,Siêu Cấp Thống Kích (Cấp 3),-1,Active,Enemy,-1,15,pet_chaojitongji_sanji
+1254,Siêu Cấp Thống Kích (Cấp 4),-1,Active,Enemy,-1,15,pet_chaojitongji_siji
+1255,Siêu Cấp Thống Kích (Cấp 5),-1,Active,Enemy,-1,15,pet_chaojitongji_wuji
+1256,Siêu Cấp Thống Kích (Cấp 6),-1,Active,Enemy,-1,15,pet_chaojitongji_liuji
+1257,Siêu Cấp Thống Kích (Cấp 7),-1,Active,Enemy,-1,15,pet_chaojitongji_qiji
+1258,Siêu Cấp Thống Kích (Cấp 8),-1,Active,Enemy,-1,15,pet_chaojitongji_baji
+1259,Siêu Cấp Thống Kích (Cấp 9),-1,Active,Enemy,-1,15,pet_chaojitongji_jiuji
+1260,Siêu Cấp Mãnh Kích (Cấp 1),-1,Active,Enemy,-1,20,pet_chaojimengji_yiji
+1261,Siêu Cấp Mãnh Kích (Cấp 2),-1,Active,Enemy,-1,20,pet_chaojimengji_erji
+1262,Siêu Cấp Mãnh Kích (Cấp 3),-1,Active,Enemy,-1,20,pet_chaojimengji_sanji
+1263,Siêu Cấp Mãnh Kích (Cấp 4),-1,Active,Enemy,-1,20,pet_chaojimengji_siji
+1264,Siêu Cấp Mãnh Kích (Cấp 5),-1,Active,Enemy,-1,20,pet_chaojimengji_wuji
+1265,Siêu Cấp Mãnh Kích (Cấp 6),-1,Active,Enemy,-1,20,pet_chaojimengji_liuji
+1266,Siêu Cấp Mãnh Kích (Cấp 7),-1,Active,Enemy,-1,20,pet_chaojimengji_qiji
+1267,Siêu Cấp Mãnh Kích (Cấp 8),-1,Active,Enemy,-1,20,pet_chaojimengji_baji
+1268,Siêu Cấp Mãnh Kích (Cấp 9),-1,Active,Enemy,-1,20,pet_chaojimengji_jiuji
+1269,Cực Băng Chú (Cấp 1),-1,Active,Enemy,-1,15,pet_jibingzhou_yiji
+1270,Cực Băng Chú (Cấp 2),-1,Active,Enemy,-1,15,pet_jibingzhou_erji
+1271,Cực Băng Chú (Cấp 3),-1,Active,Enemy,-1,15,pet_jibingzhou_sanji
+1272,Cực Băng Chú (Cấp 4),-1,Active,Enemy,-1,15,pet_jibingzhou_siji
+1273,Cực Băng Chú (Cấp 5),-1,Active,Enemy,-1,15,pet_jibingzhou_wuji
+1274,Cực Băng Chú (Cấp 6),-1,Active,Enemy,-1,15,pet_jibingzhou_liuji
+1275,Cực Băng Chú (Cấp 7),-1,Active,Enemy,-1,15,pet_jibingzhou_qiji
+1276,Cực Băng Chú (Cấp 8),-1,Active,Enemy,-1,15,pet_jibingzhou_baji
+1277,Cực Băng Chú (Cấp 9),-1,Active,Enemy,-1,15,pet_jibingzhou_jiuji
+1278,Minh Hỏa Chú (Cấp 1),-1,Active,Enemy,-1,15,pet_minghuozhou_yiji
+1279,Minh Hỏa Chú (Cấp 2),-1,Active,Enemy,-1,15,pet_minghuozhou_erji
+1280,Minh Hỏa Chú (Cấp 3),-1,Active,Enemy,-1,15,pet_minghuozhou_sanji
+1281,Minh Hỏa Chú (Cấp 4),-1,Active,Enemy,-1,15,pet_minghuozhou_siji
+1282,Minh Hỏa Chú (Cấp 5),-1,Active,Enemy,-1,15,pet_minghuozhou_wuji
+1283,Minh Hỏa Chú (Cấp 6),-1,Active,Enemy,-1,15,pet_minghuozhou_liuji
+1284,Minh Hỏa Chú (Cấp 7),-1,Active,Enemy,-1,15,pet_minghuozhou_qiji
+1285,Minh Hỏa Chú (Cấp 8),-1,Active,Enemy,-1,15,pet_minghuozhou_baji
+1286,Minh Hỏa Chú (Cấp 9),-1,Active,Enemy,-1,15,pet_minghuozhou_jiuji
+1287,Thiên Lôi Chú (Cấp 1),-1,Active,Enemy,-1,15,pet_tianleizhou_yiji
+1288,Thiên Lôi Chú (Cấp 2),-1,Active,Enemy,-1,15,pet_tianleizhou_erji
+1289,Thiên Lôi Chú (Cấp 3),-1,Active,Enemy,-1,15,pet_tianleizhou_sanji
+1290,Thiên Lôi Chú (Cấp 4),-1,Active,Enemy,-1,15,pet_tianleizhou_siji
+1291,Thiên Lôi Chú (Cấp 5),-1,Active,Enemy,-1,15,pet_tianleizhou_wuji
+1292,Thiên Lôi Chú (Cấp 6),-1,Active,Enemy,-1,15,pet_tianleizhou_liuji
+1293,Thiên Lôi Chú (Cấp 7),-1,Active,Enemy,-1,15,pet_tianleizhou_qiji
+1294,Thiên Lôi Chú (Cấp 8),-1,Active,Enemy,-1,15,pet_tianleizhou_baji
+1295,Thiên Lôi Chú (Cấp 9),-1,Active,Enemy,-1,15,pet_tianleizhou_jiuji
+1296,Thị Độc Chú (Cấp 1),-1,Active,Enemy,-1,15,pet_shiduzhou_yiji
+1297,Thị Độc Chú (Cấp 2),-1,Active,Enemy,-1,15,pet_shiduzhou_erji
+1298,Thị Độc Chú (Cấp 3),-1,Active,Enemy,-1,15,pet_shiduzhou_sanji
+1299,Thị Độc Chú (Cấp 4),-1,Active,Enemy,-1,15,pet_shiduzhou_siji
+1300,Thị Độc Chú (Cấp 5),-1,Active,Enemy,-1,15,pet_shiduzhou_wuji
+1301,Thị Độc Chú (Cấp 6),-1,Active,Enemy,-1,15,pet_shiduzhou_liuji
+1302,Thị Độc Chú (Cấp 7),-1,Active,Enemy,-1,15,pet_shiduzhou_qiji
+1303,Thị Độc Chú (Cấp 8),-1,Active,Enemy,-1,15,pet_shiduzhou_baji
+1304,Thị Độc Chú (Cấp 9),-1,Active,Enemy,-1,15,pet_shiduzhou_jiuji
+1401,Huyết Lưu (Cấp 1),-1,SpiritActive,Owner,-1,0,spirit_xieliu_1
+1402,Huyết Lưu (Cấp 2),-1,SpiritActive,Owner,-1,0,spirit_xieliu_2
+1403,Huyết Lưu (Cấp 3),-1,SpiritActive,Owner,-1,0,spirit_xieliu_3
+1404,Huyết Lưu (Cấp 4),-1,SpiritActive,Owner,-1,0,spirit_xieliu_4
+1405,Huyết Lưu (Cấp 5),-1,SpiritActive,Owner,-1,0,spirit_xieliu_5
+1406,Huyết Lưu (Cấp 6),-1,SpiritActive,Owner,-1,0,spirit_xieliu_6
+1407,Huyết Lưu (Cấp 7),-1,SpiritActive,Owner,-1,0,spirit_xieliu_7
+1408,Huyết Lưu (Cấp 8),-1,SpiritActive,Owner,-1,0,spirit_xieliu_8
+1409,Huyết Lưu (Cấp 9),-1,SpiritActive,Owner,-1,0,spirit_xieliu_9
+1410,Huyết Lưu (Cấp 10),-1,SpiritActive,Owner,-1,0,spirit_xieliu_10
+1411,Khí Lưu (Cấp 1),-1,SpiritActive,Owner,-1,0,spirit_qiliu_1
+1412,Khí Lưu (Cấp 2),-1,SpiritActive,Owner,-1,0,spirit_qiliu_2
+1413,Khí Lưu (Cấp 3),-1,SpiritActive,Owner,-1,0,spirit_qiliu_3
+1414,Khí Lưu (Cấp 4),-1,SpiritActive,Owner,-1,0,spirit_qiliu_4
+1415,Khí Lưu (Cấp 5),-1,SpiritActive,Owner,-1,0,spirit_qiliu_5
+1416,Khí Lưu (Cấp 6),-1,SpiritActive,Owner,-1,0,spirit_qiliu_6
+1417,Khí Lưu (Cấp 7),-1,SpiritActive,Owner,-1,0,spirit_qiliu_7
+1418,Khí Lưu (Cấp 8),-1,SpiritActive,Owner,-1,0,spirit_qiliu_8
+1419,Khí Lưu (Cấp 9),-1,SpiritActive,Owner,-1,0,spirit_qiliu_9
+1420,Khí Lưu (Cấp 10),-1,SpiritActive,Owner,-1,0,spirit_qiliu_10
+1421,Nộ Lưu (Cấp 1),-1,SpiritActive,Owner,-1,0,spirit_nuliu_1
+1422,Nộ Lưu (Cấp 2),-1,SpiritActive,Owner,-1,0,spirit_nuliu_2
+1423,Nộ Lưu (Cấp 3),-1,SpiritActive,Owner,-1,0,spirit_nuliu_3
+1424,Nộ Lưu (Cấp 4),-1,SpiritActive,Owner,-1,0,spirit_nuliu_4
+1425,Nộ Lưu (Cấp 5),-1,SpiritActive,Owner,-1,0,spirit_nuliu_5
+1426,Nộ Lưu (Cấp 6),-1,SpiritActive,Owner,-1,0,spirit_nuliu_6
+1427,Nộ Lưu (Cấp 7),-1,SpiritActive,Owner,-1,0,spirit_nuliu_7
+1428,Nộ Lưu (Cấp 8),-1,SpiritActive,Owner,-1,0,spirit_nuliu_8
+1429,Nộ Lưu (Cấp 9),-1,SpiritActive,Owner,-1,0,spirit_nuliu_9
+1430,Nộ Lưu (Cấp 10),-1,SpiritActive,Owner,-1,0,spirit_nuliu_10
+1431,Khí Nộ Lưu (Cấp 1),-1,SpiritActive,Owner,-1,0,spirit_qinuliu_1
+1432,Khí Nộ Lưu (Cấp 2),-1,SpiritActive,Owner,-1,0,spirit_qinuliu_2
+1433,Khí Nộ Lưu (Cấp 3),-1,SpiritActive,Owner,-1,0,spirit_qinuliu_3
+1434,Khí Nộ Lưu (Cấp 4),-1,SpiritActive,Owner,-1,0,spirit_qinuliu_4
+1435,Khí Nộ Lưu (Cấp 5),-1,SpiritActive,Owner,-1,0,spirit_qinuliu_5
+1436,Khí Nộ Lưu (Cấp 6),-1,SpiritActive,Owner,-1,0,spirit_qinuliu_6
+1437,Khí Nộ Lưu (Cấp 7),-1,SpiritActive,Owner,-1,0,spirit_qinuliu_7
+1438,Khí Nộ Lưu (Cấp 8),-1,SpiritActive,Owner,-1,0,spirit_qinuliu_8
+1439,Khí Nộ Lưu (Cấp 9),-1,SpiritActive,Owner,-1,0,spirit_qinuliu_9
+1440,Khí Nộ Lưu (Cấp 10),-1,SpiritActive,Owner,-1,0,spirit_qinuliu_10
+1441,Huyết Nộ Lưu (Cấp 1),-1,SpiritActive,Owner,-1,0,spirit_xienuliu_1
+1442,Huyết Nộ Lưu (Cấp 2),-1,SpiritActive,Owner,-1,0,spirit_xienuliu_2
+1443,Huyết Nộ Lưu (Cấp 3),-1,SpiritActive,Owner,-1,0,spirit_xienuliu_3
+1444,Huyết Nộ Lưu (Cấp 4),-1,SpiritActive,Owner,-1,0,spirit_xienuliu_4
+1445,Huyết Nộ Lưu (Cấp 5),-1,SpiritActive,Owner,-1,0,spirit_xienuliu_5
+1446,Huyết Nộ Lưu (Cấp 6),-1,SpiritActive,Owner,-1,0,spirit_xienuliu_6
+1447,Huyết Nộ Lưu (Cấp 7),-1,SpiritActive,Owner,-1,0,spirit_xienuliu_7
+1448,Huyết Nộ Lưu (Cấp 8),-1,SpiritActive,Owner,-1,0,spirit_xienuliu_8
+1449,Huyết Nộ Lưu (Cấp 9),-1,SpiritActive,Owner,-1,0,spirit_xienuliu_9
+1450,Huyết Nộ Lưu (Cấp 10),-1,SpiritActive,Owner,-1,0,spirit_xienuliu_10
+1451,Huyết Khí Nộ Lưu (Cấp 1),-1,SpiritActive,Owner,-1,0,spirit_xieqinuliu_1
+1452,Huyết Khí Nộ Lưu (Cấp 2),-1,SpiritActive,Owner,-1,0,spirit_xieqinuliu_2
+1453,Huyết Khí Nộ Lưu (Cấp 3),-1,SpiritActive,Owner,-1,0,spirit_xieqinuliu_3
+1454,Huyết Khí Nộ Lưu (Cấp 4),-1,SpiritActive,Owner,-1,0,spirit_xieqinuliu_4
+1455,Huyết Khí Nộ Lưu (Cấp 5),-1,SpiritActive,Owner,-1,0,spirit_xieqinuliu_5
+1456,Huyết Khí Nộ Lưu (Cấp 6),-1,SpiritActive,Owner,-1,0,spirit_xieqinuliu_6
+1457,Huyết Khí Nộ Lưu (Cấp 7),-1,SpiritActive,Owner,-1,0,spirit_xieqinuliu_7
+1458,Huyết Khí Nộ Lưu (Cấp 8),-1,SpiritActive,Owner,-1,0,spirit_xieqinuliu_8
+1459,Huyết Khí Nộ Lưu (Cấp 9),-1,SpiritActive,Owner,-1,0,spirit_xieqinuliu_9
+1460,Huyết Khí Nộ Lưu (Cấp 10),-1,SpiritActive,Owner,-1,0,spirit_xieqinuliu_10
+1461,Huyết Liệu (Cấp 1),-1,SpiritActive,Owner,-1,0,spirit_xieliao_1
+1462,Huyết Liệu (Cấp 2),-1,SpiritActive,Owner,-1,0,spirit_xieliao_2
+1463,Huyết Liệu (Cấp 3),-1,SpiritActive,Owner,-1,0,spirit_xieliao_3
+1464,Huyết Liệu (Cấp 4),-1,SpiritActive,Owner,-1,0,spirit_xieliao_4
+1465,Huyết Liệu (Cấp 5),-1,SpiritActive,Owner,-1,0,spirit_xieliao_5
+1466,Huyết Liệu (Cấp 6),-1,SpiritActive,Owner,-1,0,spirit_xieliao_6
+1467,Huyết Liệu (Cấp 7),-1,SpiritActive,Owner,-1,0,spirit_xieliao_7
+1468,Huyết Liệu (Cấp 8),-1,SpiritActive,Owner,-1,0,spirit_xieliao_8
+1469,Huyết Liệu (Cấp 9),-1,SpiritActive,Owner,-1,0,spirit_xieliao_9
+1470,Huyết Liệu (Cấp 10),-1,SpiritActive,Owner,-1,0,spirit_xieliao_10
+1471,Khí Liệu (Cấp 1),-1,SpiritActive,Owner,-1,0,spirit_qiliao_1
+1472,Khí Liệu (Cấp 2),-1,SpiritActive,Owner,-1,0,spirit_qiliao_2
+1473,Khí Liệu (Cấp 3),-1,SpiritActive,Owner,-1,0,spirit_qiliao_3
+1474,Khí Liệu (Cấp 4),-1,SpiritActive,Owner,-1,0,spirit_qiliao_4
+1475,Khí Liệu (Cấp 5),-1,SpiritActive,Owner,-1,0,spirit_qiliao_5
+1476,Khí Liệu (Cấp 6),-1,SpiritActive,Owner,-1,0,spirit_qiliao_6
+1477,Khí Liệu (Cấp 7),-1,SpiritActive,Owner,-1,0,spirit_qiliao_7
+1478,Khí Liệu (Cấp 8),-1,SpiritActive,Owner,-1,0,spirit_qiliao_8
+1479,Khí Liệu (Cấp 9),-1,SpiritActive,Owner,-1,0,spirit_qiliao_9
+1480,Khí Liệu (Cấp 10),-1,SpiritActive,Owner,-1,0,spirit_qiliao_10
+1500,Giao Long Loạn Vũ,-1,Active,Enemy,1,0,jh_boss_jiaolongluanwu
+1501,Thận Long Loạn Vũ,-1,Active,Enemy,1,0,jh_boss_shenlongluanwu
+1502,Liệt Hỏa Thần Long,-1,Active,Self,1,0,jh_boss_liehuoshenlong
+150201,Liệt Hỏa Thần Long - Công kích,-1,Auto,Enemy,1,0,jh_boss_liehuoshenlong_child
+1503,Hải Thị Thận Lâu,-1,Auto,Enemy,1,0,jh_boss_haishishenlou
+1504,Hỏa Thiêu Thiên Xích,-1,Active,Self,1,0,jh_boss_huoqiaotianchi
+150401,Hỏa Thiêu Thiên Xích - Công kích,-1,Auto,Enemy,1,0,jh_boss_huoqiaotianchi_child
+1510,Liệt Địa Băng Thiên,-1,Active,Enemy,1,20,boss_liedibingtian
+1511,Địa Hỏa Liên Kích,-1,Active,Enemy,1,20,boss_dihuolianji
+1512,Âm Độc Vạn Lý,-1,Active,Enemy,1,20,boss_yinduwanli
+1513,Thiên Lôi Hoang Đỉnh,-1,Active,Enemy,1,20,boss_tianleihuangding
+1514,Cuồng Long Bạo Liệt,-1,Active,Enemy,1,20,boss_kuanglongbaolie
+1515,Nghịch Thiên Thống Kích,-1,Active,Enemy,1,20,boss_yitiantongji
+1516,Phá Thương Khung Quán,-1,Active,Enemy,1,10,boss_pogangqiongguan
+1520,Cực Băng Kích,-1,Active,Enemy,1,10,boss_jibingji
+1521,Minh Hỏa Kích,-1,Active,Enemy,1,20,boss_minghuoji
+1522,Thiên Lôi Kích,-1,Active,Enemy,1,20,boss_tianleiji
+1523,Thị Độc Kích,-1,Active,Enemy,1,20,boss_shiduji
+1524,Cương Mãnh Kích,-1,Active,Enemy,1,20,boss_gangmengji
+1525,Nghịch Thống Kích,-1,Active,Enemy,1,20,boss_yitongji
+1526,Phá Trán Kích,-1,Active,Enemy,1,20,boss_pozhanji
+2000,Phấn Lực Nhất Kích (Cấp 1),-1,Passive,Self,1,0,sq_fenliyiji_wai_yiji
+200001,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_yiji_child_1
+200002,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_yiji_child_2
+200003,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_wai_yiji_child_3
+2001,Phấn Lực Nhất Kích (Cấp 2),-1,Passive,Self,1,0,sq_fenliyiji_wai_erji
+200101,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_erji_child_1
+200102,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_erji_child_2
+200103,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_wai_erji_child_3
+2002,Phấn Lực Nhất Kích (Cấp 3),-1,Passive,Self,1,0,sq_fenliyiji_wai_sanji
+200201,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_sanji_child_1
+200202,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_sanji_child_2
+200203,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_wai_sanji_child_3
+2003,Phấn Lực Nhất Kích (Cấp 4),-1,Passive,Self,1,0,sq_fenliyiji_wai_siji
+200301,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_siji_child_1
+200302,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_siji_child_2
+200303,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_wai_siji_child_3
+2004,Phấn Lực Nhất Kích (Cấp 5),-1,Passive,Self,1,0,sq_fenliyiji_wai_wuji
+200401,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_wuji_child_1
+200402,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_wuji_child_2
+200403,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_wai_wuji_child_3
+2005,Phấn Lực Nhất Kích (Cấp 6),-1,Passive,Self,1,0,sq_fenliyiji_wai_liuji
+200501,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_liuji_child_1
+200502,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_wai_liuji_child_2
+200503,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_wai_liuji_child_3
+2006,Phấn Lực Nhất Kích (Cấp 1),-1,Passive,Self,1,0,sq_fenliyiji_nei_yiji
+200601,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_yiji_child_1
+200602,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_yiji_child_2
+200603,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_nei_yiji_child_3
+2007,Phấn Lực Nhất Kích (Cấp 2),-1,Passive,Self,1,0,sq_fenliyiji_nei_erji
+200701,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_erji_child_1
+200702,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_erji_child_2
+200703,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_nei_erji_child_3
+2008,Phấn Lực Nhất Kích (Cấp 3),-1,Passive,Self,1,0,sq_fenliyiji_nei_sanji
+200801,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_sanji_child_1
+200802,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_sanji_child_2
+200803,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_nei_sanji_child_3
+2009,Phấn Lực Nhất Kích (Cấp 4),-1,Passive,Self,1,0,sq_fenliyiji_nei_siji
+200901,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_siji_child_1
+200902,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_siji_child_2
+200903,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_nei_siji_child_3
+2010,Phấn Lực Nhất Kích (Cấp 5),-1,Passive,Self,1,0,sq_fenliyiji_nei_wuji
+201001,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_wuji_child_1
+201002,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_wuji_child_2
+201003,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_nei_wuji_child_3
+2011,Phấn Lực Nhất Kích (Cấp 6),-1,Passive,Self,1,0,sq_fenliyiji_nei_liuji
+201101,Phấn Lực Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_liuji_child_1
+201102,Phấn Lực Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_fenliyiji_nei_liuji_child_2
+201103,Phấn Lực Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_fenliyiji_nei_liuji_child_3
+2012,Tinh Diệu Nhất Kích (Cấp 1),-1,Passive,Self,1,0,sq_xingmiaoyiji_yiji
+201201,Tinh Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_yiji_child_1
+201202,Tinh Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_yiji_child_2
+201203,Tinh Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_xingmiaoyiji_yiji_child_3
+2013,Tinh Diệu Nhất Kích (Cấp 2),-1,Passive,Self,1,0,sq_xingmiaoyiji_erji
+201301,Tinh Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_erji_child_1
+201302,Tinh Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_erji_child_2
+201303,Tinh Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_xingmiaoyiji_erji_child_3
+2014,Tinh Diệu Nhất Kích (Cấp 3),-1,Passive,Self,1,0,sq_xingmiaoyiji_sanji
+201401,Tinh Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_sanji_child_1
+201402,Tinh Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_sanji_child_2
+201403,Tinh Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_xingmiaoyiji_sanji_child_3
+2015,Tinh Diệu Nhất Kích (Cấp 4),-1,Passive,Self,1,0,sq_xingmiaoyiji_siji
+201501,Tinh Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_siji_child_1
+201502,Tinh Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_siji_child_2
+201503,Tinh Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_xingmiaoyiji_siji_child_3
+2016,Tinh Diệu Nhất Kích (Cấp 5),-1,Passive,Self,1,0,sq_xingmiaoyiji_wuji
+201601,Tinh Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_wuji_child_1
+201602,Tinh Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_wuji_child_2
+201603,Tinh Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_xingmiaoyiji_wuji_child_3
+2017,Tinh Diệu Nhất Kích (Cấp 6),-1,Passive,Self,1,0,sq_xingmiaoyiji_liuji
+201701,Tinh Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_liuji_child_1
+201702,Tinh Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_xingmiaoyiji_liuji_child_2
+201703,Tinh Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_xingmiaoyiji_liuji_child_3
+2018,Tuyệt Diệu Nhất Kích (Cấp 1),-1,Passive,Self,1,0,sq_juemiaoyiji_yiji
+201801,Tuyệt Diệu Nhất Kích - Công kích,-1,Auto,Enemy,1,0,sq_juemiaoyiji_yiji_child_1
+201802,Tuyệt Diệu Nhất Kích - Hư nhược,-1,Auto,Enemy,1,0,sq_juemiaoyiji_yiji_child_2
+201803,Tuyệt Diệu Nhất Kích - Bản thân,-1,Auto,Self,1,0,sq_juemiaoyiji_yiji_child_3
+2019,Tuyệt Diệu Nhất Kích (Cấp 2),-1,Passive,Self,1,0,sq_juemiaoyiji_erji

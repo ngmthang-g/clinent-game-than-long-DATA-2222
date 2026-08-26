@@ -1,4 +1,4 @@
-ID,Name,DungeonMapID,Timeout,MinPlayers,MinLevel,GatherMapID,GatherNPCID,GatherX,GatherY,RequestActiveCardMonth,DungeonMapName,GatherMapName,GatherNPCName,GatherNPCResName,StepCount,ActionCount
+﻿ID,Name,DungeonMapID,Timeout,MinPlayers,MinLevel,GatherMapID,GatherNPCID,GatherX,GatherY,RequestActiveCardMonth,DungeonMapName,GatherMapName,GatherNPCName,GatherNPCResName,StepCount,ActionCount
 ThuyLao,Thủy Lao,92,1800,1,30,4,650,10990,6466,false,Thuỷ Lao,Tô Châu,Hô Diên Báo,YangWenYanC,26,54
 Q1_ToChau,Biên Giới Tống Liêu,93,1800,1,30,4,674,4400,8090,false,Biên Giới Tống Liêu,Tô Châu,Tiền Hồng Vũ,LuoYangBing2,8,17
 Q2_ToChau,Trúc Lâm,94,1800,1,30,4,707,11300,9890,false,Trúc Lâm,Tô Châu,Hoa Kiếm Vũ,BiaoTou,4,10

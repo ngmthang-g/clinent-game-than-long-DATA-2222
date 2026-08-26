@@ -1,0 +1,112 @@
+﻿TaskID,TaskName,TaskType,TaskRule,ObjectiveTag,ObjectiveIndex,ChildTag,ChildIndex,AttributesJSON,ChildAttributesJSON
+10438001,Vô Gian Đạo,0,1,Delivery,4,,,"{""MapID"":""84"",""NPCID"":""489""}",
+10439001,Kinh Vệ Phân Minh,1,1,KillMonster,3,Monster,1,"{""MapID"":""84""}","{""MonsterID"":""806"",""Count"":""30""}"
+10440001,Ăn Miếng Trả Miếng,1,1,KillMonster,4,Monster,1,"{""MapID"":""84""}","{""MonsterID"":""804"",""Count"":""30""}"
+10441001,Làm Khó,0,1,Delivery,4,,,"{""MapID"":""84"",""NPCID"":""494""}",
+10442001,Bạch Lang Bì,2,1,LootItemFromMonster,3,Monster,1,"{""MapID"":""45""}","{""MonsterID"":""814"",""ItemID"":""40002068"",""Rate"":""50"",""Quantity"":""1""}"
+10443001,Hắc Phong Mật,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""45""}","{""MonsterID"":""1094"",""ItemID"":""40002067"",""Rate"":""50"",""Quantity"":""1""}"
+10444001,Liêu Quân Nguyên Soái,0,1,Delivery,4,,,"{""MapID"":""45"",""NPCID"":""304""}",
+10445001,Hồng Y Mã Phỉ,1,1,KillMonster,4,Monster,1,"{""MapID"":""45""}","{""MonsterID"":""1099"",""Count"":""40""}"
+10446001,Hắc Y Mã Phỉ,1,1,KillMonster,3,Monster,1,"{""MapID"":""45""}","{""MonsterID"":""1096"",""Count"":""40""}"
+10447001,La Bốc Cần Con Nhện,2,1,LootItemFromMonster,3,Monster,1,"{""MapID"":""61""}","{""MonsterID"":""808"",""ItemID"":""40002113"",""Rate"":""100"",""Quantity"":""10""}"
+10447001,La Bốc Cần Con Nhện,2,1,LootItemFromMonster,3,Monster,2,"{""MapID"":""61""}","{""MonsterID"":""808"",""ItemID"":""40002114"",""Rate"":""100"",""Quantity"":""10""}"
+10448001,La Bốc Cần Vân Mẫu,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""61""}","{""MonsterID"":""809"",""ItemID"":""40002153"",""Rate"":""50"",""Quantity"":""10""}"
+10449001,La Bốc Cần Long Huyết,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""61""}","{""MonsterID"":""810"",""ItemID"":""40002154"",""Rate"":""50"",""Quantity"":""10""}"
+10450001,Tuyệt Thế Thần Binh,0,1,Delivery,3,Item,1,"{""MapID"":""61"",""NPCID"":""856""}","{""ItemID"":""40002155"",""Quantity"":""1""}"
+10451001,Ca Ca Ngốc,0,1,Delivery,4,Item,1,"{""MapID"":""61"",""NPCID"":""852""}","{""ItemID"":""40002156"",""Quantity"":""1""}"
+10452001,Nữ Oa Thạch Nhân,1,1,KillMonster,4,Monster,1,"{""MapID"":""61""}","{""MonsterID"":""1087"",""Count"":""35""}"
+10453001,Yển Sư Hộ Pháp,1,1,KillMonster,3,Monster,1,"{""MapID"":""61""}","{""MonsterID"":""812"",""Count"":""35""}"
+10454001,Đại Yển Sư,1,1,KillMonster,4,Monster,1,"{""MapID"":""61""}","{""MonsterID"":""813"",""Count"":""35""}"
+10455001,Không Hấp Bánh Bao,0,1,Delivery,4,Item,1,"{""MapID"":""45"",""NPCID"":""304""}","{""ItemID"":""40002157"",""Quantity"":""1""}"
+10456001,Tuyệt Thế Hảo Nam Nhi,0,1,Delivery,3,,,"{""MapID"":""84"",""NPCID"":""486""}",
+10457001,Thập tự quân,5,1,TransferNPC,4,MovePath,1,"{""MapID"":""84"",""NPCID"":""499""}","{""PosX"":""5270"",""PosY"":""2767"",""Delay"":""500"",""Talk"":""Chúng ta hãy đến chỗ xe ngựa""}"
+10457001,Thập tự quân,5,1,TransferNPC,4,MovePath,2,"{""MapID"":""84"",""NPCID"":""499""}","{""PosX"":""5440"",""PosY"":""7900"",""Delay"":""500"",""Talk"":""Đa tạ Các hạ đã đưa ta đến đây!!!""}"
+10458001,Dừng xe Phong Lâm đêm,0,1,Delivery,4,,,"{""MapID"":""61"",""NPCID"":""853""}",
+10459001,Biện Pháp Tầm Cầu Ôn Noãn,0,1,Delivery,3,,,"{""MapID"":""47"",""NPCID"":""6""}",
+10460001,Thông Báo Ninh Linh Ca,0,1,Delivery,4,Item,1,"{""MapID"":""47"",""NPCID"":""7""}","{""ItemID"":""40004442"",""Quantity"":""1""}"
+10461001,Băng Thiên Tuyết Địa Linh Xí Nga,1,1,KillMonster,4,Monster,1,"{""MapID"":""47""}","{""MonsterID"":""6580"",""Count"":""10""}"
+10462001,Tưởng Niệm Phụ Thân,0,1,Delivery,4,,,"{""MapID"":""47"",""NPCID"":""8""}",
+10463,Tư Hương Tình Khiếp,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""47""}","{""MonsterID"":""11307"",""ItemID"":""40004443"",""Rate"":""50"",""Quantity"":""10""}"
+10464,Băng Thiên Tuyết Địa Thánh Xí Nga,1,1,KillMonster,4,Monster,1,"{""MapID"":""47""}","{""MonsterID"":""6590"",""Count"":""10""}"
+10465001,Thần Bảo Hộ Băng Phong,4,1,EnterArea,4,Area,1,"{""MapID"":""47""}","{""Name"":""Cự Nhân Bị Đóng Băng"",""PosX"":""4480"",""PosY"":""6140"",""Radius"":""1000"",""EnterDialog"":""Nhắc nhở: các hạ nhìn thấy 1 cự nhân trong tảng băng, dưới chân của cự nhân có khắc 3 chữ: Uy Chấn Thiên. Thoạt nhìn tên cự nhân này không hề biểu hiện sự cử động nào hết."",""EnterMessage"":""Đã thám thính Ngân Ngai Tuyết Nguyên Đích Tuyết Nguyên Băng Nhân""}"
+10466001,Lai Khách Băng Sơn Thượng,1,1,KillMonster,4,Monster,1,"{""MapID"":""47""}","{""MonsterID"":""11310"",""Count"":""20""}"
+10467001,Tuyết Nguyên Mãng Cái,1,1,KillMonster,4,Monster,1,"{""MapID"":""47""}","{""MonsterID"":""11311"",""Count"":""20""}"
+10468001,Băng Thiên Tuyết Địa Tầm Đậu Đậu,0,1,Delivery,4,,,"{""MapID"":""47"",""NPCID"":""10""}",
+10469001,Bảo Tiêu Đậu Đậu,5,1,TransferNPC,4,MovePath,1,"{""MapID"":""47"",""NPCID"":""9""}","{""PosX"":""3120"",""PosY"":""7300"",""Delay"":""500"",""Talk"":""Mau giúp ta quay về""}"
+10469001,Bảo Tiêu Đậu Đậu,5,1,TransferNPC,4,MovePath,2,"{""MapID"":""47"",""NPCID"":""9""}","{""PosX"":""2010"",""PosY"":""970"",""Delay"":""500"",""Talk"":""Đúng là nơi đây, đa tạ Các hạ!!!""}"
+10470001,Một Bức Thư Từ Nhà Gửi Đến,0,1,Delivery,4,,,"{""MapID"":""45"",""NPCID"":""306""}",
+10471001,Bắt Giặc Bắt Vua,1,1,KillMonster,3,Monster,1,"{""MapID"":""45""}","{""MonsterID"":""527"",""Count"":""1""}"
+10472001,Mãng Cái Tam Kiệt,1,1,KillMonster,4,Monster,1,"{""MapID"":""45""}","{""MonsterID"":""528"",""Count"":""1""}"
+10472001,Mãng Cái Tam Kiệt,1,1,KillMonster,4,Monster,2,"{""MapID"":""45""}","{""MonsterID"":""529"",""Count"":""1""}"
+10472001,Mãng Cái Tam Kiệt,1,1,KillMonster,4,Monster,3,"{""MapID"":""45""}","{""MonsterID"":""530"",""Count"":""1""}"
+10473001,Nộp Cống Phẩm,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""48""}","{""MonsterID"":""1126"",""ItemID"":""40002095"",""Rate"":""50"",""Quantity"":""5""}"
+10474001,Tặng Rượu Thuốc,0,1,Delivery,4,Item,1,"{""MapID"":""48"",""NPCID"":""24""}","{""ItemID"":""40002103"",""Quantity"":""1""}"
+10475001,Hùng Đảm,2,1,LootItemFromMonster,3,Monster,1,"{""MapID"":""48""}","{""MonsterID"":""11125"",""ItemID"":""40002096"",""Rate"":""50"",""Quantity"":""5""}"
+10476001,Cấp Phẩm Nhân Sâm,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""48""}","{""MonsterID"":""1302"",""ItemID"":""40002097"",""Rate"":""100"",""Quantity"":""5""}"
+10477001,Phụng Hoàng Cựu Trại,1,1,KillMonster,4,Monster,1,"{""MapID"":""63""}","{""MonsterID"":""1114"",""Count"":""40""}"
+10478001,Đàn Tế Hồ Điệp Thần,4,1,EnterArea,4,Area,1,"{""MapID"":""63""}","{""Name"":""Tế Đàn"",""PosX"":""8265"",""PosY"":""1770"",""Radius"":""1000"",""EnterDialog"":""Tế Đàn Thật Đồ Sộ"",""EnterMessage"":""Đã tìm thấy Tế Đàn Hồ Điệp Thần!""}"
+10479001,Hắc Miêu Chiến Sĩ,1,1,KillMonster,4,Monster,1,"{""MapID"":""63""}","{""MonsterID"":""1122"",""Count"":""40""}"
+10480001,Đằng Giáp Tặc,1,1,KillMonster,4,Monster,1,"{""MapID"":""63""}","{""MonsterID"":""1118"",""Count"":""40""}"
+10481001,Đằng Giáp Tặc Nguyên Soái,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""63""}","{""MonsterID"":""532"",""ItemID"":""40002079"",""Rate"":""100"",""Quantity"":""1""}"
+10482001,Báo Cáo Kết Quả Chiển Đấu,0,1,Delivery,4,Item,1,"{""MapID"":""63"",""NPCID"":""523""}","{""ItemID"":""40002079"",""Quantity"":""1""}"
+10483001,Tranh Cướp Khoáng Sơn,1,1,KillMonster,3,Monster,1,"{""MapID"":""63""}","{""MonsterID"":""11120"",""Count"":""40""}"
+10484001,Lời Nói Dối Chân Thực,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""63""}","{""MonsterID"":""533"",""ItemID"":""40002080"",""Rate"":""100"",""Quantity"":""1""}"
+10485001,Phượng Văn Ngân Tỏa Phiến,0,1,Delivery,4,Item,1,"{""MapID"":""63"",""NPCID"":""527""}","{""ItemID"":""40002080"",""Quantity"":""1""}"
+10486001,Anh Hùng Lúc Già,0,1,Delivery,4,,,"{""MapID"":""48"",""NPCID"":""22""}",
+10487001,Đen Tối,1,1,KillMonster,3,Monster,1,"{""MapID"":""85""}","{""MonsterID"":""1107"",""Count"":""35""}"
+10488001,Nhân Vật Kịch Tình,0,1,Delivery,4,,,"{""MapID"":""85"",""NPCID"":""515""}",
+10489001,Nghiên Cứu Chữ Tiết,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""85""}","{""MonsterID"":""1104"",""ItemID"":""40002062"",""Rate"":""50"",""Quantity"":""5""}"
+10490001,Tứ Thiêm Danh,0,1,Delivery,4,,,"{""MapID"":""85"",""NPCID"":""517""}",
+10491001,Năm Hạt Quýt,2,1,LootItemFromMonster,3,Monster,1,"{""MapID"":""85""}","{""MonsterID"":""822"",""ItemID"":""40002072"",""Rate"":""50"",""Quantity"":""5""}"
+10492001,Phòng Trống,0,1,Delivery,4,Item,1,"{""MapID"":""85"",""NPCID"":""516""}","{""ItemID"":""40002073"",""Quantity"":""1""}"
+10493001,Một Tia Sáng,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""85""}","{""MonsterID"":""531"",""ItemID"":""40002074"",""Rate"":""100"",""Quantity"":""1""}"
+10494001,Bí Mật Về Lôi Thần Kiều,0,1,Delivery,4,Item,1,"{""MapID"":""85"",""NPCID"":""519""}","{""ItemID"":""40002074"",""Quantity"":""1""}"
+10495001,Khách Thuê Phòng Che Mặt,0,1,Delivery,3,,,"{""MapID"":""63"",""NPCID"":""524""}",
+10496001,Ách Vận Bạch Sa Thôn,4,1,EnterArea,4,Area,1,"{""MapID"":""65""}","{""Name"":""Hồ Muối"",""PosX"":""2245"",""PosY"":""2675"",""Radius"":""1000"",""EnterDialog"":""Những tên Khổ Công tại sao 1 chút tức giận cũng không có? Bọn họ xem ra giống như những bọn côn đồ vậy, thấy người là đánh."",""EnterMessage"":""Đã thám thính xong Nhiệt Bố Ba Lạp Diêm Khanh""}"
+10497001,Nguyệt Dạ Kinh Mộng,1,1,KillMonster,4,Monster,1,"{""MapID"":""65""}","{""MonsterID"":""9001"",""Count"":""30""}"
+10498001,Nhẫn Vô Khả Nhẫn,1,1,KillMonster,4,Monster,1,"{""MapID"":""65""}","{""MonsterID"":""9008"",""Count"":""30""}"
+10499001,Đột Tập Yển Sư,1,1,KillMonster,3,Monster,1,"{""MapID"":""65""}","{""MonsterID"":""9010"",""Count"":""30""}"
+10500001,Sáp Huyết Chi Ước,1,1,KillMonster,4,Monster,1,"{""MapID"":""65""}","{""MonsterID"":""608"",""Count"":""1""}"
+10501001,Đồng Mệnh Tương Liên,0,1,Delivery,4,,,"{""MapID"":""65"",""NPCID"":""833""}",
+10502001,Bút Tích,0,1,Delivery,4,,,"{""MapID"":""65"",""NPCID"":""835""}",
+10503001,Nại Hà Trung Nghĩa Lão,0,1,Delivery,3,,,"{""MapID"":""65"",""NPCID"":""835""}",
+10504001,Võng Nhiên Kiếp,0,1,Delivery,4,,,"{""MapID"":""65"",""NPCID"":""839""}",
+10505001,Vượng Tài,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""65""}","{""MonsterID"":""9008"",""ItemID"":""40004439"",""Rate"":""50"",""Quantity"":""1""}"
+10506001,Khổi Lỗi Mộc Nhân,2,1,LootItemFromMonster,3,Monster,1,"{""MapID"":""65""}","{""MonsterID"":""9004"",""ItemID"":""40004441"",""Rate"":""50"",""Quantity"":""10""}"
+10507001,Ngạc Độc Cao,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""65""}","{""MonsterID"":""9002"",""ItemID"":""40004440"",""Rate"":""50"",""Quantity"":""10""}"
+10508001,Tìm A Cốt Đả,0,1,Delivery,3,Item,1,"{""MapID"":""48"",""NPCID"":""25""}","{""ItemID"":""40002102"",""Quantity"":""1""}"
+10509001,Giấu Tài,0,1,Delivery,4,Item,1,"{""MapID"":""48"",""NPCID"":""22""}","{""ItemID"":""40002100"",""Quantity"":""1""}"
+10509001,Giấu Tài,0,1,Delivery,4,Item,2,"{""MapID"":""48"",""NPCID"":""22""}","{""ItemID"":""40002101"",""Quantity"":""1""}"
+10510001,Đơn Thuốc Của Thần Y,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""48""}","{""MonsterID"":""1129"",""ItemID"":""40002098"",""Rate"":""50"",""Quantity"":""1""}"
+10511001,Thiên Nha Hải Giác,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""48""}","{""MonsterID"":""1129"",""ItemID"":""40001039"",""Rate"":""100"",""Quantity"":""10""}"
+10512001,Đột Kích,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""48""}","{""MonsterID"":""534"",""ItemID"":""40002099"",""Rate"":""100"",""Quantity"":""1""}"
+10513001,Đồng Bằng Rộng Lớn Hoang Vu,1,1,KillMonster,4,Monster,1,"{""MapID"":""49""}","{""MonsterID"":""1154"",""Count"":""50""}"
+10514001,Hơi Thở Ấm Áp,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""49""}","{""MonsterID"":""1159"",""ItemID"":""40002083"",""Rate"":""50"",""Quantity"":""10""}"
+10515001,Tình Cảnh Nguy Hiểm,1,1,KillMonster,4,Monster,1,"{""MapID"":""49""}","{""MonsterID"":""1157"",""Count"":""50""}"
+10516001,Món Quà Tặng Đau Lòng,0,1,Delivery,3,Item,1,"{""MapID"":""49"",""NPCID"":""274""}","{""ItemID"":""40002084"",""Quantity"":""1""}"
+10517001,Bảo Vệ Thánh Vật,0,1,Delivery,4,,,"{""MapID"":""49"",""NPCID"":""269""}",
+10518001,Trận Chiến Trùng Giáp,1,1,KillMonster,4,Monster,1,"{""MapID"":""49""}","{""MonsterID"":""1161"",""Count"":""50""}"
+10519001,Cuộc Chiến Của Ba Luân,1,1,KillMonster,4,Monster,1,"{""MapID"":""49""}","{""MonsterID"":""849"",""Count"":""50""}"
+10520001,Chân Tướng,0,1,Delivery,3,Item,1,"{""MapID"":""49"",""NPCID"":""271""}","{""ItemID"":""40002104"",""Quantity"":""1""}"
+10521001,Sự Bùng Nổ Đau Khổ,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""49""}","{""MonsterID"":""537"",""ItemID"":""40002105"",""Rate"":""100"",""Quantity"":""1""}"
+10522001,Luân Hồi Tình Cảm,0,1,Delivery,4,Item,1,"{""MapID"":""49"",""NPCID"":""272""}","{""ItemID"":""40002084"",""Quantity"":""1""}"
+10523001,A Vũ Nhát Gan,1,1,KillMonster,3,Monster,1,"{""MapID"":""64""}","{""MonsterID"":""1144"",""Count"":""50""}"
+10524001,Thỉnh Cầu Của A Tùng,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""64""}","{""MonsterID"":""1144"",""ItemID"":""40002085"",""Rate"":""50"",""Quantity"":""10""}"
+10525001,Cảm Ơn,0,1,Delivery,4,Item,1,"{""MapID"":""63"",""NPCID"":""527""}","{""ItemID"":""40002086"",""Quantity"":""1""}"
+10526001,Kế Hoạch Của Dương Minh,0,1,Delivery,3,,,"{""MapID"":""64"",""NPCID"":""501""}",
+10527001,Ách Tu La,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""64""}","{""MonsterID"":""843"",""ItemID"":""40002087"",""Rate"":""50"",""Quantity"":""1""}"
+10528001,Vĩnh Dạ Tu La,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""64""}","{""MonsterID"":""11146"",""ItemID"":""40002088"",""Rate"":""50"",""Quantity"":""1""}"
+10529001,Vạn Kiếp Tu La,2,1,LootItemFromMonster,3,Monster,1,"{""MapID"":""64""}","{""MonsterID"":""11148"",""ItemID"":""40002089"",""Rate"":""50"",""Quantity"":""1""}"
+10530001,Chỉ Thị Của Tu La Vương,0,1,Delivery,4,,,"{""MapID"":""63"",""NPCID"":""527""}",
+10531001,Thanh Thanh Tử Câm,1,1,KillMonster,4,Monster,1,"{""MapID"":""86""}","{""MonsterID"":""1134"",""Count"":""45""}"
+10532001,Hộ Hoa Sứ Giả,5,1,TransferNPC,3,MovePath,1,"{""MapID"":""86"",""NPCID"":""528""}","{""PosX"":""8690"",""PosY"":""1766"",""Delay"":""500"",""Talk"":""Buồn bã ngẩng đầu nhìn các hạ, thái độ có vẻ bẽn lẽn...các hạ, có thể phiền các hạ một phen, đưa tôi đi một chuyến?""}"
+10532001,Hộ Hoa Sứ Giả,5,1,TransferNPC,3,MovePath,2,"{""MapID"":""86"",""NPCID"":""528""}","{""PosX"":""7735"",""PosY"":""5235"",""Delay"":""500"",""Talk"":""Từ Khâm ca ca..., đa tạ các hạ!!!""}"
+10533001,Đạo Thần,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""86""}","{""MonsterID"":""1138"",""ItemID"":""40002077"",""Rate"":""5"",""Quantity"":""1""}"
+10534001,Thư Mật,0,1,Delivery,4,Item,1,"{""MapID"":""86"",""NPCID"":""530""}","{""ItemID"":""40002077"",""Quantity"":""1""}"
+10535001,Thuốc Hiển Ảnh,2,1,LootItemFromMonster,4,Monster,1,"{""MapID"":""86""}","{""MonsterID"":""1141"",""ItemID"":""40010003"",""Rate"":""100"",""Quantity"":""10""}"
+10535001,Thuốc Hiển Ảnh,2,1,LootItemFromMonster,4,Monster,2,"{""MapID"":""86""}","{""MonsterID"":""1141"",""ItemID"":""40010004"",""Rate"":""100"",""Quantity"":""10""}"
+10536001,Giải Sự Nghi Ngờ,0,1,Delivery,3,,,"{""MapID"":""86"",""NPCID"":""531""}",
+10537001,Diệt Trừ Dũng Sỹ,1,1,KillMonster,4,Monster,1,"{""MapID"":""86""}","{""MonsterID"":""1136"",""Count"":""45""}"
+10538001,Diệt Trừ Sát Thủ,1,1,KillMonster,4,Monster,1,"{""MapID"":""86""}","{""MonsterID"":""1141"",""Count"":""45""}"
+10539001,Huyền Vũ Môn Chi Biến,2,1,LootItemFromMonster,3,Monster,1,"{""MapID"":""86""}","{""MonsterID"":""535"",""ItemID"":""40002081"",""Rate"":""100"",""Quantity"":""1""}"
+10540001,Đống Đất Sạch Cuối Cùng,0,1,Delivery,4,Item,1,"{""MapID"":""64"",""NPCID"":""504""}","{""ItemID"":""40002082"",""Quantity"":""1""}"

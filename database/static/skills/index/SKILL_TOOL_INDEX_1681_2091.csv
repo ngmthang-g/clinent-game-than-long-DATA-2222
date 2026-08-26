@@ -1,0 +1,412 @@
+﻿ID,Name,FactionID,Type,TargetType,RequireLevel,CastRange,Property
+5015129,Thập Tam Thái Bảo - Miễn Dịch Nội Công (Cấp 9),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_12_lv9
+5015131,Thập Tam Thái Bảo - Miễn Dịch Băng Công (Cấp 1),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_13_lv1
+5015132,Thập Tam Thái Bảo - Miễn Dịch Băng Công (Cấp 2),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_13_lv2
+5015133,Thập Tam Thái Bảo - Miễn Dịch Băng Công (Cấp 3),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_13_lv3
+5015134,Thập Tam Thái Bảo - Miễn Dịch Băng Công (Cấp 4),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_13_lv4
+5015135,Thập Tam Thái Bảo - Miễn Dịch Băng Công (Cấp 5),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_13_lv5
+5015136,Thập Tam Thái Bảo - Miễn Dịch Băng Công (Cấp 6),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_13_lv6
+5015137,Thập Tam Thái Bảo - Miễn Dịch Băng Công (Cấp 7),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_13_lv7
+5015138,Thập Tam Thái Bảo - Miễn Dịch Băng Công (Cấp 8),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_13_lv8
+5015139,Thập Tam Thái Bảo - Miễn Dịch Băng Công (Cấp 9),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_13_lv9
+5015141,Thập Tam Thái Bảo - Miễn Dịch Hỏa Công (Cấp 1),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_14_lv1
+5015142,Thập Tam Thái Bảo - Miễn Dịch Hỏa Công (Cấp 2),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_14_lv2
+5015143,Thập Tam Thái Bảo - Miễn Dịch Hỏa Công (Cấp 3),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_14_lv3
+5015144,Thập Tam Thái Bảo - Miễn Dịch Hỏa Công (Cấp 4),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_14_lv4
+5015145,Thập Tam Thái Bảo - Miễn Dịch Hỏa Công (Cấp 5),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_14_lv5
+5015146,Thập Tam Thái Bảo - Miễn Dịch Hỏa Công (Cấp 6),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_14_lv6
+5015147,Thập Tam Thái Bảo - Miễn Dịch Hỏa Công (Cấp 7),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_14_lv7
+5015148,Thập Tam Thái Bảo - Miễn Dịch Hỏa Công (Cấp 8),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_14_lv8
+5015149,Thập Tam Thái Bảo - Miễn Dịch Hỏa Công (Cấp 9),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_14_lv9
+5015151,Thập Tam Thái Bảo - Miễn Dịch Huyền Công (Cấp 1),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_15_lv1
+5015152,Thập Tam Thái Bảo - Miễn Dịch Huyền Công (Cấp 2),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_15_lv2
+5015153,Thập Tam Thái Bảo - Miễn Dịch Huyền Công (Cấp 3),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_15_lv3
+5015154,Thập Tam Thái Bảo - Miễn Dịch Huyền Công (Cấp 4),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_15_lv4
+5015155,Thập Tam Thái Bảo - Miễn Dịch Huyền Công (Cấp 5),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_15_lv5
+5015156,Thập Tam Thái Bảo - Miễn Dịch Huyền Công (Cấp 6),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_15_lv6
+5015157,Thập Tam Thái Bảo - Miễn Dịch Huyền Công (Cấp 7),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_15_lv7
+5015158,Thập Tam Thái Bảo - Miễn Dịch Huyền Công (Cấp 8),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_15_lv8
+5015159,Thập Tam Thái Bảo - Miễn Dịch Huyền Công (Cấp 9),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_15_lv9
+5015161,Thập Tam Thái Bảo - Miễn Dịch Độc Công (Cấp 1),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_16_lv1
+5015162,Thập Tam Thái Bảo - Miễn Dịch Độc Công (Cấp 2),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_16_lv2
+5015163,Thập Tam Thái Bảo - Miễn Dịch Độc Công (Cấp 3),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_16_lv3
+5015164,Thập Tam Thái Bảo - Miễn Dịch Độc Công (Cấp 4),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_16_lv4
+5015165,Thập Tam Thái Bảo - Miễn Dịch Độc Công (Cấp 5),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_16_lv5
+5015166,Thập Tam Thái Bảo - Miễn Dịch Độc Công (Cấp 6),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_16_lv6
+5015167,Thập Tam Thái Bảo - Miễn Dịch Độc Công (Cấp 7),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_16_lv7
+5015168,Thập Tam Thái Bảo - Miễn Dịch Độc Công (Cấp 8),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_16_lv8
+5015169,Thập Tam Thái Bảo - Miễn Dịch Độc Công (Cấp 9),-1,Auto,Self,1,0,heroicorder_shisantaibao_child_16_lv9
+50161,Dục Huyết Tàn Thương (Cấp 1),-1,Passive,Self,1,0,heroicorder_yuxuecanshang_lv1
+50162,Dục Huyết Tàn Thương (Cấp 2),-1,Passive,Self,1,0,heroicorder_yuxuecanshang_lv2
+50163,Dục Huyết Tàn Thương (Cấp 3),-1,Passive,Self,1,0,heroicorder_yuxuecanshang_lv3
+50164,Dục Huyết Tàn Thương (Cấp 4),-1,Passive,Self,1,0,heroicorder_yuxuecanshang_lv4
+50165,Dục Huyết Tàn Thương (Cấp 5),-1,Passive,Self,1,0,heroicorder_yuxuecanshang_lv5
+50166,Dục Huyết Tàn Thương (Cấp 6),-1,Passive,Self,1,0,heroicorder_yuxuecanshang_lv6
+50167,Dục Huyết Tàn Thương (Cấp 7),-1,Passive,Self,1,0,heroicorder_yuxuecanshang_lv7
+50168,Dục Huyết Tàn Thương (Cấp 8),-1,Passive,Self,1,0,heroicorder_yuxuecanshang_lv8
+50169,Dục Huyết Tàn Thương (Cấp 9),-1,Passive,Self,1,0,heroicorder_yuxuecanshang_lv9
+5016011,Dục Huyết Tàn Thương - Tàn Thương (Cấp 1),-1,Auto,Enemy,1,0,heroicorder_yuxuecanshang_child_lv1
+5016012,Dục Huyết Tàn Thương - Tàn Thương (Cấp 2),-1,Auto,Enemy,1,0,heroicorder_yuxuecanshang_child_lv2
+5016013,Dục Huyết Tàn Thương - Tàn Thương (Cấp 3),-1,Auto,Enemy,1,0,heroicorder_yuxuecanshang_child_lv3
+5016014,Dục Huyết Tàn Thương - Tàn Thương (Cấp 4),-1,Auto,Enemy,1,0,heroicorder_yuxuecanshang_child_lv4
+5016015,Dục Huyết Tàn Thương - Tàn Thương (Cấp 5),-1,Auto,Enemy,1,0,heroicorder_yuxuecanshang_child_lv5
+5016016,Dục Huyết Tàn Thương - Tàn Thương (Cấp 6),-1,Auto,Enemy,1,0,heroicorder_yuxuecanshang_child_lv6
+5016017,Dục Huyết Tàn Thương - Tàn Thương (Cấp 7),-1,Auto,Enemy,1,0,heroicorder_yuxuecanshang_child_lv7
+5016018,Dục Huyết Tàn Thương - Tàn Thương (Cấp 8),-1,Auto,Enemy,1,0,heroicorder_yuxuecanshang_child_lv8
+5016019,Dục Huyết Tàn Thương - Tàn Thương (Cấp 9),-1,Auto,Enemy,1,0,heroicorder_yuxuecanshang_child_lv9
+50171,Vu Cổ Kỳ Thuật (Cấp 1),-1,Passive,Self,1,0,heroicorder_wuguqishu_lv1
+50172,Vu Cổ Kỳ Thuật (Cấp 2),-1,Passive,Self,1,0,heroicorder_wuguqishu_lv2
+50173,Vu Cổ Kỳ Thuật (Cấp 3),-1,Passive,Self,1,0,heroicorder_wuguqishu_lv3
+50174,Vu Cổ Kỳ Thuật (Cấp 4),-1,Passive,Self,1,0,heroicorder_wuguqishu_lv4
+50175,Vu Cổ Kỳ Thuật (Cấp 5),-1,Passive,Self,1,0,heroicorder_wuguqishu_lv5
+50176,Vu Cổ Kỳ Thuật (Cấp 6),-1,Passive,Self,1,0,heroicorder_wuguqishu_lv6
+50177,Vu Cổ Kỳ Thuật (Cấp 7),-1,Passive,Self,1,0,heroicorder_wuguqishu_lv7
+50178,Vu Cổ Kỳ Thuật (Cấp 8),-1,Passive,Self,1,0,heroicorder_wuguqishu_lv8
+50179,Vu Cổ Kỳ Thuật (Cấp 9),-1,Passive,Self,1,0,heroicorder_wuguqishu_lv9
+5017011,Vu Cổ Kỳ Thuật - Tê Liệt (Cấp 1),-1,Auto,Enemy,1,0,heroicorder_wuguqishu_child_lv1
+5017012,Vu Cổ Kỳ Thuật - Tê Liệt (Cấp 2),-1,Auto,Enemy,1,0,heroicorder_wuguqishu_child_lv2
+5017013,Vu Cổ Kỳ Thuật - Tê Liệt (Cấp 3),-1,Auto,Enemy,1,0,heroicorder_wuguqishu_child_lv3
+5017014,Vu Cổ Kỳ Thuật - Tê Liệt (Cấp 4),-1,Auto,Enemy,1,0,heroicorder_wuguqishu_child_lv4
+5017015,Vu Cổ Kỳ Thuật - Tê Liệt (Cấp 5),-1,Auto,Enemy,1,0,heroicorder_wuguqishu_child_lv5
+5017016,Vu Cổ Kỳ Thuật - Tê Liệt (Cấp 6),-1,Auto,Enemy,1,0,heroicorder_wuguqishu_child_lv6
+5017017,Vu Cổ Kỳ Thuật - Tê Liệt (Cấp 7),-1,Auto,Enemy,1,0,heroicorder_wuguqishu_child_lv7
+5017018,Vu Cổ Kỳ Thuật - Tê Liệt (Cấp 8),-1,Auto,Enemy,1,0,heroicorder_wuguqishu_child_lv8
+5017019,Vu Cổ Kỳ Thuật - Tê Liệt (Cấp 9),-1,Auto,Enemy,1,0,heroicorder_wuguqishu_child_lv9
+50181,Hoành Hành Vô Kỵ (Cấp 1),-1,Passive,Self,1,0,heroicorder_hengxingwuji_lv1
+50182,Hoành Hành Vô Kỵ (Cấp 2),-1,Passive,Self,1,0,heroicorder_hengxingwuji_lv2
+50183,Hoành Hành Vô Kỵ (Cấp 3),-1,Passive,Self,1,0,heroicorder_hengxingwuji_lv3
+50184,Hoành Hành Vô Kỵ (Cấp 4),-1,Passive,Self,1,0,heroicorder_hengxingwuji_lv4
+50185,Hoành Hành Vô Kỵ (Cấp 5),-1,Passive,Self,1,0,heroicorder_hengxingwuji_lv5
+50186,Hoành Hành Vô Kỵ (Cấp 6),-1,Passive,Self,1,0,heroicorder_hengxingwuji_lv6
+50187,Hoành Hành Vô Kỵ (Cấp 7),-1,Passive,Self,1,0,heroicorder_hengxingwuji_lv7
+50188,Hoành Hành Vô Kỵ (Cấp 8),-1,Passive,Self,1,0,heroicorder_hengxingwuji_lv8
+50189,Hoành Hành Vô Kỵ (Cấp 9),-1,Passive,Self,1,0,heroicorder_hengxingwuji_lv9
+5018011,Hoành Hành Vô Kỵ - Vô Kỵ (Cấp 1),-1,Auto,Self,1,0,heroicorder_hengxingwuji_child_lv1
+5018012,Hoành Hành Vô Kỵ - Vô Kỵ (Cấp 2),-1,Auto,Self,1,0,heroicorder_hengxingwuji_child_lv2
+5018013,Hoành Hành Vô Kỵ - Vô Kỵ (Cấp 3),-1,Auto,Self,1,0,heroicorder_hengxingwuji_child_lv3
+5018014,Hoành Hành Vô Kỵ - Vô Kỵ (Cấp 4),-1,Auto,Self,1,0,heroicorder_hengxingwuji_child_lv4
+5018015,Hoành Hành Vô Kỵ - Vô Kỵ (Cấp 5),-1,Auto,Self,1,0,heroicorder_hengxingwuji_child_lv5
+5018016,Hoành Hành Vô Kỵ - Vô Kỵ (Cấp 6),-1,Auto,Self,1,0,heroicorder_hengxingwuji_child_lv6
+5018017,Hoành Hành Vô Kỵ - Vô Kỵ (Cấp 7),-1,Auto,Self,1,0,heroicorder_hengxingwuji_child_lv7
+5018018,Hoành Hành Vô Kỵ - Vô Kỵ (Cấp 8),-1,Auto,Self,1,0,heroicorder_hengxingwuji_child_lv8
+5018019,Hoành Hành Vô Kỵ - Vô Kỵ (Cấp 9),-1,Auto,Self,1,0,heroicorder_hengxingwuji_child_lv9
+50191,Hư Bất Thụ Bổ (Cấp 1),-1,Passive,Self,1,0,heroicorder_xubushoubu_lv1
+50192,Hư Bất Thụ Bổ (Cấp 2),-1,Passive,Self,1,0,heroicorder_xubushoubu_lv2
+50193,Hư Bất Thụ Bổ (Cấp 3),-1,Passive,Self,1,0,heroicorder_xubushoubu_lv3
+50194,Hư Bất Thụ Bổ (Cấp 4),-1,Passive,Self,1,0,heroicorder_xubushoubu_lv4
+50195,Hư Bất Thụ Bổ (Cấp 5),-1,Passive,Self,1,0,heroicorder_xubushoubu_lv5
+50196,Hư Bất Thụ Bổ (Cấp 6),-1,Passive,Self,1,0,heroicorder_xubushoubu_lv6
+50197,Hư Bất Thụ Bổ (Cấp 7),-1,Passive,Self,1,0,heroicorder_xubushoubu_lv7
+50198,Hư Bất Thụ Bổ (Cấp 8),-1,Passive,Self,1,0,heroicorder_xubushoubu_lv8
+50199,Hư Bất Thụ Bổ (Cấp 9),-1,Passive,Self,1,0,heroicorder_xubushoubu_lv9
+5019011,Hư Bất Thụ Bổ - Thể Hư (Cấp 1),-1,Auto,Enemy,1,0,heroicorder_xubushoubu_child_lv1
+5019012,Hư Bất Thụ Bổ - Thể Hư (Cấp 2),-1,Auto,Enemy,1,0,heroicorder_xubushoubu_child_lv2
+5019013,Hư Bất Thụ Bổ - Thể Hư (Cấp 3),-1,Auto,Enemy,1,0,heroicorder_xubushoubu_child_lv3
+5019014,Hư Bất Thụ Bổ - Thể Hư (Cấp 4),-1,Auto,Enemy,1,0,heroicorder_xubushoubu_child_lv4
+5019015,Hư Bất Thụ Bổ - Thể Hư (Cấp 5),-1,Auto,Enemy,1,0,heroicorder_xubushoubu_child_lv5
+5019016,Hư Bất Thụ Bổ - Thể Hư (Cấp 6),-1,Auto,Enemy,1,0,heroicorder_xubushoubu_child_lv6
+5019017,Hư Bất Thụ Bổ - Thể Hư (Cấp 7),-1,Auto,Enemy,1,0,heroicorder_xubushoubu_child_lv7
+5019018,Hư Bất Thụ Bổ - Thể Hư (Cấp 8),-1,Auto,Enemy,1,0,heroicorder_xubushoubu_child_lv8
+5019019,Hư Bất Thụ Bổ - Thể Hư (Cấp 9),-1,Auto,Enemy,1,0,heroicorder_xubushoubu_child_lv9
+50201,Mục Huyền Thần Mê (Cấp 1),-1,Passive,Self,1,0,heroicorder_muxuanshenmi_lv1
+50202,Mục Huyền Thần Mê (Cấp 2),-1,Passive,Self,1,0,heroicorder_muxuanshenmi_lv2
+50203,Mục Huyền Thần Mê (Cấp 3),-1,Passive,Self,1,0,heroicorder_muxuanshenmi_lv3
+50204,Mục Huyền Thần Mê (Cấp 4),-1,Passive,Self,1,0,heroicorder_muxuanshenmi_lv4
+50205,Mục Huyền Thần Mê (Cấp 5),-1,Passive,Self,1,0,heroicorder_muxuanshenmi_lv5
+50206,Mục Huyền Thần Mê (Cấp 6),-1,Passive,Self,1,0,heroicorder_muxuanshenmi_lv6
+50207,Mục Huyền Thần Mê (Cấp 7),-1,Passive,Self,1,0,heroicorder_muxuanshenmi_lv7
+50208,Mục Huyền Thần Mê (Cấp 8),-1,Passive,Self,1,0,heroicorder_muxuanshenmi_lv8
+50209,Mục Huyền Thần Mê (Cấp 9),-1,Passive,Self,1,0,heroicorder_muxuanshenmi_lv9
+5020011,Mục Huyền Thần Mê - Ma Tý (Cấp 1),-1,Auto,Enemy,1,0,heroicorder_muxuanshenmi_child_lv1
+5020012,Mục Huyền Thần Mê - Ma Tý (Cấp 2),-1,Auto,Enemy,1,0,heroicorder_muxuanshenmi_child_lv2
+5020013,Mục Huyền Thần Mê - Ma Tý (Cấp 3),-1,Auto,Enemy,1,0,heroicorder_muxuanshenmi_child_lv3
+5020014,Mục Huyền Thần Mê - Ma Tý (Cấp 4),-1,Auto,Enemy,1,0,heroicorder_muxuanshenmi_child_lv4
+5020015,Mục Huyền Thần Mê - Ma Tý (Cấp 5),-1,Auto,Enemy,1,0,heroicorder_muxuanshenmi_child_lv5
+5020016,Mục Huyền Thần Mê - Ma Tý (Cấp 6),-1,Auto,Enemy,1,0,heroicorder_muxuanshenmi_child_lv6
+5020017,Mục Huyền Thần Mê - Ma Tý (Cấp 7),-1,Auto,Enemy,1,0,heroicorder_muxuanshenmi_child_lv7
+5020018,Mục Huyền Thần Mê - Ma Tý (Cấp 8),-1,Auto,Enemy,1,0,heroicorder_muxuanshenmi_child_lv8
+5020019,Mục Huyền Thần Mê - Ma Tý (Cấp 9),-1,Auto,Enemy,1,0,heroicorder_muxuanshenmi_child_lv9
+50211,Tu La Lâm Thế (Cấp 1),-1,Passive,Self,1,0,heroicorder_xiuluolinshi_lv1
+50212,Tu La Lâm Thế (Cấp 2),-1,Passive,Self,1,0,heroicorder_xiuluolinshi_lv2
+50213,Tu La Lâm Thế (Cấp 3),-1,Passive,Self,1,0,heroicorder_xiuluolinshi_lv3
+50214,Tu La Lâm Thế (Cấp 4),-1,Passive,Self,1,0,heroicorder_xiuluolinshi_lv4
+50215,Tu La Lâm Thế (Cấp 5),-1,Passive,Self,1,0,heroicorder_xiuluolinshi_lv5
+50216,Tu La Lâm Thế (Cấp 6),-1,Passive,Self,1,0,heroicorder_xiuluolinshi_lv6
+50217,Tu La Lâm Thế (Cấp 7),-1,Passive,Self,1,0,heroicorder_xiuluolinshi_lv7
+50218,Tu La Lâm Thế (Cấp 8),-1,Passive,Self,1,0,heroicorder_xiuluolinshi_lv8
+50219,Tu La Lâm Thế (Cấp 9),-1,Passive,Self,1,0,heroicorder_xiuluolinshi_lv9
+5021011,Tu La Lâm Thế - Tuyệt Sát (Cấp 1),-1,Auto,Self,1,0,heroicorder_xiuluolinshi_child_lv1
+5021012,Tu La Lâm Thế - Tuyệt Sát (Cấp 2),-1,Auto,Self,1,0,heroicorder_xiuluolinshi_child_lv2
+5021013,Tu La Lâm Thế - Tuyệt Sát (Cấp 3),-1,Auto,Self,1,0,heroicorder_xiuluolinshi_child_lv3
+5021014,Tu La Lâm Thế - Tuyệt Sát (Cấp 4),-1,Auto,Self,1,0,heroicorder_xiuluolinshi_child_lv4
+5021015,Tu La Lâm Thế - Tuyệt Sát (Cấp 5),-1,Auto,Self,1,0,heroicorder_xiuluolinshi_child_lv5
+5021016,Tu La Lâm Thế - Tuyệt Sát (Cấp 6),-1,Auto,Self,1,0,heroicorder_xiuluolinshi_child_lv6
+5021017,Tu La Lâm Thế - Tuyệt Sát (Cấp 7),-1,Auto,Self,1,0,heroicorder_xiuluolinshi_child_lv7
+5021018,Tu La Lâm Thế - Tuyệt Sát (Cấp 8),-1,Auto,Self,1,0,heroicorder_xiuluolinshi_child_lv8
+5021019,Tu La Lâm Thế - Tuyệt Sát (Cấp 9),-1,Auto,Self,1,0,heroicorder_xiuluolinshi_child_lv9
+50221,Hồi Thiên Phạp Thuật (Cấp 1),-1,Passive,Self,1,0,heroicorder_huitianfashu_lv1
+50222,Hồi Thiên Phạp Thuật (Cấp 2),-1,Passive,Self,1,0,heroicorder_huitianfashu_lv2
+50223,Hồi Thiên Phạp Thuật (Cấp 3),-1,Passive,Self,1,0,heroicorder_huitianfashu_lv3
+50224,Hồi Thiên Phạp Thuật (Cấp 4),-1,Passive,Self,1,0,heroicorder_huitianfashu_lv4
+50225,Hồi Thiên Phạp Thuật (Cấp 5),-1,Passive,Self,1,0,heroicorder_huitianfashu_lv5
+50226,Hồi Thiên Phạp Thuật (Cấp 6),-1,Passive,Self,1,0,heroicorder_huitianfashu_lv6
+50227,Hồi Thiên Phạp Thuật (Cấp 7),-1,Passive,Self,1,0,heroicorder_huitianfashu_lv7
+50228,Hồi Thiên Phạp Thuật (Cấp 8),-1,Passive,Self,1,0,heroicorder_huitianfashu_lv8
+50229,Hồi Thiên Phạp Thuật (Cấp 9),-1,Passive,Self,1,0,heroicorder_huitianfashu_lv9
+5022011,Hồi Thiên Phạp Thuật - Cấm Hồi Phục (Cấp 1),-1,Auto,Enemy,1,0,heroicorder_huitianfashu_child_lv1
+5022012,Hồi Thiên Phạp Thuật - Cấm Hồi Phục (Cấp 2),-1,Auto,Enemy,1,0,heroicorder_huitianfashu_child_lv2
+5022013,Hồi Thiên Phạp Thuật - Cấm Hồi Phục (Cấp 3),-1,Auto,Enemy,1,0,heroicorder_huitianfashu_child_lv3
+5022014,Hồi Thiên Phạp Thuật - Cấm Hồi Phục (Cấp 4),-1,Auto,Enemy,1,0,heroicorder_huitianfashu_child_lv4
+5022015,Hồi Thiên Phạp Thuật - Cấm Hồi Phục (Cấp 5),-1,Auto,Enemy,1,0,heroicorder_huitianfashu_child_lv5
+5022016,Hồi Thiên Phạp Thuật - Cấm Hồi Phục (Cấp 6),-1,Auto,Enemy,1,0,heroicorder_huitianfashu_child_lv6
+5022017,Hồi Thiên Phạp Thuật - Cấm Hồi Phục (Cấp 7),-1,Auto,Enemy,1,0,heroicorder_huitianfashu_child_lv7
+5022018,Hồi Thiên Phạp Thuật - Cấm Hồi Phục (Cấp 8),-1,Auto,Enemy,1,0,heroicorder_huitianfashu_child_lv8
+5022019,Hồi Thiên Phạp Thuật - Cấm Hồi Phục (Cấp 9),-1,Auto,Enemy,1,0,heroicorder_huitianfashu_child_lv9
+10000,GM thần công,-1,Active,Self,1,0,GM
+10001,Xóa Hồi Chiêu,-1,Active,Self,1,0,GM1
+10002,GM Bất Tử,-1,Active,Self,1,0,GM2
+10003,GM Tàng Hình,-1,Active,Self,1,0,GM3
+10004,GM hút mana,-1,Active,Enemy,1,15,GM4
+10005,Hỏa Thiêu Thiên Xích,-1,Active,Self,1,0,GM5
+10006,Hỏa Thiêu Thiên Xích - Công kích,-1,Auto,Enemy,1,0,GM6
+11000,Tấn công,-1,Active,Enemy,1,8,empty
+11001,Lục Sắc Ám Khí,-1,Active,Enemy,1,20,pmf_boss_luseanqi
+11002,Lam Sắc Ám Khí,-1,Active,Enemy,1,20,pmf_boss_lanseanqi
+11003,Tử Sắc Ám Khí,-1,Active,Enemy,1,20,pmf_boss_ziseanqi
+11004,Ngưu Mao Độc Châm,-1,Active,Enemy,1,20,pmf_boss_niumaoduzhen
+11005,Cuồng Nộ,-1,Active,Self,1,0,pmf_boss_kuangnu
+11006,Kim Giáp,-1,Active,Self,1,0,pmf_boss_jinjia
+11007,Minh Kính,-1,Active,Self,1,0,pmf_boss_mingjing
+11008,Kiếm Mang,-1,Active,Enemy,1,20,pmf_boss_jianmang
+11009,Kim Đăng Vạn Trảm,-1,Active,Enemy,1,20,pmf_boss_jindengwanzhan
+11010,Độc Dược Tê Liệt,-1,Active,Enemy,1,20,pmf_boss_duyaobilie
+11011,Lục Ba Hương Lộ,-1,Active,Self,1,0,pmf_boss_lubaxianglu
+1101100,Lục Ba Hương Lộ - Trúng độc,-1,Auto,Enemy,1,0,pmf_boss_lubaxianglu_child
+11012,Huynh Đệ,-1,Active,Self,1,0,pmf_boss_xiongdi
+11013,Hàn Băng,-1,Active,Enemy,1,20,pmf_boss_hanbing
+11014,Tiểu Vô Tướng Công,-1,Active,Enemy,1,20,pmf_boss_xiaowuxianggong
+11015,Kiếm Vũ,-1,Active,Self,1,0,pmf_boss_jianwu
+1101500,Kiếm Vũ - Tử Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_zise
+1101501,Kiếm Vũ - Hồng Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_hongse
+1101502,Kiếm Vũ - Bạch Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_baise
+1101503,Kiếm Vũ - Hoàng Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_huangse
+1101504,Kiếm Vũ - Lam Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_lanse
+1101505,Kiếm Vũ - Lục Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_luse
+1101510,Kiếm Vũ - Tử Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_zise_child
+1101511,Kiếm Vũ - Hồng Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_hongse_child
+1101512,Kiếm Vũ - Bạch Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_baise_child
+1101513,Kiếm Vũ - Hoàng Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_huangse_child
+1101514,Kiếm Vũ - Lam Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_lanse_child
+1101515,Kiếm Vũ - Lục Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_luse_child
+1101520,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_zise
+1101521,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_hongse
+1101522,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_baise
+1101523,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_huangse
+1101524,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_lanse
+1101525,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_luse
+11020,Tấn Công Cao Cấp,-1,Active,Enemy,1,4,boss_nhaclaotam
+11021,Quần Long Loạn Vũ,-1,Active,Enemy,1,0,QuanLongLoanVu
+11022,Cắn Xé,-1,Active,Enemy,1,4,CanXe
+11023,Độc Linh Trảo,-1,Active,Enemy,1,4,DocLinhChao
+110230,Độc Linh Trảo - Mất máu,-1,Auto,Enemy,1,0,DocLinhChao_child
+11024,Bạo Độc,-1,Active,Enemy,1,0,BaoDoc
+11025,Tử Triền Lan Đà,-1,Active,Enemy,1,4,TuTrienLanDa
+110250,Tử Triền Lan Đà - Giảm tốc,-1,Auto,Enemy,1,0,TuTrienLanDa_GiamToc
+11026,Phong Huyệt,-1,Active,Enemy,1,3,PhongHuyet
+11027,Nhất Dương Chỉ,-1,Active,Enemy,1,10,NhatDuongChi
+11028,Cuồng Lôi Thiên Đao,-1,Active,Enemy,1,0,CuongLoiThienDao
+11029,Bài Sơn Đảo Hải,-1,Active,Enemy,1,0,BaiSonDaoHai
+11030,Hư Hoan Trảm,-1,Active,Enemy,1,4,HuHoanTram
+11031,Hư Hoan Phá Sát,-1,Active,Enemy,1,0,HuHoanPhaSat
+11032,Hỏa Diệm Đao,-1,Active,Enemy,1,4,HoaDiemDao
+11033,Liệt Diệm Luyện Ngục,-1,Active,Enemy,1,0,LietDiemLuyenNguc
+110330,Liệt Diệm Luyện Ngục - Giảm huyết,-1,Auto,Enemy,1,0,LietDiemLuyenNguc_child
+11034,Băng Bạo,-1,Active,Enemy,1,0,BangBao
+11035,Băng Thiên Tuyết Địa,-1,PetActive,Enemy,-1,20,BangThienTuyetDia
+11036,Đẩu Chuyển Tinh Di,-1,Active,Self,40,0,DauChuyenTinhDi
+11037,Tham Hợp Chỉ,-1,Active,Enemy,1,4,ThaoNhuocChi
+11038,Bi Tô Thanh Phong,-1,Active,Enemy,1,0,BiToThanhPhong
+11039,Chỉ Điểm Giang Sơn,-1,Active,Enemy,1,15,tianlong_zhidianjiangshan_YTO
+12001,Lục Sắc Ám Khí,-1,Active,Enemy,1,20,pmf_boss_luseanqi_SC
+12002,Lam Sắc Ám Khí,-1,Active,Enemy,1,20,pmf_boss_lanseanqi_SC
+12003,Tử Sắc Ám Khí,-1,Active,Enemy,1,20,pmf_boss_ziseanqi_SC
+12004,Ngưu Mao Độc Châm,-1,Active,Enemy,1,20,pmf_boss_niumaoduzhen_SC
+12005,Cuồng Nộ,-1,Active,Self,1,0,pmf_boss_kuangnu_SC
+12006,Kim Giáp,-1,Active,Self,1,0,pmf_boss_jinjia_SC
+12007,Minh Kính,-1,Active,Self,1,0,pmf_boss_mingjing_SC
+12008,Kiếm Mang,-1,Active,Enemy,1,20,pmf_boss_jianmang_SC
+12009,Kim Đăng Vạn Trảm,-1,Active,Enemy,1,20,pmf_boss_jindengwanzhan_SC
+12010,Độc Dược Tê Liệt,-1,Active,Enemy,1,20,pmf_boss_duyaobilie_SC
+12011,Lục Ba Hương Lộ,-1,Active,Self,1,0,pmf_boss_lubaxianglu_SC
+1201100,Lục Ba Hương Lộ - Trúng độc,-1,Auto,Enemy,1,0,pmf_boss_lubaxianglu_child_SC
+12012,Huynh Đệ,-1,Active,Self,1,0,pmf_boss_xiongdi_SC
+12013,Hàn Băng,-1,Active,Enemy,1,20,pmf_boss_hanbing_SC
+12014,Tiểu Vô Tướng Công,-1,Active,Enemy,1,20,pmf_boss_xiaowuxianggong_SC
+12015,Kiếm Vũ,-1,Active,Self,1,0,pmf_boss_jianwu_SC
+1201500,Kiếm Vũ - Tử Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_zise_SC
+1201501,Kiếm Vũ - Hồng Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_hongse_SC
+1201502,Kiếm Vũ - Bạch Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_baise_SC
+1201503,Kiếm Vũ - Hoàng Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_huangse_SC
+1201504,Kiếm Vũ - Lam Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_lanse_SC
+1201505,Kiếm Vũ - Lục Sắc,-1,Active,Self,1,0,pmf_boss_jianwu_luse_SC
+1201510,Kiếm Vũ - Tử Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_zise_child_SC
+1201511,Kiếm Vũ - Hồng Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_hongse_child_SC
+1201512,Kiếm Vũ - Bạch Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_baise_child_SC
+1201513,Kiếm Vũ - Hoàng Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_huangse_child_SC
+1201514,Kiếm Vũ - Lam Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_lanse_child_SC
+1201515,Kiếm Vũ - Lục Sắc - Công kích,-1,Auto,Enemy,1,0,pmf_boss_jianwu_luse_child_SC
+1201520,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_zise_SC
+1201521,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_hongse_SC
+1201522,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_baise_SC
+1201523,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_huangse_SC
+1201524,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_lanse_SC
+1201525,Thiên Sơn Hộ Giáp,-1,Active,Self,1,0,pmf_buff_luse_SC
+13001,Hàn Băng Chân Khí,-1,Active,Enemy,-1,20,sslt_boss_hanbingzhenqi
+1300101,Nhược Băng,-1,Active,Enemy,1,20,sslt_boss_hanbingzhenqi_child
+13002,Hỏa Thiêu Đại Danh Phủ,-1,Active,Enemy,-1,20,sslt_boss_huoqiaodamingfu
+1300201,Nhược Hỏa,-1,Active,Enemy,1,20,sslt_boss_huoqiaodamingfu_child
+13003,Lôi Đình Vạn Quân,-1,Active,Enemy,-1,20,sslt_boss_leitingwanjun
+1300301,Nhược Huyền,-1,Active,Enemy,1,20,sslt_boss_leitingwanjun_child
+13004,Hủ Cốt Xuyên Tâm,-1,Active,Enemy,-1,20,sslt_boss_xiuguchuanxin
+1300401,Nhược Độc,-1,Active,Enemy,1,20,sslt_boss_xiuguchuanxin_child
+13005,Kim Cang Bất Hoại Thể,-1,Active,Self,1,20,sslt_boss_jingangbuhuaiti
+13006,Cuồng Phong San,-1,Active,Enemy,-1,20,sslt_boss_kuangfengsan
+13007,Thiên Sát Cô Tinh,-1,Active,Enemy,-1,20,sslt_boss_tianshaguxing
+13008,Cô Phương Tự Thưởng,-1,Active,Self,1,20,sslt_boss_gufangziqiang
+13009,Cường Hóa Trận,-1,Active,Enemy,1,20,sslt_boss_qianghuazhen
+1300901,Cường Hóa Trận - Suy yếu,-1,Active,Enemy,1,20,sslt_boss_qianghuazhen_child
+13010,Địa Sát Trận,-1,Active,Enemy,1,20,sslt_boss_dishazhen
+13011,Thiên Canh Trận,-1,Active,Enemy,1,20,sslt_boss_tiangangzhen
+13012,Nhân Vong Trận,-1,Active,SelfAndAlly,1,20,sslt_boss_renwangzhen
+1301201,Nhân Vong Trận - Hư nhược,-1,Active,SelfAndAlly,1,20,sslt_boss_renwangzhen_child
+13013,Thiên Cang Hoàng Khí,-1,Active,Self,1,20,sslt_boss_tianganghuangqi
+1301301,Thiên Cang Hoàng Khí - Hư nhược,-1,Active,Self,1,20,sslt_boss_tianganghuangqi_child
+13014,Thiên Cang Bá Khí,-1,Active,Self,40,20,sslt_boss_tiangangpoqi
+13015,Thần Hàng Nghịch Chuyển,-1,Active,Self,1,20,sslt_boss_shenhengyizhuan
+1301501,Thần Hàng Nghịch Chuyển - Yêu Tinh Tụ Nghĩa,-1,Active,Enemy,-1,20,sslt_boss_shenhengyizhuan_child
+13016,Sinh Môn,-1,Active,Enemy,1,20,sslt_boss_shengmen
+1301601,Sinh Môn - Phát tán,-1,Active,Enemy,1,20,sslt_boss_shengmen_child
+1301602,Sinh Môn - Sát thương,-1,Active,Enemy,1,20,sslt_boss_shengmen_child_2
+13017,Diệt Thế Đao Trận,-1,Active,Enemy,1,20,sslt_boss_mieshidaozhen
+1301701,Diệt Thế Đao Trận - Phát tán,-1,Active,Enemy,1,20,sslt_boss_mieshidaozhen_child
+1301702,Diệt Thế Đao Trận - Sát thương,-1,Active,Enemy,1,20,sslt_boss_mieshidaozhen_child_2
+13018,Sát Khí Ôn Dịch,-1,Active,Enemy,1,20,sslt_boss_shaqiwenyi
+1301801,Sát Khí Ôn Dịch - Bộc phát,-1,Active,Enemy,1,20,sslt_boss_shaqiwenyi_child
+13019,Sát Khí Bạo Phát,-1,Active,Self,1,20,sslt_boss_shaqibaofa
+13020,Phong Huyệt Phù,-1,Active,Enemy,1,20,sslt_boss_fengxuefu
+13021,Định Thân Phù,-1,Active,Enemy,1,20,sslt_boss_dingshenfu
+13022,Hôn Thụy Phù,-1,Active,Enemy,1,20,sslt_boss_hunshuifu
+13023,Thiên Tinh Trận Pháp,-1,Active,Self,1,20,sslt_boss_huarong
+13024,Công Tôn Phù Pháp,-1,Active,Enemy,1,20,sslt_boss_gongsunsheng
+14001,Tướng Tiến Tửu,-1,Active,Enemy,1,30,marvel_minmo_jiangjinjiu_trap
+1400101,Tướng Tiến Tửu - Phát nổ,-1,Active,Enemy,1,30,marvel_minmo_jiangjinjiu_explode
+14002,Thần Lai Chi Bút,-1,Active,Enemy,1,20,marvel_minmo_shenlaizhibi
+14003,Chúc Ảnh Dao Hồng,-1,Active,Enemy,1,30,marvel_qinyun_zhuyingyaohong
+1400301,Chúc Ảnh Dao Hồng - Thất minh,-1,Auto,Enemy,1,0,marvel_qinyun_zhuyingyaohong_blind
+1400302,Chúc Ảnh Dao Hồng - Lan nổ,-1,Active,Enemy,1,30,marvel_qinyun_zhuyingyaohong_spread
+14004,Kim Sắc Cuồng Vũ,-1,Active,Self,1,0,marvel_qinyun_jinsekuangwu
+1400401,Hồi Âm Phiên - Tăng sát thương,-1,Active,SelfAndAlly,1,50,marvel_qinyun_huiyinfan_damage_buff
+14005,Huyền Ngoại Chi Âm,-1,Active,Enemy,1,25,marvel_qinyun_xuanwaizhiyin
+14006,Tam Phong Lưu Vân,-1,Active,Enemy,1,20,marvel_daoqing_sanfengliuyun
+1400601,Tam Phong Lưu Vân - Hư nhược,-1,Active,SelfAndAlly,1,50,marvel_daoqing_liuyun_damage_taken_buff
+1400602,Tam Phong Lưu Vân - Giảm thương,-1,Active,SelfAndAlly,1,50,marvel_daoqing_liuyun_damage_reduce_buff
+14007,Hoa Lạc Ngân,-1,Active,Enemy,1,20,marvel_daoqing_hualuoyin
+14008,Thanh Ưng Chiêu Lai,-1,Active,Self,1,0,marvel_daoqing_qingyingzhaolai
+1400801,Chiêu Lai - Miễn sát thương,-1,Active,SelfAndAlly,1,50,marvel_daoqing_zhaolai_immune_damage_buff
+1400802,Thanh Ưng - Tăng sát thương,-1,Active,SelfAndAlly,1,50,marvel_daoqing_qingying_damage_buff
+14009,Phi Tuyết Y Nhiên,-1,Active,Enemy,1,20,marvel_daoqing_feixueyiran
+14010,Mặc Hổ Chiêu Lai,-1,Active,Self,1,0,marvel_daoqing_mohuzhaolai
+1401001,Băng Mặc Hổ - Chỉ nhận Băng,-1,Active,SelfAndAlly,1,50,marvel_daoqing_mohu_only_bing_buff
+1401002,Hỏa Mặc Hổ - Chỉ nhận Hỏa,-1,Active,SelfAndAlly,1,50,marvel_daoqing_mohu_only_huo_buff
+1401003,Huyền Mặc Hổ - Chỉ nhận Huyền,-1,Active,SelfAndAlly,1,50,marvel_daoqing_mohu_only_xuan_buff
+1401004,Độc Mặc Hổ - Chỉ nhận Độc,-1,Active,SelfAndAlly,1,50,marvel_daoqing_mohu_only_du_buff
+14011,Khí Sa Bảo Soái,-1,Active,Self,1,0,marvel_pangxi_qishabaoshuai
+1401101,Khí Sa Bảo Soái - Miễn sát thương,-1,Active,SelfAndAlly,1,50,marvel_pangxi_wushi_immune_damage_buff
+14012,Tướng Quân Lệnh,-1,Active,Self,1,0,marvel_pangxi_jiangjunling
+1401201,Tướng Quân Lệnh - Tương khắc,-1,Active,SelfAndAlly,1,50,marvel_pangxi_longzhu_counter_buff
+1401202,Tướng Quân Lệnh - Sai trụ,-1,Active,SelfAndAlly,1,50,marvel_pangxi_longzhu_wrong_buff
+14013,Thập Bộ Nhất Sát,-1,Active,Enemy,1,20,marvel_pangxi_shibuyisha_warning
+1401301,Thập Bộ Nhất Sát - Phát nổ,-1,Active,Enemy,1,50,marvel_pangxi_shibuyisha_explode
+1401302,Thập Bộ Nhất Sát - Suy yếu,-1,Active,SelfAndAlly,1,50,marvel_pangxi_shibuyisha_damage_taken_buff
+15001,Tam Sinh Tinh Trận,-1,Active,Enemy,1,0,shaolin_scripture_guigu_tristar_formation
+1500101,Tam Sinh Tinh Trận - Sát thương,-1,Auto,Enemy,1,0,shaolin_scripture_guigu_tristar_formation_damage
+15002,Vòng Lửa,-1,Active,Enemy,1,15,shaolin_scripture_jiumozhi_fire_circle
+15003,Tín Đồ Tự Sát,-1,Auto,Enemy,1,30,shaolin_scripture_jiumozhi_believer_burst
+15004,Liệt Diệm Đao,-1,Active,Enemy,1,30,shaolin_scripture_jiumozhi_lieyandao
+15005,Thị Ma Quyết,-1,Active,Enemy,1,0,shaolin_scripture_jiumozhi_shimojue
+15006,Hóa Cốt Miên Chưởng,-1,Active,Enemy,1,0,shaolin_scripture_zhuangjuxian_huagu_mianzhang
+15007,Bẫy Băng,-1,Active,Enemy,1,30,shaolin_scripture_zhuangjuxian_ice_trap
+1500701,Bẫy Băng - Giảm tốc,-1,Auto,Enemy,1,0,shaolin_scripture_zhuangjuxian_ice_trap_slow
+15008,Băng Tằm - Hồi máu,-1,Active,SelfAndAlly,1,30,shaolin_scripture_zhuangjuxian_silkworm_heal
+15009,Băng Tằm - Đóng Kén,-1,Active,SelfAndAlly,1,30,shaolin_scripture_zhuangjuxian_cocoon_buff
+15010,Băng Tằm - Phá Kén,-1,Auto,Enemy,1,0,shaolin_scripture_zhuangjuxian_cocoon_explosion
+15011,Cuồng Bạo,-1,Active,SelfAndAlly,1,30,shaolin_scripture_zhuangjuxian_berserk_buff
+15012,Lăng Thần Thức,-1,Active,Enemy,1,20,shaolin_scripture_murongfu_lingshenshi
+15013,Phá Thiên Thức,-1,Active,Enemy,1,30,shaolin_scripture_murongfu_potianshi_trap
+1501301,Phá Thiên Thức - Tê liệt,-1,Auto,Enemy,1,0,shaolin_scripture_murongfu_potianshi_paralyse
+15014,Đẩu Chuyển Tinh Di,-1,Active,Self,1,30,shaolin_scripture_murongfu_douzhuanxingyi_reflect
+15015,Tất Sát - Đánh dấu,-1,Auto,Enemy,1,30,shaolin_scripture_murongfu_lethal_mark
+15016,Tất Sát,-1,Auto,Enemy,1,30,shaolin_scripture_murongfu_lethal_burst
+15017,Thanh Xà Độc Chưởng,-1,Auto,Enemy,1,25,shaolin_scripture_dingchunqiu_qingsheduzhang
+15018,Thanh Xà Độc Chưởng - Độc,-1,Auto,Enemy,1,30,shaolin_scripture_dingchunqiu_poison_mark
+15019,Thanh Xà Độc Chưởng - Phát nổ,-1,Auto,Enemy,1,15,shaolin_scripture_dingchunqiu_poison_explosion
+15020,Huyết Chú Vu Cổ - Hồi máu,-1,Active,SelfAndAlly,1,30,shaolin_scripture_dingchunqiu_bloodcurse_heal
+15021,Huyết Chú Vu Cổ - Mất máu,-1,Auto,Enemy,1,30,shaolin_scripture_dingchunqiu_bloodcurse_damage
+15022,Phần Thiên Diệt Địa,-1,Auto,Enemy,1,30,shaolin_scripture_xiaoyuanshan_fentianmiedi_pull
+15023,Băng Ngưng Sương Hoa,-1,Auto,Enemy,1,20,shaolin_scripture_xiaoyuanshan_bingningshuanghua
+15024,Huyết Trận Bát Phương,-1,Auto,Enemy,1,30,shaolin_scripture_xiaoyuanshan_xuezhenbafang
+15025,Ấn Vàng,-1,Auto,Enemy,1,30,shaolin_scripture_xiaoyuanshan_gold_mark
+15026,Ấn Vàng - Bạo phát,-1,Auto,Enemy,1,30,shaolin_scripture_xiaoyuanshan_burst
+15027,Ấn Tím,-1,Auto,Enemy,1,30,shaolin_scripture_murongbo_purple_mark
+15028,Ấn Tím - Bạo phát,-1,Auto,Enemy,1,30,shaolin_scripture_murongbo_burst
+15029,Phá Triền,-1,Auto,Enemy,1,25,shaolin_scripture_murongbo_phatrien
+15030,Đường Môn Nội Tức,-1,Active,SelfAndAlly,1,30,shaolin_scripture_inner_tangmen_buff
+15031,Quỷ Cốc Nội Tức,-1,Active,SelfAndAlly,1,30,shaolin_scripture_inner_guigu_buff
+15032,Võ Đang Nội Tức,-1,Active,SelfAndAlly,1,30,shaolin_scripture_inner_wudang_buff
+15033,Mộ Dung Nội Tức,-1,Active,SelfAndAlly,1,30,shaolin_scripture_inner_murong_buff
+15034,Đạt Ma Chánh Tâm,-1,Active,Enemy,1,30,shaolin_scripture_heartdemon_damo_zhengxin_damage
+15035,Tâm Ma - Tất Sát,-1,Auto,Enemy,1,30,shaolin_scripture_final_heartdemon_fail
+16002,Tật Phong Đao,-1,Active,Self,1,0,warsage_formation_xiaoyifeng_jifengdao
+16003,Cự Phong Thuật,-1,Active,Enemy,1,30,warsage_formation_cyclone_paralyse
+16004,Cự Phong Thuật - Tất Sát,-1,Auto,Enemy,1,30,warsage_formation_cyclone_kill
+16005,Phong Lôi Đàn,-1,Active,Enemy,1,50,warsage_formation_thunder_altar_burst
+16006,Kỳ Từ Như Lâm,-1,Active,Self,1,0,warsage_formation_xiaolin_qicirulin
+16007,Lâm Dã Mê Tung,-1,Active,Enemy,1,20,warsage_formation_forest_maze_trap
+1600701,Lâm Dã Mê Tung - Định thân,-1,Auto,Enemy,1,0,warsage_formation_forest_maze_immobile
+16008,Du Địch Thâm Nhập,-1,Active,Enemy,1,20,warsage_formation_deep_attack_trap
+1600801,Du Địch Thâm Nhập - Tất Sát,-1,Auto,Enemy,1,0,warsage_formation_deep_attack_kill
+16009,Kháng Băng Cọc Trúc,-1,Active,SelfAndAlly,1,50,warsage_formation_bamboo_ignore_ice
+16010,Kháng Hỏa Cọc Trúc,-1,Active,SelfAndAlly,1,50,warsage_formation_bamboo_ignore_fire
+16011,Kháng Huyền Cọc Trúc,-1,Active,SelfAndAlly,1,50,warsage_formation_bamboo_ignore_light
+16012,Kháng Độc Cọc Trúc,-1,Active,SelfAndAlly,1,50,warsage_formation_bamboo_ignore_poison
+16013,Nội Thủ Cọc Trúc,-1,Active,SelfAndAlly,1,50,warsage_formation_bamboo_ignore_magic
+16014,Ngoại Thủ Cọc Trúc,-1,Active,SelfAndAlly,1,50,warsage_formation_bamboo_ignore_phys
+16015,Minh Hỏa Chưởng,-1,Active,Enemy,1,5,warsage_formation_yeluyan_minghuozhang
+16016,Xâm Lược Như Hỏa,-1,Active,SelfAndAlly,1,50,warsage_formation_fire_invade_immune
+16017,Xâm Lược Như Hỏa - Tất Sát,-1,Auto,Enemy,1,50,warsage_formation_fire_invade_kill
+16018,Địa Phủ Ngưu Yêu,-1,Auto,Enemy,1,1,warsage_formation_fire_bull_kill
+16019,Địa Hỏa Phần Thiên,-1,Active,Enemy,1,20,warsage_formation_fire_trap
+1601901,Địa Hỏa Phần Thiên - Thất minh,-1,Auto,Enemy,1,0,warsage_formation_fire_trap_blind
+16020,Phi Hỏa Lưu Tinh,-1,Auto,Enemy,1,50,warsage_formation_falling_meteor_debuff
+16021,Sơn Nhạc Mãnh Kích,-1,Active,Enemy,1,5,warsage_formation_yeluliancheng_shanyuemengji
+16022,Sơn Thạch Phi Tiên,-1,Active,Enemy,1,0,warsage_formation_yeluliancheng_shanshifeixian
+16023,Kim Giáp Bất Thân - Tất Sát,-1,Auto,Enemy,1,30,warsage_formation_golden_armor_fail_kill
+16024,Nội Miễn Thạch Đồi,-1,Active,SelfAndAlly,1,50,warsage_formation_stonepile_magic_immune
+16025,Ngoại Miễn Thạch Đồi,-1,Active,SelfAndAlly,1,50,warsage_formation_stonepile_phys_immune
+16026,Thôn Thiên Thạch - Tất Sát,-1,Auto,Enemy,1,30,warsage_formation_sky_stone_fail_kill
+16027,Thôn Thiên Thạch - Miễn thuộc tính,-1,Active,SelfAndAlly,1,50,warsage_formation_sky_stone_element_immune
+17001,Hàn Mai Nộ Phóng,-1,Active,Enemy,1,20,yangate_blood_battle_hanmei_nufang_trap
+1700101,Hàn Mai Nộ Phóng - Phát nổ,-1,Auto,Enemy,1,30,yangate_blood_battle_hanmei_nufang_burst
+17002,Thú Chi Tù Lưỡng,-1,Active,Enemy,1,20,yangate_blood_battle_shouzhi_qiulong
+1700201,Thú Chi Tù Lưỡng - Độc thương,-1,Auto,Enemy,1,30,yangate_blood_battle_shouzhi_qiulong_dot
+17003,Mãn Thiên Băng Tuyết,-1,Active,Enemy,1,20,yangate_blood_battle_mantian_bingxue
+1700301,Mãn Thiên Băng Tuyết - Băng bạo,-1,Auto,Enemy,1,20,yangate_blood_battle_mantian_bingxue_burst
+17004,Hàn Băng Dẫn,-1,Active,Enemy,1,20,yangate_blood_battle_hanbing_yin
+1700401,Hàn Băng Dẫn - Băng bạo,-1,Auto,Enemy,1,20,yangate_blood_battle_hanbing_yin_burst
+17005,Địa Hỏa Thiêu Thiên,-1,Active,Enemy,1,0,yangate_blood_battle_dihuo_shaotian
+17006,Phóng Thiên Phạt,-1,Active,Self,1,0,yangate_blood_battle_fangtian_fa
+1700601,Phóng Thiên Phạt - Hỏa vũ,-1,Auto,Enemy,1,0,yangate_blood_battle_fangtian_fa_tick
+17007,Kim Qua Thiết Mã,-1,Active,Enemy,1,0,yangate_blood_battle_jingua_tiema
+17008,Chúc Tính Chi Lực,-1,Active,Enemy,1,0,yangate_blood_battle_zhuxing_zhili
+17009,Hiệu Lệnh Thiên Hạ,-1,Active,Self,1,0,yangate_blood_battle_haoling_tianxia
+17010,Thiên Lôi Hủy Thế,-1,Active,SelfAndAlly,1,50,yangate_blood_battle_tianlei_huishi
