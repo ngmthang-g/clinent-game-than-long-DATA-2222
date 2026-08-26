@@ -1,8 +1,8 @@
-# 42 — Tool-first data materialization 2026-08-26
+# 42 — Tool-first + all-Config materialization
 
 Status: **MATERIALIZED AND VERIFIED ON `main`.**
 
-This document supersedes the earlier intermediate state where several CSVs had been generated locally but were not yet present in the repository tree.
+This document supersedes every intermediate state where generated CSV paths existed only locally or only in analysis text.
 
 ## Source and reproducibility
 
@@ -10,125 +10,124 @@ Authoritative frozen source:
 
 `Game/Thần Long  Mobile_Data/StreamingAssets/Config.unity3d`
 
-Verified pipeline:
+Generators:
 
-`tools/materialize_tool_data.py`
+- `tools/materialize_tool_data.py` — specialized tool-first indexes/chunks.
+- `tools/materialize_all_config.py` — structurally-lossless fallback for every Config table.
 
-Automated regeneration:
+Workflow:
 
 `.github/workflows/materialize-tool-data.yml`
 
-The pipeline was first tested locally against the supplied frozen client, recovering **75 Config XML tables**, then executed successfully by GitHub Actions. The successful workflow committed the generated database to `main` as:
+The first specialized materialization was committed by GitHub Actions as:
 
 `31a34a967d329284e05b40c0d47c7d98f721e05c` — `data: regenerate tool-first static database`.
 
-Canonical machine-readable generated-file audit:
+The later all-table run succeeded and committed:
 
-`database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv`
+`51b795afc5117304fedf6b1ee15a75ea77855bc8` — `data: regenerate tool and all-Config databases`.
 
-Canonical lookup/navigation:
+Canonical lookup:
 
 `database/TOOL_DATA_INDEX.md`
 
-## Materialized FuBen / Boss data
+Specialized manifest:
 
-`database/fuben/` now contains:
+`database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv`
 
-- `FUBEN_SCENARIOS.csv` — **19** scenarios.
-- `FUBEN_ENTRY_NPCS.csv` — **19** entry/gather NPC mappings.
-- `FUBEN_ACTIONS.csv` — **268** full normalized actions.
-- `FUBEN_ACTIONS_COMPACT.csv` — compact view of the same **268** actions.
-- `FUBEN_KILL_TARGETS.csv` — **72** Kill actions with configured monster/boss evidence.
-- `FUBEN_BOSS_LEVEL_BANDS.csv` — **1,381** level-banded FuBen monster-template mappings.
-- `actions/FUBEN_ACTIONS_*.csv` — full action chunks.
+All-table catalog/manifest:
 
-Boss lookup under `database/static/monsters/`:
+- `database/config_full/CONFIG_FULL_CATALOG.csv`
+- `database/config_full/CONFIG_FULL_MANIFEST.csv`.
 
-- **17,121** Monster templates total.
-- **3,579** exact `Type=Boss` templates.
-- **578** grouped Boss display names in `BOSS_NAME_INDEX.csv`.
+## Specialized tool-first data now on main
 
-This closes the previous mismatch where the analysis referred to FuBen database paths that were not yet reachable on `main`.
+### FuBen / Boss
 
-## Materialized Tasks / activities
+- 19 scenarios
+- 19 entry/gather NPC mappings
+- 268 actions
+- 72 Kill actions
+- 1,381 FuBen level-band target mappings
+- 17,121 Monster templates
+- 3,579 exact `Type=Boss` templates
+- 578 grouped Boss display names.
 
-`database/static/tasks/` now contains:
+### Tasks / activities
 
-- `TASK_INDEX.csv` — **516** task templates.
-- full `TASKS_*` chunks — all 516 rows with preserved nested data.
-- `TASK_OBJECTIVES.csv` — **591** normalized objective records.
-- objective chunks — all 591 objective records.
-- `GROW_POINTS.csv` — **407** records.
-- `GUILD_TASKS.csv` — **360** records.
-- `ACTIVITIES.csv` — **45** records.
+- 516 Tasks
+- 591 normalized objectives
+- 407 GrowPoints
+- 360 GuildTasks
+- 45 Activities.
 
-Runtime task progress remains server-authoritative through current task state/Parameters.
+### Items / equipment
 
-## Materialized inventory / equipment data
+- 5,238 Items
+- 692 Medicines
+- 1,154 Gems
+- 22,763 Equips
+- 4,685 `EquipPoint==0` Weapon-position templates.
 
-Items under `database/static/items/`:
+### Skills / combat support
 
-- **5,238** Item rows, compact indexes and full chunks.
-- `ITEM_POLICY_EXCEPTIONS.csv` — high-caution templates for keep/sell/drop/use policy.
-- **692** Medicines.
-- **1,154** Gems.
+- 2,091 Skills
+- 2,044 SkillProperties
+- 300 AutoSkills
+- 509 MagicAttributes
+- 17 Factions
+- 128 Books.
 
-Equipment under `database/static/equips/`:
+### Pet / Spirit
 
-- **22,763** Equip templates in indexes and full chunks.
-- `WEAPON_INDEX.csv` — **4,685** `EquipPoint==0` Weapon-position templates.
-- position/type counts.
+- 8,349 Pets
+- 1,889 Spirits
+- associated Pet/Spirit feature/equipment tables.
 
-This provides offline template policy data for Sell/Loot/Use/Drop/Trade, while current live item instance state remains required before mutation.
+### PC input
 
-## Materialized Skills / combat-support data
+- 22 PC input key-binding rows.
 
-`database/static/skills/` now contains:
+## All 75 Config tables are now preserved
 
-- **2,091** Skills in tool index, expanded index and full chunks.
-- **2,044** SkillProperties.
-- **300** AutoSkills.
-- **17** Factions.
-- **128** Books.
-- Book level-up cost table.
-
-`database/static/magic/MAGIC_ATTRIBUTES.csv` contains all **509** magic/effect symbols.
-
-This allows future Train/PK/Buff development to resolve static skill identity/target/range/property without reopening Config.
-
-## Materialized Pet / Spirit data
-
-`database/static/pets/` now contains:
-
-- **8,349** Pets in compact indexes and full chunks.
-- **1,889** Spirits in compact index and full chunks.
-- PetFeatures, PetEquips, PetEquipSets, SpiritFeatures.
-
-## PC input
-
-`database/PC_INPUT_KEY_BINDINGS.csv` contains all **22** frozen PC key-binding records.
-
-This is complementary to `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md`; semantic Game/UI actions remain preferred over simulated physical input.
-
-## Why both indexes and full chunks exist
-
-The repository now intentionally preserves both:
+`tools/materialize_all_config.py` requires exactly **75** recovered Config XML TextAssets and writes:
 
 ```text
-small index -> fast AI lookup
-full chunk -> lossless deeper row data when needed
+database/config_full/<Table>/ROWS_*.csv
 ```
 
-This avoids two bad extremes:
+Each top-level row preserves:
 
-1. keeping only schemas/counts and forcing future AI to decrypt Config again;
-2. loading all 22,763 Equip or 17,121 Monster rows into every context.
+- original XML direct attributes using original names;
+- row tag/index;
+- recursive nested child tags/attributes/text in `ChildrenJSON`;
+- root/table metadata in `CONFIG_FULL_CATALOG.csv`.
 
-## Evidence boundaries remain unchanged
+The current frozen catalog reports zero non-whitespace XML text nodes outside the attribute/child representation.
 
-- Static Config/database = template/configured truth.
+This closes the long-tail gap: guild/title/reputation/mount/progression/cosmetic and any other low-frequency Config domain no longer requires a new decrypt/extract pass merely to read frozen fields.
+
+## Why both layers exist
+
+Preferred route:
+
+```text
+specialized tool index -> exact specialized chunk
+```
+
+Fallback only when needed:
+
+```text
+CONFIG_FULL_CATALOG -> one config_full table chunk
+```
+
+The full fallback is not mandatory AI context.
+
+## Evidence boundaries
+
+- Static Config/database = frozen template/configured truth.
 - Shipped Lua = client flow/action-construction truth.
-- Native/runtime metadata = executable/runtime semantic evidence.
-- Current runtime/server state = current spawn, mutable instance, dialog selection, acceptance and completion truth.
+- Native metadata/disassembly = executable static contract.
+- Current runtime/server state = current spawn/instance/dialog/session/acceptance/completion truth.
 
-The database is now materially complete for the frozen Config domains relevant to the tool. Remaining gaps in `research/AUTO_RUNTIME_PROOF_QUEUE.md` are runtime/server proofs, not missing static-table extraction.
+Therefore static extraction is now closed for this snapshot. Remaining gaps in `research/AUTO_RUNTIME_PROOF_QUEUE.md` are live/server/integration proofs, not missing Config tables.
