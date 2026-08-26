@@ -1,0 +1,65 @@
+path,size_bytes,compressed_bytes,crc32,sha256,zip_mtime,compression
+ThanLongMobile_PC/Game/baselib.dll,239536,116913,235ceb72,e3544a0d46eeb9af7c70ad8965e644002d534fa5376e61f3631cc8a985d318ab,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/D3D12/D3D12Core.dll,4725304,1789100,857c6a8c,625bd40005b1c3708695d5256ecf230d278e6b8edba5a88af70f3d91324f3052,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/GameAssembly.dll,61923328,21505863,95b677ab,4c98c9934bc4260efa64f5492c58e0c5104c89359f0126e7cd402feb381fe3c7,2026-06-28 18:57:10,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260517_124547_1154635.jpg,1140453,1140421,3729360f,229992e3ffef91ce7b49c9b05f827066a428f634dfc7651ba6ac11a3a5acb2a9,2026-05-17 12:45:46,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260518_084744_7518358.jpg,838085,837963,8c0a1d9f,78995134ddb11811511ad9400d1ba16ca000455a96caa6232f47980bd2b75d35,2026-05-18 08:47:44,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260519_214753_0380576.jpg,557466,557371,af6a02e6,f03cab8fde3dcd8a6d28960908819a7e26b419421240382d9e84e5c6bf956624,2026-05-19 21:47:52,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260519_214756_1744287.jpg,515287,515196,95c6bfe4,9fe297cd92590aff0c4100a977a96de0b030c5996f4d55032732d51ed9f7e319,2026-05-19 21:47:56,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260520_105608_8398086.jpg,737954,737895,d8ef6236,06f69d34df6ad2d07c9e36178cad9d2685e5970dbd95a835a208eed245003ebb,2026-05-20 10:56:08,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260521_021806_6229283.jpg,883631,883528,43b76d4c,6253798d78899924dc857a7e3dd29f8b8545ea22b1854d675bb17d65ee55dfdc,2026-05-21 02:18:06,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260522_003810_8874894.jpg,874106,874060,eac9f2ab,f45998aaa9fff2803f43eb6fe2a81094c06bd22360a7bdf571463bfeafb5a7c9,2026-05-22 00:38:10,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260522_003811_0885220.jpg,869197,869160,8fba8377,bb7374e54e7b0093ce2bda7752c2de2bac16bb540fa9f650e23db745c799c1ec,2026-05-22 00:38:10,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260522_230358_7121559.jpg,847793,847760,fbc3d238,7b93aa1237f2836f6cbaabd5db96d757be494f3d4323e4e400799d9a819aa364,2026-05-22 23:03:58,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260523_162140_1028041.jpg,806378,806340,3a27afc5,28d00119da68ebe9ff1e2c258198f02ec4e63e13f02974498d551d2ee7f66b42,2026-05-23 16:21:40,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260523_233211_4045724.jpg,939828,939664,8eba149f,600539a7a59b36ca7751780399cf8e2b3ae1ef997caf5fc124d499f20bd60e02,2026-05-23 23:32:10,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260524_102423_3139370.jpg,657250,656951,f36e1b10,e66f387158c4ec6acd5fe3bba49e6f96d4adab07f0f2adbb210ee773a848c3bd,2026-05-24 10:24:22,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260601_121452_4123380.jpg,780985,780937,f3306d83,c9dbe0038991a871bc93bbb0bfe20dd0891113e6e3ebad7b26b9b4f1ba58cb59,2026-06-01 12:14:52,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260731_231537_4665023.jpg,913262,913235,7b7bb6d4,e6bd1a3a3fb19e1dd4889340d6c0e60886426cae715cea456ebad0fd56c4ab76,2026-07-31 23:15:36,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260814_134426_8204684.jpg,910127,910072,30bb1d27,7c9d5bf074e089d8771a6532528e7311dc067af95c21d597a57a6d5f0a27de9e,2026-08-14 13:44:26,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260817_082632_4133710.jpg,300779,300660,21ea0a4d,14c2849a060bde535d72dedff19e4c07bca8e4955fc0c3d052663118119ec433,2026-08-17 08:26:32,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260817_082635_0686503.jpg,300379,300261,76c868ab,d8daa058ce0b5771758baba16d6c9c5d1cc7f7811f98bb7a847e01704d623f6a,2026-08-17 08:26:34,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260818_084926_4563233.jpg,198482,198353,774affe7,925cdaab5ca3f1e35d82e83280bdedb9fb9ee8d0d82808467d750c74227ed090,2026-08-18 08:49:26,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260818_115437_7015335.jpg,206759,206629,0fc26b11,d9e437b7c27495665c4662a789ace1a5dd9178d7612f0863755a1908c37b5150,2026-08-18 11:54:36,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260819_003940_8957376.jpg,184778,184631,1f6d8b7e,36d8d76eb644556cf1da30b6440da3d3cb191fc229237de5d44e15f8b4c7b69c,2026-08-19 00:39:40,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260820_053255_4558283.jpg,154412,154272,9824a31d,00da33aeff3e4e79c1df3e9f8f118e9054bfa764be0547b36e868ea706fda737,2026-08-20 05:32:54,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260820_091153_0460283.jpg,211911,211779,5637431d,f5c17da81bf5e6b8cfc7f5c279181c32f6e8a52e44dc3efc9e2bc7c705463ef3,2026-08-20 09:11:52,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260820_091153_7773083.jpg,185616,185471,d364dffb,1bfd15759171d080530bfd9bb6ebb6acc12f61193b54334fbf9083cf317f54c6,2026-08-20 09:11:52,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260820_092117_2748073.jpg,187577,187442,7de6a3f8,29c33aca2839c5a8dd5c9701d9278953b4e339108886933f5f374f95997103e4,2026-08-20 09:21:16,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260821_010601_1398453.jpg,201402,201253,800cca40,2b23f3ed2755cbd47f0d3ab833ffe5cbc343bb0bbdcdef1770f580b5771d6d4e,2026-08-21 01:06:00,deflate
+ThanLongMobile_PC/Game/Screenshots/TLM_20260824_233550_5108794.jpg,145352,145212,2e3a8c1a,7fc243f367de3887d6be0bb9088b897006db5fe99f30675feb878dc795cc3ac2,2026-08-24 23:35:50,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile.exe,667648,473408,6de9651f,53dbfb39b0e153966ef0dce20fa1d27423e481770a3575ff0934237c2b61f5c9,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/app.info,28,30,34f40fd4,772e711c2d9358097c45c65c8050804f5fb2a5249c464c3bf687547a93fb2337,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/boot.config,156,124,2f56afa6,1f4f48e33556035c19dd54f80778ba5a185a0a0710a7524aa5bd87b936790945,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/data.unity3d,47627199,43483687,0f584595,f1a840e7ec4ce7ff754c94a204fa8a027de48e5c7100255afc9cb19e2a92504b,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/il2cpp_data/Metadata/global-metadata.dat,14747552,4328484,f3fc250a,d199498dad7d3139e4c09f6742f4645bfc2a33c465e3d259196931199f6ee6a8,2026-06-28 18:56:52,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/il2cpp_data/Resources/mscorlib.dll-resources.dat,337563,125559,d475b854,c5baa176a5b72cd545266340e42102d393a5e43d38c95796bc828918bb95277f,2026-06-28 18:56:52,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/il2cpp_data/Resources/Newtonsoft.Json.dll-resources.dat,900,320,c1c26f60,531de49e73ddea25554c9f656f54da2a665946f3fec57048e0cfe3b9e49b03f8,2026-06-28 18:56:52,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/il2cpp_data/Resources/System.Data.dll-resources.dat,93718,7609,6622a023,98a7950ec6de3242c2e190dfa630188dfa32511a125542b94baa952d1c757d49,2026-06-28 18:56:52,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/il2cpp_data/Resources/System.Drawing.dll-resources.dat,25453,9685,296392f1,7c33aa707bc3fdc83991b81a97d6fc622b140762a767300f08f616c2c0a91255,2026-06-28 18:56:52,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/il2cpp_data/Resources/System.ServiceModel.dll-resources.dat,9749,1959,446ac7bf,15c25a909b3ad28265bf09d5899532625631e1a877aca496144a17fbb7fe168b,2026-06-28 18:56:52,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/Plugins/x86_64/FGClientTool_Windows.dll,107520,54137,a7d3df1d,cab5148fa70ae231e7245d62d8448b7881c16ed64bd8c84558f68e21d6ecd9a0,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/Plugins/x86_64/lib_burst_generated.dll,377856,173476,82da6e8e,3a89bb748dce68e36380286a87f03dcb3725e4e9b97bca4b596c8005a37c9975,2026-06-28 18:56:56,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/Plugins/x86_64/livekit_ffi.dll,24392704,10234115,a2e80347,9985b5efb8ba884d79acec6af981bcf726ae23ca8ff8ab70582978f99b5229a8,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/Resources/unity default resources,5883780,904791,9fe67a12,776d63d5d172cc1903a8086214e540819ca487b790d81f85607755211d604948,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/RuntimeInitializeOnLoads.json,4527,767,51605a11,e1a042308946bf9c6c2a1fabe7b93df339ee6c61458f583e6ddff5afae4abd28,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/ScriptingAssemblies.json,5020,1055,dfb66c75,ecdce956b7f2100772f5e439050e93bdaccdaaa8a9352e76ee26a3050c18328e,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/StreamingAssets/Config.unity3d,1361714,1361924,3b858f48,bb895bc6e89381173c3b9b8f194ec731bfd334d84792d66da256f3965df94608,2026-06-30 09:16:36,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/StreamingAssets/Interface/LoadingResources.unity3d,1565175,1565415,de17c3d3,6b213926d63cae45cea52aaf46b2aaa652e61a1f7f2f7814973247979766dea9,2026-06-25 13:34:34,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/StreamingAssets/Interface/Logo.unity3d,205891,205926,ad028a15,89da23e04abe8935c0930cd2269aca8590af9839222187c1426e04927607790d,2026-06-25 13:34:34,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/StreamingAssets/Interface/Shared.unity3d,943319,943464,76dd719b,e1ff17888409883cfdf08a194cb90795acf176ab5b17de75fc362f477f01333a,2026-06-26 10:20:46,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/StreamingAssets/Interface/Shared_2.unity3d,643746,643846,bd1ed3e3,89f31dc5c5655ee0b9f7201f5538c8393d8d8d7ed1e5518b48194277666efc21,2026-06-26 10:20:46,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/StreamingAssets/Interface.unity3d,578379,578469,36dbf664,9b594c653edd3c0eefa11e3b600a3aa2b5e58718e0aff330effb4f9f9c994fe2,2026-06-30 09:16:52,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/StreamingAssets/Translations.unity3d,1827488,1827768,6a2d76ac,5044a63df5d5b62a35e729cf1f76314f505e9cb6a498889f8bad799ea902e395,2026-06-30 09:16:44,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/StreamingAssets/UnityServicesProjectConfiguration.json,1214,352,8473a677,7e660ca7931d7d1b1f17b535bc54c026d9e297fb0f700e0cd9739742c2b8d002,2026-05-27 08:46:04,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/StreamingAssets/UpdateList.xml,30,23,6d7a5c66,25d13f4915610a6fbe57c60ea91f8c452fbd90e61beba98914ece6fb542d4fe3,2026-05-27 08:46:04,deflate
+ThanLongMobile_PC/Game/Thần Long  Mobile_Data/StreamingAssets/Version.xml,1422,634,2912125d,29af57c5e054e5aa89e85206aae1544bdb5b2441b6cdaa954c036b31b5d85990,2026-05-27 08:48:28,deflate
+ThanLongMobile_PC/Game/UnityCrashHandler64.exe,1609128,495926,32951f67,88f00de95a3c954ecbc36713c8d882763bfe8fe8aaaf47b953827a0771b89f6d,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Game/UnityPlayer.dll,35718568,15579066,184340a5,9feedb4527a30fae4762bff45d204f8e85b90851b2c8ae8d24f436f7d474667b,2026-06-28 18:55:34,deflate
+ThanLongMobile_PC/Host.exe,209920,201072,6b40f0ed,1d2db2590f48535d74b94343b380774fecdc72732934b30911748e16624c8698,2026-05-14 10:48:32,deflate
+ThanLongMobile_PC/Host.exe.config,189,140,63e8d557,47e5a0f101af4151d7f13d2d6bfa9b847d5b5e4a98d1f4674b7c015772746cdf,2026-03-01 09:38:48,deflate
+ThanLongMobile_PC/Host.pdb,50688,7089,9e68387d,c02271df547623feb4150b33d7de200064aadbb7f0ec448ce3360d24ab3842ff,2026-05-14 10:48:32,deflate
+ThanLongMobile_PC/Launcher.exe,2213888,2067813,9d50bf03,c4c1c49198799f2a6d1a1de93f40a48b6c382d901cc1bb09c42e2bb8ce4fe5f7,2026-07-09 09:58:38,deflate
+ThanLongMobile_PC/Launcher.exe.config,189,140,63e8d557,47e5a0f101af4151d7f13d2d6bfa9b847d5b5e4a98d1f4674b7c015772746cdf,2026-07-09 09:58:36,deflate
+ThanLongMobile_PC/Launcher.pdb,368128,87040,fee96381,5db27f46029c0b1079ffeaae62f8e1a5af5ceec902e421af2d6da169243dc77b,2026-05-14 10:48:32,deflate
+ThanLongMobile_PC/Manifest.xml,129,118,cc37495d,b3d8c421d61cab03fcbc272ab46551ecea1f62ba0cc8bc59b4547ceec9d28731,2026-07-23 10:02:46,deflate
