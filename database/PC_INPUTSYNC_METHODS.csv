@@ -1,0 +1,24 @@
+DeclaringType,Method,Signature,Token,Static,RVA,VA
+InputSyncManager,ClearSyncRuntimeState,ClearSyncRuntimeState() -> System.Void,0x0600005C,false,0x004FFC50,0x00000001804FFC50
+InputSyncManager,ReleaseInjectedInputState,ReleaseInjectedInputState() -> System.Void,0x0600005D,false,0x00501940,0x0000000180501940
+InputSyncManager,ConvertPos,"ConvertPos(System.Int32 masterX, System.Int32 masterY, System.Int32 masterW, System.Int32 masterH) -> UnityEngine.Vector2",0x06000060,true,0x004FFE20,0x00000001804FFE20
+InputSyncManager,ParseAndInject,ParseAndInject(System.String evt) -> System.Void,0x06000061,false,0x00500590,0x0000000180500590
+InputSyncManager,TryClickUI,"TryClickUI(System.Int32 btn, UnityEngine.Vector2 screenPos) -> System.Void",0x06000066,false,0x00502E40,0x0000000180502E40
+InputSyncManager,UpdateUIDrag,UpdateUIDrag(UnityEngine.Vector2 screenPos) -> System.Void,0x06000067,false,0x00503710,0x0000000180503710
+InputSyncManager,EndUIDrag,EndUIDrag(UnityEngine.Vector2 screenPos) -> System.Void,0x06000068,false,0x004FFEA0,0x00000001804FFEA0
+InputSyncManager,CancelUIDragState,CancelUIDragState() -> System.Void,0x06000069,false,0x004FE470,0x00000001804FE470
+InputSyncManager,ResetUIDragState,ResetUIDragState() -> System.Void,0x0600006A,false,0x00501D10,0x0000000180501D10
+InstanceRegistry,SetSyncState,SetSyncState(System.Boolean isIn) -> System.Void,0x06000082,false,0x00506630,0x0000000180506630
+InstanceRegistry,GetSyncGroupId,GetSyncGroupId() -> System.Int32,0x06000083,false,0x00505550,0x0000000180505550
+InstanceRegistry,SetSyncGroup,SetSyncGroup(System.Int32 groupId) -> System.Void,0x06000084,false,0x005063E0,0x00000001805063E0
+SyncInput,InjectMouseDown,InjectMouseDown(System.Int32 btn) -> System.Void,0x060000C7,true,0x0050E550,0x000000018050E550
+SyncInput,InjectMouseUp,InjectMouseUp(System.Int32 btn) -> System.Void,0x060000C8,true,0x0050E680,0x000000018050E680
+SyncInput,InjectMousePos,InjectMousePos(UnityEngine.Vector2 pos) -> System.Void,0x060000C9,true,0x0050E5F0,0x000000018050E5F0
+SyncInput,SetClickedUI,SetClickedUI(System.Boolean value) -> System.Void,0x060000CD,true,0x0050E790,0x000000018050E790
+FGStudio.LuaSystem.GUI.UIButton,HandleClickEvent,HandleClickEvent() -> System.Void,0x060003DC,false,0x0052D140,0x000000018052D140
+FGStudio.LuaSystem.GUI.UIButton,HandlePointerUp,HandlePointerUp(UnityEngine.EventSystems.PointerEventData eventData) -> System.Void,0x060003DE,false,0x0052D3F0,0x000000018052D3F0
+FGStudio.LuaSystem.GUI.UIButton,HandlePointerDown,HandlePointerDown(UnityEngine.EventSystems.PointerEventData eventData) -> System.Void,0x060003DF,false,0x0052D270,0x000000018052D270
+FGStudio.Engine.Utilities.Unity.UI.UIDragableObject,IsRectTransformInsideScreen,IsRectTransformInsideScreen(UnityEngine.RectTransform rectTransform) -> System.Boolean,0x06002C6A,false,0x0060A3E0,0x000000018060A3E0
+FGStudio.Engine.Utilities.Unity.UI.UIDragableObject,OnDrag,OnDrag(UnityEngine.EventSystems.PointerEventData eventData) -> System.Void,0x06002C6B,false,0x0060A630,0x000000018060A630
+FGStudio.Engine.Utilities.Unity.UI.UIDragableObject,OnBeginDrag,OnBeginDrag(UnityEngine.EventSystems.PointerEventData eventData) -> System.Void,0x06002C6C,false,0x0060A5D0,0x000000018060A5D0
+FGStudio.Engine.Utilities.Unity.UI.UIDragableObject,OnEndDrag,OnEndDrag(UnityEngine.EventSystems.PointerEventData eventData) -> System.Void,0x06002C6D,false,0x0060A7F0,0x000000018060A7F0
