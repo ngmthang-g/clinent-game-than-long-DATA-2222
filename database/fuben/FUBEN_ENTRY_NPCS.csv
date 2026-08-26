@@ -1,0 +1,20 @@
+ScenarioID,ScenarioName,DungeonMapID,DungeonMapName,GatherMapID,GatherMapName,GatherNPCID,GatherNPCName,GatherNPCResName,GatherX,GatherY
+ThuyLao,Thủy Lao,92,Thuỷ Lao,4,Tô Châu,650,Hô Diên Báo,YangWenYanC,10990,6466
+Q1_ToChau,Biên Giới Tống Liêu,93,Biên Giới Tống Liêu,4,Tô Châu,674,Tiền Hồng Vũ,LuoYangBing2,4400,8090
+Q2_ToChau,Trúc Lâm,94,Trúc Lâm,4,Tô Châu,707,Hoa Kiếm Vũ,BiaoTou,11300,9890
+Q3_ToChau,Dã Ngoại Trại Phỉ,95,Dã Ngoại Trại Phỉ,4,Tô Châu,674,Tiền Hồng Vũ,LuoYangBing2,4500,8190
+DanhCo1,Trân Long Kỳ Cuộc (thường),77,Trân Long Kỳ Cuộc,4,Tô Châu,717,Trương Dịch Quốc,SuXingHe,8600,8600
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),77,Trân Long Kỳ Cuộc,4,Tô Châu,717,Trương Dịch Quốc,SuXingHe,8600,8600
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),77,Trân Long Kỳ Cuộc,4,Tô Châu,717,Trương Dịch Quốc,SuXingHe,8600,8600
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),101,Lâu Lan Bảo Tàng Động,5,Lâu Lan,384,Kim Cửu Linh,npcXiYuNianQingNanZi1,5200,7700
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),101,Lâu Lan Bảo Tàng Động,5,Lâu Lan,384,Kim Cửu Linh,npcXiYuNianQingNanZi1,5200,7700
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),101,Lâu Lan Bảo Tàng Động,5,Lâu Lan,384,Kim Cửu Linh,npcXiYuNianQingNanZi1,5200,7700
+TucCau_1,Túc Cầu (thường),103,Mẫu Đan Uyển,4,Tô Châu,718,Vu Thiên Thiên,HongYu,9300,9170
+TucCau_2,Túc Cầu (nhanh),103,Mẫu Đan Uyển,4,Tô Châu,718,Vu Thiên Thiên,HongYu,9300,9170
+TucCau_3,Túc Cầu (siêu tốc),103,Mẫu Đan Uyển,4,Tô Châu,718,Vu Thiên Thiên,HongYu,9300,9170
+Q1_LauLan,Hoàng Kim Chi Liên,108,Huyền Lôi Pha,5,Lâu Lan,385,Hà Duyệt,npcXiYuLaoNianNanZi2,9400,8000
+Q2_LauLan,Huyền Phật Châu,109,Độc Chướng Trạch Địa,5,Lâu Lan,385,Hà Duyệt,npcXiYuLaoNianNanZi2,9400,8000
+Q3_LauLan,Dung Nham Chi Địa,110,Dung Nham Chi Địa,5,Lâu Lan,386,Lưu Thuẫn,npcXiYuLaoNianNanZi1a,4000,8500
+SatTinh,Thập Nhị Sát Tinh,111,Lôi Đài Sinh Tử,2,Đại Lý,41,Khô Vinh Đại Sư,XuanCi80jq,4170,7840
+PMVL,Yến Tử Ô,105,Yến Tử Ô,25,Thái Hồ,721,Lý Cương,MiFei,2200,6400
+PhiKH,Diệt Phỉ Kính Hồ,107,Kính Hồ Phỉ Trại,30,Kính Hồ,301,Tề Sát Vân,SongDaGuanYuan3,6400,8430

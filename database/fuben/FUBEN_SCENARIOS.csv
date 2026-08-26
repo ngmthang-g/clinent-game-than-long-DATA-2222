@@ -1,0 +1,20 @@
+ID,Name,DungeonMapID,Timeout,MinPlayers,MinLevel,GatherMapID,GatherNPCID,GatherX,GatherY,RequestActiveCardMonth,DungeonMapName,GatherMapName,GatherNPCName,GatherNPCResName,StepCount,ActionCount
+ThuyLao,Thủy Lao,92,1800,1,30,4,650,10990,6466,false,Thuỷ Lao,Tô Châu,Hô Diên Báo,YangWenYanC,26,54
+Q1_ToChau,Biên Giới Tống Liêu,93,1800,1,30,4,674,4400,8090,false,Biên Giới Tống Liêu,Tô Châu,Tiền Hồng Vũ,LuoYangBing2,8,17
+Q2_ToChau,Trúc Lâm,94,1800,1,30,4,707,11300,9890,false,Trúc Lâm,Tô Châu,Hoa Kiếm Vũ,BiaoTou,4,10
+Q3_ToChau,Dã Ngoại Trại Phỉ,95,1800,1,30,4,674,4500,8190,false,Dã Ngoại Trại Phỉ,Tô Châu,Tiền Hồng Vũ,LuoYangBing2,3,8
+DanhCo1,Trân Long Kỳ Cuộc (thường),77,1800,1,30,4,717,8600,8600,true,Trân Long Kỳ Cuộc,Tô Châu,Trương Dịch Quốc,SuXingHe,4,11
+DanhCo2,Trân Long Kỳ Cuộc (nhanh),77,1800,1,30,4,717,8600,8600,true,Trân Long Kỳ Cuộc,Tô Châu,Trương Dịch Quốc,SuXingHe,4,11
+DanhCo3,Trân Long Kỳ Cuộc (siêu tốc),77,1800,1,30,4,717,8600,8600,true,Trân Long Kỳ Cuộc,Tô Châu,Trương Dịch Quốc,SuXingHe,4,11
+LauLanTamBao_1,Lâu Lan Tầm Bảo (thường),101,1800,1,30,5,384,5200,7700,true,Lâu Lan Bảo Tàng Động,Lâu Lan,Kim Cửu Linh,npcXiYuNianQingNanZi1,4,11
+LauLanTamBao_2,Lâu Lan Tầm Bảo (nhanh),101,1800,1,30,5,384,5200,7700,true,Lâu Lan Bảo Tàng Động,Lâu Lan,Kim Cửu Linh,npcXiYuNianQingNanZi1,4,11
+LauLanTamBao_3,Lâu Lan Tầm Bảo (siêu tốc),101,1800,1,30,5,384,5200,7700,true,Lâu Lan Bảo Tàng Động,Lâu Lan,Kim Cửu Linh,npcXiYuNianQingNanZi1,4,11
+TucCau_1,Túc Cầu (thường),103,1800,1,30,4,718,9300,9170,true,Mẫu Đan Uyển,Tô Châu,Vu Thiên Thiên,HongYu,4,11
+TucCau_2,Túc Cầu (nhanh),103,1800,1,30,4,718,9300,9170,true,Mẫu Đan Uyển,Tô Châu,Vu Thiên Thiên,HongYu,4,11
+TucCau_3,Túc Cầu (siêu tốc),103,1800,1,30,4,718,9300,9170,true,Mẫu Đan Uyển,Tô Châu,Vu Thiên Thiên,HongYu,4,11
+Q1_LauLan,Hoàng Kim Chi Liên,108,1800,1,30,5,385,9400,8000,true,Huyền Lôi Pha,Lâu Lan,Hà Duyệt,npcXiYuLaoNianNanZi2,6,14
+Q2_LauLan,Huyền Phật Châu,109,1800,1,30,5,385,9400,8000,true,Độc Chướng Trạch Địa,Lâu Lan,Hà Duyệt,npcXiYuLaoNianNanZi2,9,19
+Q3_LauLan,Dung Nham Chi Địa,110,1800,1,30,5,386,4000,8500,true,Dung Nham Chi Địa,Lâu Lan,Lưu Thuẫn,npcXiYuLaoNianNanZi1a,4,9
+SatTinh,Thập Nhị Sát Tinh,111,1800,1,30,2,41,4170,7840,true,Lôi Đài Sinh Tử,Đại Lý,Khô Vinh Đại Sư,XuanCi80jq,3,8
+PMVL,Yến Tử Ô,105,1800,1,30,25,721,2200,6400,truetrue,Yến Tử Ô,Thái Hồ,Lý Cương,MiFei,10,18
+PhiKH,Diệt Phỉ Kính Hồ,107,1800,1,30,30,301,6400,8430,true,Kính Hồ Phỉ Trại,Kính Hồ,Tề Sát Vân,SongDaGuanYuan3,5,12
