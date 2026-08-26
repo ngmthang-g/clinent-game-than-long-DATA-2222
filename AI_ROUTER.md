@@ -2,215 +2,230 @@
 
 Read `AI_BOOTSTRAP.md` and `AUTO_TOOL_SCOPE.md` first.
 
-This file answers: **What should I read for the current automation/tool task?**
+This repository now contains both:
 
-Do not select multiple context packs unless the task genuinely spans multiple subsystems. For cross-feature work, use `contexts/BUILD_ORCHESTRATOR.md` instead of loading every feature pack independently.
+1. canonical analysis/runtime/action contracts; and
+2. a fully materialized frozen Config lookup database.
 
-## Compact auto-tool references
+Future AI should **lookup first, reverse only for a genuinely absent semantic contract**.
 
-Before opening broad analysis, use these when useful:
+## Mandatory compact entrypoints
 
-- `AUTO_FEATURE_READINESS.md` — solved vs targeted-proof vs design-only status for each automation feature.
-- `research/AUTO_RUNTIME_PROOF_QUEUE.md` — **only the remaining live/runtime proofs worth collecting**; use this instead of inventing new broad reverse work.
-- `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md` — exact per-PID read-only external snapshot model and field boundaries.
-- `database/AUTO_TOOL_API_CATALOG.md` — auto-only state/query API catalog.
-- `database/AUTO_TOOL_ACTION_CATALOG.md` — **exact semantic mutable actions**, packet IDs/payloads and result-proof rules.
-- `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md` — per-feature `state -> guard -> one action -> proof -> failure/rescan` matrix.
-- `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md` — exact static anchors for PC multi-instance InputSync, `TryClickUI`, UIButton and UI drag-state resolution; use for hidden-click/sync resolver failures.
+Use these before broad analysis:
 
-These are compact implementation summaries; canonical subsystem documents remain the evidence source when exact provenance or edge cases matter.
+- `database/TOOL_DATA_INDEX.md` — **canonical static/data lookup router** for NPC/Map/FuBen/Boss/Monster/Task/Item/Equip/Skill/Pet/Spirit.
+- `database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv` — exact generated paths, row counts and sizes.
+- `AUTO_FEATURE_READINESS.md` — feature solved/proof/design status.
+- `research/AUTO_RUNTIME_PROOF_QUEUE.md` — remaining live/server proofs only.
+- `analysis/35_RUNTIME_SNAPSHOT_CONTRACT.md` — per-PID immutable read snapshot model.
+- `database/AUTO_TOOL_API_CATALOG.md` — state/query APIs.
+- `database/AUTO_TOOL_ACTION_CATALOG.md` — exact mutable semantic actions/payloads/proofs.
+- `analysis/34_AUTO_STATE_ACTION_PROOF_MATRIX.md` — `state -> guard -> action -> proof -> rescan` contract.
+- `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md` — InputSync/TryClickUI/drag-state anchors.
 
-| Auto-tool task / question | Primary context pack |
-|---|---|
-| Build/refactor tool architecture, multi-client, state machine, action arbitration | `contexts/BUILD_TOOL_CORE.md` |
-| Read nearby players/entities, local player, target, map objects, bag state | `contexts/BUILD_RUNTIME_SCANNER.md` |
-| Execute semantic actions safely on Unity thread, Action/delegate bridge | `contexts/BUILD_MAINTHREAD_BRIDGE.md` |
-| Hidden internal click / `TryClickUI` / InputSync / press-release-drag-state / multi-instance sync resolver | `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md` |
-| Auto Train / đánh quái / target/chase/skill/loot | `contexts/BUILD_AUTO_TRAIN.md` |
-| Auto Buff / Nga My / nearby-player heal / HP priority | `contexts/BUILD_AUTO_BUFF.md` |
-| Auto Sell / bag full / vendor / item filtering | `contexts/BUILD_AUTO_SELL.md` |
-| NPC Trị liệu / healer / GameDialog semantic selection | `contexts/BUILD_AUTO_HEAL.md` |
-| Đầu thai / revive / death recovery | `contexts/BUILD_AUTO_REVIVE.md` |
-| Party/team/join/leave/follow/member data | `contexts/BUILD_PARTY.md` |
-| Adaptive Train + Party + Buff + Sell + Revive + spot switching | `contexts/BUILD_ORCHESTRATOR.md` |
+## Primary feature routes
 
-## Direct supporting routes for automation
+| Tool task | Start here | Static lookup when needed |
+|---|---|---|
+| Tool architecture / multi-client / arbitration | `contexts/BUILD_TOOL_CORE.md` | `database/TOOL_DATA_INDEX.md` only for feature-specific static IDs |
+| Runtime scanner / nearby entities / bag / target | `contexts/BUILD_RUNTIME_SCANNER.md` | matching domain index only |
+| MainThread action bridge | `contexts/BUILD_MAINTHREAD_BRIDGE.md` | none normally |
+| Hidden click / InputSync | `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md` | `database/PC_INPUT_KEY_BINDINGS.csv` only when input mapping matters |
+| Auto Train | `contexts/BUILD_AUTO_TRAIN.md` | `static/monsters/`, `static/skills/`, item/loot indexes |
+| Auto Buff / Nga My | `contexts/BUILD_AUTO_BUFF.md` | `static/skills/`, `static/magic/`, `NGAMY_SUPPORT_SKILLS.md` |
+| Auto Sell | `contexts/BUILD_AUTO_SELL.md` | `static/items/`, `static/equips/`, NPC/vendor data |
+| NPC Trị liệu | `contexts/BUILD_AUTO_HEAL.md` | NPC lookup + current GameDialog runtime state |
+| Revive / Đầu thai | `contexts/BUILD_AUTO_REVIVE.md` | no large static DB required |
+| Party / follow | `contexts/BUILD_PARTY.md` | only faction/name interpretation if needed |
+| Cross-feature orchestrator | `contexts/BUILD_ORCHESTRATOR.md` | feature-specific indexes only |
+| Auto FuBen / dungeon / Boss | `features/AUTO_FUBEN.md`, `analysis/38_FUBEN_BOSS_TASK_TOOL_STACK.md` | `database/fuben/` + `static/monsters/` |
+| Auto PK / retaliation | `features/AUTO_PK.md`, `analysis/39_PK_AUTOPK_RUNTIME_STACK.md` | `static/skills/`, faction data |
+| Dồn đồ / Trade | `features/TRADE_CONSOLIDATION.md`, `analysis/40_TRADE_CONSOLIDATION_RUNTIME_STACK.md` | `static/items/`, `static/equips/` for policy only |
+| Use / vứt / hủy / chuyển item | `features/BAG_ITEM_POLICY.md`, `analysis/41_BAG_ITEM_USE_DROP_POLICY_STACK.md` | `static/items/`, `static/equips/`, `MEDICINES.csv` |
+| Auto Quest / tasks | `analysis/23_TASK_QUEST_AUTOMATION.md` | `static/tasks/` + NPC/Monster/Map indexes |
+| Pet / Spirit auto | `analysis/24_PET_SPIRIT_AUTO_RUNTIME.md` | `static/pets/` + skill data |
+| Storage / bank | `analysis/26_STORAGE_BANK_ITEM_MOVE.md` | item/equip policy indexes |
 
-### Exact action / packet question
+## Static database lookup rules
 
-Start with:
-
-- `database/AUTO_TOOL_ACTION_CATALOG.md`
-
-It already consolidates the important solved mutations for Train, movement, skill use, NPC/GameDialog, Sell, item actions, loot, Revive, Team join/leave/invite and Follow.
-
-Only open `database/PACKET_IDS.csv` / subsystem analysis when the action catalog does not contain the required operation.
-
-### Ground loot / pickup
-
-Read only:
-
-- `database/AUTO_TOOL_ACTION_CATALOG.md`
-- `analysis/27_LOOT_PICKUP_FILTER_ENGINE.md` if detailed filter/lifecycle evidence is needed.
-
-### Skill / buff lookup
-
-Use lookup first:
-
-- `database/AUTO_TOOL_API_CATALOG.md`
-- `database/AUTO_TOOL_ACTION_CATALOG.md`
-- `database/NGAMY_SUPPORT_SKILLS.md`
-- `database/FACTS.jsonl`
-- exact static record only if a concrete auto decision needs it.
-
-Do not load every skill/config table merely to implement one cast rule.
-
-### Item/equipment lookup for Auto Sell / loot
+### NPC / Map / route
 
 Use:
 
-- `contexts/BUILD_AUTO_SELL.md`
-- `database/AUTO_SELL_CLASSIFICATION.md`
-- live runtime `GetItemType`, `GetEquipType`, `IsItemSellable`
-- targeted static rows only when a richer keep/sell policy requires them.
+- `database/MAPS.csv`
+- `database/npcs/`
+- `database/autopath_npc/`
+- `database/AUTOPATH_PORTAL_EDGES.csv`
+- `database/NPC_SERVICE_CANDIDATES.md`.
 
-Do not load all 5,238 Items or 22,763 Equips.
+Do not invent live NPC coordinates when `Game.GetNPCPosition(npcID)` exists.
 
-### NPC/service/navigation
+### FuBen / Boss
 
-For Auto Sell vendor selection, start with:
+Use:
 
-- `database/AUTO_SELL_VENDOR_MAP.md`.
+```text
+database/fuben/FUBEN_SCENARIOS.csv
+ -> FUBEN_ENTRY_NPCS.csv
+ -> FUBEN_ACTIONS_COMPACT.csv
+ -> FUBEN_KILL_TARGETS.csv
+ -> FUBEN_BOSS_LEVEL_BANDS.csv
+ -> static/monsters/BOSS_INDEX_* when exact template detail is needed
+```
 
-For broader discovery only when needed, use:
+Do not conflate entry NPC with combat Boss.
 
-- `database/NPC_SERVICE_CANDIDATES.md` / NPC chunks;
-- `analysis/12_GLOBAL_LUA_HELPERS.md`;
-- `analysis/22_MAP_MINIMAP_RUNTIME.md`;
-- actual `GameDialog` / `NPCShop` runtime state.
+### Monster / Train target
 
-Do not invent static X/Y when `Game.GetNPCPosition(npcID)` exists.
+Use `database/static/monsters/`:
 
-### Party/join/follow
+- `MONSTER_INDEX_*` — all 17,121 templates.
+- `BOSS_INDEX_*` — 3,579 exact Boss templates.
+- `BOSS_NAME_INDEX.csv` — 578 grouped Boss names.
 
-Use `contexts/BUILD_PARTY.md` first.
+Current spawn/death/RoleID/Position remains runtime-authoritative.
 
-Already solved and must not be retraced:
+### Skill / Buff / PK lookup
+
+Normal route:
+
+```text
+static/skills/index/SKILL_TOOL_INDEX_*.csv
+ -> full SKILL row only if needed
+ -> SKILL_PROPERTIES_* / AUTO_SKILLS / MAGIC_ATTRIBUTES only if the decision needs them
+ -> current ownership/cooldown/target/range at runtime
+```
+
+Known Nga My support identities remain in `database/NGAMY_SUPPORT_SKILLS.md`.
+
+### Item / Equip / Sell / Loot / Use / Drop
+
+Use:
+
+```text
+static/items/ITEM_TOOL_INDEX.csv
+static/items/ITEM_POLICY_EXCEPTIONS.csv
+static/items/MEDICINES.csv
+static/equips/EQUIP_INDEX_*.csv
+static/equips/WEAPON_INDEX.csv
+```
+
+Open full `ITEMS_*` / `EQUIPS_*` chunks only for deeper attributes.
+
+Hard rules:
+
+```text
+live dbItemData.ID != template ItemID != Position != Site
+static Weapon position = EquipPoint == 0
+```
+
+### Task / Quest
+
+Use:
+
+```text
+static/tasks/TASK_INDEX.csv
+ -> TASK_OBJECTIVES.csv
+ -> matching TASKS_* full chunk only if needed
+ -> current dbTaskData.Parameters at runtime
+```
+
+Grow/Activity lookup is already under the same directory.
+
+### Pet / Spirit
+
+Use compact `PET_INDEX_*` / `SPIRIT_INDEX_*` first. Open full chunks only if template details are needed.
+
+## Exact action / packet questions
+
+Start with `database/AUTO_TOOL_ACTION_CATALOG.md`.
+
+Already solved action families include:
+
+- Train start/stop;
+- movement / target / chase;
+- skill use;
+- NPC interaction / dynamic GameDialog;
+- Sell;
+- item Use/Abandon/Move/Split/Destroy;
+- loot pickup;
+- Revive;
+- Team join/leave/invite/follow;
+- Trade/dồn đồ session actions.
+
+Use `PACKET_IDS.csv` only after the action catalog. Packet name/ID alone is not payload proof.
+
+## Party exact routes already solved
+
+Do not retrace:
 
 ```text
 leave team -> CMD_TEAM_ACTION 200057 -> 4:selfRoleID
-join target's team -> CMD_OTHER_ROLE_COMMAND 200051 -> 9:targetRoleID
+join target team -> CMD_OTHER_ROLE_COMMAND 200051 -> 9:targetRoleID
 invite target -> CMD_OTHER_ROLE_COMMAND 200051 -> 5:targetRoleID
 ```
 
-Membership success still requires fresh TeamID/C_TeamData proof.
+Request sent is not success; wait fresh TeamID/C_TeamData proof.
 
-### Hidden click / InputSync / multi-instance sync
+## Trade / dồn đồ exact route already solved
+
+Do not rebuild the trade protocol from UI coordinates.
+
+Start trade:
+
+```text
+CMD_OTHER_ROLE_COMMAND 200051
+7:1:targetRoleID
+```
+
+Active session uses current `ExchangeID` and live item instance IDs. Nine item slots are a session capacity, not proof that a batch completed. See `analysis/40_TRADE_CONSOLIDATION_RUNTIME_STACK.md`.
+
+## Hidden click / InputSync
 
 Start with:
 
 - `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md`
-- `analysis/07_SUPPORT_MODULES_LAUNCHER.md` only when launcher/session control is part of the problem.
+- `analysis/07_SUPPORT_MODULES_LAUNCHER.md` only when launcher/session control is actually involved.
 
-Verified static anchors include `SyncBootstrap.AutoInit`, `InputSyncManager`, `TryClickUI`, `FramePressState`, UI drag-state helpers, `UIButton.HandleClickEvent`, instance/master/group/UDP evidence and official record/playback components.
+Static anchors include `SyncBootstrap.AutoInit`, `InputSyncManager`, `TryClickUI`, `FramePressState`, UI drag helpers and `UIButton.HandleClickEvent`.
 
-Do **not** invent method signatures from string names. For a machine-specific failure, verify snapshot hashes and separate resolver/init/PID/window/Screen/UI-drag-state causes before blaming a different game build or CPU model.
+Do not invent signatures from string names. For machine-specific failures, verify snapshot hash, resolver/init timing, PID/window/Screen and drag-state before blaming CPU/client build.
 
-### Feature is statically solved but one live behavior is missing
+## Remaining live-proof route
 
-Read:
+If static semantics are solved but one behavior is still unknown:
 
 1. `AUTO_FEATURE_READINESS.md`
 2. `research/AUTO_RUNTIME_PROOF_QUEUE.md`
-3. exactly the one feature/context document named by that proof.
+3. exactly one matching feature document.
 
-Do **not** broad-reverse the client again merely because runtime validation has not yet been performed.
-
-Current highest-value queued proofs are:
+Current important live proofs include:
 
 ```text
-P0 external managed Action -> MainThread live callback
-P1 non-team Nga My beneficial-skill acceptance
-P1 exact Trị liệu dialog/result
-P1 Lâu Lan vendor -> normal NPCShop promotion
+external managed Action -> MainThread callback from production tool
+relationship-specific Nga My beneficial-skill server acceptance
+current healer GameDialog selection/confirmation/result
+current chosen vendor dialog -> NpcShopID/ShopID promotion
 ```
 
-## Conditional routes — only when that auto feature is actually requested
+These are runtime/server proofs, **not missing static Config data**.
 
-Quest/task automation:
+## Data regeneration
 
-- `analysis/23_TASK_QUEST_AUTOMATION.md`
-- `analysis/12_GLOBAL_LUA_HELPERS.md`
-- `analysis/10_BUILTIN_AUTO_FIGHT_ENGINE.md`
-- `analysis/22_MAP_MINIMAP_RUNTIME.md`.
+Do not manually re-decrypt Config for a normal lookup.
 
-Pet/Spirit automation:
+The repository now contains a tested reproducible pipeline:
 
-- `analysis/24_PET_SPIRIT_AUTO_RUNTIME.md`
-- `analysis/18_SKILLBAR_COOLDOWN_QUICKSKILLS.md`
-- `analysis/19_PROGRESS_CAPTCHA_SAFETY.md`.
+- `tools/materialize_tool_data.py`
+- `.github/workflows/materialize-tool-data.yml`
+- `database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv`.
 
-Storage/Bank automation:
-
-- `analysis/26_STORAGE_BANK_ITEM_MOVE.md`
-- `analysis/20_BAG_GRID_SHOP_UI_RUNTIME.md`.
-
-Do not research these domains merely because they exist in Config.
+When a future frozen Config snapshot changes, run/regenerate through that pipeline and compare generated data instead of starting reverse research from zero.
 
 ## Normally out of route
 
-Unless a concrete auto feature depends on them, do not spend context/research on:
-
-- cosmetics/fashion/appearance/FX;
-- voice/LiveKit;
-- launcher/update internals except when diagnosing the documented PC InputSync/launcher-control path;
-- D3D/rendering/baselib;
-- decorative UI assets;
-- guild/title/reputation systems;
-- broad analytics unrelated to auto decisions.
-
-## Routing examples
-
-### “Build Auto Buff for selected nearby people”
-
-Read:
-
-1. `AI_BOOTSTRAP.md`
-2. `AUTO_TOOL_SCOPE.md`
-3. `contexts/BUILD_AUTO_BUFF.md`
-4. only REQUIRED files listed there.
-
-Do not read Quest/Pet/Storage/Launcher docs.
-
-### “Fix disconnect/crash when actions are invoked”
-
-Read:
-
-1. `AI_BOOTSTRAP.md`
-2. `AUTO_TOOL_SCOPE.md`
-3. `contexts/BUILD_MAINTHREAD_BRIDGE.md`
-4. `contexts/BUILD_TOOL_CORE.md` only if action queue/state ownership is also broken.
-
-Do not restart GameAssembly-wide reverse.
-
-### “Fix hidden click / InputSync resolver failure on another PC”
-
-Read:
-
-1. `CLIENT_MANIFEST.md` for exact snapshot hashes;
-2. `analysis/37_INPUT_SYNC_STATIC_EVIDENCE.md`;
-3. `analysis/07_SUPPORT_MODULES_LAUNCHER.md` only if launcher master/group/session state is relevant.
-
-Do not assume Xeon/CPU or a different client binary before checking the hash, resolver, startup timing, PID, window/Screen and drag-state evidence.
-
-### “Find NPC ID and make character walk to it”
-
-Use database lookup first, then `database/AUTO_TOOL_ACTION_CATALOG.md` and `analysis/12_GLOBAL_LUA_HELPERS.md`. Do not manually invent X/Y.
-
-### “What should Auto Sell keep?”
-
-Read `contexts/BUILD_AUTO_SELL.md` and `database/AUTO_SELL_CLASSIFICATION.md`; query only item/equipment fields needed by the policy.
+Unless a concrete tool feature depends on them, avoid spending context on cosmetics/FX, voice/LiveKit, renderer/D3D/baselib, crash-handler internals, decorative UI, or unrelated title/reputation systems.
 
 ## Hard rule
 
-**This is an automation-tool knowledge library, not an encyclopedia of the whole client. Route, lookup, then read narrowly.**
+**Lookup -> semantic/runtime contract -> one action -> proof. Reverse native/client code only when the required contract genuinely does not exist in the KB.**
