@@ -6,6 +6,7 @@ on:
     paths:
       - 'Game/Thần Long  Mobile_Data/StreamingAssets/Config.unity3d'
       - 'tools/materialize_tool_data.py'
+      - 'tools/materialize_all_config.py'
       - '.github/workflows/materialize-tool-data.yml'
 
 permissions:
@@ -28,15 +29,20 @@ jobs:
           python tools/materialize_tool_data.py \
             --config "Game/Thần Long  Mobile_Data/StreamingAssets/Config.unity3d" \
             --repo-root .
+      - name: Regenerate all-Config fallback database
+        run: |
+          python tools/materialize_all_config.py \
+            --config "Game/Thần Long  Mobile_Data/StreamingAssets/Config.unity3d" \
+            --repo-root .
       - name: Commit generated database
         shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add database/fuben database/static database/PC_INPUT_KEY_BINDINGS.csv database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv
+          git add database/fuben database/static database/config_full database/PC_INPUT_KEY_BINDINGS.csv database/TOOL_DATA_MATERIALIZATION_MANIFEST.csv
           if git diff --cached --quiet; then
             echo "No database changes."
           else
-            git commit -m "data: regenerate tool-first static database"
+            git commit -m "data: regenerate tool and all-Config databases"
             git push
           fi
